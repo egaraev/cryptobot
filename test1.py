@@ -28,3 +28,4 @@ for index in enumerate(api.get_deposit_history(currency2)['result']):
             print "     ".join(repr(x).lstrip('u')[1:-1] for x in item)
         print " "
 
+print "test"
