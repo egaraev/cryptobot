@@ -62,7 +62,6 @@ class Client(object):
 #For specific currency  markets[0] index means the number of currency pair
     print (markets[2])['MarketName']
     #market = (markets[2])['MarketName']
-    print "     "
 #For all markets
 #for i in markets:
 #    print(i['MarketName'])
@@ -88,21 +87,31 @@ class Client(object):
 
 
 
-
-
     def get_market_summaries(self):
         """Used to get the last 24 hour summary of all active exchanges."""
         url = self._build_url('/public/getmarketsummaries')
 
         return self._call(url)
+    market_summ = c.get_market_summaries().json()['result']
+    market_summ_vtc = market_summ[175]
+    print market_summ_vtc['Volume']
+    print market_summ_vtc['Bid']
 
-    def get_market_summary(self, market, *args, **kwargs):
-        """Used to get the last 24 hour summary of all active exchanges."""
-        url = self._build_url('/public/getmarketsummary')
 
-        payload = {'market': market}
 
-        return self._call(url, params=payload)
+
+#Not used
+   # def get_market_summary(self, market, *args, **kwargs):
+    #    """Used to get the last 24 hour summary of all active exchanges."""
+     #   url = self._build_url('/public/getmarketsummary')
+#
+ #       payload = {'market': market}
+
+#        return self._call(url, params=payload)
+ #   market_summary = c.get_market_summary(market).json()['result']
+  #  print market_summary
+
+
 
     def get_orderbook(self, market, type, *args, **kwargs):
         """Used to get retrieve the orderbook for a given market."""
@@ -111,6 +120,8 @@ class Client(object):
         payload = {'market': market, 'type': type}
 
         return self._call(url, params=payload)
+
+
 
     def get_market_history(self, market, *args, **kwargs):
         """Used to retrieve the latest trades that have occured for a specific market."""
