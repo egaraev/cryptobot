@@ -140,14 +140,21 @@ for i in enumerate(openorders):
 
 
 #Used to place a buy order in a specific market. Use buylimit to place limit orders
-market = "BTC-QTUM"
-rate = "0.00170400"
-quantity = "0.37000000"
-print c.buy_limit(market,quantity,rate).json()
+#market = "BTC-QTUM"
+#rate = "0.00170400"
+#quantity = "0.37000000"
+#print c.buy_limit(market,quantity,rate).json()
 
 
 #Used to place an sell order in a specific market. Use selllimit to place limit orders.
-#sell = c.sell_limit()
+#market = "BTC-QTUM"
+#rate = "0.00185551"
+#quantity = "0.37000000"
+
+#c.sell_limit(market, quantity,rate).json()
+
+
+
 
 #Used to cancel a buy or sell order.
 #cancel = c.market_cancel()
