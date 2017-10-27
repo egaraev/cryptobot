@@ -14,14 +14,11 @@ c = Client(api_key=config.key, api_secret=config.secret)
 #Opening config file with variables
 with open("variables.yml", "r") as variables_file:
     variables = yaml.load(variables_file)
-#    market_summ_vtc_id = variables['markets']['btc_vtc']['market_summ_vtc_id']
-#    market_btc_vtc = variables['markets']['btc_vtc']['market']
 
 #Setup tick interval
 TICK_INTERVAL = 60  # seconds
 market_summ = c.get_market_summaries().json()['result']
-#print market_summ[market_summ_vtc_id]
-#market_summ_vtc = market_summ[market_summ_vtc_id]
+
 
 
 def main():
@@ -31,7 +28,6 @@ def main():
         start = time.time()
         tick()
         end = time.time()
-
         # Sleep the thread if needed
         if end - start < TICK_INTERVAL:
             time.sleep(TICK_INTERVAL - (end - start))
@@ -79,7 +75,6 @@ def has_open_order(market, order_type):
     orders = orders_res['result']
     if orders is None or len(orders) == 0:
         return False
-
 # Check all orders for a LIMIT_BUY
     for order in orders:
         if order['OrderType'] == order_type:
@@ -89,8 +84,6 @@ def has_open_order(market, order_type):
 
 def get_open_orders(market):
     return c.get_open_orders(market).json()
-
-
 
 
 def get_balance_from_market(market_type):
