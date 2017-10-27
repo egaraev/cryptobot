@@ -1,0 +1,9 @@
+markets:
+    btc_qtum:
+      market: "BTC-QTUM"
+
+
+
+    btc_vtc:
+      market: "BTC-VTC"
+      market_summ_vtc_id: 175

@@ -158,3 +158,7 @@ for i in enumerate(openorders):
 
 #Used to cancel a buy or sell order.
 #cancel = c.market_cancel()
+
+
+
+
