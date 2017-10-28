@@ -7,3 +7,16 @@ markets:
     btc_vtc:
       market: "BTC-VTC"
       market_summ_vtc_id: 175
+
+
+buy_order_size: "0.0006"
+
+min_sell_order_size: "0.0005"
+
+multiplier: "1.2"
+
+currency_btc: "BTC"
+
+currency_eth: "ETH"
+
+currency_usdt: "USDT"

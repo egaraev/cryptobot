@@ -14,6 +14,10 @@ c = Client(api_key=config.key, api_secret=config.secret)
 #Opening config file with variables
 with open("variables.yml", "r") as variables_file:
     variables = yaml.load(variables_file)
+    buy_size = float(variables['buy_order_size'])
+    sell_size = float(variables['min_sell_order_size'])
+    profit = float(variables['multiplier'])
+    currency_btc = variables['currency_btc']
 
 #Setup tick interval
 TICK_INTERVAL = 60  # seconds
@@ -34,21 +38,22 @@ def main():
 
 def tick():
     for summary in market_summ:
-        market = summary['MarketName']
+        if (summary['MarketName'][0:3]) == currency_btc:
+            market = summary['MarketName']
         day_close = summary['PrevDay']
         last = summary['Last']
         percent_chg = ((last / day_close) - 1) * 100
-        print(market + ' changed ' + str(percent_chg))
-
-
+        #print(market + ' changed ' + str(percent_chg))
+        buy_quantity = buy_size / last
+        sell_quantity = (sell_size / last)*profit
 
 
         if 40 < percent_chg < 60:
             # Fomo strikes! Let's buy some
             if has_open_order(market, 'LIMIT_BUY'):
-                print('Order already opened to buy 5 ' + market)
+                print('Order already opened to buy some ' + market)
             else:
-                print('Purchasing 5 units of ' + market + ' for ' + str(format_float(last)))
+                print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(last)))
                 #res = buy_limit(market, 5, last)
                 #print(res)
 
@@ -56,13 +61,17 @@ def tick():
             # Do we have any to sell?
             balance_res = get_balance_from_market(market)
             current_balance = balance_res['result']['Available']
+            if current_balance == 'None':
+                current_balance = 0
 
-            if current_balance > 5:
+                print current_balance
+
+            if current_balance > 0:
                 # Ship is sinking, get out!
                 if has_open_order(market, 'LIMIT_SELL'):
-                    print('Order already opened to sell 5 ' + market)
+                    print('Order already opened to sell some ' + market)
                 else:
-                    print('Selling 5 units of ' + market + ' for ' + str(format_float(last)))
+                    print('Selling ' + str(format_float(sell_quantity)) +' units of ' + market + ' for ' + str(format_float(last)))
  #                   res = sell_limit(market, 5, last)
  #                   print(res)
             else:
