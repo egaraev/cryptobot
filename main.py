@@ -61,12 +61,10 @@ def tick():
             # Do we have any to sell?
             balance_res = get_balance_from_market(market)
             current_balance = balance_res['result']['Available']
-            if current_balance == 'None':
-                current_balance = 0
+            if current_balance == None:
+                break
 
-                print current_balance
-
-            if current_balance > 0:
+            elif current_balance > 0:
                 # Ship is sinking, get out!
                 if has_open_order(market, 'LIMIT_SELL'):
                     print('Order already opened to sell some ' + market)
