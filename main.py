@@ -22,7 +22,17 @@ with open("variables.yml", "r") as variables_file:
 #Setup tick interval
 TICK_INTERVAL = 60  # seconds
 market_summ = c.get_market_summaries().json()['result']
-
+orderhistory = c.get_order_history().json()['result']
+#print orderhistory
+for i in orderhistory:
+  result = (i['Exchange'], i['PricePerUnit'])
+  if result[0] == "BTC-QTUM":
+    result_qtum = result[-1]
+    break
+  else:
+      break
+print result_qtum
+ # print "{0} cost is: {1}".format(i['Exchange'], i['PricePerUnit'])
 
 
 def main():
@@ -36,6 +46,8 @@ def main():
         if end - start < TICK_INTERVAL:
             time.sleep(TICK_INTERVAL - (end - start))
 
+
+
 def tick():
     for summary in market_summ:
         if (summary['MarketName'][0:3]) == currency_btc:
@@ -48,7 +60,7 @@ def tick():
         sell_quantity = (sell_size / last)*profit
 
 
-        if 40 < percent_chg < 60:
+        if 30 < percent_chg < 50:
             # Fomo strikes! Let's buy some
             if has_open_order(market, 'LIMIT_BUY'):
                 print('Order already opened to buy some ' + market)
@@ -57,7 +69,7 @@ def tick():
                 #res = buy_limit(market, 5, last)
                 #print(res)
 
-        if percent_chg < -20:
+        if percent_chg < -15:
             # Do we have any to sell?
             balance_res = get_balance_from_market(market)
             current_balance = balance_res['result']['Available']
