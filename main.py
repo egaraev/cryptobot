@@ -24,6 +24,10 @@ with open("variables.yml", "r") as variables_file:
     profit = float(variables['multiplier'])
 #The main currency
     currency_btc = variables['currency_btc']
+#The maximum quantity of open orders at the same time
+    max = float(variables['maxorder'])
+
+
 
 #Setup tick interval
 TICK_INTERVAL = 120  # seconds
@@ -45,7 +49,7 @@ def main():
         if end - start < TICK_INTERVAL:
             time.sleep(TICK_INTERVAL - (end - start))
 
-##########################################################################
+##################################################################################################################
 #what will be done every loop iteration
 def tick():
     for summary in market_summ:
@@ -64,27 +68,31 @@ def tick():
         bought_quantity = get_closed_orders(market, 'Quantity')
         sell_quantity = bought_quantity
 
+        #print get_balance("VTC")
+        #print balance_res
 
 #If the price for some currency rapidly increased from 30% till 50%. lets buy something
-        if 30 < percent_chg < 50:
+        if 25 < percent_chg < 50:
+            balance_res = get_balance_from_market(market)
+            current_balance = balance_res['result']['Available']
             # Check if we have open orders
-            if has_open_order(market, 'LIMIT_BUY'):
-                print('Order already opened to buy some ' + market)
+            if has_open_order(market, 'LIMIT_BUY') or current_balance is not None:
+                print('Order already opened to buy  ' + market)
             else:
                 #Buy some currency
                 print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(last)))
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
-                #res = buy_limit(market, 5, last)
-                #print(res)
+                #print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
 #Check if we have this currency for sell
         if bought_price != None:
 
-#If price changed to 5% decrease OR we got our prfit, lets sell
-            if percent_chg < -5 or last >= bought_price*profit:
+#If  we got our profit, lets sell
+            if last >= bought_price*profit:
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Available']
+
 
 #check current balance
                 if current_balance is None:
@@ -94,20 +102,20 @@ def tick():
                 elif current_balance > 0:
                     # Lets Sell some
                     if has_open_order(market, 'LIMIT_SELL'):
-                        print('Order already opened to sell some ' + market)
+                        print('Order already opened to sell  ' + market)
                     else:
                         print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  +' + str(format_float(last-bought_price)) + ' BTC')
- #                      res = sell_limit(market, 5, last)
- #                      print(res)
+#########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+ #                      print c.sell_limit(market, sell_quantity, last).json()
+#########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                 else:
-                    print('Not enough ' + market + ' to open a sell order')
+                    pass
+                    #print('Not enough ' + market + ' to open a sell order')
         else:
             pass
 
-
-
-#######################################################################################################
-#Function for
+###############################################################################################################
+#Function for checking the history of orders
 def get_closed_orders(currency, value):
     orderhistory = c.get_order_history(currency).json()
     orders = orderhistory['result']
@@ -118,7 +126,7 @@ def get_closed_orders(currency, value):
             return False
 
 
-#Works
+#Check the market prices
 def get_balance_from_market(market_type):
     markets_res = c.get_markets().json()
     markets = markets_res['result']
@@ -129,7 +137,7 @@ def get_balance_from_market(market_type):
             # Return a fake response of 0 if not found
     return {'result': {'Available': 0}}
 
-#works
+#Getting balance for currency
 def get_balance(currency):
     res =c.get_balance(currency).json()
     if res['result'] is not None and len(res['result']) > 0:
@@ -139,12 +147,12 @@ def get_balance(currency):
 
 
 
-#works - get the orders
+#get the orders
 def get_open_orders(market):
     return c.get_open_orders(market).json()
 
 
-#works - check if order opened or not
+#check if order opened or not
 def has_open_order(market, order_type):
     orders_res = c.get_open_orders(market).json()
     orders = orders_res['result']
