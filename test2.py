@@ -89,7 +89,7 @@ print "The deposit address for {1} is {0}".format(balance['Address'],balance['Cu
 #Used to retrieve your order history
 orderhistory = c.get_order_history().json()['result']
 for i in orderhistory:
-  print "The  orders from history for currency: {0} cost is: {1} uuid is: {2}".format(i['Exchange'], i['Price'], i['OrderUuid'])
+  print "The  orders from history for currency: {0} cost is: {1} uuid is: {2}".format(i['Exchange'], i['PricePerUnit'], i['OrderUuid'])
 vtcorderuuid =  orderhistory[0]['OrderUuid']
 #print vtcorderuuid
 
