@@ -58,6 +58,8 @@ def tick():
         day_close = summary['PrevDay']
         #Current price
         last = float(summary['Last'])
+        bid = float(summary['Bid'])
+        ask = float(summary['Ask'])
         #How much market has been changed
         percent_chg = ((last / day_close) - 1) * 100
         #HOW MUCH TO BUY
@@ -68,11 +70,12 @@ def tick():
         bought_quantity = get_closed_orders(market, 'Quantity')
         sell_quantity = bought_quantity
 
-        #print get_balance("VTC")
-        #print balance_res
+        #orders =set(get_big_orders('BTC-QTUM','buy'))
+        #print get_big_orders('BTC-QTUM', 'BUY')
+        #print c.get_market_history('BTC-QTUM', 'Total').json()['result']
 
 #If the price for some currency rapidly increased from 30% till 50%. lets buy something
-        if 25 < percent_chg < 50:
+        if 5 < percent_chg < 50:
             balance_res = get_balance_from_market(market)
             current_balance = balance_res['result']['Available']
             # Check if we have open orders
@@ -80,7 +83,7 @@ def tick():
                 print('Order already opened to buy  ' + market)
             else:
                 #Buy some currency
-                print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(last)))
+                print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(ask)))
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                 #print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
@@ -104,7 +107,7 @@ def tick():
                     if has_open_order(market, 'LIMIT_SELL'):
                         print('Order already opened to sell  ' + market)
                     else:
-                        print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  +' + str(format_float(last-bought_price)) + ' BTC')
+                        print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + '  and getting  +' + str(format_float(bid-bought_price)) + ' BTC')
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
  #                      print c.sell_limit(market, sell_quantity, last).json()
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -115,6 +118,26 @@ def tick():
             pass
 
 ###############################################################################################################
+#Analize of last buy orders
+def get_big_orders(market_type, value):
+    bigorders = c.get_market_history(market_type, value).json()
+    orders = bigorders['result']
+    #return orders
+    #items = (itemgetter(0, 1, 2, 3, 4)(orders))
+    #if orders['OrderType'] == value:
+    #    return orders['Total']
+    #return orders
+    for i in orders:
+        if i['OrderType'] == value:
+    #        #time.sleep(15)
+            return i['Total']
+
+
+
+
+
+
+
 #Function for checking the history of orders
 def get_closed_orders(currency, value):
     orderhistory = c.get_order_history(currency).json()
