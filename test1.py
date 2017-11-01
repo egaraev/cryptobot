@@ -86,3 +86,39 @@ for i in enumerate(balance):
 price = api.get_ticker('BTC-VTC')['result']
 print price
 
+
+
+
+print c.get_market_summaries().json()['result']
+
+{u'PrevDay': 5.114e-05, u'Volume': 764229.87748726, u'Last': 4.899e-05, u'OpenSellOrders': 5715, u'TimeStamp': u'2017-10-31T18:38:45.76', u'Bid': 4.899e-05, u'Created': u'2017-06-06T01:22:35.727', u'OpenBuyOrders': 182, u'High': 5.367e-05, u'MarketName': u'BTC-1ST', u'Low': 4.7e-05, u'Ask': 4.9e-05, u'BaseVolume': 38.96921826}, {u'PrevDay': 8.2e-07, u'Volume': 3423432.74044269, u'Last': 8.3e-07, u'OpenSellOrders': 2376, u'TimeStamp': u'2017-10-31T18:46:11.77', u'Bid': 8e-07, u'Created': u'2016-05-16T06:44:15.287', u'OpenBuyOrders': 133, u'High': 8.7e-07, u'MarketName': u'BTC-2GIVE', u'Low': 7.7e-07, u'Ask': 8.3e-07, u'BaseVolume': 2.84692667}
+
+for summary in market_summ:
+    market = summary['MarketName']
+    day_close = summary['PrevDay']
+    last = float(summary['Last'])
+
+allowed_markets = ('BTC-QTUM', 'BTC-ETH', 'BTC-VTC', 'BTC-LTC', 'BTC-XCP')
+
+
+
+
+
+
+for summary in market_summ:
+    if (summary['MarketName']) == market_list():
+        market = summary['MarketName']
+    day_close = summary['PrevDay']
+    last = float(summary['Last'])
+
+
+
+def market_list():
+    allowed_markets = ('BTC-QTUM', 'BTC-ETH', 'BTC-VTC', 'BTC-LTC', 'BTC-XCP')
+    for markets in allowed_markets:
+        return markets
+
+
+print c.get_orderbook(market, 'sell').json()['result']
+
+{u'Rate': 4.96e-05, u'Quantity': 107.96278}, {u'Rate': 4.961e-05, u'Quantity': 18.97173211}, {u'Rate': 4.968e-05, u'Quantity': 204.29009193}, {u'Rate': 5e-05, u'Quantity': 130.91176861}, {u'Rate': 5.092e-05, u'Quantity': 16.60063353},

@@ -28,12 +28,15 @@ with open("variables.yml", "r") as variables_file:
     max = float(variables['maxorder'])
 
 
-
 #Setup tick interval
-TICK_INTERVAL = 120  # seconds
+TICK_INTERVAL = 60  # seconds
 
-#Call pybittrex function for all encrypted connections
+#Get the market summaries
 market_summ = c.get_market_summaries().json()['result']
+
+
+#bigorders = float(variables['markets']['btc_qtum']['bigorders'])
+
 
 
 #The main function
@@ -49,93 +52,136 @@ def main():
         if end - start < TICK_INTERVAL:
             time.sleep(TICK_INTERVAL - (end - start))
 
+
+
 ##################################################################################################################
 #what will be done every loop iteration
 def tick():
+
+
+    for summary in market_summ:
+        #if (summary['MarketName'][0:3]) == currency_btc:
+        if market_list(summary['MarketName']):
+            market = summary['MarketName']
+            buyorders = buysellorders(market,'BuyOrders')
+            sellorders = buysellorders(market,'SellOrders')
+            day_close = summary['PrevDay']
+            last = float(summary['Last'])
+            buyorderbook = c.get_orderbook(market, 'buy').json()['result']
+            buycount = 0
+            for buyorder in buyorderbook:
+                buyamount = buyorder['Quantity']
+                if buyamount>buyorders:
+                    buycount +=1
+
+            sellorderbook = c.get_orderbook(market, 'sell').json()['result']
+            sellcount = 0
+            for sellorder in sellorderbook:
+                sellamount = sellorder['Quantity']
+                if sellamount > sellorders:
+                    sellcount += 1
+
+            print market, buycount, buyorders, sellcount, sellorders
+
+
+
+
+
+
+
+
+###############################################################################################################
     for summary in market_summ:
         if (summary['MarketName'][0:3]) == currency_btc:
+        #if market_list(summary['MarketName']):
             market = summary['MarketName']
-        day_close = summary['PrevDay']
+            #print c.get_orderbook(market, 'sell').json()['result']
+            day_close = summary['PrevDay']
         #Current price
-        last = float(summary['Last'])
-        bid = float(summary['Bid'])
-        ask = float(summary['Ask'])
+            last = float(summary['Last'])
+            bid = float(summary['Bid'])
+            ask = float(summary['Ask'])
         #How much market has been changed
-        percent_chg = ((last / day_close) - 1) * 100
+            percent_chg = ((last / day_close) - 1) * 100
         #HOW MUCH TO BUY
-        buy_quantity = buy_size / last
+            buy_quantity = buy_size / last
         #BOUGHT PRICE
-        bought_price = get_closed_orders(market, 'PricePerUnit')
+            bought_price = get_closed_orders(market, 'PricePerUnit')
         #Bought Quantity need for sell order, to know at which price we bought some currency
-        bought_quantity = get_closed_orders(market, 'Quantity')
-        sell_quantity = bought_quantity
+            bought_quantity = get_closed_orders(market, 'Quantity')
+            sell_quantity = bought_quantity
 
-        #orders =set(get_big_orders('BTC-QTUM','buy'))
-        #print get_big_orders('BTC-QTUM', 'BUY')
-        #print c.get_market_history('BTC-QTUM', 'Total').json()['result']
+
 
 #If the price for some currency rapidly increased from 30% till 50%. lets buy something
-        if 5 < percent_chg < 50:
-            balance_res = get_balance_from_market(market)
-            current_balance = balance_res['result']['Available']
+            if 1 < percent_chg < 50:
+                balance_res = get_balance_from_market(market)
+                current_balance = balance_res['result']['Available']
             # Check if we have open orders
-            if has_open_order(market, 'LIMIT_BUY') or current_balance is not None:
-                print('Order already opened to buy  ' + market)
-            else:
+                if has_open_order(market, 'LIMIT_BUY') or current_balance is not None:
+                    print('Order already opened to buy  ' + market)
+                else:
                 #Buy some currency
-                print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(ask)))
+                    print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(ask)))
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                 #print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
 #Check if we have this currency for sell
-        if bought_price != None:
+            if bought_price != None:
 
 #If  we got our profit, lets sell
-            if last >= bought_price*profit:
-                balance_res = get_balance_from_market(market)
-                current_balance = balance_res['result']['Available']
+                if last >= bought_price*profit:
+                    balance_res = get_balance_from_market(market)
+                    current_balance = balance_res['result']['Available']
 
 
 #check current balance
-                if current_balance is None:
-                    pass
+                    if current_balance is None:
+                        pass
 
 #If curent balance more then zero
-                elif current_balance > 0:
+                    elif current_balance > 0:
                     # Lets Sell some
-                    if has_open_order(market, 'LIMIT_SELL'):
-                        print('Order already opened to sell  ' + market)
-                    else:
-                        print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + '  and getting  +' + str(format_float(bid-bought_price)) + ' BTC')
+                        if has_open_order(market, 'LIMIT_SELL'):
+                            print('Order already opened to sell  ' + market)
+                        else:
+                            print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + '  and getting  +' + str(format_float(bid-bought_price)) + ' BTC')
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
  #                      print c.sell_limit(market, sell_quantity, last).json()
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                else:
-                    pass
+                    else:
+                        pass
                     #print('Not enough ' + market + ' to open a sell order')
-        else:
-            pass
+            else:
+                pass
+
+
+
+
 
 ###############################################################################################################
 #Analize of last buy orders
-def get_big_orders(market_type, value):
-    bigorders = c.get_market_history(market_type, value).json()
-    orders = bigorders['result']
-    #return orders
-    #items = (itemgetter(0, 1, 2, 3, 4)(orders))
-    #if orders['OrderType'] == value:
-    #    return orders['Total']
-    #return orders
-    for i in orders:
-        if i['OrderType'] == value:
-    #        #time.sleep(15)
-            return i['Total']
+
+#Allowed currencies function
+def market_list(marketname):
+    allowed_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 10, "SellOrders": 20}, {"MarketName": 'BTC-ETH', "BuyOrders": 35, "SellOrders": 50}]
+    for markets in allowed_markets:
+        if markets['MarketName'] == marketname:
+            return True
+
+    return False
 
 
 
 
+def buysellorders(marketname, value):
+    allowed_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 10, "SellOrders": 20}, {"MarketName": 'BTC-ETH', "BuyOrders": 35, "SellOrders": 50}]
+    for markets in allowed_markets:
+        if markets['MarketName'] == marketname:
+            return markets[value]
 
+    return False
 
 
 #Function for checking the history of orders
