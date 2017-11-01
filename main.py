@@ -28,6 +28,7 @@ with open("variables.yml", "r") as variables_file:
     max = float(variables['maxorder'])
 
 
+
 #Setup tick interval
 TICK_INTERVAL = 60  # seconds
 
@@ -60,28 +61,30 @@ def tick():
 
 
     for summary in market_summ:
-        #if (summary['MarketName'][0:3]) == currency_btc:
         if market_list(summary['MarketName']):
             market = summary['MarketName']
             buyorders = buysellorders(market,'BuyOrders')
             sellorders = buysellorders(market,'SellOrders')
             day_close = summary['PrevDay']
             last = float(summary['Last'])
-            buyorderbook = c.get_orderbook(market, 'buy').json()['result']
+
+            buyorderbook = c.get_orderbook(market, 'buy').json()['result'][:30]
             buycount = 0
             for buyorder in buyorderbook:
                 buyamount = buyorder['Quantity']
-                if buyamount>buyorders:
+                if buyamount >= buyorders:
                     buycount +=1
 
-            sellorderbook = c.get_orderbook(market, 'sell').json()['result']
+            sellorderbook = c.get_orderbook(market, 'sell').json()['result'][:30]
             sellcount = 0
             for sellorder in sellorderbook:
                 sellamount = sellorder['Quantity']
-                if sellamount > sellorders:
+                if sellamount >= sellorders:
                     sellcount += 1
 
-            print market, buycount, buyorders, sellcount, sellorders
+            print market, buycount, sellcount
+
+            #print c.get_orderbook(market, 'buy').json()['result'][:10]
 
 
 
@@ -176,7 +179,7 @@ def market_list(marketname):
 
 
 def buysellorders(marketname, value):
-    allowed_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 10, "SellOrders": 20}, {"MarketName": 'BTC-ETH', "BuyOrders": 35, "SellOrders": 50}]
+    allowed_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 100, "SellOrders": 100}, {"MarketName": 'BTC-ETH', "BuyOrders": 10, "SellOrders": 10}]
     for markets in allowed_markets:
         if markets['MarketName'] == marketname:
             return markets[value]
