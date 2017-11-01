@@ -82,9 +82,7 @@ def tick():
                 if sellamount >= sellorders:
                     sellcount += 1
 
-            print market, buycount, sellcount
 
-            #print c.get_orderbook(market, 'buy').json()['result'][:10]
 
 
 
