@@ -11,7 +11,10 @@ api = Bittrex(config.key, config.secret)
 market = "BTC-VTC"
 vtc = 3
 currency = "VTC"
+currency2 = "QTUM"
 
+
+#                                       Public API
 #Used to get the open and available trading markets at Bittrex along with other metadata.
 markets = c.get_markets().json()['result']
 #For specific currency  markets[0] index means the number of currency pair
@@ -63,7 +66,7 @@ for i in items:
   print "The last 2 SELL orders from history {0}".format(i['Total'])
 
 
-# Account API
+#                                           Account API
 #Used to retrieve balances from your account.
 balances = c.get_balances().json()['result']
 items = (itemgetter(0, 1)(balances))
@@ -73,11 +76,88 @@ for i in balances:
 
 
 
+#used to retrieve balance for specific currency
+balance = c.get_balance(currency).json()['result']
+print "The current balance for {1} is {0}".format(balance['Available'],balance['Currency'])
+
+
+#Used to retrieve or generate an address for a specific currency. If one does not exist, the call will fail and return ADDRESS_GENERATING until one is available
+balance = c.get_deposit_address(currency).json()['result']
+print "The deposit address for {1} is {0}".format(balance['Address'],balance['Currency'])
+
+
+#Used to retrieve your order history
+orderhistory = c.get_order_history().json()['result']
+for i in orderhistory:
+  print "The  orders from history for currency: {0} cost is: {1} uuid is: {2}".format(i['Exchange'], i['PricePerUnit'], i['OrderUuid'])
+vtcorderuuid =  orderhistory[0]['OrderUuid']
+#print vtcorderuuid
+
+
+#Used to retrieve a single order by uuid
+order = c.get_order(vtcorderuuid).json()['result']
+print "The UUID for this currency: {1} is: {0}".format(order['OrderUuid'], order['Exchange'])
+
+
+#Used to retrieve your withdrawal history
+withdrawhistory = c.get_withdrawal_history().json()['result']
+for i in withdrawhistory:
+  print "Withdrawal is:".format(i)
+#print withdrawhistory
+
+
+#Used to retrieve your deposit history
+deposithistory = c.get_deposit_history().json()['result']
+print "This is my deposit history"
+for index in enumerate(deposithistory):
+        i = index[0]
+        items = deposithistory[i].items()
+        items = (itemgetter(0,2,3)(items))
+        #print items
+        for item in items:
+            p = "       ".join(repr(x).lstrip('u')[1:-1] for x in item)
+            print p
+
+
+#Used to withdraw funds from your account. Will be tested in future
+#withdraw = c.withdraw().json()
+#{'currency': currency, 'quantity': qty, 'address': address, 'paymentid': memo}
+
+
+
+#                                   Market API
+
+#Get all orders that you currently have opened. A specific market can be requested
+openorders = c.get_open_orders().json()['result']
+print "We have these open orders:"
+for i in enumerate(openorders):
+    i = i[0]
+    items = openorders[i].items()
+    for item in items:
+        p = "       ".join(repr(x).lstrip('u')[1:-1] for x in item)
+        print p
+
+
+
+#Used to place a buy order in a specific market. Use buylimit to place limit orders
+#market = "BTC-QTUM"
+#rate = "0.00170400"
+#quantity = "0.37000000"
+#print c.buy_limit(market,quantity,rate).json()
+
+
+#Used to place an sell order in a specific market. Use selllimit to place limit orders.
+#market = "BTC-QTUM"
+#rate = "0.00185551"
+#quantity = "0.37000000"
+
+#c.sell_limit(market, quantity,rate).json()
 
 
 
 
-
+#Used to cancel a buy or sell order.
+#cancel = c.market_cancel()
 
 
 
