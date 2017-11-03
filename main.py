@@ -60,18 +60,24 @@ def tick():
             sellorders = buysellorders(market,'SellOrders')  #Get the size of big sell orders from history
             buyorderbook = c.get_orderbook(market, 'buy').json()['result'][:50]  #getting buy orders history last 50 orders
             buycount = 0
+            buysum = 0
             for buyorder in buyorderbook:  #Counting how much big buy orders we have in history
                 buyamount = buyorder['Quantity']
                 if buyamount >= buyorders:
                     buycount += 1
+                    buysum = buyamount + buysum
+            buytotalsumm = buysum  #total summ of BUY orders on the market
             buycountresult = buycount
 
             sellorderbook = c.get_orderbook(market, 'sell').json()['result'][:50]  #getting sell orders history last 50 orders
             sellcount = 0
+            sellsum = 0
             for sellorder in sellorderbook:   #Counting how much big buy orders we have in history
                 sellamount = sellorder['Quantity']
                 if sellamount >= sellorders:
                     sellcount += 1
+                    sellsum = sellamount + sellsum
+            selltotalsumm = sellsum  #total summ of SELL orders on the market
             sellcountresult = sellcount
 
 
@@ -109,9 +115,9 @@ def tick():
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                 #print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
-#If we have twice more BIG buy orders then BIG sell Orders, it means that price is growing, Let` buy something
+#If we have more BIG buy orders then BIG sell Orders, and volume of BUY order is bigger then volume pf sell prders, it means that price is growing, Let` buy something
 
-            elif buycountresult > sellcountresult*2 :
+            elif buytotalsumm > selltotalsumm and buycountresult > sellcountresult:
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Available']
                 # Check if we have open orders or some unsold currency
@@ -155,7 +161,18 @@ def tick():
 
 #"STOP LOSS" MECHANIZM. WE should sell failed currency before price goes down and reach min selling limit. If sell now we are losing 50%. If not - we will lose 100% of order`s cost
                 elif last < bought_price and sell_quantity*last >= sell_size:
-                    print ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + '  and losing  - ' + str(format_float(bid-bought_price)) + ' BTC')
+                    balance_res = get_balance_from_market(market)
+                    current_balance = balance_res['result']['Available']
+                    # check current balance
+                    if current_balance is None:
+                        pass
+                        # If curent balance of this currency more then zero
+                    elif current_balance > 0:
+                        # Lets Sell some
+                        if has_open_order(market, 'LIMIT_SELL'):
+                            print('Order already opened to sell  ' + market)
+                        else:
+                            print ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + '  and losing  - ' + str(format_float(bid-bought_price)) + ' BTC')
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                 #   print c.sell_limit(market, sell_quantity, last).json()
 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
