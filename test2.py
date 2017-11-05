@@ -13,6 +13,16 @@ vtc = 3
 currency = "VTC"
 currency2 = "QTUM"
 
+# Prepare SQL query to INSERT a record into the database.
+# sql = "INSERT INTO logs(date, \
+# log_entry) \
+# VALUES ('%s', '%s' )" % \
+# (currtime, market)
+
+# cursor.execute(sql)
+
+
+
 
 #                                       Public API
 #Used to get the open and available trading markets at Bittrex along with other metadata.

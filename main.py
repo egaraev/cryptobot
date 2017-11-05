@@ -10,6 +10,12 @@ import yaml
 import hmac
 import hashlib
 from pybittrex.auth import BittrexAuth
+import MySQLdb
+import sys
+
+
+
+
 
 c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 
@@ -93,6 +99,19 @@ def tick():
             prevlow = float(previouscandle[0]['L'])
             prevopen = float(previouscandle[0]['O'])
             prevclose = float(previouscandle[0]['C'])
+            currtime = time.ctime()
+
+            """try:
+                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                cursor = db.cursor()
+                cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, market))
+                db.commit()
+            except MySQLdb.Error, e:
+                print "Error %d: %s" % (e.args[0], e.args[1])
+                sys.exit(1)
+            finally:
+                db.close()"""
+
 
 ###################
 
@@ -112,7 +131,8 @@ def tick():
             bought_quantity = get_closed_orders(market, 'Quantity')
             sell_quantity = bought_quantity
 
-            #print market, buycountresult, sellcountresult
+
+            #print time.ctime(), market, buycountresult, sellcountresult
 
 
 
@@ -131,6 +151,20 @@ def tick():
                 else:
                 #Buy some currency
                     print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(bid)))
+
+                try:
+                    printed = ('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(
+                        format_float(bid)))
+                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                 #print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
@@ -147,6 +181,18 @@ def tick():
                 else:
                     # Buy some currency
                     print('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
+
+                try:
+                    printed = ('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
+                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed ))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                     # print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
@@ -162,7 +208,8 @@ def tick():
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Available']
                 # check current balance
-                if current_balance is None:
+                #print market,  current_balance, sell_quantity
+                if current_balance is None or current_balance == 0.0:
                     pass
                     # If curent balance of this currency more then zero
                 elif current_balance > 0:
