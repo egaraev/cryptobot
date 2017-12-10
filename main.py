@@ -213,6 +213,7 @@ def tick():
                     pass
                     # If curent balance of this currency more then zero
                 elif current_balance > 0:
+                    #print market, current_balance, open, low, prevclose
                 ##Check if we have completelly green candle
                     if open == low and prevclose <= open:
                         print (" We have GREEN candle for " + market + " and it is better to wait, before sell")
