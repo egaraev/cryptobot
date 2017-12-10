@@ -224,7 +224,7 @@ def tick():
                         pass
 
                     else:
-#If  we got our profit, lets sell this shitcoin
+#If  we got our profit, lets sell this shitcoins
 ## "TAKE PROFIT" MECHANIZM - we can take our percent from profit variable and sell currency
                         if last >= bought_price*profit:
                     # Lets Sell some
