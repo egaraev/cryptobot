@@ -1,8 +1,8 @@
 buy_order_size: "0.001"
-
+#buy_order_size: "0.0004"
 min_sell_order_size: "0.00051"
 
-multiplier: "1.05"
+multiplier: "1.00"
 
 currency_btc: "BTC"
 

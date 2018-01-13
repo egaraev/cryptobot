@@ -41,6 +41,9 @@ TICK_INTERVAL = 60  # seconds
 #Get the market summaries
 market_summ = c.get_market_summaries().json()['result']
 
+BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
+#print "The current BTC price is: {0}".format((BTC_price)['Last'])
+print BTC_price
 
 #The main function
 def main():
@@ -60,6 +63,8 @@ def main():
 ##################################################################################################################
 #what will be done every loop iteration
 def tick():
+
+
 
     for summary in market_summ: #Loop trough the market summary
         if market_list(summary['MarketName']):  #Check if currency is from my allowed list
@@ -89,9 +94,9 @@ def tick():
             sellcountresult = sellcount
             #Candle analisys
             lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-            low = float(lastcandle[0]['L'])
-            open = float(lastcandle[0]['O'])
-            close = float(lastcandle[0]['C'])
+            currentlow = float(lastcandle[0]['L'])
+            currentopen = float(lastcandle[0]['O'])
+            currentclose = float(lastcandle[0]['C'])
             previouscandle = get_candles(market, 'thirtymin')['result'][-2:]
             prevlow = float(previouscandle[0]['L'])
             prevopen = float(previouscandle[0]['O'])
@@ -236,9 +241,6 @@ def tick():
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
 
-
-
-
                         #################################SELLING ALGORITHM#####################
                     ################################################################################
 #Check if we have this currency for sell
@@ -253,7 +255,7 @@ def tick():
                 elif current_balance > 0:
                     #print market, current_balance, open, low, prevclose
                 ##Check if we have completelly green candle
-                    if open == low and prevclose <= open:
+                    if open == currentlow and prevclose <= currentopen:
                         print (" We have GREEN candle for " + market + " and it is better to wait, before sell")
                         try:
                             printed = (" We have GREEN candle for " + market + " and it is better to wait, before sell")
@@ -286,7 +288,13 @@ def tick():
                     else:
 #If  we got our profit, lets sell this shitcoins
 ## "TAKE PROFIT" MECHANIZM - we can take our percent from profit variable and sell currency
-                        if last >= bought_price*profit:
+                        if last >= bought_price*profit:  #hould be >=
+                            #print ask
+                            #print bought_price
+                            #print bought_quantity
+                            #print BTC_price
+                            #print str(format_float((ask*bought_quantity - bought_price*bought_quantity)*BTC_price))
+
 
                     # Lets Sell some
                             if has_open_order(market, 'LIMIT_SELL'):
@@ -303,7 +311,7 @@ def tick():
                                 finally:
                                     db.close()
                             else:
-                                print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask-bought_price)) + ' BTC')
+                                print('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask*bought_quantity - bought_price*bought_quantity)) + ' BTC' + ' or ' + str(format_float((ask*bought_quantity - bought_price*bought_quantity)*BTC_price)) + ' USD')
                                 try:
                                     printed = ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask-bought_price)) + ' BTC')
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -337,7 +345,7 @@ def tick():
                                 finally:
                                     db.close()
                             else:
-                                print ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  - ' + str(format_float(ask-bought_price)) + ' BTC')
+                                print ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  - ' + str(format_float(ask*bought_quantity - bought_price*bought_quantity)) + ' BTC' ' or ' + str(format_float((ask*bought_quantity - bought_price*bought_quantity)*BTC_price)) + ' USD')
                                 try:
                                     printed = ('Selling ' + str(format_float(sell_quantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  - ' + str(format_float(ask-bought_price)) + ' BTC')
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
