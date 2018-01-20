@@ -66,7 +66,7 @@ def tick():
 
 
 
-    global active
+    #global active
     for summary in market_summ: #Loop trough the market summary
         if market_list(summary['MarketName']):  #Check if currency is from my allowed list
             market = summary['MarketName']
@@ -159,6 +159,7 @@ def tick():
             sell_quantity = bought_quantity
 
 
+
             #print time.ctime(), market, buycountresult, sellcountresult
 
 
@@ -166,12 +167,12 @@ def tick():
                         #################################BUYING ALGORITHM#####################
             ###################################################################################################
 #If the price for some currency rapidly increased from 25% till 50%  let`s buy something too
-            if 5 < percent_chg < 50:  #should start from 25
+            if 25 < percent_chg < 50:  #should start from 25
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Available']
                 active = active_orders(market)
                 #print active
-
+                #print float(status_orders(market, 2))
                 #print market, current_balance
             # Check if we have open orders or some unsold currency
                 if has_open_order(market, 'LIMIT_BUY'):
@@ -202,12 +203,23 @@ def tick():
                     finally:
                         db.close()
 
-                elif (active is True):
-                    print ('We already have ' + str(format_float(current_balance)) + '  ' + market +  ' on our balance')
+                elif active == 1:
+                    print ('We already have ' + str(float(status_orders(market, 2))) +' units of ' + market +  ' on our balance')
+                    try:
+                        printed = ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
                 else:
                 #Buy some currency
-                    print active
+                    #print active
                     print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(bid)))
                     try:
                          printed = ('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
@@ -234,6 +246,8 @@ def tick():
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Available']
                 active = active_orders(market)
+                #print active
+                #print float(status_orders(market, 2))
                 # Check if we have open orders or some unsold currency
                 if has_open_order(market, 'LIMIT_BUY'):
                     print('Order already opened to buy  ' + market)
@@ -262,15 +276,25 @@ def tick():
                     finally:
                         db.close()
 
-                elif (active is True):
-                    print ('We already have ' + str(format_float(current_balance)) + '  ' + market +  ' on our balance')
-
+                elif active == 1:
+                    print ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                    try:
+                        printed = ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
                 else:
                     # Buy some currency
-                    print active
-                    print('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)) + " BTC")
+                    #print active
+                    print('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
                     try:
                         printed = ('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -423,7 +447,22 @@ def active_orders(marketname):
     cursor.execute("SELECT * FROM orders WHERE market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        return row[4]
+        return int(row[4])
+
+    return 0
+
+
+#Check the status of active orders
+# 2 - is quantity, 3 -is price, 4 - active/passive
+def status_orders(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
 
 
 
