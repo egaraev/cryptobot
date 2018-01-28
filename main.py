@@ -395,7 +395,7 @@ def tick():
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                                            cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                            cursor.execute('update orders set active = 0, reason_close = "Take profit" where market =("%s")' % market)
                                             db.commit()
                                         except MySQLdb.Error, e:
                                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -434,7 +434,7 @@ def tick():
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                                            cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                            cursor.execute('update orders set active = 0, reason_close = "Stop Loss" where market =("%s")' % market)
                                             db.commit()
                                         except MySQLdb.Error, e:
                                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -503,7 +503,7 @@ def tick():
 
 
 
-                    elif active == 1 and iteration == 1:
+                    elif active == 1 and iteration != 0:
                         print ('We already have ' + str(
                             float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                         try:
@@ -589,7 +589,7 @@ def tick():
                             db.close()
 
                         # For SQL storing (TESTING)
-                    elif active == 1 and iteration == 1:
+                    elif active == 1 and iteration != 0:
                         # print market, active
                         print ('We already have ' + str(
                             float(status_orders(market, 2))) + ' units of this ' + market + ' on our balance')
@@ -714,23 +714,14 @@ def tick():
 
                                 else:
                                     # Lets Sell some
-                                    print('Selling ' + str(
-                                        format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                        format_float(ask)) + '  and getting  +' + str(format_float(
-                                        ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
-                                        format_float((
-                                                     ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                    print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                     try:
-                                        printed = ('Selling ' + str(
-                                            format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                            format_float(ask)) + '  and getting  +' + str(
-                                            format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float((
-                                                                                                                       ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                        printed = ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                         currtime, printed))
-                                        cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                        cursor.execute('update orders set active = 0, reason_close = "Take profit 1 iteration" where market =("%s")' % market)
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -901,7 +892,7 @@ def tick():
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                                        cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                        cursor.execute('update orders set active = 0, reason_close = "Take profit few iteration" where market =("%s")' % market)
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -914,8 +905,54 @@ def tick():
                             else:
                                 pass
 
+                    elif last < bought_price_sql and sell_size >= sell_quantity_sql * last and iteration == 3:  # # Need to add bought_price without sql and sell_quantity without sql
+
+                        if has_open_order(market, 'LIMIT_SELL'):
+                            print('Order already opened to sell  ' + market)
+                            try:
+                                printed = ('Order already opened to sell  ' + market)
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+
+                        else:
+
+                            print (
+                            'Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                format_float(ask)) + '  and losing  ' + str(format_float(
+                                ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(
+                                format_float((
+                                             ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                            try:
+                                printed = ('Selling ' + str(
+                                    format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                    format_float(ask)) + '  and losing  ' + str(
+                                    format_float(ask - bought_price_sql)) + ' BTC')
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                cursor.execute('update orders set active = 0, reason_close = "Stop loss few iteration" where market =("%s")' % market)
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                #   print c.sell_limit(market, sell_quantity, last).json()
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                     else:
-                        print "Not good moment for selling"
+                        pass
+
 
                 else:
                     pass
