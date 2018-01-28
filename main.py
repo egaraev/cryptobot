@@ -315,7 +315,8 @@ def tick():
                     # print c.buy_limit(market, buy_quantity, last).json()
 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
-
+                else:
+                    pass
                         #################################SELLING ALGORITHM#####################
                     ################################################################################
 #Check if we have this currency for sell
@@ -444,8 +445,8 @@ def tick():
                                             #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                             #   print c.sell_limit(market, sell_quantity, last).json()
                                             #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                        #else:
-                            #pass
+                                else:
+                                    pass
 
                 else:
                     pass
@@ -521,7 +522,7 @@ def tick():
                         # Buy some currency
                         # print active
                         # print "first", market, active
-                        print('Purchasing ' + str(format_float(fiboquantity*2)) + ' units of ' + market + ' for ' + str(
+                        print('Purchasing ' + str(format_float(buy_quantity2)) + ' units of ' + market + ' for ' + str(
                             format_float(bid)))
                         try:
                             printed = ('Purchasing (by market analize) ' + str(
@@ -638,6 +639,8 @@ def tick():
                             #################################SELLING ALGORITHM#####################
                             ################################################################################
                             # Check if we have this currency for sell
+                else:
+                    pass
 
                 if bought_price_sql != None or bought_price != None:  # added OR
                     balance_res = get_balance_from_market(market)
@@ -740,12 +743,9 @@ def tick():
                             else:
                                 pass
 
-                if serf < 0 and (timestamp-timestamp_old > 600000) and active == 1 and iteration < maxiteration:  #check if we have active order with minus profit and older then 1 week
+                if serf < 0 and (timestamp-timestamp_old > 600) and active == 1 and iteration < maxiteration:  #should be 600000 , check if we have active order with minus profit and older then 1 week
                     print market, "Has old order"
-                    #print percent_chg
-                    #print buytotalsumm, selltotalsumm, buycountresult, sellcountresult
-                    #print last, bought_price_sql
-                    if -10 < percent_chg < 3.5:
+                    if 0.8 < percent_chg < 3.5:
                         print "Buying by Market analize"
                         if has_open_order(market, 'LIMIT_BUY'):
                             print('Order already opened to buy  ' + market)
@@ -784,17 +784,136 @@ def tick():
                                 # print c.buy_limit(market, fiboquantity2, last).json()
                                 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
-
-
-
-
-
-                    elif buytotalsumm > selltotalsumm * 2 and buycountresult > sellcountresult * 2: #
+                    elif buytotalsumm > selltotalsumm*3 and buycountresult > sellcountresult*3 and buytotalsumm !=0 and selltotalsumm !=0 and buycountresult !=0 and sellcountresult !=0:  #
                         print "Buying by order analize"
+
+                        if has_open_order(market, 'LIMIT_BUY'):
+                            print('Order already opened to buy  ' + market)
+                            try:
+                                printed = ('Order already opened to buy  ' + market)
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                        else:
+                            newiteration = iteration + 1
+                            # Buy some currency
+                            # print active
+                            # print "first", market, active
+                            print(
+                            'Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(
+                                format_float(last)))
+                            try:
+                                printed = ('Purchasing (by market analize) ' + str(
+                                    format_float(percent_chg)) + ' percent changed ' + str(
+                                    format_float(fiboquantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
+                                    format_float(last)))
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                cursor.execute(
+                                    "update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s where market = %s and active = 1",
+                                    (fiboquantity + fiboquantity2, last, timestamp, newiteration, market))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                                #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
+                                # print c.buy_limit(market, fiboquantity2, last).json()
+                                #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                     else:
                         pass
-                    if last >= bought_price_sql * profit:
-                        print "Selling some", market
+
+                    if iteration != 1:  #
+                        # print market, current_balance, bought_quantity_sql
+                        ##Check if we have completelly green candle
+                        if currentopen == currentlow and prevclose <= currentopen:
+                            print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
+                            try:
+                                printed = (
+                                    " We have GREEN candle for " + market + " and it is better to wait, before sell")
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+                            pass
+
+                        elif currentopen == prevclose and last > bought_price_sql * profit:  ## Need to add bought_price without sql
+                            print ("We have good trend for " + market)
+                            try:
+                                printed = ("We have good trend for " + market)
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+                            pass
+
+                        else:
+                            # If  we got our profit, lets sell this shitcoins
+                            # !!!!!!!!!!!
+                            ## "TAKE PROFIT" MECHANIZM - we can take our percent from profit variable and sell currency
+                            if last >= bought_price_sql * profit:  ## Need to add bought_price without sql
+
+                                if has_open_order(market, 'LIMIT_SELL'):
+                                    print('Order already opened to sell  ' + market)
+                                    try:
+                                        printed = ('Order already opened to sell  ' + market)
+                                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                        cursor = db.cursor()
+                                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                        db.commit()
+                                    except MySQLdb.Error, e:
+                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        sys.exit(1)
+                                    finally:
+                                        db.close()
+
+
+                                else:
+                                    # Lets Sell some
+                                    print('Selling ' + str(
+                                        format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
+                                    try:
+                                        printed = ('Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
+                                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                        cursor = db.cursor()
+                                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                        cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                        db.commit()
+                                    except MySQLdb.Error, e:
+                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        sys.exit(1)
+                                    finally:
+                                        db.close()
+                                        #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                        #                      print c.sell_limit(market, fiboquantity, last).json()
+                                        #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                            else:
+                                pass
+
                     else:
                         print "Not good moment for selling"
 
