@@ -27,23 +27,23 @@ c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex c
 
 
 #The list of available markets for trading with max order sizes (order sizes from history, which we can count as BIG)
-available_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 1200, "SellOrders": 1200}, {"MarketName": 'BTC-ETH', "BuyOrders": 30, "SellOrders": 30},
-                     {"MarketName": 'BTC-LTC', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-VTC', "BuyOrders": 1200, "SellOrders": 1200},
-                     {"MarketName": 'BTC-XMR', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-XRP', "BuyOrders": 3200, "SellOrders": 3200},
-                     {"MarketName": 'BTC-ZEC', "BuyOrders": 70, "SellOrders": 70}, {"MarketName": 'BTC-ETC', "BuyOrders": 600, "SellOrders": 600},
-                     {"MarketName": 'BTC-DASH', "BuyOrders": 25, "SellOrders": 25}, {"MarketName": 'BTC-NEO', "BuyOrders": 500, "SellOrders": 500},
-                     {"MarketName": 'BTC-XLM', "BuyOrders": 1000000, "SellOrders": 1000000}, {"MarketName": 'BTC-OMG', "BuyOrders": 1200, "SellOrders": 1200},
-                     {"MarketName": 'BTC-BCC', "BuyOrders": 20, "SellOrders": 20}, {"MarketName": 'BTC-LSK', "BuyOrders": 1200, "SellOrders": 1200}]
+#available_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 1200, "SellOrders": 1200}, {"MarketName": 'BTC-ETH', "BuyOrders": 30, "SellOrders": 30},
+#                     {"MarketName": 'BTC-LTC', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-VTC', "BuyOrders": 1200, "SellOrders": 1200},
+#                     {"MarketName": 'BTC-XMR', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-XRP', "BuyOrders": 3200, "SellOrders": 3200},
+#                     {"MarketName": 'BTC-ZEC', "BuyOrders": 70, "SellOrders": 70}, {"MarketName": 'BTC-ETC', "BuyOrders": 600, "SellOrders": 600},
+#                     {"MarketName": 'BTC-DASH', "BuyOrders": 25, "SellOrders": 25}, {"MarketName": 'BTC-NEO', "BuyOrders": 500, "SellOrders": 500},
+#                     {"MarketName": 'BTC-XLM', "BuyOrders": 1000000, "SellOrders": 1000000}, {"MarketName": 'BTC-OMG', "BuyOrders": 1200, "SellOrders": 1200},
+#                     {"MarketName": 'BTC-BCC', "BuyOrders": 20, "SellOrders": 20}, {"MarketName": 'BTC-LSK', "BuyOrders": 1200, "SellOrders": 1200}]
 
 #print available_markets
 
 #Setup tick interval
-TICK_INTERVAL = 60  # seconds
+#TICK_INTERVAL = 60  # seconds
 
 
 #The main function
 def main():
-    print('Starting trader bot, ticking every ' + str(TICK_INTERVAL) + ' seconds')
+    print('Starting trader bot')
 
     tick()
 
@@ -70,20 +70,25 @@ def tick():
     order_multiplier = parameters()[6]
     min_percent_chg = parameters()[7]
     max_percent_chg = parameters()[8]
+    last_orders_quantity = int(parameters()[9])
 
     market_summ = c.get_market_summaries().json()['result']
     BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
-
-
+    #print available_market('BTC-NEO')
+    #print available_market('BTC-NEO')
 
 
     #global active
     for summary in market_summ: #Loop trough the market summary
-        if market_list(summary['MarketName']):  #Check if currency is from my allowed list
+        #if market_list(summary['MarketName']):  #Check if currency is from my allowed list  -  WITHOUT SQL
+        if available_market_list(summary['MarketName']):
             market = summary['MarketName']
-            buyorders = buysellorders(market,'BuyOrders') #Get the size of big buy orders from history
-            sellorders = buysellorders(market,'SellOrders')  #Get the size of big sell orders from history
-            buyorderbook = c.get_orderbook(market, 'buy').json()['result'][:100]  #getting buy orders history last 150 orders
+            #buyorders = buysellorders(market,'BuyOrders') #Get the size of big buy orders from history   -  WITHOUT SQL
+            #sellorders = buysellorders(market,'SellOrders')  #Get the size of big sell orders from history   -  WITHOUT SQL
+            buyorders = buysellorders_sql(market, 2)
+            sellorders = buysellorders_sql(market, 3)
+            #print market, buyorders, sellorders
+            buyorderbook = c.get_orderbook(market, 'buy').json()['result'][:last_orders_quantity]  #getting buy orders history last 150 orders
             buycount = 0
             buysum = 0
             for buyorder in buyorderbook:  #Counting how much big buy orders we have in history
@@ -94,7 +99,7 @@ def tick():
             buytotalsumm = buysum  #total summ of BUY orders on the market
             buycountresult = buycount
 
-            sellorderbook = c.get_orderbook(market, 'sell').json()['result'][:100]  #getting sell orders history last 150 orders
+            sellorderbook = c.get_orderbook(market, 'sell').json()['result'][:last_orders_quantity]  #getting sell orders history last 150 orders
             sellcount = 0
             sellsum = 0
             for sellorder in sellorderbook:   #Counting how much big buy orders we have in history
@@ -143,6 +148,10 @@ def tick():
             iteration = int(iteration_orders(market))
             timestamp_old = int(timestamp_orders(market))
 
+            #print market, available_market(market)
+
+
+
             ########
             price_for_sql = c.get_ticker(market).json()['result']['Last']
             # print market, price_for_sql
@@ -150,7 +159,8 @@ def tick():
                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                 cursor = db.cursor()
                 # cursor.execute('insert into prices(market, price) values("%s", "%s")' % (market, price_for_sql))
-                cursor.execute("update prices set price = %s where market = %s", (BTC_price, 'USDT-BTC'))
+                #cursor.execute("update prices set price = %s where market = %s", (BTC_price, 'USDT-BTC'))
+                cursor.execute("update parameters set usdt_btc_price = %s where id = %s", (BTC_price, 1))
                 serf = (price_for_sql * bought_quantity_sql - bought_price_sql * bought_quantity_sql) *BTC_price
                 cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
                 # cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, bid, "1", currtime, timestamp, "1"))
@@ -746,7 +756,7 @@ def tick():
                             else:
                                 pass
 
-                if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and iteration < maxiteration:  #should be 600000 , check if we have active order with minus profit and older then 1 week
+                if serf < 0 and (timestamp-timestamp_old > 60000) and active == 1 and iteration < maxiteration:  #should be 600000 , check if we have active order with minus profit and older then 1 week
                     #print market, "Has old order"
                     if min_percent_chg < percent_chg < max_percent_chg:
                         #print "Buying by Market analize"
@@ -1059,16 +1069,52 @@ def tick():
 
 ### FUNCTIONS
 ###############################################################################################################
-#def available_markets(marketname):
-#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-#    cursor = db.cursor()
-#    market = marketname
-#    cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
-#    r = cursor.fetchall()
-#    for row in r:
-#        return (row[1]), (row[2]), (row[3])
+#Allowed currencies function for SQL
+def available_market_list(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return True
 
-#    return 0
+    return False
+
+
+
+#Allowed currencies function
+#def market_list(marketname):
+#    allowed_markets = available_markets
+#    for markets in allowed_markets:
+#        if markets['MarketName'] == marketname:
+#            return True
+#    return False
+
+
+
+#function for getting "Big" values for sell and buy for each market
+#def buysellorders(marketname, value):
+#    allowed_markets = available_markets
+#    for markets in allowed_markets:
+#        if markets['MarketName'] == marketname:
+#            return markets[value]
+#    return False
+
+
+def buysellorders_sql(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
+
 
 
 
@@ -1078,7 +1124,7 @@ def parameters():
     cursor.execute("SELECT * FROM parameters")
     r = cursor.fetchall()
     for row in r:
-        return (row[1]), (row[2]), (row[3]), (row[4]), (row[5]), (row[6]), (row[7]), (row[8]), (row[9])
+        return (row[1]), (row[2]), (row[3]), (row[4]), (row[5]), (row[6]), (row[7]), (row[8]), (row[9]), (row[10])
 
     return 0
 
@@ -1152,25 +1198,7 @@ def status_orders(marketname, value):
 
 
 
-#Allowed currencies function
-def market_list(marketname):
-    allowed_markets = available_markets
-    for markets in allowed_markets:
-        if markets['MarketName'] == marketname:
-            return True
 
-    return False
-
-
-
-#function for getting "Big" values for sell and buy for each market
-def buysellorders(marketname, value):
-    allowed_markets = available_markets
-    for markets in allowed_markets:
-        if markets['MarketName'] == marketname:
-            return markets[value]
-
-    return False
 
 
 #Function for checking the history of orders
