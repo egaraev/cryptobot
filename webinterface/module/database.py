@@ -152,4 +152,69 @@ class Database:
         finally:
             con.close()
 
+    def update_market(self, id, data):
+        con = Database.connect(self)
+        cursor = con.cursor()
 
+        try:
+            cursor.execute(
+                "UPDATE markets set market = %s, buy_orders = %s, sell_orders =%s where id = %s",
+                (data['market'], data['buy_orders'], data['sell_orders'], id,))
+            con.commit()
+
+            return True
+        except:
+            con.rollback()
+
+            return False
+        finally:
+            con.close()
+
+
+    def read_markets(self, id):
+        con = Database.connect(self)
+        cursor = con.cursor()
+
+        try:
+            if id == None:
+                cursor.execute("SELECT * FROM markets")
+            else:
+                cursor.execute("SELECT * FROM markets where id = %s ", (id,))
+
+            return cursor.fetchall()
+        except:
+            return ()
+        finally:
+          con.close()
+
+    def delete_markets(self, id):
+        con = Database.connect(self)
+        cursor = con.cursor()
+
+        try:
+            cursor.execute("DELETE FROM markets where id = %s", (id,))
+            con.commit()
+
+            return True
+        except:
+            con.rollback()
+
+            return False
+        finally:
+            con.close()
+
+    def insert_market(self, data):
+        con = Database.connect(self)
+        cursor = con.cursor()
+
+        try:
+            cursor.execute("INSERT INTO markets(market,buy_orders,sell_orders) VALUES (%s,%s,%s)", (data['market'], data['buy_orders'], data['sell_orders'],))
+            con.commit()
+
+            return True
+        except:
+            con.rollback()
+
+            return False
+        finally:
+            con.close()
