@@ -151,8 +151,94 @@ def logs():
 
     return render_template('/logs.html', data = data)
 
+####
 
 
+@app.route('/markets')
+def markets():
+    data = db.read_markets(None)
+
+    return render_template('/index_market.html', data = data)
+
+
+@app.route('/updatem/<int:id>/')
+def updatem(id):
+    data = db.read_markets(id)
+
+    if len(data) == 0:
+        return redirect(url_for('markets'))
+    else:
+        session['update'] = id
+        return render_template('update_market.html', data=data)
+
+
+@app.route('/updatemarket', methods=['POST'])
+def updatemarket():
+    if request.method == 'POST' and request.form['update']:
+
+        if db.update_market(session['update'], request.form):
+            flash('A market has been updated')
+
+        else:
+            flash('A market can not be updated')
+
+        session.pop('update', None)
+
+        return redirect(url_for('markets'))
+    else:
+        return redirect(url_for('markets'))
+
+@app.route('/deletem/<int:id>/')
+def deletem(id):
+        data = db.read_markets(id)
+
+        if len(data) == 0:
+            return redirect(url_for('markets'))
+        else:
+            session['delete'] = id
+            return render_template('delete_market.html', data=data)
+
+@app.route('/deletemarket', methods=['POST'])
+def deletemarket():
+        if request.method == 'POST' and request.form['delete']:
+
+            if db.delete_markets(session['delete']):
+                flash('A market has been deleted')
+
+            else:
+                flash('A market can not be deleted')
+
+            session.pop('delete', None)
+
+            return redirect(url_for('markets'))
+        else:
+            return redirect(url_for('umarkets'))
+
+@app.route('/addm/')
+def addm():
+            return render_template('/add_market.html')
+
+
+
+@app.route('/addmarket', methods=['POST', 'GET'])
+def addmarket():
+            if request.method == 'POST' and request.form['save']:
+                if db.insert_market(request.form):
+                    flash("A new market has been added")
+                else:
+                    flash("A new market can not be added")
+
+                return redirect(url_for('markets'))
+            else:
+                return redirect(url_for('markets'))
+
+
+
+
+
+
+
+#####
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('error.html')

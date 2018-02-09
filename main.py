@@ -14,28 +14,6 @@ import sys
 
 c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 
-#Opening config file with variables
-
-#with open("/root/PycharmProjects/cryptobot/variables.yml", "r") as variables_file:   #Open config file
-#    variables = yaml.load(variables_file)
-#    buy_size = float(variables['buy_order_size']) #The size for opening orders for STOP_LOSS mode
-#    buy_size2 = float(variables['buy_order_size2'])  # The size for opening orders for FIBONACI Mode
-#    sell_size = float(variables['min_sell_order_size'])  #Minimal size for closing oders
-#    profit = float(variables['multiplier'])  #The size of profit we want to take
-#    stop_loss = float(variables['stop_loss'])  #If stop_loss==1 we use stop loss mechanism, of not - we use fibonachi mechanism
-#    maxiteration = float(variables['maxiteration'])
-
-
-#The list of available markets for trading with max order sizes (order sizes from history, which we can count as BIG)
-#available_markets = [{"MarketName": 'BTC-QTUM', "BuyOrders": 1200, "SellOrders": 1200}, {"MarketName": 'BTC-ETH', "BuyOrders": 30, "SellOrders": 30},
-#                     {"MarketName": 'BTC-LTC', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-VTC', "BuyOrders": 1200, "SellOrders": 1200},
-#                     {"MarketName": 'BTC-XMR', "BuyOrders": 120, "SellOrders": 120}, {"MarketName": 'BTC-XRP', "BuyOrders": 3200, "SellOrders": 3200},
-#                     {"MarketName": 'BTC-ZEC', "BuyOrders": 70, "SellOrders": 70}, {"MarketName": 'BTC-ETC', "BuyOrders": 600, "SellOrders": 600},
-#                     {"MarketName": 'BTC-DASH', "BuyOrders": 25, "SellOrders": 25}, {"MarketName": 'BTC-NEO', "BuyOrders": 500, "SellOrders": 500},
-#                     {"MarketName": 'BTC-XLM', "BuyOrders": 1000000, "SellOrders": 1000000}, {"MarketName": 'BTC-OMG', "BuyOrders": 1200, "SellOrders": 1200},
-#                     {"MarketName": 'BTC-BCC', "BuyOrders": 20, "SellOrders": 20}, {"MarketName": 'BTC-LSK', "BuyOrders": 1200, "SellOrders": 1200}]
-
-#print available_markets
 
 #Setup tick interval
 #TICK_INTERVAL = 60  # seconds
@@ -74,17 +52,13 @@ def tick():
 
     market_summ = c.get_market_summaries().json()['result']
     BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
-    #print available_market('BTC-NEO')
-    #print available_market('BTC-NEO')
+
 
 
     #global active
     for summary in market_summ: #Loop trough the market summary
-        #if market_list(summary['MarketName']):  #Check if currency is from my allowed list  -  WITHOUT SQL
         if available_market_list(summary['MarketName']):
             market = summary['MarketName']
-            #buyorders = buysellorders(market,'BuyOrders') #Get the size of big buy orders from history   -  WITHOUT SQL
-            #sellorders = buysellorders(market,'SellOrders')  #Get the size of big sell orders from history   -  WITHOUT SQL
             buyorders = buysellorders_sql(market, 2)
             sellorders = buysellorders_sql(market, 3)
             #print market, buyorders, sellorders
@@ -140,8 +114,6 @@ def tick():
             sell_quantity = bought_quantity
             ##FOR SQL MODE
             bought_price_sql = float(status_orders(market, 3))
-            #bought_price_sql = float(bought_price_sql_1)
-            #print market, (type(bought_price_sql), bought_price_sql)
             bought_quantity_sql = float(status_orders(market, 2))
             sell_quantity_sql = bought_quantity_sql
             active = active_orders(market)
@@ -158,12 +130,9 @@ def tick():
             try:
                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                 cursor = db.cursor()
-                # cursor.execute('insert into prices(market, price) values("%s", "%s")' % (market, price_for_sql))
-                #cursor.execute("update prices set price = %s where market = %s", (BTC_price, 'USDT-BTC'))
                 cursor.execute("update parameters set usdt_btc_price = %s where id = %s", (BTC_price, 1))
                 serf = (price_for_sql * bought_quantity_sql - bought_price_sql * bought_quantity_sql) *BTC_price
                 cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
-                # cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, bid, "1", currtime, timestamp, "1"))
                 db.commit()
             except MySQLdb.Error, e:
                 print "Error %d: %s" % (e.args[0], e.args[1])
@@ -189,10 +158,6 @@ def tick():
                 if min_percent_chg < percent_chg < max_percent_chg:  # 0.8 - 3.5
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
-                    #active = active_orders(market)
-                #print active
-                #print float(status_orders(market, 2))
-                #print market, current_balance
             # Check if we have open orders or some unsold currency
 
                     if has_open_order(market, 'LIMIT_BUY'):
@@ -241,8 +206,6 @@ def tick():
 
                     else:
                 #Buy some currency
-                    #print active
-                        #print "first", market, active
                         print('Purchasing ' + str(format_float(buy_quantity)) +' units of ' + market + ' for ' + str(format_float(bid)))
                         try:
                             printed = ('Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + str(format_float(buy_quantity)) + '  |  ' + ' units of ' + market + ' for ' + str(format_float(bid)))
@@ -271,10 +234,6 @@ def tick():
                     buysummpercent = float(buytotalsumm/selltotalsumm)
                     buycountpercent = float(buycountresult/sellcountresult)
 
-                    #active = active_orders(market)
-                #print active
-                #print float(status_orders(market, 2))
-                # Check if we have open orders or some unsold currency
                     if has_open_order(market, 'LIMIT_BUY'):
                         print('Order already opened to buy  ' + market)
                         try:
@@ -305,7 +264,6 @@ def tick():
 
                 #For SQL storing (TESTING)
                     elif active == 1:
-                        #print market, active
                         print ('We already have ' + str(float(status_orders(market, 2))) + ' units of this ' + market + ' on our balance')
                         try:
                             printed = ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
@@ -322,8 +280,6 @@ def tick():
 
                     else:
                     # Buy some currency
-                    #print active
-                        #print "second", market, active
                         print('Purchasing ' + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(bid)))
                         try:
                             printed = ('Purchasing (by order analize) '+ ' Total Summ ' + str(format_float(buycountpercent)) + ' Total Count ' + str(format_float(buy_quantity)) + '  |  ' + ' units of ' + market + ' for ' + str(format_float(bid)))
@@ -350,17 +306,15 @@ def tick():
                 if bought_price_sql != None or bought_price != None:   #added OR
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
-                        # print market, bought_price, bought_price_sql
+
 
                         # check current balance
-                        # print market,  current_balance, sell_quantity
 
                         if bought_quantity_sql is None or bought_quantity_sql == 0.0:  # Need to add bought_quantity without sql
                             # print market, bought_quantity_sql, current_balance
                             pass
                             # If curent balance of this currency more then zero
                         elif bought_quantity_sql > 0:  # Need to add bought_quantity without sql
-                            # print market, current_balance, bought_quantity_sql
                             ##Check if we have completelly green candle
                             if currentopen == currentlow and prevclose <= currentopen:
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
@@ -492,11 +446,6 @@ def tick():
                 if min_percent_chg < percent_chg < max_percent_chg:  # 0.8 - 3.5
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
-                    # active = active_orders(market)
-                    # print active
-                    # print float(status_orders(market, 2))
-                    # print market, current_balance
-                    # Check if we have open orders or some unsold currency
 
                     if has_open_order(market, 'LIMIT_BUY'):
                         #print('Order already opened to buy  ' + market)
@@ -544,8 +493,6 @@ def tick():
 
                     else:
                         # Buy some currency
-                        # print active
-                        # print "first", market, active
                         #print('Purchasing ' + str(format_float(buy_quantity2)) + ' units of ' + market + ' for ' + str(format_float(bid)))
                         try:
                             printed = ('4- Purchasing (by market analize) ' + str(
@@ -578,9 +525,6 @@ def tick():
                     buysummpercent = float(buytotalsumm / selltotalsumm)
                     buycountpercent = float(buycountresult / sellcountresult)
 
-                    # active = active_orders(market)
-                    # print active
-                    # print float(status_orders(market, 2))
                     # Check if we have open orders or some unsold currency
                     if has_open_order(market, 'LIMIT_BUY'):
                         #print('Order already opened to buy  ' + market)
@@ -629,8 +573,6 @@ def tick():
 
                     else:
                         # Buy some currency
-                        # print active
-                        # print "second", market, active
                         #print('Purchasing ' + str(format_float(buy_quantity2)) + ' units of ' + market + ' for ' + str(format_float(bid)))
                         try:
                             printed = ('8 - Purchasing (by order analize) ' + ' Total Summ ' + str(
@@ -665,17 +607,13 @@ def tick():
                 if bought_price_sql != None or bought_price != None:  # added OR
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
-                    # print market, bought_price, bought_price_sql
-                    #print market, bought_quantity_sql, bought_price_sql, profit, last
-                    # check current balance
-                    # print market,  current_balance, sell_quantity
+
 
                     if bought_quantity_sql is None or bought_quantity_sql == 0.0:  # Need to add bought_quantity without sql
                         # print market, bought_quantity_sql, current_balance
                         pass
                         # If curent balance of this currency more then zero
                     elif bought_quantity_sql > 0 and iteration == 1:  # Need to add bought_quantity without sql
-                        # print market, current_balance, bought_quantity_sql
                         ##Check if we have completelly green candle
                         if currentopen == currentlow and prevclose <= currentopen:
 
@@ -777,8 +715,6 @@ def tick():
                         else:
                             newiteration = iteration + 1
                             # Buy some currency
-                            # print active
-                            # print "first", market, active
                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                             try:
                                 printed = ('14 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
@@ -818,8 +754,6 @@ def tick():
                         else:
                             newiteration = iteration + 1
                             # Buy some currency
-                            # print active
-                            # print "first", market, active
                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                             try:
                                 printed = ('16 - Purchasing (by market analize) ' + str(
@@ -1083,26 +1017,6 @@ def available_market_list(marketname):
     return False
 
 
-
-#Allowed currencies function
-#def market_list(marketname):
-#    allowed_markets = available_markets
-#    for markets in allowed_markets:
-#        if markets['MarketName'] == marketname:
-#            return True
-#    return False
-
-
-
-#function for getting "Big" values for sell and buy for each market
-#def buysellorders(marketname, value):
-#    allowed_markets = available_markets
-#    for markets in allowed_markets:
-#        if markets['MarketName'] == marketname:
-#            return markets[value]
-#    return False
-
-
 def buysellorders_sql(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
@@ -1249,15 +1163,6 @@ def has_open_order(market, order_type):
         if order['OrderType'] == order_type:
             return True
     return False
-
-
-
-#def get_candles(self, market, tick_interval):
-#    return self._api_query(path_dict={
-#        'v2.0': '/pub/market/GetTicks'
-#    }, options={
-#        'marketName': market, 'tickInterval': tick_interval
-#    }, protection='pub')
 
 
 def get_candles(market, tick_interval):
