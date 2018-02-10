@@ -69,30 +69,6 @@ def adduser():
             return redirect(url_for('users'))
 
 
-
-
-
-
-#    if 'username' in session:
-#        username_session = escape(session['username']).capitalize()
-#        #return render_template('index.html', session_user_name=username_session)
-#        if request.method == 'POST' and request.form['save']:
-#            if db.insert(request.form):
-#                flash("A new user has been added")
-#            else:
-#                flash("A new user can not be added")
-
-#            return redirect(url_for('users'))
-#        else:
-#            return redirect(url_for('users'))
-
-#    return redirect(url_for('login'))
-
-
-
-
-
-
 @app.route('/delete/<int:id>/')
 def delete(id):
     data = db.read(id)
