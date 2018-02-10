@@ -39,6 +39,15 @@
             {% endfor%}
         </section>
 
+          <div class="container" style="margin-top:3px;">
+            <div class="row">
+                <div class="col-md-0 col-md-offset-0 text-left">
+                {% if session_user_name %}
+                    <p>Hello <b>{{ session_user_name }}</b></p>
+                {% endif %}
+                </div>
+            </div>
+        </div>
 
 
             <div class="box-body">
@@ -79,7 +88,7 @@
     <footer class="main-footer">
       <div class="container">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 0.1
+          <a href="{{ url_for('logout') }}"><b>Logout</b></a>
         </div>
       </div>
     </footer>
