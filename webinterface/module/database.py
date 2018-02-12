@@ -73,8 +73,8 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("UPDATE parameters set buy_size = %s, buy_size2 = %s, sell_size =%s, profit =%s, stop_loss =%s, maxiteration =%s, order_multiplier =%s, min_percent_chg =%s, max_percent_chg =%s, last_orders_quantity =%s  where id = %s",
-                           (data['buy_size'], data['buy_size2'], data['sell_size'], data['profit'], data['stop_loss'], data['maxiteration'], data['order_multiplier'], data['min_percent_chg'], data['max_percent_chg'], data['last_orders_quantity'], id,))
+            cursor.execute("UPDATE parameters set buy_size = %s, buy_size2 = %s, sell_size =%s, profit =%s, stop_loss =%s, maxiteration =%s, order_multiplier =%s, min_percent_chg =%s, max_percent_chg =%s, last_orders_quantity =%s, stop_bot =%s  where id = %s",
+                           (data['buy_size'], data['buy_size2'], data['sell_size'], data['profit'], data['stop_loss'], data['maxiteration'], data['order_multiplier'], data['min_percent_chg'], data['max_percent_chg'], data['last_orders_quantity'], data['stop_bot'], id,))
             con.commit()
 
             return True
@@ -158,8 +158,8 @@ class Database:
 
         try:
             cursor.execute(
-                "UPDATE markets set market = %s, buy_orders = %s, sell_orders =%s where id = %s",
-                (data['market'], data['buy_orders'], data['sell_orders'], id,))
+                "UPDATE markets set market = %s, buy_orders = %s, sell_orders =%s, active =%s  where id = %s",
+                (data['market'], data['buy_orders'], data['sell_orders'], data['active'], id,))
             con.commit()
 
             return True
@@ -208,7 +208,7 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("INSERT INTO markets(market,buy_orders,sell_orders) VALUES (%s,%s,%s)", (data['market'], data['buy_orders'], data['sell_orders'],))
+            cursor.execute("INSERT INTO markets(market,buy_orders,sell_orders, active) VALUES (%s,%s,%s,%s)", (data['market'], data['buy_orders'], data['sell_orders'], data['active'],))
             con.commit()
 
             return True
