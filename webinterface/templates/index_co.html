@@ -74,21 +74,24 @@
                     <td>{{ row[12] }}</td>
                     <td>{{ row[9] }}</td>
 
-                    
                   </tr>
-                      {% endfor %}
-                    {% endif%}   
+                {% endfor %}
+                    {% endif%}
                 </tbody>
               </table>
+
+
             </div>
           </div>
         </section>
       </div>
     </div>
 
+
     <footer class="main-footer">
       <div class="container">
         <div class="pull-right hidden-xs">
+
            <a href="{{ url_for('logout') }}"><b>Logout</b></a>
         </div>
       </div>
