@@ -470,7 +470,7 @@ def tick():
                     elif current_balance is not None and current_balance != 0.0:
                         #print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                         try:
-                            printed = ('2 - We already have ' + str(format_float(current_balance)) + '  ' + market +  ' on our balance')
+                            printed = ('2 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -548,7 +548,7 @@ def tick():
                     elif current_balance is not None and current_balance != 0.0:
                         #print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                         try:
-                            printed = ('6 - We already have ' + str(format_float(current_balance)) + '  ' + market +  ' on our balance')
+                            printed = ('6 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -685,7 +685,7 @@ def tick():
                                     # Lets Sell some
                                     #print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                     try:
-                                        printed = ('12 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                        printed = ('12 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -860,7 +860,7 @@ def tick():
                                     # Lets Sell some
                                     #print('Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                     try:
-                                        printed = ('20 - Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
+                                        printed = ('20 - Selling ' + str(format_float(bought_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -877,7 +877,7 @@ def tick():
                             else:
                                 pass
 
-                    elif last < bought_price_sql and last * bought_quantity_sql*1.5 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration:  # # Need to add bought_price without sql and sell_quantity without sql
+                elif last < bought_price_sql and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration:  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
@@ -906,7 +906,9 @@ def tick():
                                 cursor = db.cursor()
                                 cursor.execute(
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                                cursor.execute('update orders set active = 0, reason_close = "Stop loss" where market =("%s")' % market)
+                                cursor.execute('update orders set reason_close = "Stop loss" where active=1 and market =("%s")' % market)
+                                cursor.execute(
+                                    'update orders set active = 0 where market =("%s")' % market)
                                 db.commit()
                             except MySQLdb.Error, e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
@@ -917,8 +919,8 @@ def tick():
                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                 #   print c.sell_limit(market, sell_quantity, last).json()
                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                    else:
-                        pass
+
+
 
                 elif serf > 0 and active == 1 and iteration !=1:
                     if currentopen == currentlow and prevclose <= currentopen:
@@ -981,9 +983,9 @@ def tick():
                                 #print('Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                 try:
                                     printed = ('26 - Selling ' + str(
-                                        format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(
+                                        format_float(bought_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(ask)) + '  and getting  +' + str(
-                                        format_float(ask - bought_price_sql)) + ' BTC' + ' or ' + str(format_float(
+                                        format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float(
                                         serf)) + ' USD')
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
