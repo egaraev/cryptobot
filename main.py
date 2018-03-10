@@ -121,7 +121,7 @@ def tick():
             iteration = int(iteration_orders(market))
             timestamp_old = int(timestamp_orders(market))
 
-            #print market, available_market(market)
+            #print market, ai_prediction(market)
 
 
 
@@ -447,7 +447,7 @@ def tick():
                 #################################BUYING ALGORITHM#####################
                 ###################################################################################################
                 # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if min_percent_chg < percent_chg < max_percent_chg and stop_bot == 0:  # 0.8 - 3.5
+                if min_percent_chg < percent_chg < max_percent_chg and ai_prediction(market)=='UP' and stop_bot == 0:  # 0.8 - 3.5
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
 
@@ -482,7 +482,7 @@ def tick():
                             db.close()
 
 
-                    #if we have som active orders in sql
+                    #if we have some active orders in sql
                     elif active == 1 and iteration != 0:
                         #print ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                         try:
@@ -507,7 +507,7 @@ def tick():
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                            cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity2, bid, "1", currtime, timestamp, "1",'Market Analize:  % change ' + str(format_float(percent_chg))))
+                            cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity2, bid, "1", currtime, timestamp, "1",'Market Analize:  % change ' + str(format_float(percent_chg)) + '  AI Prediction  ' + str(ai_prediction(market))))
                             cursor.execute("update orders set serf = %s where market = %s and active =1",(serf, market))
                             db.commit()
                         except MySQLdb.Error, e:
@@ -524,7 +524,7 @@ def tick():
 
                             # If we have twice more BIG buy orders then BIG sell Orders, and volume of BUY order is twice bigger then volume of sell orders, it means that price is growing, Let` buy something
 
-                elif buytotalsumm > selltotalsumm * order_multiplier and buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0 and stop_bot ==0:  # should be *2 on both
+                elif buytotalsumm > selltotalsumm * order_multiplier and buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0 and stop_bot ==0 and ai_prediction(market)=='UP':  # should be *2 on both
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
                     buysummpercent = float(buytotalsumm / selltotalsumm)
@@ -590,7 +590,7 @@ def tick():
                                 'insert into orders(market, quantity, price, active, date, timestamp, iteration, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
                                 market, buy_quantity2, bid, "1", currtime, timestamp, "1",
                                 'OA: ' + str(format_float(buysummpercent)) + ' TSumm ' + str(
-                                    format_float(buycountpercent)) + ' TCount '))
+                                    format_float(buycountpercent)) + ' TCount ') + '  AI Prediction  ' + str(ai_prediction(market)))
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -707,7 +707,7 @@ def tick():
 
                 #print market, last*bought_quantity_sql*2, bought_price_sql*bought_quantity_sql+prev_serf
 
-                if serf < 0 and (timestamp-timestamp_old > 60000) and active == 1 and  iteration < maxiteration :  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+                if serf < 0 and (timestamp-timestamp_old > 60000) and active == 1 and  iteration < maxiteration and ai_prediction(market)=='UP':  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
                     #print market, "Has old order"
                     if min_percent_chg < percent_chg < max_percent_chg:
                         #print "Buying by Market analize"
@@ -730,7 +730,7 @@ def tick():
                             # Buy some currency
                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                             try:
-                                printed = ('14 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
+                                printed = ('14 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  AI Prediction  ' + str(ai_prediction(market)))
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -749,7 +749,7 @@ def tick():
                                 # print c.buy_limit(market, fiboquantity2, last).json()
                                 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
-                    elif buytotalsumm > selltotalsumm*order_multiplier and buycountresult > sellcountresult*order_multiplier and buytotalsumm !=0 and selltotalsumm !=0 and buycountresult !=0 and sellcountresult !=0:  #
+                    elif buytotalsumm > selltotalsumm*order_multiplier and buycountresult > sellcountresult*order_multiplier and buytotalsumm !=0 and selltotalsumm !=0 and buycountresult !=0 and sellcountresult !=0 and ai_prediction(market)=='UP':  #
                         #print "Buying by order analize"
 
                         if has_open_order(market, 'LIMIT_BUY'):
@@ -1058,6 +1058,18 @@ def parameters():
 
     return 0
 
+
+
+def ai_prediction(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT ai_direction FROM markets WHERE active =1 and ai_active=1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
+
+    return 0
 
 
 
