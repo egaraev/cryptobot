@@ -11,20 +11,14 @@ import hashlib
 import MySQLdb
 import sys
 import subprocess
-
 c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
-
-
 #Setup tick interval
 #TICK_INTERVAL = 60  # seconds
-
-
 #The main function
 def main():
     print('Starting trader bot')
 
     tick()
-
 #Running clock forever for testing purposes
     #while True:
         #start = time.time()
@@ -33,10 +27,7 @@ def main():
         # Sleep the thread if needed
         #if end - start < TICK_INTERVAL:
         #    time.sleep(TICK_INTERVAL - (end - start))
-
-
-
-##################################################################################################################
+################################################################################################################
 #what will be done every loop iteration
 def tick():
     buy_size = parameters()[0] #The size for opening orders for STOP_LOSS mode
@@ -50,12 +41,8 @@ def tick():
     max_percent_chg = parameters()[8]
     last_orders_quantity = int(parameters()[9])
     stop_bot = int(parameters()[10])
-
     market_summ = c.get_market_summaries().json()['result']
     BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
-
-
-
     #global active
     for summary in market_summ: #Loop trough the market summary
         if available_market_list(summary['MarketName']):
@@ -73,7 +60,6 @@ def tick():
                     buysum = buyamount + buysum
             buytotalsumm = buysum  #total summ of BUY orders on the market
             buycountresult = buycount
-
             sellorderbook = c.get_orderbook(market, 'sell').json()['result'][:last_orders_quantity]  #getting sell orders history last 150 orders
             sellcount = 0
             sellsum = 0
@@ -84,7 +70,6 @@ def tick():
                     sellsum = sellamount + sellsum
             selltotalsumm = sellsum  #total summ of SELL orders on the market
             sellcountresult = sellcount
-
             #Candle analisys
             lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
             currentlow = float(lastcandle[0]['L'])
@@ -120,14 +105,8 @@ def tick():
             active = active_orders(market)
             iteration = int(iteration_orders(market))
             timestamp_old = int(timestamp_orders(market))
-
-
-
-
-           # print market, ai_prediction(market)
+            #print market, ai_prediction_price(market), ai_prediction(market)
             #print market, percent_chg
-
-
             ########
             #price_for_sql = c.get_ticker(market).json()['result']['Last']
             # print market, price_for_sql
@@ -148,8 +127,6 @@ def tick():
                 ########
 
             #print market, prev_serf, serf
-
-
 #####---------------------################################
 ##
 ##STOP LOSS MODE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -709,6 +686,7 @@ def tick():
 
 
                 #print market, last*bought_quantity_sql*2, bought_price_sql*bought_quantity_sql+prev_serf
+#DOING SECOND AND THIRD BUY
 
                 if serf < 0 and (timestamp-timestamp_old > 60000) and active == 1 and  iteration < maxiteration :  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
                     #print market, "Has old order"
@@ -716,7 +694,7 @@ def tick():
                     p = subprocess.Popen(run_prediction, stdout=subprocess.PIPE, shell=True)
                     (output, err) = p.communicate()
                     p_status = p.wait()
-                    print "Command output: " + output
+                    #print "Command output: " + output
 
                     if (min_percent_chg < percent_chg < max_percent_chg) and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL'):
                         #print "Buying by Market analize"
@@ -886,7 +864,7 @@ def tick():
                             else:
                                 pass
 
-                elif last < bought_price_sql and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration:  # # Need to add bought_price without sql and sell_quantity without sql
+                elif (last < bought_price_sql and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration)  or (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC')  :  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
@@ -915,7 +893,7 @@ def tick():
                                 cursor = db.cursor()
                                 cursor.execute(
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
-                                cursor.execute('update orders set reason_close = "Stop loss" where active=1 and market =("%s")' % market)
+                                cursor.execute('update orders set reason_close = "AI Stop loss" where active=1 and market =("%s")' % market)
                                 cursor.execute(
                                     'update orders set active = 0 where market =("%s")' % market)
                                 db.commit()
@@ -929,6 +907,92 @@ def tick():
                                 #   print c.sell_limit(market, sell_quantity, last).json()
                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
 
+#-------------
+                elif (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql < (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)!='UP')  :  # # Need to add bought_price without sql and sell_quantity without sql
+
+                        if has_open_order(market, 'LIMIT_SELL'):
+                            #print('Order already opened to sell  ' + market)
+                            try:
+                                printed = ('212 - Order already opened to sell  ' + market)
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+
+                        else:
+
+                            #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                            try:
+                                printed = ('222 -Selling ' + str(
+                                    format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                    format_float(ask)) + '  and losing  ' + str(
+                                    format_float(serf)) + ' USD')
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                cursor.execute('update orders set reason_close = "AI Stop loss" where active=1 and market =("%s")' % market)
+                                cursor.execute(
+                                    'update orders set active = 0 where market =("%s")' % market)
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                #   print c.sell_limit(market, sell_quantity, last).json()
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+#-----------
+                elif (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 > (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL'):  # # Need to add bought_price without sql and sell_quantity without sql
+
+                        if has_open_order(market, 'LIMIT_SELL'):
+                            #print('Order already opened to sell  ' + market)
+                            try:
+                                printed = ('22.1 - Order already opened to sell  ' + market)
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+
+                        else:
+
+                            #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                            try:
+                                printed = ('22 -Selling ' + str(
+                                    format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                    format_float(ask)) + '  and getting  ' + str(
+                                    format_float(serf)) + ' USD')
+                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                                cursor.execute('update orders set reason_close = "AI take profit" where active=1 and market =("%s")' % market)
+                                cursor.execute(
+                                    'update orders set active = 0 where market =("%s")' % market)
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                #   print c.sell_limit(market, sell_quantity, last).json()
+                                #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
 
 
                 elif serf > 0 and active == 1 and iteration !=1:
@@ -1080,7 +1144,16 @@ def ai_prediction(marketname):
 
     return 0
 
+def ai_prediction_price(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT ai_price FROM markets WHERE active =1 and ai_direction='UP' and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
 
+    return 0
 
 
 def quantity_orders(marketname):

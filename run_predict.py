@@ -69,7 +69,14 @@ def learn():
         # print market, prediction_info(market)[2]
         #          ---------================DATA COLLECTION====================------------
         # connect to poloniex's API
-        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+        if currency == 'BCC':
+            url = (
+            'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+        # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
+        else:
+            url = (
+            'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
+
         # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
 
         # parse json returned from the API to Pandas DF

@@ -90,10 +90,11 @@ def learn():
 
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
-                    url = (
-                    'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    if currency =='BCC':
+                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-
+                    else:
+                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
                     # parse json returned from the API to Pandas DF
@@ -247,8 +248,12 @@ def learn():
                     print market, 'Running learning again D', current_price
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
-                    url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+
+                    if currency =='BCC':
+                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
+                    else:
+                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
 
@@ -370,7 +375,7 @@ def learn():
                     elif last_word < current_price:
                         direction = 'DOWN'
                     else:
-                        direction = 'SAME'
+                        direction = 'NEUTRAL'
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
