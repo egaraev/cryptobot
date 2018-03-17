@@ -82,10 +82,12 @@ def learn():
             now = datetime.datetime.now()
             currenttime = now.strftime("%Y-%m-%d %H:%M")
             #print market, currtime, prediction_info(market)[1]
+            #print market, prediction_info(market)[2]
             if prediction_info(market)[2] == 'UP':
                 #print market, current_price, prediction_info(market)[0], prediction_info(market)[1], prediction_info(market)[2]
-                if (current_price >= prediction_info(market)[0]) or (int(currtime) - int(prediction_info(market)[1]) >= 21600): #21600
-                    #print market, 'Success and running learning again U'
+                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 21600): #21600
+                    print market, 'Running learning again U', current_price
+
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
                     url = (
@@ -124,7 +126,7 @@ def learn():
                         next(f)  # skip the header row
                         for line in f:
                             fields = line.split(',')
-                            vector_vix.append(float(fields[4]))
+                            vector_vix.append(float(fields[4])*10)
 
                             # convert the vector to a 2D matrix
                     matrix_vix = convertSeriesToMatrix(vector_vix, sequence_length)
@@ -198,20 +200,21 @@ def learn():
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
                         lines = f.read().splitlines()
-                        last_line = lines[-2]  # should be -1
+                        last_line = lines[-1]  # should be -1
                         last_word = last_line.split()[0]
                         last_word2 = last_line.split()[1]
-                        mean_price = (float(last_word) + float(last_word2)) / 2
+                        #mean_price = (float(last_word) + float(last_word2)) / 2
+                        mean_price = float(last_word) / 10
                         predicted_price = format(float(mean_price), '.6f')
 
-                    last_word = float(last_word)
+                    last_word = float(last_word)/10
 
                     if last_word > current_price:
                         direction = 'UP'
                     elif last_word < current_price:
                         direction = 'DOWN'
                     else:
-                        direction = 'SAME'
+                        direction = 'NEUTRAL'
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
@@ -222,7 +225,7 @@ def learn():
                     print market, predicted_price, direction, last_word
 
                     try:
-                        printed = (str(currency) + '   The predicted mean price is  ' + str(
+                        printed = ('      '+ str(currency) + '   The predicted mean price is  ' + str(
                             predicted_price) + '  Current time is:  ' + str(
                             currenttime + '  Current price is:   ' + str(
                                 current_price) + '   Direction is: ' + direction))
@@ -240,12 +243,11 @@ def learn():
                         db.close()
 
             elif prediction_info(market)[2] == 'DOWN':
-                if current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1]) >= 21600):  #21600
-                    #print market, 'Success and running learning again D'
+                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 21600):  #21600
+                    print market, 'Running learning again D', current_price
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
-                    url = (
-                    'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
 
 
@@ -280,7 +282,7 @@ def learn():
                         next(f)  # skip the header row
                         for line in f:
                             fields = line.split(',')
-                            vector_vix.append(float(fields[4]))
+                            vector_vix.append(float(fields[4])*10)
 
                             # convert the vector to a 2D matrix
                     matrix_vix = convertSeriesToMatrix(vector_vix, sequence_length)
@@ -354,13 +356,14 @@ def learn():
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
                         lines = f.read().splitlines()
-                        last_line = lines[-2]  # should be -1
+                        last_line = lines[-1]  # should be -1
                         last_word = last_line.split()[0]
                         last_word2 = last_line.split()[1]
-                        mean_price = (float(last_word) + float(last_word2)) / 2
+                        #mean_price = (float(last_word) + float(last_word2)) / 2
+                        mean_price = float(last_word) / 10
                         predicted_price = format(float(mean_price), '.6f')
 
-                    last_word = float(last_word)
+                    last_word = float(last_word)/10
 
                     if last_word > current_price:
                         direction = 'UP'
@@ -371,14 +374,14 @@ def learn():
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
-                            'The predicted mean price is  ' + str(predicted_price) + '    Current time is:  ' + str(
+                            'The predicted  price is  ' + str(predicted_price) + '    Current time is:  ' + str(
                                 currenttime + '   Current price is:   ' + str(
                                     current_price) + '    Direction is: ' + direction + '\n'))
 
-                    print market, predicted_price, direction, last_word
+                    print market, predicted_price, direction
 
                     try:
-                        printed = (str(currency) + '   The predicted mean price is  ' + str(
+                        printed = ('      '+ str(currency) + '   The predicted  price is  ' + str(
                             predicted_price) + '  Current time is:  ' + str(
                             currenttime + '  Current price is:   ' + str(
                                 current_price) + '   Direction is: ' + direction))
