@@ -79,6 +79,19 @@ def tick():
             prevlow = float(previouscandle[0]['L'])
             prevopen = float(previouscandle[0]['O'])
             prevclose = float(previouscandle[0]['C'])
+
+            daylastcandle = get_candles(market, 'day')['result'][-1:]
+            daycurrentlow = float(lastcandle[0]['L'])
+            daycurrenthigh = float(lastcandle[0]['H'])
+            daycurrentopen = float(lastcandle[0]['O'])
+            daycurrentclose = float(lastcandle[0]['C'])
+            daypreviouscandle = get_candles(market, 'day')['result'][-2:]
+            dayprevlow = float(previouscandle[0]['L'])
+            dayprevhigh = float(previouscandle[0]['H'])
+            dayprevopen = float(previouscandle[0]['O'])
+            dayprevclose = float(previouscandle[0]['C'])
+            #if (dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is True:
+            #    print market
             currtime = time.ctime()
             timestamp = int(time.time())
             fiboquantity = float(quantity_orders(market))
@@ -316,9 +329,9 @@ def tick():
                                 pass
 
                             elif currentopen == prevclose and last > bought_price_sql * profit:  ## Need to add bought_price without sql
-                                print ("We have good trend for " + market)
+                                #print ("We have good trend for " + market)
                                 try:
-                                    printed = ("We have good trend for " + market)
+                                    printed = ("We have good short term trend for " + market)
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -425,9 +438,22 @@ def tick():
             elif stop_loss == 0:
                 # Bot works in FIBONACI mode. It means that sell orders will be opened by 0.0005 BTC and reopened again and again till he gain his profit
                 #################################BUYING ALGORITHM#####################
+                if (dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is True:
+                    try:
+                        printed = ('  125 - We have bad daily prognoz for' + market)
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+
                 ###################################################################################################
                 # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if min_percent_chg < percent_chg < max_percent_chg  and stop_bot == 0:  # 0.8 - 3.5  #and ai_prediction(market)=='UP'
+                if min_percent_chg < percent_chg < max_percent_chg  and stop_bot == 0 and (dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True:  # 0.8 - 3.5  #and ai_prediction(market)=='UP'
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
 
@@ -435,7 +461,7 @@ def tick():
                     if has_open_order(market, 'LIMIT_BUY'):
                         #print('Order already opened to buy  ' + market)
                         try:
-                            printed = ('1 - Order already opened to buy  ' + market)
+                            printed = ('  1 - Order already opened to buy  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -450,7 +476,7 @@ def tick():
                     elif current_balance is not None and current_balance != 0.0:
                         #print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                         try:
-                            printed = ('2 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
+                            printed = ('  2 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -466,7 +492,7 @@ def tick():
                     elif active == 1 and iteration != 0:
                         #print ('We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                         try:
-                            printed = ('3 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                            printed = ('  3 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -477,10 +503,12 @@ def tick():
                         finally:
                             db.close()
 
+
+
                     else:
                         # Buy some currency by market analize first time
                         try:
-                            printed = ('4- Purchasing (by market analize) ' + str(
+                            printed = ('  4- Purchasing (by market analize) ' + str(
                                 format_float(percent_chg)) + ' percent changed ' + '  |  ' + str(
                                 format_float(buy_quantity2))  + ' units of ' + market + ' for ' + str(
                                 format_float(bid)))
@@ -504,7 +532,7 @@ def tick():
 
                             # If we have twice more BIG buy orders then BIG sell Orders, and volume of BUY order is twice bigger then volume of sell orders, it means that price is growing, Let` buy something
 
-                elif buytotalsumm > selltotalsumm * order_multiplier and buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0 and stop_bot ==0 :  # should be *2 on both  ##and ai_prediction(market)=='UP'
+                elif buytotalsumm > selltotalsumm * order_multiplier and buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0 and stop_bot ==0 and (dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True:  # should be *2 on both  ##and ai_prediction(market)=='UP'
                     balance_res = get_balance_from_market(market)
                     current_balance = balance_res['result']['Available']
                     buysummpercent = float(buytotalsumm / selltotalsumm)
@@ -514,7 +542,7 @@ def tick():
                     if has_open_order(market, 'LIMIT_BUY'):
                         #print('Order already opened to buy  ' + market)
                         try:
-                            printed = ('5 - Order already opened to buy  ' + market)
+                            printed = ('  5 - Order already opened to buy  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -528,7 +556,7 @@ def tick():
                     elif current_balance is not None and current_balance != 0.0:
                         #print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                         try:
-                            printed = ('6 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
+                            printed = ('  6 - We already have ' + str(format_float(bought_quantity_sql)) + '  ' + market +  ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -539,12 +567,26 @@ def tick():
                         finally:
                             db.close()
 
+                    #elif (dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True:
+                    #    try:
+                    #        printed = ('  6.1 - We have bad daily prognoz for' + market)
+                    #        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    #        cursor = db.cursor()
+                    #        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
+                    #        db.commit()
+                    #    except MySQLdb.Error, e:
+                    #        print "Error %d: %s" % (e.args[0], e.args[1])
+                    #        sys.exit(1)
+                    #    finally:
+                    #        db.close()
+
+
                         # For SQL storing (TESTING)
                     elif active == 1 and iteration != 0:
                         # print market, active
                         #print ('We already have ' + str(float(status_orders(market, 2))) + ' units of this ' + market + ' on our balance')
                         try:
-                            printed = ('7 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                            printed = ('  7 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -559,7 +601,7 @@ def tick():
                     else:
                         # Buy some currency by order analize for first time
                         try:
-                            printed = ('8 - Purchasing (by order analize) ' + ' Total Summ ' + str(
+                            printed = ('  8 - Purchasing (by order analize) ' + ' Total Summ ' + str(
                                 format_float(buycountpercent)) + ' Total Count ' + str(
                                 format_float(buy_quantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
                                 format_float(bid)))
@@ -607,7 +649,7 @@ def tick():
                             #print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                             try:
                                 printed = (
-                                "9 - We have GREEN candle for " + market + " and it is better to wait, before sell")
+                                "  9 - We have GREEN candle for " + market + " and it is better to wait, before sell")
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -624,7 +666,7 @@ def tick():
                             #print ("We have good trend for " + market)
 
                             try:
-                                printed = ("10 - We have good trend for " + market)
+                                printed = ("  10 - We have good short term trend for " + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -648,7 +690,7 @@ def tick():
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     #print('Order already opened to sell  ' + market)
                                     try:
-                                        printed = ('11 - Order already opened to sell  ' + market)
+                                        printed = ('  11 - Order already opened to sell  ' + market)
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -665,7 +707,7 @@ def tick():
                                     # Lets Sell some
                                     #print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                     try:
-                                        printed = ('12 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                        printed = ('  12 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -717,7 +759,7 @@ def tick():
                             # Buy some currency
                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                             try:
-                                printed = ('14 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  AI   ' + str(ai_prediction(market)))
+                                printed = ('  14 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  AI   ' + str(ai_prediction(market)))
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -742,7 +784,7 @@ def tick():
                         if has_open_order(market, 'LIMIT_BUY'):
                             #print('Order already opened to buy  ' + market)
                             try:
-                                printed = ('15 - Order already opened to buy  ' + market)
+                                printed = (' 15 - Order already opened to buy  ' + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -759,7 +801,7 @@ def tick():
                             # Buy some currency
                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                             try:
-                                printed = ('16 - Purchasing (by market analize) ' + str(
+                                printed = ('  16 - Purchasing (by market analize) ' + str(
                                     format_float(percent_chg)) + ' percent changed ' + str(
                                     format_float(fiboquantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
                                     format_float(last)))
@@ -793,7 +835,7 @@ def tick():
                             #print ("We have GREEN candle for " + market + " and let`s wait it to be up")
                             try:
                                 printed = (
-                                    "17 - We have GREEN candle for " + market + " and let`s wait it to be up")
+                                    "  17 - We have GREEN candle for " + market + " and let`s wait it to be up")
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -809,7 +851,7 @@ def tick():
                         elif currentopen == prevclose:  ## Need to add bought_price without sql
                             #print (" We have good trend for " + market)
                             try:
-                                printed = ("18 - We have good trend for " + market)
+                                printed = ("  18 - We have good short term trend for " + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -831,7 +873,7 @@ def tick():
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     #print('Order already opened to sell  ' + market)
                                     try:
-                                        printed = ('19 - Order already opened to sell  ' + market)
+                                        printed = ('  19 - Order already opened to sell  ' + market)
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -847,7 +889,7 @@ def tick():
                                     # Lets Sell some
                                     #print('Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                     try:
-                                        printed = ('20 - Selling ' + str(format_float(bought_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
+                                        printed = ('  20 - Selling ' + str(format_float(bought_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -864,12 +906,12 @@ def tick():
                             else:
                                 pass
 
-                elif (last < bought_price_sql and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration)  or (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC')  :  # # Need to add bought_price without sql and sell_quantity without sql
+                elif (last < bought_price_sql and last * bought_quantity_sql*1.04 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration)  or (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 < (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)!='DOWN')  :  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
                             try:
-                                printed = ('21 - Order already opened to sell  ' + market)
+                                printed = ('  21 - Order already opened to sell  ' + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -885,10 +927,10 @@ def tick():
 
                             #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                             try:
-                                printed = ('22 -Selling ' + str(
+                                printed = ('  22 -Selling ' + str(
                                     format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(ask)) + '  and losing  ' + str(
-                                    format_float(serf)) + ' USD')
+                                    format_float(serf*BTC_price)) + ' USD')
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -913,7 +955,7 @@ def tick():
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
                             try:
-                                printed = ('212 - Order already opened to sell  ' + market)
+                                printed = ('  212 - Order already opened to sell  ' + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -929,10 +971,10 @@ def tick():
 
                             #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                             try:
-                                printed = ('222 -Selling ' + str(
+                                printed = ('  222 -Selling ' + str(
                                     format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(ask)) + '  and losing  ' + str(
-                                    format_float(serf)) + ' USD')
+                                    format_float(serf*BTC_price)) + ' USD')
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -951,12 +993,12 @@ def tick():
                                 #   print c.sell_limit(market, sell_quantity, last).json()
                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
 #-----------
-                elif (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 > (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL'):  # # Need to add bought_price without sql and sell_quantity without sql
+                elif (iteration == maxiteration and last >= ai_prediction_price(market) and last * bought_quantity_sql*1.05 > (bought_price_sql * bought_quantity_sql + prev_serf) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)!='DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
                             try:
-                                printed = ('22.1 - Order already opened to sell  ' + market)
+                                printed = ('  22.1 - Order already opened to sell  ' + market)
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currtime, printed))
@@ -972,10 +1014,10 @@ def tick():
 
                             #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                             try:
-                                printed = ('22 -Selling ' + str(
+                                printed = ('  225 -Selling ' + str(
                                     format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(ask)) + '  and getting  ' + str(
-                                    format_float(serf)) + ' USD')
+                                    format_float(serf*BTC_price)) + ' USD')
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
@@ -1000,7 +1042,7 @@ def tick():
                         #print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                         try:
                             printed = (
-                                "23 - We have GREEN candle for " + market + " and it is better to wait, before sell")
+                                "  23 - We have GREEN candle for " + market + " and it is better to wait, before sell")
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute(
@@ -1016,7 +1058,7 @@ def tick():
                     elif currentopen == prevclose and last*bought_quantity_sql >= bought_price_sql*bought_quantity_sql*profit+prev_serf:  ## Need to add bought_price without sql
                         #print (" We have good trend for " + market)
                         try:
-                            printed = ("24 -We have good trend for " + market)
+                            printed = ("  24 -We have good short term trend for " + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute(
@@ -1038,7 +1080,7 @@ def tick():
                             if has_open_order(market, 'LIMIT_SELL'):
                                 #print('Order already opened to sell  ' + market)
                                 try:
-                                    printed = ('25 - Order already opened to sell  ' + market)
+                                    printed = ('  25 - Order already opened to sell  ' + market)
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
@@ -1055,11 +1097,11 @@ def tick():
                                 # Lets Sell some
                                 #print('Selling ' + str(format_float(fiboquantity)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float((ask * fiboquantity - bought_price_sql * fiboquantity) * BTC_price)) + ' USD')
                                 try:
-                                    printed = ('26 - Selling ' + str(
+                                    printed = ('  26 - Selling ' + str(
                                         format_float(bought_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(ask)) + '  and getting  +' + str(
                                         format_float(ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(format_float(
-                                        serf)) + ' USD')
+                                        serf * BTC_price)) + ' USD')
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
@@ -1190,6 +1232,16 @@ def last_serf(marketname):
         return float(row[0])
     return 0
 
+
+#def usd_serf(marketname):
+#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#    cursor = db.cursor()
+#    market=marketname
+#    cursor.execute("SELECT serf FROM orders WHERE active =1 and market = '%s'" % market)
+#    r = cursor.fetchall()
+#    for row in r:
+#        return float(row[0])
+#    return 0
 
 
 #Check active orders in mysql
