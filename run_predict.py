@@ -28,6 +28,10 @@ epochs = 50
 for arg in sys.argv[1:]:
     #print arg
     market = arg
+    #if market =='BTC-QTUM' or market == 'BTC-NEO' or market == 'BTC-XLM' or market =='BTC-VTC' or market =='BTC-XRP':
+     #   pass
+
+
 
 def prediction_info(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -58,12 +62,13 @@ def main():
 
 
 def learn():
+    #market = 'BTC-XLM'
     currency = market.split('-')[1]
-    currtime = int(round(time.time()))
+    #currtime = int(round(time.time()))
     current_price = c.get_ticker('BTC-' + currency).json()['result']['Last']
     now = datetime.datetime.now()
     currenttime = now.strftime("%Y-%m-%d %H:%M")
-    # print market, currtime, prediction_info(market)[1]
+    #print market, currtime, prediction_info(market)[1]
 
     if (int(currtime) - int(prediction_info(market)[1])) >= 3600:
         # print market, prediction_info(market)[2]
