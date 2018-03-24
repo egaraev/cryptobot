@@ -656,10 +656,10 @@ def tick():
 
                         # If  we got our profit, lets sell this shitcoins
                         # !!!!!!!!!!!
-                        ## "TAKE PROFIT" MECHANIZM FOR FIRST ITERATION - we can take our percent from profit variable and sell currency
+ ## "TAKE PROFIT" MECHANIZM FOR FIRST ITERATION - we can take our percent from profit variable and sell currency
 
                         else:
-
+ # DOING FIRST SELL
                             if last >= bought_price_sql * profit and (serf*BTC_price > 0):  ## Need to add bought_price without sql
                                 #if we have already opened order to sell
                                 if has_open_order(market, 'LIMIT_SELL'):
@@ -924,14 +924,13 @@ def tick():
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
 
 
-
-
-
                             else:
                                 pass
 
-                #STOP LOSS FOR Last iteration
-                elif (last < bought_price_sql and last * bought_quantity_sql*1.045 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration):  # # Need to add bought_price without sql and sell_quantity without sql
+# DOING SECOND AND THIRD SELL
+
+#STOP LOSS FOR Last iteration
+                elif (last < bought_price_sql and last * bought_quantity_sql*1.04 < (bought_price_sql * bought_quantity_sql + prev_serf) and iteration == maxiteration):  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
                             #print('Order already opened to sell  ' + market)
@@ -976,7 +975,7 @@ def tick():
 
 #-------------
 
-                #AI STOP LOSS
+#AI STOP LOSS
                 elif (last >= ai_prediction_price(market)  and (last * bought_quantity_sql < (bought_price_sql * bought_quantity_sql*profit + prev_serf)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
                     if has_open_order(market, 'LIMIT_SELL'):
                         # print('Order already opened to sell  ' + market)
@@ -1020,7 +1019,7 @@ def tick():
                             #   print c.sell_limit(market, sell_quantity, last).json()
                             #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
 
-                #AI Take profit at least something
+#AI Take profit at least something
                 elif (last >= ai_prediction_price(market) and (serf*BTC_price >= 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
 
                         if has_open_order(market, 'LIMIT_SELL'):
