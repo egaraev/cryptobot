@@ -7,6 +7,7 @@ import requests
 import time
 import datetime
 import yaml
+import numpy
 import hmac
 import hashlib
 import MySQLdb
@@ -103,6 +104,7 @@ def tick():
             prevlow = float(previouscandle[0]['L'])
             prevopen = float(previouscandle[0]['O'])
             prevclose = float(previouscandle[0]['C'])
+            prevhigh = float(previouscandle[0]['H'])
 
             daylastcandle = get_candles(market, 'day')['result'][-1:]
             daycurrentlow = float(daylastcandle[0]['L'])
@@ -152,7 +154,99 @@ def tick():
             #print market, percent_chg
             #print market, min_percent_chg, percent_chg, max_percent_chg, last_orders_quantity, stop_bot
 
-            ########
+
+#Heiken Ashi
+            HA_PREV_Close = (prevopen + prevhigh + prevlow + prevclose) / 4
+            HA_PREV_Open = (prevopen + prevclose) / 2
+            HA_PREV_Low = prevlow
+            HA_PREV_High = prevhigh
+
+            HA_Close = (currentopen + currenthigh + currentlow + currentclose) / 4
+            HA_Open = (HA_PREV_Open + HA_PREV_Close) / 2
+            elements = numpy.array([currenthigh, currentlow, HA_Open, HA_Close])
+            HA_High = elements.max(0)
+            HA_Low = elements.min(0)
+
+
+
+
+            if (((HA_Open == HA_High and HA_Close < HA_Open) or (HA_Open == HA_High and HA_PREV_Open == HA_PREV_High and HA_Close < HA_Open) or (HA_Open == HA_High or HA_PREV_Open == HA_PREV_High and (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open)) and HA_Close < HA_Open) or (HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open)):
+                HA_trend = "DOWN"
+
+            if (((HA_Open == HA_Low  and HA_Close > HA_Open) or (HA_Open == HA_Low and HA_PREV_Open == HA_PREV_Low and HA_Close > HA_Open) or (HA_Open == HA_Low or HA_PREV_Open == HA_PREV_Low and (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open)) and HA_Close > HA_Open) or (HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open)):
+                HA_trend = "UP"
+
+            if HA_Open > HA_Close:
+                if ((HA_High - HA_Low) / (HA_Open - HA_Close) >= 6):
+                    HA_trend = "DOWN-0"
+            elif HA_PREV_Open > HA_PREV_Close:
+                if ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6):
+                    HA_trend = "DOWN-0"
+            elif (HA_PREV_Open == HA_PREV_Close):
+                    HA_trend = "DOWN-0"
+
+
+            if HA_Close > HA_Close:
+                if ((HA_High - HA_Low) / (HA_Close - HA_Open) >= 6):
+                    HA_trend = "0-UP"
+            elif HA_PREV_Close > HA_PREV_Open:
+                if ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6):
+                    HA_trend = "0-UP"
+            elif (HA_Open == HA_Close):
+                    HA_trend = "0-UP"
+
+
+
+            print market, HA_trend
+
+            if HA_Open == HA_High:
+                print market,  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+            if HA_PREV_Open == HA_PREV_High:
+                print market, "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open:
+                print market, "Strong DOWN, latest candle body is longer than previous candle body"
+            if HA_Close < HA_Open:
+                print market, "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+            if HA_PREV_Close < HA_PREV_Open:
+                print market, "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+            if HA_Open > HA_Close:
+                if (HA_High - HA_Low) / (HA_Open - HA_Close) >= 6:
+                    print market, "Weak DOWN, latest candle body is short - doji"
+            if HA_PREV_Open > HA_PREV_Close:
+                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6:
+                    print market, "Weak DOWN, previous candle body is short - doji"
+
+
+            if HA_Open == HA_Close:
+                print market, "Change direction, spin"
+            if HA_PREV_Open == HA_PREV_Close:
+                print market, "Change direction in previous candle, spin"
+
+
+            if HA_Close > HA_Open:
+                if (HA_High - HA_Low) / (HA_Close - HA_Open) >= 6:
+                    print market, "Weak UP, latest candle body is short - doji"
+            if HA_PREV_Close > HA_PREV_Open:
+                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6:
+                    print market, "Weak UP, previous candle body is short - doji"
+            if HA_Close > HA_Open:
+                print market, "UP, latest candle bullish  HA_Close > HA_Open"
+            if HA_PREV_Close > HA_PREV_Open:
+                print market, "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+            if HA_Open == HA_Low:
+                print market, "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+            if HA_PREV_Open == HA_PREV_Low:
+                print market, "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open:
+                print market, "Strong UP, latest candle body is longer than previous candle body"
+
+
+
+
+
+
+
+                ########
             #price_for_sql = c.get_ticker(market).json()['result']['Last']
             # print market, price_for_sql
             try:
@@ -173,7 +267,7 @@ def tick():
                 ########
             #print market,  (bought_price_sql * bought_quantity_sql + prev_serf), bought_price_sql, bought_quantity_sql, prev_serf
 
-            print btc_trend
+            #print btc_trend
 #####---------------------################################
 ##
 ##STOP LOSS MODE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -243,7 +337,7 @@ def tick():
                          printed = ('    4- Purchasing (by market analize) ' + str(
                              format_float(percent_chg)) + ' percent changed ' + '  |  ' + str(
                              format_float(buy_quantity2))  + ' units of ' + market + ' for ' + str(
-                             format_float(bid)))
+                             format_float(bid)) + ' HA ' + HA_trend)
                          db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                          cursor = db.cursor()
                          cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -319,7 +413,7 @@ def tick():
                          printed = ('    8 - Purchasing (by order analize) ' + ' Total Summ ' + str(
                              format_float(buycountpercent)) + ' Total Count ' + str(
                              format_float(buy_quantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
-                             format_float(bid)))
+                             format_float(bid))+ ' HA ' + HA_trend)
                          db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                          cursor = db.cursor()
                          cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -346,7 +440,7 @@ def tick():
 #############################################################################
 # Check if weve this currency for sell
 
-#FIRST ITERAT - SELL: CHECK GREEN CANDLES AND TAKE PROFIT
+#FIRST ITERATION - SELL: CHECK GREEN CANDLES AND TAKE PROFIT
             if bought_price_sql != None or bought_price != None:  # added OR
                  balance_res = get_balance_from_market(market)
                  current_balance = balance_res['result']['Available']
@@ -396,7 +490,7 @@ def tick():
 #
 
 
- ## "TAKE PRO" MECHANIZM FOR FIRST ITERATION
+ ## "TAKE PROFIT" MECHANIZM FOR FIRST ITERATION
 
                          if last >= bought_price_sql * (1+profit) and (serf*BTC_price > 0):  ## Need to add bought_price without sql
                              #if we have already opened order to sell
@@ -445,7 +539,7 @@ def tick():
 #
 
 ##
-#AI TAKE PROFFOR FIRST ITERATION
+#AI TAKE PROFIT FOR FIRST ITERATION
 ##
 
                          elif (last >= ai_prediction_price(market) and (serf * BTC_price > 0) and (last >= bought_price_sql * (1+profit))  and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
@@ -501,7 +595,7 @@ def tick():
 
 #
 #
-# AI STOP LOSIRST ITERATION
+# AI STOP LOSS FIRST ITERATION
 
                          elif (last >= ai_prediction_price(market) and (last * bought_quantity_sql*1.5 < (bought_price_sql * bought_quantity_sql * (1+profit))) and (serf * BTC_price < 0)  and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN'):
                              if has_open_order(market, 'LIMIT_SELL'):
@@ -564,9 +658,9 @@ def tick():
 #
 
 
-#DOING SECONDD THIRD BUY
+#DOING SECOND AND THIRD BUY
 
-            if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (last < bought_price_sql and last * bought_quantity_sql*1.02 < (bought_price_sql * bought_quantity_sql + prev_serf)):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+            if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (last < bought_price_sql and last * bought_quantity_sql*1.02 < (bought_price_sql * bought_quantity_sql + prev_serf)) and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
                  #print market, "Has old order"
                  run_prediction = "python2.7 run_predict.py " + market
                  p = subprocess.Popen(run_prediction, stdout=subprocess.PIPE, shell=True)
@@ -595,7 +689,7 @@ def tick():
                          # Buy some currency
                          #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                          try:
-                             printed = ('    17 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  AI   ' + str(ai_prediction(market)) + ' BTC ' + btc_trend + ' USD serf ' + str(serf*BTC_price)  + ' Iteration ' + str(iteration))
+                             printed = ('    17 - Purchasing (by market analize) ' + str(format_float(percent_chg)) + ' percent changed ' + '  |  ' +  str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  AI   ' + str(ai_prediction(market)) + ' BTC ' + btc_trend + ' USD serf ' + str(serf*BTC_price)  + ' Iteration ' + str(iteration) + ' HA ' + HA_trend)
                              db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                              cursor = db.cursor()
                              cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -641,7 +735,7 @@ def tick():
                              printed = ('    19 - Purchasing (by market analize) ' + str(
                                  format_float(percent_chg)) + ' percent changed ' + str(
                                  format_float(fiboquantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
-                                 format_float(last)) + ' USD serf ' + str(serf*BTC_price) + ' Iteration ' + str(iteration))
+                                 format_float(last)) + ' USD serf ' + str(serf*BTC_price) + ' Iteration ' + str(iteration)+ ' HA ' + HA_trend)
                              db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                              cursor = db.cursor()
                              cursor.execute(
@@ -666,9 +760,9 @@ def tick():
                      pass
 #
 
-# SECOND AND RD ITERATION -SELL: TAKE PROFITS
+# SECOND AND THIRD ITERATION -SELL: TAKE PROFITS
 
-            elif (serf > 0) and ((last * bought_quantity_sql) >= (bought_price_sql * bought_quantity_sql + prev_serf)*(1+profit*iteration)) and (active == 1) and (iteration != 1):
+            elif (serf > 0) and ((last * bought_quantity_sql) >= (bought_price_sql * bought_quantity_sql + prev_serf)*(1+profit*1.7)) and (active == 1) and (iteration != 1):
                  if (currentopen == currentlow and prevclose <= currentopen) or (currentopen == currenthigh):
                      # print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                      try:
@@ -762,10 +856,10 @@ def tick():
 
 
 
-#DOING THIRD Ls
+#DOING THIRD SELLs
 
 
-#AI take proffor last order
+#AI take profit for last order
 
             elif (last >= ai_prediction_price(market) and (serf*BTC_price >= 0) and iteration == maxiteration and (active == 1) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
 
@@ -814,7 +908,7 @@ def tick():
 
 
 
-#STOP LOSS FOast iteration
+#STOP LOSS FOR last iteration
 
             elif (last < bought_price_sql) and (last * bought_quantity_sql*1.04) < (bought_price_sql * bought_quantity_sql + prev_serf) and (iteration == maxiteration) and (active == 1):  # # Need to add bought_price without sql and sell_quantity without sql
 
@@ -910,7 +1004,7 @@ def tick():
 
 
 
-#Candle Take fit
+#Candle Take profit
             elif ((currentlow == currentclose)  and (last * bought_quantity_sql > (bought_price_sql * bought_quantity_sql + prev_serf)*1.04) and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1):
                  if has_open_order(market, 'LIMIT_SELL'):
                      # print('Order already opened to sell  ' + market)
@@ -957,8 +1051,6 @@ def tick():
             else:
                  pass
 
-
-##Fibonacci mode ends
 
 
 
