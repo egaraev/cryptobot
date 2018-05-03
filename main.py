@@ -59,11 +59,111 @@ def tick():
     btcprevclose = float(btcprevcandle[0]['C'])
     btcprevhigh = float(btcprevcandle[0]['H'])
 
-    if btcprevhigh > btccurrenthigh and btccurrentopen > btccurrentclose:
-        btc_trend ='DOWN'
-    else:
-        btc_trend='UP'
+    btclastcandlehour = get_candles('USDT-BTC', 'hour')['result'][-1:]
+    btccurrentlowhour = float(btclastcandlehour[0]['L'])
+    btccurrentopenhour = float(btclastcandlehour[0]['O'])
+    btccurrentclosehour = float(btclastcandlehour[0]['C'])
+    btccurrenthighhour = float(btclastcandlehour[0]['H'])
+    btcprevcandlehour = get_candles('USDT-BTC', 'hour')['result'][-2:]
+    btcprevlowhour = float(btcprevcandlehour[0]['L'])
+    btcprevopenhour = float(btcprevcandlehour[0]['O'])
+    btcprevclosehour = float(btcprevcandlehour[0]['C'])
+    btcprevhighhour = float(btcprevcandlehour[0]['H'])
+
+
+    BTC_HA_PREV_Close = (btcprevopen + btcprevhigh + btcprevlow + btcprevclose) / 4
+    BTC_HA_PREV_Open = (btcprevopen + btcprevclose) / 2
+    BTC_HA_PREV_Low = btcprevlow
+    BTC_HA_PREV_High = btcprevhigh
+
+    BTC_HA_PREV_Close_hour = (btcprevopenhour + btcprevhighhour + btcprevlowhour + btcprevclosehour) / 4
+    BTC_HA_PREV_Open_hour = (btcprevopenhour + btcprevclosehour) / 2
+    BTC_HA_PREV_Low_hour = btcprevlowhour
+    BTC_HA_PREV_High_hour = btcprevhighhour
+
+    BTC_HA_Close = (btccurrentopen + btccurrenthigh + btccurrentlow + btccurrentclose) / 4
+    BTC_HA_Open = (BTC_HA_PREV_Open + BTC_HA_PREV_Close) / 2
+    elements1 = numpy.array([btccurrenthigh, btccurrentlow, BTC_HA_Open, BTC_HA_Close])
+    BTC_HA_High = elements1.max(0)
+    BTC_HA_Low = elements1.min(0)
+
+    BTC_HA_Close_hour = (btccurrentopenhour + btccurrenthighhour + btccurrentlowhour + btccurrentclosehour) / 4
+    BTC_HA_Open_hour = (BTC_HA_PREV_Open_hour + BTC_HA_PREV_Close_hour) / 2
+    elements2 = numpy.array([btccurrenthighhour, btccurrentlowhour, BTC_HA_Open_hour, BTC_HA_Close_hour])
+    BTC_HA_High_hour = elements2.max(0)
+    BTC_HA_Low_hour = elements2.min(0)
+
+    if (((BTC_HA_Open_hour == BTC_HA_High_hour and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Open_hour == BTC_HA_High_hour and BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Open_hour == BTC_HA_High_hour or BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour and (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and BTC_HA_Close_hour < BTC_HA_Open_hour and BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)) and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Close_hour < BTC_HA_Open_hour and BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)):
+        btc_trend_hour = "DOWN"
+
+
+    if (((BTC_HA_Open == BTC_HA_High and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Open == BTC_HA_High and BTC_HA_PREV_Open == BTC_HA_PREV_High and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Open == BTC_HA_High or BTC_HA_PREV_Open == BTC_HA_PREV_High and (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open)) and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open)):
+        btc_trend = "DOWN"
+
+    if (((BTC_HA_Open == BTC_HA_Low and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Open == BTC_HA_Low and BTC_HA_PREV_Open == BTC_HA_PREV_Low and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Open == BTC_HA_Low or BTC_HA_PREV_Open == BTC_HA_PREV_Low and (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close > BTC_HA_Open and BTC_HA_PREV_Close > BTC_HA_PREV_Open)) and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Close > BTC_HA_Open and BTC_HA_PREV_Close > BTC_HA_PREV_Open)):
+        btc_trend = "UP"
+
+    if BTC_HA_Open > BTC_HA_Close:
+        if ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Open - BTC_HA_Close) >= 6):
+            btc_trend = "DOWN-0"
+    elif BTC_HA_PREV_Open > BTC_HA_PREV_Close:
+        if ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Open - BTC_HA_PREV_Close) >= 6):
+            btc_trend = "DOWN-0"
+    elif (BTC_HA_PREV_Open == BTC_HA_PREV_Close):
+        btc_trend = "DOWN-0"
+
+    if BTC_HA_Close > BTC_HA_Close:
+        if ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Close - BTC_HA_Open) >= 6):
+            btc_trend = "0-UP"
+    elif BTC_HA_PREV_Close > BTC_HA_PREV_Open:
+        if ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Close - BTC_HA_PREV_Open) >= 6):
+            btc_trend = "0-UP"
+    elif (BTC_HA_Open == BTC_HA_Close):
+        btc_trend = "0-UP"
+
+
+    if btc_trend == "DOWN" and btc_trend_hour =="DOWN":
+        btc_trend = "DANGER"
+
+
+    print btc_trend
+
+#    if BTC_HA_Open == BTC_HA_High:
+#        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+#    if BTC_HA_PREV_Open == BTC_HA_PREV_High:
+#        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#    if numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open:
+#        print "Strong DOWN, latest candle body is longer than previous candle body"
+#    if BTC_HA_Close < BTC_HA_Open:
+#        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+#    if BTC_HA_PREV_Close < BTC_HA_PREV_Open:
+#        print "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+#    if BTC_HA_Open > BTC_HA_Close:
+#        if (BTC_HA_High - BTC_HA_Low) / (BTC_HA_Open - BTC_HA_Close) >= 6:
+#            print "Weak DOWN, latest candle body is short - doji"
+#    if BTC_HA_PREV_Open > BTC_HA_PREV_Close:
+#        if (BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Open - BTC_HA_PREV_Close) >= 6:
+#            print "Weak DOWN, previous candle body is short - doji"
+
+
+#    if BTC_HA_Open == BTC_HA_Close:
+#        print "Change direction, spin"
+#    if BTC_HA_PREV_Open == BTC_HA_PREV_Close:
+#        print "Change direction in previous candle, spin"
+
+
+
+
+
+
+    #if btcprevhigh > btccurrenthigh and btccurrentopen > btccurrentclose:
+    #    btc_trend ='DOWN'
+    #else:
+    #    btc_trend='UP'
     #print btc_trend, btcprevhigh, btccurrenthigh
+
+
+
 
 
 
@@ -197,48 +297,49 @@ def tick():
 
 
 
-            print market, HA_trend
+            #print market, HA_trend
 
-            if HA_Open == HA_High:
-                print market,  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
-            if HA_PREV_Open == HA_PREV_High:
-                print market, "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open:
-                print market, "Strong DOWN, latest candle body is longer than previous candle body"
-            if HA_Close < HA_Open:
-                print market, "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
-            if HA_PREV_Close < HA_PREV_Open:
-                print market, "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-            if HA_Open > HA_Close:
-                if (HA_High - HA_Low) / (HA_Open - HA_Close) >= 6:
-                    print market, "Weak DOWN, latest candle body is short - doji"
-            if HA_PREV_Open > HA_PREV_Close:
-                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6:
-                    print market, "Weak DOWN, previous candle body is short - doji"
-
-
-            if HA_Open == HA_Close:
-                print market, "Change direction, spin"
-            if HA_PREV_Open == HA_PREV_Close:
-                print market, "Change direction in previous candle, spin"
+#            if HA_Open == HA_High:
+#                print market,  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+#            if HA_PREV_Open == HA_PREV_High:
+#                print market, "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open:
+#                print market, "Strong DOWN, latest candle body is longer than previous candle body"
+#            if HA_Close < HA_Open:
+#                print market, "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+#            if HA_PREV_Close < HA_PREV_Open:
+#                print market, "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+#            if HA_Open > HA_Close:
+#                if (HA_High - HA_Low) / (HA_Open - HA_Close) >= 6:
+#                    print market, "Weak DOWN, latest candle body is short - doji"
+#            if HA_PREV_Open > HA_PREV_Close:
+#                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6:
+#                    print market, "Weak DOWN, previous candle body is short - doji"
 
 
-            if HA_Close > HA_Open:
-                if (HA_High - HA_Low) / (HA_Close - HA_Open) >= 6:
-                    print market, "Weak UP, latest candle body is short - doji"
-            if HA_PREV_Close > HA_PREV_Open:
-                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6:
-                    print market, "Weak UP, previous candle body is short - doji"
-            if HA_Close > HA_Open:
-                print market, "UP, latest candle bullish  HA_Close > HA_Open"
-            if HA_PREV_Close > HA_PREV_Open:
-                print market, "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
-            if HA_Open == HA_Low:
-                print market, "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
-            if HA_PREV_Open == HA_PREV_Low:
-                print market, "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
-            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open:
-                print market, "Strong UP, latest candle body is longer than previous candle body"
+#            if HA_Open == HA_Close:
+#                print market, "Change direction, spin"
+#            if HA_PREV_Open == HA_PREV_Close:
+#                print market, "Change direction in previous candle, spin"
+
+
+#            if HA_Close > HA_Open:
+#                if (HA_High - HA_Low) / (HA_Close - HA_Open) >= 6:
+#                    print market, "Weak UP, latest candle body is short - doji"
+#            if HA_PREV_Close > HA_PREV_Open:
+#                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6:
+#                    print market, "Weak UP, previous candle body is short - doji"
+#            if HA_Close > HA_Open:
+#                print market, "UP, latest candle bullish  HA_Close > HA_Open"
+#            if HA_PREV_Close > HA_PREV_Open:
+#                print market, "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+#            if HA_Open == HA_Low:
+#                print market, "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+#            if HA_PREV_Open == HA_PREV_Low:
+#                print market, "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+#            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open:
+#                print market, "Strong UP, latest candle body is longer than previous candle body"
+
 
 
 
@@ -286,7 +387,7 @@ def tick():
 #FIRST ITERATION - BUY
 
              # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-            if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #and ai_prediction(market)=='UP'
+            if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0): #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #and ai_prediction(market)=='UP'
                  balance_res = get_balance_from_market(market)
                  current_balance = balance_res['result']['Available']
              #If we have opened order on bitrex
@@ -341,7 +442,7 @@ def tick():
                          db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                          cursor = db.cursor()
                          cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                         cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity2, bid, "1", currenttime, timestamp, "1", btc_trend ,'Market Analize:  % change ' + str(format_float(percent_chg)) + '  AI   ' + str(ai_prediction(market)) + '  BTC ' + btc_trend ))   #+ '  AI   ' + str(ai_prediction(market))
+                         cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity2, bid, "1", currenttime, timestamp, "1", btc_trend ,'MA:  % chng ' + str(format_float(percent_chg)) + '  AI   ' + str(ai_prediction(market)) + '  BTC ' + btc_trend, HA_trend ))   #+ '  AI   ' + str(ai_prediction(market))
                          cursor.execute("update orders set serf = %s where market = %s and active =1",(serf, market))
                          db.commit()
                      except MySQLdb.Error, e:
@@ -354,7 +455,7 @@ def tick():
                          # print c.buy_limit(market, fiboquantity*2, last).json()
                          #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!##################################
                          # If we have twice more BIG buy orders then BIG sell Orders, and volume of BUY order is twice bigger then volume of sell orders, it means that price is growing, Let` buy somethin
-            elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0) and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
+            elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0):# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
                  balance_res = get_balance_from_market(market)
                  current_balance = balance_res['result']['Available']
                  buysummpercent = float(buytotalsumm / selltotalsumm)
@@ -418,10 +519,10 @@ def tick():
                          cursor = db.cursor()
                          cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                          cursor.execute(
-                             'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
+                             'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
                              market, buy_quantity2, bid, "1", currenttime, timestamp, "1", btc_trend,
                              'OA: ' + str(format_float(buysummpercent)) + ' TSumm ' + str(
-                                 format_float(buycountpercent)) + ' TCount ' + '  AI   ' + str(ai_prediction(market)) + '  BTC ' + btc_trend))  ## + '  AI   ' + str(ai_prediction(market))
+                                 format_float(buycountpercent)) + ' TCount ' + '  AI   ' + str(ai_prediction(market)) + '  BTC ' + btc_trend,HA_trend ))  ## + '  AI   ' + str(ai_prediction(market))
                          db.commit()
                      except MySQLdb.Error, e:
                          print "Error %d: %s" % (e.args[0], e.args[1])
@@ -522,7 +623,7 @@ def tick():
                                      #cursor.execute('update orders set active = 0, reason_close = "12 Take profit" where market =("%s")' % market)
                                      cursor.execute(
                                          'update orders set reason_close =%s where active=1 and market =%s', (
-                                         "12 Take profit, price:    " + str(
+                                         "12 TP, price:    " + str(
                                              format_float(last)) + "    time:   " + str(currenttime), market))
                                      cursor.execute('update orders set active = 0 where market =("%s")' % market)
                                      db.commit()
@@ -576,7 +677,7 @@ def tick():
                                      # cursor.execute('update orders set reason_close = "225 AI take profit" where active=1 and market =("%s")' % market)
                                      cursor.execute(
                                          'update orders set reason_close =%s where active=1 and market =%s', (
-                                         "14 AI Take profit, price:  " + str(format_float(last)) + "  time:   " + str(
+                                         "14 AI TP, price:  " + str(format_float(last)) + "  time:   " + str(
                                              currenttime), market))
                                      cursor.execute(
                                          'update orders set active = 0 where market =("%s")' % market)
@@ -660,7 +761,7 @@ def tick():
 
 #DOING SECOND AND THIRD BUY
 
-            if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (last < bought_price_sql and last * bought_quantity_sql*1.02 < (bought_price_sql * bought_quantity_sql + prev_serf)) and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+            if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (last < bought_price_sql and last * bought_quantity_sql*1.02 < (bought_price_sql * bought_quantity_sql + prev_serf)):# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
                  #print market, "Has old order"
                  run_prediction = "python2.7 run_predict.py " + market
                  p = subprocess.Popen(run_prediction, stdout=subprocess.PIPE, shell=True)
@@ -696,7 +797,7 @@ def tick():
                              current_serf = previous_serf(market)
                              prev_serf = ((last * bought_quantity_sql - bought_price_sql * bought_quantity_sql) + current_serf)
                              cursor.execute("update orders set prev_serf = %s where market = %s and active = 1", (prev_serf, market ))
-                             cursor.execute("update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s, btc_direction = %s where market = %s and active = 1", (fiboquantity+fiboquantity2, last, timestamp, newiteration, btc_trend, market))
+                             cursor.execute("update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s, btc_direction_1 = %s, heikin_ashi_1 = %s where market = %s and active = 1", (fiboquantity+fiboquantity2, last, timestamp, newiteration, btc_trend, HA_trend, market))
                              db.commit()
                          except MySQLdb.Error, e:
                              print "Error %d: %s" % (e.args[0], e.args[1])
@@ -744,8 +845,8 @@ def tick():
                              prev_serf = ((last * bought_quantity_sql - bought_price_sql * bought_quantity_sql) + current_serf)
                              cursor.execute("update orders set prev_serf = %s where market = %s and active = 1", (prev_serf, market ))
                              cursor.execute(
-                                 "update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s, btc_direction =%s where market = %s and active = 1",
-                                 (fiboquantity + fiboquantity2, last, timestamp, newiteration, btc_trend, market))
+                                 "update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s, btc_direction_1 =%s, heikin_ashi_1 =%s where market = %s and active = 1",
+                                 (fiboquantity + fiboquantity2, last, timestamp, newiteration, btc_trend, HA_trend, market))
                              db.commit()
                          except MySQLdb.Error, e:
                              print "Error %d: %s" % (e.args[0], e.args[1])
@@ -834,7 +935,7 @@ def tick():
                                      'insert into logs(date, log_entry) values("%s", "%s")' % (
                                      currenttime, printed))
                                  #cursor.execute('update orders set active = 0, reason_close = "23 Take profit " where market =("%s")' % market)
-                                 cursor.execute('update orders set reason_close =%s where active=1 and market =%s', ("23 Take profit, price:    " + str(format_float(last)) + "    time:   " + str(currenttime), market))
+                                 cursor.execute('update orders set reason_close =%s where active=1 and market =%s', ("23 TP, p:    " + str(format_float(last)) + "    t:   " + str(currenttime), market))
                                  cursor.execute('update orders set active = 0 where market =("%s")' % market)
                                  db.commit()
                              except MySQLdb.Error, e:
@@ -891,7 +992,7 @@ def tick():
                              cursor.execute(
                                  'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                              #cursor.execute('update orders set reason_close = "225 AI take profit" where active=1 and market =("%s")' % market)
-                             cursor.execute('update orders set reason_close =%s where active=1 and market =%s',("25 AI Take profit, price:   " + str(format_float(last))+"   time:    "+str(currenttime), market))
+                             cursor.execute('update orders set reason_close =%s where active=1 and market =%s',("25 AI TP, p:   " + str(format_float(last))+"   t:    "+str(currenttime), market))
                              cursor.execute(
                                  'update orders set active = 0 where market =("%s")' % market)
                              db.commit()
@@ -1034,7 +1135,7 @@ def tick():
                          cursor.execute(
                              'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                          #cursor.execute('update orders set reason_close = "22 AI Stop loss" where active=1 and market =("%s")' % market)
-                         cursor.execute('update orders set reason_close =%s where active=1 and market =%s', ("31 Candle Take profit, price:    "+str(format_float(last))+"    time:   "+str(currenttime), market))
+                         cursor.execute('update orders set reason_close =%s where active=1 and market =%s', ("31 Candle TP, p:    "+str(format_float(last))+"    t:   "+str(currenttime), market))
                          cursor.execute('update orders set active = 0 where market =("%s")' % market)
                          db.commit()
                      except MySQLdb.Error, e:
