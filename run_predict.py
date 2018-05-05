@@ -44,6 +44,7 @@ def prediction_info(marketname):
     return 0
 
 
+
 def convertSeriesToMatrix(vectorSeries, sequence_length):
     matrix = []
     for i in range(len(vectorSeries) - sequence_length + 1):

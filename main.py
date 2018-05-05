@@ -47,6 +47,8 @@ def tick():
     stop_bot = int(parameters()[11])
     market_summ = c.get_market_summaries().json()['result']
     BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
+    currtime = int(time.time())
+
 
     btclastcandle = get_candles('USDT-BTC', 'day')['result'][-1:]
     btccurrentlow = float(btclastcandle[0]['L'])
@@ -70,16 +72,12 @@ def tick():
     btcprevclosehour = float(btcprevcandlehour[0]['C'])
     btcprevhighhour = float(btcprevcandlehour[0]['H'])
 
+    lasttimeday = int(parameters()[17])
+    BTC_HA_PREV_Close = int(parameters()[13])
+    BTC_HA_PREV_Open = int(parameters()[14])
+    BTC_HA_PREV_Low = int(parameters()[15])
+    BTC_HA_PREV_High = int(parameters()[16])
 
-    BTC_HA_PREV_Close = (btcprevopen + btcprevhigh + btcprevlow + btcprevclose) / 4
-    BTC_HA_PREV_Open = (btcprevopen + btcprevclose) / 2
-    BTC_HA_PREV_Low = btcprevlow
-    BTC_HA_PREV_High = btcprevhigh
-
-    BTC_HA_PREV_Close_hour = (btcprevopenhour + btcprevhighhour + btcprevlowhour + btcprevclosehour) / 4
-    BTC_HA_PREV_Open_hour = (btcprevopenhour + btcprevclosehour) / 2
-    BTC_HA_PREV_Low_hour = btcprevlowhour
-    BTC_HA_PREV_High_hour = btcprevhighhour
 
     BTC_HA_Close = (btccurrentopen + btccurrenthigh + btccurrentlow + btccurrentclose) / 4
     BTC_HA_Open = (BTC_HA_PREV_Open + BTC_HA_PREV_Close) / 2
@@ -87,72 +85,244 @@ def tick():
     BTC_HA_High = elements1.max(0)
     BTC_HA_Low = elements1.min(0)
 
+    if currtime-lasttimeday>86400:
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set btc_ha_close_day = %s, btc_ha_open_day =%s, btc_ha_low_day =%s, btc_ha_high_day =%s, btc_ha_time_day =%s  where id = %s",(BTC_HA_Close, BTC_HA_Open, BTC_HA_Low, BTC_HA_High, currtime, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+    else:
+        pass
+
+    lasttimehour = int(parameters()[22])
+
+
+    BTC_HA_PREV_Close_hour = int(parameters()[18])
+    BTC_HA_PREV_Open_hour = int(parameters()[19])
+    BTC_HA_PREV_Low_hour = int(parameters()[20])
+    BTC_HA_PREV_High_hour = int(parameters()[21])
+
     BTC_HA_Close_hour = (btccurrentopenhour + btccurrenthighhour + btccurrentlowhour + btccurrentclosehour) / 4
     BTC_HA_Open_hour = (BTC_HA_PREV_Open_hour + BTC_HA_PREV_Close_hour) / 2
     elements2 = numpy.array([btccurrenthighhour, btccurrentlowhour, BTC_HA_Open_hour, BTC_HA_Close_hour])
     BTC_HA_High_hour = elements2.max(0)
     BTC_HA_Low_hour = elements2.min(0)
 
-    if (((BTC_HA_Open_hour == BTC_HA_High_hour and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Open_hour == BTC_HA_High_hour and BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Open_hour == BTC_HA_High_hour or BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour and (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and BTC_HA_Close_hour < BTC_HA_Open_hour and BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)) and BTC_HA_Close_hour < BTC_HA_Open_hour) or (BTC_HA_Close_hour < BTC_HA_Open_hour and BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)):
+    if currtime-lasttimehour>3600:
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set btc_ha_close_hour = %s, btc_ha_open_hour =%s, btc_ha_low_hour =%s, btc_ha_high_hour =%s, btc_ha_time_hour =%s  where id = %s",(BTC_HA_Close_hour, BTC_HA_Open_hour, BTC_HA_Low_hour, BTC_HA_High_hour, currtime, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+    else:
+        pass
+
+
+    btc_trend ="NONE"
+    btc_trend_hour = "NONE"
+
+
+    direction_down_short0=False
+    direction_down_short1=False
+    direction_up_short0=False
+    direction_up_short1=False
+    direction_down1 = False
+
+    hour_direction_down_short0=False
+    hour_direction_down_short1=False
+    hour_direction_up_short0=False
+    hour_direction_up_short1=False
+
+    #print BTC_HA_PREV_Close, BTC_HA_PREV_Open
+
+    direction_down0=(BTC_HA_Close < BTC_HA_Open)
+    direction_down1=(BTC_HA_PREV_Close < BTC_HA_PREV_Open)
+    direction_down_long_0=(BTC_HA_Open == BTC_HA_High)
+    direction_down_long_1=(BTC_HA_PREV_Open == BTC_HA_PREV_High)
+    direction_down_longer=(numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and direction_down0 and direction_down1)
+    direction_spin0=(BTC_HA_Open == BTC_HA_Close)
+    direction_spin1=(BTC_HA_PREV_Open == BTC_HA_PREV_Close)
+
+    hour_direction_down0 = (BTC_HA_Close_hour < BTC_HA_Open_hour)
+    hour_direction_down1 = (BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)
+    hour_direction_down_long_0 = (BTC_HA_Open_hour == BTC_HA_High_hour)
+    hour_direction_down_long_1 = (BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour)
+    hour_direction_down_longer = (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and hour_direction_down0 and hour_direction_down1)
+    hour_direction_spin0 = (BTC_HA_Open_hour == BTC_HA_Close_hour)
+    hour_direction_spin1 = (BTC_HA_PREV_Open_hour == BTC_HA_PREV_Close_hour)
+
+    if BTC_HA_High > BTC_HA_Low:
+        direction_down_short0=((BTC_HA_Open - BTC_HA_Close) / (BTC_HA_High - BTC_HA_Low)  >= 6)
+    if BTC_HA_PREV_High > BTC_HA_PREV_Low:
+        direction_down_short1=((BTC_HA_PREV_Open - BTC_HA_PREV_Close) / (BTC_HA_PREV_High - BTC_HA_PREV_Low) >= 6)
+    if BTC_HA_High > BTC_HA_Low:
+        direction_up_short0=((BTC_HA_Close - BTC_HA_Open) / (BTC_HA_High - BTC_HA_Low) >= 6)
+    if BTC_HA_PREV_High > BTC_HA_PREV_Low:
+        direction_up_short1=((BTC_HA_PREV_Close - BTC_HA_PREV_Open) /  (BTC_HA_PREV_High - BTC_HA_PREV_Low) >= 6)
+
+
+    if BTC_HA_High_hour > BTC_HA_Low_hour:
+        hour_direction_down_short0=((BTC_HA_Open_hour - BTC_HA_Close_hour) / (BTC_HA_High_hour - BTC_HA_Low_hour)  >= 6)
+    if BTC_HA_PREV_High_hour > BTC_HA_PREV_Low_hour:
+        hour_direction_down_short1=((BTC_HA_PREV_Open_hour - BTC_HA_PREV_Close_hour) / (BTC_HA_PREV_High_hour - BTC_HA_PREV_Low_hour) >= 6)
+    if BTC_HA_High_hour > BTC_HA_Low_hour:
+        hour_direction_up_short0=((BTC_HA_Close_hour - BTC_HA_Open_hour) / (BTC_HA_High_hour - BTC_HA_Low_hour) >= 6)
+    if BTC_HA_PREV_High_hour > BTC_HA_PREV_Low_hour:
+        hour_direction_up_short1=((BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) /  (BTC_HA_PREV_High_hour - BTC_HA_PREV_Low_hour) >= 6)
+
+
+
+    direction_up0=(BTC_HA_Close > BTC_HA_Open)
+    direction_up1=(BTC_HA_PREV_Close > BTC_HA_PREV_Open)
+    direction_up_long_0=(BTC_HA_Open == BTC_HA_Low)
+    direction_up_long_1=(BTC_HA_PREV_Open == BTC_HA_PREV_Low)
+    direction_up_longer=(numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and direction_up0 and direction_up1)
+
+    hour_direction_up0 = (BTC_HA_Close_hour > BTC_HA_Open_hour)
+    hour_direction_up1 = (BTC_HA_PREV_Close_hour > BTC_HA_PREV_Open_hour)
+    hour_direction_up_long_0 = (BTC_HA_Open_hour == BTC_HA_Low_hour)
+    hour_direction_up_long_1 = (BTC_HA_PREV_Open_hour == BTC_HA_PREV_Low_hour)
+    hour_direction_up_longer = (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and hour_direction_up0 and hour_direction_up1)
+
+
+
+    if (((hour_direction_down_long_0 and hour_direction_down0) or (hour_direction_down_long_0 and hour_direction_down_long_1 and hour_direction_down0) or (hour_direction_down_long_0 or hour_direction_down_long_1 and hour_direction_down_longer) and hour_direction_down0) or (hour_direction_down0 and hour_direction_down1)):
         btc_trend_hour = "DOWN"
-
-
-    if (((BTC_HA_Open == BTC_HA_High and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Open == BTC_HA_High and BTC_HA_PREV_Open == BTC_HA_PREV_High and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Open == BTC_HA_High or BTC_HA_PREV_Open == BTC_HA_PREV_High and (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open)) and BTC_HA_Close < BTC_HA_Open) or (BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open)):
+    if (((hour_direction_up_long_0 and hour_direction_up0) or (hour_direction_up_long_0 and hour_direction_up_long_1 and hour_direction_up0) or (hour_direction_up_long_0 or hour_direction_up_long_1 and hour_direction_up_longer) and hour_direction_up0) or (hour_direction_up0 and hour_direction_up1)):
+        btc_trend_hour = "UP"
+    if (((direction_down_long_0 and direction_down0) or (direction_down_long_0 and direction_down_long_1 and direction_down0) or (direction_down_long_0 or direction_down_long_1 and direction_down_longer) and direction_down0) or (direction_down0 and direction_down1)):
         btc_trend = "DOWN"
-
-    if (((BTC_HA_Open == BTC_HA_Low and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Open == BTC_HA_Low and BTC_HA_PREV_Open == BTC_HA_PREV_Low and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Open == BTC_HA_Low or BTC_HA_PREV_Open == BTC_HA_PREV_Low and (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close > BTC_HA_Open and BTC_HA_PREV_Close > BTC_HA_PREV_Open)) and BTC_HA_Close > BTC_HA_Open) or (BTC_HA_Close > BTC_HA_Open and BTC_HA_PREV_Close > BTC_HA_PREV_Open)):
+    if (((direction_up_long_0 and direction_up0) or (direction_up_long_0 and direction_up_long_1 and direction_up0) or (direction_up_long_0 or direction_up_long_1 and direction_up_longer) and direction_up0) or (direction_up0 and direction_up1)):
         btc_trend = "UP"
 
-    if BTC_HA_Open > BTC_HA_Close:
-        if ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Open - BTC_HA_Close) >= 6):
-            btc_trend = "DOWN-0"
-    elif BTC_HA_PREV_Open > BTC_HA_PREV_Close:
-        if ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Open - BTC_HA_PREV_Close) >= 6):
-            btc_trend = "DOWN-0"
-    elif (BTC_HA_PREV_Open == BTC_HA_PREV_Close):
+    if direction_down_short0:
+        btc_trend = "DOWN-0"
+    if direction_down_short1:
+        btc_trend = "DOWN-0"
+    if direction_spin1:
         btc_trend = "DOWN-0"
 
-    if BTC_HA_Close > BTC_HA_Close:
-        if ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Close - BTC_HA_Open) >= 6):
-            btc_trend = "0-UP"
-    elif BTC_HA_PREV_Close > BTC_HA_PREV_Open:
-        if ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Close - BTC_HA_PREV_Open) >= 6):
-            btc_trend = "0-UP"
-    elif (BTC_HA_Open == BTC_HA_Close):
+    if hour_direction_down_short0:
+        btc_trend_hour = "DOWN-0"
+    if hour_direction_down_short1:
+        btc_trend_hour = "DOWN-0"
+    if hour_direction_spin1:
+        btc_trend_hour = "DOWN-0"
+
+    if direction_up_short0:
         btc_trend = "0-UP"
+    if direction_up_short1:
+        btc_trend = "0-UP"
+    if direction_spin0:
+        btc_trend = "0-UP"
+
+    if hour_direction_up_short0:
+        btc_trend_hour = "0-UP"
+    if hour_direction_up_short1:
+        btc_trend_hour = "0-UP"
+    if hour_direction_spin0:
+        btc_trend_hour = "0-UP"
 
 
     if btc_trend == "DOWN" and btc_trend_hour =="DOWN":
         btc_trend = "DANGER"
+    if btc_trend == "DOWN-0" and btc_trend_hour =="UP":
+        btc_trend ="0-UP"
 
 
-    print btc_trend
+    print "BTC", btc_trend, btc_trend_hour
 
-#    if BTC_HA_Open == BTC_HA_High:
-#        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
-#    if BTC_HA_PREV_Open == BTC_HA_PREV_High:
-#        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-#    if numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(BTC_HA_PREV_Close - BTC_HA_PREV_Open) and BTC_HA_Close < BTC_HA_Open and BTC_HA_PREV_Close < BTC_HA_PREV_Open:
-#        print "Strong DOWN, latest candle body is longer than previous candle body"
-#    if BTC_HA_Close < BTC_HA_Open:
+
+
+    if direction_down0:
+        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+    if direction_down1:
+        print "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+    if direction_down_long_0:
+        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+    if direction_down_long_1:
+        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+    if direction_down_longer:
+        print "Strong DOWN, latest candle body is longer than previous candle body"
+    if direction_spin0:
+        print "Change direction, spin"
+    if direction_spin1:
+        print "Change direction in previous candle, spin"
+    if direction_down_short0:
+        print "Weak DOWN, latest candle body is short - doji"
+    if direction_down_short1:
+        print "Weak DOWN, previous candle body is short - doji"
+    if direction_up_short0:
+        print "Weak UP, latest candle body is short - doji"
+    if direction_up_short1:
+        print "Weak UP, previous candle body is short - doji"
+    if direction_up0:
+        print  "UP, latest candle bullish  HA_Close > HA_Open"
+    if direction_up1:
+        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+    if direction_up_long_0:
+        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+    if direction_up_long_1:
+        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+    if direction_up_longer:
+        print "Strong UP, latest candle body is longer than previous candle body"
+
+
+#    if hour_direction_down0:
 #        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
-#    if BTC_HA_PREV_Close < BTC_HA_PREV_Open:
-#        print "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-#    if BTC_HA_Open > BTC_HA_Close:
-#        if (BTC_HA_High - BTC_HA_Low) / (BTC_HA_Open - BTC_HA_Close) >= 6:
-#            print "Weak DOWN, latest candle body is short - doji"
-#    if BTC_HA_PREV_Open > BTC_HA_PREV_Close:
-#        if (BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Open - BTC_HA_PREV_Close) >= 6:
-#            print "Weak DOWN, previous candle body is short - doji"
-
-
-#    if BTC_HA_Open == BTC_HA_Close:
+#    if hour_direction_down1:
+#        print "DOWN,", "Previous candle was bearish !  HA_PREV_Close < HA_PREV_Open"
+#    if hour_direction_down_long_0:
+#        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+#    if hour_direction_down_long_1:
+#        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#    if hour_direction_down_longer:
+#        print "Strong DOWN, latest candle body is longer than previous candle body"
+#    if hour_direction_spin0:
 #        print "Change direction, spin"
-#    if BTC_HA_PREV_Open == BTC_HA_PREV_Close:
+#    if hour_direction_spin1:
 #        print "Change direction in previous candle, spin"
+#    if hour_direction_down_short0:
+#        print "Weak DOWN, latest candle body is short - doji"
+#    if hour_direction_down_short1:
+#        print "Weak DOWN, previous candle body is short - doji"
+#    if hour_direction_up_short0:
+#        print "Weak UP, latest candle body is short - doji"
+#    if hour_direction_up_short1:
+#        print "Weak UP, previous candle body is short - doji"
+#    if hour_direction_up0:
+#        print  "UP, latest candle bullish  HA_Close > HA_Open"
+#    if hour_direction_up1:
+#        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+#    if hour_direction_up_long_0:
+#        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+#    if hour_direction_up_long_1:
+#        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+#    if hour_direction_up_longer:
+#        print "Strong UP, latest candle body is longer than previous candle body"
 
 
-
+    try:
+        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+        cursor = db.cursor()
+        cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s",
+                       (BTC_price, btc_trend, 1))
+        db.commit()
+    except MySQLdb.Error, e:
+        print "Error %d: %s" % (e.args[0], e.args[1])
+        sys.exit(1)
+    finally:
+        db.close()
 
 
 
@@ -256,10 +426,13 @@ def tick():
 
 
 #Heiken Ashi
-            HA_PREV_Close = (prevopen + prevhigh + prevlow + prevclose) / 4
-            HA_PREV_Open = (prevopen + prevclose) / 2
-            HA_PREV_Low = prevlow
-            HA_PREV_High = prevhigh
+
+
+            ha_time = heikin_ashi(market, 15)
+            HA_PREV_Close = heikin_ashi(market, 11)
+            HA_PREV_Open = heikin_ashi(market, 12)
+            HA_PREV_Low = heikin_ashi(market, 13)
+            HA_PREV_High = heikin_ashi(market, 14)
 
             HA_Close = (currentopen + currenthigh + currentlow + currentclose) / 4
             HA_Open = (HA_PREV_Open + HA_PREV_Close) / 2
@@ -268,82 +441,122 @@ def tick():
             HA_Low = elements.min(0)
 
 
+            if currtime-ha_time>1800:
+                try:
+                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute("update markets set ha_close = %s, ha_open =%s, ha_low =%s, ha_high =%s, ha_time =%s  where id = %s",(HA_Close, HA_Open, HA_Low, HA_High, currtime, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+            else:
+                pass
 
 
-            if (((HA_Open == HA_High and HA_Close < HA_Open) or (HA_Open == HA_High and HA_PREV_Open == HA_PREV_High and HA_Close < HA_Open) or (HA_Open == HA_High or HA_PREV_Open == HA_PREV_High and (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open)) and HA_Close < HA_Open) or (HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open)):
+
+
+            HA_trend = "NONE"
+
+
+            ha_direction_down_short0 = False
+            ha_direction_down_short1 = False
+            ha_direction_up_short0 = False
+            ha_direction_up_short1 = False
+
+            ha_direction_down0 = (HA_Close < HA_Open)
+            ha_direction_down1 = (HA_PREV_Close < HA_PREV_Open)
+            ha_direction_down_long_0 = (HA_Open == HA_High)
+            ha_direction_down_long_1 = (HA_PREV_Open == HA_PREV_High)
+            ha_direction_down_longer = (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and ha_direction_down0 and ha_direction_down1)
+            ha_direction_spin0 = (HA_Open == HA_Close)
+            ha_direction_spin1 = (HA_PREV_Open == HA_PREV_Close)
+
+
+
+            if HA_High > HA_Low:
+                ha_direction_down_short0 = ((HA_Open - HA_Close) / (HA_High - HA_Low) >= 6)
+            if HA_PREV_High > HA_PREV_Low:
+                ha_direction_down_short1 = ((HA_PREV_Open - HA_PREV_Close) / (HA_PREV_High - HA_PREV_Low) >= 6)
+            if HA_High > HA_Low:
+                ha_direction_up_short0 = ((HA_Close - HA_Open) / (HA_High - HA_Low) >= 6)
+            if HA_PREV_High > HA_PREV_Low:
+                ha_direction_up_short1 = ((HA_PREV_Close - HA_PREV_Open) / (HA_PREV_High - HA_PREV_Low) >= 6)
+
+            ha_direction_up0 = (HA_Close > HA_Open)
+            ha_direction_up1 = (HA_PREV_Close > HA_PREV_Open)
+            ha_direction_up_long_0 = (HA_Open == HA_Low)
+            ha_direction_up_long_1 = (HA_PREV_Open == HA_PREV_Low)
+            ha_direction_up_longer = (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and ha_direction_up0 and ha_direction_up1)
+
+
+
+
+            if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1)):
                 HA_trend = "DOWN"
 
-            if (((HA_Open == HA_Low  and HA_Close > HA_Open) or (HA_Open == HA_Low and HA_PREV_Open == HA_PREV_Low and HA_Close > HA_Open) or (HA_Open == HA_Low or HA_PREV_Open == HA_PREV_Low and (numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open)) and HA_Close > HA_Open) or (HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open)):
+            if (((ha_direction_up_long_0 and ha_direction_up0) or (ha_direction_up_long_0 and ha_direction_up_long_1 and ha_direction_up0) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer) and ha_direction_up0) or (ha_direction_up0 and ha_direction_up1)):
                 HA_trend = "UP"
 
-            if HA_Open > HA_Close:
-                if ((HA_High - HA_Low) / (HA_Open - HA_Close) >= 6):
-                    HA_trend = "DOWN-0"
-            elif HA_PREV_Open > HA_PREV_Close:
-                if ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6):
-                    HA_trend = "DOWN-0"
-            elif (HA_PREV_Open == HA_PREV_Close):
-                    HA_trend = "DOWN-0"
+            if ha_direction_down_short0:
+                HA_trend = "DOWN-0"
+            if ha_direction_down_short1:
+                HA_trend = "DOWN-0"
+            if ha_direction_spin1:
+                HA_trend = "DOWN-0"
 
 
-            if HA_Close > HA_Close:
-                if ((HA_High - HA_Low) / (HA_Close - HA_Open) >= 6):
-                    HA_trend = "0-UP"
-            elif HA_PREV_Close > HA_PREV_Open:
-                if ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6):
-                    HA_trend = "0-UP"
-            elif (HA_Open == HA_Close):
-                    HA_trend = "0-UP"
+            if ha_direction_up_short0:
+                HA_trend = "0-UP"
+            if ha_direction_up_short1:
+                HA_trend = "0-UP"
+            if ha_direction_spin0:
+                HA_trend = "0-UP"
 
 
+            if ha_direction_down1 and ha_direction_up0:
+                HA_trend = "0-UP"
 
-            #print market, HA_trend
-
-#            if HA_Open == HA_High:
-#                print market,  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
-#            if HA_PREV_Open == HA_PREV_High:
-#                print market, "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-#            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close < HA_Open and HA_PREV_Close < HA_PREV_Open:
-#                print market, "Strong DOWN, latest candle body is longer than previous candle body"
-#            if HA_Close < HA_Open:
-#                print market, "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
-#            if HA_PREV_Close < HA_PREV_Open:
-#                print market, "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-#            if HA_Open > HA_Close:
-#                if (HA_High - HA_Low) / (HA_Open - HA_Close) >= 6:
-#                    print market, "Weak DOWN, latest candle body is short - doji"
-#            if HA_PREV_Open > HA_PREV_Close:
-#                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 6:
-#                    print market, "Weak DOWN, previous candle body is short - doji"
+            if  ha_direction_up1 and ha_direction_down0:
+                HA_trend = "DOWN-0"
 
 
-#            if HA_Open == HA_Close:
-#                print market, "Change direction, spin"
-#            if HA_PREV_Open == HA_PREV_Close:
-#                print market, "Change direction in previous candle, spin"
+            print market, HA_trend
 
-
-#            if HA_Close > HA_Open:
-#                if (HA_High - HA_Low) / (HA_Close - HA_Open) >= 6:
-#                    print market, "Weak UP, latest candle body is short - doji"
-#            if HA_PREV_Close > HA_PREV_Open:
-#                if (HA_PREV_High - HA_PREV_Low) / (HA_PREV_Close - HA_PREV_Open) >= 6:
-#                    print market, "Weak UP, previous candle body is short - doji"
-#            if HA_Close > HA_Open:
-#                print market, "UP, latest candle bullish  HA_Close > HA_Open"
-#            if HA_PREV_Close > HA_PREV_Open:
-#                print market, "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
-#            if HA_Open == HA_Low:
-#                print market, "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
-#            if HA_PREV_Open == HA_PREV_Low:
-#                print market, "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
-#            if numpy.abs(HA_Close - HA_Open) > numpy.abs(HA_PREV_Close - HA_PREV_Open) and HA_Close > HA_Open and HA_PREV_Close > HA_PREV_Open:
-#                print market, "Strong UP, latest candle body is longer than previous candle body"
-
-
-
-
-
+            if ha_direction_down0:
+                print  market, "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+            if ha_direction_down1:
+                print market, "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+            if ha_direction_down_long_0:
+                print  market, "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+            if ha_direction_down_long_1:
+                print market, "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+            if ha_direction_down_longer:
+                print market,  "Strong DOWN, latest candle body is longer than previous candle body"
+            if ha_direction_spin0:
+                print market, "Change direction, spin"
+            if ha_direction_spin1:
+                print market, "Change direction in previous candle, spin"
+            if ha_direction_down_short0:
+                print market, "Weak DOWN, latest candle body is short - doji"
+            if ha_direction_down_short1:
+                print market, "Weak DOWN, previous candle body is short - doji"
+            if ha_direction_up_short0:
+                print market, "Weak UP, latest candle body is short - doji"
+            if ha_direction_up_short1:
+                print market, "Weak UP, previous candle body is short - doji"
+            if ha_direction_up0:
+                print  market, "UP, latest candle bullish  HA_Close > HA_Open"
+            if ha_direction_up1:
+                print  market, "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+            if ha_direction_up_long_0:
+                print  market, "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+            if ha_direction_up_long_1:
+                print  market, "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+            if ha_direction_up_longer:
+                print market, "Strong UP, latest candle body is longer than previous candle body"
 
 
 
@@ -353,12 +566,12 @@ def tick():
             try:
                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                 cursor = db.cursor()
-                cursor.execute("update parameters set usdt_btc_price = %s where id = %s", (BTC_price, 1))
+                #cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s", (BTC_price, btc_trend, 1))
                 prev_serf = previous_serf(market)
                 serf = (last * bought_quantity_sql - bought_price_sql * bought_quantity_sql+prev_serf)
                 cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
                 cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf*BTC_price, market))
-                cursor.execute("update markets set current_price = %s where market = %s and active =1",(last, market))
+                cursor.execute("update markets set current_price = %s, ha_direction =%s  where market = %s and active =1",(last, HA_trend, market))
                 db.commit()
             except MySQLdb.Error, e:
                 print "Error %d: %s" % (e.args[0], e.args[1])
@@ -370,15 +583,7 @@ def tick():
 
             #print btc_trend
 #####---------------------################################
-##
-##STOP LOSS MODE     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-###
-####----------------------################################
-            # Bot works in STOP_LOSS mode. It means that sell orders will be opened by 0.001 BTC and closed after losing 50%.
 
-
-                #profit = 0.05
-                #print profit, iteration, 1+profit*iteration
 
 # Bot works in FIBONACI mode. It means that sell orders will be opened by 0.0005 BTC and reopened again and again till he gain his profit
 #######BUYING ALGORITHM##########################BUYING ALGORITHM#####################
@@ -1011,7 +1216,7 @@ def tick():
 
 #STOP LOSS FOR last iteration
 
-            elif (last < bought_price_sql) and (last * bought_quantity_sql*1.04) < (bought_price_sql * bought_quantity_sql + prev_serf) and (iteration == maxiteration) and (active == 1):  # # Need to add bought_price without sql and sell_quantity without sql
+            elif (last < bought_price_sql) and (last * bought_quantity_sql*(1+profit-0.01)) < (bought_price_sql * bought_quantity_sql + prev_serf) and (iteration == maxiteration) and (active == 1):  # # Need to add bought_price without sql and sell_quantity without sql
 
                      if has_open_order(market, 'LIMIT_SELL'):
                          #print('Order already opened to sell  ' + market)
@@ -1060,7 +1265,7 @@ def tick():
 
 #AI STOP LOSS
 
-            elif (last >= ai_prediction_price(market) and (active == 1)  and (last * bought_quantity_sql*1.03 < (bought_price_sql * bought_quantity_sql + prev_serf)*(1+profit)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
+            elif (last >= ai_prediction_price(market) and (active == 1)  and (last * bought_quantity_sql*(1+profit-0.02) < (bought_price_sql * bought_quantity_sql + prev_serf)*(1+profit)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
                  if has_open_order(market, 'LIMIT_SELL'):
                      # print('Order already opened to sell  ' + market)
                      try:
@@ -1106,7 +1311,7 @@ def tick():
 
 
 #Candle Take profit
-            elif ((currentlow == currentclose)  and (last * bought_quantity_sql > (bought_price_sql * bought_quantity_sql + prev_serf)*1.04) and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1):
+            elif ((currentlow == currentclose)  and (last * bought_quantity_sql > (bought_price_sql * bought_quantity_sql + prev_serf)*(1+profit-0.01)) and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1):
                  if has_open_order(market, 'LIMIT_SELL'):
                      # print('Order already opened to sell  ' + market)
                      try:
@@ -1161,6 +1366,24 @@ def tick():
 
 ### FUNCTIONS
 ###############################################################################################################
+
+def heikin_ashi(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
+
+
+
+
+
+
 def Mail(FROM,TO,SUBJECT,TEXT,SERVER):
 
 # Prepare actual message
@@ -1213,7 +1436,7 @@ def parameters():
     cursor.execute("SELECT * FROM parameters")
     r = cursor.fetchall()
     for row in r:
-        return (row[1]), (row[2]), (row[3]), (row[4]), (row[5]), (row[6]), (row[7]), (row[8]), (row[9]), (row[10]), (row[11]), (row[12])
+        return (row[1]), (row[2]), (row[3]), (row[4]), (row[5]), (row[6]), (row[7]), (row[8]), (row[9]), (row[10]), (row[11]), (row[12]), (row[13]), (row[14]), (row[15]), (row[16]), (row[17]), (row[18]), (row[19]), (row[20]), (row[21]), (row[22]), (row[23])
 
     return 0
 

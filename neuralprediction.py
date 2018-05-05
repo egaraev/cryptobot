@@ -85,7 +85,7 @@ def learn():
             #print market, prediction_info(market)[2]
             if prediction_info(market)[2] == 'UP':
                 #print market, current_price, prediction_info(market)[0], prediction_info(market)[1], prediction_info(market)[2]
-                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 21600): #21600
+                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 43200): #21600
                     print market, 'Running learning again U', current_price
 
                     #          ---------================DATA COLLECTION====================------------
@@ -244,7 +244,7 @@ def learn():
                         db.close()
 
             elif prediction_info(market)[2] == 'DOWN':
-                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 21600):  #21600
+                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 28800):  #21600
                     print market, 'Running learning again D', current_price
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
