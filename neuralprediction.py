@@ -85,7 +85,7 @@ def learn():
             #print market, prediction_info(market)[2]
             if prediction_info(market)[2] == 'UP':
                 #print market, current_price, prediction_info(market)[0], prediction_info(market)[1], prediction_info(market)[2]
-                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 43200): #21600
+                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 28800): #21600
                     print market, 'Running learning again U', current_price
 
                     #          ---------================DATA COLLECTION====================------------
@@ -219,14 +219,14 @@ def learn():
 
                     with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
-                            'The predicted mean price is  ' + str(predicted_price) + '    Current time is:  ' + str(
+                            '1 The predicted  price is  ' + str(predicted_price) + '    Current time is:  ' + str(
                                 currenttime + '   Current price is:   ' + str(
                                     current_price) + '    Direction is: ' + direction + '\n'))
 
                     print market, predicted_price, direction, last_word
 
                     try:
-                        printed = ('      '+ str(currency) + '   The predicted mean price is  ' + str(
+                        printed = ('      '+ str(currency) + '  1 The predicted  price is  ' + str(
                             predicted_price) + '  Current time is:  ' + str(
                             currenttime + '  Current price is:   ' + str(
                                 current_price) + '   Direction is: ' + direction))

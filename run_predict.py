@@ -207,14 +207,14 @@ def learn():
 
         with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
             myfile.write(
-                'The predicted mean price is  ' + str(predicted_price) + '    Current time is:  ' + str(
+                '2 The predicted  price is  ' + str(predicted_price) + '    Current time is:  ' + str(
                     currenttime + '   Current price is:   ' + str(
                         current_price) + '    Direction is: ' + direction + '\n'))
 
         print market, predicted_price, direction, last_word
 
         try:
-            printed = ('      ' + str(currency) + '   The predicted mean price is  ' + str(
+            printed = ('      ' + str(currency) + '  2 The predicted  price is  ' + str(
                 predicted_price) + '  Current time is:  ' + str(
                 currenttime + '  Current price is:   ' + str(
                     current_price) + '   Direction is: ' + direction))
