@@ -265,8 +265,10 @@ def learn():
                         db.close()
 
             elif prediction_info(market)[2] == 'DOWN' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
-                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 28800):  #21600
+                #print market, current_price, prediction_info(market)[0], int(currtime), int(prediction_info(market)[1])
+                if (current_price <= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 28800):  #21600
                     print market, 'Running learning again D', current_price
+
 
                     if prediction_info(market)[0] < prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
