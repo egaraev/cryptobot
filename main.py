@@ -329,6 +329,7 @@ def tick():
                                 sys.exit(1)
                             finally:
                                 db.close()
+
                         else:
                             print(' Order cancelled  ' + market)
                             try:
