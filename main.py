@@ -22,6 +22,7 @@ def main():
     print('Starting trader bot')
 
 
+
     tick()
 #Running clock forever for testing purposes
     #while True:
