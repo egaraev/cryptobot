@@ -58,19 +58,12 @@ def prediction_info(marketname):
     for row in r:
         return (row[0]), (row[1]), (row[2]), (row[3])
     return 0
-
-
-
 # random seed
 np.random.seed(1234)
 
-
 def main():
     print('Starting deep learning module')
-
     learn()
-
-
 def learn():
 
     market_summ = c.get_market_summaries().json()['result']
@@ -88,11 +81,11 @@ def learn():
             if prediction_info(market)[2] == 'UP' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
 
                 #print market, current_price, prediction_info(market)[0], prediction_info(market)[1], prediction_info(market)[2]
-                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 28800): #21600
+                if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 18000): #21600
                     print market, 'Running learning again U', current_price
                     print market, currtime , prediction_info(market)[1]
 
-                    if prediction_info(market)[0] > prediction_info(market)[3]:
+                    if current_price > prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was successful  ')
                     elif current_price >= prediction_info(market)[0]:
@@ -257,6 +250,7 @@ def learn():
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         cursor.execute('update markets set ai_price = %s, ai_time = %s, ai_direction =%s, ai_prev_price = %s, ai_time_human=%s  where market =%s',(predicted_price, currtime, direction, current_price, currenttime, market))
+                        cursor.execute('insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -265,10 +259,10 @@ def learn():
                         db.close()
 
             elif prediction_info(market)[2] == 'DOWN' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
-                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 28800):  #21600
+                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 18000):  #21600
                     print market, 'Running learning again D', current_price
 
-                    if prediction_info(market)[0] < prediction_info(market)[3]:
+                    if current_price < prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str( currency) + '  AI Prediction trend was successful  ')
                     elif current_price <= prediction_info(market)[0]:
@@ -435,6 +429,9 @@ def learn():
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         cursor.execute('update markets set ai_price=%s, ai_time=%s, ai_direction=%s, ai_prev_price=%s, ai_time_human=%s where market=%s',(predicted_price, currtime, direction,current_price, currenttime, market))
+                        cursor.execute(
+                            'insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
+                            predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
