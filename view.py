@@ -146,7 +146,6 @@ print HA_BTC_price
 
 
 
-
 #Count the summ of closed orders
 db.query("SELECT SUM(serf_usd) FROM orders where active = 0")
 r = db.store_result()
