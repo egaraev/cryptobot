@@ -1253,6 +1253,7 @@ def tick():
                                              ask * fiboquantity - bought_price_sql * fiboquantity)) + ' BTC' + ' or ' + str(
                                          format_float(
                                              serf * BTC_price)) + ' USD')
+
                                      db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                      cursor = db.cursor()
                                      cursor.execute(
