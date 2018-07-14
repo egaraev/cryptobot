@@ -37,7 +37,7 @@ def tick():
     buy_size = parameters()[0] #The size for opening orders for STOP_LOSS mode
     buy_size2 = parameters()[1]  # The size for opening orders for FIBONACI Mode
     sell_size = parameters()[2]  #Minimal size for closing oders
-    profit = parameters()[3]  #The size of profit we want to take
+    #profit = parameters()[3]  #The size of profit we want to take
     profit2 = parameters()[3]
     stop_bot_force = parameters()[4]  #If stop_bot_force==1 we  stop bot and close all orders
     maxiteration = parameters()[5]
@@ -171,6 +171,9 @@ def tick():
                 now = datetime.datetime.now()
                 currenttime = now.strftime("%Y-%m-%d %H:%M")
                 HA_trend=heikin_ashi(market, 10)
+                bot_step = bot_mode(market)
+
+                #print bot_step
 
                 #profit = parameters()[3]
 
@@ -184,7 +187,7 @@ def tick():
                 else:
                     profit = parameters()[3]
 
-
+                #print market, profit
 
 
                 #print market, profit, profit2 / 2
@@ -304,9 +307,10 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "STABLE")  and btc_trend != "DANGER" and stop_bot_force == 0)  and (ai_prediction(market) == 'UP' or ai_prediction(market) == 'NEUTRAL') :  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "STABLE")  and btc_trend != "DANGER" and stop_bot_force == 0)  and (ai_prediction(market) == 'UP' or ai_prediction(market) == 'NEUTRAL') and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
+                        print market
                         # If we have opened order on bitrex
                         if has_open_order(market, 'LIMIT_BUY'):
                             # print('Order already opened to buy  ' + market)
@@ -369,7 +373,7 @@ def tick():
                                     market, buy_quantity2, bid, "1", currenttime, timestamp, "1", btc_trend,'  AI   ' + str(
                                         ai_prediction(market)) + '  BTC ' + btc_trend,
                                     HA_trend))  # + '  AI   ' + str(ai_prediction(market))
-                                cursor.execute("update orders set serf = %s where market = %s and active =1",
+                                cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                (serf, market))
                                 db.commit()
                             except MySQLdb.Error, e:
@@ -435,7 +439,7 @@ def tick():
 
                             if (active == 1) and (
                                     HA_trend == 'DOWN' or HA_trend == 'Revers-DOWN') and last > bought_price_sql * (
-                                1 + profit2 / 2):  # # Need to add bought_price without sql and sell_quantity without sql
+                                1 + profit / 2):  # # WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     # print('Order already opened to sell  ' + market)
@@ -492,7 +496,7 @@ def tick():
                                                 market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(
                                         market) != 'NEUTRAL' and ai_prediction(
                                     market) == 'DOWN') and last > bought_price_sql * (
-                                1 + profit2 / 2):  # # and (last >= bought_price_sql * (1+profit-0.03))
+                                1 + profit / 2):  # #WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     # print('Order already opened to sell  ' + market)
@@ -545,8 +549,8 @@ def tick():
                                     Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
                                          "localhost")
                                     ## AI_HA MODE SL
-                            elif (active == 1) and (last * bought_quantity_sql * (1 + profit2 / 2) < (
-                                bought_price_sql * bought_quantity_sql)) and ai_ha_mode == 1:  # # Need to add bought_price without sql and sell_quantity without sql
+                            elif (active == 1) and (last * bought_quantity_sql * (1 + profit / 2) < (
+                                bought_price_sql * bought_quantity_sql)) and ai_ha_mode == 1  and bot_step == 1:  # #WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     print('Order already opened to sell  ' + market)
@@ -593,6 +597,7 @@ def tick():
                                         sys.exit(1)
                                     finally:
                                         db.close()
+                                    Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "localhost")
 
 
 ## AI_HA MODE END SELL
@@ -1061,7 +1066,8 @@ def tick():
                                                 sys.exit(1)
                                             finally:
                                                 db.close()
-
+                                            Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed,
+                                                     "localhost")
                                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                                 #   print c.sell_limit(market, sell_quantity, last).json()
                                                 #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -1811,6 +1817,22 @@ def previous_serf(marketname):
     for row in r:
         return float(row[0])
     return 0
+
+
+
+def bot_mode(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT one_step_active FROM orders WHERE active =1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
+    return 0
+
+
+
+
 
 
 def last_serf(marketname):

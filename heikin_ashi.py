@@ -356,7 +356,7 @@ def HA():
         db.close()
 
 
-    if btc_trend=="DOWN" or btc_trend=="DANGER":
+    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
         try:
             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
             cursor = db.cursor()
