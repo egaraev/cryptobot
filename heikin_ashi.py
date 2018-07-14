@@ -381,6 +381,7 @@ def HA():
         finally:
             db.close()
 
+
     market_summ = c.get_market_summaries().json()['result']
     for summary in market_summ: #Loop trough the market summary
         try:
