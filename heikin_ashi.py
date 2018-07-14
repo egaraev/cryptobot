@@ -356,6 +356,31 @@ def HA():
         db.close()
 
 
+    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set ai_ha =%s where id = %s",
+                           (1, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+    else:
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set ai_ha =%s where id = %s",
+                           (0, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+
     market_summ = c.get_market_summaries().json()['result']
     for summary in market_summ: #Loop trough the market summary
         try:
