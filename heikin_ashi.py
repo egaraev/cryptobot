@@ -88,7 +88,7 @@ def HA():
     btcprevclose3 = float(btcprevcandle3[0]['C'])
     btcprevhigh3 = float(btcprevcandle3[0]['H'])
 
-    print  btccurrentlow
+    #print  btccurrentlow
 
     btclastcandlehour = get_candles('USDT-BTC', 'hour')['result'][-1:]
     btccurrentlowhour = float(btclastcandlehour[0]['L'])
@@ -407,6 +407,27 @@ def HA():
                 #prevclose = float(previouscandle[0]['C'])
                 #prevhigh = float(previouscandle[0]['H'])
 
+#######################
+                daylastcandle = get_candles(market, 'day')['result'][-1:]
+                daycurrentlow = float(daylastcandle[0]['L'])
+                daycurrenthigh = float(daylastcandle[0]['H'])
+                daycurrentopen = float(daylastcandle[0]['O'])
+                daycurrentclose = float(daylastcandle[0]['C'])
+                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
+                dayprevlow = float(daypreviouscandle[0]['L'])
+                dayprevhigh = float(daypreviouscandle[0]['H'])
+                dayprevopen = float(daypreviouscandle[0]['O'])
+                dayprevclose = float(daypreviouscandle[0]['C'])
+                daypreviouscandle2 = get_candles(market, 'day')['result'][-3:]
+                dayprevlow2 = float(daypreviouscandle2[0]['L'])
+                dayprevhigh2 = float(daypreviouscandle2[0]['H'])
+                dayprevopen2 = float(daypreviouscandle2[0]['O'])
+                dayprevclose2 = float(daypreviouscandle2[0]['C'])
+#####################
+
+
+
+
                 hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                 hourcurrentlow = float(hourlastcandle[0]['L'])
                 hourcurrenthigh = float(hourlastcandle[0]['H'])
@@ -487,6 +508,28 @@ def HA():
                 HA_High = elements0.max(0)
                 HA_Low = elements0.min(0)
 
+###############
+                HAD_PREV_Close2 = (dayprevopen2 + dayprevhigh2 + dayprevlow2 + dayprevclose2) / 4
+                HAD_PREV_Open2 = (dayprevopen2 + dayprevclose2) / 2
+                HAD_PREV_Low2 = dayprevlow2
+                HAD_PREV_High2 = dayprevhigh2
+
+                HAD_PREV_Close = (dayprevopen + dayprevhigh + dayprevlow + dayprevclose) / 4
+                HAD_PREV_Open = (HAD_PREV_Open2 + HAD_PREV_Close2) / 2
+                elements1 = numpy.array([dayprevhigh, dayprevlow, HAD_PREV_Open, HAD_PREV_Close])
+                HAD_PREV_High = elements1.max(0)
+                HAD_PREV_Low = elements1.min(0)
+
+                HAD_Close = (daycurrentopen + daycurrenthigh + daycurrentlow + daycurrentclose) / 4
+                HAD_Open = (HAD_PREV_Open + HAD_PREV_Close) / 2
+                elements0 = numpy.array([daycurrenthigh, daycurrentlow, HAD_Open, HAD_Close])
+                HAD_High = elements0.max(0)
+                HAD_Low = elements0.min(0)
+##############
+
+
+
+
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -500,6 +543,9 @@ def HA():
 
                 HA_trend = "NONE"
 
+###############
+                HAD_trend = "NONE"
+###############
 
                 ha_direction_down_short0 =((HA_High - HA_Low) / (HA_Open - HA_Close) >= 2)  and (HA_Open - HA_Close !=0)
                 ha_direction_down_short1 = ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 2) and (HA_PREV_Open - HA_PREV_Close !=0)
@@ -542,6 +588,47 @@ def HA():
                 ha_direction_up_smallermax = (numpy.abs(HA_Close - HA_Open) < numpy.abs(HA_PREV_Close - HA_PREV_Open) and numpy.abs(HA_PREV_Close - HA_PREV_Open) < numpy.abs(HA_PREV_Close2 - HA_PREV_Open2) and ha_direction_up0 and ha_direction_up1 and ha_direction_up2)
 
 
+#############
+                had_direction_down_short0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 2)  and (HAD_Open - HAD_Close !=0)
+                had_direction_down_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 2) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+                had_direction_down_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 2) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+                had_direction_down_shorter0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 4)  and (HAD_Open - HAD_Close !=0)
+                had_direction_down_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 4) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+                had_direction_down_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 4) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+                had_direction_down0 = (HAD_Close < HAD_Open)
+                had_direction_down1 = (HAD_PREV_Close < HAD_PREV_Open)
+                had_direction_down2 = (HAD_PREV_Close2 < HAD_PREV_Open2)
+                had_direction_down_long_0 = (HAD_Open == HAD_High and HAD_Close < HAD_Open)
+                had_direction_down_long_1 = (HAD_PREV_Open == HAD_PREV_High and HAD_PREV_Close < HAD_PREV_Open)
+                had_direction_down_long_2 = (HAD_PREV_Open2 == HAD_PREV_High2 and HAD_PREV_Close2 < HAD_PREV_Open2)
+                had_direction_down_longer = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+                had_direction_down_longermax = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) > numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2 ) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+                had_direction_down_smaller = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+                had_direction_down_smaller1 = (numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down1 and had_direction_down2)
+                had_direction_down_smallermax = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+
+                had_direction_spin0 = (HAD_Open == HAD_Close)
+                had_direction_spin1 = (HAD_PREV_Open == HAD_PREV_Close)
+                had_direction_spin2 = (HAD_PREV_Open2 == HAD_PREV_Close2)
+
+                had_direction_up_short0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 2) and (HAD_Close - HAD_Open !=0)
+                had_direction_up_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 2) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+                had_direction_up_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 2) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+                had_direction_up_shorter0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 4) and (HAD_Close - HAD_Open !=0)
+                had_direction_up_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 4) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+                had_direction_up_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 4) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+                had_direction_up0 = (HAD_Close > HAD_Open)
+                had_direction_up1 = (HAD_PREV_Close > HAD_PREV_Open)
+                had_direction_up2 = (HAD_PREV_Close2 > HAD_PREV_Open2)
+                had_direction_up_long_0 = (HAD_Open == HAD_Low and HAD_Close > HAD_Open)
+                had_direction_up_long_1 = (HAD_PREV_Open == HAD_PREV_Low and HAD_PREV_Close > HAD_PREV_Open)
+                had_direction_up_long_2 = (HAD_PREV_Open2 == HAD_PREV_Low2 and HAD_PREV_Close2 > HAD_PREV_Open2)
+                had_direction_up_longer = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+                had_direction_up_longermax = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) > numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+                had_direction_up_smaller = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+                had_direction_up_smaller1 = (numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up1 and had_direction_up2)
+                had_direction_up_smallermax = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+##############
 
                 if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longermax and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2)):
                     HA_trend = "DOWN"
@@ -554,6 +641,20 @@ def HA():
                 else:
                     HA_trend = "STABLE"
 
+
+#############
+                if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)):
+                    HAD_trend = "DOWN"
+                elif (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)):
+                    HAD_trend = "UP"
+                elif ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0)):
+                    HAD_trend = "Revers-UP"
+                elif ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0)):
+                    HAD_trend = "Revers-DOWN"
+                else:
+                    HAD_trend = "STABLE"
+
+############
                 #print market, HA_trend, HA_Open, HA_Close, HA_Low, HA_High
 
                 #printed = ""
@@ -638,7 +739,7 @@ def HA():
                     cursor = db.cursor()
                     #cursor.execute(
                      #   'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                    cursor.execute("update markets set current_price = %s, ha_direction =%s  where market = %s and active =1",(last, HA_trend, market))
+                    cursor.execute("update markets set current_price = %s, ha_direction =%s, ha_direction_daily=%s  where market = %s and active =1",(last, HA_trend, HAD_trend, market))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
