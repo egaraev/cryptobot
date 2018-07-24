@@ -37,8 +37,7 @@ def tick():
     buy_size = parameters()[0] #The size for opening orders for STOP_LOSS mode
     buy_size2 = parameters()[1]  # The size for opening orders for FIBONACI Mode
     sell_size = parameters()[2]  #Minimal size for closing oders
-    #profit = parameters()[3]  #The size of profit we want to take
-    profit2 = parameters()[3]
+#    profit = parameters()[3]  #The size of profit we want to take
     stop_bot_force = parameters()[4]  #If stop_bot_force==1 we  stop bot and close all orders
     maxiteration = parameters()[5]
     order_multiplier = parameters()[6]
@@ -285,7 +284,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "STABLE") and HAD_trend=="UP"  and btc_trend != "DANGER" and stop_bot_force == 0)  and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "STABLE") and HAD_trend!="DOWN"  and btc_trend != "DANGER" and stop_bot_force == 0):#  and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -340,7 +339,7 @@ def tick():
                             # Buy some currency by market analize first time
                             try:
                                 printed = ('    00004- Purchasing (by ai_ha) '  + str(
-                                    format_float(buy_quantity2)) + ' units of ' + market + ' for ' + str(
+                                    format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(
                                     format_float(bid)))
                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
@@ -348,7 +347,7 @@ def tick():
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 cursor.execute(
                                     'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                    market, buy_quantity2, bid, "1", currenttime, timestamp, "1", btc_trend,'  AI   ' + str(
+                                    market, buy_quantity, bid, "1", currenttime, timestamp, "1", btc_trend,'  AI   ' + str(
                                         ai_prediction(market)) + '  BTC ' + btc_trend,
                                     HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
@@ -597,7 +596,7 @@ def tick():
                                         cursor = db.cursor()
                                         cursor.execute(
                                             'insert into logs(date, log_entry) values("%s", "%s")' % (
-                                                currtime, printed))
+                                                currenttime, printed))
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -646,7 +645,7 @@ def tick():
 # 3 step mode BUY START
 
                  # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and btc_trend!="DANGER" and stop_bot_force==0 and ai_prediction(market)=='UP' and ai_ha_mode==0: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and btc_trend!="DANGER" and stop_bot_force==0  and ai_ha_mode==0: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                  #If we have opened order on bitrex
@@ -950,6 +949,8 @@ def tick():
                                          #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                          #                      print c.sell_limit(market, sell_quantity, last).json()
                                          #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+
+
 
                              elif serf >= buy_size2 * profit / 3 and (HAD_trend == "DOWN" or HA_trend == "DOWN"):  ## Need to add bought_price without sql
                                      # if we have already opened order to sell
