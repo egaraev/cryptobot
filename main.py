@@ -284,7 +284,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "STABLE") and HAD_trend!="DOWN"  and btc_trend != "DANGER" and stop_bot_force == 0):#  and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and HAD_trend!="DOWN"  and btc_trend != "DANGER" and stop_bot_force == 0):#  and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -952,7 +952,7 @@ def tick():
 
 
 
-                             elif serf >= buy_size2 * profit / 3 and (HAD_trend == "DOWN" or HA_trend == "DOWN"):  ## Need to add bought_price without sql
+                             elif serf >= buy_size2 * profit / 3 and (HAD_trend == "DOWN" or HA_trend == "DOWN" or HA_trend == "Revers-DOWN"):  ## Need to add bought_price without sql
                                      # if we have already opened order to sell
                                      if has_open_order(market, 'LIMIT_SELL'):
                                          # print('Order already opened to sell  ' + market)
@@ -1116,7 +1116,7 @@ def tick():
 
 
 # "STOP  LOSS" MECHANIZM. WE should sell failed currency before price goes down and reach min selling limit. If sell now we are losing 50%. If not - we will lose 100% of order`s cost
-                             elif last < bought_price_sql and sell_size >= sell_quantity_sql * last and (btc_trend=="DANGER" or btc_trend=="DOWN" or HAD_trend=="DOWN" ) and HA_trend=="DOWN" and ai_ha_mode==0:  # # Need to add bought_price without sql and sell_quantity without sql
+                             elif last < bought_price_sql and sell_size >= sell_quantity_sql * last and (btc_trend=="DANGER" or btc_trend=="DOWN" or HAD_trend=="DOWN" ) and (HA_trend=="DOWN" or HA_trend=="Revers-DOWN") and ai_ha_mode==0:  # # Need to add bought_price without sql and sell_quantity without sql
 
                                         if has_open_order(market, 'LIMIT_SELL'):
                                             print('Order already opened to sell  ' + market)
@@ -1344,7 +1344,7 @@ def tick():
                      #else:
                       #   pass
 
-                elif serf >= buy_size2*profit/2 and (active == 1) and (iteration != 1) and (btc_trend=="DANGER" or btc_trend=="DOWN" or HAD_trend=="DOWN" ):
+                elif serf >= buy_size2*profit/2 and (active == 1) and (iteration != 1) and (btc_trend=="DANGER" or btc_trend=="DOWN" or HAD_trend=="DOWN" or HA_trend=="Revers-DOWN" or HA_trend=="DOWN" ):
                      if (currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and  currentopen5 < currenthigh5 and last>prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last>prevclose5):  ## Need to add bought_price without sql
                          # print (" We have good trend for " + market)
                          try:
@@ -1667,7 +1667,7 @@ def tick():
 
 
 #Candle Take profit
-                elif ((currentlow == currentclose)  and serf >= buy_size2*profit/2 and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1) and (HA_trend=="DOWN" or btc_trend=="DANGER"):
+                elif ((currentlow == currentclose)  and serf >= buy_size2*profit/2 and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1) and (HA_trend=="DOWN" or HA_trend=="Revers-DOWN" or btc_trend=="DANGER"):
                      if has_open_order(market, 'LIMIT_SELL'):
                          # print('Order already opened to sell  ' + market)
                          try:
