@@ -416,7 +416,7 @@ def tick():
 
                             if (active == 1) and (
                                     HA_trend == 'DOWN' or HA_trend == 'Revers-DOWN') and last > bought_price_sql * (
-                                1 + profit / 2):  # # WAS profit2
+                                1 + profit / 2) and bot_step == 1:  # # WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     # print('Order already opened to sell  ' + market)
@@ -473,7 +473,7 @@ def tick():
                                                 market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(
                                         market) != 'NEUTRAL' and ai_prediction(
                                     market) == 'DOWN') and last > bought_price_sql * (
-                                1 + profit / 2):  # #WAS profit2
+                                1 + profit / 2) and bot_step == 1:  # #WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
                                     # print('Order already opened to sell  ' + market)
@@ -527,7 +527,7 @@ def tick():
                                          "localhost")
 
                             elif (active == 1) and  last > bought_price_sql * (
-                                        1 + profit / 2):  # #WAS profit2
+                                        1 + profit / 2) and bot_step == 1:  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
@@ -1064,7 +1064,7 @@ def tick():
 #
 # AI STOP LOSS FIRST ITERATION
 
-                             elif (last >= ai_prediction_price(market) and  (serf <= buy_size2*profit*4)   and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and ai_ha_mode==0:
+                             elif (last >= ai_prediction_price(market) and  (serf <= buy_size2*profit*(-2))   and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and ai_ha_mode==0:
                                  if has_open_order(market, 'LIMIT_SELL'):
                                      # print('Order already opened to sell  ' + market)
                                      try:
@@ -1165,13 +1165,13 @@ def tick():
 
 
 
-
+                #print market, serf, buy_size2*profit*(-2)
 #
 
 
 #DOING SECOND AND THIRD BUY
 
-                if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (serf <= buy_size2*profit*2) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER" and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL') and HAD_trend!="DOWN"  and ai_ha_mode==0:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+                if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (serf <= buy_size2*profit*(-2)) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER" and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL') and HAD_trend!="DOWN"  and ai_ha_mode==0:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
                      #print market, "Has old order"
                      #run_prediction = "python2.7 run_predict.py " + market
                      #p = subprocess.Popen(run_prediction, stdout=subprocess.PIPE, shell=True)
@@ -1520,7 +1520,7 @@ def tick():
 
 #STOP LOSS FOR last iteration
 
-                elif (last < bought_price_sql) and (serf <= buy_size2*profit*10) and (iteration == maxiteration) and (active == 1):  # # Need to add bought_price without sql and sell_quantity without sql
+                elif (last < bought_price_sql) and (serf <= buy_size2*profit*(-10)) and (iteration == maxiteration) and (active == 1):  # # Need to add bought_price without sql and sell_quantity without sql
 
                          if has_open_order(market, 'LIMIT_SELL'):
                              #print('Order already opened to sell  ' + market)
@@ -1569,7 +1569,7 @@ def tick():
 
 #AI STOP LOSS
 
-                elif (last >= ai_prediction_price(market) and (active == 1)  and (serf <= buy_size2*profit*4) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
+                elif (last >= ai_prediction_price(market) and (active == 1)  and (serf <= buy_size2*profit*(-4)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
                      if has_open_order(market, 'LIMIT_SELL'):
                          # print('Order already opened to sell  ' + market)
                          try:
@@ -1614,7 +1614,7 @@ def tick():
 
 
 # HA STOP LOSS
-                elif (last >= ai_prediction_price(market) and (active == 1) and (serf <= buy_size2*profit*4) and iteration == maxiteration and (HA_trend == 'DOWN' or HA_trend=="Revers-DOWN" or HAD_trend=="DOWN" or btc_trend=="DANGER") and (currentcloseday<currentopenday and currentlowday<currenthighday) ):
+                elif (last >= ai_prediction_price(market) and (active == 1) and (serf <= buy_size2*profit*(-4)) and iteration == maxiteration and (HA_trend == 'DOWN' or HA_trend=="Revers-DOWN" or HAD_trend=="DOWN" or btc_trend=="DANGER") and (currentcloseday<currentopenday and currentlowday<currenthighday) ):
                      if has_open_order(market, 'LIMIT_SELL'):
                          # print('Order already opened to sell  ' + market)
                          try:
@@ -1664,7 +1664,7 @@ def tick():
 
 
 #Candle Take profit
-                elif ((currentlow == currentclose)  and serf >= buy_size2*profit/2 and (serf*BTC_price > 0) and iteration == maxiteration) and (active == 1) and (HA_trend=="DOWN" or HA_trend=="Revers-DOWN" or btc_trend=="DANGER"):
+                elif ((currentlow == currentclose)  and serf >= buy_size2*profit/2  and iteration == maxiteration) and (active == 1) and (HA_trend=="DOWN" or HA_trend=="Revers-DOWN" or btc_trend=="DANGER"):
                      if has_open_order(market, 'LIMIT_SELL'):
                          # print('Order already opened to sell  ' + market)
                          try:
