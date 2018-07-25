@@ -283,6 +283,7 @@ def tick():
 #FIRST ITERATION - BUY
 
 
+
 ### BUY FOR HA_AI mode
                 if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and HAD_trend!="DOWN" and HAD_trend!="Reverse-DOWN"  and btc_trend != "DANGER" and stop_bot_force == 0)  and currentopenday<currentcloseday and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
