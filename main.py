@@ -589,6 +589,7 @@ def tick():
 
 
 
+
                                     ## AI_HA MODE SL
                             elif (active == 1) and (last * bought_quantity_sql * (1 + profit * 2) < (
                                 bought_price_sql * bought_quantity_sql)) and bot_step == 1:  # #WAS profit2
