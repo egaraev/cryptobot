@@ -158,6 +158,11 @@ def tick():
                 if (btc_trend == "DOWN" and HA_trend == "DOWN") or (btc_trend == "DANGER") or (HAD_trend == "DOWN"):
                     profit = parameters()[3] / 1.5
 
+                elif (timestamp - timestamp_old > 240000) and (HA_trend!="UP" or HA_trend!="Revers-UP") and iteration==1:
+                    profit = parameters()[3] / 3
+
+                elif (timestamp - timestamp_old > 240000) and (HA_trend!="UP" or HA_trend!="Revers-UP") and iteration!=1:
+                    profit = parameters()[3] / 4
 
                 else:
                     profit = parameters()[3]
@@ -165,7 +170,7 @@ def tick():
                 #print market, profit, (1 + profit / 2)
 
 
-                #print market, profit, profit2 / 2
+                print market, profit
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -585,7 +590,7 @@ def tick():
 
 
                                     ## AI_HA MODE SL
-                            elif (active == 1) and (last * bought_quantity_sql * (1 + profit / 2) < (
+                            elif (active == 1) and (last * bought_quantity_sql * (1 + profit * 2) < (
                                 bought_price_sql * bought_quantity_sql)) and bot_step == 1:  # #WAS profit2
 
                                 if has_open_order(market, 'LIMIT_SELL'):
@@ -1166,13 +1171,15 @@ def tick():
 
 
 
-                #print market, serf, buy_size2*profit*(-2)
+                #print market, float(serf), float(buy_size2/2*profit*(-1)*iteration)
 #
 
 
 #DOING SECOND AND THIRD BUY
 
-                if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (serf <= buy_size2*profit*(-2)) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER" and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL') and HAD_trend!="DOWN"  and ai_ha_mode==0:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+                #if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (serf <= buy_size2/2*profit*(-1)*iteration) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER"  and HAD_trend!="DOWN" and ai_ha_mode==0 and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
+                if serf < 0 and (timestamp - timestamp_old > 6000) and active == 1 and iteration < maxiteration  and HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and btc_trend != "DANGER"  and bot_step == 0 and (currenthigh>currentopen or currentopen<currentclose):
+                    #(last < bought_price_sql and last * bought_quantity_sql * (1 + profit - 0.03) < (bought_price_sql * bought_quantity_sql + prev_serf))
                      #print market, "Has old order"
                      #run_prediction = "python2.7 run_predict.py " + market
                      #p = subprocess.Popen(run_prediction, stdout=subprocess.PIPE, shell=True)
@@ -1180,7 +1187,7 @@ def tick():
                      #p_status = p.wait()
 
 
-                     if (min_percent_chg < percent_chg < max_percent_chg) and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL') and (currenthigh>currentopen or currentopen<currentclose):
+                     if (min_percent_chg < percent_chg < max_percent_chg) and (HAD_trend=="UP" or HAD_trend=="revers-UP") and (currenthigh>currentopen or currentopen<currentclose):
                          #print "Buying by Market analize"
                          if has_open_order(market, 'LIMIT_BUY'):
                              #print('13 - Order already opened to buy  ' + market)
@@ -1221,7 +1228,7 @@ def tick():
                                  # print c.buy_limit(market, fiboquantity2, last).json()
                                  #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
 
-                     elif buytotalsumm > selltotalsumm*order_multiplier and buycountresult > sellcountresult*order_multiplier and buytotalsumm !=0 and selltotalsumm !=0 and buycountresult !=0 and sellcountresult !=0 and (ai_prediction(market)=='UP' or ai_prediction(market)=='NEUTRAL') and (currenthigh>currentopen or currentopen<currentclose) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER" and ai_ha_mode==0:  #
+                     elif buytotalsumm > selltotalsumm*order_multiplier and buycountresult > sellcountresult*order_multiplier and buytotalsumm !=0 and selltotalsumm !=0 and buycountresult !=0 and sellcountresult !=0 and (HAD_trend=="UP" or HAD_trend=="revers-UP") and (currenthigh>currentopen or currentopen<currentclose) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER" and ai_ha_mode==0:  #
                          #print "Buying by order analize"
 
                          if has_open_order(market, 'LIMIT_BUY'):

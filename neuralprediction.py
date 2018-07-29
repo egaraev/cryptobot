@@ -418,7 +418,7 @@ def learn():
                                 currenttime + '   Current price is:   ' + str(
                                     current_price) + '    Direction is: ' + direction + '\n'))
 
-                    print predicted_price, currtime, direction,current_price, market
+                    #print predicted_price, currtime, direction,current_price, market
 
                     try:
                         printed = ('      '+ str(currency) + '   The predicted  price is  ' + str(

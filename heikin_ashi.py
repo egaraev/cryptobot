@@ -356,30 +356,30 @@ def HA():
         db.close()
 
 
-#    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
-#        try:
-#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-#            cursor = db.cursor()
-#            cursor.execute("update parameters set ai_ha =%s where id = %s",
-#                           (1, 1))
-#            db.commit()
-#        except MySQLdb.Error, e:
-#            print "Error %d: %s" % (e.args[0], e.args[1])
-#            sys.exit(1)
-#        finally:
-#            db.close()
-#    else:
-#        try:
-#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-#            cursor = db.cursor()
-#            cursor.execute("update parameters set ai_ha =%s where id = %s",
-#                           (0, 1))
-#            db.commit()
-#        except MySQLdb.Error, e:
-#            print "Error %d: %s" % (e.args[0], e.args[1])
-#            sys.exit(1)
-#        finally:
-#            db.close()
+    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set ai_ha =%s where id = %s",
+                           (1, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+    else:
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            cursor.execute("update parameters set ai_ha =%s where id = %s",
+                           (0, 1))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
 
 
 
@@ -675,28 +675,28 @@ def HA():
 
                 if ha_direction_down0:
                     print  market, "DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open"
-                    #printed = (market, "    DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open")
+                    printed = (market, "    DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open")
                 if ha_direction_down1:
                     print market, "DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-                    #printed =(market, " DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open")
+                    printed =(market, " DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open")
                 if ha_direction_down2:
                     print market, "DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2"
-                    #printed =(market, " DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2")
+                    printed =(market, " DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2")
                 if ha_direction_down_long_0:
                     print  market, "Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High"
-                    #printed = (market," Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High")
+                    printed = (market," Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High")
                 if ha_direction_down_long_1:
                     print market, "Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-                    #printed = (market, "    Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High")
+                    printed = (market, "    Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High")
                 if ha_direction_down_long_2:
                     print market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2"
-                    #printed = (market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2")
+                    printed = (market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2")
                 if ha_direction_down_longer:
                     print market,  "Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body"
-                    #printed = (market, "    Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body")
+                    printed = (market, "    Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body")
                 if ha_direction_down_longermax:
                     print market,  "Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
-                    #printed = (market, "    Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
+                    printed = (market, "    Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
                 if ha_direction_spin0:
                     print market, "Change direction, ha_direction_spin0 spin"
                 if ha_direction_spin1:
@@ -746,14 +746,98 @@ def HA():
                 if ha_direction_down_smallermax:
                     print market, "Strong DOWN, ha_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
 
-                print market, HA_trend
+
+
+#####
+
+
+                if had_direction_down0:
+                    print  market, "DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open"
+                    printed = (market, "    DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open")
+                if had_direction_down1:
+                    print market, "DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open"
+                    printed =(market, " DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open")
+                if had_direction_down2:
+                    print market, "DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2"
+                    printed =(market, " DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2")
+                if had_direction_down_long_0:
+                    print  market, "Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High"
+                    printed = (market," Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High")
+                if had_direction_down_long_1:
+                    print market, "Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High"
+                    printed = (market, "    Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High")
+                if had_direction_down_long_2:
+                    print market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2"
+                    printed = (market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2")
+                if had_direction_down_longer:
+                    print market,  "Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body"
+                    printed = (market, "    Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body")
+                if had_direction_down_longermax:
+                    print market,  "Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+                    printed = (market, "    Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
+                if had_direction_spin0:
+                    print market, "Change direction, had_direction_spin0 spin"
+                if had_direction_spin1:
+                    print market, "Change direction had_direction_spin1 in previous candle, spin"
+                if had_direction_down_short0:
+                    print market, "Weak DOWN, had_direction_down_short0 latest candle body is short - doji"
+                if had_direction_down_short1:
+                    print market, "Weak DOWN, had_direction_down_short1 previous candle body is short - doji"
+                if had_direction_up_short0:
+                    print market, "Weak UP, had_direction_up_short0 latest candle body is short - doji"
+                if had_direction_up_short1:
+                    print market, "Weak UP, had_direction_up_short1 previous candle body is short - doji"
+                if had_direction_up0:
+                    print  market, "UP, had_direction_up0 latest candle bullish  HAD_Close > HAD_Open"
+                if had_direction_up1:
+                    print  market, "UP, had_direction_up1 previous candle was bullish  HAD_PREV_Close > HAD_PREV_Open"
+                if had_direction_up2:
+                    print  market, "UP, had_direction_up2 previous2 candle was bullish  HAD_PREV_Close2 > HAD_PREV_Open2"
+                if had_direction_up_long_0:
+                    print  market, "Strong UP, had_direction_up_long_0 latest candle has no lower wick HAD_Open == HAD_Low"
+                if had_direction_up_long_1:
+                    print  market, "Strong UP, had_direction_up_long_1 previous candle has no lower wick HAD_PREV_Open == HAD_PREV_Low"
+                if had_direction_up_long_2:
+                    print  market, "Strong UP, had_direction_up_long_2 previous candle2 has no lower wick HAD_PREV_Open2 == HAD_PREV_Low2"
+                if had_direction_up_longer:
+                    print market, "Strong UP, had_direction_up_longer latest candle body is longer than previous candle body"
+                if had_direction_up_longermax:
+                    print market, "Strong UP, had_direction_up_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+                if had_direction_up_shorter0:
+                    print market, "Weak UP, had_direction_down_shorter0 latest candle body is very short - doji"
+                if had_direction_up_shorter1:
+                    print market, "Weak UP, had_direction_down_shorter1 latest candle body is very short - doji"
+                if had_direction_up_shorter2:
+                    print market, "Weak UP, had_direction_down_shorter2 latest candle body is very short - doji"
+                if had_direction_up_smaller:
+                    print market, "Strong UP, had_direction_down_smaller latest candle  is shorter than previous candle"
+                if had_direction_up_smallermax:
+                    print market, "Strong UP, had_direction_up_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+                if had_direction_down_shorter0:
+                    print market, "Weak DOWN, had_direction_down_shorter0 latest candle body is very short - doji"
+                if had_direction_down_shorter1:
+                    print market, "Weak DOWN, had_direction_down_shorter1 latest candle body is very short - doji"
+                if had_direction_down_shorter2:
+                    print market, "Weak DOWN, had_direction_down_shorter2 latest candle body is very short - doji"
+                if had_direction_down_smaller:
+                    print market, "Strong DOWN, had_direction_down_smaller latest candle is shorter than previous candle"
+                if had_direction_down_smallermax:
+                    print market, "Strong DOWN, had_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+
+
+
+
+                #print market, HA_trend, HAD_trend
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     #cursor.execute(
                      #   'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                    printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HA_day is:  ' + HAD_trend )
                     cursor.execute("update markets set current_price = %s, ha_direction =%s, ha_direction_daily=%s  where market = %s and active =1",(last, HA_trend, HAD_trend, market))
+                    cursor.execute('insert into ha_logs (date, market, HA_hour, HA_day, log ) values ("%s", "%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, HAD_trend, printed))
+                    #cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
