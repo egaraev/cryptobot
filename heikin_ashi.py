@@ -369,30 +369,30 @@ def HA():
         db.close()
 
 
-    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
-        try:
-            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-            cursor = db.cursor()
-            cursor.execute("update parameters set ai_ha =%s where id = %s",
-                           (1, 1))
-            db.commit()
-        except MySQLdb.Error, e:
-            print "Error %d: %s" % (e.args[0], e.args[1])
-            sys.exit(1)
-        finally:
-            db.close()
-    else:
-        try:
-            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-            cursor = db.cursor()
-            cursor.execute("update parameters set ai_ha =%s where id = %s",
-                           (0, 1))
-            db.commit()
-        except MySQLdb.Error, e:
-            print "Error %d: %s" % (e.args[0], e.args[1])
-            sys.exit(1)
-        finally:
-            db.close()
+#    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
+#        try:
+#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#            cursor = db.cursor()
+#            cursor.execute("update parameters set ai_ha =%s where id = %s",
+#                           (1, 1))
+#            db.commit()
+#        except MySQLdb.Error, e:
+#            print "Error %d: %s" % (e.args[0], e.args[1])
+#            sys.exit(1)
+#        finally:
+#            db.close()
+#    else:
+#        try:
+#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#            cursor = db.cursor()
+#            cursor.execute("update parameters set ai_ha =%s where id = %s",
+#                           (0, 1))
+#            db.commit()
+#        except MySQLdb.Error, e:
+#            print "Error %d: %s" % (e.args[0], e.args[1])
+#            sys.exit(1)
+#        finally:
+#            db.close()
 
 
 
@@ -647,20 +647,24 @@ def HA():
                 if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longermax and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2)):
                     HA_trend = "DOWN"
 
+
                 if (((ha_direction_up_long_0 and ha_direction_up0) or (ha_direction_up_long_0 and ha_direction_up_long_1 and ha_direction_up0) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer and ha_direction_up_longermax) and ha_direction_up0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up2)):
                     HA_trend = "UP"
+
 
                 if ((ha_direction_up_short2 and ha_direction_spin1 and ha_direction_up0) or (ha_direction_down_short2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_down_short1 and ha_direction_spin0) or (ha_direction_down_long_2 and ha_direction_down_short1 and ha_direction_up_long_0) or (ha_direction_down_long_2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_up_long_0 and ha_direction_up1 and ha_direction_up_longer) or (ha_direction_down_long_2 and ha_direction_down_smaller1 and ha_direction_up0) or (ha_direction_down_long_2 and ha_direction_down_short1 and  ha_direction_up_long_0) or (ha_direction_down_longermax and ha_direction_up_short0)):
                     HA_trend = "Revers-UP"
 
+
                 if ((ha_direction_down_short2 and ha_direction_spin1 and ha_direction_down0) or (ha_direction_up_short2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_up_short1 and ha_direction_spin0) or (ha_direction_up_long_2 and ha_direction_up_short1 and ha_direction_down_long_0) or (ha_direction_up_long_2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_down_long_0 and ha_direction_down1 and ha_direction_down_longer) or (ha_direction_up_long_2 and ha_direction_up_smaller1 and ha_direction_down0) or (ha_direction_up_long_2 and ha_direction_up_short1 and  ha_direction_down_long_0) or (ha_direction_up_longermax and ha_direction_down_short0)):
                     HA_trend = "Revers-DOWN"
+
 
                 if  HA_trend != "Revers-DOWN" and   HA_trend != "Revers-UP" and  HA_trend != "DOWN" and HA_trend != "UP":
                     HA_trend = "STABLE"
 
                 #else:
-                 #   HA_trend = "STABLE"
+                                        #   HA_trend = "STABLE"
 
 
 #############
@@ -840,14 +844,15 @@ def HA():
 
                 #print market, bought_quantity_sql
 
-                if ((ha_direction_down0 and ha_direction_down1 and ha_direction_down_long0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_long0 and ha_direction_down_long1) and bought_quantity_sql > 0):
+                if ((ha_direction_down0 and ha_direction_down1 and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down_long_0) and bought_quantity_sql > 0):
 
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
-                        cursor.execute('update orders set sell = 1 where market =("%s")' % market)
-                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
+                        if bought_quantity_sql>0:
+                            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -857,7 +862,7 @@ def HA():
 
 
 
-                #print market, HA_trend, HAD_trend
+                print market, HA_trend, HAD_trend
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")

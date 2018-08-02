@@ -621,10 +621,10 @@ def tick():
                                                 cursor = db.cursor()
                                                 cursor.execute(
                                                     'insert into logs(date, log_entry) values("%s", "%s")' % (
-                                                        currtime, printed))
+                                                        currenttime, printed))
                                                 cursor.execute(
                                                     'update orders set reason_close =%s where active=1 and market =%s',
-                                                    ("0000161  SL, p:   " + str(
+                                                    ("00001615  SL, p:   " + str(
                                                         format_float(last)) + " t:    " + str(currenttime), market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
@@ -678,7 +678,7 @@ def tick():
                                         cursor = db.cursor()
                                         cursor.execute(
                                             'insert into logs(date, log_entry) values("%s", "%s")' % (
-                                                currtime, printed))
+                                                currenttime, printed))
                                         cursor.execute(
                                             'update orders set reason_close =%s where active=1 and market =%s',
                                             ("0000161  SL, p:   " + str(
