@@ -55,6 +55,19 @@ def heikin_ashi(marketname, value):
 
     return False
 
+def status_orders(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
+    #cursor.execute("SELECT o.*, m.market FROM orders o, markets m WHERE o.active = 1 and o.market_id = m.id and m.market like '%%'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return 0
+
 
 def main():
     print('Starting heikin ashi module')
@@ -395,6 +408,7 @@ def HA():
                 last = float(summary['Last'])  # last price
                 bid = float(summary['Bid'])  # sell price
                 ask = float(summary['Ask'])  # buy price
+                bought_quantity_sql = float(status_orders(market, 2))
             # Candle analisys
                 #lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
                 #currentlow = float(lastcandle[0]['L'])
@@ -428,37 +442,37 @@ def HA():
 
 
 
-                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
+                hourlastcandle = get_candles(market, 'thirtymin')['result'][-1:]
                 hourcurrentlow = float(hourlastcandle[0]['L'])
                 hourcurrenthigh = float(hourlastcandle[0]['H'])
                 hourcurrentopen = float(hourlastcandle[0]['O'])
                 hourcurrentclose = float(hourlastcandle[0]['C'])
-                hourpreviouscandle = get_candles(market, 'hour')['result'][-2:]
+                hourpreviouscandle = get_candles(market, 'thirtymin')['result'][-2:]
                 hourprevlow = float(hourpreviouscandle[0]['L'])
                 hourprevhigh = float(hourpreviouscandle[0]['H'])
                 hourprevopen = float(hourpreviouscandle[0]['O'])
                 hourprevclose = float(hourpreviouscandle[0]['C'])
-                hourpreviouscandle2 = get_candles(market, 'hour')['result'][-3:]
+                hourpreviouscandle2 = get_candles(market, 'thirtymin')['result'][-3:]
                 hourprevlow2 = float(hourpreviouscandle2[0]['L'])
                 hourprevhigh2 = float(hourpreviouscandle2[0]['H'])
                 hourprevopen2 = float(hourpreviouscandle2[0]['O'])
                 hourprevclose2 = float(hourpreviouscandle2[0]['C'])
-                hourpreviouscandle3 = get_candles(market, 'hour')['result'][-4:]
+                hourpreviouscandle3 = get_candles(market, 'thirtymin')['result'][-4:]
                 hourprevlow3 = float(hourpreviouscandle3[0]['L'])
                 hourprevhigh3 = float(hourpreviouscandle3[0]['H'])
                 hourprevopen3 = float(hourpreviouscandle3[0]['O'])
                 hourprevclose3 = float(hourpreviouscandle3[0]['C'])
-                hourpreviouscandle4 = get_candles(market, 'hour')['result'][-5:]
+                hourpreviouscandle4 = get_candles(market, 'thirtymin')['result'][-5:]
                 hourprevlow4 = float(hourpreviouscandle4[0]['L'])
                 hourprevhigh4 = float(hourpreviouscandle4[0]['H'])
                 hourprevopen4 = float(hourpreviouscandle4[0]['O'])
                 hourprevclose4 = float(hourpreviouscandle4[0]['C'])
-                hourpreviouscandle5 = get_candles(market, 'hour')['result'][-6:]
+                hourpreviouscandle5 = get_candles(market, 'thirtymin')['result'][-6:]
                 hourprevlow5 = float(hourpreviouscandle5[0]['L'])
                 hourprevhigh5 = float(hourpreviouscandle5[0]['H'])
                 hourprevopen5 = float(hourpreviouscandle5[0]['O'])
                 hourprevclose5 = float(hourpreviouscandle5[0]['C'])
-                hourpreviouscandle6 = get_candles(market, 'hour')['result'][-7:]
+                hourpreviouscandle6 = get_candles(market, 'thirtymin')['result'][-7:]
                 hourprevlow6 = float(hourpreviouscandle6[0]['L'])
                 hourprevhigh6 = float(hourpreviouscandle6[0]['H'])
                 hourprevopen6 = float(hourpreviouscandle6[0]['O'])
@@ -824,6 +838,22 @@ def HA():
                 if had_direction_down_smallermax:
                     print market, "Strong DOWN, had_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
 
+                #print market, bought_quantity_sql
+
+                if ((ha_direction_down0 and ha_direction_down1 and ha_direction_down_long0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_long0 and ha_direction_down_long1) and bought_quantity_sql > 0):
+
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
+                        cursor.execute('update orders set sell = 1 where market =("%s")' % market)
+                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
 
