@@ -587,7 +587,8 @@ def tick():
                                         Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
                                              "localhost")
 
-                            elif (active == 1) and serf<0 and bot_step == 1 and sell_signal==1:  # #WAS profit2
+                            elif (active == 1) and (last * bought_quantity_sql * (1 + profit/2) < (
+                                bought_price_sql * bought_quantity_sql)) and bot_step == 1 and sell_signal==1:  # #WAS profit2
 
                                         if has_open_order(market, 'LIMIT_SELL'):
                                             print('Order already opened to sell  ' + market)
