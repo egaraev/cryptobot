@@ -291,7 +291,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP") and stop_bot_force == 0)  and currentopenday<last and last > currentopenday:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (ai_ha_mode==1 and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP") and stop_bot_force == 0):  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -638,6 +638,55 @@ def tick():
                                             Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
                                                  "localhost")
 
+                            elif (active == 1) and serf>0 and bot_step == 1 and sell_signal == 1:  # #WAS profit2
+
+                                            if has_open_order(market, 'LIMIT_SELL'):
+                                                print('Order already opened to sell  ' + market)
+                                                try:
+                                                    printed = ('Order already opened to sell  ' + market)
+                                                    db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                                                         "cryptodb")
+                                                    cursor = db.cursor()
+                                                    cursor.execute(
+                                                        'insert into logs(date, log_entry) values("%s", "%s")' % (
+                                                            currenttime, printed))
+                                                    db.commit()
+                                                except MySQLdb.Error, e:
+                                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                                    sys.exit(1)
+                                                finally:
+                                                    db.close()
+
+
+                                            else:
+
+                                                # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                                try:
+                                                    printed = ('00001620 Selling ' + str(
+                                                        format_float(
+                                                            sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                                        format_float(ask)) + '  and getting  ' + str(
+                                                        format_float(serf * BTC_price)) + ' USD')
+                                                    db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                                                         "cryptodb")
+                                                    cursor = db.cursor()
+                                                    cursor.execute(
+                                                        'insert into logs(date, log_entry) values("%s", "%s")' % (
+                                                            currenttime, printed))
+                                                    cursor.execute(
+                                                        'update orders set reason_close =%s where active=1 and market =%s',
+                                                        ("00001620  ha TP, p:   " + str(
+                                                            format_float(last)) + " t:    " + str(currenttime), market))
+                                                    cursor.execute(
+                                                        'update orders set active = 0 where market =("%s")' % market)
+                                                    db.commit()
+                                                except MySQLdb.Error, e:
+                                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                                    sys.exit(1)
+                                                finally:
+                                                    db.close()
+                                                Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
+                                                     "localhost")
 
 
 
