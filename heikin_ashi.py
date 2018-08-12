@@ -862,7 +862,31 @@ def HA():
 
 
 
-                print market, HA_trend, HAD_trend
+                if HAD_trend=="UP":
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('update markets set ai_ha = 1 where active=1 and market =("%s")' % market)
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+                else:
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('update markets set ai_ha = 0 where active=1 and market =("%s")' % market)
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+
+
+                #print market, HA_trend, HAD_trend
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
