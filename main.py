@@ -149,7 +149,7 @@ def tick():
                 ha_mode=heikin_ashi(market, 19)
                 bot_step = bot_mode(market)
 
-                print market, ha_mode
+                #print market, ha_mode
                 #print market, (last * bought_quantity_sql),  (bought_price_sql * bought_quantity_sql + prev_serf), buy_quantity2*(1+profit)
 
                 #profit = parameters()[3]
@@ -172,7 +172,7 @@ def tick():
                 #print market, profit, (1 + profit / 2)
 
 
-                print market, profit
+                #print market, profit
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -367,9 +367,11 @@ def tick():
                             finally:
                                 db.close()
                             Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "localhost")
+                            break
+
 
 ### FOR HA_AI mode - END
-
+                #print market, summ_serf(market)
 
 # AI_HA MODE SELL START
                 if bought_price_sql != None or bought_price != None  and bot_step == 1:  # added "and bot_step == 1" HERE ONLY
@@ -468,6 +470,8 @@ def tick():
                                                 market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
+                                        newvalue=summ_serf(market)+serf*BTC_price
+                                        cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -525,6 +529,10 @@ def tick():
                                                     currenttime), market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
+                                        newvalue=summ_serf(market)+serf*BTC_price
+                                        cursor.execute(
+                                            'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                            currenttime, newvalue, market))
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -579,6 +587,10 @@ def tick():
                                                         currenttime), market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
+                                            newvalue = summ_serf(market) + serf * BTC_price
+                                            cursor.execute(
+                                                'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                                currenttime, newvalue, market))
                                             db.commit()
                                         except MySQLdb.Error, e:
                                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -630,6 +642,10 @@ def tick():
                                                         format_float(last)) + " t:    " + str(currenttime), market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
+                                                newvalue = summ_serf(market) + serf * BTC_price
+                                                cursor.execute(
+                                                    'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                                    currenttime, newvalue, market))
                                                 db.commit()
                                             except MySQLdb.Error, e:
                                                 print "Error %d: %s" % (e.args[0], e.args[1])
@@ -680,6 +696,10 @@ def tick():
                                                             format_float(last)) + " t:    " + str(currenttime), market))
                                                     cursor.execute(
                                                         'update orders set active = 0 where market =("%s")' % market)
+                                                    newvalue = summ_serf(market) + serf * BTC_price
+                                                    cursor.execute(
+                                                        'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                                        currenttime, newvalue, market))
                                                     db.commit()
                                                 except MySQLdb.Error, e:
                                                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -736,6 +756,10 @@ def tick():
                                                 format_float(last)) + " t:    " + str(currenttime), market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
+                                        newvalue=summ_serf(market)+serf*BTC_price
+                                        cursor.execute(
+                                            'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                            currenttime, newvalue, market))
                                         db.commit()
                                     except MySQLdb.Error, e:
                                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -747,8 +771,8 @@ def tick():
 
 ## AI_HA MODE END SELL
 
-                active = 0
-                active = active_orders(market)
+                #active = 0
+                #active = active_orders(market)
 
 
 
@@ -1972,6 +1996,20 @@ def previous_serf(marketname):
     for row in r:
         return float(row[0])
     return 0
+
+
+
+
+def summ_serf(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT SUM(serf_usd) FROM orders WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return float(row[0])
+    return 0
+
 
 
 

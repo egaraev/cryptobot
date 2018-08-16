@@ -101,6 +101,10 @@ def HA():
     btcprevclose3 = float(btcprevcandle3[0]['C'])
     btcprevhigh3 = float(btcprevcandle3[0]['H'])
 
+
+
+
+
     #print  btccurrentlow
 
     btclastcandlehour = get_candles('USDT-BTC', 'hour')['result'][-1:]
@@ -439,6 +443,28 @@ def HA():
                 dayprevclose2 = float(daypreviouscandle2[0]['C'])
 #####################
 
+                daymonthcandle1 = get_candles(market, 'day')['result'][-20:]
+                daymonthcandle2 = get_candles(market, 'day')['result'][-40:]
+                daymonthcandle3 = get_candles(market, 'day')['result'][-60:]
+                daymonthcandle4 = get_candles(market, 'day')['result'][-80:]
+                daymonthcandle5 = get_candles(market, 'day')['result'][-100:]
+                daymonthcandle6 = get_candles(market, 'day')['result'][-120:]
+                daymonthcandle7 = get_candles(market, 'day')['result'][-180:]
+                daymonthcandle8 = get_candles(market, 'day')['result'][-200:]
+                daymonthcandle9 = get_candles(market, 'day')['result'][-220:]
+                daymonthcandle10 = get_candles(market, 'day')['result'][-240:]
+
+                daymonthclose1 = float(daymonthcandle1[0]['C'])
+                daymonthclose2 = float(daymonthcandle2[0]['C'])
+                daymonthclose3 = float(daymonthcandle3[0]['C'])
+                daymonthclose4 = float(daymonthcandle4[0]['C'])
+                daymonthclose5 = float(daymonthcandle5[0]['C'])
+                daymonthclose6 = float(daymonthcandle6[0]['C'])
+                daymonthclose7 = float(daymonthcandle7[0]['C'])
+                daymonthclose8 = float(daymonthcandle8[0]['C'])
+                daymonthclose9 = float(daymonthcandle9[0]['C'])
+                daymonthclose10 = float(daymonthcandle10[0]['C'])
+####
 
 
 
@@ -860,9 +886,28 @@ def HA():
                     finally:
                         db.close()
 
+                    # print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
+                    dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
+                    dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
+                    dayprice6 = int(daymonthclose6 * 100 / daymonthclose8)
+                    dayprice5 = int(daymonthclose5 * 100 / daymonthclose8)
+                    dayprice4 = int(daymonthclose4 * 100 / daymonthclose8)
+                    dayprice3 = int(daymonthclose3 * 100 / daymonthclose8)
+                    dayprice2 = int(daymonthclose2 * 100 / daymonthclose8)
+                    dayprice1 = int(daymonthclose1 * 100 / daymonthclose8)
+
+                    #    quarter_direction="NULL"
+
+                    if (dayprice8 >= dayprice7 and dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1):
+                        quarter_direction = "DOWN"
+                    else:
+                        quarter_direction = "STABLE"
+
+                    #print market, quarter_direction
 
 
-                if HAD_trend=="UP":
+
+                if HAD_trend=="DOWN" or HAD_trend=="STABLE" or HAD_trend=="Revers-DOWN" or quarter_direction == "DOWN":
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -903,6 +948,12 @@ def HA():
                     sys.exit(1)
                 finally:
                     db.close()
+
+
+
+
+
+
         except:
             continue
 

@@ -107,10 +107,10 @@ def learn():
 
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
-                    if currency =='BCC':
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    #if currency =='BCC':
+                    #    url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    else:
+                    #else:
                         url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
@@ -285,10 +285,10 @@ def learn():
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
 
-                    if currency =='BCC':
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    #if currency =='BCC':
+                     #   url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    else:
+                    #else:
                         url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
