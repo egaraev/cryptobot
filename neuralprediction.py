@@ -58,19 +58,12 @@ def prediction_info(marketname):
     for row in r:
         return (row[0]), (row[1]), (row[2]), (row[3])
     return 0
-
-
-
 # random seed
 np.random.seed(1234)
 
-
 def main():
     print('Starting deep learning module')
-
     learn()
-
-
 def learn():
 
     market_summ = c.get_market_summaries().json()['result']
@@ -114,10 +107,10 @@ def learn():
 
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
-                    if currency =='BCC':
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    #if currency =='BCC':
+                    #    url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    else:
+                    #else:
                         url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
@@ -266,10 +259,8 @@ def learn():
                         db.close()
 
             elif prediction_info(market)[2] == 'DOWN' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
-                #print market, current_price, prediction_info(market)[0], int(currtime), int(prediction_info(market)[1])
-                if (current_price <= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 18000):  #21600
+                if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 18000):  #21600
                     print market, 'Running learning again D', current_price
-
 
                     if current_price < prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
@@ -294,10 +285,10 @@ def learn():
                     #          ---------================DATA COLLECTION====================------------
                     # connect to poloniex's API
 
-                    if currency =='BCC':
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
+                    #if currency =='BCC':
+                     #   url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    else:
+                    #else:
                         url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
@@ -427,7 +418,7 @@ def learn():
                                 currenttime + '   Current price is:   ' + str(
                                     current_price) + '    Direction is: ' + direction + '\n'))
 
-                    print predicted_price, currtime, direction,current_price, market
+                    #print predicted_price, currtime, direction,current_price, market
 
                     try:
                         printed = ('      '+ str(currency) + '   The predicted  price is  ' + str(
@@ -438,7 +429,9 @@ def learn():
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         cursor.execute('update markets set ai_price=%s, ai_time=%s, ai_direction=%s, ai_prev_price=%s, ai_time_human=%s where market=%s',(predicted_price, currtime, direction,current_price, currenttime, market))
-                        cursor.execute('insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (predicted_price, currtime, direction, current_price, currenttime, market, printed))
+                        cursor.execute(
+                            'insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
+                            predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
