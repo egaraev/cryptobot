@@ -373,30 +373,30 @@ def HA():
         db.close()
 
 
-    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
-        try:
-            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-            cursor = db.cursor()
-            cursor.execute("update parameters set ai_ha =%s where id = %s",
-                           (1, 1))
-            db.commit()
-        except MySQLdb.Error, e:
-            print "Error %d: %s" % (e.args[0], e.args[1])
-            sys.exit(1)
-        finally:
-            db.close()
-    else:
-        try:
-            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-            cursor = db.cursor()
-            cursor.execute("update parameters set ai_ha =%s where id = %s",
-                           (0, 1))
-            db.commit()
-        except MySQLdb.Error, e:
-            print "Error %d: %s" % (e.args[0], e.args[1])
-            sys.exit(1)
-        finally:
-            db.close()
+#    if btc_trend=="DOWN" or btc_trend=="DANGER" or btc_trend=="STABLE":
+#        try:
+#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#            cursor = db.cursor()
+#            cursor.execute("update parameters set ai_ha =%s where id = %s",
+#                           (1, 1))
+#            db.commit()
+#        except MySQLdb.Error, e:
+#            print "Error %d: %s" % (e.args[0], e.args[1])
+#            sys.exit(1)
+#        finally:
+#            db.close()
+#    else:
+#        try:
+#            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#            cursor = db.cursor()
+#            cursor.execute("update parameters set ai_ha =%s where id = %s",
+#                           (0, 1))
+#            db.commit()
+#        except MySQLdb.Error, e:
+#            print "Error %d: %s" % (e.args[0], e.args[1])
+#            sys.exit(1)
+#        finally:
+#            db.close()
 
 
 
@@ -886,39 +886,29 @@ def HA():
                     finally:
                         db.close()
 
-                    # print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
-                    dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
-                    dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
-                    dayprice6 = int(daymonthclose6 * 100 / daymonthclose8)
-                    dayprice5 = int(daymonthclose5 * 100 / daymonthclose8)
-                    dayprice4 = int(daymonthclose4 * 100 / daymonthclose8)
-                    dayprice3 = int(daymonthclose3 * 100 / daymonthclose8)
-                    dayprice2 = int(daymonthclose2 * 100 / daymonthclose8)
-                    dayprice1 = int(daymonthclose1 * 100 / daymonthclose8)
+                print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
+                dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
+                dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
+                dayprice6 = int(daymonthclose6 * 100 / daymonthclose8)
+                dayprice5 = int(daymonthclose5 * 100 / daymonthclose8)
+                dayprice4 = int(daymonthclose4 * 100 / daymonthclose8)
+                dayprice3 = int(daymonthclose3 * 100 / daymonthclose8)
+                dayprice2 = int(daymonthclose2 * 100 / daymonthclose8)
+                dayprice1 = int(daymonthclose1 * 100 / daymonthclose8)
+
 
                     #    quarter_direction="NULL"
 
-                    if (dayprice8 >= dayprice7 and dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1):
-                        quarter_direction = "DOWN"
-                    else:
-                        quarter_direction = "STABLE"
+                if (dayprice8 >= dayprice7 and dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1):
+                    quarter_direction = "DOWN"
+                else:
+                    quarter_direction = "STABLE"
 
                     #print market, quarter_direction
 
 
 
-                if HAD_trend=="DOWN" or HAD_trend=="STABLE" or HAD_trend=="Revers-DOWN" or quarter_direction == "DOWN":
-                    try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update markets set ai_ha = 1 where active=1 and market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-                else:
+                if (HAD_trend=="UP" or HAD_trend=="Revers-UP") and quarter_direction == "STABLE" and btc_trend=="UP":
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -929,9 +919,20 @@ def HA():
                         sys.exit(1)
                     finally:
                         db.close()
+                else:
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('update markets set ai_ha = 1 where active=1 and market =("%s")' % market)
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
-                #print market, HA_trend, HAD_trend
+                print market, quarter_direction
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
