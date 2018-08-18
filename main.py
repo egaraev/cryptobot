@@ -292,7 +292,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0):  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -482,7 +482,7 @@ def tick():
                                          "localhost")
 
                             elif (active == 1) and (
-                                                market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(
+                                                market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCH' and ai_prediction(
                                         market) != 'NEUTRAL' and ai_prediction(
                                     market) == 'DOWN') and last > bought_price_sql * (
                                 1 + profit / 2) and bot_step == 1:  # #WAS profit2
@@ -779,7 +779,7 @@ def tick():
 # 3 step mode BUY START
 
                  # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and stop_bot_force==0  and (ha_mode==0): #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and stop_bot_force==0  and (ha_mode==0) and last>currentopen: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                  #If we have opened order on bitrex
@@ -847,7 +847,7 @@ def tick():
                              # print c.buy_limit(market, fiboquantity*2, last).json()
                              #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!##################################
                              # If we have twice more BIG buy orders then BIG sell Orders, and volume of BUY order is twice bigger then volume of sell orders, it means that price is growing, Let` buy somethin
-                elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend != "DOWN" and stop_bot_force==0  and HAD_trend!="DOWN"  and (ha_mode==0):# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
+                elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend != "DOWN" and stop_bot_force==0  and HAD_trend!="DOWN"  and (ha_mode==0) and last>currentopen:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                      buysummpercent = float(buytotalsumm / selltotalsumm)
@@ -1155,7 +1155,7 @@ def tick():
 #AI TAKE PROFIT FOR FIRST ITERATION
 ##
 
-                             elif (last >= ai_prediction_price(market) and (serf >= buy_size2*profit/3)  and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and (last >= bought_price_sql * (1+profit-0.03)) and iteration==1 and (ha_mode==0):  # # and (last >= bought_price_sql * (1+profit-0.03))
+                             elif (last >= ai_prediction_price(market) and (serf >= buy_size2*profit/3)  and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCH' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and (last >= bought_price_sql * (1+profit-0.03)) and iteration==1 and (ha_mode==0):  # # and (last >= bought_price_sql * (1+profit-0.03))
 
                                  if has_open_order(market, 'LIMIT_SELL'):
                                      # print('Order already opened to sell  ' + market)
@@ -1214,7 +1214,7 @@ def tick():
 #
 # AI STOP LOSS FIRST ITERATION
 
-                             elif (last >= ai_prediction_price(market) and  (serf <= buy_size2*profit*(-2))   and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCC' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and (ha_mode==0):
+                             elif (last >= ai_prediction_price(market) and  (serf <= buy_size2*profit*(-2))   and market != 'BTC-OMG' and market != 'BTC-LSK' and market != 'BTC-BCH' and ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and (ha_mode==0):
                                  if has_open_order(market, 'LIMIT_SELL'):
                                      # print('Order already opened to sell  ' + market)
                                      try:
@@ -1591,7 +1591,7 @@ def tick():
 
 #AI take profit for last order
 
-                elif (last >= ai_prediction_price(market) and (serf >= buy_size2*profit/4) and iteration == maxiteration and (active == 1) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
+                elif (last >= ai_prediction_price(market) and (serf >= buy_size2*profit/4) and iteration == maxiteration and (active == 1) and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCH' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):  # # Need to add bought_price without sql and sell_quantity without sql
 
                          if has_open_order(market, 'LIMIT_SELL'):
                              #print('Order already opened to sell  ' + market)
@@ -1749,7 +1749,7 @@ def tick():
 
 #AI STOP LOSS
 
-                elif (last >= ai_prediction_price(market) and (active == 1)  and (serf <= buy_size2*profit*(-4)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCC' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
+                elif (last >= ai_prediction_price(market) and (active == 1)  and (serf <= buy_size2*profit*(-4)) and (serf*BTC_price < 0) and iteration == maxiteration and market!='BTC-OMG' and market!='BTC-LSK' and market!='BTC-BCH' and ai_prediction(market)!='NEUTRAL' and ai_prediction(market)=='DOWN'):
                      if has_open_order(market, 'LIMIT_SELL'):
                          # print('Order already opened to sell  ' + market)
                          try:
