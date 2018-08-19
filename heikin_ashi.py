@@ -886,6 +886,25 @@ def HA():
                     finally:
                         db.close()
 
+
+                if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) and bought_quantity_sql > 0):
+
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
+                        cursor.execute('update orders set sell = 0 where active=1 and market =("%s")' % market)
+                        if bought_quantity_sql>0:
+                            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+
+
+
                 print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
                 dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
                 dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
