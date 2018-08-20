@@ -1427,6 +1427,57 @@ def tick():
                                  #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
                                  # print c.buy_limit(market, fiboquantity2, last).json()
                                  #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
+
+                     elif (HAD_trend=="UP" or HAD_trend=="revers-UP") and (HAD_trend=="UP" or HAD_trend=="revers-UP") and (ai_prediction(market)=='NEUTRAL' or ai_prediction(market)=='UP') and last>currentopen5:  #
+                         #print "Buying by order analize"
+
+                         if has_open_order(market, 'LIMIT_BUY'):
+                             #print('Order already opened to buy  ' + market)
+                             try:
+                                 printed = ('    1855 - Order already opened to buy  ' + market)
+                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                 cursor = db.cursor()
+                                 cursor.execute(
+                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                 db.commit()
+                             except MySQLdb.Error, e:
+                                 print "Error %d: %s" % (e.args[0], e.args[1])
+                                 sys.exit(1)
+                             finally:
+                                 db.close()
+
+                         else:
+                             newiteration = iteration + 1
+                             # Buy some currency
+                             #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
+                             try:
+                                 printed = ('    1955 - Purchasing (by ai_ha analize) ' + ' Total Summ ' + str(
+                                     format_float(buycountpercent)) + ' Total Count ' + str(
+                                     format_float(buy_quantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
+                                     format_float(bid)) + ' HA ' + HA_trend)
+                                 db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                 cursor = db.cursor()
+                                 cursor.execute(
+                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                 current_serf = previous_serf(market)
+                                 prev_serf = ((last * bought_quantity_sql - bought_price_sql * bought_quantity_sql) + current_serf)
+                                 cursor.execute("update orders set prev_serf = %s where market = %s and active = 1", (prev_serf, market ))
+                                 cursor.execute(
+                                     "update orders set quantity = %s, price = %s, timestamp = %s, iteration = %s, btc_direction_1 =%s, heikin_ashi_1 =%s where market = %s and active = 1",
+                                     (fiboquantity + fiboquantity2, last, timestamp, newiteration, btc_trend, HA_trend, market))
+                                 db.commit()
+                             except MySQLdb.Error, e:
+                                 print "Error %d: %s" % (e.args[0], e.args[1])
+                                 sys.exit(1)
+                             finally:
+                                 db.close()
+                             Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "localhost")
+                                 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
+                                 # print c.buy_limit(market, fiboquantity2, last).json()
+                                 #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!###################################
+
+
+
                      else:
                          pass
 #
