@@ -292,7 +292,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -779,7 +779,7 @@ def tick():
 # 3 step mode BUY START
 
                  # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and stop_bot_force==0  and (ha_mode==0) and last>currentopen: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and stop_bot_force==0  and (ha_mode==0) and last>currentopen5: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                  #If we have opened order on bitrex
@@ -847,7 +847,7 @@ def tick():
                              # print c.buy_limit(market, fiboquantity*2, last).json()
                              #########!!!!!!!!! BUYING MECHANIZM, DANGER !!!!##################################
                              # If we have twice more BIG buy orders then BIG sell Orders, and volume of BUY order is twice bigger then volume of sell orders, it means that price is growing, Let` buy somethin
-                elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend != "DOWN" and stop_bot_force==0  and HAD_trend!="DOWN"  and (ha_mode==0) and last>currentopen:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
+                elif (buytotalsumm > selltotalsumm * order_multiplier) and (buycountresult > sellcountresult * order_multiplier and buytotalsumm != 0 and selltotalsumm != 0 and buycountresult != 0 and sellcountresult != 0) and (stop_bot ==0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend != "DOWN" and stop_bot_force==0   and (ha_mode==0) and last>currentopen5:# and ((dayprevclose >= daycurrentopen or daycurrentopen == daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # should be *2 on both  ##and ai_prediction(market)=='UP'
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                      buysummpercent = float(buytotalsumm / selltotalsumm)
@@ -1403,10 +1403,10 @@ def tick():
                              # Buy some currency
                              #print('Purchasing ' + str(format_float(fiboquantity2)) + ' units of ' + market + ' for ' + str(format_float(last)))
                              try:
-                                 printed = ('    19 - Purchasing (by market analize) ' + str(
-                                     format_float(percent_chg)) + ' percent changed ' + str(
-                                     format_float(fiboquantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
-                                     format_float(last)) + ' USD serf ' + str(serf*BTC_price) + ' Iteration ' + str(iteration)+ ' HA ' + HA_trend)
+                                 printed = ('    19 - Purchasing (by order analize) ' + ' Total Summ ' + str(
+                                     format_float(buycountpercent)) + ' Total Count ' + str(
+                                     format_float(buy_quantity2)) + '  |  ' + ' units of ' + market + ' for ' + str(
+                                     format_float(bid)) + ' HA ' + HA_trend)
                                  db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                  cursor = db.cursor()
                                  cursor.execute(
