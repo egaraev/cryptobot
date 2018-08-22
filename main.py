@@ -146,10 +146,11 @@ def tick():
                 currenttime = now.strftime("%Y-%m-%d %H:%M")
                 HA_trend=heikin_ashi(market, 10)
                 HAD_trend=heikin_ashi(market, 18)
+                HAH_trend = heikin_ashi(market, 20)
                 ha_mode=heikin_ashi(market, 19)
                 bot_step = bot_mode(market)
 
-                #print market, ha_mode
+                print market, HA_trend, HAH_trend, HAD_trend
                 #print market, (last * bought_quantity_sql),  (bought_price_sql * bought_quantity_sql + prev_serf), buy_quantity2*(1+profit)
 
                 #profit = parameters()[3]
@@ -355,8 +356,8 @@ def tick():
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 cursor.execute(
                                     'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                    market, buy_quantity, bid, "1", currenttime, timestamp, "1", btc_trend,'  AI   ' + str(
-                                        ai_prediction(market)) + '  BTC ' + btc_trend,
+                                    market, buy_quantity, bid, "1", currenttime, timestamp, "1", HAH_trend,'  AI   ' + str(
+                                        ai_prediction(market)) + '  HAH ' + HAH_trend + ' HAD ' + HAD_trend,
                                     HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                (serf, market))
