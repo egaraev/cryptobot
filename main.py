@@ -150,7 +150,7 @@ def tick():
                 ha_mode=heikin_ashi(market, 19)
                 bot_step = bot_mode(market)
 
-                print market, HA_trend, HAH_trend, HAD_trend
+                print market, HA_trend, HAH_trend, HAD_trend, percent_chg
                 #print market, (last * bought_quantity_sql),  (bought_price_sql * bought_quantity_sql + prev_serf), buy_quantity2*(1+profit)
 
                 #profit = parameters()[3]
@@ -293,7 +293,7 @@ def tick():
 
 
 ### BUY FOR HA_AI mode
-                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5 and percent_chg>0:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
                         current_balance = balance_res['result']['Available']
                         #print market
@@ -372,7 +372,7 @@ def tick():
 
 
 ### FOR HA_AI mode - END
-                print market, summ_serf(), serf*BTC_price
+                #print market, summ_serf(), serf*BTC_price
 
 # AI_HA MODE SELL START
                 if bought_price_sql != None or bought_price != None  and bot_step == 1:  # added "and bot_step == 1" HERE ONLY
@@ -780,7 +780,7 @@ def tick():
 # 3 step mode BUY START
 
                  # If the price for some currency rapidly increased from 0.8% till 3.5%  let`s buy something too
-                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"  and stop_bot_force==0  and (ha_mode==0) and last>currentopen5: #and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if (min_percent_chg < percent_chg < max_percent_chg)  and (stop_bot == 0)  and stop_bot_force==0  and (ha_mode==0) and last>currentopen5: #  and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and HAD_trend!="DOWN"                      and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                      balance_res = get_balance_from_market(market)
                      current_balance = balance_res['result']['Available']
                  #If we have opened order on bitrex
@@ -1331,7 +1331,7 @@ def tick():
 #DOING SECOND AND THIRD BUY
 
                 #if serf < 0 and (timestamp-timestamp_old > 6000) and active == 1 and  iteration < maxiteration  and (serf <= buy_size2/2*profit*(-1)*iteration) and HA_trend!="DOWN" and HA_trend!="Revers-DOWN" and btc_trend!="DANGER"  and HAD_trend!="DOWN" and ai_ha_mode==0 and (currenthigh>currentopen or currentopen<currentclose):  #should be 600000 , check if we have active order with minus profit and older then 1 week   :   and last*1.1 < bought_price_sql
-                if serf < 0 and (timestamp - timestamp_old > 6000) and active == 1 and iteration < maxiteration  and HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and HAD_trend != "DOWN"  and bot_step == 0   and (last < bought_price_sql and last * bought_quantity_sql*(1+profit-0.03) < (bought_price_sql * bought_quantity_sql + prev_serf)):
+                if serf < 0 and (timestamp - timestamp_old > 6000) and active == 1 and iteration < maxiteration   and bot_step == 0   and (last < bought_price_sql and last * bought_quantity_sql*(1+profit-0.03) < (bought_price_sql * bought_quantity_sql + prev_serf)):
                     #(last < bought_price_sql and last * bought_quantity_sql * (1 + profit - 0.03) < (bought_price_sql * bought_quantity_sql + prev_serf))
                      #print market, "Has old order"
                      #run_prediction = "python2.7 run_predict.py " + market

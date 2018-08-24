@@ -1031,28 +1031,28 @@ def HA():
 
 ### 3 step - 1 step bot
 
-                if (HAD_trend=="UP" or HAD_trend=="Revers-UP") and quarter_direction == "STABLE" and btc_trend=="UP":
-                    try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update markets set ai_ha = 0 where active=1 and market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-                else:
-                    try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update markets set ai_ha = 1 where active=1 and market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+#                if (HAD_trend=="UP" or HAD_trend=="Revers-UP") and quarter_direction == "STABLE" and (btc_trend=="UP" or btc_trend=="STABLE"):
+#                    try:
+#                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#                        cursor = db.cursor()
+#                        cursor.execute('update markets set ai_ha = 0 where active=1 and market =("%s")' % market)
+#                        db.commit()
+#                    except MySQLdb.Error, e:
+#                        print "Error %d: %s" % (e.args[0], e.args[1])
+#                        sys.exit(1)
+#                    finally:
+#                        db.close()
+#                else:
+#                    try:
+#                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#                        cursor = db.cursor()
+#                        cursor.execute('update markets set ai_ha = 1 where active=1 and market =("%s")' % market)
+#                        db.commit()
+#                    except MySQLdb.Error, e:
+#                        print "Error %d: %s" % (e.args[0], e.args[1])
+#                        sys.exit(1)
+#                    finally:
+#                        db.close()
 #####
 
 
