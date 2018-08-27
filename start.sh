@@ -62,3 +62,17 @@ else
 
 fi
 
+
+SERVICE6='heikin_day.py'
+
+if ps ax | grep -v grep | grep $SERVICE6 > /dev/null
+then
+    echo "$SERVICE5 service running "
+else
+    echo there is no such "$SERVICE6 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 heikin_day.py
+#/usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_day.py
+
+fi
+

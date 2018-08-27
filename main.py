@@ -50,7 +50,7 @@ def tick():
     currtime = int(time.time())
     btc_trend = parameters()[12]
     ai_ha_mode = parameters()[23]
-    #print total_summ()
+   # print summa()
 
 
 
@@ -148,9 +148,13 @@ def tick():
                 HAD_trend=heikin_ashi(market, 18)
                 HAH_trend = heikin_ashi(market, 20)
                 ha_mode=heikin_ashi(market, 19)
+                ha_time_second=heikin_ashi(market, 23)
                 bot_step = bot_mode(market)
+                percent_sql=int(heikin_ashi(market, 21))
+                volume_sql=int(heikin_ashi(market, 22))
+                total=summa()
 
-                print market, HA_trend, HAH_trend, HAD_trend, percent_chg
+                #print market, HA_trend, HAH_trend, HAD_trend, percent_chg
                 #print market, (last * bought_quantity_sql),  (bought_price_sql * bought_quantity_sql + prev_serf), buy_quantity2*(1+profit)
 
                 #profit = parameters()[3]
@@ -290,11 +294,12 @@ def tick():
 
 #FIRST ITERATION - BUY
 
-
+                #print market, volume_sql, percent_sql
 
 ### BUY FOR HA_AI mode
-                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5 and percent_chg>0:  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
+                if ((ha_mode==1 or ai_ha_mode==1) and (stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5 and percent_chg>0 and (currtime-ha_time_second<1500):  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                         balance_res = get_balance_from_market(market)
+                        #print market
                         current_balance = balance_res['result']['Available']
                         #print market
                         # If we have opened order on bitrex
@@ -356,8 +361,7 @@ def tick():
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 cursor.execute(
                                     'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                    market, buy_quantity, bid, "1", currenttime, timestamp, "1", HAH_trend,'  AI   ' + str(
-                                        ai_prediction(market)) + '  HAH ' + HAH_trend + ' HAD ' + HAD_trend,
+                                    market, buy_quantity, bid, "1", currenttime, timestamp, "1", HAH_trend, '  HAH ' + str(HAH_trend) + ' HAD ' + str(HAD_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql),
                                     HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                (serf, market))
@@ -455,7 +459,7 @@ def tick():
                                             format_float(
                                                 sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                             format_float(ask)) + '  and getting   ' + str(
-                                            format_float(serf * BTC_price)) + ' USD')
+                                            format_float(serf * BTC_price)) + ' USD' )
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                              "cryptodb")
                                         cursor = db.cursor()
@@ -630,7 +634,7 @@ def tick():
                                                     format_float(
                                                         sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                     format_float(ask)) + '  and losing  ' + str(
-                                                    format_float(serf * BTC_price)) + ' USD')
+                                                    format_float(serf * BTC_price)) + ' USD' )
                                                 db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                      "cryptodb")
                                                 cursor = db.cursor()
@@ -684,7 +688,7 @@ def tick():
                                                         format_float(
                                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                         format_float(ask)) + '  and getting  ' + str(
-                                                        format_float(serf * BTC_price)) + ' USD')
+                                                        format_float(serf * BTC_price)) + ' USD'  )
                                                     db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                          "cryptodb")
                                                     cursor = db.cursor()
@@ -744,7 +748,7 @@ def tick():
                                             format_float(
                                                 sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                             format_float(ask)) + '  and losing  ' + str(
-                                            format_float(serf * BTC_price)) + ' USD')
+                                            format_float(serf * BTC_price)) + ' USD' )
                                         db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                              "cryptodb")
                                         cursor = db.cursor()
@@ -2118,6 +2122,15 @@ def summ_serf():
         return float(row[0])
     return 0
 
+
+def summa():
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    cursor.execute("SELECT serf FROM `statistics` ORDER BY id DESC LIMIT 1")
+    r = cursor.fetchall()
+    for row in r:
+        return float(row[0])
+    return 0
 
 
 

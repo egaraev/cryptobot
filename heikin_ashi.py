@@ -8,13 +8,36 @@ import hashlib
 import hmac
 import numpy
 import datetime
-
 c = Client(api_key=config.key, api_secret=config.secret)
+
 
 currtime = int(round(time.time()))
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 #print currtime
+
+
+
+#def apikey():
+#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#    cursor = db.cursor()
+#    cursor.execute("SELECT api_key FROM `parameters`")
+#    r = cursor.fetchall()
+#    for row in r:
+#        return (row[0])
+#    return 0
+
+
+#def apisecret():
+#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#    cursor = db.cursor()
+#    cursor.execute("SELECT api_secret FROM `parameters`")
+#    r = cursor.fetchall()
+#    for row in r:
+#        return (row[0])
+#    return 0
+
+
 
 
 def available_market_list(marketname):
@@ -77,6 +100,9 @@ def main():
 
 
 def HA():
+#    key = apikey()
+#    secret = apisecret()
+#    c = Client(api_key=key, api_secret=secret)
     BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
     currtime = int(time.time())
 
@@ -297,75 +323,75 @@ def HA():
 
 
 
-    print "BTC", btc_trend, btc_trend_hour
+#    print "BTC", btc_trend, btc_trend_hour
+#
+#    if direction_down0:
+#        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+#    if direction_down1:
+#        print "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+#    if direction_down_long_0:
+#        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+#    if direction_down_long_1:
+#        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#    if direction_down_longer:
+#        print "Strong DOWN, latest candle body is longer than previous candle body"
+#    if direction_spin0:
+#        print "Change direction, spin"
+#    if direction_spin1:
+#        print "Change direction in previous candle, spin"
+#    if direction_down_short0:
+#        print "Weak DOWN, latest candle body is short - doji"
+#    if direction_down_short1:
+#        print "Weak DOWN, previous candle body is short - doji"
+#    if direction_up_short0:
+#        print "Weak UP, latest candle body is short - doji"
+#    if direction_up_short1:
+#        print "Weak UP, previous candle body is short - doji"
+#    if direction_up0:
+#        print  "UP, latest candle bullish  HA_Close > HA_Open"
+#    if direction_up1:
+#        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+#    if direction_up_long_0:
+#        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+#    if direction_up_long_1:
+#        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+#    if direction_up_longer:
+#        print "Strong UP, latest candle body is longer than previous candle body"
 
-    if direction_down0:
-        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
-    if direction_down1:
-        print "DOWN,", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-    if direction_down_long_0:
-        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
-    if direction_down_long_1:
-        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-    if direction_down_longer:
-        print "Strong DOWN, latest candle body is longer than previous candle body"
-    if direction_spin0:
-        print "Change direction, spin"
-    if direction_spin1:
-        print "Change direction in previous candle, spin"
-    if direction_down_short0:
-        print "Weak DOWN, latest candle body is short - doji"
-    if direction_down_short1:
-        print "Weak DOWN, previous candle body is short - doji"
-    if direction_up_short0:
-        print "Weak UP, latest candle body is short - doji"
-    if direction_up_short1:
-        print "Weak UP, previous candle body is short - doji"
-    if direction_up0:
-        print  "UP, latest candle bullish  HA_Close > HA_Open"
-    if direction_up1:
-        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
-    if direction_up_long_0:
-        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
-    if direction_up_long_1:
-        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
-    if direction_up_longer:
-        print "Strong UP, latest candle body is longer than previous candle body"
-
-
-    if hour_direction_down0:
-        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
-    if hour_direction_down1:
-        print "DOWN,", "Previous candle was bearish !  HA_PREV_Close < HA_PREV_Open"
-    if hour_direction_down_long_0:
-        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
-    if hour_direction_down_long_1:
-        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-    if hour_direction_down_longer:
-        print "Strong DOWN, latest candle body is longer than previous candle body"
-    if hour_direction_spin0:
-        print "Change direction, spin"
-    if hour_direction_spin1:
-        print "Change direction in previous candle, spin"
-    if hour_direction_down_short0:
-        print "Weak DOWN, latest candle body is short - doji"
-    if hour_direction_down_short1:
-        print "Weak DOWN, previous candle body is short - doji"
-    if hour_direction_up_short0:
-        print "Weak UP, latest candle body is short - doji"
-    if hour_direction_up_short1:
-        print "Weak UP, previous candle body is short - doji"
-    if hour_direction_up0:
-        print  "UP, latest candle bullish  HA_Close > HA_Open"
-    if hour_direction_up1:
-        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
-    if hour_direction_up_long_0:
-        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
-    if hour_direction_up_long_1:
-        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
-    if hour_direction_up_longer:
-        print "Strong UP, latest candle body is longer than previous candle body"
-
+#
+#    if hour_direction_down0:
+#        print  "DOWN,", "Latest candle is bearish, HA_Close < HA_Open"
+#    if hour_direction_down1:
+#        print "DOWN,", "Previous candle was bearish !  HA_PREV_Close < HA_PREV_Open"
+#    if hour_direction_down_long_0:
+#        print  "Strong DOWN, latest candle has no upper wick HA_Open == HA_High"
+#    if hour_direction_down_long_1:
+#        print "Strong DOWN bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#    if hour_direction_down_longer:
+#        print "Strong DOWN, latest candle body is longer than previous candle body"
+#    if hour_direction_spin0:
+#        print "Change direction, spin"
+#    if hour_direction_spin1:
+#        print "Change direction in previous candle, spin"
+#    if hour_direction_down_short0:
+#        print "Weak DOWN, latest candle body is short - doji"
+#    if hour_direction_down_short1:
+#        print "Weak DOWN, previous candle body is short - doji"
+#    if hour_direction_up_short0:
+#        print "Weak UP, latest candle body is short - doji"
+#    if hour_direction_up_short1:
+#        print "Weak UP, previous candle body is short - doji"
+#    if hour_direction_up0:
+#        print  "UP, latest candle bullish  HA_Close > HA_Open"
+#    if hour_direction_up1:
+#        print  "UP, previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+#    if hour_direction_up_long_0:
+#        print  "Strong UP, latest candle has no lower wick HA_Open == HA_Low"
+#    if hour_direction_up_long_1:
+#        print  "Strong UP, previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+#    if hour_direction_up_longer:
+#        print "Strong UP, latest candle body is longer than previous candle body"
+#
     try:
         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
         cursor = db.cursor()
@@ -432,21 +458,21 @@ def HA():
                 #prevhigh = float(previouscandle[0]['H'])
 
 #######################
-                daylastcandle = get_candles(market, 'day')['result'][-1:]
-                daycurrentlow = float(daylastcandle[0]['L'])
-                daycurrenthigh = float(daylastcandle[0]['H'])
-                daycurrentopen = float(daylastcandle[0]['O'])
-                daycurrentclose = float(daylastcandle[0]['C'])
-                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
-                dayprevlow = float(daypreviouscandle[0]['L'])
-                dayprevhigh = float(daypreviouscandle[0]['H'])
-                dayprevopen = float(daypreviouscandle[0]['O'])
-                dayprevclose = float(daypreviouscandle[0]['C'])
-                daypreviouscandle2 = get_candles(market, 'day')['result'][-3:]
-                dayprevlow2 = float(daypreviouscandle2[0]['L'])
-                dayprevhigh2 = float(daypreviouscandle2[0]['H'])
-                dayprevopen2 = float(daypreviouscandle2[0]['O'])
-                dayprevclose2 = float(daypreviouscandle2[0]['C'])
+#                daylastcandle = get_candles(market, 'day')['result'][-1:]
+#                daycurrentlow = float(daylastcandle[0]['L'])
+#                daycurrenthigh = float(daylastcandle[0]['H'])
+#                daycurrentopen = float(daylastcandle[0]['O'])
+#                daycurrentclose = float(daylastcandle[0]['C'])
+#                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
+#                dayprevlow = float(daypreviouscandle[0]['L'])
+#                dayprevhigh = float(daypreviouscandle[0]['H'])
+#                dayprevopen = float(daypreviouscandle[0]['O'])
+#                dayprevclose = float(daypreviouscandle[0]['C'])
+#                daypreviouscandle2 = get_candles(market, 'day')['result'][-3:]
+#                dayprevlow2 = float(daypreviouscandle2[0]['L'])
+#                dayprevhigh2 = float(daypreviouscandle2[0]['H'])
+#                dayprevopen2 = float(daypreviouscandle2[0]['O'])
+#                dayprevclose2 = float(daypreviouscandle2[0]['C'])
 #####################
 
                 hlastcandle = get_candles(market, 'hour')['result'][-1:]
@@ -467,27 +493,27 @@ def HA():
 
 #####################
 
-                daymonthcandle1 = get_candles(market, 'day')['result'][-20:]
-                daymonthcandle2 = get_candles(market, 'day')['result'][-40:]
-                daymonthcandle3 = get_candles(market, 'day')['result'][-60:]
-                daymonthcandle4 = get_candles(market, 'day')['result'][-80:]
-                daymonthcandle5 = get_candles(market, 'day')['result'][-100:]
-                daymonthcandle6 = get_candles(market, 'day')['result'][-120:]
-                daymonthcandle7 = get_candles(market, 'day')['result'][-180:]
-                daymonthcandle8 = get_candles(market, 'day')['result'][-200:]
-                daymonthcandle9 = get_candles(market, 'day')['result'][-220:]
-                daymonthcandle10 = get_candles(market, 'day')['result'][-240:]
+#                daymonthcandle1 = get_candles(market, 'day')['result'][-20:]
+#                daymonthcandle2 = get_candles(market, 'day')['result'][-40:]
+#                daymonthcandle3 = get_candles(market, 'day')['result'][-60:]
+#                daymonthcandle4 = get_candles(market, 'day')['result'][-80:]
+#                daymonthcandle5 = get_candles(market, 'day')['result'][-100:]
+#                daymonthcandle6 = get_candles(market, 'day')['result'][-120:]
+#                daymonthcandle7 = get_candles(market, 'day')['result'][-180:]
+#                daymonthcandle8 = get_candles(market, 'day')['result'][-200:]
+#                daymonthcandle9 = get_candles(market, 'day')['result'][-220:]
+#                daymonthcandle10 = get_candles(market, 'day')['result'][-240:]
 
-                daymonthclose1 = float(daymonthcandle1[0]['C'])
-                daymonthclose2 = float(daymonthcandle2[0]['C'])
-                daymonthclose3 = float(daymonthcandle3[0]['C'])
-                daymonthclose4 = float(daymonthcandle4[0]['C'])
-                daymonthclose5 = float(daymonthcandle5[0]['C'])
-                daymonthclose6 = float(daymonthcandle6[0]['C'])
-                daymonthclose7 = float(daymonthcandle7[0]['C'])
-                daymonthclose8 = float(daymonthcandle8[0]['C'])
-                daymonthclose9 = float(daymonthcandle9[0]['C'])
-                daymonthclose10 = float(daymonthcandle10[0]['C'])
+#                daymonthclose1 = float(daymonthcandle1[0]['C'])
+#               daymonthclose2 = float(daymonthcandle2[0]['C'])
+#                daymonthclose3 = float(daymonthcandle3[0]['C'])
+#                daymonthclose4 = float(daymonthcandle4[0]['C'])
+#                daymonthclose5 = float(daymonthcandle5[0]['C'])
+#                daymonthclose6 = float(daymonthcandle6[0]['C'])
+#                daymonthclose7 = float(daymonthcandle7[0]['C'])
+#                daymonthclose8 = float(daymonthcandle8[0]['C'])
+#                daymonthclose9 = float(daymonthcandle9[0]['C'])
+#                daymonthclose10 = float(daymonthcandle10[0]['C'])
 ####
 
 
@@ -573,22 +599,22 @@ def HA():
                 HA_Low = elements0.min(0)
 
 ###############
-                HAD_PREV_Close2 = (dayprevopen2 + dayprevhigh2 + dayprevlow2 + dayprevclose2) / 4
-                HAD_PREV_Open2 = (dayprevopen2 + dayprevclose2) / 2
-                HAD_PREV_Low2 = dayprevlow2
-                HAD_PREV_High2 = dayprevhigh2
+#                HAD_PREV_Close2 = (dayprevopen2 + dayprevhigh2 + dayprevlow2 + dayprevclose2) / 4
+#                HAD_PREV_Open2 = (dayprevopen2 + dayprevclose2) / 2
+#                HAD_PREV_Low2 = dayprevlow2
+#                HAD_PREV_High2 = dayprevhigh2
 
-                HAD_PREV_Close = (dayprevopen + dayprevhigh + dayprevlow + dayprevclose) / 4
-                HAD_PREV_Open = (HAD_PREV_Open2 + HAD_PREV_Close2) / 2
-                elements1 = numpy.array([dayprevhigh, dayprevlow, HAD_PREV_Open, HAD_PREV_Close])
-                HAD_PREV_High = elements1.max(0)
-                HAD_PREV_Low = elements1.min(0)
+#                HAD_PREV_Close = (dayprevopen + dayprevhigh + dayprevlow + dayprevclose) / 4
+#                HAD_PREV_Open = (HAD_PREV_Open2 + HAD_PREV_Close2) / 2
+#                elements1 = numpy.array([dayprevhigh, dayprevlow, HAD_PREV_Open, HAD_PREV_Close])
+#                HAD_PREV_High = elements1.max(0)
+#                HAD_PREV_Low = elements1.min(0)
 
-                HAD_Close = (daycurrentopen + daycurrenthigh + daycurrentlow + daycurrentclose) / 4
-                HAD_Open = (HAD_PREV_Open + HAD_PREV_Close) / 2
-                elements0 = numpy.array([daycurrenthigh, daycurrentlow, HAD_Open, HAD_Close])
-                HAD_High = elements0.max(0)
-                HAD_Low = elements0.min(0)
+#                HAD_Close = (daycurrentopen + daycurrenthigh + daycurrentlow + daycurrentclose) / 4
+#                HAD_Open = (HAD_PREV_Open + HAD_PREV_Close) / 2
+#                elements0 = numpy.array([daycurrenthigh, daycurrentlow, HAD_Open, HAD_Close])
+#                HAD_High = elements0.max(0)
+#                HAD_Low = elements0.min(0)
 ##############
 
                 HAH_PREV_Close2 = (hprevopen2 + hprevhigh2 + hprevlow2 + hprevclose2) / 4
@@ -614,7 +640,7 @@ def HA():
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
-                    cursor.execute("update markets set ha_close = %s, ha_open =%s, ha_low =%s, ha_high =%s, ha_time =%s  where market = %s",(HA_Close, HA_Open, HA_Low, HA_High, currenttime, market))
+                    cursor.execute("update markets set ha_close = %s, ha_open =%s, ha_low =%s, ha_high =%s, ha_time =%s, ha_time_second=%s  where market = %s",(HA_Close, HA_Open, HA_Low, HA_High, currenttime, currtime, market))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -625,7 +651,7 @@ def HA():
                 HA_trend = "NONE"
 
 ###############
-                HAD_trend = "NONE"
+                #HAD_trend = "NONE"
                 HAH_trend = "NONE"
 ###############
 
@@ -671,45 +697,45 @@ def HA():
 
 
 #############
-                had_direction_down_short0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 2)  and (HAD_Open - HAD_Close !=0)
-                had_direction_down_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 2) and (HAD_PREV_Open - HAD_PREV_Close !=0)
-                had_direction_down_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 2) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
-                had_direction_down_shorter0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 4)  and (HAD_Open - HAD_Close !=0)
-                had_direction_down_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 4) and (HAD_PREV_Open - HAD_PREV_Close !=0)
-                had_direction_down_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 4) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
-                had_direction_down0 = (HAD_Close < HAD_Open)
-                had_direction_down1 = (HAD_PREV_Close < HAD_PREV_Open)
-                had_direction_down2 = (HAD_PREV_Close2 < HAD_PREV_Open2)
-                had_direction_down_long_0 = (HAD_Open == HAD_High and HAD_Close < HAD_Open)
-                had_direction_down_long_1 = (HAD_PREV_Open == HAD_PREV_High and HAD_PREV_Close < HAD_PREV_Open)
-                had_direction_down_long_2 = (HAD_PREV_Open2 == HAD_PREV_High2 and HAD_PREV_Close2 < HAD_PREV_Open2)
-                had_direction_down_longer = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
-                had_direction_down_longermax = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) > numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2 ) and had_direction_down0 and had_direction_down1 and had_direction_down2)
-                had_direction_down_smaller = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
-                had_direction_down_smaller1 = (numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down1 and had_direction_down2)
-                had_direction_down_smallermax = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down0 and had_direction_down1 and had_direction_down2)
-
-                had_direction_spin0 = (HAD_Open == HAD_Close)
-                had_direction_spin1 = (HAD_PREV_Open == HAD_PREV_Close)
-                had_direction_spin2 = (HAD_PREV_Open2 == HAD_PREV_Close2)
-
-                had_direction_up_short0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 2) and (HAD_Close - HAD_Open !=0)
-                had_direction_up_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 2) and (HAD_PREV_Close - HAD_PREV_Open !=0)
-                had_direction_up_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 2) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
-                had_direction_up_shorter0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 4) and (HAD_Close - HAD_Open !=0)
-                had_direction_up_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 4) and (HAD_PREV_Close - HAD_PREV_Open !=0)
-                had_direction_up_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 4) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
-                had_direction_up0 = (HAD_Close > HAD_Open)
-                had_direction_up1 = (HAD_PREV_Close > HAD_PREV_Open)
-                had_direction_up2 = (HAD_PREV_Close2 > HAD_PREV_Open2)
-                had_direction_up_long_0 = (HAD_Open == HAD_Low and HAD_Close > HAD_Open)
-                had_direction_up_long_1 = (HAD_PREV_Open == HAD_PREV_Low and HAD_PREV_Close > HAD_PREV_Open)
-                had_direction_up_long_2 = (HAD_PREV_Open2 == HAD_PREV_Low2 and HAD_PREV_Close2 > HAD_PREV_Open2)
-                had_direction_up_longer = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
-                had_direction_up_longermax = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) > numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
-                had_direction_up_smaller = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
-                had_direction_up_smaller1 = (numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up1 and had_direction_up2)
-                had_direction_up_smallermax = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+    #            had_direction_down_short0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 2)  and (HAD_Open - HAD_Close !=0)
+    #            had_direction_down_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 2) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+    #            had_direction_down_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 2) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+    #            had_direction_down_shorter0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 4)  and (HAD_Open - HAD_Close !=0)
+    #            had_direction_down_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 4) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+    #            had_direction_down_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 4) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+    #            had_direction_down0 = (HAD_Close < HAD_Open)
+    #            had_direction_down1 = (HAD_PREV_Close < HAD_PREV_Open)
+    #            had_direction_down2 = (HAD_PREV_Close2 < HAD_PREV_Open2)
+    #            had_direction_down_long_0 = (HAD_Open == HAD_High and HAD_Close < HAD_Open)
+    #            had_direction_down_long_1 = (HAD_PREV_Open == HAD_PREV_High and HAD_PREV_Close < HAD_PREV_Open)
+    #            had_direction_down_long_2 = (HAD_PREV_Open2 == HAD_PREV_High2 and HAD_PREV_Close2 < HAD_PREV_Open2)
+    #            had_direction_down_longer = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+    #            had_direction_down_longermax = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) > numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2 ) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+    #            had_direction_down_smaller = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+    #            had_direction_down_smaller1 = (numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down1 and had_direction_down2)
+    #            had_direction_down_smallermax = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+     #
+    #            had_direction_spin0 = (HAD_Open == HAD_Close)
+    #            had_direction_spin1 = (HAD_PREV_Open == HAD_PREV_Close)
+    #            had_direction_spin2 = (HAD_PREV_Open2 == HAD_PREV_Close2)
+     #
+    #            had_direction_up_short0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 2) and (HAD_Close - HAD_Open !=0)
+    #            had_direction_up_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 2) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+    #            had_direction_up_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 2) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+    #            had_direction_up_shorter0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 4) and (HAD_Close - HAD_Open !=0)
+    #            had_direction_up_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 4) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+    #            had_direction_up_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 4) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+    #            had_direction_up0 = (HAD_Close > HAD_Open)
+    #            had_direction_up1 = (HAD_PREV_Close > HAD_PREV_Open)
+    #            had_direction_up2 = (HAD_PREV_Close2 > HAD_PREV_Open2)
+    #            had_direction_up_long_0 = (HAD_Open == HAD_Low and HAD_Close > HAD_Open)
+    #            had_direction_up_long_1 = (HAD_PREV_Open == HAD_PREV_Low and HAD_PREV_Close > HAD_PREV_Open)
+    #            had_direction_up_long_2 = (HAD_PREV_Open2 == HAD_PREV_Low2 and HAD_PREV_Close2 > HAD_PREV_Open2)
+    #            had_direction_up_longer = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+    #            had_direction_up_longermax = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) > numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+    #            had_direction_up_smaller = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+    #            had_direction_up_smaller1 = (numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up1 and had_direction_up2)
+    #            had_direction_up_smallermax = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
 ##############
 
                 hah_direction_down_short0 =((HAH_High - HAH_Low) / (HAH_Open - HAH_Close) >= 2)  and (HAH_Open - HAH_Close !=0)
@@ -778,20 +804,20 @@ def HA():
 
 
 #############
-                if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)):
-                    HAD_trend = "DOWN"
+#                if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)):
+#                    HAD_trend = "DOWN"
 
-                if (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)):
-                    HAD_trend = "UP"
+#                if (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)):
+#                    HAD_trend = "UP"
 
-                if ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0) and had_direction_down1 and had_direction_down2):
-                    HAD_trend = "Revers-UP"
+#                if ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0) and had_direction_down1 and had_direction_down2):
+#                    HAD_trend = "Revers-UP"
 
-                if ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0) and had_direction_up1 and had_direction_up2):
-                    HAD_trend = "Revers-DOWN"
+#                if ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0) and had_direction_up1 and had_direction_up2):
+#                    HAD_trend = "Revers-DOWN"
 
-                if  HAD_trend != "Revers-DOWN" and   HAD_trend != "Revers-UP" and  HAD_trend != "DOWN" and HAD_trend != "UP":
-                    HAD_trend = "STABLE"
+#                if  HAD_trend != "Revers-DOWN" and   HAD_trend != "Revers-UP" and  HAD_trend != "DOWN" and HAD_trend != "UP":
+#                    HAD_trend = "STABLE"
 
 ###############
 
@@ -810,7 +836,7 @@ def HA():
                 if  HAH_trend != "Revers-DOWN" and   HAH_trend != "Revers-UP" and  HAH_trend != "DOWN" and HAH_trend != "UP":
                     HAH_trend = "STABLE"
 
-
+                print market, HA_trend, HAH_trend
 
 
                 #else:
@@ -820,158 +846,158 @@ def HA():
                 #print market, HA_trend, HA_Open, HA_Close, HA_Low, HA_High
 
                 #printed = ""
-
-                if ha_direction_down0:
-                    print  market, "DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open"
-                    printed = (market, "    DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open")
-                if ha_direction_down1:
-                    print market, "DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
-                    printed =(market, " DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open")
-                if ha_direction_down2:
-                    print market, "DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2"
-                    printed =(market, " DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2")
-                if ha_direction_down_long_0:
-                    print  market, "Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High"
-                    printed = (market," Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High")
-                if ha_direction_down_long_1:
-                    print market, "Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
-                    printed = (market, "    Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High")
-                if ha_direction_down_long_2:
-                    print market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2"
-                    printed = (market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2")
-                if ha_direction_down_longer:
-                    print market,  "Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body"
-                    printed = (market, "    Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body")
-                if ha_direction_down_longermax:
-                    print market,  "Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
-                    printed = (market, "    Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
-                if ha_direction_spin0:
-                    print market, "Change direction, ha_direction_spin0 spin"
-                if ha_direction_spin1:
-                    print market, "Change direction ha_direction_spin1 in previous candle, spin"
-                if ha_direction_down_short0:
-                    print market, "Weak DOWN, ha_direction_down_short0 latest candle body is short - doji"
-                if ha_direction_down_short1:
-                    print market, "Weak DOWN, ha_direction_down_short1 previous candle body is short - doji"
-                if ha_direction_up_short0:
-                    print market, "Weak UP, ha_direction_up_short0 latest candle body is short - doji"
-                if ha_direction_up_short1:
-                    print market, "Weak UP, ha_direction_up_short1 previous candle body is short - doji"
-                if ha_direction_up0:
-                    print  market, "UP, ha_direction_up0 latest candle bullish  HA_Close > HA_Open"
-                if ha_direction_up1:
-                    print  market, "UP, ha_direction_up1 previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
-                if ha_direction_up2:
-                    print  market, "UP, ha_direction_up2 previous2 candle was bullish  HA_PREV_Close2 > HA_PREV_Open2"
-                if ha_direction_up_long_0:
-                    print  market, "Strong UP, ha_direction_up_long_0 latest candle has no lower wick HA_Open == HA_Low"
-                if ha_direction_up_long_1:
-                    print  market, "Strong UP, ha_direction_up_long_1 previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
-                if ha_direction_up_long_2:
-                    print  market, "Strong UP, ha_direction_up_long_2 previous candle2 has no lower wick HA_PREV_Open2 == HA_PREV_Low2"
-                if ha_direction_up_longer:
-                    print market, "Strong UP, ha_direction_up_longer latest candle body is longer than previous candle body"
-                if ha_direction_up_longermax:
-                    print market, "Strong UP, ha_direction_up_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
-                if ha_direction_up_shorter0:
-                    print market, "Weak UP, ha_direction_down_shorter0 latest candle body is very short - doji"
-                if ha_direction_up_shorter1:
-                    print market, "Weak UP, ha_direction_down_shorter1 latest candle body is very short - doji"
-                if ha_direction_up_shorter2:
-                    print market, "Weak UP, ha_direction_down_shorter2 latest candle body is very short - doji"
-                if ha_direction_up_smaller:
-                    print market, "Strong UP, ha_direction_down_smaller latest candle  is shorter than previous candle"
-                if ha_direction_up_smallermax:
-                    print market, "Strong UP, ha_direction_up_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
-                if ha_direction_down_shorter0:
-                    print market, "Weak DOWN, ha_direction_down_shorter0 latest candle body is very short - doji"
-                if ha_direction_down_shorter1:
-                    print market, "Weak DOWN, ha_direction_down_shorter1 latest candle body is very short - doji"
-                if ha_direction_down_shorter2:
-                    print market, "Weak DOWN, ha_direction_down_shorter2 latest candle body is very short - doji"
-                if ha_direction_down_smaller:
-                    print market, "Strong DOWN, ha_direction_down_smaller latest candle is shorter than previous candle"
-                if ha_direction_down_smallermax:
-                    print market, "Strong DOWN, ha_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
-
-
+#
+#                if ha_direction_down0:
+#                    print  market, "DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open"
+#                    printed = (market, "    DOWN, ha_direction_down0", "Latest candle is bearish, HA_Close < HA_Open")
+#                if ha_direction_down1:
+#                    print market, "DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open"
+#                    printed =(market, " DOWN, ha_direction_down1", "Previous candle was bearish   HA_PREV_Close < HA_PREV_Open")
+#                if ha_direction_down2:
+#                    print market, "DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2"
+#                    printed =(market, " DOWN, ha_direction_down2", "Previous2 candle was bearish   HA_PREV_Close2 < HA_PREV_Open2")
+#                if ha_direction_down_long_0:
+#                    print  market, "Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High"
+#                    printed = (market," Strong DOWN, ha_direction_down_long_0 latest candle has no upper wick HA_Open == HA_High")
+#                if ha_direction_down_long_1:
+#                    print market, "Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High"
+#                    printed = (market, "    Strong DOWN ha_direction_down_long_1 bearish, previous candle has no upper wick HA_PREV_Open == HA_PREV_High")
+#                if ha_direction_down_long_2:
+#                    print market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2"
+#                    printed = (market, "Strong DOWN ha_direction_down_long_2 bearish, previous2 candle has no upper wick HA_PREV_Open2 == HA_PREV_High2")
+#                if ha_direction_down_longer:
+#                    print market,  "Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body"
+#                    printed = (market, "    Strong DOWN, ha_direction_down_longer latest candle body is longer than previous candle body")
+#                if ha_direction_down_longermax:
+#                    print market,  "Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+#                    printed = (market, "    Strong DOWN, ha_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
+#                if ha_direction_spin0:
+#                    print market, "Change direction, ha_direction_spin0 spin"
+#                if ha_direction_spin1:
+#                    print market, "Change direction ha_direction_spin1 in previous candle, spin"
+#                if ha_direction_down_short0:
+#                    print market, "Weak DOWN, ha_direction_down_short0 latest candle body is short - doji"
+#                if ha_direction_down_short1:
+#                    print market, "Weak DOWN, ha_direction_down_short1 previous candle body is short - doji"
+#                if ha_direction_up_short0:
+#                    print market, "Weak UP, ha_direction_up_short0 latest candle body is short - doji"
+#                if ha_direction_up_short1:
+#                    print market, "Weak UP, ha_direction_up_short1 previous candle body is short - doji"
+#                if ha_direction_up0:
+#                    print  market, "UP, ha_direction_up0 latest candle bullish  HA_Close > HA_Open"
+#                if ha_direction_up1:
+#                    print  market, "UP, ha_direction_up1 previous candle was bullish  HA_PREV_Close > HA_PREV_Open"
+#                if ha_direction_up2:
+#                    print  market, "UP, ha_direction_up2 previous2 candle was bullish  HA_PREV_Close2 > HA_PREV_Open2"
+#                if ha_direction_up_long_0:
+#                    print  market, "Strong UP, ha_direction_up_long_0 latest candle has no lower wick HA_Open == HA_Low"
+#                if ha_direction_up_long_1:
+#                    print  market, "Strong UP, ha_direction_up_long_1 previous candle has no lower wick HA_PREV_Open == HA_PREV_Low"
+#                if ha_direction_up_long_2:
+#                    print  market, "Strong UP, ha_direction_up_long_2 previous candle2 has no lower wick HA_PREV_Open2 == HA_PREV_Low2"
+#                if ha_direction_up_longer:
+#                    print market, "Strong UP, ha_direction_up_longer latest candle body is longer than previous candle body"
+#                if ha_direction_up_longermax:
+#                    print market, "Strong UP, ha_direction_up_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+#                if ha_direction_up_shorter0:
+#                    print market, "Weak UP, ha_direction_down_shorter0 latest candle body is very short - doji"
+#                if ha_direction_up_shorter1:
+#                    print market, "Weak UP, ha_direction_down_shorter1 latest candle body is very short - doji"
+#                if ha_direction_up_shorter2:
+#                    print market, "Weak UP, ha_direction_down_shorter2 latest candle body is very short - doji"
+#                if ha_direction_up_smaller:
+#                    print market, "Strong UP, ha_direction_down_smaller latest candle  is shorter than previous candle"
+#                if ha_direction_up_smallermax:
+#                    print market, "Strong UP, ha_direction_up_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+#                if ha_direction_down_shorter0:
+#                    print market, "Weak DOWN, ha_direction_down_shorter0 latest candle body is very short - doji"
+#                if ha_direction_down_shorter1:
+#                    print market, "Weak DOWN, ha_direction_down_shorter1 latest candle body is very short - doji"
+#                if ha_direction_down_shorter2:
+#                    print market, "Weak DOWN, ha_direction_down_shorter2 latest candle body is very short - doji"
+#                if ha_direction_down_smaller:
+#                    print market, "Strong DOWN, ha_direction_down_smaller latest candle is shorter than previous candle"
+#                if ha_direction_down_smallermax:
+#                    print market, "Strong DOWN, ha_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+#
+#
 
 #####
-
-
-                if had_direction_down0:
-                    print  market, "DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open"
-                    printed = (market, "    DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open")
-                if had_direction_down1:
-                    print market, "DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open"
-                    printed =(market, " DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open")
-                if had_direction_down2:
-                    print market, "DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2"
-                    printed =(market, " DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2")
-                if had_direction_down_long_0:
-                    print  market, "Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High"
-                    printed = (market," Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High")
-                if had_direction_down_long_1:
-                    print market, "Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High"
-                    printed = (market, "    Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High")
-                if had_direction_down_long_2:
-                    print market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2"
-                    printed = (market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2")
-                if had_direction_down_longer:
-                    print market,  "Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body"
-                    printed = (market, "    Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body")
-                if had_direction_down_longermax:
-                    print market,  "Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
-                    printed = (market, "    Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
-                if had_direction_spin0:
-                    print market, "Change direction, had_direction_spin0 spin"
-                if had_direction_spin1:
-                    print market, "Change direction had_direction_spin1 in previous candle, spin"
-                if had_direction_down_short0:
-                    print market, "Weak DOWN, had_direction_down_short0 latest candle body is short - doji"
-                if had_direction_down_short1:
-                    print market, "Weak DOWN, had_direction_down_short1 previous candle body is short - doji"
-                if had_direction_up_short0:
-                    print market, "Weak UP, had_direction_up_short0 latest candle body is short - doji"
-                if had_direction_up_short1:
-                    print market, "Weak UP, had_direction_up_short1 previous candle body is short - doji"
-                if had_direction_up0:
-                    print  market, "UP, had_direction_up0 latest candle bullish  HAD_Close > HAD_Open"
-                if had_direction_up1:
-                    print  market, "UP, had_direction_up1 previous candle was bullish  HAD_PREV_Close > HAD_PREV_Open"
-                if had_direction_up2:
-                    print  market, "UP, had_direction_up2 previous2 candle was bullish  HAD_PREV_Close2 > HAD_PREV_Open2"
-                if had_direction_up_long_0:
-                    print  market, "Strong UP, had_direction_up_long_0 latest candle has no lower wick HAD_Open == HAD_Low"
-                if had_direction_up_long_1:
-                    print  market, "Strong UP, had_direction_up_long_1 previous candle has no lower wick HAD_PREV_Open == HAD_PREV_Low"
-                if had_direction_up_long_2:
-                    print  market, "Strong UP, had_direction_up_long_2 previous candle2 has no lower wick HAD_PREV_Open2 == HAD_PREV_Low2"
-                if had_direction_up_longer:
-                    print market, "Strong UP, had_direction_up_longer latest candle body is longer than previous candle body"
-                if had_direction_up_longermax:
-                    print market, "Strong UP, had_direction_up_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
-                if had_direction_up_shorter0:
-                    print market, "Weak UP, had_direction_down_shorter0 latest candle body is very short - doji"
-                if had_direction_up_shorter1:
-                    print market, "Weak UP, had_direction_down_shorter1 latest candle body is very short - doji"
-                if had_direction_up_shorter2:
-                    print market, "Weak UP, had_direction_down_shorter2 latest candle body is very short - doji"
-                if had_direction_up_smaller:
-                    print market, "Strong UP, had_direction_down_smaller latest candle  is shorter than previous candle"
-                if had_direction_up_smallermax:
-                    print market, "Strong UP, had_direction_up_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
-                if had_direction_down_shorter0:
-                    print market, "Weak DOWN, had_direction_down_shorter0 latest candle body is very short - doji"
-                if had_direction_down_shorter1:
-                    print market, "Weak DOWN, had_direction_down_shorter1 latest candle body is very short - doji"
-                if had_direction_down_shorter2:
-                    print market, "Weak DOWN, had_direction_down_shorter2 latest candle body is very short - doji"
-                if had_direction_down_smaller:
-                    print market, "Strong DOWN, had_direction_down_smaller latest candle is shorter than previous candle"
-                if had_direction_down_smallermax:
-                    print market, "Strong DOWN, had_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
-
+ #
+ #
+ #               if had_direction_down0:
+ #                   print  market, "DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open"
+ #                   printed = (market, "    DOWN, had_direction_down0", "Latest candle is bearish, HAD_Close < HAD_Open")
+ #               if had_direction_down1:
+ #                   print market, "DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open"
+ #                   printed =(market, " DOWN, had_direction_down1", "Previous candle was bearish   HAD_PREV_Close < HAD_PREV_Open")
+ #               if had_direction_down2:
+ #                   print market, "DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2"
+ #                   printed =(market, " DOWN, had_direction_down2", "Previous2 candle was bearish   HAD_PREV_Close2 < HAD_PREV_Open2")
+ #               if had_direction_down_long_0:
+ #                   print  market, "Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High"
+ #                   printed = (market," Strong DOWN, had_direction_down_long_0 latest candle has no upper wick HAD_Open == HAD_High")
+ #               if had_direction_down_long_1:
+ #                   print market, "Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High"
+ #                   printed = (market, "    Strong DOWN had_direction_down_long_1 bearish, previous candle has no upper wick HAD_PREV_Open == HAD_PREV_High")
+ #               if had_direction_down_long_2:
+ #                   print market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2"
+ #                   printed = (market, "Strong DOWN had_direction_down_long_2 bearish, previous2 candle has no upper wick HAD_PREV_Open2 == HAD_PREV_High2")
+ #               if had_direction_down_longer:
+ #                   print market,  "Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body"
+ #                   printed = (market, "    Strong DOWN, had_direction_down_longer latest candle body is longer than previous candle body")
+ #               if had_direction_down_longermax:
+ #                   print market,  "Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+ #                   printed = (market, "    Strong DOWN, had_direction_down_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2")
+ #               if had_direction_spin0:
+ #                   print market, "Change direction, had_direction_spin0 spin"
+ #               if had_direction_spin1:
+ #                   print market, "Change direction had_direction_spin1 in previous candle, spin"
+ #               if had_direction_down_short0:
+ #                   print market, "Weak DOWN, had_direction_down_short0 latest candle body is short - doji"
+ #               if had_direction_down_short1:
+ #                   print market, "Weak DOWN, had_direction_down_short1 previous candle body is short - doji"
+ #               if had_direction_up_short0:
+ #                   print market, "Weak UP, had_direction_up_short0 latest candle body is short - doji"
+ #               if had_direction_up_short1:
+ #                   print market, "Weak UP, had_direction_up_short1 previous candle body is short - doji"
+ #               if had_direction_up0:
+ #                   print  market, "UP, had_direction_up0 latest candle bullish  HAD_Close > HAD_Open"
+ #               if had_direction_up1:
+ #                   print  market, "UP, had_direction_up1 previous candle was bullish  HAD_PREV_Close > HAD_PREV_Open"
+ #               if had_direction_up2:
+ #                   print  market, "UP, had_direction_up2 previous2 candle was bullish  HAD_PREV_Close2 > HAD_PREV_Open2"
+ #               if had_direction_up_long_0:
+ #                   print  market, "Strong UP, had_direction_up_long_0 latest candle has no lower wick HAD_Open == HAD_Low"
+ #               if had_direction_up_long_1:
+ #                   print  market, "Strong UP, had_direction_up_long_1 previous candle has no lower wick HAD_PREV_Open == HAD_PREV_Low"
+ #               if had_direction_up_long_2:
+ #                   print  market, "Strong UP, had_direction_up_long_2 previous candle2 has no lower wick HAD_PREV_Open2 == HAD_PREV_Low2"
+ #               if had_direction_up_longer:
+ #                   print market, "Strong UP, had_direction_up_longer latest candle body is longer than previous candle body"
+ #               if had_direction_up_longermax:
+ #                   print market, "Strong UP, had_direction_up_longermax latest candle body is longer than previous candle body and previous candle body longer then previous2"
+ #               if had_direction_up_shorter0:
+ #                   print market, "Weak UP, had_direction_down_shorter0 latest candle body is very short - doji"
+ #               if had_direction_up_shorter1:
+ #                   print market, "Weak UP, had_direction_down_shorter1 latest candle body is very short - doji"
+ #               if had_direction_up_shorter2:
+ #                   print market, "Weak UP, had_direction_down_shorter2 latest candle body is very short - doji"
+ #               if had_direction_up_smaller:
+ #                   print market, "Strong UP, had_direction_down_smaller latest candle  is shorter than previous candle"
+ #               if had_direction_up_smallermax:
+ #                   print market, "Strong UP, had_direction_up_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+ #               if had_direction_down_shorter0:
+ #                   print market, "Weak DOWN, had_direction_down_shorter0 latest candle body is very short - doji"
+ #               if had_direction_down_shorter1:
+ #                   print market, "Weak DOWN, had_direction_down_shorter1 latest candle body is very short - doji"
+ #               if had_direction_down_shorter2:
+ #                   print market, "Weak DOWN, had_direction_down_shorter2 latest candle body is very short - doji"
+ #               if had_direction_down_smaller:
+ #                   print market, "Strong DOWN, had_direction_down_smaller latest candle is shorter than previous candle"
+ #               if had_direction_down_smallermax:
+ #                   print market, "Strong DOWN, had_direction_down_shortermax latest candle is shorter than previous candle and previous candle shorter then previous2"
+ #
                 #print market, bought_quantity_sql
 
                 if ((ha_direction_down0 and ha_direction_down1 and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer) and bought_quantity_sql > 0):
@@ -1009,23 +1035,23 @@ def HA():
 
 
 
-                print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
-                dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
-                dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
-                dayprice6 = int(daymonthclose6 * 100 / daymonthclose8)
-                dayprice5 = int(daymonthclose5 * 100 / daymonthclose8)
-                dayprice4 = int(daymonthclose4 * 100 / daymonthclose8)
-                dayprice3 = int(daymonthclose3 * 100 / daymonthclose8)
-                dayprice2 = int(daymonthclose2 * 100 / daymonthclose8)
-                dayprice1 = int(daymonthclose1 * 100 / daymonthclose8)
+#                print market, daymonthclose8, daymonthclose7, daymonthclose6, daymonthclose5, daymonthclose4, daymonthclose3, daymonthclose2, daymonthclose1, last
+#                dayprice8 = int(daymonthclose8 * 100 / daymonthclose8)
+#                dayprice7 = int(daymonthclose7 * 100 / daymonthclose8)
+#                dayprice6 = int(daymonthclose6 * 100 / daymonthclose8)
+#                dayprice5 = int(daymonthclose5 * 100 / daymonthclose8)
+#                dayprice4 = int(daymonthclose4 * 100 / daymonthclose8)
+#                dayprice3 = int(daymonthclose3 * 100 / daymonthclose8)
+#                dayprice2 = int(daymonthclose2 * 100 / daymonthclose8)
+#                dayprice1 = int(daymonthclose1 * 100 / daymonthclose8)
 
 
                     #    quarter_direction="NULL"
 
-                if (dayprice8 >= dayprice7 and dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1):
-                    quarter_direction = "DOWN"
-                else:
-                    quarter_direction = "STABLE"
+#                if (dayprice8 >= dayprice7 and dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice7 >= dayprice6 and dayprice6 >= dayprice5 and dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1) or (dayprice5 >= dayprice4 and dayprice4 >= dayprice3 and dayprice3 >= dayprice2 and dayprice2 >= dayprice1):
+#                    quarter_direction = "DOWN"
+#                else:
+#                    quarter_direction = "STABLE"
 
                     #print market, quarter_direction
 
@@ -1062,10 +1088,10 @@ def HA():
                     cursor = db.cursor()
                     #cursor.execute(
                      #   'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                    printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HA_day is:  ' + HAD_trend )
-                    cursor.execute("update markets set current_price = %s, ha_direction =%s, ha_direction_daily=%s, ha_direction_hour=%s  where market = %s and active =1",(last, HA_trend, HAD_trend, HAH_trend, market))
-                    cursor.execute('insert into ha_logs (date, market, HA_hour, HA_day, log ) values ("%s", "%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, HAD_trend, printed))
-                    #cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                    printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
+                    cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, market))
+                    cursor.execute('insert into ha_logs (date, market, HA_hour, log ) values ("%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, printed))
+                    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])

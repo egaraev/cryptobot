@@ -28,3 +28,7 @@ PID5=`ps aux | awk '/enable_market.py/ && !/awk/ { print $2 }'`
 
 kill -9 $PID5
 
+PID6=`ps aux | awk '/heikin_day.py/ && !/awk/ { print $2 }'`
+
+kill -9 $PID6
+
