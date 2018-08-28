@@ -64,6 +64,8 @@ def percent(marketname, value):
 
 
 
+
+
 def main():
     print('Starting enabling market module')
 

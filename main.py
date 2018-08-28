@@ -86,6 +86,7 @@ def tick():
                 volume_sql=int(heikin_ashi(market, 22))
 
 
+
                 if (btc_trend == "DOWN" and HA_trend == "DOWN") or (btc_trend == "DANGER") or (HAD_trend == "DOWN"):
                     profit = parameters()[3] / 1.5
                 elif (timestamp - timestamp_old > 240000) and (HA_trend!="UP" or HA_trend!="Revers-UP") and iteration==1:

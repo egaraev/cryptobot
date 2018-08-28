@@ -386,6 +386,7 @@ def HA():
 
 
 
+
                 HA_PREV_Close6 = (hourprevopen6 + hourprevhigh6 + hourprevlow6 + hourprevclose6) / 4
                 HA_PREV_Open6 = (hourprevopen6 + hourprevclose6) / 2
                 HA_PREV_Low6 = hourprevlow6
