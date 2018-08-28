@@ -16,60 +16,6 @@ currenttime = now.strftime("%Y-%m-%d %H:%M")
 
 
 
-
-
-def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-    cursor = db.cursor()
-    market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
-    r = cursor.fetchall()
-    for row in r:
-        if row[1] == marketname:
-            return True
-
-    return False
-
-def get_candles(market, tick_interval):
-    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
-    return signed_request(url)
-
-
-def signed_request(url):
-    now = time.time()
-    url += '&nonce=' + str(now)
-    signed = hmac.new(config.secret, url.encode('utf-8'), hashlib.sha512).hexdigest()
-    headers = {'apisign': signed}
-    r = requests.get(url, headers=headers)
-    return r.json()
-
-
-def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-    cursor = db.cursor()
-    market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
-    r = cursor.fetchall()
-    for row in r:
-        if row[1] == marketname:
-            return row[value]
-
-    return False
-
-def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-    cursor = db.cursor()
-    market=marketname
-    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
-    #cursor.execute("SELECT o.*, m.market FROM orders o, markets m WHERE o.active = 1 and o.market_id = m.id and m.market like '%%'" % market)
-    r = cursor.fetchall()
-    for row in r:
-        if row[1] == marketname:
-            return row[value]
-
-    return 0
-
-
 def main():
     print('Starting heikin ashi module')
 
@@ -193,6 +139,57 @@ def HA():
         except:
             continue
 
+
+def available_market_list(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return True
+
+    return False
+
+def get_candles(market, tick_interval):
+    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
+    return signed_request(url)
+
+
+def signed_request(url):
+    now = time.time()
+    url += '&nonce=' + str(now)
+    signed = hmac.new(config.secret, url.encode('utf-8'), hashlib.sha512).hexdigest()
+    headers = {'apisign': signed}
+    r = requests.get(url, headers=headers)
+    return r.json()
+
+
+def heikin_ashi(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
+
+def status_orders(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
+    #cursor.execute("SELECT o.*, m.market FROM orders o, markets m WHERE o.active = 1 and o.market_id = m.id and m.market like '%%'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return 0
 
 
 if __name__ == "__main__":
