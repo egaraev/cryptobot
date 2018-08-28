@@ -329,8 +329,6 @@ def HA():
                 market = summary['MarketName']
 
                 last = float(summary['Last'])  # last price
-                bid = float(summary['Bid'])  # sell price
-                ask = float(summary['Ask'])  # buy price
                 bought_quantity_sql = float(status_orders(market, 2))
 
 
@@ -349,10 +347,6 @@ def HA():
                 hprevhigh2 = float(hpreviouscandle2[0]['H'])
                 hprevopen2 = float(hpreviouscandle2[0]['O'])
                 hprevclose2 = float(hpreviouscandle2[0]['C'])
-
-
-
-
 
                 hourlastcandle = get_candles(market, 'thirtymin')['result'][-1:]
                 hourcurrentlow = float(hourlastcandle[0]['L'])
@@ -605,8 +599,8 @@ def HA():
                         cursor = db.cursor()
                         printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
                         cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
-                        if bought_quantity_sql>0:
-                            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        #if bought_quantity_sql>0:
+                        #    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -622,8 +616,8 @@ def HA():
                         cursor = db.cursor()
                         printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
                         cursor.execute('update orders set sell = 0 where active=1 and market =("%s")' % market)
-                        if bought_quantity_sql>0:
-                            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        #if bought_quantity_sql>0:
+                        #    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -632,7 +626,7 @@ def HA():
                         db.close()
 
 
-
+                #print market, last, HA_trend, HAH_trend
 
 
 
@@ -643,8 +637,8 @@ def HA():
 
                     printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
                     cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, market))
-                    cursor.execute('insert into ha_logs (date, market, HA_hour, log ) values ("%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, printed))
-                    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                    #cursor.execute('insert into ha_logs (date, market, HA_hour, log ) values ("%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, printed))
+                    #cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])

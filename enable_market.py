@@ -1,12 +1,7 @@
-import time
 import config
 from pybittrex.client import Client
 import MySQLdb
 import sys
-import requests
-import hashlib
-import hmac
-import numpy
 import datetime
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
@@ -15,34 +10,11 @@ c = Client(api_key=config.key, api_secret=config.secret)
 
 
 
-
-
-#def apikey():
-#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-#    cursor = db.cursor()
-#    cursor.execute("SELECT api_key FROM `parameters`")
-#    r = cursor.fetchall()
-#    for row in r:
-#        return (row[0])
-#    return 0
-
-
-#def apisecret():
-#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-#    cursor = db.cursor()
-#    cursor.execute("SELECT api_secret FROM `parameters`")
-#    r = cursor.fetchall()
-#    for row in r:
-#        return (row[0])
-#    return 0
-
-
-
 def available_market_list(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE  market = '%s'" % market)
+    cursor.execute("SELECT * FROM markets WHERE  enabled=1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -56,8 +28,7 @@ def status_orders(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
-    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
-    #cursor.execute("SELECT o.*, m.market FROM orders o, markets m WHERE o.active = 1 and o.market_id = m.id and m.market like '%%'" % market)
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and enabled=1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -83,7 +54,7 @@ def percent(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
-    cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>1) and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' ORDER BY volume DESC  limit 10")
+    cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>1) and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10")
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -102,18 +73,13 @@ def main():
 
 
 def ME():
-#    key = apikey()
-#    secret = apisecret()
-#    c = Client(api_key=key, api_secret=secret)
     market_summ = c.get_market_summaries().json()['result']
-
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
                 day_close = summary['PrevDay']  # Getting day of closing order
                 volume = int(summary['BaseVolume'])
-                #total_volume=summary['Volume']
                 bought_quantity_sql = float(status_orders(market, 2))
                 last = float(summary['Last'])  # last price
                 percent_chg = int(((last / day_close) - 1) * 100)
@@ -122,7 +88,7 @@ def ME():
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
-                        "update markets set percent_chg= %s, volume=%s  where market = %s",
+                        "update markets set percent_chg= %s, volume=%s  where enabled=1 and market = %s",
                         (percent_chg, volume, market))
                     db.commit()
                 except MySQLdb.Error, e:
@@ -133,20 +99,12 @@ def ME():
 
 
 
-                #print c.get_market_summaries().json()['result']
-                #print market, total_volume
-
-                #if percent(market, 21) >0:
-                #print market, percent(market, 21)#, bought_quantity_sql
-
-
-
                 if percent(market, 21) >0:
                     print market, "We need to enable those currencies"
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
-                        cursor.execute('update markets set active= 1 where market =("%s")' % market)
+                        cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -167,9 +125,7 @@ def ME():
                             printed = ('    We are disabling this currency  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
-                            cursor.execute('update markets set active= 0 where market =("%s")' % market)
-                            #cursor.execute(
-                            #    'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                            cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -181,8 +137,6 @@ def ME():
         except:
             continue
 
-def format_float(f):
-    return "%.7f" % f
 
 
 if __name__ == "__main__":
