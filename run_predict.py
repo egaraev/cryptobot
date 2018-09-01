@@ -1,4 +1,4 @@
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 import time
 import datetime
@@ -9,27 +9,27 @@ from keras.models import Sequential
 import urllib2
 import os
 import json
+import urllib3
 import pandas as pd
 from pybittrex.client import Client
 import MySQLdb
 import sys
+import simplejson
 
 
-c = Client(api_key=config.key, api_secret=config.secret)
+
+c = Client(api_key="", api_secret="")
 
 currtime = int(round(time.time()))
 starttime = str(currtime - 16000000) #for 1800 period 6 month
-#starttime = str(millis - 64000000) #for 7200 period 24 month
+#starttime = str(currtime - 64000000) #for 7200 period 24 month
 period = str(1800)
+
 epochs = 50
 
+market="BTC-XMR"
 
 
-for arg in sys.argv[1:]:
-    #print arg
-    market = arg
-    #if market =='BTC-QTUM' or market == 'BTC-NEO' or market == 'BTC-XLM' or market =='BTC-VTC' or market =='BTC-XRP':
-     #   pass
 
 
 
@@ -71,38 +71,63 @@ def learn():
     currenttime = now.strftime("%Y-%m-%d %H:%M")
     #print market, currtime, prediction_info(market)[1]
 
-    if (int(currtime) - int(prediction_info(market)[1])) >= 3600:
+    if (int(currtime) - int(prediction_info(market)[1])) >= 1:
         # print market, prediction_info(market)[2]
         #          ---------================DATA COLLECTION====================------------
         # connect to poloniex's API
-        if currency == 'BCC':
-            url = (
-            'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
-        # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-        else:
-            url = (
-            'https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
-        # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
+#        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
+        url =('https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName='+'BTC-' + currency + '&tickInterval=thirtyMin&_='+starttime)
 
-        # parse json returned from the API to Pandas DF
-        openUrl = urllib2.urlopen(url)
-        r = openUrl.read()
-        openUrl.close()
-        d = json.loads(r.decode())
+        #print url1
+        #print url
+
+        #url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
+
+
+########
+#        openUrl = urllib2.urlopen(url)
+#        r = openUrl.read()
+#        openUrl.close()
+#        d = json.loads(r.decode())
+#        df = pd.DataFrame(d)
+
+#        datPath = 'data/'
+#        if not os.path.exists(datPath):
+#            os.mkdir(datPath)
+
+#        original_columns = [u'date', u'high', u'low', u'open', u'close']
+#        new_columns = ['date', 'high', 'low', 'open', 'close']
+#        df = df.loc[:, original_columns]
+#        df.columns = new_columns
+#        cols = list(df)
+#        cols.insert(1, cols.pop(cols.index('open')))
+#        df = df.reindex(columns=cols)
+
+
+
+######
+
+
+
+        response = urllib2.urlopen(url)
+        data = simplejson.load(response)
+        d= data['result'][0:]
         df = pd.DataFrame(d)
+
 
         datPath = 'data/'
         if not os.path.exists(datPath):
             os.mkdir(datPath)
 
-        original_columns = [u'date', u'high', u'low', u'open', u'close']
-        new_columns = ['date', 'high', 'low', 'open', 'close']
+        original_columns = [u'O', u'H', u'L', u'C', u'T']
+        new_columns = ['open', 'high', 'low', 'close', 'date']
         df = df.loc[:, original_columns]
         df.columns = new_columns
         cols = list(df)
-        cols.insert(1, cols.pop(cols.index('open')))
+        cols.insert(0, cols.pop(cols.index('date')))
         df = df.reindex(columns=cols)
+
 
         df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
 
@@ -170,13 +195,13 @@ def learn():
         num_test_samples = len(predicted_values)
         predicted_values = np.reshape(predicted_values, (num_test_samples, 1))
 
-        # plot the results
-        # fig = plt.figure()
-        # plt.plot(y_test + shifted_value)
-        # plt.plot(predicted_values + shifted_value)
-        # plt.xlabel('Date')
-        # plt.ylabel('BTC-' + currency)
-        # plt.show()
+       ## plot the results
+        fig = plt.figure()
+        plt.plot(y_test + shifted_value)
+        plt.plot(predicted_values + shifted_value)
+        plt.xlabel('Date')
+        plt.ylabel('BTC-' + currency)
+        plt.show()
 
 
         # save the result into txt file
