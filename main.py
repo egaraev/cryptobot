@@ -93,7 +93,7 @@ def tick():
                 sell_quantity = bought_quantity
                 bought_price_sql = float(status_orders(market, 3))
                 bought_quantity_sql = float(status_orders(market, 2))
-                sell_signal = status_orders(market, 18)
+                sell_signal = status_orders(market, 23)
                 sell_quantity_sql = bought_quantity_sql
                 active = active_orders(market)
                 iteration = int(iteration_orders(market))
@@ -575,6 +575,7 @@ def tick():
                         current_balance = balance_res['result']['Available']
 
 
+
                         # If we have opened order on bitrex
                         if has_open_order(market, 'LIMIT_BUY'):
                             # print('Order already opened to buy  ' + market)
@@ -665,6 +666,7 @@ def tick():
                         elif bought_quantity_sql > 0:  # Need to add bought_quantity without sql
                             ##Check if we have completelly green candle
 
+                            print market,  sell_signal, active, ai_time_second
                             #print ('  28 Prod - Trying to Sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str((ask)) + '  and get  ' + str(format_float(serf * BTC_price)) + ' USD')
 
                             if (currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5):

@@ -1,0 +1,6 @@
+* * * * * /root/PycharmProjects/cryptobot/start.sh >> /root/crontab.out
+0 * * * * /root/PycharmProjects/cryptobot/restart.sh >/dev/null 2>&1
+0 0 * * * yes | cp /var/www/cgi-bin/view.py /root/PycharmProjects/cryptobot/  >/dev/null 2>&1
+*/10  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/enable_market.py >> /root/crontab.out
+*/5  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator.py >> /root/crontab.out
+*/5  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/config_sync.py >> /root/crontab.out
