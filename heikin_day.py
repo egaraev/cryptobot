@@ -8,7 +8,8 @@ import hashlib
 import hmac
 import numpy
 import datetime
-c = Client(api_key=config.key, api_secret=config.secret)
+#c = Client(api_key=config.key, api_secret=config.secret)
+c=Client(api_key="", api_secret="")
 currtime = int(round(time.time()))
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
@@ -144,7 +145,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
+    cursor.execute("SELECT * FROM `markets` where `percent_chg`>1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

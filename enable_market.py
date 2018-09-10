@@ -5,8 +5,8 @@ import sys
 import datetime
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
-c = Client(api_key=config.key, api_secret=config.secret)
-
+#c = Client(api_key=config.key, api_secret=config.secret)
+c=Client(api_key="", api_secret="")
 
 
 def main():
@@ -66,9 +66,6 @@ def ME():
 
 
                 if percent(market, 21)==0 and bought_quantity_sql==0 :
-                    if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY'):
-                        pass
-                    else:
                         #print market, "We are disabling this currency"
                         try:
                             printed = ('    We are disabling this currency  ' + market)
@@ -143,7 +140,7 @@ def percent(marketname, value):
     market=marketname
     min_percent_chg = float(parameters()[7])
     order_devider = parameters()[6]
-    cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>'%s') and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10" % min_percent_chg)
+    cursor.execute("SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

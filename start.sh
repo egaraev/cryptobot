@@ -58,7 +58,6 @@ else
     echo there is no such "$SERVICE5 service, starting"
     cd /root/PycharmProjects/cryptobot
     /usr/bin/python2.7 enable_market.py
-#/usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_ashi.py
 
 fi
 
@@ -67,12 +66,53 @@ SERVICE6='heikin_day.py'
 
 if ps ax | grep -v grep | grep $SERVICE6 > /dev/null
 then
-    echo "$SERVICE5 service running "
+    echo "$SERVICE6 service running "
 else
     echo there is no such "$SERVICE6 service, starting"
     cd /root/PycharmProjects/cryptobot
     /usr/bin/python2.7 heikin_day.py
-#/usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_day.py
 
 fi
+
+
+SERVICE7='chart_creator.py'
+
+if ps ax | grep -v grep | grep $SERVICE7 > /dev/null
+then
+    echo "$SERVICE7 service running "
+else
+    echo there is no such "$SERVICE7 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 chart_creator.py
+
+fi
+
+
+
+SERVICE8='check_market_profits.py'
+
+if ps ax | grep -v grep | grep $SERVICE8 > /dev/null
+then
+    echo "$SERVICE8 service running "
+else
+    echo there is no such "$SERVICE8 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 check_market_profits.py
+
+fi
+
+
+SERVICE9='chart_creator2.py'
+
+if ps ax | grep -v grep | grep $SERVICE9 > /dev/null
+then
+    echo "$SERVICE9 service running "
+else
+    echo there is no such "$SERVICE9 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 chart_creator2.py
+
+fi
+
+
 

@@ -15,7 +15,8 @@ import MySQLdb
 import sys
 
 
-c = Client(api_key=config.key, api_secret=config.secret)
+#c = Client(api_key=config.key, api_secret=config.secret)
+c=Client(api_key="", api_secret="")
 
 currtime = int(round(time.time()))
 starttime = str(currtime - 16000000) #for 1800 period 6 month
