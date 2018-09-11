@@ -158,8 +158,8 @@ class Database:
 
         try:
             cursor.execute(
-                "UPDATE markets set market = %s, enabled = %s, ai_active =%s, active =%s  where id = %s",
-                (data['market'], data['enabled'], data['ai_active'], data['active'], id,))
+                "UPDATE markets set market = %s, enabled = %s, slow_market = %s, ai_active =%s, active =%s  where id = %s",
+                (data['market'], data['enabled'], data['slow_market'], data['ai_active'], data['active'], id,))
             con.commit()
 
             return True
@@ -208,7 +208,7 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("INSERT INTO markets(market,enabled,ai_active, active) VALUES (%s,%s,%s,%s)", (data['market'], data['enabled'], data['ai_active'], data['active'],))
+            cursor.execute("INSERT INTO markets(market,enabled, slow_market, ai_active, active) VALUES (%s,%s,%s,%s,%s)", (data['market'], data['enabled'], data['slow_market'], data['ai_active'], data['active'],))
             con.commit()
 
             return True

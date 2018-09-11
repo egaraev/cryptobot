@@ -49,17 +49,17 @@ def ME():
                     db.close()
 
 
+                #print market, percent(market, 21)
 
-
-                if percent(market, 21) ==0 and (bought_quantity_sql>0  or get_balance_from_market(market)['result']['Available'] >0 or get_balance_from_market(market)['result']['Balance'] >0):
+                if (percent(market, 21) ==0 and (bought_quantity_sql>0.0)  and (get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0)):
                     print market, "We have open order, but we need to disable this currency"
 
 
-                if percent(market, 21)==0 and bought_quantity_sql==0:
+                if percent(market, 21)==0 and bought_quantity_sql==0.0:
                     if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY'):
                         pass
                     else:
-                        #print market, "We are disabling this currency"
+                        print market, "We are disabling this currency"
                         try:
                             printed = ('    We are disabling this currency  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -73,7 +73,7 @@ def ME():
                             db.close()
 
 
-                if percent(market, 21) > 0:# and market_count() <=max_markets:
+                if percent(market, 21) > 0  and market_count() <=max_markets:
                     print market, "We need to enable those currencies"
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -182,7 +182,9 @@ def percent(marketname, value):
     market=marketname
     min_percent_chg = float(parameters()[7])
     order_devider = parameters()[6]
-    cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>'%s') and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10" % min_percent_chg)
+    #cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>'%s') and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10" % min_percent_chg)
+    cursor.execute(
+        "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

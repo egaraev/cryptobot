@@ -330,6 +330,17 @@ def HA():
                 hourprevclose6 = float(hourpreviouscandle6[0]['C'])
 
 
+                lastcandlesize = hourcurrenthigh-hourcurrentlow
+                previouscandlesize = hourprevhigh-hourprevlow
+                previouscandlesize2 = hourprevhigh2-hourprevlow2
+                previouscandlesize3 = hourprevhigh3-hourprevlow3
+                previouscandlesize4 = hourprevhigh4-hourprevlow4
+                previouscandlesize5 = hourprevhigh5-hourprevlow5
+                previouscandlesize6 =  hourprevhigh6- hourprevlow6
+
+
+
+
 
 
                 HA_PREV_Close6 = (hourprevopen6 + hourprevhigh6 + hourprevlow6 + hourprevclose6) / 4
@@ -592,6 +603,28 @@ def HA():
                 finally:
                     db.close()
 
+
+
+                averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
+                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
+
+
+                if (lastcandlesize/averagecandlesize>3 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>3 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>3 and hourprevclose2>hourprevopen2):
+                    print "We have peak situation, lets wait"
+                    printed1=("We have peak situation, lets wait")
+
+
+
+                try:
+                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
 
 
 

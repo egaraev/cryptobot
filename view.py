@@ -101,6 +101,12 @@ img_tag = '<img src="data:image/png;base64,%s"  height="350" width="800">' % dat
 
 print(img_tag)
 
+
+
+data_uri = open('crypto_results2.png', 'rb').read().encode('base64').replace('\n', '')
+img_tag2 = '<img src="data:image/png;base64,%s"  height="350" width="800">' % data_uri
+
+print(img_tag2)
 print """<br>"""
 
 db.query("SELECT * FROM markets where active = 1")
