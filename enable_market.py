@@ -28,10 +28,24 @@ def ME():
                 volume = int(summary['BaseVolume'])
                 bought_quantity_sql = float(status_orders(market, 2))
                 last = float(summary['Last'])  # last price
-                percent_chg = int(((last / day_close) - 1) * 100)
+                percent_chg = float(((last / day_close) - 1) * 100)
+                percent_sql = float(heikin_ashi(market, 21))
+                last = float(summary['Last'])  #last price
+                bid = float(summary['Bid'])    #sell price
+                ask = float(summary['Ask'])    #buy price
+
+                spread = float(((ask / bid) - 1) * 100)
 
 
-                #print market, last
+
+                if percent_chg>percent_sql:
+                    percent_grow=1
+                elif percent_chg<percent_sql:
+                    percent_grow=-1
+                else:
+                    percent_grow=0
+
+                print market, percent_chg, percent_sql, percent_grow
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -48,12 +62,12 @@ def ME():
 
 
 
-                if percent(market, 21) >0:
+                if spread<0.5 and (percent_grow==1 or percent_grow==0) :
                     print market, "We need to enable those currencies"
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
-                        cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
+                        cursor.execute('update markets set active= 1 where market =("%s")' % market)
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -61,17 +75,17 @@ def ME():
                     finally:
                         db.close()
 
-                if percent(market, 21) ==0 and bought_quantity_sql>0:
+                if spread>0.5 and bought_quantity_sql>0 and percent_grow==-1:
                     print market, "We have open order, but we need to disable this currency"
 
 
-                if percent(market, 21)==0 and bought_quantity_sql==0 :
+                if spread>0.5 and bought_quantity_sql==0 and percent_grow==-1:
                         #print market, "We are disabling this currency"
                         try:
                             printed = ('    We are disabling this currency  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
-                            cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
+                            cursor.execute('update markets set active= 0 where  market =("%s")' % market)
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -134,13 +148,29 @@ def has_open_order(market, order_type):
 
 
 
+def heikin_ashi(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE enabled=1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
+
+
+
+
+
 def percent(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     min_percent_chg = float(parameters()[7])
     order_devider = parameters()[6]
-    cursor.execute("SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
+    cursor.execute("SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN'  and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

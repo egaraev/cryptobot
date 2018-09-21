@@ -125,7 +125,7 @@ def HA():
                     HAD_trend = "STABLE"
 
 
-
+                print market, HAD_trend
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -145,7 +145,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>1 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM `markets` where `percent_chg`>0  and enabled=1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -171,7 +171,9 @@ def heikin_ashi(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
+    #cursor.execute("SELECT * FROM `markets` where `percent_chg`>(SELECT AVG(`percent_chg`)/1.5 FROM `markets` where `percent_chg`>1) and market = '%s'" % market)
+    cursor.execute(
+        "SELECT * FROM `markets` where `percent_chg`>0  and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

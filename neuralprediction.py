@@ -73,7 +73,7 @@ def learn():
             market = summary['MarketName']
             currency= market.split('-')[1]
             currtime = int(round(time.time()))
-            current_price = c.get_ticker('BTC-'+currency).json()['result']['Last']
+            current_price = c.get_ticker('USD-'+currency).json()['result']['Last']
             now = datetime.datetime.now()
             currenttime = now.strftime("%Y-%m-%d %H:%M")
             #print market, currtime, prediction_info(market)[1]
@@ -113,7 +113,7 @@ def learn():
                     # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
                     #else:
                         url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
-
+                        print url
 
                     # parse json returned from the API to Pandas DF
                     openUrl = urllib2.urlopen(url)
