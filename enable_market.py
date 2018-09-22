@@ -30,8 +30,18 @@ def ME():
                 volume = int(summary['BaseVolume'])
                 bought_quantity_sql = float(status_orders(market, 2))
                 last = float(summary['Last'])  # last price
-                percent_chg = int(((last / day_close) - 1) * 100)
+                bid = float(summary['Bid'])    #sell price
+                ask = float(summary['Ask'])    #buy price
+                percent_chg = float(((last / day_close) - 1) * 100)
+                percent_sql = float(heikin_ashi(market, 21))
+                spread = float(((ask / bid) - 1) * 100)
 
+                if percent_chg>percent_sql:
+                    percent_grow=1
+                elif percent_chg<percent_sql:
+                    percent_grow=-1
+                else:
+                    percent_grow=0
 
                 #print market, last
 
@@ -51,12 +61,12 @@ def ME():
 
                 #print market, percent(market, 21)
 
-                if (percent(market, 21) ==0 and (bought_quantity_sql>0.0)  and (get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0)):
+                if (spread>0.4 and bought_quantity_sql>0 and percent_grow==-1 and open_buy(market)==2  and ((get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0))):
                     print market, "We have open order, but we need to disable this currency"
 
 
-                if percent(market, 21)==0 and bought_quantity_sql==0.0:
-                    if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY'):
+                if spread>0.4 and bought_quantity_sql==0 and percent_grow==-1:
+                    if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY') or open_buy(market)==2:
                         pass
                     else:
                         print market, "We are disabling this currency"
@@ -73,7 +83,7 @@ def ME():
                             db.close()
 
 
-                if percent(market, 21) > 0  and market_count() <=max_markets:
+                if spread<0.4 and (percent_grow==1 or percent_grow==0)  and market_count() <=max_markets:
                     print market, "We need to enable those currencies"
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -102,6 +112,19 @@ def available_market_list(marketname):
             return True
 
     return False
+
+
+def open_buy(marketname):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT active FROM orders WHERE active =2 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
+    return 0
+
+
 
 
 def get_balance_from_market(market_type):
@@ -148,8 +171,6 @@ def market_count():
 
 
 
-
-
 def status_orders(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
@@ -183,8 +204,10 @@ def percent(marketname, value):
     min_percent_chg = float(parameters()[7])
     order_devider = parameters()[6]
     #cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>'%s') and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10" % min_percent_chg)
+#    cursor.execute(
+#        "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     cursor.execute(
-        "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
+        "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN'  and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -192,7 +215,17 @@ def percent(marketname, value):
     return 0
 
 
+def heikin_ashi(marketname, value):
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE enabled=1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
 
+    return False
 
 
 

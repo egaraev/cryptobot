@@ -73,8 +73,8 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("UPDATE parameters set buy_size = %s, buy_timeout = %s, sell_timeout =%s, profit =%s, force_stop =%s, maxorders =%s, max_markets =%s, min_percent_chg =%s, max_percent_chg =%s, stop_bot =%s, api_key =%s, api_secret=%s  where id = %s",
-                           (data['buy_size'], data['buy_timeout'], data['sell_timeout'], data['profit'], data['force_stop'], data['maxorders'], data['max_markets'], data['min_percent_chg'], data['max_percent_chg'], data['stop_bot'], data['api_key'], data['api_secret'], id,))
+            cursor.execute("UPDATE parameters set buy_size = %s, buy_timeout = %s, sell_timeout =%s, profit =%s, force_stop =%s, maxorders =%s, max_markets =%s, min_percent_chg =%s, max_percent_chg =%s, debug=%s, stop_bot =%s, api_key =%s, api_secret=%s  where id = %s",
+                           (data['buy_size'], data['buy_timeout'], data['sell_timeout'], data['profit'], data['force_stop'], data['maxorders'], data['max_markets'], data['min_percent_chg'], data['max_percent_chg'], data['debug_mode'], data['stop_bot'], data['api_key'], data['api_secret'], id,))
             con.commit()
 
             return True
