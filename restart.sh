@@ -34,3 +34,7 @@ kill -9 $PID8
 
 PID9=`ps aux | awk '/check_market_profits.py/ && !/awk/ { print $2 }'`
 kill -9 $PID9
+
+PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
+kill -9 $PID10
+

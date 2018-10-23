@@ -115,4 +115,15 @@ else
 fi
 
 
+SERVICE10='btc_ha.py'
+
+if ps ax | grep -v grep | grep $SERVICE10 > /dev/null
+then
+    echo "$SERVICE10 service running "
+else
+    echo there is no such "$SERVICE10 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 btc_ha.py
+
+fi
 

@@ -73,8 +73,8 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("UPDATE parameters set buy_size = %s, buy_size2 = %s, sell_size =%s, profit =%s, stop_loss =%s, maxiteration =%s, order_multiplier =%s, min_percent_chg =%s, max_percent_chg =%s, last_orders_quantity =%s, stop_bot =%s  where id = %s",
-                           (data['buy_size'], data['buy_size2'], data['sell_size'], data['profit'], data['stop_loss'], data['maxiteration'], data['order_multiplier'], data['min_percent_chg'], data['max_percent_chg'], data['last_orders_quantity'], data['stop_bot'], id,))
+            cursor.execute("UPDATE parameters set buy_size = %s, buy_timeout = %s, sell_timeout =%s, profit =%s, force_stop =%s, maxorders =%s, max_markets =%s, min_percent_chg =%s, max_percent_chg =%s, debug=%s, stop_bot =%s, api_key =%s, api_secret=%s  where id = %s",
+                           (data['buy_size'], data['buy_timeout'], data['sell_timeout'], data['profit'], data['force_stop'], data['maxorders'], data['max_markets'], data['min_percent_chg'], data['max_percent_chg'], data['debug_mode'], data['stop_bot'], data['api_key'], data['api_secret'], id,))
             con.commit()
 
             return True
@@ -158,8 +158,8 @@ class Database:
 
         try:
             cursor.execute(
-                "UPDATE markets set market = %s, buy_orders = %s, sell_orders =%s, active =%s  where id = %s",
-                (data['market'], data['buy_orders'], data['sell_orders'], data['active'], id,))
+                "UPDATE markets set market = %s, enabled = %s, slow_market = %s, ai_active =%s, active =%s  where id = %s",
+                (data['market'], data['enabled'], data['slow_market'], data['ai_active'], data['active'], id,))
             con.commit()
 
             return True
@@ -208,7 +208,7 @@ class Database:
         cursor = con.cursor()
 
         try:
-            cursor.execute("INSERT INTO markets(market,buy_orders,sell_orders, active) VALUES (%s,%s,%s,%s)", (data['market'], data['buy_orders'], data['sell_orders'], data['active'],))
+            cursor.execute("INSERT INTO markets(market,enabled, slow_market, ai_active, active) VALUES (%s,%s,%s,%s,%s)", (data['market'], data['enabled'], data['slow_market'], data['ai_active'], data['active'],))
             con.commit()
 
             return True

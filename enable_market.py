@@ -3,11 +3,12 @@ from pybittrex.client import Client
 import MySQLdb
 import sys
 import datetime
+import time
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 #c = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key="", api_secret="")
-
+currtime = int(time.time())
 
 def main():
     print('Starting enabling market module')
@@ -33,7 +34,9 @@ def ME():
                 last = float(summary['Last'])  #last price
                 bid = float(summary['Bid'])    #sell price
                 ask = float(summary['Ask'])    #buy price
-
+                max_markets = parameters()[6]
+                HAD_trend = heikin_ashi(market, 18)
+                ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
 
 
@@ -45,7 +48,7 @@ def ME():
                 else:
                     percent_grow=0
 
-                print market, percent_chg, percent_sql, percent_grow
+                #print market, percent_chg, percent_sql, percent_grow
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -62,25 +65,14 @@ def ME():
 
 
 
-                if spread<0.5 and (percent_grow==1 or percent_grow==0) :
-                    print market, "We need to enable those currencies"
-                    try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update markets set active= 1 where market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+
 
                 if spread>0.5 and bought_quantity_sql>0 and percent_grow==-1:
                     print market, "We have open order, but we need to disable this currency"
 
 
-                if spread>0.5 and bought_quantity_sql==0 and percent_grow==-1:
-                        #print market, "We are disabling this currency"
+                if (spread>0.5 and bought_quantity_sql==0 and percent_grow==-1) or ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000):
+                        print market, "We are disabling this currency"
                         try:
                             printed = ('    We are disabling this currency  ' + market)
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -92,6 +84,19 @@ def ME():
                             sys.exit(1)
                         finally:
                             db.close()
+
+                if spread<0.5 and (percent_grow==1 or percent_grow==0) and market_count() <=max_markets :
+                    print market, "We need to enable those currencies"
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('update markets set active= 1 where market =("%s")' % market)
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
         except:
@@ -178,6 +183,15 @@ def percent(marketname, value):
     return 0
 
 
+def market_count():
+    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    #market=marketname
+    cursor.execute("SELECT COUNT(*) FROM markets where enabled=1 and active=1")
+    r = cursor.fetchall()
+    for row in r:
+        return row[0]
+    return 0
 
 
 

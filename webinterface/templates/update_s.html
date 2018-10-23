@@ -42,23 +42,23 @@
                   <label class="col-sm-2 control-label">Buy Size</label>
 
                   <div class="col-sm-10">
-                    <input name="buy_size" value="{{ row[1] }}" type="text" class="form-control" placeholder="Buy Size" autocomplete="off" required>
+                    <input name="buy_size" value="{{ row[1] }}" type="text" class="form-control" placeholder="buy size" autocomplete="off" required>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Buy Size Fibonacci</label>
+                  <label class="col-sm-2 control-label">Buy Timeout</label>
 
                   <div class="col-sm-10">
-                    <input name="buy_size2" value="{{ row[2] }}" type="text" class="form-control" placeholder="Buy Size Fibonacci" autocomplete="off" required>
+                    <input name="buy_timeout" value="{{ row[2] }}" type="text" class="form-control" placeholder="buy timeout" autocomplete="off" required>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Sell size</label>
+                  <label class="col-sm-2 control-label">Sell Timeout</label>
 
                   <div class="col-sm-10">
-                    <input name="sell_size" value="{{ row[3] }}" type="text" class="form-control" placeholder="Sell size" autocomplete="off" required>
+                    <input name="sell_timeout" value="{{ row[3] }}" type="text" class="form-control" placeholder="sell timeout" autocomplete="off" required>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@
                   <label class="col-sm-2 control-label">Profit</label>
 
                   <div class="col-sm-10">
-                    <input name="profit" value="{{ row[4] }}" type="text" class="form-control" placeholder="Profit" autocomplete="off" required>
+                    <input name="profit" value="{{ row[4] }}" type="text" class="form-control" placeholder="profit percent" autocomplete="off" required>
                   </div>
                 </div>
 
@@ -76,24 +76,25 @@
                   <label class="col-sm-2 control-label">Stop Bot FORCE</label>
 
                   <div class="col-sm-10">
-                    <input name="stop_loss" value="{{ row[5] }}" type="text" class="form-control" placeholder="Stop Loss" autocomplete="off" required>
+                    <input name="force_stop" value="{{ row[5] }}" type="text" class="form-control" placeholder="force stop" autocomplete="off" required>
                   </div>
                 </div>
 
 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Max iteration</label>
+                  <label class="col-sm-2 control-label">Max open orders</label>
 
                   <div class="col-sm-10">
-                    <input name="maxiteration" value="{{ row[6] }}" type="text" class="form-control" placeholder="Max iteration" autocomplete="off" required>
+                    <input name="maxorders" value="{{ row[6] }}" type="text" class="form-control" placeholder="max orders" autocomplete="off" required>
                   </div>
                 </div>
 
+
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Order multiplier</label>
+                  <label class="col-sm-2 control-label">Max active markets</label>
 
                   <div class="col-sm-10">
-                    <input name="order_multiplier" value="{{ row[7] }}" type="text" class="form-control" placeholder="Order multiplier" autocomplete="off" required>
+                    <input name="max_markets" value="{{ row[7] }}" type="text" class="form-control" placeholder="max active markets" autocomplete="off" required>
                   </div>
                 </div>
 
@@ -102,7 +103,7 @@
                   <label class="col-sm-2 control-label">Min % market change</label>
 
                   <div class="col-sm-10">
-                    <input name="min_percent_chg" value="{{ row[8] }}" type="text" class="form-control" placeholder="Min % market change" autocomplete="off" required>
+                    <input name="min_percent_chg" value="{{ row[8] }}" type="text" class="form-control" placeholder="min percent chg" autocomplete="off" required>
                   </div>
                 </div>
 
@@ -111,28 +112,42 @@
                   <label class="col-sm-2 control-label">Max % market change</label>
 
                   <div class="col-sm-10">
-                    <input name="max_percent_chg" value="{{ row[9] }}" type="text" class="form-control" placeholder="Max % market change" autocomplete="off" required>
+                    <input name="max_percent_chg" value="{{ row[9] }}" type="text" class="form-control" placeholder="max percent chg" autocomplete="off" required>
                   </div>
                 </div>
 
-
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Last orders quantity</label>
+                  <div class="form-group">
+                  <label class="col-sm-2 control-label">Debug mode</label>
 
                   <div class="col-sm-10">
-                    <input name="last_orders_quantity" value="{{ row[11] }}" type="text" class="form-control" placeholder="Last orders quantity" autocomplete="off" required>
+                    <input name="debug_mode" value="{{ row[11] }}" type="text" class="form-control" placeholder="debug mode" autocomplete="off" required>
                   </div>
                 </div>
-
 
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Stop bot</label>
 
                   <div class="col-sm-10">
-                    <input name="stop_bot" value="{{ row[12] }}" type="text" class="form-control" placeholder="Stop bot" autocomplete="off" required>
+                    <input name="stop_bot" value="{{ row[12] }}" type="text" class="form-control" placeholder="stop bot" autocomplete="off" required>
                   </div>
                 </div>
 
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">API Key</label>
+
+                  <div class="col-sm-10">
+                    <input name="api_key" value="{{ row[25] }}" type="text" class="form-control" placeholder="api key" autocomplete="off" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">API Secret</label>
+
+                  <div class="col-sm-10">
+                    <input name="api_secret" value="{{ row[26] }}" type="text" class="form-control" placeholder="api secret" autocomplete="off" required>
+                  </div>
+                </div>
 
               <div class="box-footer">
                 <a href="/settings"><button type="button" class="btn btn-default">Cancel</button></a>

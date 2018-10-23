@@ -28,243 +28,6 @@ def main():
 
 def HA():
 
-    BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
-    currtime = int(time.time())
-
-    btclastcandle = get_candles('USDT-BTC', 'day')['result'][-1:]
-    btccurrentlow = float(btclastcandle[0]['L'])
-    btccurrentopen = float(btclastcandle[0]['O'])
-    btccurrentclose = float(btclastcandle[0]['C'])
-    btccurrenthigh = float(btclastcandle[0]['H'])
-    btcprevcandle = get_candles('USDT-BTC', 'day')['result'][-2:]
-    btcprevlow = float(btcprevcandle[0]['L'])
-    btcprevopen = float(btcprevcandle[0]['O'])
-    btcprevclose = float(btcprevcandle[0]['C'])
-    btcprevhigh = float(btcprevcandle[0]['H'])
-    btcprevcandle2 = get_candles('USDT-BTC', 'day')['result'][-3:]
-    btcprevlow2 = float(btcprevcandle2[0]['L'])
-    btcprevopen2 = float(btcprevcandle2[0]['O'])
-    btcprevclose2 = float(btcprevcandle2[0]['C'])
-    btcprevhigh2 = float(btcprevcandle2[0]['H'])
-    btcprevcandle3 = get_candles('USDT-BTC', 'day')['result'][-4:]
-    btcprevlow3 = float(btcprevcandle3[0]['L'])
-    btcprevopen3 = float(btcprevcandle3[0]['O'])
-    btcprevclose3 = float(btcprevcandle3[0]['C'])
-    btcprevhigh3 = float(btcprevcandle3[0]['H'])
-
-
-
-
-
-
-
-    btclastcandlehour = get_candles('USDT-BTC', 'hour')['result'][-1:]
-    btccurrentlowhour = float(btclastcandlehour[0]['L'])
-    btccurrentopenhour = float(btclastcandlehour[0]['O'])
-    btccurrentclosehour = float(btclastcandlehour[0]['C'])
-    btccurrenthighhour = float(btclastcandlehour[0]['H'])
-    btcprevcandlehour = get_candles('USDT-BTC', 'hour')['result'][-2:]
-    btcprevlowhour = float(btcprevcandlehour[0]['L'])
-    btcprevopenhour = float(btcprevcandlehour[0]['O'])
-    btcprevclosehour = float(btcprevcandlehour[0]['C'])
-    btcprevhighhour = float(btcprevcandlehour[0]['H'])
-    btcprevcandlehour2 = get_candles('USDT-BTC', 'hour')['result'][-3:]
-    btcprevlowhour2 = float(btcprevcandlehour2[0]['L'])
-    btcprevopenhour2 = float(btcprevcandlehour2[0]['O'])
-    btcprevclosehour2 = float(btcprevcandlehour2[0]['C'])
-    btcprevhighhour2 = float(btcprevcandlehour2[0]['H'])
-
-
-
-
-
-    BTC_HA_PREV_Close3 = (btcprevopen3 + btcprevhigh3 + btcprevlow3 + btcprevclose3) / 4
-    BTC_HA_PREV_Open3 = (btcprevopen3 + btcprevclose3) / 2
-    BTC_HA_PREV_Low3 = btcprevlow3
-    BTC_HA_PREV_High3 = btcprevhigh3
-
-    BTC_HA_PREV_Close2 = (btcprevopen2 + btcprevhigh2 + btcprevlow2 + btcprevclose2) / 4
-    BTC_HA_PREV_Open2 = (BTC_HA_PREV_Open3 + BTC_HA_PREV_Close3) / 2
-    elements2 = numpy.array([btcprevhigh2, btcprevlow2, BTC_HA_PREV_Open2, BTC_HA_PREV_Close2])
-    BTC_HA_PREV_Low2 = elements2.min(0)
-    BTC_HA_PREV_High2 = elements2.max(0)
-
-
-    BTC_HA_PREV_Close = (btcprevopen + btcprevhigh + btcprevlow + btcprevclose) / 4
-    BTC_HA_PREV_Open = (BTC_HA_PREV_Open2 + BTC_HA_PREV_Close2) / 2
-    elements0 = numpy.array([btcprevhigh, btcprevlow, BTC_HA_PREV_Open, BTC_HA_PREV_Close])
-    BTC_HA_PREV_Low = elements0.min(0)
-    BTC_HA_PREV_High = elements0.max(0)
-
-    BTC_HA_Close = (btccurrentopen + btccurrenthigh + btccurrentlow + btccurrentclose) / 4
-    BTC_HA_Open = (BTC_HA_PREV_Open + BTC_HA_PREV_Close) / 2
-    elements1 = numpy.array([btccurrenthigh, btccurrentlow, BTC_HA_Open, BTC_HA_Close])
-    BTC_HA_Low = elements1.min(0)
-    BTC_HA_High = elements1.max(0)
-
-    try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-        cursor = db.cursor()
-        cursor.execute(
-            "update parameters set btc_ha_close_day = %s, btc_ha_open_day =%s, btc_ha_low_day =%s, btc_ha_high_day =%s, btc_ha_time_day =%s  where id = %s",
-            (BTC_HA_Close, BTC_HA_Open, BTC_HA_Low, BTC_HA_High, currtime, 1))
-        db.commit()
-    except MySQLdb.Error, e:
-        print "Error %d: %s" % (e.args[0], e.args[1])
-        sys.exit(1)
-    finally:
-        db.close()
-
-    BTC_HA_PREV_Close_hour2 = (btcprevopenhour2 + btcprevhighhour2 + btcprevlowhour2 + btcprevclosehour2) / 4
-    BTC_HA_PREV_Open_hour2 = (btcprevopenhour2 + btcprevclosehour2) / 2
-    BTC_HA_PREV_Low_hour2 = btcprevlowhour2
-    BTC_HA_PREV_High_hour2 = btcprevhighhour2
-
-    BTC_HA_PREV_Close_hour = (btcprevopenhour + btcprevhighhour + btcprevlowhour + btcprevclosehour) / 4
-    BTC_HA_PREV_Open_hour = (BTC_HA_PREV_Open_hour2 + BTC_HA_PREV_Close_hour2) / 2
-    elements3 = numpy.array([btccurrenthighhour, btccurrentlowhour, BTC_HA_PREV_Open_hour, BTC_HA_PREV_Close_hour])
-    BTC_HA_PREV_High_hour = elements3.max(0)
-    BTC_HA_PREV_Low_hour = elements3.min(0)
-
-    BTC_HA_Close_hour = (btccurrentopenhour + btccurrenthighhour + btccurrentlowhour + btccurrentclosehour) / 4
-    BTC_HA_Open_hour = (BTC_HA_PREV_Open_hour + BTC_HA_PREV_Close_hour) / 2
-    elements2 = numpy.array([btccurrenthighhour, btccurrentlowhour, BTC_HA_Open_hour, BTC_HA_Close_hour])
-    BTC_HA_High_hour = elements2.max(0)
-    BTC_HA_Low_hour = elements2.min(0)
-
-    try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-        cursor = db.cursor()
-        cursor.execute(
-            "update parameters set btc_ha_close_hour = %s, btc_ha_open_hour =%s, btc_ha_low_hour =%s, btc_ha_high_hour =%s, btc_ha_time_hour =%s  where id = %s",
-            (BTC_HA_Close_hour, BTC_HA_Open_hour, BTC_HA_Low_hour, BTC_HA_High_hour, currtime, 1))
-        db.commit()
-    except MySQLdb.Error, e:
-        print "Error %d: %s" % (e.args[0], e.args[1])
-        sys.exit(1)
-    finally:
-        db.close()
-
-    btc_trend = "NONE"
-    btc_trend_hour = "NONE"
-
-
-
-    direction_down0 = (BTC_HA_Close < BTC_HA_Open)
-    direction_down1 = (BTC_HA_PREV_Close < BTC_HA_PREV_Open)
-    direction_down2 = (BTC_HA_PREV_Close2 < BTC_HA_PREV_Open2)
-    direction_down_long_0 = (BTC_HA_Open == BTC_HA_High and BTC_HA_Close < BTC_HA_Open)
-    direction_down_long_1 = (BTC_HA_PREV_Open == BTC_HA_PREV_High and BTC_HA_PREV_Close < BTC_HA_PREV_Open)
-    direction_down_longer = (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(
-        BTC_HA_PREV_Close - BTC_HA_PREV_Open) and direction_down0 and direction_down1)
-    direction_spin0 = (BTC_HA_Open == BTC_HA_Close)
-    direction_spin1 = (BTC_HA_PREV_Open == BTC_HA_PREV_Close)
-
-    hour_direction_down0 = (BTC_HA_Close_hour < BTC_HA_Open_hour)
-    hour_direction_down1 = (BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)
-    hour_direction_down_long_0 = (BTC_HA_Open_hour == BTC_HA_High_hour and BTC_HA_Close_hour < BTC_HA_Open_hour)
-    hour_direction_down_long_1 = (
-    BTC_HA_PREV_Open_hour == BTC_HA_PREV_High_hour and BTC_HA_PREV_Close_hour < BTC_HA_PREV_Open_hour)
-    hour_direction_down_longer = (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(
-        BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and hour_direction_down0 and hour_direction_down1)
-    hour_direction_spin0 = (BTC_HA_Open_hour == BTC_HA_Close_hour)
-    hour_direction_spin1 = (BTC_HA_PREV_Open_hour == BTC_HA_PREV_Close_hour)
-
-    direction_down_short0 = ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Open - BTC_HA_Close) >= 6) and (
-    BTC_HA_Open - BTC_HA_Close != 0)
-    direction_down_short1 = ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Open - BTC_HA_PREV_Close) >= 6) and (
-    BTC_HA_PREV_Open - BTC_HA_PREV_Close != 0)
-    direction_up_short0 = ((BTC_HA_High - BTC_HA_Low) / (BTC_HA_Close - BTC_HA_Open) >= 6) and (
-    BTC_HA_Close - BTC_HA_Open != 0)
-    direction_up_short1 = ((BTC_HA_PREV_High - BTC_HA_PREV_Low) / (BTC_HA_PREV_Close - BTC_HA_PREV_Open) >= 6) and (
-    BTC_HA_PREV_Close - BTC_HA_PREV_Open != 0)
-
-    hour_direction_down_short0 = ((BTC_HA_High_hour - BTC_HA_Low_hour) / (
-    BTC_HA_Open_hour - BTC_HA_Close_hour) >= 6) and (BTC_HA_Open_hour - BTC_HA_Close_hour != 0)
-    hour_direction_down_short1 = ((BTC_HA_PREV_High_hour - BTC_HA_PREV_Low_hour) / (
-    BTC_HA_PREV_Open_hour - BTC_HA_PREV_Close_hour) >= 6) and (BTC_HA_PREV_Open_hour - BTC_HA_PREV_Close_hour != 0)
-    hour_direction_up_short0 = (
-                               (BTC_HA_High_hour - BTC_HA_Low_hour) / (BTC_HA_Close_hour - BTC_HA_Open_hour) >= 6) and (
-                               BTC_HA_Close_hour - BTC_HA_Open_hour != 0)
-    hour_direction_up_short1 = ((BTC_HA_PREV_High_hour - BTC_HA_PREV_Low_hour) / (
-    BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) >= 6) and (BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour != 0)
-
-    direction_up0 = (BTC_HA_Close > BTC_HA_Open)
-    direction_up1 = (BTC_HA_PREV_Close > BTC_HA_PREV_Open)
-    direction_up2 = (BTC_HA_PREV_Close2 > BTC_HA_PREV_Open2)
-    direction_up_long_0 = (BTC_HA_Open == BTC_HA_Low and BTC_HA_Close_hour > BTC_HA_Open_hour)
-    direction_up_long_1 = (BTC_HA_PREV_Open == BTC_HA_PREV_Low and BTC_HA_PREV_Close > BTC_HA_PREV_Open)
-    direction_up_longer = (numpy.abs(BTC_HA_Close - BTC_HA_Open) > numpy.abs(
-        BTC_HA_PREV_Close - BTC_HA_PREV_Open) and direction_up0 and direction_up1)
-
-    hour_direction_up0 = (BTC_HA_Close_hour > BTC_HA_Open_hour)
-    hour_direction_up1 = (BTC_HA_PREV_Close_hour > BTC_HA_PREV_Open_hour)
-    hour_direction_up_long_0 = (BTC_HA_Open_hour == BTC_HA_Low_hour and BTC_HA_Close_hour > BTC_HA_Open_hour)
-    hour_direction_up_long_1 = (
-    BTC_HA_PREV_Open_hour == BTC_HA_PREV_Low_hour and BTC_HA_PREV_Close_hour > BTC_HA_PREV_Open_hour)
-    hour_direction_up_longer = (numpy.abs(BTC_HA_Close_hour - BTC_HA_Open_hour) > numpy.abs(
-        BTC_HA_PREV_Close_hour - BTC_HA_PREV_Open_hour) and hour_direction_up0 and hour_direction_up1)
-
-
-
-    if (((hour_direction_down_long_0 and hour_direction_down0) or (
-            hour_direction_down_long_0 and hour_direction_down_long_1 and hour_direction_down0) or (
-        hour_direction_down_long_0 or hour_direction_down_long_1 and hour_direction_down_longer) and hour_direction_down0) or (
-        hour_direction_down0 and hour_direction_down1)):
-        btc_trend_hour = "DOWN"
-    if (((hour_direction_up_long_0 and hour_direction_up0) or (
-            hour_direction_up_long_0 and hour_direction_up_long_1 and hour_direction_up0) or (
-        hour_direction_up_long_0 or hour_direction_up_long_1 and hour_direction_up_longer) and hour_direction_up0) or (
-        hour_direction_up0 and hour_direction_up1)):
-        btc_trend_hour = "UP"
-
-    if btc_trend_hour != "DOWN" and btc_trend_hour != "UP":
-        btc_trend_hour = "STABLE"
-
-
-        # Daily HA
-    if (((direction_down_long_0 and direction_down0) or (
-            direction_down_long_0 and direction_down_long_1 and direction_down0) or (
-        direction_down_long_0 or direction_down_long_1 and direction_down_longer) and direction_down0) or (
-        direction_down0 and direction_down1 and direction_down2)):
-        btc_trend = "DOWN"
-    if (((direction_up_long_0 and direction_up0) or (
-            direction_up_long_0 and direction_up_long_1 and direction_up0) or (
-        direction_up_long_0 or direction_up_long_1 and direction_up_longer) and direction_up0) or (
-        direction_up0 and direction_up1 and direction_up2)):
-        btc_trend = "UP"
-
-    if btc_trend != "DOWN" and btc_trend != "UP":
-        btc_trend = "STABLE"
-
-
-
-    if btc_trend == "DOWN" and btc_trend_hour == "DOWN":
-        btc_trend = "DANGER"
-
-
-
-
-
-
-
-
-    try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-        cursor = db.cursor()
-        cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s",
-                       (BTC_price, btc_trend, 1))
-        db.commit()
-    except MySQLdb.Error, e:
-        print "Error %d: %s" % (e.args[0], e.args[1])
-        sys.exit(1)
-    finally:
-        db.close()
-
-
-
-
-
 
 
     market_summ = c.get_market_summaries().json()['result']
@@ -296,113 +59,113 @@ def HA():
                 hourpreviouscandle3 = get_candles(market, 'hour')['result'][-4:]
                 hourprevlow3 = float(hourpreviouscandle3[0]['L'])
                 hourprevhigh3 = float(hourpreviouscandle3[0]['H'])
-                hourprevopen3 = float(hourpreviouscandle3[0]['O'])
-                hourprevclose3 = float(hourpreviouscandle3[0]['C'])
+                #hourprevopen3 = float(hourpreviouscandle3[0]['O'])
+                #hourprevclose3 = float(hourpreviouscandle3[0]['C'])
                 hourpreviouscandle4 = get_candles(market, 'hour')['result'][-5:]
                 hourprevlow4 = float(hourpreviouscandle4[0]['L'])
                 hourprevhigh4 = float(hourpreviouscandle4[0]['H'])
                 hourprevopen4 = float(hourpreviouscandle4[0]['O'])
-                hourprevclose4 = float(hourpreviouscandle4[0]['C'])
+                #hourprevclose4 = float(hourpreviouscandle4[0]['C'])
                 hourpreviouscandle5 = get_candles(market, 'hour')['result'][-6:]
                 hourprevlow5 = float(hourpreviouscandle5[0]['L'])
                 hourprevhigh5 = float(hourpreviouscandle5[0]['H'])
-                hourprevopen5 = float(hourpreviouscandle5[0]['O'])
+                #hourprevopen5 = float(hourpreviouscandle5[0]['O'])
                 hourprevclose5 = float(hourpreviouscandle5[0]['C'])
                 hourpreviouscandle6 = get_candles(market, 'hour')['result'][-7:]
                 hourprevlow6 = float(hourpreviouscandle6[0]['L'])
                 hourprevhigh6 = float(hourpreviouscandle6[0]['H'])
-                hourprevopen6 = float(hourpreviouscandle6[0]['O'])
-                hourprevclose6 = float(hourpreviouscandle6[0]['C'])
+                #hourprevopen6 = float(hourpreviouscandle6[0]['O'])
+                #hourprevclose6 = float(hourpreviouscandle6[0]['C'])
                 hourpreviouscandle7 = get_candles(market, 'hour')['result'][-8:]
                 hourprevlow7 = float(hourpreviouscandle7[0]['L'])
                 hourprevhigh7 = float(hourpreviouscandle7[0]['H'])
-                hourprevopen7 = float(hourpreviouscandle7[0]['O'])
-                hourprevclose7 = float(hourpreviouscandle7[0]['C'])
+                #hourprevopen7 = float(hourpreviouscandle7[0]['O'])
+                #hourprevclose7 = float(hourpreviouscandle7[0]['C'])
                 hourpreviouscandle8 = get_candles(market, 'hour')['result'][-9:]
                 hourprevlow8 = float(hourpreviouscandle8[0]['L'])
                 hourprevhigh8 = float(hourpreviouscandle8[0]['H'])
-                hourprevopen8 = float(hourpreviouscandle8[0]['O'])
-                hourprevclose8 = float(hourpreviouscandle8[0]['C'])
+                #hourprevopen8 = float(hourpreviouscandle8[0]['O'])
+                #hourprevclose8 = float(hourpreviouscandle8[0]['C'])
                 hourpreviouscandle9 = get_candles(market, 'hour')['result'][-10:]
                 hourprevlow9 = float(hourpreviouscandle9[0]['L'])
                 hourprevhigh9 = float(hourpreviouscandle9[0]['H'])
                 hourprevopen9 = float(hourpreviouscandle9[0]['O'])
-                hourprevclose9 = float(hourpreviouscandle9[0]['C'])
+                #hourprevclose9 = float(hourpreviouscandle9[0]['C'])
                 hourpreviouscandle10 = get_candles(market, 'hour')['result'][-11:]
                 hourprevlow10 = float(hourpreviouscandle10[0]['L'])
                 hourprevhigh10 = float(hourpreviouscandle10[0]['H'])
-                hourprevopen10 = float(hourpreviouscandle10[0]['O'])
+                #hourprevopen10 = float(hourpreviouscandle10[0]['O'])
                 hourprevclose10 = float(hourpreviouscandle10[0]['C'])
                 hourpreviouscandle11 = get_candles(market, 'hour')['result'][-12:]
                 hourprevlow11 = float(hourpreviouscandle11[0]['L'])
                 hourprevhigh11 = float(hourpreviouscandle11[0]['H'])
-                hourprevopen11 = float(hourpreviouscandle11[0]['O'])
-                hourprevclose11 = float(hourpreviouscandle11[0]['C'])
+                #hourprevopen11 = float(hourpreviouscandle11[0]['O'])
+                #hourprevclose11 = float(hourpreviouscandle11[0]['C'])
                 hourpreviouscandle12 = get_candles(market, 'hour')['result'][-13:]
                 hourprevlow12 = float(hourpreviouscandle12[0]['L'])
                 hourprevhigh12 = float(hourpreviouscandle12[0]['H'])
-                hourprevopen12 = float(hourpreviouscandle12[0]['O'])
-                hourprevclose12 = float(hourpreviouscandle12[0]['C'])
+                #hourprevopen12 = float(hourpreviouscandle12[0]['O'])
+                #hourprevclose12 = float(hourpreviouscandle12[0]['C'])
                 hourpreviouscandle13 = get_candles(market, 'hour')['result'][-14:]
                 hourprevlow13 = float(hourpreviouscandle13[0]['L'])
                 hourprevhigh13 = float(hourpreviouscandle13[0]['H'])
-                hourprevopen13 = float(hourpreviouscandle13[0]['O'])
-                hourprevclose13 = float(hourpreviouscandle13[0]['C'])
+                #hourprevopen13 = float(hourpreviouscandle13[0]['O'])
+                #hourprevclose13 = float(hourpreviouscandle13[0]['C'])
                 hourpreviouscandle14 = get_candles(market, 'hour')['result'][-15:]
                 hourprevlow14 = float(hourpreviouscandle14[0]['L'])
                 hourprevhigh14 = float(hourpreviouscandle14[0]['H'])
                 hourprevopen14 = float(hourpreviouscandle14[0]['O'])
-                hourprevclose14 = float(hourpreviouscandle14[0]['C'])
+                #hourprevclose14 = float(hourpreviouscandle14[0]['C'])
                 hourpreviouscandle15 = get_candles(market, 'hour')['result'][-16:]
                 hourprevlow15 = float(hourpreviouscandle15[0]['L'])
                 hourprevhigh15 = float(hourpreviouscandle15[0]['H'])
-                hourprevopen15 = float(hourpreviouscandle15[0]['O'])
+                #hourprevopen15 = float(hourpreviouscandle15[0]['O'])
                 hourprevclose15 = float(hourpreviouscandle15[0]['C'])
                 hourpreviouscandle16 = get_candles(market, 'hour')['result'][-17:]
                 hourprevlow16 = float(hourpreviouscandle16[0]['L'])
                 hourprevhigh16 = float(hourpreviouscandle16[0]['H'])
-                hourprevopen16 = float(hourpreviouscandle16[0]['O'])
-                hourprevclose16 = float(hourpreviouscandle16[0]['C'])
+                #hourprevopen16 = float(hourpreviouscandle16[0]['O'])
+                #hourprevclose16 = float(hourpreviouscandle16[0]['C'])
                 hourpreviouscandle17 = get_candles(market, 'hour')['result'][-18:]
                 hourprevlow17 = float(hourpreviouscandle17[0]['L'])
                 hourprevhigh17 = float(hourpreviouscandle17[0]['H'])
-                hourprevopen17 = float(hourpreviouscandle17[0]['O'])
-                hourprevclose17 = float(hourpreviouscandle17[0]['C'])
+                #hourprevopen17 = float(hourpreviouscandle17[0]['O'])
+                #hourprevclose17 = float(hourpreviouscandle17[0]['C'])
                 hourpreviouscandle18 = get_candles(market, 'hour')['result'][-19:]
                 hourprevlow18 = float(hourpreviouscandle18[0]['L'])
                 hourprevhigh18 = float(hourpreviouscandle18[0]['H'])
-                hourprevopen18 = float(hourpreviouscandle18[0]['O'])
-                hourprevclose18 = float(hourpreviouscandle18[0]['C'])
+                #hourprevopen18 = float(hourpreviouscandle18[0]['O'])
+                #hourprevclose18 = float(hourpreviouscandle18[0]['C'])
                 hourpreviouscandle19 = get_candles(market, 'hour')['result'][-20:]
                 hourprevlow19 = float(hourpreviouscandle19[0]['L'])
                 hourprevhigh19 = float(hourpreviouscandle19[0]['H'])
                 hourprevopen19 = float(hourpreviouscandle19[0]['O'])
-                hourprevclose19 = float(hourpreviouscandle19[0]['C'])
+                #hourprevclose19 = float(hourpreviouscandle19[0]['C'])
                 hourpreviouscandle20 = get_candles(market, 'hour')['result'][-21:]
                 hourprevlow20 = float(hourpreviouscandle20[0]['L'])
                 hourprevhigh20 = float(hourpreviouscandle20[0]['H'])
-                hourprevopen20 = float(hourpreviouscandle20[0]['O'])
+                #hourprevopen20 = float(hourpreviouscandle20[0]['O'])
                 hourprevclose20 = float(hourpreviouscandle20[0]['C'])
                 hourpreviouscandle21 = get_candles(market, 'hour')['result'][-22:]
                 hourprevlow21 = float(hourpreviouscandle21[0]['L'])
                 hourprevhigh21 = float(hourpreviouscandle21[0]['H'])
-                hourprevopen21 = float(hourpreviouscandle21[0]['O'])
-                hourprevclose21 = float(hourpreviouscandle21[0]['C'])
+                #hourprevopen21 = float(hourpreviouscandle21[0]['O'])
+                #hourprevclose21 = float(hourpreviouscandle21[0]['C'])
                 hourpreviouscandle22 = get_candles(market, 'hour')['result'][-23:]
                 hourprevlow22 = float(hourpreviouscandle22[0]['L'])
                 hourprevhigh22 = float(hourpreviouscandle22[0]['H'])
-                hourprevopen22 = float(hourpreviouscandle22[0]['O'])
-                hourprevclose22 = float(hourpreviouscandle22[0]['C'])
+                #hourprevopen22 = float(hourpreviouscandle22[0]['O'])
+                #hourprevclose22 = float(hourpreviouscandle22[0]['C'])
                 hourpreviouscandle23 = get_candles(market, 'hour')['result'][-24:]
                 hourprevlow23 = float(hourpreviouscandle23[0]['L'])
                 hourprevhigh23 = float(hourpreviouscandle23[0]['H'])
-                hourprevopen23 = float(hourpreviouscandle23[0]['O'])
-                hourprevclose23 = float(hourpreviouscandle23[0]['C'])
+                #hourprevopen23 = float(hourpreviouscandle23[0]['O'])
+                #hourprevclose23 = float(hourpreviouscandle23[0]['C'])
                 hourpreviouscandle24 = get_candles(market, 'hour')['result'][-25:]
                 hourprevlow24 = float(hourpreviouscandle24[0]['L'])
                 hourprevhigh24 = float(hourpreviouscandle24[0]['H'])
                 hourprevopen24 = float(hourpreviouscandle24[0]['O'])
-                hourprevclose24 = float(hourpreviouscandle24[0]['C'])
+                #hourprevclose24 = float(hourpreviouscandle24[0]['C'])
 
 
 
@@ -657,7 +420,7 @@ def HA():
 
 
 
-                if ((ha_direction_down0 and ha_direction_down1 and ha_direction_down2 and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down2 and ha_direction_down1 and ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down_long_2) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2 and ha_direction_down_longer) and bought_quantity_sql > 0 and HAD_trend!='UP'):
+                if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0  and ha_direction_down1 and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
 
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -672,6 +435,26 @@ def HA():
                         sys.exit(1)
                     finally:
                         db.close()
+
+
+                lastcandlesize= fivehourcurrenthigh-fivehourcurrentlow
+                prevcandlesize = fivehourprevhigh - fivehourprevlow
+
+                if (lastcandlesize>prevcandlesize and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!='UP'):
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        printed = ('      ' + market + '   Received HA sell signal  ' + '  ' + HA_trend)
+                        cursor.execute('update orders set sell = 2 where active=1 and market =("%s")' % market)
+                        # if bought_quantity_sql>0:
+                        #    cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+
 
 
                 if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) and bought_quantity_sql > 0):
@@ -691,7 +474,7 @@ def HA():
                         db.close()
 
 
-                #print market, HA_trend, HAH_trend
+
 
 
 
@@ -732,16 +515,16 @@ def HA():
 
 
 
-                try:
-                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
-                    cursor = db.cursor()
-                    cursor.execute("update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",(currenttime, currtime, printed1, market))
-                    db.commit()
-                except MySQLdb.Error, e:
-                    print "Error %d: %s" % (e.args[0], e.args[1])
-                    sys.exit(1)
-                finally:
-                    db.close()
+                    try:
+                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute("update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",(currenttime, currtime, printed1, market))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
         except:
             continue

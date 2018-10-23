@@ -13,6 +13,7 @@ import pandas as pd
 from pybittrex.client import Client
 import MySQLdb
 import sys
+import simplejson
 
 
 #c = Client(api_key=config.key, api_secret=config.secret)
@@ -106,32 +107,23 @@ def learn():
                     finally:
                         db.close()
 
-                    #          ---------================DATA COLLECTION====================------------
-                    # connect to poloniex's API
-                    #if currency =='BCC':
-                    #    url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
-                    # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    #else:
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
-                        print url
-
-                    # parse json returned from the API to Pandas DF
-                    openUrl = urllib2.urlopen(url)
-                    r = openUrl.read()
-                    openUrl.close()
-                    d = json.loads(r.decode())
+                    url = (
+                    'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + 'BTC-' + currency + '&tickInterval=thirtyMin&_=' + starttime)
+                    response = urllib2.urlopen(url)
+                    data = simplejson.load(response)
+                    d = data['result'][0:]
                     df = pd.DataFrame(d)
 
                     datPath = 'data/'
                     if not os.path.exists(datPath):
                         os.mkdir(datPath)
 
-                    original_columns = [u'date', u'high', u'low', u'open', u'close']
-                    new_columns = ['date', 'high', 'low', 'open', 'close']
+                    original_columns = [u'O', u'H', u'L', u'C', u'T']
+                    new_columns = ['open', 'high', 'low', 'close', 'date']
                     df = df.loc[:, original_columns]
                     df.columns = new_columns
                     cols = list(df)
-                    cols.insert(1, cols.pop(cols.index('open')))
+                    cols.insert(0, cols.pop(cols.index('date')))
                     df = df.reindex(columns=cols)
 
                     df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
@@ -284,39 +276,32 @@ def learn():
                         db.close()
 
                     #          ---------================DATA COLLECTION====================------------
-                    # connect to poloniex's API
-
-                    #if currency =='BCC':
-                     #   url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_BCH' + '&start=' + starttime + '&end=9999999999&period=' + period)  # 1800
-                    # url = ('https://poloniex.com/public?command=returnChartData&currencyPair='+currency+'&start='+starttime+'&end=9999999999&period=14400')
-                    #else:
-                        url = ('https://poloniex.com/public?command=returnChartData&currencyPair=' + 'BTC_' + currency + '&start=' + starttime + '&end=9999999999&period=' + period)
 
 
+                        url = (
+                            'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + 'BTC-' + currency + '&tickInterval=thirtyMin&_=' + starttime)
+                        response = urllib2.urlopen(url)
+                        data = simplejson.load(response)
+                        d = data['result'][0:]
+                        df = pd.DataFrame(d)
 
-                    # parse json returned from the API to Pandas DF
-                    openUrl = urllib2.urlopen(url)
-                    r = openUrl.read()
-                    openUrl.close()
-                    d = json.loads(r.decode())
-                    df = pd.DataFrame(d)
+                        datPath = 'data/'
+                        if not os.path.exists(datPath):
+                            os.mkdir(datPath)
 
-                    datPath = 'data/'
-                    if not os.path.exists(datPath):
-                        os.mkdir(datPath)
+                        original_columns = [u'O', u'H', u'L', u'C', u'T']
+                        new_columns = ['open', 'high', 'low', 'close', 'date']
+                        df = df.loc[:, original_columns]
+                        df.columns = new_columns
+                        cols = list(df)
+                        cols.insert(0, cols.pop(cols.index('date')))
+                        df = df.reindex(columns=cols)
 
-                    original_columns = [u'date', u'high', u'low', u'open', u'close']
-                    new_columns = ['date', 'high', 'low', 'open', 'close']
-                    df = df.loc[:, original_columns]
-                    df.columns = new_columns
-                    cols = list(df)
-                    cols.insert(1, cols.pop(cols.index('open')))
-                    df = df.reindex(columns=cols)
+                        df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
 
-                    df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
+                        path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
+                        sequence_length = 20
 
-                    path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
-                    sequence_length = 20
 
                     # vector to store the time series
                     vector_vix = []
