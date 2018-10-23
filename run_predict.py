@@ -27,7 +27,7 @@ period = str(1800)
 
 epochs = 50
 
-market="BTC-XMR"
+market="BTC-ZEC"
 
 
 
@@ -69,7 +69,7 @@ def learn():
     current_price = c.get_ticker('BTC-' + currency).json()['result']['Last']
     now = datetime.datetime.now()
     currenttime = now.strftime("%Y-%m-%d %H:%M")
-    #print market, currtime, prediction_info(market)[1]
+    print currtime, prediction_info(market)[1]
 
     if (int(currtime) - int(prediction_info(market)[1])) >= 1:
         # print market, prediction_info(market)[2]
@@ -133,6 +133,9 @@ def learn():
 
         path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
         sequence_length = 20
+
+
+
 
         # vector to store the time series
         vector_vix = []

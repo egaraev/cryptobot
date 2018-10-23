@@ -115,4 +115,43 @@ else
 fi
 
 
+SERVICE10='btc_ha.py'
+
+if ps ax | grep -v grep | grep $SERVICE10 > /dev/null
+then
+    echo "$SERVICE10 service running "
+else
+    echo there is no such "$SERVICE10 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 btc_ha.py
+
+fi
+
+
+
+
+SERVICE11='check_ai.py'
+
+if ps ax | grep -v grep | grep $SERVICE11 > /dev/null
+then
+    echo "$SERVICE11 service running "
+else
+    echo there is no such "$SERVICE8 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 check_ai.py
+
+fi
+
+
+SERVICE12='chart_creator3.py'
+
+if ps ax | grep -v grep | grep $SERVICE12 > /dev/null
+then
+    echo "$SERVICE12 service running "
+else
+    echo there is no such "$SERVICE12 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 chart_creator3.py
+
+fi
 

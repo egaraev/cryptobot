@@ -3,10 +3,12 @@ from pybittrex.client import Client
 import MySQLdb
 import sys
 import datetime
+import time
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
+currtime = int(time.time())
 
 
 def main():
@@ -35,6 +37,8 @@ def ME():
                 percent_chg = float(((last / day_close) - 1) * 100)
                 percent_sql = float(heikin_ashi(market, 21))
                 spread = float(((ask / bid) - 1) * 100)
+                HAD_trend = heikin_ashi(market, 18)
+                ha_time_second = heikin_ashi(market, 23)
 
                 if percent_chg>percent_sql:
                     percent_grow=1
@@ -61,11 +65,11 @@ def ME():
 
                 #print market, percent(market, 21)
 
-                if (spread>0.4 and bought_quantity_sql>0 and percent_grow==-1 and open_buy(market)==2  and ((get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0))):
+                if (spread>0.5 and bought_quantity_sql>0 and percent_grow==-1 and open_buy(market)==2  and ((get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0))):
                     print market, "We have open order, but we need to disable this currency"
 
 
-                if spread>0.4 and bought_quantity_sql==0 and percent_grow==-1:
+                if (spread>0.5 and bought_quantity_sql==0 and percent_grow==-1) or ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000):
                     if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY') or open_buy(market)==2:
                         pass
                     else:
@@ -83,7 +87,7 @@ def ME():
                             db.close()
 
 
-                if spread<0.4 and (percent_grow==1 or percent_grow==0)  and market_count() <=max_markets:
+                if spread<0.5 and (percent_grow==1 or percent_grow==0)  and market_count() <=max_markets:
                     print market, "We need to enable those currencies"
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
