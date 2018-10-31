@@ -115,7 +115,7 @@ def aftercount_serf_sell(marketname, value):
     cursor = db.cursor()
     market=marketname
     sell=value
-    cursor.execute("SELECT SUM(aftercount) FROM orders where active=0 and market= '%s' and sell='%s'" % (market, sell))
+    cursor.execute("SELECT SUM(aftercount) FROM orders where active=0 and aftercount>0 and market= '%s' and sell='%s'" % (market, sell))
     r = cursor.fetchall()
     for row in r:
         if row[0] is not None:
@@ -130,7 +130,7 @@ def summ_serf_sell(marketname, value):
     cursor = db.cursor()
     market=marketname
     sell=value
-    cursor.execute("SELECT SUM(percent_serf) FROM orders where active=0 and market= '%s' and sell='%s'" % (market, sell))
+    cursor.execute("SELECT SUM(percent_serf) FROM orders where active=0 and percent_serf>0 and market= '%s' and sell='%s'" % (market, sell))
     r = cursor.fetchall()
     for row in r:
         if row[0] is not None:
