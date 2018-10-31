@@ -1,4 +1,3 @@
-#import matplotlib.pyplot as plt
 import numpy as np
 import time
 import datetime
@@ -16,9 +15,8 @@ import sys
 import simplejson
 
 
-#c = Client(api_key=config.key, api_secret=config.secret)
-c=Client(api_key="", api_secret="")
-
+c1 = Client(api_key=config.key, api_secret=config.secret)
+c=Client(api_key='', api_secret='')
 currtime = int(round(time.time()))
 starttime = str(currtime - 16000000) #for 1800 period 6 month
 #starttime = str(millis - 64000000) #for 7200 period 24 month
@@ -74,7 +72,7 @@ def learn():
             market = summary['MarketName']
             currency= market.split('-')[1]
             currtime = int(round(time.time()))
-            current_price = c.get_ticker('USD-'+currency).json()['result']['Last']
+            current_price = c.get_ticker('BTC-'+currency).json()['result']['Last']
             now = datetime.datetime.now()
             currenttime = now.strftime("%Y-%m-%d %H:%M")
             #print market, currtime, prediction_info(market)[1]
@@ -90,12 +88,43 @@ def learn():
                     if current_price > prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was successful  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
+
                     elif current_price >= prediction_info(market)[0]:
                         print market, "AI Prediction  was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction was successful  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
                     else:
                         print market, "AI Prediction was mistaken"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was mistaken  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 0))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -107,8 +136,10 @@ def learn():
                     finally:
                         db.close()
 
+
                     url = (
                     'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + 'BTC-' + currency + '&tickInterval=thirtyMin&_=' + starttime)
+
                     response = urllib2.urlopen(url)
                     data = simplejson.load(response)
                     d = data['result'][0:]
@@ -130,6 +161,8 @@ def learn():
 
                     path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
                     sequence_length = 20
+
+
 
                     # vector to store the time series
                     vector_vix = []
@@ -258,12 +291,42 @@ def learn():
                     if current_price < prediction_info(market)[3]:
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str( currency) + '  AI Prediction trend was successful  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
                     elif current_price <= prediction_info(market)[0]:
                         print market, "AI Prediction was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction was successful  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
                     else:
                         print market, "AI Prediction was mistaken"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was mistaken  ')
+                        try:
+                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 0))
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -275,32 +338,31 @@ def learn():
                     finally:
                         db.close()
 
-                    #          ---------================DATA COLLECTION====================------------
 
+                    url = (
+                    'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + 'BTC-' + currency + '&tickInterval=thirtyMin&_=' + starttime)
 
-                        url = (
-                            'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + 'BTC-' + currency + '&tickInterval=thirtyMin&_=' + starttime)
-                        response = urllib2.urlopen(url)
-                        data = simplejson.load(response)
-                        d = data['result'][0:]
-                        df = pd.DataFrame(d)
+                    response = urllib2.urlopen(url)
+                    data = simplejson.load(response)
+                    d = data['result'][0:]
+                    df = pd.DataFrame(d)
 
-                        datPath = 'data/'
-                        if not os.path.exists(datPath):
-                            os.mkdir(datPath)
+                    datPath = 'data/'
+                    if not os.path.exists(datPath):
+                        os.mkdir(datPath)
 
-                        original_columns = [u'O', u'H', u'L', u'C', u'T']
-                        new_columns = ['open', 'high', 'low', 'close', 'date']
-                        df = df.loc[:, original_columns]
-                        df.columns = new_columns
-                        cols = list(df)
-                        cols.insert(0, cols.pop(cols.index('date')))
-                        df = df.reindex(columns=cols)
+                    original_columns = [u'O', u'H', u'L', u'C', u'T']
+                    new_columns = ['open', 'high', 'low', 'close', 'date']
+                    df = df.loc[:, original_columns]
+                    df.columns = new_columns
+                    cols = list(df)
+                    cols.insert(0, cols.pop(cols.index('date')))
+                    df = df.reindex(columns=cols)
 
-                        df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
+                    df.to_csv('data/cryptodata' + 'BTC-' + currency + '.csv', index=None)
 
-                        path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
-                        sequence_length = 20
+                    path_to_dataset = ('data/cryptodata' + 'BTC-' + currency + '.csv')
+                    sequence_length = 20
 
 
                     # vector to store the time series

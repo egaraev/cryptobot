@@ -353,6 +353,9 @@ def tick():
                                         "update markets set strike_time= %s  where market = %s",
                                         (currtime, market))
                                     cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
+                                    cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue = summ_serf() + serf
                                     cursor.execute(
@@ -393,6 +396,11 @@ def tick():
                                                 format_float(newbid)) + "   t:    " + str(currenttime),
                                             market))
                                     cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
+                                    cursor.execute(
+                                        'update orders set sell = 3 where active=1 and market =("%s")' % market)
+                                    cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue=summ_serf()+serf
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
@@ -429,6 +437,11 @@ def tick():
                                             "10 AI SELL, price:  " + str(
                                                 format_float(newbid)) + "  time:   " + str(
                                                 currenttime), market))
+                                    cursor.execute(
+                                        'update orders set sell = 5 where active=1 and market =("%s")' % market)
+                                    cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue=summ_serf()+serf
@@ -472,6 +485,9 @@ def tick():
                                             "12 TP SELL, price:  " + str(
                                                 format_float(newbid)) + "  time:   " + str(
                                                 currenttime), market))
+                                    cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
 
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
@@ -551,6 +567,9 @@ def tick():
                                         ("13  small SL, p:   " + str(
                                             format_float(newbid)) + " t:    " + str(currenttime), market))
                                     cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
+                                    cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue = summ_serf() + serf
                                     cursor.execute(
@@ -584,6 +603,9 @@ def tick():
                                         'update orders set reason_close =%s where active=1 and market =%s',
                                         (" 14  ha TP, p:   " + str(
                                             format_float(newbid)) + " t:    " + str(currenttime), market))
+                                    cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue = summ_serf() + serf
@@ -621,6 +643,11 @@ def tick():
                                                 "88  TP-SL SELL, p:   " + str(
                                                     format_float(newbid)) + "   t:    " + str(currenttime),
                                                 market))
+                                        cursor.execute(
+                                            'update orders set sell = 4 where active=1 and market =("%s")' % market)
+                                        cursor.execute(
+                                            "update orders set sell_time=%s  where market = %s and active =1",
+                                            (currtime, market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
                                         newvalue = summ_serf() + serf
@@ -694,6 +721,11 @@ def tick():
                                         'update orders set reason_close =%s where active=1 and market =%s',
                                         (" 15  SL, p:   " + str(
                                             format_float(newbid)) + " t:    " + str(currenttime), market))
+                                    cursor.execute(
+                                        'update orders set sell = 6 where active=1 and market =("%s")' % market)
+                                    cursor.execute(
+                                        "update orders set sell_time=%s  where market = %s and active =1",
+                                        (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     newvalue=summ_serf()+serf

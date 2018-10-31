@@ -38,3 +38,25 @@ kill -9 $PID9
 PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
 kill -9 $PID10
 
+
+PID11=`ps aux | awk '/chart_creator3.py/ && !/awk/ { print $2 }'`
+kill -9 $PID11
+
+
+PID12=`ps aux | awk '/check_ai.py/ && !/awk/ { print $2 }'`
+kill -9 $PID12
+
+
+PID13=`ps aux | awk '/aftercount.py/ && !/awk/ { print $2 }'`
+kill -9 $PID13
+
+
+PID14=`ps aux | awk '/chart_creator4.py/ && !/awk/ { print $2 }'`
+kill -9 $PID14
+
+
+PID15=`ps aux | awk '/statistic.py/ && !/awk/ { print $2 }'`
+kill -9 $PID15
+
+
+
