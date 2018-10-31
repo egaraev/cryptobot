@@ -160,6 +160,9 @@ def tick():
                     serf = (newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql)
                     if bought_price_sql!=0:
                         procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
+                        cursor.execute(
+                            "update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",
+                            (procent_serf, market))
                         if procent_serf>=percent_serf_max(market):
                             cursor.execute(
                             "update orders set percent_serf_max=%s where market = %s and active =1 and open_sell=0 ",
@@ -754,6 +757,8 @@ def tick():
                                             cursor.execute(
                                                 "update orders set open_sell=%s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
+                                            cursor.execute(
+                                                'update orders set sell = 3 where active=1 and market =("%s")' % market)
                                             #newvalue = summ_serf() + serf * BTC_price
                                             #cursor.execute(
                                                # 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -792,7 +797,7 @@ def tick():
                                         # Lets Sell some
                                         # print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('    12.2 -Selling ' + str(format_float(
+                                            printed = ('   Prod 12.2 -Selling ' + str(format_float(
                                                 sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and getting  +' + str(format_float(
                                                 ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
@@ -807,6 +812,8 @@ def tick():
                                                     "12.2  TP - SL, price:    " + str(
                                                         format_float(newbid)) + "    time:   " + str(currenttime),
                                                     market))
+                                            cursor.execute(
+                                                'update orders set sell = 4 where active=1 and market =("%s")' % market)
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
@@ -828,7 +835,7 @@ def tick():
 
 
 #AI changed to down and we have our profit, so lets sell it in time
-                                elif (active == 1) and (ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and newbid > bought_price_sql * ( 1 + profit/3) and currtime-ai_time_second<7200:  # #WAS profit2
+                                elif (active == 1) and (ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and newbid > bought_price_sql * ( 1 + profit/3) and currtime-ai_time_second<7200 and last<hourcurrentopen:  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
@@ -873,6 +880,8 @@ def tick():
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
+                                            cursor.execute(
+                                                'update orders set sell = 5 where active=1 and market =("%s")' % market)
                                             cursor.execute(
                                                 "update markets set strike_time= %s  where market = %s",
                                                 (currtime, market))
@@ -1121,6 +1130,8 @@ def tick():
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 (" 15  SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime), market))
+                                            cursor.execute(
+                                                'update orders set sell = 6 where active=1 and market =("%s")' % market)
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))

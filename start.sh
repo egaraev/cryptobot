@@ -155,3 +155,46 @@ else
 
 fi
 
+SERVICE13='aftercount.py'
+
+if ps ax | grep -v grep | grep $SERVICE13 > /dev/null
+then
+    echo "$SERVICE13 service running "
+else
+    echo there is no such "$SERVICE13 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 aftercount.py
+
+fi
+
+
+SERVICE14='chart_creator4.py'
+
+if ps ax | grep -v grep | grep $SERVICE14 > /dev/null
+then
+    echo "$SERVICE14 service running "
+else
+    echo there is no such "$SERVICE14 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 chart_creator4.py
+
+fi
+
+
+SERVICE15='statistic.py'
+
+if ps ax | grep -v grep | grep $SERVICE15 > /dev/null
+then
+    echo "$SERVICE15 service running "
+else
+    echo there is no such "$SERVICE15 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 statistic.py
+
+fi
+
+
+
+
+
+
