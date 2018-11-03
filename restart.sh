@@ -58,5 +58,3 @@ kill -9 $PID14
 PID15=`ps aux | awk '/statistic.py/ && !/awk/ { print $2 }'`
 kill -9 $PID15
 
-
-
