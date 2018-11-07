@@ -595,6 +595,67 @@ def tick():
                             ##Check if we have completelly green candle
 
 
+ #####################################################
+                            if serf > 0 and max_percent_sql - procent_serf >= 0.5 and max_percent_sql >= 3:
+                            # if we have already opened order to sell
+                               if has_open_order(market, 'LIMIT_SELL'):
+                                   # print('Order already opened to sell  ' + market)
+                                   try:
+                                       printed = ('    12.21 - Order already opened to sell  ' + market)
+                                       db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                       cursor = db.cursor()
+                                       cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
+                                           currenttime, printed))
+                                       db.commit()
+                                   except MySQLdb.Error, e:
+                                       print "Error %d: %s" % (e.args[0], e.args[1])
+                                       sys.exit(1)
+                                   finally:
+                                       db.close()
+
+
+                               else:
+                                   # Lets Sell some
+                                   # print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                   try:
+                                       printed = ('   Prod 12.21 -Selling ' + str(format_float(
+                                           sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                           format_float(newbid)) + '  and getting  +' + str(format_float(
+                                           ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
+                                           format_float((
+                                                        newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                       db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                       cursor = db.cursor()
+                                       cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
+                                           currenttime, printed))
+                                       # cursor.execute('update orders set active = 0, reason_close = "12 Take profit" where market =("%s")' % market)
+                                       cursor.execute(
+                                           'update orders set reason_close =%s where active=1 and market =%s', (
+                                               "12.21  TP - SL, price:    " + str(
+                                                   format_float(newbid)) + "    time:   " + str(currenttime),
+                                               market))
+                                       cursor.execute(
+                                           'update orders set sell = 4 where active=1 and market =("%s")' % market)
+                                       cursor.execute(
+                                           "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
+                                           (1, currtime, market))
+
+                                       db.commit()
+                                   except MySQLdb.Error, e:
+                                       print "Error %d: %s" % (e.args[0], e.args[1])
+                                       sys.exit(1)
+                                   finally:
+                                       db.close()
+                                   Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
+                                        "localhost")
+                                   #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                   print c1.sell_limit(market, sell_quantity, newbid).json()
+                                   #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
+                                   break
+
+#####################################################
+
+
                             if (currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ):
 
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")

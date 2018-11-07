@@ -36,16 +36,16 @@ def ME():
                 bought_price_sql = float(status_orders(market, 3))
                 #bought_quantity_sql = float(status_orders(market, 2))
                 order_id = closed_orders_id(market)
-                print order_id, market, close_date(market)
+                procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
 
 
 
-                if order_id!=0 and currtime - close_date(market)<259200:
+                if order_id!=0 and currtime - close_date(market)<172800:
 
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
-                        procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
+
                         if procent_serf>=percent_serf(market):
                             cursor.execute(
                                 "update orders set aftercount=%s where market = %s and active = 0 and order_id = %s",
@@ -64,7 +64,7 @@ def ME():
                 else:
                     pass
 
-
+                print order_id, market, percent_serf(market), procent_serf, bought_price_sql
 
         except:
             continue
@@ -101,7 +101,7 @@ def status_orders(marketname, value):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
-    cursor.execute("SELECT * FROM orders WHERE active = 0 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM orders WHERE active = 0 and market = '%s' order by order_id desc" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
