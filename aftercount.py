@@ -34,6 +34,7 @@ def ME():
                 newbid = bid - bid * 0.002
                 newask = ask + ask * 0.002
                 bought_price_sql = float(status_orders(market, 3))
+                aftercount=float(status_orders(market, 25))
                 #bought_quantity_sql = float(status_orders(market, 2))
                 order_id = closed_orders_id(market)
                 procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
@@ -63,6 +64,29 @@ def ME():
                         db.close()
                 else:
                     pass
+
+
+                if order_id != 0 and currtime - close_date(market) < 80000 and aftercount-percent_serf(market)>=10:
+                 try:
+                     print "We have peak situation, lets wait"
+                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                     cursor = db.cursor()
+                     printed1 = ("We have peak situation, lets wait")
+                     cursor.execute(
+                         "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
+                         (currenttime, currtime, printed1, market))
+                     db.commit()
+                 except MySQLdb.Error, e:
+                     print "Error %d: %s" % (e.args[0], e.args[1])
+                     sys.exit(1)
+                 finally:
+                     db.close()
+                else:
+                    pass
+
+
+
+
 
                 print order_id, market, percent_serf(market), procent_serf, bought_price_sql
 
