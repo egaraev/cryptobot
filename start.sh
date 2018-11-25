@@ -194,6 +194,17 @@ else
 fi
 
 
+SERVICE16='btc_status.py'
+
+if ps ax | grep -v grep | grep $SERVICE16 > /dev/null
+then
+    echo "$SERVICE16 service running "
+else
+    echo there is no such "$SERVICE16 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 btc_status.py
+
+fi
 
 
 

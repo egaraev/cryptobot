@@ -59,4 +59,5 @@ PID15=`ps aux | awk '/statistic.py/ && !/awk/ { print $2 }'`
 kill -9 $PID15
 
 
-
+PID16=`ps aux | awk '/btc_status.py/ && !/awk/ { print $2 }'`
+kill -9 $PID16

@@ -39,12 +39,16 @@ with open('out16.csv', 'r') as myfile:
     max_loss_6=map(float, myfile)
 
 
+with open('out17.csv', 'r') as myfile:
+    max_loss_7=map(float, myfile)
+
+
 with open('out-max.csv', 'r') as myfile:
     max_loss=map(float, myfile)
     max_val= max(max_loss)
 
 
-data = [max_loss_0, max_loss_1, max_loss_2, max_loss_3, max_loss_4, max_loss_5, max_loss_6]
+data = [max_loss_0, max_loss_1, max_loss_2, max_loss_3, max_loss_4, max_loss_5, max_loss_6, max_loss_7]
 
 
 
@@ -54,7 +58,7 @@ columns = tuple(market)
 
 #rows = ['%d year' % x for x in (100, 50, 20, 10, 5)]
 #rows = ['%d  Signal type' % x for x in signals]
-rows = ['%d  Signal type' % x for x in (6, 5, 4, 3, 2, 1, 0)]
+rows = ['%d  Signal type' % x for x in (7, 6, 5, 4, 3, 2, 1, 0)]
 
 
 
@@ -92,7 +96,7 @@ the_table.set_fontsize(5)
 
 
 # Adjust layout to make room for the table:
-plt.subplots_adjust(left=0.2, bottom=0.2)
+plt.subplots_adjust(left=0.2, bottom=0.3)
 
 plt.ylabel("Loss in percent's")
 plt.yticks(values, ['%d' % val for val in values])
