@@ -11,18 +11,28 @@ import sys
 import smtplib
 c1 = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 c=Client(api_key='', api_secret='')
+#Setup tick interval
+TICK_INTERVAL = 60  # seconds
+
 
 def main():
     print('Starting sell trader bot')
 
+    # Running clock forever
+    while True:
+        start = time.time()
+        tick()
+        end = time.time()
+        # Sleep the thread if needed
+        if end - start < TICK_INTERVAL:
+            time.sleep(TICK_INTERVAL - (end - start))
 
 
-    tick()
 
 ################################################################################################################
 #what will be done every loop iteration
 def tick():
-    buy_size = parameters()[0] #The size for opening orders for STOP_LOSS mode
+
     max_sell_timeout= parameters()[2]
     stop_bot_force = parameters()[4]  #If stop_bot_force==1 we  stop bot and close all orders
     market_summ = c.get_market_summaries().json()['result']
@@ -78,7 +88,7 @@ def tick():
 
 
                 timestamp = int(time.time())
-                day_close = summary['PrevDay']   #Getting day of closing order
+
             #Current prices
                 last = float(summary['Last'])  #last price
                 bid = float(summary['Bid'])    #sell price
@@ -139,7 +149,8 @@ def tick():
                     #prev_serf = previous_serf(market)
                     serf = (newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql)
                     if bought_price_sql!=0:
-                        procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
+                        #procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
+                        procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
                         cursor.execute(
                             "update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",
                             (procent_serf, market))
@@ -166,7 +177,8 @@ def tick():
                 finally:
                     db.close()
                     ########
-                max_percent_sql = status_orders(market, 15)
+                #max_percent_sql = float(status_orders(market, 15))
+                max_percent_sql= float("{0:.2f}".format(status_orders(market, 15)))
 
                 #print market, max_percent_sql, procent_serf, last, fivehourprevopen, last, currentopen
 
@@ -274,7 +286,7 @@ def tick():
 
 
 
-                print market
+                #print market, max_percent_sql, procent_serf, max_percent_sql - procent_serf,
 
 #What if we have sent the sell order to bittrex?
                 if open_sell(market)==1:
@@ -1148,7 +1160,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE active =1 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM orders WHERE active =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
