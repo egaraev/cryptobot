@@ -21,6 +21,7 @@ def SUMM():
     open('out14.csv', 'w').close()
     open('out15.csv', 'w').close()
     open('out16.csv', 'w').close()
+    open('out17.csv', 'w').close()
     open('out-max.csv', 'w').close()
 
 
@@ -59,6 +60,7 @@ def SUMM():
                 sell_loss_4 = aftercount_serf_sell(market, 4) - summ_serf_sell(market, 4)
                 sell_loss_5 = aftercount_serf_sell(market, 5) - summ_serf_sell(market, 5)
                 sell_loss_6 = aftercount_serf_sell(market, 6) - summ_serf_sell(market, 6)
+                sell_loss_7 = aftercount_serf_sell(market, 7) - summ_serf_sell(market, 7)
                 #if summ_serf(market)!=0:
                  #   print market, summ_serf(market), count(market)
                 f= open('out8.csv', 'a')
@@ -77,8 +79,10 @@ def SUMM():
                 print >> f7, sell_loss_5
                 f8 = open('out16.csv', 'a')
                 print >> f8, sell_loss_6
-                f9 = open('out-max.csv', 'a')
-                print >> f9, max_loss
+                f9 = open('out17.csv', 'a')
+                print >> f9, sell_loss_7
+                f10 = open('out-max.csv', 'a')
+                print >> f10, max_loss
 
 
 

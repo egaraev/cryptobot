@@ -1,14 +1,43 @@
 #!/bin/bash
 
-SERVICE1='main.py'
+#SERVICE1='main.py'
  
+#if ps ax | grep -v grep | grep $SERVICE1 > /dev/null
+#then
+#    echo "$SERVICE1 service running "
+#else
+#    echo there is no such "$SERVICE1 service, starting"
+#    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/main.py
+#fi
+
+
+SERVICE0='buy.py'
+
+if ps ax | grep -v grep | grep $SERVICE0 > /dev/null
+then
+    echo "$SERVICE0 service running "
+else
+    echo there is no such "$SERVICE0 service, starting"
+    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/buy.py
+fi
+
+
+
+SERVICE1='sell.py'
+
 if ps ax | grep -v grep | grep $SERVICE1 > /dev/null
 then
     echo "$SERVICE1 service running "
 else
     echo there is no such "$SERVICE1 service, starting"
-    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/main.py
+    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/sell.py
 fi
+
+
+
+
+
+
 
 SERVICE2='server.py'
 
@@ -194,6 +223,17 @@ else
 fi
 
 
+SERVICE16='btc_status.py'
+
+if ps ax | grep -v grep | grep $SERVICE16 > /dev/null
+then
+    echo "$SERVICE16 service running "
+else
+    echo there is no such "$SERVICE16 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 btc_status.py
+
+fi
 
 
 
