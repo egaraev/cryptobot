@@ -43,8 +43,20 @@ def HA():
     btcprevclose = float(btcprevcandle2[0]['C'])
     btcprevhigh = float(btcprevcandle2[0]['H'])
 
-    if (btccurrentopen - BTC_price >= 80 or (btcprevopen - BTC_price >= 100 and btccurrentopen > BTC_price)):
+    if (btccurrentopen - BTC_price >= 150 or (btcprevopen - BTC_price >= 200 and btccurrentopen > BTC_price)):
         btc_status = "STOP"
+        try:
+            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            cursor = db.cursor()
+            printed = ('   Received BTC STOP sell signal ')
+            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+            db.commit()
+        except MySQLdb.Error, e:
+            print "Error %d: %s" % (e.args[0], e.args[1])
+            sys.exit(1)
+        finally:
+            db.close()
+        print printed
     else:
         btc_status = "OK"
 
@@ -63,16 +75,15 @@ def HA():
                     try:
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
-                        printed = ('   Received BTC STOP sell signal ')
                         cursor.execute('update orders set sell = 7 where active=1 and market =("%s")' % market)
-                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
                         sys.exit(1)
                     finally:
                         db.close()
-                    print printed
+                else:
+                    pass
     
 
         except:

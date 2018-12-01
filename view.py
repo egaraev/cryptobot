@@ -108,16 +108,18 @@ img_tag2 = '<img src="data:image/png;base64,%s"  height="350" width="800">' % da
 
 print(img_tag2)
 
+
+
+
+data_uri = open('crypto_results4.png', 'rb').read().encode('base64').replace('\n', '')
+img_tag4 = '<img src="data:image/png;base64,%s"  height="700" width="1600">' % data_uri
+
+print(img_tag4)
+
 data_uri = open('crypto_results3.png', 'rb').read().encode('base64').replace('\n', '')
 img_tag3 = '<img src="data:image/png;base64,%s"  height="350" width="800">' % data_uri
 
 print(img_tag3)
-
-
-data_uri = open('crypto_results4.png', 'rb').read().encode('base64').replace('\n', '')
-img_tag4 = '<img src="data:image/png;base64,%s"  height="350" width="800">' % data_uri
-
-print(img_tag4)
 
 print """<br>"""
 
