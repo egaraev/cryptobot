@@ -15,6 +15,7 @@ c=Client(api_key="", api_secret="")
 TICK_INTERVAL = 60  # seconds
 
 
+
 #The main function
 def main():
     print('Starting trader bot')
