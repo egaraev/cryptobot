@@ -19,7 +19,7 @@ btc_status = "OK"
 
 
 def main():
-    print('Starting heikin ashi module')
+    print('Starting btc status module')
 
     HA()
 

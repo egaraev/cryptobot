@@ -72,6 +72,11 @@ def tick():
                 hourprevopen = float(hourprevcandle[0]['O'])
                 hourprevclose = float(hourprevcandle[0]['C'])
                 timestamp = int(time.time())
+                fivemin='NONE'
+                thirtymin='NONE'
+                hour='NONE'
+
+
 
             #Current prices
                 last = float(summary['Last'])  #last price
@@ -99,7 +104,26 @@ def tick():
                 HAH_trend = heikin_ashi(market, 20)
                 ai_time_second = heikin_ashi(market, 8)
                 profit = parameters()[3]
-                #print get_balance_from_market(market)['result']
+                slow_market=heikin_ashi(market, 3)
+
+                if last>currentopen5:
+                    fivemin='UP'
+                else:
+                    fivemin='DOWN'
+
+                if last>currentopen:
+                    thirtymin='UP'
+                else:
+                    thirtymin='DOWN'
+
+                if last>hourcurrentopen:
+                    hour='UP'
+                else:
+                    hour='DOWN'
+
+
+
+                #print market, last, fivemin, thirtymin, hour
 
 
 
@@ -128,7 +152,8 @@ def tick():
                     cursor = db.cursor()
                     #cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s", (BTC_price, btc_trend, 1))
                     #prev_serf = previous_serf(market)
-                    serf = (newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql)
+                    serf = float("{0:.8f}".format(newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql))
+                    serf_usd=float("{0:.4f}".format(serf*BTC_price))
                     if bought_price_sql!=0:
                         #procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
                         procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
@@ -160,9 +185,9 @@ def tick():
                     ########
                 #max_percent_sql = float(status_orders(market, 15))
                 max_percent_sql= float("{0:.2f}".format(status_orders(market, 15)))
-
+                min_percent_sql= float("{0:.2f}".format(status_orders(market, 24)))
                 #print market, max_percent_sql, procent_serf, last, fivehourprevopen, last, currentopen
-
+                print serf_usd
 
 
                 #print market, bought_quantity
@@ -268,7 +293,7 @@ def tick():
 
 
                 #print market, max_percent_sql, procent_serf, max_percent_sql - procent_serf,
-
+                #print ("3  fast SL, price:    " + str(float(newbid)) + "    time:   " + str(currenttime) + '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,market)
 #What if we have sent the sell order to bittrex?
                 if open_sell(market)==1:
 
@@ -396,12 +421,12 @@ def tick():
 
 
  #####################################################
-                            if (serf > 0 and max_percent_sql - procent_serf >= 0.2 and 1<=max_percent_sql >= 0.4) or (serf > 0 and max_percent_sql - procent_serf >= 0.5 and 2<=max_percent_sql >= 1) or (serf > 0 and max_percent_sql - procent_serf >= 1 and 3<=max_percent_sql >= 2):
+                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.0>=max_percent_sql >= 0.4) or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.5 and 2.0>=max_percent_sql >= 1.0) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0) and slow_market==1)  or  ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1>=max_percent_sql >= 0.4) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0)  and slow_market==0):
                             # if we have already opened order to sell
                                if has_open_order(market, 'LIMIT_SELL'):
                                    # print('Order already opened to sell  ' + market)
                                    try:
-                                       printed = ('    12 - Order already opened to sell  ' + market)
+                                       printed = ('    5 - Order already opened to sell  ' + market)
                                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                        cursor = db.cursor()
                                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -418,7 +443,7 @@ def tick():
                                    # Lets Sell some
                                    # print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                    try:
-                                       printed = ('   Prod 12 -Selling ' + str(format_float(
+                                       printed = ('   Prod 6 -Selling ' + str(format_float(
                                            sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                            format_float(newbid)) + '  and getting  +' + str(format_float(
                                            ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
@@ -431,10 +456,13 @@ def tick():
                                        # cursor.execute('update orders set active = 0, reason_close = "12 Take profit" where market =("%s")' % market)
                                        cursor.execute(
                                            'update orders set reason_close =%s where active=1 and market =%s', (
-                                               "12  TP , price:    " + str(
-                                                   format_float(newbid)) + "    time:   " + str(currenttime),
+                                               "4  TP , price:    " + str(
+                                                   format_float(newbid)) + "    time:   " + str(currenttime)  +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,
                                                market))
-                                       cursor.execute(
+                                       if sell_signal == 0:
+                                           cursor.execute(
                                            'update orders set sell = 4 where active=1 and market =("%s")' % market)
                                        if max_percent_sql>profit/1.5:
                                            cursor.execute(
@@ -460,12 +488,12 @@ def tick():
 #####################################################
 
 
-                            if (currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ):
+                            if serf_usd > 0 and ((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose )):
 
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                                 try:
                                     printed = (
-                                        "    5.1 - We have GREEN candle for " + market + " and let`s wait it to be up")
+                                        "    7 - We have GREEN candle for " + market + " and let`s wait it to be up")
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
@@ -482,11 +510,11 @@ def tick():
 
 
 
-                            elif (currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5):
+                            elif serf_usd > 0 and ((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5)):
                                 print ("We have good trend for " + market)
 
                                 try:
-                                    printed = ("   6.1  - We have good short term trend for " + market)
+                                    printed = ("   8  - We have good short term trend for " + market)
                                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
@@ -506,12 +534,12 @@ def tick():
                             else:
 
 
-                                if  (serf > 0 and max_percent_sql - procent_serf >= 1 and max_percent_sql >= 3):  # #WAS profit2
+                                if  (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and max_percent_sql >= 3.0 and slow_market==1) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and max_percent_sql >= 3.0 and slow_market==0):  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('    8.1 - Order already opened to sell  ' + market)
+                                            printed = ('    9 - Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  #
                                                                  "cryptodb")
@@ -531,10 +559,10 @@ def tick():
 
                                         # print ('26 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('    8.1 Prod - Trying to Sell ' + str(
+                                            printed = ('    10 Prod - Trying to Sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                                format_float(ask)) + '  and get   ' + str(
+                                                format_float(ask)) + '  and get  + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
@@ -546,16 +574,21 @@ def tick():
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 (
-                                                    "8.1 Strike TP SELL, price:  " + str(
+                                                    "6 Strike TP SELL, price:  " + str(
                                                         format_float(last)) + "  time:   " + str(
-                                                        currenttime), market))
-
+                                                        currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            cursor.execute(
+                                                'update orders set sell = 6 where active=1 and market =("%s")' % market)
+                                            if max_percent_sql > profit / 1.5:
+                                                cursor.execute(
+                                                    "update markets set strike_time= %s  where market = %s",
+                                                    (currtime, market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
-                                            cursor.execute(
-                                                "update markets set strike_time= %s  where market = %s",
-                                                (currtime, market))
+
                                             # newvalue = summ_serf() + serf * BTC_price
                                             # cursor.execute(
                                             #   'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -643,12 +676,12 @@ def tick():
 
 
 
-                                if serf<0 and max_percent_sql<=0 and  last<currentopen and last<hourcurrentopen  and timestamp - timestamp_old > 7200:
+                                if serf_usd<0 and max_percent_sql<=0.5 and procent_serf==min_percent_sql and  timestamp - timestamp_old > 7200:
                                     # if we have already opened order to sell
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('    12.2 - Order already opened to sell  ' + market)
+                                            printed = ('    11 - Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -665,9 +698,9 @@ def tick():
                                         # Lets Sell some
                                         # print('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('   Prod 12.2 -Selling ' + str(format_float(
+                                            printed = ('   Prod 12 -Selling ' + str(format_float(
                                                 sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                                format_float(newbid)) + '  and getting  +' + str(format_float(
+                                                format_float(newbid)) + '  and losing  ' + str(format_float(
                                                 ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                                 format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
@@ -677,8 +710,10 @@ def tick():
                                             # cursor.execute('update orders set active = 0, reason_close = "12 Take profit" where market =("%s")' % market)
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s', (
-                                                    "12.2  fast SL, price:    " + str(
-                                                        format_float(newbid)) + "    time:   " + str(currenttime),
+                                                    "3  fast SL, price:    " + str(
+                                                        format_float(newbid)) + "    time:   " + str(currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,
                                                     market))
                                             cursor.execute(
                                                 'update orders set sell = 3 where active=1 and market =("%s")' % market)
@@ -703,12 +738,12 @@ def tick():
 
 
 #AI changed to down and we have our profit, so lets sell it in time
-                                elif (active == 1) and (ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and newbid > bought_price_sql * ( 1 + profit/3) and currtime-ai_time_second<7200 and last<hourcurrentopen:  # #WAS profit2
+                                elif (ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and newbid > bought_price_sql * ( 1 + profit/3) and currtime-ai_time_second<7200 and last<hourcurrentopen:  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('    10 - Order already opened to sell  ' + market)
+                                            printed = ('    13 - Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -727,10 +762,10 @@ def tick():
 
                                         #print ('23 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('    10 - Prod - Trying to sell ' + str(
+                                            printed = ('    14 - Prod - Trying to sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                                format_float(newbid)) + '  and get   ' + str(
+                                                format_float(newbid)) + '  and get  + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
@@ -742,9 +777,11 @@ def tick():
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 (
-                                                    "10 AI SELL, price:  " + str(
+                                                    "5 AI SELL, price:  " + str(
                                                         format_float(newbid)) + "  time:   " + str(
-                                                        currenttime), market))
+                                                        currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
@@ -832,12 +869,12 @@ def tick():
 
 #We have sell signal and some lost(equal to our profit), so lets sell it in time to avoid more loses
 
-                                elif (active == 1) and (newbid * (1 + profit / 3) < (bought_price_sql )) and (sell_signal != 0):# and slow_market==1:
+                                elif  ((newbid * (1 + profit / 3) < (bought_price_sql )) or procent_serf==min_percent_sql) and (sell_signal != 0):# and slow_market==1:
 
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         print('Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('  13 Order already opened to sell  ' + market)
+                                            printed = ('  15 Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -856,7 +893,7 @@ def tick():
 
                                         #print ('27 Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('   13 Prod -Trying to Sell ' + str(
+                                            printed = ('   16 Prod -Trying to Sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and lose  ' + str(
@@ -870,7 +907,9 @@ def tick():
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 ("13 small SL, p:   " + str(
-                                                    format_float(newbid)) + " t:    " + str(currenttime), market))
+                                                    format_float(newbid)) + " t:    " + str(currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -893,12 +932,12 @@ def tick():
 
 
 #We have sell signal and profit a little bit more then zero, so lets sell it in time
-                                elif (active == 1) and serf >= 0 and procent_serf<0.4 and (sell_signal != 0) and last<hourcurrentopen:  # #WAS profit2
+                                elif serf_usd >= 0 and procent_serf<0.4 and (sell_signal != 0) and last<hourcurrentopen:  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
-                                        print('  14 Order already opened to sell  ' + market)
+                                        print('  17 Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('  14 Order already opened to sell  ' + market)
+                                            printed = ('  17 Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -917,10 +956,10 @@ def tick():
 
                                         #print ('28 Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('  14 Prod - Trying to Sell ' + str(
+                                            printed = ('  18 Prod - Trying to Sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                                format_float(newbid)) + '  and get  ' + str(
+                                                format_float(newbid)) + '  and get + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
@@ -931,7 +970,9 @@ def tick():
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 ("14  ha TP, p:   " + str(
-                                                    format_float(newbid)) + " t:    " + str(currenttime), market))
+                                                    format_float(newbid)) + " t:    " + str(currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -957,12 +998,12 @@ def tick():
 
 
 ### btc_status sell
-                                elif (active == 1)  and (sell_signal == 7):  # #WAS profit2
+                                elif (sell_signal == 7):  # #WAS profit2
 
                                     if has_open_order(market, 'LIMIT_SELL'):
-                                        print('  144 Order already opened to sell  ' + market)
+                                        print('  19 Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('  144 Order already opened to sell  ' + market)
+                                            printed = ('  19 Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -981,7 +1022,7 @@ def tick():
 
                                         #print ('28 Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
-                                            printed = ('  144 Prod - Trying to Sell ' + str(
+                                            printed = ('  20 Prod - Trying to Sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get or lose  ' + str(
@@ -994,8 +1035,10 @@ def tick():
                                                     currenttime, printed))
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
-                                                ("144  BTC SL, p:   " + str(
-                                                    format_float(newbid)) + " t:    " + str(currenttime), market))
+                                                ("7  BTC SL, p:   " + str(
+                                                    format_float(newbid)) + " t:    " + str(currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -1021,11 +1064,11 @@ def tick():
 #Minus is 1.5 times more then expected profit, so lets STOP LOSS
 
                                 #elif   (active == 1) and (newbid  * (1 + profit * 1.5) < (bought_price_sql)):  # #WAS profit2
-                                elif (active == 1) and (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)):
+                                elif (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)):
                                     if has_open_order(market, 'LIMIT_SELL'):
                                         print('Order already opened to sell  ' + market)
                                         try:
-                                            printed = ('  15 Order already opened to sell  ' + market)
+                                            printed = ('  21 Order already opened to sell  ' + market)
                                             db = MySQLdb.connect("localhost", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -1045,7 +1088,7 @@ def tick():
                                         #print ('29 Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         #print summ_serf(), serf , BTC_price
                                         try:
-                                            printed = ('  15 Prod - Trying to sell ' + str(
+                                            printed = ('  22 Prod - Trying to sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and lose  ' + str(
@@ -1058,10 +1101,10 @@ def tick():
                                                     currenttime, printed))
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
-                                                (" 15  SL, p:   " + str(
-                                                    format_float(newbid)) + " t:    " + str(currenttime), market))
-                                            cursor.execute(
-                                                'update orders set sell = 6 where active=1 and market =("%s")' % market)
+                                                (" 22  SL, p:   " + str(
+                                                    format_float(newbid)) + " t:    " + str(currenttime) +
+                                        '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
@@ -1205,7 +1248,7 @@ def percent_serf(marketname):
     cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        return float(row[0])
+        return float("{0:.2f}".format(row[0]))
     return 0
 
 
@@ -1218,7 +1261,7 @@ def percent_serf_max(marketname):
     cursor.execute("SELECT percent_serf_max FROM orders WHERE active =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        return float(row[0])
+        return float("{0:.2f}".format(row[0]))
     return 0
 
 
@@ -1229,7 +1272,7 @@ def percent_serf_min(marketname):
     cursor.execute("SELECT percent_serf_min FROM orders WHERE active =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        return float(row[0])
+        return float("{0:.2f}".format(row[0]))
     return 0
 
 
@@ -1326,7 +1369,7 @@ def summ_serf():
     r = cursor.fetchall()
     for row in r:
         if row[0] is not None:
-            return float(row[0])
+            return float("{0:.2f}".format(row[0]))
     #return 0
         else:
             return 0

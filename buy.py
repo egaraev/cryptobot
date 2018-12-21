@@ -90,7 +90,7 @@ def tick():
                 ha_time_second=heikin_ashi(market, 23)
                 strike_time = heikin_ashi(market, 24)
                 strike_time2 = heikin_ashi(market, 27)
-                percent_sql=float(heikin_ashi(market, 21))
+                percent_sql=float("{0:.2f}".format(heikin_ashi(market, 21)))
                 volume_sql=int(heikin_ashi(market, 22))
                 #print get_balance_from_market(market)['result']
                 balance_res = get_balance_from_market(market)
@@ -109,9 +109,9 @@ def tick():
                     cursor = db.cursor()
                     #cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s", (BTC_price, btc_trend, 1))
                     #prev_serf = previous_serf(market)
-                    serf = (newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql)
+                    serf = float("{0:.8f}".format(newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql))
                     if bought_price_sql!=0:
-                        procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
+                        procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
                         cursor.execute(
                             "update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",
                             (procent_serf, market))

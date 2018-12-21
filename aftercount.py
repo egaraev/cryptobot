@@ -35,10 +35,11 @@ def ME():
                 newask = ask + ask * 0.002
                 bought_price_sql = float(status_orders(market, 3))
                 aftercount=float(status_orders(market, 25))
+                min_percent=float(status_orders(market, 24))
                 #bought_quantity_sql = float(status_orders(market, 2))
                 order_id = closed_orders_id(market)
-                procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
-
+                procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
+                #print market, procent_serf, percent_serf(market)
 
 
                 if order_id!=0 and currtime - close_date(market)<172800:
@@ -47,11 +48,11 @@ def ME():
                         db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
 
-                        if procent_serf>=percent_serf(market):
+                        if procent_serf>=percent_serf(market) and procent_serf>=aftercount:
                             cursor.execute(
                                 "update orders set aftercount=%s where market = %s and active = 0 and order_id = %s",
                                 (procent_serf, market, order_id))
-                        else:
+                        elif procent_serf<percent_serf(market):
                             cursor.execute(
                                 "update orders set aftercount_min=%s where market = %s and active = 0 and order_id = %s",
                                 (procent_serf, market, order_id))
@@ -88,7 +89,7 @@ def ME():
 
 
 
-                print order_id, market, percent_serf(market), procent_serf, bought_price_sql
+                #print market, percent_serf(market), procent_serf, aftercount, min_percent
 
         except:
             continue
@@ -142,7 +143,7 @@ def percent_serf(marketname):
     cursor.execute("SELECT percent_serf FROM orders WHERE active=0 and market= '%s' order by order_id desc" % market)
     r = cursor.fetchall()
     for row in r:
-        return float(row[0])
+        return float("{0:.2f}".format(row[0]))
     return 0
 
 
