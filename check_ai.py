@@ -61,7 +61,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE enabled =1")
+    cursor.execute("SELECT * FROM markets WHERE enabled =1 and ai_active=1")
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:

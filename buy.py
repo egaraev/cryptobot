@@ -11,13 +11,20 @@ import sys
 import smtplib
 c1 = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 c=Client(api_key='', api_secret='')
+TICK_INTERVAL = 60  # seconds
 
 def main():
     print('Starting buy trader bot')
 
 
-
-    tick()
+    # Running clock forever
+    while True:
+        start = time.time()
+        tick()
+        end = time.time()
+        # Sleep the thread if needed
+        if end - start < TICK_INTERVAL:
+            time.sleep(TICK_INTERVAL - (end - start))
 
 ################################################################################################################
 #what will be done every loop iteration
@@ -63,6 +70,16 @@ def tick():
                 fivehourprevopen = hourprevopen9
                 fivehourprevclose = hourprevclose5
 
+
+                lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
+                currentlow5 = float(lastcandle5[0]['L'])
+                currentopen5 = float(lastcandle5[0]['O'])
+                currenthigh5 = float(lastcandle5[0]['H'])
+                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
+                hourcurrentopen = float(hourlastcandle[0]['O'])
+
+
+
                 timestamp = int(time.time())
 
             #Current prices
@@ -92,10 +109,13 @@ def tick():
                 strike_time2 = heikin_ashi(market, 27)
                 percent_sql=float("{0:.2f}".format(heikin_ashi(market, 21)))
                 volume_sql=int(heikin_ashi(market, 22))
+                candles = str(heikin_ashi(market, 28))
                 #print get_balance_from_market(market)['result']
                 balance_res = get_balance_from_market(market)
                 current_balance = balance_res['result']['Balance']
                 current_available = balance_res['result']['Available']
+                #print market, candles
+
 
 
 
@@ -194,7 +214,7 @@ def tick():
                 else:
                     pass
 
-                print market
+                #print market, candles
 
 
 # What if we have sent the buy order to bittrex?
@@ -290,6 +310,7 @@ def tick():
                     #print market, last
 
 
+
                 #if  ((stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAD_trend=="UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and stop_bot_force == 0) and last>currentopen5 and percent_chg>0 and (currtime-ha_time_second<1500) and current_order_count<=max_orders: # and (currtime-strike_time>5000):  # and ((dayprevclose>=daycurrentopen or daycurrentopen==daycurrenthigh) is not True) and (currenthigh>currentopen or currentopen<currentclose):  # 0.8 - 3.5  #
                 if ((stop_bot == 0) and (HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE") and (
                                 HAD_trend == "UP" or HAD_trend == "Revers-UP" or HAD_trend == "STABLE") and (HAH_trend == "UP" or HAH_trend == "Revers-UP") and stop_bot_force == 0) and (
@@ -358,7 +379,7 @@ def tick():
                                         market, buy_quantity, newask, "2", currenttime, timestamp, "1", btc_trend,
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                             HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(
-                                            percent_sql) + '  vol  ' + str(volume_sql),
+                                            percent_sql) + '  vol  ' + str(volume_sql) + 'Candles'+ str(candles),
                                         HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute(
                                     "update orders set serf = %s where market = %s and active =2",

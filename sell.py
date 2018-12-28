@@ -107,37 +107,26 @@ def tick():
                 slow_market=heikin_ashi(market, 3)
 
                 if last>currentopen5:
-                    fivemin='UP'
+                    fivemin='U'
                 else:
-                    fivemin='DOWN'
+                    fivemin='D'
 
                 if last>currentopen:
-                    thirtymin='UP'
+                    thirtymin='U'
                 else:
-                    thirtymin='DOWN'
+                    thirtymin='D'
 
                 if last>hourcurrentopen:
-                    hour='UP'
+                    hour='U'
                 else:
-                    hour='DOWN'
+                    hour='D'
 
 
 
-                #print market, last, fivemin, thirtymin, hour
+                #print market, last, currentopen5, currentopen, fivemin, thirtymin, hourcurrentopen, hour
 
 
 
-
-#                if (HA_trend == "DOWN") or (btc_trend == "DANGER") or (HAD_trend == "DOWN"):
-#                    profit = parameters()[3] / 1.5
-#                elif (HAD_trend == "DOWN" or HAD_trend == "Revers-DOWN") and (HA_trend=="DOWN" or HA_trend=="Revers-DOWN") and (HAH_trend=="DOWN" or HAH_trend=="Revers-DOWN"):
-#                    profit = parameters()[3] / 2
-#                elif (timestamp - timestamp_old > 259200) and (HA_trend!="UP" or HA_trend!="Revers-UP"):
-#                    profit = parameters()[3] / 2.5
-#                elif (timestamp - timestamp_old > 518400) and (HA_trend != "UP" or HA_trend != "Revers-UP"):
-#                    profit = parameters()[3] / 3
-#                else:
-#                    profit = parameters()[3]
 
 
 
@@ -157,6 +146,7 @@ def tick():
                     if bought_price_sql!=0:
                         #procent_serf = float(((newbid / bought_price_sql) - 1) * 100)
                         procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
+                        #bittrex_fee=
                         cursor.execute(
                             "update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",
                             (procent_serf, market))
@@ -187,7 +177,7 @@ def tick():
                 max_percent_sql= float("{0:.2f}".format(status_orders(market, 15)))
                 min_percent_sql= float("{0:.2f}".format(status_orders(market, 24)))
                 #print market, max_percent_sql, procent_serf, last, fivehourprevopen, last, currentopen
-                print serf_usd
+                #print serf_usd
 
 
                 #print market, bought_quantity
@@ -296,6 +286,11 @@ def tick():
                 #print ("3  fast SL, price:    " + str(float(newbid)) + "    time:   " + str(currenttime) + '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,market)
 #What if we have sent the sell order to bittrex?
                 if open_sell(market)==1:
+                    #print get_balance_from_market(market)['result']['Available']
+                    quantity_left=float(get_balance_from_market(market)['result']['Available'])
+                    btc_quantity = float(quantity_left*newbid)
+
+                    #print btc_quantity
 
                     if has_open_order(market, 'LIMIT_SELL'):
                         if currtime - sell_time(market) < max_sell_timeout:
@@ -336,7 +331,7 @@ def tick():
                             #############################################################
 
 
-                    elif get_balance_from_market(market)['result']['Available'] >0:
+                    elif get_balance_from_market(market)['result']['Available'] >0 and btc_quantity>0.0005:
                         print(' Order failed  ' + market)
                         rest_balance=get_balance_from_market(market)['result']['Available']
                         try:
@@ -368,7 +363,7 @@ def tick():
                             newquantity = get_closed_orders(market, 'Quantity')
                             cursor.execute("update orders set quantity = %s where market = %s and active =1",(newquantity, market))
                             cursor.execute('update orders set active = 0, open_sell = 0  where active =1 and market =("%s")' % market)       # -this is deactivating the order  !!!!
-                            newvalue = summ_serf() + serf * BTC_price
+                            newvalue = summ_serf() + procent_serf
                             cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                             currenttime, newvalue, market))
                             db.commit()
@@ -421,7 +416,7 @@ def tick():
 
 
  #####################################################
-                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.0>=max_percent_sql >= 0.4) or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.5 and 2.0>=max_percent_sql >= 1.0) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0) and slow_market==1)  or  ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1>=max_percent_sql >= 0.4) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0)  and slow_market==0):
+                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 0.7 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.5 and 2.0>=max_percent_sql >= 1.5 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0) and slow_market==1)  or  ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 0.7) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 3.0>=max_percent_sql >= 2.0)  and slow_market==0):
                             # if we have already opened order to sell
                                if has_open_order(market, 'LIMIT_SELL'):
                                    # print('Order already opened to sell  ' + market)
@@ -459,7 +454,8 @@ def tick():
                                                "4  TP , price:    " + str(
                                                    format_float(newbid)) + "    time:   " + str(currenttime)  +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)),
                                                market))
                                        if sell_signal == 0:
                                            cursor.execute(
@@ -488,7 +484,7 @@ def tick():
 #####################################################
 
 
-                            if serf_usd > 0 and ((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose )):
+                            if serf_usd > 0 and ((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ) or thirtymin=='U'):
 
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                                 try:
@@ -510,7 +506,7 @@ def tick():
 
 
 
-                            elif serf_usd > 0 and ((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5)):
+                            elif serf_usd > 0 and ((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5) or fivemin=='D'):
                                 print ("We have good trend for " + market)
 
                                 try:
@@ -578,7 +574,8 @@ def tick():
                                                         format_float(last)) + "  time:   " + str(
                                                         currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)), market))
                                             cursor.execute(
                                                 'update orders set sell = 6 where active=1 and market =("%s")' % market)
                                             if max_percent_sql > profit / 1.5:
@@ -713,7 +710,8 @@ def tick():
                                                     "3  fast SL, price:    " + str(
                                                         format_float(newbid)) + "    time:   " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin,
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin + '  AI:'  + str(
+                                        ai_prediction(market)),
                                                     market))
                                             cursor.execute(
                                                 'update orders set sell = 3 where active=1 and market =("%s")' % market)
@@ -909,7 +907,8 @@ def tick():
                                                 ("13 small SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)), market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -972,7 +971,8 @@ def tick():
                                                 ("14  ha TP, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)), market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -1038,7 +1038,8 @@ def tick():
                                                 ("7  BTC SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)), market))
 
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
@@ -1104,7 +1105,8 @@ def tick():
                                                 (" 22  SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                        ai_prediction(market)), market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
@@ -1361,18 +1363,34 @@ def status_orders(marketname, value):
     return 0
 
 
+#def summ_serf():
+#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#    cursor = db.cursor()
+    #market=marketname
+#    cursor.execute("SELECT SUM(serf_usd) FROM orders where active=0")
+#    r = cursor.fetchall()
+#    for row in r:
+#        if row[0] is not None:
+#            return float("{0:.2f}".format(row[0]))
+    #return 0
+#        else:
+#            return 0
+
 def summ_serf():
     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    #market=marketname
-    cursor.execute("SELECT SUM(serf_usd) FROM orders where active=0")
+    # market=marketname
+    cursor.execute("SELECT SUM(percent_serf) FROM orders where active=0")
     r = cursor.fetchall()
     for row in r:
         if row[0] is not None:
             return float("{0:.2f}".format(row[0]))
-    #return 0
+            # return 0
         else:
             return 0
+
+
+
 
 
 #Function for checking the history of orders

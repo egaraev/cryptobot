@@ -4,18 +4,23 @@
 #kill -9 $PID1
 
 
-PID0=`ps aux | awk '/buy.py/ && !/awk/ { print $2 }'`
-kill -9 $PID0
+#PID0=`ps aux | awk '/buy.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID0
 
 
-PID1=`ps aux | awk '/sell.py/ && !/awk/ { print $2 }'`
-kill -9 $PID1
+#PID1=`ps aux | awk '/sell.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID1
 
 
 
 
 PID2=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
 kill -9 $PID2
+
+
+PID22=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
+kill -9 $PID22
+
 
 
 PID3=`ps aux | awk '/neuralprediction.py/ && !/awk/ { print $2 }'`

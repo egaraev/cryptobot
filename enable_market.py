@@ -4,6 +4,9 @@ import MySQLdb
 import sys
 import datetime
 import time
+import hmac
+import requests
+import hashlib
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 c1 = Client(api_key=config.key, api_secret=config.secret)
@@ -46,15 +49,43 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
+                #Candle analisys
+                lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
+                currentopen = float(lastcandle[0]['O'])
 
-                #print market, last
+                lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
+                currentopen5 = float(lastcandle5[0]['O'])
+                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
+                hourcurrentopen = float(hourlastcandle[0]['O'])
+
+                fivemin='NONE'
+                thirtymin='NONE'
+                hour='NONE'
+
+                if last>currentopen5:
+                    fivemin='U'
+                else:
+                    fivemin='D'
+
+                if last>currentopen:
+                    thirtymin='U'
+                else:
+                    thirtymin='D'
+
+                if last>hourcurrentopen:
+                    hour='U'
+                else:
+                    hour='D'
+
+
+                #print market, last, hour, thirtymin, fivemin
 
                 try:
                     db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
-                        "update markets set percent_chg= %s, volume=%s  where enabled=1 and market = %s",
-                        (percent_chg, volume, market))
+                        "update markets set percent_chg= %s, volume=%s, candles=%s where enabled=1 and market = %s",
+                        (percent_chg, volume, ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin), market))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -233,7 +264,18 @@ def heikin_ashi(marketname, value):
 
 
 
+def get_candles(market, tick_interval):
+    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
+    return signed_request(url)
 
+
+def signed_request(url):
+    now = time.time()
+    url += '&nonce=' + str(now)
+    signed = hmac.new(config.secret, url.encode('utf-8'), hashlib.sha512).hexdigest()
+    headers = {'apisign': signed}
+    r = requests.get(url, headers=headers)
+    return r.json()
 
 
 
