@@ -76,3 +76,7 @@ kill -9 $PID15
 
 PID16=`ps aux | awk '/btc_status.py/ && !/awk/ { print $2 }'`
 kill -9 $PID16
+
+PID17=`ps aux | awk '/candles.py/ && !/awk/ { print $2 }'`
+kill -9 $PID17
+

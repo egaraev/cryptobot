@@ -75,7 +75,8 @@ def tick():
                 fivemin='NONE'
                 thirtymin='NONE'
                 hour='NONE'
-
+                candles_signal_short = str(heikin_ashi(market, 29))
+                candles_signal_long = str(heikin_ashi(market, 30))
 
 
             #Current prices
@@ -454,7 +455,7 @@ def tick():
                                                "4  TP , price:    " + str(
                                                    format_float(newbid)) + "    time:   " + str(currenttime)  +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)),
                                                market))
                                        if sell_signal == 0:
@@ -574,7 +575,7 @@ def tick():
                                                         format_float(last)) + "  time:   " + str(
                                                         currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)), market))
                                             cursor.execute(
                                                 'update orders set sell = 6 where active=1 and market =("%s")' % market)
@@ -710,7 +711,7 @@ def tick():
                                                     "3  fast SL, price:    " + str(
                                                         format_float(newbid)) + "    time:   " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)),
                                                     market))
                                             cursor.execute(
@@ -779,7 +780,7 @@ def tick():
                                                         format_float(newbid)) + "  time:   " + str(
                                                         currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin, market))
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin+' CS '+str(candles_signal_short) +' '+str(candles_signal_long), market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
                                                 (1, currtime, market))
@@ -907,7 +908,7 @@ def tick():
                                                 ("13 small SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)), market))
 
                                             cursor.execute(
@@ -971,7 +972,7 @@ def tick():
                                                 ("14  ha TP, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)), market))
 
                                             cursor.execute(
@@ -1038,7 +1039,7 @@ def tick():
                                                 ("7  BTC SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)), market))
 
                                             cursor.execute(
@@ -1105,7 +1106,7 @@ def tick():
                                                 (" 22  SL, p:   " + str(
                                                     format_float(newbid)) + " t:    " + str(currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + '  AI:'  + str(
+                                            HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
                                         ai_prediction(market)), market))
                                             cursor.execute(
                                                 "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",

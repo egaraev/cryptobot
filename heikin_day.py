@@ -37,20 +37,20 @@ def HA():
 
 #######################
                 daylastcandle = get_candles(market, 'day')['result'][-1:]
-                daycurrentlow = float(daylastcandle[0]['L'])
-                daycurrenthigh = float(daylastcandle[0]['H'])
-                daycurrentopen = float(daylastcandle[0]['O'])
-                daycurrentclose = float(daylastcandle[0]['C'])
+                daycurrentlow = float(daylastcandle[0]['L'])*100000
+                daycurrenthigh = float(daylastcandle[0]['H'])*100000
+                daycurrentopen = float(daylastcandle[0]['O'])*100000
+                daycurrentclose = float(daylastcandle[0]['C'])*100000
                 daypreviouscandle = get_candles(market, 'day')['result'][-2:]
-                dayprevlow = float(daypreviouscandle[0]['L'])
-                dayprevhigh = float(daypreviouscandle[0]['H'])
-                dayprevopen = float(daypreviouscandle[0]['O'])
-                dayprevclose = float(daypreviouscandle[0]['C'])
+                dayprevlow = float(daypreviouscandle[0]['L'])*100000
+                dayprevhigh = float(daypreviouscandle[0]['H'])*100000
+                dayprevopen = float(daypreviouscandle[0]['O'])*100000
+                dayprevclose = float(daypreviouscandle[0]['C'])*100000
                 daypreviouscandle2 = get_candles(market, 'day')['result'][-3:]
-                dayprevlow2 = float(daypreviouscandle2[0]['L'])
-                dayprevhigh2 = float(daypreviouscandle2[0]['H'])
-                dayprevopen2 = float(daypreviouscandle2[0]['O'])
-                dayprevclose2 = float(daypreviouscandle2[0]['C'])
+                dayprevlow2 = float(daypreviouscandle2[0]['L'])*100000
+                dayprevhigh2 = float(daypreviouscandle2[0]['H'])*100000
+                dayprevopen2 = float(daypreviouscandle2[0]['O'])*100000
+                dayprevclose2 = float(daypreviouscandle2[0]['C'])*100000
 ###############
                 HAD_PREV_Close2 = (dayprevopen2 + dayprevhigh2 + dayprevlow2 + dayprevclose2) / 4
                 HAD_PREV_Open2 = (dayprevopen2 + dayprevclose2) / 2

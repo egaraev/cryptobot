@@ -115,8 +115,9 @@ def tick():
                 current_balance = balance_res['result']['Balance']
                 current_available = balance_res['result']['Available']
                 #print market, candles
-
-
+                btc_quantity = float(bought_quantity * newbid)
+                candles_signal_short = str(heikin_ashi(market, 29))
+                candles_signal_long = str(heikin_ashi(market, 30))
 
 
 
@@ -165,7 +166,7 @@ def tick():
 
 
                 #print market, bought_quantity
-                if bought_quantity is not None:
+                if bought_quantity is not None :
                     if has_open_order(market, 'LIMIT_SELL'):
                         print('Order already opened to sell  ' + market)
                         try:
@@ -287,7 +288,7 @@ def tick():
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                            cursor.execute("update orders set quantity = %s, price=%s, active=1, date=%s, timestamp=%s, iteration=1, btc_direction=%s, params=%s, heikin_ashi=%s  where market = %s and active =2",(buy_quantity, newbid, currenttime, timestamp,btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql), HA_trend, market))
+                            cursor.execute("update orders set quantity = %s, price=%s, active=1, date=%s, timestamp=%s, iteration=1, btc_direction=%s, params=%s, heikin_ashi=%s  where market = %s and active =2",(buy_quantity, newbid, currenttime, timestamp,btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)   + ' Candles '+ str(candles)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long), HA_trend, market))
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -332,7 +333,7 @@ def tick():
                                 db.close()
                         # If we have some currency on the balance
 
-                        elif (current_balance!=0.0) or (current_available!=0.0):
+                        elif ((current_balance!=0.0) or (current_available!=0.0)) and btc_quantity>0.0005:
                             print market, current_balance, current_available
                             # print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                             try:
@@ -379,7 +380,7 @@ def tick():
                                         market, buy_quantity, newask, "2", currenttime, timestamp, "1", btc_trend,
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                             HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(
-                                            percent_sql) + '  vol  ' + str(volume_sql) + 'Candles'+ str(candles),
+                                            percent_sql) + '  vol  ' + str(volume_sql) + ' Candles '+ str(candles)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long),
                                         HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute(
                                     "update orders set serf = %s where market = %s and active =2",

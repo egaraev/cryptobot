@@ -236,5 +236,16 @@ else
 fi
 
 
+SERVICE17='candles.py'
+
+if ps ax | grep -v grep | grep $SERVICE17 > /dev/null
+then
+    echo "$SERVICE17 service running "
+else
+    echo there is no such "$SERVICE17 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 candles.py
+
+fi
 
 
