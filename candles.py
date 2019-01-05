@@ -480,7 +480,7 @@ def tick():
                     finally:
                         db.close()
 
-                else:
+                elif (signal1=="NONE" or signal2=="NONE") and currtime - candles_signal_time > 3600 :
 
                     try:
                         print market, "lets update new predictions"
@@ -496,7 +496,8 @@ def tick():
                         sys.exit(1)
                     finally:
                         db.close()
-
+                else:
+                    pass
 
 
 

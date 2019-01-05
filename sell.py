@@ -106,6 +106,7 @@ def tick():
                 ai_time_second = heikin_ashi(market, 8)
                 profit = parameters()[3]
                 slow_market=heikin_ashi(market, 3)
+                normal_candles=heikin_ashi(market, 19)
 
                 if last>currentopen5:
                     fivemin='U'
@@ -485,7 +486,7 @@ def tick():
 #####################################################
 
 
-                            if serf_usd > 0 and ((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ) or thirtymin=='U'):
+                            if serf_usd > 0 and slow_market==1 and (((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ) or thirtymin=='U')):
 
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                                 try:
@@ -507,7 +508,7 @@ def tick():
 
 
 
-                            elif serf_usd > 0 and ((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5) or fivemin=='D'):
+                            elif serf_usd > 0 and normal_candles==1 and (((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5) or fivemin=='D')):
                                 print ("We have good trend for " + market)
 
                                 try:

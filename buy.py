@@ -119,7 +119,25 @@ def tick():
                 candles_signal_short = str(heikin_ashi(market, 29))
                 candles_signal_long = str(heikin_ashi(market, 30))
 
+                fivemin='NONE'
+                thirtymin='NONE'
+                hour='NONE'
 
+
+                if last>currentopen5:
+                    fivemin='U'
+                else:
+                    fivemin='D'
+
+                if last>currentopen:
+                    thirtymin='U'
+                else:
+                    thirtymin='D'
+
+                if last>hourcurrentopen:
+                    hour='U'
+                else:
+                    hour='D'
 
 
 
@@ -288,7 +306,7 @@ def tick():
                             db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                            cursor.execute("update orders set quantity = %s, price=%s, active=1, date=%s, timestamp=%s, iteration=1, btc_direction=%s, params=%s, heikin_ashi=%s  where market = %s and active =2",(buy_quantity, newbid, currenttime, timestamp,btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)   + ' Candles '+ str(candles)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long), HA_trend, market))
+                            cursor.execute("update orders set quantity = %s, price=%s, active=1, date=%s, timestamp=%s, iteration=1, btc_direction=%s, params=%s, heikin_ashi=%s  where market = %s and active =2",(buy_quantity, newbid, currenttime, timestamp,btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long), HA_trend, market))
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -380,7 +398,7 @@ def tick():
                                         market, buy_quantity, newask, "2", currenttime, timestamp, "1", btc_trend,
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                             HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(
-                                            percent_sql) + '  vol  ' + str(volume_sql) + ' Candles '+ str(candles)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long),
+                                            percent_sql) + '  vol  ' + str(volume_sql) + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long),
                                         HA_trend))  # + '  AI   ' + str(ai_prediction(market))
                                 cursor.execute(
                                     "update orders set serf = %s where market = %s and active =2",
