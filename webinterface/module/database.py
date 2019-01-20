@@ -2,7 +2,7 @@ import pymysql
 
 class Database:
     def connect(self):
-        return pymysql.connect("localhost","cryptouser","123456","cryptodb" )
+        return pymysql.connect("database-service","cryptouser","123456","cryptodb" )
     
     def read(self, id):
         con = Database.connect(self)

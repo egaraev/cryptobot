@@ -6,16 +6,16 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-with open('out5.csv', 'r') as myfile:
+with open('data/out5.csv', 'r') as myfile:
     #market=myfile.read().replace('\n', ' ')
     market=myfile.read().splitlines()
 
-with open('out6.csv', 'r') as myfile:
+with open('data/out6.csv', 'r') as myfile:
     #profit=myfile.read().replace('\n', ' ')
     #profit=myfile.read().splitlines()
     profit = map(float, myfile)
 
-with open('out7.csv', 'r') as myfile:
+with open('data/out7.csv', 'r') as myfile:
     #profit=myfile.read().replace('\n', ' ')
     #profit=myfile.read().splitlines()
     count = map(int, myfile)
@@ -36,8 +36,8 @@ ax.set_xticklabels(market, fontsize=10, rotation=90)
 ax.legend()
 fig.tight_layout()
 plt.grid(True)
-plt.savefig('/var/www/cgi-bin/crypto_results3.png')
-plt.savefig('/root/PycharmProjects/cryptobot/webinterface/static/crypto_results3.png')
+plt.savefig('/var/www/html/images/crypto_results3.png')
+plt.savefig('/root/PycharmProjects/cryptobot/images/crypto_results3.png')
 plt.show()
 
 

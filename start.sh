@@ -249,3 +249,32 @@ else
 fi
 
 
+
+
+
+SERVICE18='check_candle_signals.py'
+
+if ps ax | grep -v grep | grep $SERVICE18 > /dev/null
+then
+    echo "$SERVICE18 service running "
+else
+    echo there is no such "$SERVICE18 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 check_candle_signals.py
+
+fi
+
+
+
+SERVICE19='chart_creator5.py'
+
+if ps ax | grep -v grep | grep $SERVICE19 > /dev/null
+then
+    echo "$SERVICE19 service running "
+else
+    echo there is no such "$SERVICE19 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 chart_creator5.py
+
+fi
+

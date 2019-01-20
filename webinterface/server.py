@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = "mys3cr3tk3y"
 db = Database()
 
-db1 = MySQLdb.connect(host="localhost", user="cryptouser", passwd="123456", db="cryptodb")
+db1 = MySQLdb.connect(host="database-service", user="cryptouser", passwd="123456", db="cryptodb")
 cur = db1.cursor()
 
 

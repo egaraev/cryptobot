@@ -46,7 +46,7 @@ def HA():
     if (btccurrentopen - BTC_price >= 150 or (btcprevopen - BTC_price >= 200 and btccurrentopen > BTC_price)):
         btc_status = "STOP"
         try:
-            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
             cursor = db.cursor()
             printed = ('   Received BTC STOP sell signal ')
             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -73,7 +73,7 @@ def HA():
                 if (btc_status == "STOP"):
 
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('update orders set sell = 7 where active=1 and market =("%s")' % market)
                         db.commit()
@@ -91,7 +91,7 @@ def HA():
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE active =1 and market = '%s'" % market)
@@ -119,7 +119,7 @@ def signed_request(url):
 
 
 def status_markets(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
@@ -132,7 +132,7 @@ def status_markets(marketname, value):
 
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)

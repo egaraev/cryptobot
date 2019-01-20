@@ -68,6 +68,7 @@ def tick():
                 prevclose5 = float(previouscandle5[0]['C'])
                 hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                 hourcurrentopen = float(hourlastcandle[0]['O'])
+                hourcurrenthigh = float(hourlastcandle[0]['H'])
                 hourprevcandle = get_candles(market, 'hour')['result'][-2:]
                 hourprevopen = float(hourprevcandle[0]['O'])
                 hourprevclose = float(hourprevcandle[0]['C'])
@@ -110,16 +111,22 @@ def tick():
 
                 if last>currentopen5:
                     fivemin='U'
+                elif last==currenthigh5:
+                    fivemin='H'
                 else:
                     fivemin='D'
 
                 if last>currentopen:
                     thirtymin='U'
+                elif last==currenthigh:
+                    thirtymin='H'
                 else:
                     thirtymin='D'
 
                 if last>hourcurrentopen:
                     hour='U'
+                elif last==hourcurrenthigh:
+                    hour='H'
                 else:
                     hour='D'
 
@@ -139,7 +146,7 @@ def tick():
                 #if open_sell(market)!=1:
 
                 try:
-                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     #cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s", (BTC_price, btc_trend, 1))
                     #prev_serf = previous_serf(market)
@@ -189,7 +196,7 @@ def tick():
                         try:
                             printed = ('    1 - Order already opened to sell  ' + market)
                             uuid = order_uuid(market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                             cursor.execute('update orders set uuid =%s where active=1 and open_sell=1 and market =%s', (uuid,market))
@@ -204,7 +211,7 @@ def tick():
                         print('Order already opened to buy  ' + market)
                         try:
                             printed = ('    2 - Order already opened to buy  ' + market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                             db.commit()
@@ -217,7 +224,7 @@ def tick():
                         #print market, bought_quantity,
                         if timestamp-timestamp_old<1800:
                             try:
-                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute("update orders set quantity = %s where market = %s and active =1",(bought_quantity, market))
                                 db.commit()
@@ -243,7 +250,7 @@ def tick():
                         print('Order already opened to sell  ' + market)
                         try:
                             printed = ('    3 - Order already opened to sell  ' + market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute(
                                 'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -259,7 +266,7 @@ def tick():
                         #print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                         try:
                             printed = ('    4 Prod -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or losing  ' + str(format_float(serf * BTC_price)) + ' USD')
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                             # cursor.execute('update orders set reason_close = "22 AI Stop loss" where active=1 and market =("%s")' % market)
@@ -275,7 +282,7 @@ def tick():
                             sys.exit(1)
                         finally:
                             db.close()
-                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "localhost")
+                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                         print c1.sell_limit(market, sell_quantity, newbid).json()
                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -299,7 +306,7 @@ def tick():
                             print('Order already opened to sell  ' + market)
                             try:
                                 printed = ('    5 - Order already opened to sell  ' + market)
-                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -314,7 +321,7 @@ def tick():
                             print(' Order cancelled  ' + market)
                             try:
                                 printed = ('    6- Order has been cancelled  ' + market)
-                                db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -329,7 +336,7 @@ def tick():
                             #########################################CANCEL OLD ORDER#####
                             uuid = order_uuid(market)
                             print c1.market_cancel(uuid)
-                            Mail("egaraev@gmail.com", "egaraev@gmail.com", "Cancel order", printed, "localhost")
+                            Mail("egaraev@gmail.com", "egaraev@gmail.com", "Cancel order", printed, "database-service")
                             #############################################################
 
 
@@ -338,7 +345,7 @@ def tick():
                         rest_balance=get_balance_from_market(market)['result']['Available']
                         try:
                             printed = ('    6- Order has been failed to sell  ' + market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute(
                                 'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -351,7 +358,7 @@ def tick():
                             sys.exit(1)
                         finally:
                             db.close()
-                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "Failed order", printed, "localhost")
+                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "Failed order", printed, "database-service")
 
 
 
@@ -359,7 +366,7 @@ def tick():
                         try:
                             print ('    7 Prod -This currency has been sold ' + market )
                             printed = ('    7 Prod -This currency has been sold   ' + market )
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                             newquantity = get_closed_orders(market, 'Quantity')
@@ -374,7 +381,7 @@ def tick():
                             sys.exit(1)
                         finally:
                             db.close()
-                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "Currency sold", printed, "localhost")
+                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "Currency sold", printed, "database-service")
 
 
                         break
@@ -392,7 +399,7 @@ def tick():
                 if debug_mode==1:
                         try:
                             printed = ("    XXX - Bot is working with " + market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute(
                                 'insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -418,13 +425,14 @@ def tick():
 
 
  #####################################################
-                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 0.7 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.5 and 2.0>=max_percent_sql >= 1.5 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0) and slow_market==1)  or  ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 0.7) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 3.0>=max_percent_sql >= 2.0)  and slow_market==0):
+                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 1.0 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.1 and 1.0>=max_percent_sql >= 0.7 )  or (serf_usd > 0 and max_percent_sql - procent_serf >= 0.5 and 2.0>=max_percent_sql >= 1.5 and fivemin=='D') or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.0 and 3.0>=max_percent_sql >= 2.0 and fivemin=='D') or max_percent_sql>7.0 and slow_market==1)\
+                                    or  ((serf_usd > 0 and max_percent_sql - procent_serf >= 0.2 and 1.5>=max_percent_sql >= 0.8) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 3.0>=max_percent_sql >= 2.0 and fivemin=='D') or max_percent_sql>10.0  and slow_market==0):
                             # if we have already opened order to sell
                                if has_open_order(market, 'LIMIT_SELL'):
                                    # print('Order already opened to sell  ' + market)
                                    try:
                                        printed = ('    5 - Order already opened to sell  ' + market)
-                                       db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                       db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                        cursor = db.cursor()
                                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                            currenttime, printed))
@@ -446,7 +454,7 @@ def tick():
                                            ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                            format_float((
                                                         newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
-                                       db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                       db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                        cursor = db.cursor()
                                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                            currenttime, printed))
@@ -477,7 +485,7 @@ def tick():
                                    finally:
                                        db.close()
                                    Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
-                                        "localhost")
+                                        "database-service")
                                    #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                    print c1.sell_limit(market, sell_quantity, newbid).json()
                                    #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -486,13 +494,13 @@ def tick():
 #####################################################
 
 
-                            if serf_usd > 0 and slow_market==1 and (((currentopen <= currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose) or (currentopen <= currentlow and currentopen < currenthigh and last > prevclose ) or thirtymin=='U')):
+                            if serf_usd > 0 and slow_market==1 and (((currentopen == currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose and thirtymin=='U') or (currentopen == currentlow and currentopen < currenthigh and last > prevclose and thirtymin=='U') )):
 
                                 print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                                 try:
                                     printed = (
                                         "    7 - We have GREEN candle for " + market + " and let`s wait it to be up")
-                                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -508,12 +516,12 @@ def tick():
 
 
 
-                            elif serf_usd > 0 and normal_candles==1 and (((currentopen5 <= currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5) or (currentopen5 <= currentlow5 and currentopen5 < currenthigh5 and last > prevclose5) or fivemin=='D')):
+                            elif serf_usd > 0 and normal_candles==1 and (((currentopen5 == currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin=='U') or (currentopen5 == currentlow5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin=='U'))):
                                 print ("We have good trend for " + market)
 
                                 try:
                                     printed = ("   8  - We have good short term trend for " + market)
-                                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute(
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -538,7 +546,7 @@ def tick():
                                         # print('Order already opened to sell  ' + market)
                                         try:
                                             printed = ('    9 - Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  #
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -562,7 +570,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(ask)) + '  and get  + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -572,7 +580,7 @@ def tick():
                                             cursor.execute(
                                                 'update orders set reason_close =%s where active=1 and market =%s',
                                                 (
-                                                    "6 Strike TP SELL, price:  " + str(
+                                                    "6 Good TP SELL, price:  " + str(
                                                         format_float(last)) + "  time:   " + str(
                                                         currenttime) +
                                         '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
@@ -598,7 +606,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -616,7 +624,7 @@ def tick():
 #                                        # print('Order already opened to sell  ' + market)
 #                                        try:
 #                                            printed = ('    8 - Order already opened to sell  ' + market)
-#                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+#                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
 #                                                                 "cryptodb")
 #                                            cursor = db.cursor()
 #                                            cursor.execute(
@@ -639,7 +647,7 @@ def tick():
 #                                                    sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
 #                                                format_float(ask)) + '  and get   ' + str(
 #                                                format_float(serf * BTC_price)) + ' USD')
-#                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+#                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
 #                                                                 "cryptodb")
 #                                            cursor = db.cursor()
 #                                            cursor.execute(
@@ -667,7 +675,7 @@ def tick():
 #                                            sys.exit(1)
 #                                        finally:
 #                                            db.close()
-#                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+#                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!####################################
 #                                        print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -681,7 +689,7 @@ def tick():
                                         # print('Order already opened to sell  ' + market)
                                         try:
                                             printed = ('    11 - Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                                 currenttime, printed))
@@ -702,7 +710,7 @@ def tick():
                                                 format_float(newbid)) + '  and losing  ' + str(format_float(
                                                 ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                                 format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                                 currenttime, printed))
@@ -728,7 +736,7 @@ def tick():
                                         finally:
                                             db.close()
                                         Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,
-                                             "localhost")
+                                             "database-service")
                                        #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -744,7 +752,7 @@ def tick():
                                         # print('Order already opened to sell  ' + market)
                                         try:
                                             printed = ('    13 - Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -767,7 +775,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get  + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -796,75 +804,75 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         break
 
-#We have our profit, so lets sell it in time
+#Our profit is less then 0 during 30 mins, so lets sell this shit in time
 
-#                                elif (active == 1) and newbid > bought_price_sql * (1 + profit/1.5 ):  # #WAS profit2
+                                elif (max_percent_sql==0 and timestamp-timestamp_old> 1800 and fivemin=='D'):  # #WAS profit2
 
-#                                    if has_open_order(market, 'LIMIT_SELL'):
+                                    if has_open_order(market, 'LIMIT_SELL'):
                                         # print('Order already opened to sell  ' + market)
-#                                        try:
-#                                            printed = ('    12 - Order already opened to sell  ' + market)
-#                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
-#                                                                 "cryptodb")
-#                                            cursor = db.cursor()
-#                                            cursor.execute(
-#                                                'insert into logs(date, log_entry) values("%s", "%s")' % (
-#                                                    currenttime, printed))
-#                                            db.commit()
-#                                        except MySQLdb.Error, e:
-#                                            print "Error %d: %s" % (e.args[0], e.args[1])
-#                                            sys.exit(1)
-#                                        finally:
-#                                            db.close()
+                                        try:
+                                            printed = ('    144 - Order already opened to sell  ' + market)
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
+                                                                 "cryptodb")
+                                            cursor = db.cursor()
+                                            cursor.execute(
+                                                'insert into logs(date, log_entry) values("%s", "%s")' % (
+                                                    currenttime, printed))
+                                            db.commit()
+                                        except MySQLdb.Error, e:
+                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            sys.exit(1)
+                                        finally:
+                                            db.close()
 
 
-#                                    else:
+                                    else:
 
                                         #print ('26 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
-#                                        try:
-#                                            printed = ('    12 Prod - Trying to Sell ' + str(
-#                                                format_float(
-#                                                    sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-#                                                format_float(newbid)) + '  and get   ' + str(
-#                                                format_float(serf * BTC_price)) + ' USD')
-#                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
-#                                                                 "cryptodb")
-#                                            cursor = db.cursor()
-#                                            cursor.execute(
-#                                                'insert into logs(date, log_entry) values("%s", "%s")' % (
-#                                                    currenttime, printed))
+                                        try:
+                                            printed = ('    144 Prod - Trying to Sell ' + str(
+                                                format_float(
+                                                    sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                                format_float(newbid)) + '  and lose   ' + str(
+                                                format_float(serf * BTC_price)) + ' USD')
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
+                                                                 "cryptodb")
+                                            cursor = db.cursor()
+                                            cursor.execute(
+                                                'insert into logs(date, log_entry) values("%s", "%s")' % (
+                                                    currenttime, printed))
                                             # cursor.execute('update orders set reason_close = "225 AI take profit" where active=1 and market =("%s")' % market)
-#                                            cursor.execute(
-#                                                'update orders set reason_close =%s where active=1 and market =%s',
-#                                                (
-#                                                    "12 TP SELL, price:  " + str(
-#                                                        format_float(newbid)) + "  time:   " + str(
-#                                                        currenttime), market))
+                                            cursor.execute(
+                                                'update orders set reason_close =%s where active=1 and market =%s',
+                                                (
+                                                    "144 Zero SL SELL, price:  " + str(
+                                                        format_float(newbid)) + "  time:   " + str(
+                                                        currenttime), market))
 
-#                                            cursor.execute(
-#                                                "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
-#                                                (1, currtime, market))
+                                            cursor.execute(
+                                                "update orders set open_sell = %s, sell_time=%s  where market = %s and active =1",
+                                                (1, currtime, market))
                                             #newvalue = summ_serf() + serf * BTC_price
                                             #cursor.execute(
                                              #   'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                               #      currenttime, newvalue, market))
-#                                            db.commit()
-#                                        except MySQLdb.Error, e:
-#                                            print "Error %d: %s" % (e.args[0], e.args[1])
-#                                            sys.exit(1)
-#                                        finally:
-#                                            db.close()
-#                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+                                            db.commit()
+                                        except MySQLdb.Error, e:
+                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            sys.exit(1)
+                                        finally:
+                                            db.close()
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-#                                        print c1.sell_limit(market, sell_quantity, newbid).json()
+                                        print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-#                                        break
+                                        break
 
 
 #We have sell signal and some lost(equal to our profit), so lets sell it in time to avoid more loses
@@ -875,7 +883,7 @@ def tick():
                                         print('Order already opened to sell  ' + market)
                                         try:
                                             printed = ('  15 Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -898,7 +906,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and lose  ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -925,7 +933,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -939,7 +947,7 @@ def tick():
                                         print('  17 Order already opened to sell  ' + market)
                                         try:
                                             printed = ('  17 Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -962,7 +970,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get + ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -989,7 +997,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -1006,7 +1014,7 @@ def tick():
                                         print('  19 Order already opened to sell  ' + market)
                                         try:
                                             printed = ('  19 Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -1029,7 +1037,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get or lose  ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -1056,7 +1064,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -1072,7 +1080,7 @@ def tick():
                                         print('Order already opened to sell  ' + market)
                                         try:
                                             printed = ('  21 Order already opened to sell  ' + market)
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -1096,7 +1104,7 @@ def tick():
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and lose  ' + str(
                                                 format_float(serf * BTC_price)) + ' USD')
-                                            db = MySQLdb.connect("localhost", "cryptouser", "123456",
+                                            db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute(
@@ -1122,7 +1130,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "localhost")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         print c1.sell_limit(market, sell_quantity, newbid).json()
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
@@ -1154,7 +1162,7 @@ def tick():
 
 
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
@@ -1188,7 +1196,7 @@ def Mail(FROM,TO,SUBJECT,TEXT,SERVER):
 
 #Allowed currencies function for SQL
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1208,7 +1216,7 @@ def available_market_list(marketname):
 
 
 def parameters():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM parameters")
     r = cursor.fetchall()
@@ -1220,7 +1228,7 @@ def parameters():
 
 
 def ai_prediction(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT ai_direction FROM markets WHERE active =1 and market = '%s'" % market)
@@ -1231,7 +1239,7 @@ def ai_prediction(marketname):
     return 0
 
 def ai_prediction_price(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT ai_price FROM markets WHERE active =1 and ai_direction='UP' and market = '%s'" % market)
@@ -1246,7 +1254,7 @@ def ai_prediction_price(marketname):
 
 
 def percent_serf(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1259,7 +1267,7 @@ def percent_serf(marketname):
 
 
 def percent_serf_max(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT percent_serf_max FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1270,7 +1278,7 @@ def percent_serf_max(marketname):
 
 
 def percent_serf_min(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT percent_serf_min FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1281,7 +1289,7 @@ def percent_serf_min(marketname):
 
 
 def open_sell(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT open_sell FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1297,7 +1305,7 @@ def open_sell(marketname):
 
 
 def sell_time(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT sell_time FROM orders WHERE active =1 and market = '%s'" % market)
@@ -1316,7 +1324,7 @@ def sell_time(marketname):
 
 #Check active orders in mysql
 def timestamp_orders(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -1332,7 +1340,7 @@ def timestamp_orders(marketname):
 
 #Check active orders in mysql
 def active_orders(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -1352,7 +1360,7 @@ def active_orders(marketname):
 #Check the status of active orders
 # 2 - is quantity, 3 -is price, 4 - active/passive
 def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -1366,7 +1374,7 @@ def status_orders(marketname, value):
 
 
 #def summ_serf():
-#    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+#    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
 #    cursor = db.cursor()
     #market=marketname
 #    cursor.execute("SELECT SUM(serf_usd) FROM orders where active=0")
@@ -1379,7 +1387,7 @@ def status_orders(marketname, value):
 #            return 0
 
 def summ_serf():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     # market=marketname
     cursor.execute("SELECT SUM(percent_serf) FROM orders where active=0")

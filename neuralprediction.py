@@ -38,7 +38,7 @@ def convertSeriesToMatrix(vectorSeries, sequence_length):
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE active =1 and ai_active = 1 and market = '%s'" % market)
@@ -51,7 +51,7 @@ def available_market_list(marketname):
 
 
 def prediction_info(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT ai_price, ai_time, ai_direction, ai_prev_price FROM markets WHERE active=1 and ai_active=1 and market='%s'" % market)
@@ -90,7 +90,7 @@ def learn():
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was successful  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
                             db.commit()
@@ -104,7 +104,7 @@ def learn():
                         print market, "AI Prediction  was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction was successful  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
                             db.commit()
@@ -117,7 +117,7 @@ def learn():
                         print market, "AI Prediction was mistaken"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was mistaken  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 0))
                             db.commit()
@@ -127,7 +127,7 @@ def learn():
                         finally:
                             db.close()
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
@@ -237,13 +237,13 @@ def learn():
 
                     # save the result into txt file
                     test_result = zip(predicted_values, y_test) + shifted_value
-                    np.savetxt('results/output_result_' + 'BTC_' + currency + '.txt', test_result)
+                    np.savetxt('data/results/output_result_' + 'BTC_' + currency + '.txt', test_result)
 
                     # with open('results/output_result_'+'BTC_'+currency+'.txt', 'a') as myfile:
                     #    myfile.write(str(current_price)+'      '+str(currenttime+'\n'))
 
 
-                    with open('results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
+                    with open('data/results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
                         lines = f.read().splitlines()
                         last_line = lines[-1]  # should be -1
                         last_word = last_line.split()[0]
@@ -260,7 +260,7 @@ def learn():
                         direction = 'DOWN'
 
 
-                    with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
+                    with open('data/results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
                             '1 The predicted  price is  ' + str(predicted_price) + '    Current time is:  ' + str(
                                 currenttime + '   Current price is:   ' + str(
@@ -273,11 +273,16 @@ def learn():
                             predicted_price) + '  Current time is:  ' + str(
                             currenttime + '  Current price is:   ' + str(
                                 current_price) + '   Direction is: ' + direction))
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         cursor.execute('update markets set ai_price = %s, ai_time = %s, ai_direction =%s, ai_prev_price = %s, ai_time_human=%s  where market =%s',(predicted_price, currtime, direction, current_price, currenttime, market))
                         cursor.execute('insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (predicted_price, currtime, direction, current_price, currenttime, market, printed))
+                        if status_orders(market, 4) == 1:
+                            cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
+                            market, str(currenttime)+' AI: ' + str(direction), currtime))
+                        else:
+                            pass
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -293,7 +298,7 @@ def learn():
                         print market, "AI Prediction trend was successful"
                         printed = ('      ' + str( currency) + '  AI Prediction trend was successful  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
                             db.commit()
@@ -306,7 +311,7 @@ def learn():
                         print market, "AI Prediction was successful"
                         printed = ('      ' + str(currency) + '  AI Prediction was successful  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 1))
                             db.commit()
@@ -319,7 +324,7 @@ def learn():
                         print market, "AI Prediction was mistaken"
                         printed = ('      ' + str(currency) + '  AI Prediction trend was mistaken  ')
                         try:
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('insert into predictlog(market, result) values("%s", "%s")' % (market, 0))
                             db.commit()
@@ -329,7 +334,7 @@ def learn():
                         finally:
                             db.close()
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         db.commit()
@@ -438,13 +443,13 @@ def learn():
 
                     # save the result into txt file
                     test_result = zip(predicted_values, y_test) + shifted_value
-                    np.savetxt('results/output_result_' + 'BTC_' + currency + '.txt', test_result)
+                    np.savetxt('data/results/output_result_' + 'BTC_' + currency + '.txt', test_result)
 
                     # with open('results/output_result_'+'BTC_'+currency+'.txt', 'a') as myfile:
                     #    myfile.write(str(current_price)+'      '+str(currenttime+'\n'))
 
 
-                    with open('results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
+                    with open('data/results/output_result_' + 'BTC_' + currency + '.txt', 'r') as f:
                         lines = f.read().splitlines()
                         last_line = lines[-1]  # should be -1
                         last_word = last_line.split()[0]
@@ -461,7 +466,7 @@ def learn():
                         direction = 'DOWN'
 
 
-                    with open('results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
+                    with open('data/results/output_result_' + 'BTC_' + currency + '.txt', 'a') as myfile:
                         myfile.write(
                             'The predicted  price is  ' + str(predicted_price) + '    Current time is:  ' + str(
                                 currenttime + '   Current price is:   ' + str(
@@ -474,13 +479,18 @@ def learn():
                             predicted_price) + '  Current time is:  ' + str(
                             currenttime + '  Current price is:   ' + str(
                                 current_price) + '   Direction is: ' + direction))
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         cursor.execute('update markets set ai_price=%s, ai_time=%s, ai_direction=%s, ai_prev_price=%s, ai_time_human=%s where market=%s',(predicted_price, currtime, direction,current_price, currenttime, market))
                         cursor.execute(
                             'insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
                             predicted_price, currtime, direction, current_price, currenttime, market, printed))
+                        if status_orders(market, 4) == 1:
+                            cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
+                            market, str(currenttime)+' AI: ' + str(direction), currtime))
+                        else:
+                            pass
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -493,6 +503,18 @@ def learn():
                 pass
 
 
+
+def status_orders(marketname, value):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return 0
 
 
 

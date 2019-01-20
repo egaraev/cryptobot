@@ -11,9 +11,7 @@ import datetime
 #c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
 
-currtime = int(round(time.time()))
-now = datetime.datetime.now()
-currenttime = now.strftime("%Y-%m-%d %H:%M")
+
 TICK_INTERVAL = 60  # seconds
 
 
@@ -34,13 +32,16 @@ def main():
 
 
 def tick():
+    currtime = int(round(time.time()))
+    now = datetime.datetime.now()
+    currenttime = now.strftime("%Y-%m-%d %H:%M")
 
     market_summ = c.get_market_summaries().json()['result']
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
-
+                #active_order= status_orders(market, 4)
                 last = float(summary['Last'])  # last price
                 #print last
                 candles_signal_short = str(heikin_ashi(market, 29))
@@ -340,13 +341,34 @@ def tick():
 
 
                 print market, signal1, signal2
+                if signal1!="NONE" or signal2!="NONE":
+                    try:
+                        printed=('      ' + str(market) + '  has thirtymin candle signal '+signal1 + ' and has hour candle signal  '+signal2)
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        if status_orders(market, 4)==1:
+                            if (signal1!= "NONE"):
+                                cursor.execute(
+                                    'insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (market, str(currenttime)+ ' 30m: ' + str(signal1), currtime))
+                            elif (signal2!= "NONE"):
+                                cursor.execute(
+                                    'insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (market, str(currenttime)+' 1h: ' + str(signal2), currtime))
+                        else:
+                            pass
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 #
 
                 if (candles_signal_short=="UP_1" or candles_signal_short=="UP_2" or candles_signal_short=="UP_3" or candles_signal_short=="UP_4" or candles_signal_short=="UP_5" or candles_signal_short=="UP_6" or candles_signal_short=="UP_7" or candles_signal_short=="UP_8") and (signal1!="NONE" or currtime-candles_signal_time>3600) and last>candles_signal_price:
                     print market, "prediction was successfull"
 
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
                         cursor.execute(
@@ -362,7 +384,7 @@ def tick():
                 elif (candles_signal_short=="UP_1" or candles_signal_short=="UP_2" or candles_signal_short=="UP_3" or candles_signal_short=="UP_4" or candles_signal_short=="UP_5" or candles_signal_short=="UP_6" or candles_signal_short=="UP_7" or candles_signal_short=="UP_8") and (signal1!="NONE" or currtime-candles_signal_time>3600) and last<candles_signal_price:
                     print market, "prediction was failed"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
                         cursor.execute(
@@ -380,7 +402,7 @@ def tick():
                         signal1 != "NONE" or currtime - candles_signal_time > 3600) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
                         cursor.execute(
@@ -397,7 +419,7 @@ def tick():
                         signal1 != "NONE" or currtime - candles_signal_time > 3600) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
                         cursor.execute(
@@ -416,7 +438,7 @@ def tick():
                         signal2 != "NONE" or currtime - candles_signal_time > 7200) and last > candles_signal_price:
                     print market, "prediction was successfull"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal2))
                         cursor.execute(
@@ -433,7 +455,7 @@ def tick():
                         signal2 != "NONE" or currtime - candles_signal_time > 7200) and last < candles_signal_price:
                     print market, "prediction was failed"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal2))
                         cursor.execute(
@@ -450,7 +472,7 @@ def tick():
                                 signal2 != "NONE" or currtime - candles_signal_time > 7200) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal2))
                         cursor.execute(
@@ -467,7 +489,7 @@ def tick():
                                 signal2 != "NONE" or currtime - candles_signal_time > 7200) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456","cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal2))
                         cursor.execute(
@@ -484,7 +506,7 @@ def tick():
 
                     try:
                         print market, "lets update new predictions"
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
 
                         #printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
@@ -510,8 +532,23 @@ def tick():
 
 
 
+
+def status_orders(marketname, value):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
+    #cursor.execute("SELECT o.*, m.market FROM orders o, markets m WHERE o.active = 1 and o.market_id = m.id and m.market like '%%'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return 0
+
+
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE enabled =1 and market = '%s'" % market)
@@ -537,7 +574,7 @@ def signed_request(url):
 
 
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
@@ -549,7 +586,7 @@ def heikin_ashi(marketname, value):
     return False
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)

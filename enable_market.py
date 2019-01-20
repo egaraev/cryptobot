@@ -81,7 +81,7 @@ def ME():
                 #print market, last, hour, thirtymin, fivemin
 
                 try:
-                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
                         "update markets set percent_chg= %s, volume=%s, candles=%s where enabled=1 and market = %s",
@@ -107,7 +107,7 @@ def ME():
                         print market, "We are disabling this currency"
                         try:
                             printed = ('    We are disabling this currency  ' + market)
-                            db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                             db.commit()
@@ -121,7 +121,7 @@ def ME():
                 if spread<0.5 and (percent_grow==1 or percent_grow==0)  and market_count() <=max_markets:
                     print market, "We need to enable those currencies"
                     try:
-                        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                         db.commit()
@@ -137,7 +137,7 @@ def ME():
             continue
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE  enabled=1 and market = '%s'" % market)
@@ -150,7 +150,7 @@ def available_market_list(marketname):
 
 
 def open_buy(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT active FROM orders WHERE active =2 and market = '%s'" % market)
@@ -181,7 +181,7 @@ def get_balance(currency):
 
 
 def parameters():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM parameters")
     r = cursor.fetchall()
@@ -194,7 +194,7 @@ def parameters():
 
 
 def market_count():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     #market=marketname
     cursor.execute("SELECT COUNT(*) FROM markets where enabled=1 and active=1")
@@ -207,7 +207,7 @@ def market_count():
 
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -233,7 +233,7 @@ def has_open_order(market, order_type):
 
 
 def percent(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     min_percent_chg = float(parameters()[7])
@@ -251,7 +251,7 @@ def percent(marketname, value):
 
 
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE enabled=1 and market = '%s'" % market)

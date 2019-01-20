@@ -127,7 +127,7 @@ def HA():
 
                 print market, HAD_trend
                 try:
-                    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute("update markets set current_price = %s, ha_direction_daily=%s  where market = %s",(last,  HAD_trend,  market))
                     db.commit()
@@ -142,7 +142,7 @@ def HA():
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM `markets` where `percent_chg`>0 and enabled=1 and market = '%s'" % market)
@@ -169,7 +169,7 @@ def signed_request(url):
 
 
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
 #    cursor.execute(
@@ -183,7 +183,7 @@ def heikin_ashi(marketname, value):
     return False
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)

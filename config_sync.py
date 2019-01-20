@@ -28,7 +28,7 @@ def PS():
 
 
 def api_key_get():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     cursor.execute("SELECT api_key FROM parameters")
     r = cursor.fetchall()
@@ -39,7 +39,7 @@ def api_key_get():
 
 
 def api_secret_get():
-    db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     cursor.execute("SELECT api_secret FROM parameters")
     r = cursor.fetchall()

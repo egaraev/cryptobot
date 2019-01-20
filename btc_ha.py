@@ -100,7 +100,7 @@ def HA():
     BTC_HA_High = elements1.max(0)
 
     try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
         cursor = db.cursor()
         cursor.execute(
             "update parameters set btc_ha_close_day = %s, btc_ha_open_day =%s, btc_ha_low_day =%s, btc_ha_high_day =%s, btc_ha_time_day =%s  where id = %s",
@@ -130,7 +130,7 @@ def HA():
     BTC_HA_Low_hour = elements2.min(0)
 
     try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
         cursor = db.cursor()
         cursor.execute(
             "update parameters set btc_ha_close_hour = %s, btc_ha_open_hour =%s, btc_ha_low_hour =%s, btc_ha_high_hour =%s, btc_ha_time_hour =%s  where id = %s",
@@ -247,7 +247,7 @@ def HA():
 
 
     try:
-        db = MySQLdb.connect("localhost", "cryptouser", "123456", "cryptodb")
+        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
         cursor = db.cursor()
         cursor.execute("update parameters set usdt_btc_price = %s, btc_ha_direction_day =%s where id = %s",
                        (BTC_price, btc_trend, 1))

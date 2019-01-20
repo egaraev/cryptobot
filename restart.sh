@@ -80,3 +80,11 @@ kill -9 $PID16
 PID17=`ps aux | awk '/candles.py/ && !/awk/ { print $2 }'`
 kill -9 $PID17
 
+
+PID18=`ps aux | awk '/check_candle_signals.py/ && !/awk/ { print $2 }'`
+kill -9 $PID18
+
+PID19=`ps aux | awk '/chart_creator5.py/ && !/awk/ { print $2 }'`
+kill -9 $PID19
+
+
