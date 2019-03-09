@@ -278,3 +278,18 @@ else
 
 fi
 
+
+
+
+SERVICE20='score.py'
+
+if ps ax | grep -v grep | grep $SERVICE20 > /dev/null
+then
+    echo "$SERVICE20 service running "
+else
+    echo there is no such "$SERVICE20 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 score.py
+
+fi
+

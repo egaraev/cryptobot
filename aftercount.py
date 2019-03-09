@@ -42,7 +42,7 @@ def ME():
                 #print market, procent_serf, percent_serf(market)
 
 
-                if order_id!=0 and currtime - close_date(market)<172800:
+                if order_id!=0 and currtime - close_date(market)<432000:
 
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")

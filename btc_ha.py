@@ -20,7 +20,7 @@ currenttime = now.strftime("%Y-%m-%d %H:%M")
 
 
 def main():
-    print('Starting heikin ashi module')
+    print('Starting btc_ha module')
 
     HA()
 

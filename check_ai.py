@@ -1,6 +1,6 @@
 import MySQLdb
 from pybittrex.client import Client
-
+import os
 c=Client(api_key='', api_secret='')
 
 def main():
@@ -11,20 +11,23 @@ def main():
 
 def AI():
     market_summ = c.get_market_summaries().json()['result']
-    open('data/out5.csv', 'w').close()
-    open('data/out6.csv', 'w').close()
-    open('data/out7.csv', 'w').close()
+    open('data/out5_tmp.csv', 'w').close()
+    open('data/out6_tmp.csv', 'w').close()
+    open('data/out7_tmp.csv', 'w').close()
     for summary in market_summ: #Loop trough the market summary
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
                 if summ_ai(market)>-1:
                     print market, summ_ai(market), count(market)
-                    f= open('data/out5.csv', 'a')
+                    f= open('data/out5_tmp.csv', 'a')
                     print >> f, str(market)
-                    f1=open('data/out6.csv', 'a')
+                    f1=open('data/out6_tmp.csv', 'a')
                     print >>f1, summ_ai(market)
-                    f2 = open('data/out7.csv', 'a')
+                    f2 = open('data/out7_tmp.csv', 'a')
                     print >> f2, count(market)
+    os.rename('data/out5_tmp.csv', 'data/out5.csv')
+    os.rename('data/out6_tmp.csv', 'data/out6.csv')
+    os.rename('data/out7_tmp.csv', 'data/out7.csv')
 
 
 

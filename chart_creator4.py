@@ -92,7 +92,7 @@ cell_text.reverse()
 # Add a table at the bottom of the axes
 the_table = plt.table(cellText=cell_text, rowLabels=rows, rowColours=colors, colLabels=columns, loc='bottom')
 the_table.auto_set_font_size(False)
-the_table.set_fontsize(5)
+the_table.set_fontsize(8)
 
 
 # Adjust layout to make room for the table:

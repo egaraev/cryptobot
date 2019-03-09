@@ -50,6 +50,7 @@ echo "<table border='1'>
 <th>Max %</th>
 <th>Min %</th>
 <th>Reasons and parameters used</th>
+<th>Signal history</th>
 <th>Sell signal</th>
 </tr>";
 
@@ -64,6 +65,7 @@ echo "<td><b>" . $row['percent_serf'] . "</b></td>";
 echo "<td>" . $row['percent_serf_max'] . "</td>";
 echo "<td>" . $row['percent_serf_min'] . "</td>";
 echo "<td>" . $row['params'] . "</td>";
+echo "<td>" . $row['history'] . "</td>";
 echo "<td>" . $row['sell'] . "</td>";
 echo "</tr>";
 }
@@ -86,6 +88,7 @@ echo "<table border='1'>
 <th>Min % After</th>
 <th>Reason and Parameters used</th>
 <th>Reason to sell</th>
+<th>Signal history</th>
 <th>SELL signal</th>
 </tr>";
 
@@ -102,6 +105,7 @@ echo "<td>" . $row['aftercount'] . "</td>";
 echo "<td>" . $row['aftercount_min'] . "</td>";
 echo "<td>" . $row['params'] . "</td>";
 echo "<td>" . $row['reason_close'] . "</td>";
+echo "<td>" . $row['history'] . "</td>";
 echo "<td>" . $row['sell'] . "</td>";
 echo "</tr>";
 }

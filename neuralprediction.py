@@ -50,6 +50,30 @@ def available_market_list(marketname):
     return False
 
 
+def percent_serf(marketname):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return float("{0:.2f}".format(row[0]))
+    return 0
+
+
+def status_orders(marketname, value):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return 0
+
+
 def prediction_info(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
@@ -76,6 +100,7 @@ def learn():
             current_price = c.get_ticker('BTC-'+currency).json()['result']['Last']
             now = datetime.datetime.now()
             currenttime = now.strftime("%Y-%m-%d %H:%M")
+            serf=percent_serf(market)
             #print market, currtime, prediction_info(market)[1]
             #print market, prediction_info(market)[2]
 
@@ -280,7 +305,7 @@ def learn():
                         cursor.execute('insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         if status_orders(market, 4) == 1:
                             cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
-                            market, str(currenttime)+' AI: ' + str(direction), currtime))
+                            market, str(serf) + ' AI: ' + str(direction), currtime))
                         else:
                             pass
                         db.commit()
@@ -487,8 +512,8 @@ def learn():
                             'insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
                             predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         if status_orders(market, 4) == 1:
-                            cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
-                            market, str(currenttime)+' AI: ' + str(direction), currtime))
+                            cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                            market, str(serf) + ' AI: ' + str(direction), currtime, status_orders(market, 0)))
                         else:
                             pass
                         db.commit()
@@ -504,17 +529,7 @@ def learn():
 
 
 
-def status_orders(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-    cursor = db.cursor()
-    market=marketname
-    cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
-    r = cursor.fetchall()
-    for row in r:
-        if row[1] == marketname:
-            return row[value]
 
-    return 0
 
 
 

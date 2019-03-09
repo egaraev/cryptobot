@@ -10,9 +10,8 @@ import hashlib
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 c1 = Client(api_key=config.key, api_secret=config.secret)
-c=Client(api_key='', api_secret='')
+c=Client(api_key="", api_secret="")
 currtime = int(time.time())
-
 
 def main():
     print('Starting enabling market module')
@@ -24,8 +23,9 @@ def main():
 
 def ME():
     market_summ = c.get_market_summaries().json()['result']
-    #print market_count()
     max_markets = parameters()[6]
+    bot_mode=parameters()[23]
+
 #    print c.get_market_summaries().json()['result']
     for summary in market_summ: #Loop trough the market summary
         try:
@@ -33,15 +33,17 @@ def ME():
                 market = summary['MarketName']
                 day_close = summary['PrevDay']  # Getting day of closing order
                 volume = int(summary['BaseVolume'])
-                bought_quantity_sql = float(status_orders(market, 2))
-                last = float(summary['Last'])  # last price
+                last = float(summary['Last'])  #last price
                 bid = float(summary['Bid'])    #sell price
                 ask = float(summary['Ask'])    #buy price
+                bought_quantity_sql = float(status_orders(market, 2))
                 percent_chg = float(((last / day_close) - 1) * 100)
                 percent_sql = float(heikin_ashi(market, 21))
-                spread = float(((ask / bid) - 1) * 100)
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
+                spread = float(((ask / bid) - 1) * 100)
+
+
 
                 if percent_chg>percent_sql:
                     percent_grow=1
@@ -49,6 +51,7 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
+
                 #Candle analisys
                 lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
                 currentopen = float(lastcandle[0]['O'])
@@ -58,9 +61,13 @@ def ME():
                 hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                 hourcurrentopen = float(hourlastcandle[0]['O'])
 
+                daylastcandle = get_candles(market, 'day')['result'][-1:]
+                daycurrentopen = float(daylastcandle[0]['O'])
+
                 fivemin='NONE'
                 thirtymin='NONE'
                 hour='NONE'
+                day='NONE'
 
                 if last>currentopen5:
                     fivemin='U'
@@ -77,8 +84,13 @@ def ME():
                 else:
                     hour='D'
 
+                if last>daycurrentopen:
+                    day='U'
+                else:
+                    day='D'
 
-                #print market, last, hour, thirtymin, fivemin
+
+                print market, last, hour, thirtymin, fivemin
 
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -92,24 +104,73 @@ def ME():
                     sys.exit(1)
                 finally:
                     db.close()
+                #print market, percent_chg, percent_sql, percent_grow
 
 
-                #print market, percent(market, 21)
-
-                if (spread>0.5 and bought_quantity_sql>0 and percent_grow==-1 and open_buy(market)==2  and ((get_balance_from_market(market)['result']['Available'] >0.0 or get_balance_from_market(market)['result']['Balance'] >0.0))):
-                    print market, "We have open order, but we need to disable this currency"
 
 
-                if (spread>0.5 and bought_quantity_sql==0 and percent_grow==-1) or ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000):
-                    if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY') or open_buy(market)==2:
-                        pass
-                    else:
-                        print market, "We are disabling this currency"
+                if bot_mode==0:
+
+                    if spread>0.5 and bought_quantity_sql>0 and percent_grow==-1:
+                        print market, "We have open order, but we need to disable this currency"
+
+
+                    if (spread>0.5 and bought_quantity_sql==0 and percent_grow==-1) or ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000):
+                            print market, "We are disabling this currency"
+                            try:
+                                printed = ('    We are disabling this currency  ' + market)
+                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                    if spread<0.5 and (percent_grow==1 or percent_grow==0) and market_count() <=max_markets:
+                        print market, "We need to enable those currencies"
                         try:
-                            printed = ('    We are disabling this currency  ' + market)
                             db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
-                            cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
+                            cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
+
+                else:
+                    if (spread > 0.5 and bought_quantity_sql > 0 and percent_grow == -1 and open_buy(market) == 2 and ((get_balance_from_market(market)['result']['Available'] > 0.0 or get_balance_from_market(market)['result']['Balance'] > 0.0))):
+                        print market, "We have open order, but we need to disable this currency"
+
+                    if (spread > 0.5 and bought_quantity_sql == 0 and percent_grow == -1) or (
+                        (HAD_trend == "DOWN" or HAD_trend == "Revers-DOWN") and currtime - ha_time_second < 3000):
+                        if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY') or open_buy(market) == 2:  # added last for test bot
+                            pass
+                        else:
+                            print market, "We are disabling this currency"
+                            try:
+                                printed = ('    We are disabling this currency  ' + market)
+                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                cursor = db.cursor()
+                                cursor.execute(
+                                    'update markets set active= 0 where enabled=1 and market =("%s")' % market)
+                                db.commit()
+                            except MySQLdb.Error, e:
+                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                sys.exit(1)
+                            finally:
+                                db.close()
+
+                    if spread < 0.5 and (percent_grow == 1 or percent_grow == 0) and market_count() <= max_markets:
+                        print market, "We need to enable those currencies"
+                        try:
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+                            cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                             db.commit()
                         except MySQLdb.Error, e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -118,23 +179,23 @@ def ME():
                             db.close()
 
 
-                if spread<0.5 and (percent_grow==1 or percent_grow==0)  and market_count() <=max_markets:
-                    print market, "We need to enable those currencies"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-
-
         except:
             continue
+
+def open_buy_sql(marketname):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT active FROM orders WHERE active =1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
+    return 0
+
+
+
+
+
 
 def available_market_list(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -279,11 +340,6 @@ def signed_request(url):
 
 
 
-
-
-
-
-
-
 if __name__ == "__main__":
     main()
+

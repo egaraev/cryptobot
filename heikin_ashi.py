@@ -33,10 +33,11 @@ def HA():
         try:
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
-
+                serf = percent_serf(market)
                 last = float(summary['Last'])  # last price
                 bought_quantity_sql = float(status_orders(market, 2))
                 HAD_trend = heikin_ashi(market, 18)
+                print "Gather hour HA candle info for ", market
 
                 hlastcandle = get_candles(market, 'hour')['result'][-1:]
                 hcurrentlow = float(hlastcandle[0]['L'])*100000
@@ -54,6 +55,7 @@ def HA():
                 hprevopen2 = float(hpreviouscandle2[0]['O'])*100000
                 hprevclose2 = float(hpreviouscandle2[0]['C'])*100000
 
+                print "Gather 5hour HA candle info for ", market
 
                 hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                 hourcurrentlow = float(hourlastcandle[0]['L'])*100000
@@ -215,6 +217,7 @@ def HA():
                 fivehourprevopen4 = hourprevopen24
                 fivehourprevclose4 = hourprevclose20
 
+                print "Computing HA candles for ", market
 
                 HA_PREV_Close4 = (fivehourprevopen4 + fivehourprevhigh4 + fivehourprevlow4 + fivehourprevclose4) / 4
                 HA_PREV_Open4 = (fivehourprevopen4 + fivehourprevclose4) / 2
@@ -286,6 +289,7 @@ def HA():
 
                 HAH_trend = "NONE"
 
+                print "Generting direction info for ", market
 
                 ha_direction_down_short0 =((HA_High - HA_Low) / (HA_Open - HA_Close) >= 2)  and (HA_Open - HA_Close !=0)
                 ha_direction_down_short1 = ((HA_PREV_High - HA_PREV_Low) / (HA_PREV_Open - HA_PREV_Close) >= 2) and (HA_PREV_Open - HA_PREV_Close !=0)
@@ -412,8 +416,7 @@ def HA():
 
                 print market, HA_trend, HAH_trend
 
-
-
+                print "Generate HA signls for ", market
                 if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
 
                     try:
@@ -435,7 +438,7 @@ def HA():
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HA_trend!="UP" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -450,7 +453,7 @@ def HA():
                     finally:
                         db.close()
 
-                print market, lastcandlesize, prevcandlesize, fivehourcurrentopen, last, fivehourprevopen, fivehourprevclose, HAH_trend, lastcandlebodysize, prevcandlebodysize
+
 
                 if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) and bought_quantity_sql > 0):
 
@@ -481,7 +484,7 @@ def HA():
                     printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
                     cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, market))
                     if status_orders(market, 4) == 1:
-                        cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (market, str(currenttime)+' HA: ' + str(HA_trend) + 'HAH: ' + str(HAH_trend), currtime))
+                        cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, str(serf)+' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend), currtime, status_orders(market, 0)))
                     else:
                         pass
                     #cursor.execute('insert into ha_logs (date, market, HA_hour, log ) values ("%s", "%s", "%s", "%s")' % (currenttime, market, HA_trend, printed))
@@ -496,37 +499,37 @@ def HA():
 
 
 
-#                lastcandlesize = hourcurrenthigh-hourcurrentlow
-#                previouscandlesize = hourprevhigh-hourprevlow
-#                previouscandlesize2 = hourprevhigh2-hourprevlow2
-#                previouscandlesize3 = hourprevhigh3-hourprevlow3
-#                previouscandlesize4 = hourprevhigh4-hourprevlow4
-#                previouscandlesize5 = hourprevhigh5-hourprevlow5
-#                previouscandlesize6 =  hourprevhigh6- hourprevlow6
+                lastcandlesize = hourcurrenthigh-hourcurrentlow
+                previouscandlesize = hourprevhigh-hourprevlow
+                previouscandlesize2 = hourprevhigh2-hourprevlow2
+                previouscandlesize3 = hourprevhigh3-hourprevlow3
+                previouscandlesize4 = hourprevhigh4-hourprevlow4
+                previouscandlesize5 = hourprevhigh5-hourprevlow5
+                previouscandlesize6 =  hourprevhigh6- hourprevlow6
 
-#                averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
+                averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
                 #print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
 
 
-#                if (lastcandlesize/averagecandlesize>3 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>3 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>3 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
-#                    print "We have peak situation, lets wait"
-#                    printed1=("We have peak situation, lets wait")
+                if (lastcandlesize/averagecandlesize>3 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>3 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>3 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
+                    print "We have peak situation, lets wait"
+                    printed1=("We have peak situation, lets wait")
 
 
 
-#                    try:
-#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-#                        cursor = db.cursor()
-                        #cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
-#                        cursor.execute(
-#                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
-#                            (currenttime, currtime, printed1, market))
-#                        db.commit()
-#                    except MySQLdb.Error, e:
-#                        print "Error %d: %s" % (e.args[0], e.args[1])
-#                        sys.exit(1)
-#                    finally:
-#                        db.close()
+                    try:
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                       #cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
+                        cursor.execute(
+                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
+                            (currenttime, currtime, printed1, market))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
 
@@ -587,7 +590,15 @@ def status_orders(marketname, value):
 
     return 0
 
-
+def percent_serf(marketname):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return float("{0:.2f}".format(row[0]))
+    return 0
 
 
 def format_float(f):

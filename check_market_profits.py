@@ -1,31 +1,33 @@
 import MySQLdb
 from pybittrex.client import Client
-
+import os
 c=Client(api_key='', api_secret='')
 
 def main():
-    print('Starting summ checking module')
+    print('Starting market profits checking module')
 
     SUMM()
 
 
 def SUMM():
     market_summ = c.get_market_summaries().json()['result']
-    open('data/out2.csv', 'w').close()
-    open('data/out3.csv', 'w').close()
-    open('data/out4.csv', 'w').close()
+    open('data/out2_tmp.csv', 'w').close()
+    open('data/out3_tmp.csv', 'w').close()
+    open('data/out4_tmp.csv', 'w').close()
     for summary in market_summ: #Loop trough the market summary
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
                 if summ_serf(market)!=0:
                     print market, summ_serf(market), count(market)
-                    f= open('data/out2.csv', 'a')
+                    f= open('data/out2_tmp.csv', 'a')
                     print >> f, str(market)
-                    f1=open('data/out3.csv', 'a')
+                    f1=open('data/out3_tmp.csv', 'a')
                     print >>f1, summ_serf(market)
-                    f2 = open('data/out4.csv', 'a')
+                    f2 = open('data/out4_tmp.csv', 'a')
                     print >> f2, count(market)
-
+    os.rename('data/out2_tmp.csv', 'data/out2.csv')
+    os.rename('data/out3_tmp.csv', 'data/out3.csv')
+    os.rename('data/out4_tmp.csv', 'data/out4.csv')
 
 
 

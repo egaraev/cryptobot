@@ -45,6 +45,7 @@ def HA():
 
     if (btccurrentopen - BTC_price >= 150 or (btcprevopen - BTC_price >= 200 and btccurrentopen > BTC_price)):
         btc_status = "STOP"
+        print ('   Received BTC STOP sell signal ')
         try:
             db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
             cursor = db.cursor()
