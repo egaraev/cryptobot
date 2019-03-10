@@ -138,6 +138,8 @@ echo "<table border='1'>
 <th>Peak time</th>
 <th>Candle 30m</th>
 <th>Candle 1h</th>
+<th>Score </th>
+<th>Score trend</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result4))
@@ -156,6 +158,8 @@ echo "<td>" . $row['volume'] . "</td>";
 echo "<td>" . $row['strike_date'] . "</td>";
 echo "<td>" . $row['candle_signal_short'] . "</td>";
 echo "<td>" . $row['candle_signal_long'] . "</td>";
+echo "<td>" . $row['score'] . "</td>";
+echo "<td>" . $row['score_direction'] . "</td>";
 echo "</tr>";
 }
 echo "</table>";
