@@ -122,6 +122,10 @@ def tick():
                     normal_candles=heikin_ashi(market, 19)
                     positive=str(heikin_ashi(market, 36))
                     negative = str(heikin_ashi(market, 37))
+                    buy_summ = str(heikin_ashi(market, 40))
+                    buy_count = str(heikin_ashi(market, 42))
+                    sell_summ = str(heikin_ashi(market, 41))
+                    sell_count = str(heikin_ashi(market, 43))
 
                     if last>currentopen5:
                         fivemin='U'
@@ -386,7 +390,7 @@ def tick():
                                     if sell_signal == 0:
                                         cursor.execute(
                                             'update orders set sell = 4 where active=1 and market =("%s")' % market)
-                                    if max_percent_sql > profit / 1.5:
+                                    if max_percent_sql > profit / 1.3:
                                         cursor.execute(
                                             "update markets set strike_time= %s  where market = %s",
                                             (currtime, market))
@@ -476,10 +480,10 @@ def tick():
                                                     hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                     candles_signal_long) + '  AI:' + str(
-                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend)  + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative), currtime, market))
+                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend)  + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count), currtime, market))
                                         cursor.execute(
                                             'update orders set sell = 6 where active=1 and market =("%s")' % market)
-                                        if max_percent_sql > profit / 1.5:
+                                        if max_percent_sql > profit / 1.3:
                                             cursor.execute(
                                                 "update markets set strike_time= %s  where market = %s",
                                                 (currtime, market))
@@ -577,7 +581,7 @@ def tick():
                                                     '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                                         HA_trend) + ' HAH: ' + str(
                                                         HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin + ' CS ' + str(
-                                                        candles_signal_short) + ' ' + str(candles_signal_long) +' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative),currtime, market))
+                                                        candles_signal_short) + ' ' + str(candles_signal_long) +' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),currtime, market))
 
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
@@ -751,7 +755,7 @@ def tick():
                                                      hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
                                                      fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                      candles_signal_long) + '  AI:' + str(
-                                                     ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative),currtime, market))
+                                                     ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
                                              newvalue = summ_serf() + procent_serf
@@ -795,7 +799,7 @@ def tick():
                                                     hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                     candles_signal_long) + '  AI:' + str(
-                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative),currtime, market))
+                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),currtime, market))
 
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
@@ -843,7 +847,7 @@ def tick():
                                                     hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                     candles_signal_long) + '  AI:' + str(
-                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative),currtime, market))
+                                                    ai_prediction(market))+' Score is: '+str(score)+' Score trend: '+str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),currtime, market))
 
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
@@ -1311,7 +1315,7 @@ def tick():
                             db.close()
 
                             # AI_HA MODE SELL START
-                    if bought_price_sql != None or bought_price != None:  # added OR
+                    if bought_price_sql != None and bought_price != None:  # added OR
                         # balance_res = get_balance_from_market(market)
                         # current_balance = balance_res['result']['Available']
 

@@ -366,7 +366,7 @@ def tick():
                         db.close()
 #
 
-                if (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>7200) and last>candles_signal_price:
+                if (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last>candles_signal_price:
                     print market, "prediction was successfull"
 
                     try:
@@ -383,7 +383,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>7200) and last<candles_signal_price:
+                elif (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last<candles_signal_price:
                     print market, "prediction was failed"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -401,7 +401,7 @@ def tick():
 
 
                 elif (candles_signal_short == "Down") and (
-                        signal1 != "NONE" or currtime - candles_signal_time > 7200) and last < candles_signal_price:
+                        signal1 != "NONE" or currtime - candles_signal_time > 18000) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -418,7 +418,7 @@ def tick():
                         db.close()
 
                 elif (candles_signal_short == "Down" ) and (
-                        signal1 != "NONE" or currtime - candles_signal_time > 7200) and last > candles_signal_price:
+                        signal1 != "NONE" or currtime - candles_signal_time > 18000) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -437,7 +437,7 @@ def tick():
 
 
                 elif (candles_signal_long == "Up") and (
-                        signal2 != "NONE" or currtime - candles_signal_time > 12000) and last > candles_signal_price:
+                        signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
                     print market, "prediction was successfull"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -454,7 +454,7 @@ def tick():
                         db.close()
 
                 elif (candles_signal_long == "Up") and (
-                        signal2 != "NONE" or currtime - candles_signal_time > 12000) and last < candles_signal_price:
+                        signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
                     print market, "prediction was failed"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -471,7 +471,7 @@ def tick():
                         db.close()
 
                 elif (candles_signal_long == "Down") and (
-                                signal2 != "NONE" or currtime - candles_signal_time > 12000) and last < candles_signal_price:
+                                signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -488,7 +488,7 @@ def tick():
                         db.close()
 
                 elif (candles_signal_long == "Down") and (
-                                signal2 != "NONE" or currtime - candles_signal_time > 12000) and last > candles_signal_price:
+                                signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -504,7 +504,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (signal1=="NONE" or signal2=="NONE") and currtime - candles_signal_time > 7200 :
+                elif (signal1=="NONE" or signal2=="NONE") and currtime - candles_signal_time > 18000 :
 
                     try:
                         print market, "lets update new predictions"

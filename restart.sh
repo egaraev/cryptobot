@@ -90,3 +90,7 @@ kill -9 $PID19
 PID20=`ps aux | awk '/score.py/ && !/awk/ { print $2 }'`
 kill -9 $PID20
 
+PID21=`ps aux | awk '/order_counts.py/ && !/awk/ { print $2 }'`
+kill -9 $PID21
+
+

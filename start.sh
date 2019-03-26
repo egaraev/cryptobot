@@ -293,3 +293,18 @@ else
 
 fi
 
+
+
+
+SERVICE21='order_counts.py'
+
+if ps ax | grep -v grep | grep $SERVICE21 > /dev/null
+then
+    echo "$SERVICE21 service running "
+else
+    echo there is no such "$SERVICE21 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 order_counts.py
+
+fi
+

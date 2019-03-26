@@ -140,6 +140,12 @@ echo "<table border='1'>
 <th>Candle 1h</th>
 <th>Score </th>
 <th>Score trend</th>
+<th>Positive tweets </th>
+<th>Negative tweets</th>
+<th>Buy orders summ </th>
+<th>Buy big orders count</th>
+<th>Sell orders summ </th>
+<th>Sell big orders count</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result4))
@@ -160,6 +166,12 @@ echo "<td>" . $row['candle_signal_short'] . "</td>";
 echo "<td>" . $row['candle_signal_long'] . "</td>";
 echo "<td>" . $row['score'] . "</td>";
 echo "<td>" . $row['score_direction'] . "</td>";
+echo "<td>" . $row['positive_sentiments'] . "</td>";
+echo "<td>" . $row['negative_sentiments'] . "</td>";
+echo "<td>" . $row['buy_orders_sum'] . "</td>";
+echo "<td>" . $row['buy_orders_count'] . "</td>";
+echo "<td>" . $row['sell_orders_sum'] . "</td>";
+echo "<td>" . $row['sell_orders_count'] . "</td>";
 echo "</tr>";
 }
 echo "</table>";

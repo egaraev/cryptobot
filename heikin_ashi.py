@@ -37,23 +37,64 @@ def HA():
                 last = float(summary['Last'])  # last price
                 bought_quantity_sql = float(status_orders(market, 2))
                 HAD_trend = heikin_ashi(market, 18)
-                print "Gather hour HA candle info for ", market
+                averagecandlesize = float(heikin_ashi(market, 44))
 
-                hlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hcurrentlow = float(hlastcandle[0]['L'])*100000
-                hcurrenthigh = float(hlastcandle[0]['H'])*100000
-                hcurrentopen = float(hlastcandle[0]['O'])*100000
-                hcurrentclose = float(hlastcandle[0]['C'])*100000
-                hpreviouscandle = get_candles(market, 'hour')['result'][-2:]
-                hprevlow = float(hpreviouscandle[0]['L'])*100000
-                hprevhigh = float(hpreviouscandle[0]['H'])*100000
-                hprevopen = float(hpreviouscandle[0]['O'])*100000
-                hprevclose = float(hpreviouscandle[0]['C'])*100000
-                hpreviouscandle2 = get_candles(market, 'hour')['result'][-3:]
-                hprevlow2 = float(hpreviouscandle2[0]['L'])*100000
-                hprevhigh2 = float(hpreviouscandle2[0]['H'])*100000
-                hprevopen2 = float(hpreviouscandle2[0]['O'])*100000
-                hprevclose2 = float(hpreviouscandle2[0]['C'])*100000
+                fivehourcurrentlow=0
+                fivehourcurrenthigh=0
+                fivehourcurrentopen=0
+                fivehourcurrentclose=0
+                fivehourprevlow=0
+                fivehourprevhigh=0
+                fivehourprevopen=0
+                fivehourprevclose=0
+                fivehourprevlow2=0
+                fivehourprevhigh2=0
+                fivehourprevopen2=0
+                fivehourprevclose2=0
+                fivehourprevlow3 = 0
+                fivehourprevhigh3 = 0
+                fivehourprevopen3 = 0
+                fivehourprevclose3 = 0
+                HA_PREV_Close4 = 0
+                HA_PREV_Open4 = 0
+                HA_PREV_Low4 = 0
+                HA_PREV_High4 = 0
+                HA_PREV_Close3 = 0
+                HA_PREV_Open3 = 0
+                elements3 = 0
+                HA_PREV_High3 = 0
+                HA_PREV_Low3 = 0
+                HA_PREV_Close2 =0
+                HA_PREV_Open2 = 0
+                elements2 = 0
+                HA_PREV_High2 = 0
+                HA_PREV_Low2 = 0
+                HA_PREV_Close =0
+                HA_PREV_Open =0
+                elements1 = 0
+                HA_PREV_High = 0
+                HA_PREV_Low = 0
+                HA_Close = 0
+                HA_Open = 0
+                elements0 = 0
+                HA_High = 0
+                HA_Low = 0
+                hourcurrentlow = 0
+                hourcurrenthigh = 0
+                hourcurrentopen = 0
+                hourcurrentclose = 0
+                hourprevlow = 0
+                hourprevhigh = 0
+                hourprevopen = 0
+                hourprevclose = 0
+                hourprevlow2 = 0
+                hourprevhigh2 = 0
+                hourprevopen2 = 0
+                hourprevclose2 = 0
+                hourprevlow3 = 0
+                hourprevhigh3 = 0
+
+
 
                 print "Gather 5hour HA candle info for ", market
 
@@ -185,20 +226,15 @@ def HA():
 
 
 
-
-
-
                 fivehourcurrentlow = min(hourcurrentlow, hourprevlow, hourprevlow2, hourprevlow3, hourprevlow4)
                 fivehourcurrenthigh = max(hourcurrenthigh, hourprevhigh, hourprevhigh2, hourprevhigh3, hourprevhigh4)
                 fivehourcurrentopen = hourprevopen4
                 fivehourcurrentclose = hourcurrentclose
 
-
                 fivehourprevlow = min(hourprevlow5, hourprevlow6, hourprevlow7, hourprevlow8, hourprevlow9)
                 fivehourprevhigh = max(hourprevhigh5,hourprevhigh6, hourprevhigh7, hourprevhigh8, hourprevhigh9)
                 fivehourprevopen = hourprevopen9
                 fivehourprevclose = hourprevclose5
-
 
                 fivehourprevlow2 = min(hourprevlow10, hourprevlow11, hourprevlow12, hourprevlow13, hourprevlow14)
                 fivehourprevhigh2 = max(hourprevhigh10,hourprevhigh11, hourprevhigh12, hourprevhigh13, hourprevhigh14)
@@ -254,20 +290,20 @@ def HA():
 
 
 
-                HAH_PREV_Close2 = (hprevopen2 + hprevhigh2 + hprevlow2 + hprevclose2) / 4
-                HAH_PREV_Open2 = (hprevopen2 + hprevclose2) / 2
-                HAH_PREV_Low2 = hprevlow2
-                HAH_PREV_High2 = hprevhigh2
+                HAH_PREV_Close2 = (hourprevopen2 + hourprevhigh2 + hourprevlow2 + hourprevclose2) / 4
+                HAH_PREV_Open2 = (hourprevopen2 + hourprevclose2) / 2
+                HAH_PREV_Low2 = hourprevlow2
+                HAH_PREV_High2 = hourprevhigh2
 
-                HAH_PREV_Close = (hprevopen + hprevhigh + hprevlow + hprevclose) / 4
+                HAH_PREV_Close = (hourprevopen + hourprevhigh + hourprevlow + hourprevclose) / 4
                 HAH_PREV_Open = (HAH_PREV_Open2 + HAH_PREV_Close2) / 2
-                elements1 = numpy.array([hprevhigh, hprevlow, HAH_PREV_Open, HAH_PREV_Close])
+                elements1 = numpy.array([hourprevhigh, hourprevlow, HAH_PREV_Open, HAH_PREV_Close])
                 HAH_PREV_High = elements1.max(0)
                 HAH_PREV_Low = elements1.min(0)
 
-                HAH_Close = (hcurrentopen + hcurrenthigh + hcurrentlow + hcurrentclose) / 4
+                HAH_Close = (hourcurrentopen + hourcurrenthigh + hourcurrentlow + hourcurrentclose) / 4
                 HAH_Open = (HAH_PREV_Open + HAH_PREV_Close) / 2
-                elements0 = numpy.array([hcurrenthigh, hcurrentlow, HAH_Open, HAH_Close])
+                elements0 = numpy.array([hourcurrenthigh, hourcurrentlow, HAH_Open, HAH_Close])
                 HAH_High = elements0.max(0)
                 HAH_Low = elements0.min(0)
 
@@ -507,29 +543,29 @@ def HA():
                 previouscandlesize5 = hourprevhigh5-hourprevlow5
                 previouscandlesize6 =  hourprevhigh6- hourprevlow6
 
-                averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
-                #print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
+                #averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
+                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
 
 
-                if (lastcandlesize/averagecandlesize>3 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>3 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>3 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
-                    print "We have peak situation, lets wait"
-                    printed1=("We have peak situation, lets wait")
+#                if (lastcandlesize/averagecandlesize>2.5 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>2.5 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>2.5 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
+#                    print "We have peak situation, lets wait"
+#                    printed1=("We have peak situation, lets wait")
 
 
 
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
+#                    try:
+#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+#                        cursor = db.cursor()
                        #cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
-                        cursor.execute(
-                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
-                            (currenttime, currtime, printed1, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+#                        cursor.execute(
+#                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
+#                            (currenttime, currtime, printed1, market))
+#                        db.commit()
+#                    except MySQLdb.Error, e:
+#                        print "Error %d: %s" % (e.args[0], e.args[1])
+#                        sys.exit(1)
+#                    finally:
+#                        db.close()
 
 
 

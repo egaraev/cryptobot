@@ -108,6 +108,13 @@ def tick():
                     positive=str(heikin_ashi(market, 36))
                     negative = str(heikin_ashi(market, 37))
 
+                    buy_summ = str(heikin_ashi(market, 40))
+                    buy_count = str(heikin_ashi(market, 42))
+                    sell_summ = str(heikin_ashi(market, 41))
+                    sell_count = str(heikin_ashi(market, 43))
+
+
+
 
                     fivemin='NONE'
                     thirtymin='NONE'
@@ -195,8 +202,14 @@ def tick():
                     print "Starting buying mechanizm for " , market
                     print score, score_trend
 
-                    if ((stop_bot == 0) and ((HAD_trend == "STABLE" and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAH_trend == "UP" or HAH_trend == "Revers-UP")) or (HAD_trend == "UP" and HA_trend == "UP"  and (HAH_trend == "UP" or HAH_trend == "Revers-UP"))) and stop_bot_force == 0) and (
-                                currtime - ha_time_second < 2000) and (currtime - strike_time > 36000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen and (currtime - strike_time2 > 36000) and fivemin!='D' and hour!='D' and percent_sql>0.0  :
+#                    if ((stop_bot == 0) and ((HAD_trend == "STABLE" and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAH_trend == "UP" or HAH_trend == "Revers-UP")) or (HAD_trend == "UP" and HA_trend == "UP"  and (HAH_trend == "UP" or HAH_trend == "Revers-UP"))) and stop_bot_force == 0) and (
+#                                currtime - ha_time_second < 2000) and (currtime - strike_time > 18000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen  and fivemin!='D' and hour!='D' and percent_sql>0.0 :#and (currtime - strike_time2 > 18000)
+
+                    if ((stop_bot == 0) and stop_bot_force == 0)  and ((
+                                HA_trend == "UP" or HA_trend == "Revers-UP") and (
+                                HAH_trend == "UP" or HAH_trend == "Revers-UP"))  and (
+                                        currtime - ha_time_second < 2000) and (
+                                currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D':
                             #balance_res = get_balance_from_market(market)
                             #current_balance = balance_res['result']['Available']
 
@@ -246,7 +259,7 @@ def tick():
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     cursor.execute(
                                         'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative),
+                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend) + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),
                                         HA_trend))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                    (serf, market))
@@ -617,7 +630,7 @@ def tick():
                                 db.close()
                         # If we have some currency on the balance
 
-                        elif ((current_balance != 0.0) or (current_available != 0.0)) and btc_quantity > 0.0005:
+                        elif ((current_balance != 0.0) and (current_available != 0.0)) and btc_quantity > 0.0005:
                             print market, current_balance, current_available
                             # print('We already have ' + str(format_float(current_balance)) + ' units of  ' + market + ' on our balance')
                             try:
