@@ -343,7 +343,7 @@ def tick():
 
 
                 print market, signal1, signal2
-                if signal1!="NONE" or signal2!="NONE":
+                if signal1=="Down" or signal2=="Down" or signal1=="Up" or signal2=="Up":
                     try:
                         printed=('      ' + str(market) + '  has thirtymin candle signal '+signal1 + ' and has hour candle signal  '+signal2)
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -520,6 +520,48 @@ def tick():
                         sys.exit(1)
                     finally:
                         db.close()
+
+
+                elif (signal1=="Down" or signal2=="Down" or signal1=="Up" or signal2=="Up") :
+
+                    if signal1!="NONE":
+
+                        try:
+                            print market, "lets update new predictions"
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+
+                            #printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
+                            cursor.execute("update markets set candle_signal_short = %s,  candle_signal_price=%s  where market = %s",(signal1, last, market))
+
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
+                    elif signal2!="NONE":
+
+                        try:
+                            print market, "lets update new predictions"
+                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                            cursor = db.cursor()
+
+                            # printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
+                            cursor.execute(
+                                "update markets set candle_signal_long =%s,  candle_signal_price=%s  where market = %s",
+                                (signal2,  last, market))
+
+                            db.commit()
+                        except MySQLdb.Error, e:
+                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            sys.exit(1)
+                        finally:
+                            db.close()
+                    else:
+                        pass
+
+
                 else:
                     pass
 
