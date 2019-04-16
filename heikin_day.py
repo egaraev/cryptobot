@@ -9,7 +9,7 @@ import hmac
 import numpy
 import datetime
 c1 = Client(api_key=config.key, api_secret=config.secret)
-c=Client(api_key='', api_secret='')
+c = Client(api_key='', api_secret='')
 currtime = int(round(time.time()))
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
@@ -25,11 +25,14 @@ def main():
 
 
 def HA():
+
     market_summ = c.get_market_summaries().json()['result']
+
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
+
                 # Current prices
                 last = float(summary['Last'])  # last price
                 bid = float(summary['Bid'])  # sell price
@@ -51,6 +54,29 @@ def HA():
                 dayprevhigh2 = float(daypreviouscandle2[0]['H'])*100000
                 dayprevopen2 = float(daypreviouscandle2[0]['O'])*100000
                 dayprevclose2 = float(daypreviouscandle2[0]['C'])*100000
+
+#################
+                day_candle = 'NONE'
+                prevday_candle = 'NONE'
+                prevday2_candle = 'NONE'
+
+                if last*100000 > daycurrentopen:
+                    day_candle = 'U'
+                else:
+                    day_candle = 'D'
+
+                if dayprevclose > dayprevopen:
+                    prevday_candle = 'U'
+                else:
+                    prevday_candle = 'D'
+
+                if dayprevclose2 > dayprevopen2:
+                    prevday2_candle = 'U'
+                else:
+                    prevday2_candle = 'D'
+
+                print market, day_candle, prevday_candle, prevday2_candle
+
 ###############
                 HAD_PREV_Close2 = (dayprevopen2 + dayprevhigh2 + dayprevlow2 + dayprevclose2) / 4
                 HAD_PREV_Open2 = (dayprevopen2 + dayprevclose2) / 2
@@ -113,13 +139,13 @@ def HA():
 
 
 
-                if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)):
+                if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)) and day_candle=='D' and prevday_candle=='D':
                     HAD_trend = "DOWN"
-                if (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)):
+                if (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)) and day_candle=='U' and prevday_candle=='U':
                     HAD_trend = "UP"
-                if ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0) and had_direction_down1 and had_direction_down2):
+                if ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0) and had_direction_down1 and had_direction_down2) and day_candle=='U' and prevday_candle=='D':
                     HAD_trend = "Revers-UP"
-                if ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0) and had_direction_up1 and had_direction_up2):
+                if ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0) and had_direction_up1 and had_direction_up2) and day_candle=='D' and prevday_candle=='U':
                     HAD_trend = "Revers-DOWN"
                 if  HAD_trend != "Revers-DOWN" and   HAD_trend != "Revers-UP" and  HAD_trend != "DOWN" and HAD_trend != "UP":
                     HAD_trend = "STABLE"
@@ -145,7 +171,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM `markets` where `percent_chg`>0 and enabled=1 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM `markets` where  enabled=1 and market = '%s'" % market)
 
     r = cursor.fetchall()
     for row in r:

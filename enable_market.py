@@ -43,7 +43,7 @@ def ME():
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
-
+                print market, percent_chg
 
 
                 if percent_chg>percent_sql:

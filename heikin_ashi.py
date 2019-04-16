@@ -39,6 +39,7 @@ def HA():
                 HAD_trend = heikin_ashi(market, 18)
                 averagecandlesize = float(heikin_ashi(market, 44))
 
+                hourcandles=0
                 fivehourcurrentlow=0
                 fivehourcurrenthigh=0
                 fivehourcurrentopen=0
@@ -98,133 +99,163 @@ def HA():
 
                 print "Gather 5hour HA candle info for ", market
 
-                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hourcurrentlow = float(hourlastcandle[0]['L'])*100000
-                hourcurrenthigh = float(hourlastcandle[0]['H'])*100000
-                hourcurrentopen = float(hourlastcandle[0]['O'])*100000
-                hourcurrentclose = float(hourlastcandle[0]['C'])*100000
-                hourpreviouscandle = get_candles(market, 'hour')['result'][-2:]
-                hourprevlow = float(hourpreviouscandle[0]['L'])*100000
-                hourprevhigh = float(hourpreviouscandle[0]['H'])*100000
-                hourprevopen = float(hourpreviouscandle[0]['O'])*100000
-                hourprevclose = float(hourpreviouscandle[0]['C'])*100000
-                hourpreviouscandle2 = get_candles(market, 'hour')['result'][-3:]
-                hourprevlow2 = float(hourpreviouscandle2[0]['L'])*100000
-                hourprevhigh2 = float(hourpreviouscandle2[0]['H'])*100000
-                hourprevopen2 = float(hourpreviouscandle2[0]['O'])*100000
-                hourprevclose2 = float(hourpreviouscandle2[0]['C'])*100000
-                hourpreviouscandle3 = get_candles(market, 'hour')['result'][-4:]
-                hourprevlow3 = float(hourpreviouscandle3[0]['L'])*100000
-                hourprevhigh3 = float(hourpreviouscandle3[0]['H'])*100000
-                #hourprevopen3 = float(hourpreviouscandle3[0]['O'])*100000
-                #hourprevclose3 = float(hourpreviouscandle3[0]['C'])*100000
-                hourpreviouscandle4 = get_candles(market, 'hour')['result'][-5:]
-                hourprevlow4 = float(hourpreviouscandle4[0]['L'])*100000
-                hourprevhigh4 = float(hourpreviouscandle4[0]['H'])*100000
-                hourprevopen4 = float(hourpreviouscandle4[0]['O'])*100000
-                #hourprevclose4 = float(hourpreviouscandle4[0]['C'])*100000
-                hourpreviouscandle5 = get_candles(market, 'hour')['result'][-6:]
-                hourprevlow5 = float(hourpreviouscandle5[0]['L'])*100000
-                hourprevhigh5 = float(hourpreviouscandle5[0]['H'])*100000
-                #hourprevopen5 = float(hourpreviouscandle5[0]['O'])*100000
-                hourprevclose5 = float(hourpreviouscandle5[0]['C'])*100000
-                hourpreviouscandle6 = get_candles(market, 'hour')['result'][-7:]
-                hourprevlow6 = float(hourpreviouscandle6[0]['L'])*100000
-                hourprevhigh6 = float(hourpreviouscandle6[0]['H'])*100000
-                #hourprevopen6 = float(hourpreviouscandle6[0]['O'])*100000
-                #hourprevclose6 = float(hourpreviouscandle6[0]['C'])*100000
-                hourpreviouscandle7 = get_candles(market, 'hour')['result'][-8:]
-                hourprevlow7 = float(hourpreviouscandle7[0]['L'])*100000
-                hourprevhigh7 = float(hourpreviouscandle7[0]['H'])*100000
-                #hourprevopen7 = float(hourpreviouscandle7[0]['O'])*100000
-                #hourprevclose7 = float(hourpreviouscandle7[0]['C'])*100000
-                hourpreviouscandle8 = get_candles(market, 'hour')['result'][-9:]
-                hourprevlow8 = float(hourpreviouscandle8[0]['L'])*100000
-                hourprevhigh8 = float(hourpreviouscandle8[0]['H'])*100000
-                #hourprevopen8 = float(hourpreviouscandle8[0]['O'])*100000
-                #hourprevclose8 = float(hourpreviouscandle8[0]['C'])*100000
-                hourpreviouscandle9 = get_candles(market, 'hour')['result'][-10:]
-                hourprevlow9 = float(hourpreviouscandle9[0]['L'])*100000
-                hourprevhigh9 = float(hourpreviouscandle9[0]['H'])*100000
-                hourprevopen9 = float(hourpreviouscandle9[0]['O'])*100000
-                #hourprevclose9 = float(hourpreviouscandle9[0]['C'])*100000
-                hourpreviouscandle10 = get_candles(market, 'hour')['result'][-11:]
-                hourprevlow10 = float(hourpreviouscandle10[0]['L'])*100000
-                hourprevhigh10 = float(hourpreviouscandle10[0]['H'])*100000
-                #hourprevopen10 = float(hourpreviouscandle10[0]['O'])*100000
-                hourprevclose10 = float(hourpreviouscandle10[0]['C'])*100000
-                hourpreviouscandle11 = get_candles(market, 'hour')['result'][-12:]
-                hourprevlow11 = float(hourpreviouscandle11[0]['L'])*100000
-                hourprevhigh11 = float(hourpreviouscandle11[0]['H'])*100000
-                #hourprevopen11 = float(hourpreviouscandle11[0]['O'])*100000
-                #hourprevclose11 = float(hourpreviouscandle11[0]['C'])*100000
-                hourpreviouscandle12 = get_candles(market, 'hour')['result'][-13:]
-                hourprevlow12 = float(hourpreviouscandle12[0]['L'])*100000
-                hourprevhigh12 = float(hourpreviouscandle12[0]['H'])*100000
-                #hourprevopen12 = float(hourpreviouscandle12[0]['O'])*100000
-                #hourprevclose12 = float(hourpreviouscandle12[0]['C'])*100000
-                hourpreviouscandle13 = get_candles(market, 'hour')['result'][-14:]
-                hourprevlow13 = float(hourpreviouscandle13[0]['L'])*100000
-                hourprevhigh13 = float(hourpreviouscandle13[0]['H'])*100000
-                #hourprevopen13 = float(hourpreviouscandle13[0]['O'])*100000
-                #hourprevclose13 = float(hourpreviouscandle13[0]['C'])*100000
-                hourpreviouscandle14 = get_candles(market, 'hour')['result'][-15:]
-                hourprevlow14 = float(hourpreviouscandle14[0]['L'])*100000
-                hourprevhigh14 = float(hourpreviouscandle14[0]['H'])*100000
-                hourprevopen14 = float(hourpreviouscandle14[0]['O'])*100000
-                #hourprevclose14 = float(hourpreviouscandle14[0]['C'])*100000
-                hourpreviouscandle15 = get_candles(market, 'hour')['result'][-16:]
-                hourprevlow15 = float(hourpreviouscandle15[0]['L'])*100000
-                hourprevhigh15 = float(hourpreviouscandle15[0]['H'])*100000
-                #hourprevopen15 = float(hourpreviouscandle15[0]['O'])*100000
-                hourprevclose15 = float(hourpreviouscandle15[0]['C'])*100000
-                hourpreviouscandle16 = get_candles(market, 'hour')['result'][-17:]
-                hourprevlow16 = float(hourpreviouscandle16[0]['L'])*100000
-                hourprevhigh16 = float(hourpreviouscandle16[0]['H'])*100000
-                #hourprevopen16 = float(hourpreviouscandle16[0]['O'])*100000
-                #hourprevclose16 = float(hourpreviouscandle16[0]['C'])*100000
-                hourpreviouscandle17 = get_candles(market, 'hour')['result'][-18:]
-                hourprevlow17 = float(hourpreviouscandle17[0]['L'])*100000
-                hourprevhigh17 = float(hourpreviouscandle17[0]['H'])*100000
-                #hourprevopen17 = float(hourpreviouscandle17[0]['O'])*100000
-                #hourprevclose17 = float(hourpreviouscandle17[0]['C'])*100000
-                hourpreviouscandle18 = get_candles(market, 'hour')['result'][-19:]
-                hourprevlow18 = float(hourpreviouscandle18[0]['L'])*100000
-                hourprevhigh18 = float(hourpreviouscandle18[0]['H'])*100000
-                #hourprevopen18 = float(hourpreviouscandle18[0]['O'])*100000
-                #hourprevclose18 = float(hourpreviouscandle18[0]['C'])*100000
-                hourpreviouscandle19 = get_candles(market, 'hour')['result'][-20:]
-                hourprevlow19 = float(hourpreviouscandle19[0]['L'])*100000
-                hourprevhigh19 = float(hourpreviouscandle19[0]['H'])*100000
-                hourprevopen19 = float(hourpreviouscandle19[0]['O'])*100000
-                #hourprevclose19 = float(hourpreviouscandle19[0]['C'])*100000
-                hourpreviouscandle20 = get_candles(market, 'hour')['result'][-21:]
-                hourprevlow20 = float(hourpreviouscandle20[0]['L'])*100000
-                hourprevhigh20 = float(hourpreviouscandle20[0]['H'])*100000
-                #hourprevopen20 = float(hourpreviouscandle20[0]['O'])*100000
-                hourprevclose20 = float(hourpreviouscandle20[0]['C'])*100000
-                hourpreviouscandle21 = get_candles(market, 'hour')['result'][-22:]
-                hourprevlow21 = float(hourpreviouscandle21[0]['L'])*100000
-                hourprevhigh21 = float(hourpreviouscandle21[0]['H'])*100000
-                #hourprevopen21 = float(hourpreviouscandle21[0]['O'])*100000
-                #hourprevclose21 = float(hourpreviouscandle21[0]['C'])*100000
-                hourpreviouscandle22 = get_candles(market, 'hour')['result'][-23:]
-                hourprevlow22 = float(hourpreviouscandle22[0]['L'])*100000
-                hourprevhigh22 = float(hourpreviouscandle22[0]['H'])*100000
-                #hourprevopen22 = float(hourpreviouscandle22[0]['O'])*100000
-                #hourprevclose22 = float(hourpreviouscandle22[0]['C'])*100000
-                hourpreviouscandle23 = get_candles(market, 'hour')['result'][-24:]
-                hourprevlow23 = float(hourpreviouscandle23[0]['L'])*100000
-                hourprevhigh23 = float(hourpreviouscandle23[0]['H'])*100000
-                #hourprevopen23 = float(hourpreviouscandle23[0]['O'])*100000
-                #hourprevclose23 = float(hourpreviouscandle23[0]['C'])*100000
-                hourpreviouscandle24 = get_candles(market, 'hour')['result'][-25:]
-                hourprevlow24 = float(hourpreviouscandle24[0]['L'])*100000
-                hourprevhigh24 = float(hourpreviouscandle24[0]['H'])*100000
-                hourprevopen24 = float(hourpreviouscandle24[0]['O'])*100000
-                #hourprevclose24 = float(hourpreviouscandle24[0]['C'])*100000
+                ############
+                hourcandles = get_candles(market, 'hour')['result'][-25:]
+                hourcurrentlow = float(hourcandles[24]['L'])*100000
+                hourcurrenthigh = float(hourcandles[24]['H'])*100000
+                hourcurrentopen = float(hourcandles[24]['O'])*100000
+                hourcurrentclose = float(hourcandles[24]['C'])*100000
+
+                hourprevlow = float(hourcandles[23]['L'])*100000
+                hourprevhigh = float(hourcandles[23]['H'])*100000
+                hourprevopen = float(hourcandles[23]['O'])*100000
+                hourprevclose = float(hourcandles[23]['C'])*100000
+
+                hourprevlow2 = float(hourcandles[22]['L'])*100000
+                hourprevhigh2 = float(hourcandles[22]['H'])*100000
+                hourprevopen2 = float(hourcandles[22]['O'])*100000
+                hourprevclose2 = float(hourcandles[22]['C'])*100000
+
+                hourprevlow3 = float(hourcandles[21]['L'])*100000
+                hourprevhigh3 = float(hourcandles[21]['H'])*100000
+                #hourprevopen3 = float(hourcandles[21]['O'])*100000
+                #hourprevclose3 = float(hourcandles[21]['C'])*100000
 
 
+                hourprevlow4 = float(hourcandles[20]['L'])*100000
+                hourprevhigh4 = float(hourcandles[20]['H'])*100000
+                hourprevopen4 = float(hourcandles[20]['O'])*100000
+                #hourprevclose4 = float(hourcandles[20]['C'])*100000
+
+
+                hourprevlow5 = float(hourcandles[19]['L'])*100000
+                hourprevhigh5 = float(hourcandles[19]['H'])*100000
+                #hourprevopen5 = float(hourcandles[19]['O'])*100000
+                hourprevclose5 = float(hourcandles[19]['C'])*100000
+
+
+
+                hourprevlow6 = float(hourcandles[18]['L'])*100000
+                hourprevhigh6 = float(hourcandles[18]['H'])*100000
+                #hourprevopen6 = float(hourcandles[18]['O'])*100000
+                #hourprevclose6 = float(hourcandles[18]['C'])*100000
+
+
+                hourprevlow7 = float(hourcandles[17]['L'])*100000
+                hourprevhigh7 = float(hourcandles[17]['H'])*100000
+                #hourprevopen7 = float(hourcandles[17]['O'])*100000
+                #hourprevclose7 = float(hourcandles[17]['C'])*100000
+
+
+                hourprevlow8 = float(hourcandles[16]['L'])*100000
+                hourprevhigh8 = float(hourcandles[16]['H'])*100000
+                #hourprevopen8 = float(hourcandles[16]['O'])*100000
+                #hourprevclose8 = float(hourcandles[16]['C'])*100000
+
+
+                hourprevlow9 = float(hourcandles[15]['L'])*100000
+                hourprevhigh9 = float(hourcandles[15]['H'])*100000
+                hourprevopen9 = float(hourcandles[15]['O'])*100000
+                #hourprevclose9 = float(hourcandles[15]['C'])*100000
+
+
+                hourprevlow10 = float(hourcandles[14]['L'])*100000
+                hourprevhigh10 = float(hourcandles[14]['H'])*100000
+                #hourprevopen10 = float(hourcandles[14]['O'])*100000
+                hourprevclose10 = float(hourcandles[14]['C'])*100000
+
+
+                hourprevlow11 = float(hourcandles[13]['L'])*100000
+                hourprevhigh11 = float(hourcandles[13]['H'])*100000
+                #hourprevopen11 = float(hourcandles[13]['O'])*100000
+                #hourprevclose11 = float(hourcandles[13]['C'])*100000
+
+
+                hourprevlow12 = float(hourcandles[12]['L'])*100000
+                hourprevhigh12 = float(hourcandles[12]['H'])*100000
+                #hourprevopen12 = float(hourcandles[12]['O'])*100000
+                #hourprevclose12 = float(hourcandles[12]['C'])*100000
+
+
+
+                hourprevlow13 = float(hourcandles[11]['L'])*100000
+                hourprevhigh13 = float(hourcandles[11]['H'])*100000
+                #hourprevopen13 = float(hourcandles[11]['O'])*100000
+                #hourprevclose13 = float(hourcandles[11]['C'])*100000
+
+
+                hourprevlow14 = float(hourcandles[10]['L'])*100000
+                hourprevhigh14 = float(hourcandles[10]['H'])*100000
+                hourprevopen14 = float(hourcandles[10]['O'])*100000
+                #hourprevclose14 = float(hourcandles[10]['C'])*100000
+
+
+
+                hourprevlow15 = float(hourcandles[9]['L'])*100000
+                hourprevhigh15 = float(hourcandles[9]['H'])*100000
+                #hourprevopen15 = float(hourcandles[9]['O'])*100000
+                hourprevclose15 = float(hourcandles[9]['C'])*100000
+
+
+                hourprevlow16 = float(hourcandles[8]['L'])*100000
+                hourprevhigh16 = float(hourcandles[8]['H'])*100000
+                #hourprevopen16 = float(hourcandles[8]['O'])*100000
+                #hourprevclose16 = float(hourcandles[8]['C'])*100000
+
+
+                hourprevlow17 = float(hourcandles[7]['L'])*100000
+                hourprevhigh17 = float(hourcandles[7]['H'])*100000
+                #hourprevopen17 = float(hourcandles[7]['O'])*100000
+                #hourprevclose17 = float(hourcandles[7]['C'])*100000
+
+
+
+                hourprevlow18 = float(hourcandles[6]['L'])*100000
+                hourprevhigh18 = float(hourcandles[6]['H'])*100000
+                #hourprevopen18 = float(hourcandles[6]['O'])*100000
+                #hourprevclose18 = float(hourcandles[6]['C'])*100000
+
+
+                hourprevlow19 = float(hourcandles[5]['L'])*100000
+                hourprevhigh19 = float(hourcandles[5]['H'])*100000
+                hourprevopen19 = float(hourcandles[5]['O'])*100000
+                #hourprevclose19 = float(hourcandles[5]['C'])*100000
+
+
+
+                hourprevlow20 = float(hourcandles[4]['L'])*100000
+                hourprevhigh20 = float(hourcandles[4]['H'])*100000
+                #hourprevopen20 = float(hourcandles[4]['O'])*100000
+                hourprevclose20 = float(hourcandles[4]['C'])*100000
+
+
+
+                hourprevlow21 = float(hourcandles[3]['L'])*100000
+                hourprevhigh21 = float(hourcandles[3]['H'])*100000
+                #hourprevopen21 = float(hourcandles[3]['O'])*100000
+                #hourprevclose21 = float(hourcandles[3]['C'])*100000
+
+
+
+                hourprevlow22 = float(hourcandles[2]['L'])*100000
+                hourprevhigh22 = float(hourcandles[2]['H'])*100000
+                #hourprevopen22 = float(hourcandles[2]['O'])*100000
+                #hourprevclose22 = float(hourcandles[2]['C'])*100000
+
+
+                hourprevlow23 = float(hourcandles[1]['L'])*100000
+                hourprevhigh23 = float(hourcandles[1]['H'])*100000
+                #hourprevopen23 = float(hourcandles[1]['O'])*100000
+                #hourprevclose23 = float(hourcandles[1]['C'])*100000
+
+
+                hourprevlow24 = float(hourcandles[0]['L'])*100000
+                hourprevhigh24 = float(hourcandles[0]['H'])*100000
+                hourprevopen24 = float(hourcandles[0]['O'])*100000
+                #hourprevclose24 = float(hourcandles[0]['C'])*100000
+
+
+                ###########
 
                 fivehourcurrentlow = min(hourcurrentlow, hourprevlow, hourprevlow2, hourprevlow3, hourprevlow4)
                 fivehourcurrenthigh = max(hourcurrenthigh, hourprevhigh, hourprevhigh2, hourprevhigh3, hourprevhigh4)
@@ -252,6 +283,47 @@ def HA():
                 fivehourprevhigh4 = max(hourprevhigh20,hourprevhigh21, hourprevhigh22, hourprevhigh23, hourprevhigh24)
                 fivehourprevopen4 = hourprevopen24
                 fivehourprevclose4 = hourprevclose20
+
+
+                hour_candle = 'NONE'
+                prevhour_candle = 'NONE'
+                prevhour2_candle = 'NONE'
+
+                if last*100000 > hourcurrentopen:
+                    hour_candle = 'U'
+                else:
+                    hour_candle = 'D'
+
+                if hourprevclose > hourprevopen:
+                    prevhour_candle = 'U'
+                else:
+                    prevhour_candle = 'D'
+
+                if hourprevclose2 > hourprevopen2:
+                    prevhour2_candle = 'U'
+                else:
+                    prevhour2_candle = 'D'
+
+
+                fivehour_candle = 'NONE'
+                fiveprevhour_candle = 'NONE'
+                fiveprevhour2_candle = 'NONE'
+
+                if last*100000 > fivehourcurrentopen:
+                    fivehour_candle = 'U'
+                else:
+                    fivehour_candle = 'D'
+
+                if fivehourprevclose > fivehourprevopen:
+                    fiveprevhour_candle = 'U'
+                else:
+                    fiveprevhour_candle = 'D'
+
+                if fivehourprevclose2 > fivehourprevopen2:
+                    fiveprevhour2_candle = 'U'
+                else:
+                    fiveprevhour2_candle = 'D'
+
 
                 print "Computing HA candles for ", market
 
@@ -412,19 +484,19 @@ def HA():
 
 
 
-                if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longermax and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2)):
+                if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longermax and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2))  and fivehour_candle=='D' and fiveprevhour_candle=='D':
                     HA_trend = "DOWN"
 
 
-                if (((ha_direction_up_long_0 and ha_direction_up0) or (ha_direction_up_long_0 and ha_direction_up_long_1 and ha_direction_up0) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer and ha_direction_up_longermax) and ha_direction_up0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up2)):
+                if (((ha_direction_up_long_0 and ha_direction_up0) or (ha_direction_up_long_0 and ha_direction_up_long_1 and ha_direction_up0) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer) or (ha_direction_up_long_0 or ha_direction_up_long_1 and ha_direction_up_longer and ha_direction_up_longermax) and ha_direction_up0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up2)) and fivehour_candle=='U' and fiveprevhour_candle=='U':
                     HA_trend = "UP"
 
 
-                if ((ha_direction_up_short2 and ha_direction_spin1 and ha_direction_up0) or (ha_direction_down_short2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_down_short1 and ha_direction_spin0) or (ha_direction_down_long_2 and ha_direction_down_short1 and ha_direction_up_long_0) or (ha_direction_down_long_2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_up_long_0 and ha_direction_up1 and ha_direction_up_longer) or (ha_direction_down_long_2 and ha_direction_down_smaller1 and ha_direction_up0) or (ha_direction_down_long_2 and ha_direction_down_short1 and  ha_direction_up_long_0) or (ha_direction_down_longermax and ha_direction_up_short0) and ha_direction_down1 and ha_direction_down2) and ha_direction_down1 and ha_direction_down2:
+                if ((ha_direction_up_short2 and ha_direction_spin1 and ha_direction_up0) or (ha_direction_down_short2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_down_short1 and ha_direction_spin0) or (ha_direction_down_long_2 and ha_direction_down_short1 and ha_direction_up_long_0) or (ha_direction_down_long_2 and ha_direction_up_short1 and ha_direction_up_long_0) or (ha_direction_down2 and ha_direction_up_long_0 and ha_direction_up1 and ha_direction_up_longer) or (ha_direction_down_long_2 and ha_direction_down_smaller1 and ha_direction_up0) or (ha_direction_down_long_2 and ha_direction_down_short1 and  ha_direction_up_long_0) or (ha_direction_down_longermax and ha_direction_up_short0) and ha_direction_down1 and ha_direction_down2) and ha_direction_down1 and ha_direction_down2 and fivehour_candle=='U' and fiveprevhour_candle=='D':
                     HA_trend = "Revers-UP"
 
 
-                if ((ha_direction_down_short2 and ha_direction_spin1 and ha_direction_down0) or (ha_direction_up_short2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_up_short1 and ha_direction_spin0) or (ha_direction_up_long_2 and ha_direction_up_short1 and ha_direction_down_long_0) or (ha_direction_up_long_2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_down_long_0 and ha_direction_down1 and ha_direction_down_longer) or (ha_direction_up_long_2 and ha_direction_up_smaller1 and ha_direction_down0) or (ha_direction_up_long_2 and ha_direction_up_short1 and  ha_direction_down_long_0) or (ha_direction_up_longermax and ha_direction_down_short0) and ha_direction_up1 and ha_direction_up2) and ha_direction_up1 and ha_direction_up2:
+                if ((ha_direction_down_short2 and ha_direction_spin1 and ha_direction_down0) or (ha_direction_up_short2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_up_short1 and ha_direction_spin0) or (ha_direction_up_long_2 and ha_direction_up_short1 and ha_direction_down_long_0) or (ha_direction_up_long_2 and ha_direction_down_short1 and ha_direction_down_long_0) or (ha_direction_up2 and ha_direction_down_long_0 and ha_direction_down1 and ha_direction_down_longer) or (ha_direction_up_long_2 and ha_direction_up_smaller1 and ha_direction_down0) or (ha_direction_up_long_2 and ha_direction_up_short1 and  ha_direction_down_long_0) or (ha_direction_up_longermax and ha_direction_down_short0) and ha_direction_up1 and ha_direction_up2) and ha_direction_up1 and ha_direction_up2 and fivehour_candle=='D' and fiveprevhour_candle=='U':
                     HA_trend = "Revers-DOWN"
 
 
@@ -435,22 +507,26 @@ def HA():
 
 
 
-                if (((hah_direction_down_long_0 and hah_direction_down0) or (hah_direction_down_long_0 and hah_direction_down_long_1 and hah_direction_down0) or (hah_direction_down_long_0 or hah_direction_down_long_1 and hah_direction_down_longer) or (hah_direction_down_long_0 or hah_direction_down_long_1 and hah_direction_down_longermax and hah_direction_down_longer) and hah_direction_down0) or (hah_direction_down0 and hah_direction_down1 and hah_direction_down2)):
+                if (((hah_direction_down_long_0 and hah_direction_down0) or (hah_direction_down_long_0 and hah_direction_down_long_1 and hah_direction_down0) or (hah_direction_down_long_0 or hah_direction_down_long_1 and hah_direction_down_longer) or (hah_direction_down_long_0 or hah_direction_down_long_1 and hah_direction_down_longermax and hah_direction_down_longer) and hah_direction_down0) or (hah_direction_down0 and hah_direction_down1 and hah_direction_down2)) and hour_candle=='D' and prevhour_candle=='D':
                     HAH_trend = "DOWN"
 
-                if (((hah_direction_up_long_0 and hah_direction_up0) or (hah_direction_up_long_0 and hah_direction_up_long_1 and hah_direction_up0) or (hah_direction_up_long_0 or hah_direction_up_long_1 and hah_direction_up_longer) or (hah_direction_up_long_0 or hah_direction_up_long_1 and hah_direction_up_longer and hah_direction_up_longermax) and hah_direction_up0) or (hah_direction_up0 and hah_direction_up1 and hah_direction_up2)):
+                if (((hah_direction_up_long_0 and hah_direction_up0) or (hah_direction_up_long_0 and hah_direction_up_long_1 and hah_direction_up0) or (hah_direction_up_long_0 or hah_direction_up_long_1 and hah_direction_up_longer) or (hah_direction_up_long_0 or hah_direction_up_long_1 and hah_direction_up_longer and hah_direction_up_longermax) and hah_direction_up0) or (hah_direction_up0 and hah_direction_up1 and hah_direction_up2)) and hour_candle=='U' and prevhour_candle=='U':
                     HAH_trend = "UP"
 
-                if ((hah_direction_up_short2 and hah_direction_spin1 and hah_direction_up0) or (hah_direction_down_short2 and hah_direction_up_short1 and hah_direction_up_long_0) or (hah_direction_down2 and hah_direction_down_short1 and hah_direction_spin0) or (hah_direction_down_long_2 and hah_direction_down_short1 and hah_direction_up_long_0) or (hah_direction_down_long_2 and hah_direction_up_short1 and hah_direction_up_long_0) or (hah_direction_down2 and hah_direction_up_long_0 and hah_direction_up1 and hah_direction_up_longer) or (hah_direction_down_long_2 and hah_direction_down_smaller1 and hah_direction_up0) or (hah_direction_down_long_2 and hah_direction_down_short1 and  hah_direction_up_long_0) or (hah_direction_down_longermax and hah_direction_up_short0) and hah_direction_down1 and hah_direction_down2):
+                if ((hah_direction_up_short2 and hah_direction_spin1 and hah_direction_up0) or (hah_direction_down_short2 and hah_direction_up_short1 and hah_direction_up_long_0) or (hah_direction_down2 and hah_direction_down_short1 and hah_direction_spin0) or (hah_direction_down_long_2 and hah_direction_down_short1 and hah_direction_up_long_0) or (hah_direction_down_long_2 and hah_direction_up_short1 and hah_direction_up_long_0) or (hah_direction_down2 and hah_direction_up_long_0 and hah_direction_up1 and hah_direction_up_longer) or (hah_direction_down_long_2 and hah_direction_down_smaller1 and hah_direction_up0) or (hah_direction_down_long_2 and hah_direction_down_short1 and  hah_direction_up_long_0) or (hah_direction_down_longermax and hah_direction_up_short0) and hah_direction_down1 and hah_direction_down2) and hour_candle=='U' and prevhour_candle=='D':
                     HAH_trend = "Revers-UP"
 
-                if ((hah_direction_down_short2 and hah_direction_spin1 and hah_direction_down0) or (hah_direction_up_short2 and hah_direction_down_short1 and hah_direction_down_long_0) or (hah_direction_up2 and hah_direction_up_short1 and hah_direction_spin0) or (hah_direction_up_long_2 and hah_direction_up_short1 and hah_direction_down_long_0) or (hah_direction_up_long_2 and hah_direction_down_short1 and hah_direction_down_long_0) or (hah_direction_up2 and hah_direction_down_long_0 and hah_direction_down1 and hah_direction_down_longer) or (hah_direction_up_long_2 and hah_direction_up_smaller1 and hah_direction_down0) or (hah_direction_up_long_2 and hah_direction_up_short1 and  hah_direction_down_long_0) or (hah_direction_up_longermax and hah_direction_down_short0) and hah_direction_up1 and hah_direction_up2):
+                if ((hah_direction_down_short2 and hah_direction_spin1 and hah_direction_down0) or (hah_direction_up_short2 and hah_direction_down_short1 and hah_direction_down_long_0) or (hah_direction_up2 and hah_direction_up_short1 and hah_direction_spin0) or (hah_direction_up_long_2 and hah_direction_up_short1 and hah_direction_down_long_0) or (hah_direction_up_long_2 and hah_direction_down_short1 and hah_direction_down_long_0) or (hah_direction_up2 and hah_direction_down_long_0 and hah_direction_down1 and hah_direction_down_longer) or (hah_direction_up_long_2 and hah_direction_up_smaller1 and hah_direction_down0) or (hah_direction_up_long_2 and hah_direction_up_short1 and  hah_direction_down_long_0) or (hah_direction_up_longermax and hah_direction_down_short0) and hah_direction_up1 and hah_direction_up2) and hour_candle=='D' and prevhour_candle=='U':
                     HAH_trend = "Revers-DOWN"
 
                 if  HAH_trend != "Revers-DOWN" and   HAH_trend != "Revers-UP" and  HAH_trend != "DOWN" and HAH_trend != "UP":
                     HAH_trend = "STABLE"
 
-                print market, HA_trend, HAH_trend
+
+
+                print market, HA_trend, HAH_trend, fiveprevhour2_candle, fiveprevhour_candle, fivehour_candle,  prevhour2_candle, prevhour_candle, hour_candle,
+
+
 
                 print "Generate HA signls for ", market
                 if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
@@ -508,9 +584,6 @@ def HA():
                         db.close()
 
 
-#                print market, last, HA_trend, HAH_trend
-
-
 
 
                 try:
@@ -544,7 +617,7 @@ def HA():
                 previouscandlesize6 =  hourprevhigh6- hourprevlow6
 
                 #averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
-                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
+#                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
 
 
 #                if (lastcandlesize/averagecandlesize>2.5 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>2.5 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>2.5 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
