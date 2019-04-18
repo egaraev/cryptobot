@@ -37,6 +37,7 @@ def main():
 def tick():
     market_summ = c.get_market_summaries().json()['result']
     btc_trend = parameters()[12]
+    currtime = int(round(time.time()))
 
 
 
@@ -183,6 +184,9 @@ def tick():
                 else:
                     score_trend = "DOWN"
 
+                serf = percent_serf(market)
+
+
                 try:
                     print market, "lets update new score"
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -195,6 +199,20 @@ def tick():
                     sys.exit(1)
                 finally:
                     db.close()
+
+                if (score_trend =="DOWN" or score_trend =="UP") and status_orders(market, 4)==1:
+
+                    try:
+                        print market, "lets update new score in history"
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' Score: ' + str(score)+' Score_trend: ' + str(score_trend), currtime, status_orders(market, 0)))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
 
 
         except:
@@ -285,6 +303,17 @@ def parameters():
     for row in r:
         return (row[1]), (row[2]), (row[3]), (row[4]), (row[5]), (row[6]), (row[7]), (row[8]), (row[9]), (row[10]), (row[11]), (row[12]), (row[13]), (row[14]), (row[15]), (row[16]), (row[17]), (row[18]), (row[19]), (row[20]), (row[21]), (row[22]), (row[23]), (row[24])
 
+    return 0
+
+
+def percent_serf(marketname):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return float("{0:.2f}".format(row[0]))
     return 0
 
 

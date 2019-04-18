@@ -86,8 +86,8 @@ echo "<table border='1'>
 <th>Min %</th>
 <th>Max % After</th>
 <th>Min % After</th>
-<th>Reason and Parameters used</th>
-<th>Reason to sell</th>
+<th>Reason_and_Parameters_used</th>
+<th>Reason_to_sell</th>
 <th>Signal history</th>
 <th>SELL signal</th>
 </tr>";
