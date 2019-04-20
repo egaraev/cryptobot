@@ -205,8 +205,8 @@ def tick():
 #                    if ((stop_bot == 0) and ((HAD_trend == "STABLE" and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAH_trend == "UP" or HAH_trend == "Revers-UP")) or (HAD_trend == "UP" and HA_trend == "UP"  and (HAH_trend == "UP" or HAH_trend == "Revers-UP"))) and stop_bot_force == 0) and (
 #                                currtime - ha_time_second < 2000) and (currtime - strike_time > 18000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen  and fivemin!='D' and hour!='D' and percent_sql>0.0 :#and (currtime - strike_time2 > 18000)
 
-                    if ((stop_bot == 0) and stop_bot_force == 0)  and ((
-                                HA_trend == "UP" or HA_trend == "Revers-UP") and (
+                    if ((stop_bot == 0) and stop_bot_force == 0) and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN"  and ((
+                                HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE") and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
                                 currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D':

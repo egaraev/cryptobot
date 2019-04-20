@@ -49,7 +49,7 @@ echo "<table border='1'>
 <th>Current result %</th>
 <th>Max %</th>
 <th>Min %</th>
-<th>Reasons and parameters used</th>
+<th>Reasons_and_parameters_used</th>
 <th>Signal history</th>
 <th>Sell signal</th>
 </tr>";
