@@ -9,6 +9,7 @@ import hmac
 import numpy
 import datetime
 
+
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c = Client(api_key='', api_secret='')
 
