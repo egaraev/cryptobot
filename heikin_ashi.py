@@ -555,7 +555,7 @@ def HA():
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HAH_trend!="Revers-UP" and HA_trend!="UP" and HA_trend!="Revers-UP" and HAD_trend=="DOWN" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HAH_trend!="Revers-UP" and HA_trend!="UP" and HA_trend!="Revers-UP" and HAD_trend!="UP" and HAD_trend!="Revers-UP"  and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
