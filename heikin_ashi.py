@@ -397,6 +397,8 @@ def HA():
 
                 HAH_trend = "NONE"
 
+                HAD_trend = heikin_ashi(market, 18)
+
                 print "Generting direction info for ", market
 
                 ha_direction_down_short0 =((HA_High - HA_Low) / (HA_Open - HA_Close) >= 2)  and (HA_Open - HA_Close !=0)
@@ -528,32 +530,32 @@ def HA():
 
 
 
-                print "Generate HA signls for ", market
-                if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
+#                print "Generate HA signls for ", market
+#                if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
 
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
-                        cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
-                        if status_orders(market, 4)==1:
-                            cursor.execute(
-                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-                                market, str(serf) + ' HA_sell_signal ' + str(1),
-                                currtime, status_orders(market, 0)))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+#                    try:
+#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+#                        cursor = db.cursor()
+#                        printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
+#                        cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
+#                        if status_orders(market, 4)==1:
+#                            cursor.execute(
+#                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+#                                market, str(serf) + ' HA_sell_signal ' + str(1),
+#                                currtime, status_orders(market, 0)))
+#                        db.commit()
+#                    except MySQLdb.Error, e:
+#                        print "Error %d: %s" % (e.args[0], e.args[1])
+#                        sys.exit(1)
+#                    finally:
+#                        db.close()
 
                 lastcandlesize= fivehourcurrenthigh-fivehourcurrentlow
                 prevcandlesize= fivehourprevhigh-fivehourprevlow
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HAH_trend!="Revers-UP" and HA_trend!="UP" and HA_trend!="Revers-UP" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HAH_trend!="Revers-UP" and HA_trend!="UP" and HA_trend!="Revers-UP" and HAD_trend=="DOWN" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -617,13 +619,13 @@ def HA():
 
 
 
-                lastcandlesize = hourcurrenthigh-hourcurrentlow
-                previouscandlesize = hourprevhigh-hourprevlow
-                previouscandlesize2 = hourprevhigh2-hourprevlow2
-                previouscandlesize3 = hourprevhigh3-hourprevlow3
-                previouscandlesize4 = hourprevhigh4-hourprevlow4
-                previouscandlesize5 = hourprevhigh5-hourprevlow5
-                previouscandlesize6 =  hourprevhigh6- hourprevlow6
+#                lastcandlesize = hourcurrenthigh-hourcurrentlow
+#                previouscandlesize = hourprevhigh-hourprevlow
+#                previouscandlesize2 = hourprevhigh2-hourprevlow2
+#                previouscandlesize3 = hourprevhigh3-hourprevlow3
+#               previouscandlesize4 = hourprevhigh4-hourprevlow4
+#                previouscandlesize5 = hourprevhigh5-hourprevlow5
+#               previouscandlesize6 =  hourprevhigh6- hourprevlow6
 
                 #averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
 #                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
