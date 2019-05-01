@@ -209,7 +209,7 @@ def tick():
                                 HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE") and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
-                                currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D':
+                                currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 18000):
                             #balance_res = get_balance_from_market(market)
                             #current_balance = balance_res['result']['Available']
 

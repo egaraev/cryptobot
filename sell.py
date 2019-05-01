@@ -667,7 +667,7 @@ def tick():
                                     #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
-                                elif serf_usd >= 0 and procent_serf<2.0 and (sell_signal != 0) and last<hourcurrentopen:   # # WAS profit2
+                                elif serf_usd >= 0 and  2.0>procent_serf>=0.7 and (sell_signal != 0) and last<hourcurrentopen:   # # WAS profit2
                                         print ('  18  - Trying to Sell ' + str(
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
@@ -696,13 +696,16 @@ def tick():
                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                     candles_signal_long) + '  AI:' + str(
                                                     ai_prediction(market)),currtime, market))
-
+                                            cursor.execute(
+                                                "update markets set last_sell_sig = %s, strike_time2 = %s  where market = %s and active =1",
+                                                (sell_signal, currtime, market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
                                             newvalue = summ_serf() + procent_serf
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                                 currenttime, newvalue, market))
+
                                             db.commit()
                                         except MySQLdb.Error, e:
                                             print "Error %d: %s" % (e.args[0], e.args[1])
@@ -744,7 +747,9 @@ def tick():
                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
                                                     candles_signal_long) + '  AI:' + str(
                                                     ai_prediction(market)),currtime, market))
-
+                                            cursor.execute(
+                                                "update markets set last_sell_sig = %s, strike_time2 = %s  where market = %s and active =1",
+                                                (sell_signal, currtime, market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
                                             newvalue = summ_serf() + procent_serf
