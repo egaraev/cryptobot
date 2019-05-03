@@ -36,6 +36,7 @@ def ME():
                 bought_price_sql = float(status_orders(market, 3))
                 aftercount=float(status_orders(market, 25))
                 min_percent=float(status_orders(market, 24))
+                aftercount_min=float(status_orders(market, 26))
                 #bought_quantity_sql = float(status_orders(market, 2))
                 order_id = closed_orders_id(market)
                 procent_serf = float("{0:.2f}".format(((newbid / bought_price_sql) - 1) * 100))
@@ -52,7 +53,7 @@ def ME():
                             cursor.execute(
                                 "update orders set aftercount=%s where market = %s and active = 0 and order_id = %s",
                                 (procent_serf, market, order_id))
-                        elif procent_serf<percent_serf(market):
+                        elif procent_serf<percent_serf(market) and procent_serf<aftercount_min:
                             cursor.execute(
                                 "update orders set aftercount_min=%s where market = %s and active = 0 and order_id = %s",
                                 (procent_serf, market, order_id))
