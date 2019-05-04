@@ -94,3 +94,7 @@ PID21=`ps aux | awk '/order_counts.py/ && !/awk/ { print $2 }'`
 kill -9 $PID21
 
 
+PID22=`ps aux | awk '/stat.py/ && !/awk/ { print $2 }'`
+kill -9 $PID22
+
+

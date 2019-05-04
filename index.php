@@ -1,3 +1,5 @@
+<a href="stat.php">Link to STAT Page</a>
+
 <?php
 $con=mysqli_connect("database-service","cryptouser","123456","cryptodb");
 // Check connection
@@ -5,6 +7,8 @@ if (mysqli_connect_errno())
 {
 echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
+
+
 
 $result = mysqli_query($con,"SELECT * FROM logs order by log_id desc limit 10");
 echo "<html><head><title>Cryptobot</title></head>
@@ -49,7 +53,7 @@ echo "<table border='1'>
 <th>Current result %</th>
 <th>Max %</th>
 <th>Min %</th>
-<th>Reasons_and_parameters_used</th>
+<th>Reason_and_Parameters_used</th>
 <th>Signal history</th>
 <th>Sell signal</th>
 </tr>";
@@ -120,7 +124,7 @@ echo '<img src="images/crypto_results4.png"  height="700" width="1600">';
 
 /////
 
-$result4 = mysqli_query($con,"SELECT * FROM markets where active = 1");
+$result4 = mysqli_query($con,"SELECT * FROM markets where enabled = 1");
 echo "<br><b>Market status</b><br>";
 
 echo "<table border='1'>

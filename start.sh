@@ -308,3 +308,18 @@ else
 
 fi
 
+
+
+
+SERVICE22='stat.py'
+
+if ps ax | grep -v grep | grep $SERVICE22 > /dev/null
+then
+    echo "$SERVICE22 service running "
+else
+    echo there is no such "$SERVICE22 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 stat.py
+
+fi
+
