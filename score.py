@@ -78,7 +78,7 @@ def tick():
                 bid = float(summary['Bid'])  # sell price
 
                 bought_quantity_sql = float(status_orders(market, 2))
-                previous_score = float(status_orders(market, 28))
+                previous_score = float(heikin_ashi(market, 33))
                 now = datetime.datetime.now()
 
                 HA_trend = heikin_ashi(market, 10)
