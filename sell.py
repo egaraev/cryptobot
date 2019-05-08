@@ -219,7 +219,7 @@ def tick():
                                 sys.exit(1)
                             finally:
                                 db.close()
-                            #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
+                            Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
 
@@ -300,7 +300,7 @@ def tick():
                                     sys.exit(1)
                                 finally:
                                     db.close()
-                                    # Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
+                                    Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
 
 
                             if serf_usd > 0  and (((currentopen == currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose and thirtymin=='U') or (currentopen == currentlow and currentopen < currenthigh and last > prevclose and thirtymin=='U') )):  #and slow_market==1
@@ -496,7 +496,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                    #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
 
 
 
@@ -664,7 +664,7 @@ def tick():
                                              sys.exit(1)
                                          finally:
                                              db.close()
-                                    #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
+                                         Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
                                 elif serf_usd >= 0 and  2.0>procent_serf>=0.7 and (sell_signal != 0) and last<hourcurrentopen:   # # WAS profit2
@@ -712,7 +712,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                        #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
 
@@ -762,7 +762,7 @@ def tick():
                                             sys.exit(1)
                                         finally:
                                             db.close()
-                                    #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
+                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
                                 elif (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)): # #WAS profit2
                                             print ('  22 Prod - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD')
