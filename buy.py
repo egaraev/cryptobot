@@ -272,7 +272,7 @@ def tick():
                                     sys.exit(1)
                                 finally:
                                     db.close()
-                                #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "database-service")
+                                Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "database-service")
                                 break
 
 
