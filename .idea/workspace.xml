@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="556b6752-bdc7-4d1a-8c34-d4ba90dab1c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stat.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restart.sh" afterPath="$PROJECT_DIR$/restart.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.sh" afterPath="$PROJECT_DIR$/start.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuralprediction.py" afterPath="$PROJECT_DIR$/neuralprediction.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sell.py" afterPath="$PROJECT_DIR$/sell.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,12 +18,22 @@
       <file leaf-file-name="heikin_ashi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heikin_ashi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="565" column="49" lean-forward="false" selection-start-line="565" selection-start-column="49" selection-end-line="565" selection-end-column="49" />
+            <state relative-caret-position="1303">
+              <caret line="606" column="0" lean-forward="false" selection-start-line="606" selection-start-column="0" selection-end-line="606" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#32917#32973#0" expanded="false" />
+                <element signature="e#38895#38951#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neuralprediction.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neuralprediction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="321" column="66" lean-forward="false" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -33,24 +41,35 @@
       <file leaf-file-name="heikin_day.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heikin_day.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1963">
-              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+            <state relative-caret-position="1859">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <marker date="1558257893073" expanded="true" signature="449:15781" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="543:15781" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="588:15743" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="649:15743" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="15499:15548" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="15589:15687" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="15822:16162" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="16087:16144" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="16203:16381" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="16408:16645" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="16683:17207" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="16814:16986" ph="..." />
+                <marker date="1558257893073" expanded="true" signature="17126:17189" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sell.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sell.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sell.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="383" column="68" lean-forward="false" selection-start-line="383" selection-start-column="68" selection-end-line="383" selection-end-column="68" />
+            <state relative-caret-position="156">
+              <caret line="666" column="63" lean-forward="false" selection-start-line="666" selection-start-column="63" selection-end-line="666" selection-end-column="63" />
               <folding>
                 <element signature="e#50#63#0" expanded="true" />
-                <element signature="e#24460#24604#0" expanded="false" />
-                <element signature="e#33575#33662#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -59,8 +78,8 @@
       <file leaf-file-name="stat.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="312">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -68,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file:///var/www/html/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,11 +142,12 @@
         <option value="$PROJECT_DIR$/heikin_day.py" />
         <option value="$PROJECT_DIR$/heikin_ashi.py" />
         <option value="$PROJECT_DIR$/buy.py" />
-        <option value="$PROJECT_DIR$/sell.py" />
         <option value="$PROJECT_DIR$/aftercount.py" />
         <option value="/var/www/html/stat.php" />
-        <option value="$PROJECT_DIR$/stat.py" />
         <option value="/var/www/html/index.php" />
+        <option value="$PROJECT_DIR$/stat.py" />
+        <option value="$PROJECT_DIR$/neuralprediction.py" />
+        <option value="$PROJECT_DIR$/sell.py" />
       </list>
     </option>
   </component>
@@ -181,7 +201,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.stat">
+  <component name="RunManager" selected="Python.heikin_ashi">
     <configuration name="aftercount" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,7 +219,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="buy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="heikin_ashi" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -211,7 +231,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="cryptobot" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/buy.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/heikin_ashi.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -269,18 +289,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.heikin_day" />
-      <item index="1" class="java.lang.String" itemvalue="Python.buy" />
-      <item index="2" class="java.lang.String" itemvalue="Python.sell" />
-      <item index="3" class="java.lang.String" itemvalue="Python.stat" />
-      <item index="4" class="java.lang.String" itemvalue="Python.aftercount" />
+      <item index="1" class="java.lang.String" itemvalue="Python.sell" />
+      <item index="2" class="java.lang.String" itemvalue="Python.stat" />
+      <item index="3" class="java.lang.String" itemvalue="Python.aftercount" />
+      <item index="4" class="java.lang.String" itemvalue="Python.heikin_ashi" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.stat" />
-        <item index="1" class="java.lang.String" itemvalue="Python.heikin_day" />
-        <item index="2" class="java.lang.String" itemvalue="Python.sell" />
-        <item index="3" class="java.lang.String" itemvalue="Python.aftercount" />
-        <item index="4" class="java.lang.String" itemvalue="Python.buy" />
+        <item index="0" class="java.lang.String" itemvalue="Python.heikin_ashi" />
+        <item index="1" class="java.lang.String" itemvalue="Python.stat" />
+        <item index="2" class="java.lang.String" itemvalue="Python.heikin_day" />
+        <item index="3" class="java.lang.String" itemvalue="Python.sell" />
+        <item index="4" class="java.lang.String" itemvalue="Python.aftercount" />
       </list>
     </recent_temporary>
   </component>
@@ -304,13 +324,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12225476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -338,7 +358,85 @@
           <caret line="565" column="49" lean-forward="false" selection-start-line="565" selection-start-column="49" selection-end-line="565" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#32917#32973#0" expanded="false" />
+            <element signature="e#38895#38951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heikin_day.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1846">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1558257893073" expanded="true" signature="449:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="543:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="588:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="649:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15499:15548" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15589:15687" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15822:16162" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16087:16144" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16203:16381" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16408:16645" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16683:17207" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16814:16986" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="17126:17189" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4979">
+          <caret line="383" column="68" lean-forward="false" selection-start-line="383" selection-start-column="68" selection-end-line="383" selection-end-column="68" />
+          <folding>
+            <element signature="e#50#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///var/www/html/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///var/www/html/stat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aftercount.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heikin_ashi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7111">
+          <caret line="565" column="49" lean-forward="false" selection-start-line="565" selection-start-column="49" selection-end-line="565" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#38895#38951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -349,6 +447,19 @@
           <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <marker date="1558257893073" expanded="true" signature="449:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="543:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="588:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="649:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15499:15548" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15589:15687" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15822:16162" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16087:16144" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16203:16381" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16408:16645" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16683:17207" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16814:16986" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="17126:17189" ph="..." />
           </folding>
         </state>
       </provider>
@@ -357,7 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2548">
           <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -367,8 +477,6 @@
           <caret line="743" column="60" lean-forward="false" selection-start-line="743" selection-start-column="60" selection-end-line="743" selection-end-column="60" />
           <folding>
             <element signature="e#50#63#0" expanded="true" />
-            <element signature="e#24460#24604#0" expanded="false" />
-            <element signature="e#33575#33662#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -379,7 +487,7 @@
           <caret line="565" column="49" lean-forward="false" selection-start-line="565" selection-start-column="49" selection-end-line="565" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#32917#32973#0" expanded="false" />
+            <element signature="e#38895#38951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -390,6 +498,19 @@
           <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <marker date="1558257893073" expanded="true" signature="449:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="543:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="588:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="649:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15499:15548" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15589:15687" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15822:16162" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16087:16144" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16203:16381" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16408:16645" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16683:17207" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16814:16986" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="17126:17189" ph="..." />
           </folding>
         </state>
       </provider>
@@ -400,8 +521,6 @@
           <caret line="263" column="36" lean-forward="false" selection-start-line="263" selection-start-column="36" selection-end-line="263" selection-end-column="36" />
           <folding>
             <element signature="e#50#63#0" expanded="true" />
-            <element signature="e#24460#24604#0" expanded="false" />
-            <element signature="e#33575#33662#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -412,7 +531,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#32917#32973#0" expanded="false" />
+            <element signature="e#38895#38951#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -431,22 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/heikin_ashi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="565" column="49" lean-forward="false" selection-start-line="565" selection-start-column="49" selection-end-line="565" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#32917#32973#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
           <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -454,7 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -468,32 +574,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heikin_day.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1963">
-          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+        <state relative-caret-position="1859">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sell.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="383" column="68" lean-forward="false" selection-start-line="383" selection-start-column="68" selection-end-line="383" selection-end-column="68" />
-          <folding>
-            <element signature="e#50#63#0" expanded="true" />
-            <element signature="e#24460#24604#0" expanded="false" />
-            <element signature="e#33575#33662#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1558257893073" expanded="true" signature="449:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="543:15781" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="588:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="649:15743" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15499:15548" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15589:15687" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="15822:16162" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16087:16144" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16203:16381" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16408:16645" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16683:17207" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="16814:16986" ph="..." />
+            <marker date="1558257893073" expanded="true" signature="17126:17189" ph="..." />
           </folding>
         </state>
       </provider>
@@ -509,8 +606,47 @@
     <entry file="file:///var/www/html/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heikin_ashi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1303">
+          <caret line="606" column="0" lean-forward="false" selection-start-line="606" selection-start-column="0" selection-end-line="606" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#38895#38951#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neuralprediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="321" column="66" lean-forward="false" selection-start-line="321" selection-start-column="66" selection-end-line="321" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="666" column="63" lean-forward="false" selection-start-line="666" selection-start-column="63" selection-end-line="666" selection-end-column="63" />
+          <folding>
+            <element signature="e#50#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

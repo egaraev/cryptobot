@@ -104,7 +104,7 @@ def learn():
             #print market, currtime, prediction_info(market)[1]
             #print market, prediction_info(market)[2]
 
-            if prediction_info(market)[2] == 'UP' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
+            if (prediction_info(market)[2] == 'UP' and (int(currtime) - int(prediction_info(market)[1])) >= 3600) or (current_price >= prediction_info(market)[0]):
 
                 #print market, current_price, prediction_info(market)[0], prediction_info(market)[1], prediction_info(market)[2]
                 if (current_price >= prediction_info(market)[0]  or (int(currtime) - int(prediction_info(market)[1])) >= 18000): #21600
@@ -315,7 +315,7 @@ def learn():
                     finally:
                         db.close()
 
-            elif prediction_info(market)[2] == 'DOWN' and (int(currtime) - int(prediction_info(market)[1])) >= 3600:
+            elif (prediction_info(market)[2] == 'DOWN' and (int(currtime) - int(prediction_info(market)[1])) >= 3600) or (current_price <= prediction_info(market)[0]):
                 if (current_price <= prediction_info(market)[0] or (int(currtime) - int(prediction_info(market)[1])) >= 18000):  #21600
                     print market, 'Running learning again D', current_price
 
