@@ -9,6 +9,7 @@ import hashlib
 import MySQLdb
 import sys
 import smtplib
+import calendar
 #c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 c=Client(api_key="", api_secret="")
 c1 = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
@@ -34,7 +35,7 @@ def tick():
     bot_mode=parameters()[23]
 
     print "Global buy parameters configured, moving to market loop"
-
+    dayofweek=weekday()
 
     #global active
     if bot_mode==0:
@@ -62,7 +63,7 @@ def tick():
                     hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                     hourcurrentopen = float(hourlastcandle[0]['O'])
                     hourcurrenthigh = float(hourlastcandle[0]['H'])
-
+#		    print days[dayNumber]
 
                     timestamp = int(time.time())
                     day_close = summary['PrevDay']   #Getting day of closing order
@@ -262,7 +263,7 @@ def tick():
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     cursor.execute(
                                         'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count),
+                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek),
                                         HA_trend))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                    (serf, market))
@@ -1035,6 +1036,31 @@ def iteration_orders(marketname):
 
     return 0
 
+
+def weekday():
+    now = datetime.datetime.now()
+    check = calendar.weekday(now.year, now.month, now.day)
+    if check is 0:
+        return "Monday"
+    elif check is 1:
+        return "Tuesday"
+    elif check is 2:
+        return "Wednesday"
+    elif check is 3:
+        return "Thursday"
+    elif check is 4:
+        return "Friday"
+    elif check is 5:
+        return "Saturday"
+    elif check is 6:
+        return "Sunday"
+    else:
+        return "WTF??"
+
+
+#def dow(date):
+#    days=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+#    dayNumber=date.weekday()
 
 
 

@@ -289,7 +289,7 @@ then
 else
     echo there is no such "$SERVICE20 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 score.py
+    /usr/bin/python2.7 score.py &
 
 fi
 
