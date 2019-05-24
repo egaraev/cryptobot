@@ -561,33 +561,12 @@ def HA():
                 print market, HA_trend, HAH_trend, fiveprevhour2_candle, fiveprevhour_candle, fivehour_candle,  prevhour2_candle, prevhour_candle, hour_candle,
 
 
-
-#                print "Generate HA signls for ", market
-#                if ((ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0) or (ha_direction_down0 and ha_direction_down1  and ha_direction_down_long_0 and ha_direction_down_long_1) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down_longer)) and bought_quantity_sql > 0 and HAD_trend!='UP' and (hah_direction_down_long_0 or hah_direction_down0):
-
-#                    try:
-#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-#                        cursor = db.cursor()
-#                        printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
-#                        cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
-#                        if status_orders(market, 4)==1:
-#                            cursor.execute(
-#                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-#                                market, str(serf) + ' HA_sell_signal ' + str(1),
-#                                currtime, status_orders(market, 0)))
-#                        db.commit()
-#                    except MySQLdb.Error, e:
-#                        print "Error %d: %s" % (e.args[0], e.args[1])
-#                        sys.exit(1)
-#                    finally:
-#                        db.close()
-
                 lastcandlesize= fivehourcurrenthigh-fivehourcurrentlow
                 prevcandlesize= fivehourprevhigh-fivehourprevlow
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and HAH_trend!="UP" and HAH_trend!="Revers-UP" and HA_trend!="UP" and HA_trend!="Revers-UP" and HAD_trend!="UP" and HAD_trend!="Revers-UP"  and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -607,7 +586,7 @@ def HA():
 
 
 
-                if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) and bought_quantity_sql > 0):
+                if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) or (ha_trend!="DOWN" and ha_trend!="Revers-DOWN" and ha_trend!="STABLE" and hah_trend!="DOWN" and hah_trend!="Revers-DOWN" and hah_trend!="STABLE" ) and bought_quantity_sql > 0):
 
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -648,43 +627,6 @@ def HA():
                     sys.exit(1)
                 finally:
                     db.close()
-
-
-
-
-#                lastcandlesize = hourcurrenthigh-hourcurrentlow
-#                previouscandlesize = hourprevhigh-hourprevlow
-#                previouscandlesize2 = hourprevhigh2-hourprevlow2
-#                previouscandlesize3 = hourprevhigh3-hourprevlow3
-#               previouscandlesize4 = hourprevhigh4-hourprevlow4
-#                previouscandlesize5 = hourprevhigh5-hourprevlow5
-#               previouscandlesize6 =  hourprevhigh6- hourprevlow6
-
-                #averagecandlesize=(previouscandlesize6+previouscandlesize5+previouscandlesize4)/3
-#                print market, averagecandlesize, lastcandlesize, previouscandlesize, previouscandlesize2, previouscandlesize3
-
-
-#                if (lastcandlesize/averagecandlesize>2.5 and last>hourcurrentopen) or (previouscandlesize2/averagecandlesize>2.5 and hourprevclose>hourprevopen) or (previouscandlesize3/averagecandlesize>2.5 and hourprevclose2>hourprevopen2) and last> hourprevhigh6:
-#                    print "We have peak situation, lets wait"
-#                    printed1=("We have peak situation, lets wait")
-
-
-
-#                    try:
-#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-#                        cursor = db.cursor()
-                       #cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
-#                        cursor.execute(
-#                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
-#                            (currenttime, currtime, printed1, market))
-#                        db.commit()
-#                    except MySQLdb.Error, e:
-#                        print "Error %d: %s" % (e.args[0], e.args[1])
-#                        sys.exit(1)
-#                    finally:
-#                        db.close()
-
-
 
 
 
