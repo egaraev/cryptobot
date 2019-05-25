@@ -32,9 +32,8 @@ echo "<table border='1'>
 <th>HAH</th>
 <th>HA</th>
 <th>HAD</th>
-<th>hah</th>
-<th>ha</th>
-<th>had</th>
+<th>Ha_curr</th>
+<th>Ha_prev</th>
 <th>% change</th>
 <th>Volume</th>
 <th>Candles</th>
@@ -61,9 +60,8 @@ echo "<td>" . $row['ai_direction'] . "</td>";
 echo "<td>" . $row['ha_direction_hour'] . "</td>";
 echo "<td>" . $row['ha_direction'] . "</td>";
 echo "<td>" . $row['ha_direction_daily'] . "</td>";
-echo "<td>" . $row['ha_hour'] . "</td>";
-echo "<td>" . $row['ha_fivehour'] . "</td>";
-echo "<td>" . $row['ha_day'] . "</td>";
+echo "<td>" . $row['ha_candle_current'] . "</td>";
+echo "<td>" . $row['ha_candle_previous'] . "</td>";
 echo "<td>" . $row['percent_chg'] . "</td>";
 echo "<td>" . $row['volume'] . "</td>";
 echo "<td>" . $row['candles'] . "</td>";

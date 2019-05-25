@@ -118,6 +118,8 @@ def tick():
                     ha_trend=heikin_ashi(market, 48)
                     had_trend = heikin_ashi(market, 49)
 
+                    Ha_candle_current=heikin_ashi(market, 50)
+                    Ha_candle_previous=heikin_ashi(market, 51)
 
 
                     fivemin='NONE'
@@ -210,8 +212,8 @@ def tick():
 #                                currtime - ha_time_second < 2000) and (currtime - strike_time > 18000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen  and fivemin!='D' and hour!='D' and percent_sql>0.0 :#and (currtime - strike_time2 > 18000)
 
                     if ((stop_bot == 0) and stop_bot_force == 0) and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN"  and ((
-                                HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE") and (
-                                HAH_trend == "UP" or HAH_trend == "Revers-UP"))  and (
+                                HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE" or ha_trend=="UP" or ha_trend == "Revers-UP" ) and (
+                                HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
                                 currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 18000):
                             #balance_res = get_balance_from_market(market)
@@ -263,7 +265,7 @@ def tick():
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     cursor.execute(
                                         'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek),
+                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous),
                                         HA_trend))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                    (serf, market))

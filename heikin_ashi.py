@@ -402,6 +402,7 @@ def HA():
                 
 
                 HAD_trend = heikin_ashi(market, 18)
+                had_trend = heikin_ashi(market, 47)
 
                 print "Generting direction info for ", market
 
@@ -505,6 +506,52 @@ def HA():
                 if  HA_trend != "Revers-DOWN" and   HA_trend != "Revers-UP" and  HA_trend != "DOWN" and HA_trend != "UP":
                     HA_trend = "STABLE"
 
+
+
+                if (ha_direction_down0):
+                    Ha_current_candle = "ha_direction_down0"
+
+                if (ha_direction_down_long_0):
+                    Ha_current_candle = "ha_direction_down_long_0"
+
+                if (ha_direction_spin0):
+                    Ha_current_candle = "ha_direction_spin0"
+
+                if (ha_direction_up0):
+                    Ha_current_candle = "ha_direction_up0"
+
+                if (ha_direction_up_long_0):
+                    Ha_current_candle = "ha_direction_up_long_0"
+
+
+
+
+                if (ha_direction_down1):
+                    Ha_previous_candle = "ha_direction_down1"
+
+                if (ha_direction_down_long_1):
+                    Ha_previous_candle = "ha_direction_down_long_1"
+
+                if (ha_direction_spin1):
+                    Ha_previous_candle = "ha_direction_spin1"
+
+                if (ha_direction_up1):
+                    Ha_previous_candle = "ha_direction_up1"
+
+                if (ha_direction_up_long_1):
+                    Ha_previous_candle = "ha_direction_up_long_1"
+
+                print Ha_current_candle, Ha_previous_candle
+
+
+
+
+
+
+
+
+
+
                     
                 if (((ha_direction_down_long_0 and ha_direction_down0) or (ha_direction_down_long_0 and ha_direction_down_long_1 and ha_direction_down0) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longer) or (ha_direction_down_long_0 or ha_direction_down_long_1 and ha_direction_down_longermax and ha_direction_down_longer) and ha_direction_down0) or (ha_direction_down0 and ha_direction_down1 and ha_direction_down2)):
                     ha_trend = "DOWN"
@@ -566,7 +613,7 @@ def HA():
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and had_trend!="STABLE" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -613,7 +660,7 @@ def HA():
                     cursor = db.cursor()
 
                     printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
-                    cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, market))
+                    cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s, ha_candle_previous=%s, 	ha_candle_current=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, Ha_previous_candle, Ha_current_candle, market))
                     if status_orders(market, 4) == 1:
                         cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, str(serf)+' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend), currtime, status_orders(market, 0)))
                     else:

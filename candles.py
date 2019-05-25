@@ -128,50 +128,50 @@ def tick():
                 signal2="NONE"
 
                 if (thirtyprevhigh==thirtyprevclose) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 > thirtyprevclose2) and thirtycurrentopen<thirtycurrentclose:
-                    signal1="Up"
+                    signal1="Up-1"
                 else:
                     pass
 
 
                 if (hprevhigh==hprevclose) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 > hprevclose2) and hcurrentopen<hcurrentclose:
-                    signal2="Up"
+                    signal2="Up-1"
                 else:
                     pass
 
 #HANGING MAN
                 if (thirtyprevhigh==thirtyprevopen) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 < thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
-                    signal1="Down"
+                    signal1="Down-1"
                 else:
                     pass
 
 
                 if (hprevhigh==hprevopen) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 < hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2="Down"
+                    signal2="Down-1"
                 else:
                     pass
 
 #INVERTED HAMMER
                 if (thirtyprevopen==thirtyprevlow) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 > thirtyprevclose2) and thirtycurrentopen<thirtycurrentclose:
-                    signal1="Up"
+                    signal1="Up-2"
                 else:
                     pass
 
 
                 if (hprevopen==hprevlow) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 > hprevclose2) and hcurrentopen<hcurrentclose:
-                    signal2="Up"
+                    signal2="Up-2"
                 else:
                     pass
 
 #SHOOTING STAR
 
                 if (thirtyprevclose==thirtyprevlow) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 < thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
-                    signal1="Down"
+                    signal1="Down-2"
                 else:
                     pass
 
 
                 if (hprevclose==hprevlow) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 < hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2="Down"
+                    signal2="Down-2"
                 else:
                     pass
 
@@ -179,14 +179,14 @@ def tick():
 #BULLISH ENGULFING
 
                 if ((thirtyprevopen2 > thirtyprevclose2) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevhigh2 - thirtyprevlow2) >= 1.5) and (thirtyprevhigh2 - thirtyprevlow2 !=0) and  (thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) <= 2) and (thirtyprevopen < thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-3"
                 else:
                     pass
 
 
 
                 if ((hprevopen2 > hprevclose2) and ((hprevhigh - hprevlow) / (hprevhigh2 - hprevlow2) >= 1.5) and (hprevhigh2 - hprevlow2 !=0) and  (hprevhigh - hprevlow) / (hprevopen - hprevclose) <= 2) and (hprevopen < hprevclose) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up"
+                    signal2 = "Up-3"
                 else:
                     pass
 
@@ -194,14 +194,14 @@ def tick():
 #BEARISH ENGULFING
 
                 if ((thirtyprevopen2 < thirtyprevclose2) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevhigh2 - thirtyprevlow2) >= 1.5) and (thirtyprevhigh2 - thirtyprevlow2 !=0) and  (thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) <= 2)  and (thirtyprevopen > thirtyprevclose) and thirtycurrentopen>thirtycurrentclose:
-                    signal1 = "Down"
+                    signal1 = "Down-3"
                 else:
                     pass
 
 
 
                 if ((hprevopen2 < hprevclose2) and ((hprevhigh - hprevlow) / (hprevhigh2 - hprevlow2) >= 1.5) and (hprevhigh2 - hprevlow2 !=0) and  (hprevhigh - hprevlow) / (hprevopen - hprevclose) <= 2) and (hprevopen > hprevclose) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down"
+                    signal2 = "Down-3"
                 else:
                     pass
 
@@ -209,14 +209,14 @@ def tick():
 #TWEEZER BOTTOMS
 
                 if (thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4) and (thirtyprevopen<thirtyprevclose) and thirtyprevlow==thirtyprevlow2  and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen2==thirtyprevhigh2 and thirtyprevhigh==thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-4"
                 else:
                     pass
 
 
 
                 if (hprevopen2>hprevclose2 and hprevopen3>thirtyprevclose3 and hprevopen4>hprevclose4) and (hprevopen<hprevclose) and hprevlow==hprevlow2  and ((hprevhigh - hprevlow) - (hprevopen - hprevclose) == (hprevhigh - hprevlow) - (hprevclose - hprevopen)  and hprevopen2==hprevhigh2 and hprevhigh==hprevclose) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up"
+                    signal2 = "Up-4"
                 else:
                     pass
 
@@ -225,7 +225,7 @@ def tick():
 
 
                 if (thirtyprevopen2<thirtyprevclose2 and thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4) and (thirtyprevopen>thirtyprevclose) and  thirtyprevhigh==thirtyprevhigh2 and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen==thirtyprevhigh and thirtyprevhigh2==thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
-                    signal1 = "Down"
+                    signal1 = "Down-4"
                 else:
                     pass
 
@@ -233,7 +233,7 @@ def tick():
 
 
                 if (hprevopen2<hprevclose2 and hprevopen3<hprevclose3 and hprevopen4<hprevclose4) and (hprevopen>hprevclose) and  hprevhigh==hprevhigh2 and ((hprevhigh - hprevlow) - (hprevopen - hprevclose) == (hprevhigh - hprevlow) - (hprevclose - hprevopen) and hprevopen==hprevhigh and hprevhigh2==hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down"
+                    signal2 = "Down-4"
                 else:
                     pass
 
@@ -241,14 +241,14 @@ def tick():
 #EVENING STAR
                                                 # upper trend                                                                           #current candle is Down                             #short candle or doji
                 if (thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4 and thirtyprevopen5<thirtyprevclose5) and (thirtyprevopen>thirtyprevclose) and   (thirtyprevopen2==thirtyprevclose2 or ((thirtyprevhigh2 - thirtyprevlow2) / numpy.abs(thirtyprevclose2 - thirtyprevopen2) >= 4 and (thirtyprevclose2 - thirtyprevopen2 !=0))) and (thirtyprevopen-thirtyprevclose >=(thirtyprevclose3-thirtyprevopen3)/2) and thirtycurrentopen>thirtycurrentclose:
-                    signal1 = "Down"
+                    signal1 = "Down-5"
                 else:
                     pass
 
 
 
                 if (hprevopen3<hprevclose3 and hprevopen4<hprevclose4 and hprevopen5<hprevclose5) and (hprevopen>hprevclose) and   (hprevopen2==hprevclose2 or ((hprevhigh2 - hprevlow2) / numpy.abs(hprevclose2 - hprevopen2) >= 4 and (hprevclose2 - hprevopen2 !=0))) and (hprevopen-hprevclose >=(hprevclose3-hprevopen3)/2) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down"
+                    signal2 = "Down-5"
                 else:
                     pass
 
@@ -256,14 +256,14 @@ def tick():
 #MORNING STAR
 
                 if (thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevclose5) and (thirtyprevopen<thirtyprevclose) and   (thirtyprevopen2==thirtyprevclose2 or ((thirtyprevhigh2 - thirtyprevlow2) / numpy.abs(thirtyprevclose2 - thirtyprevopen2) >= 4 and (thirtyprevclose2 - thirtyprevopen2 !=0))) and (thirtyprevclose - thirtyprevopen >=(thirtyprevopen3 - thirtyprevclose3)/2) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-5"
                 else:
                     pass
 
 
 
                 if (hprevopen3>hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevclose5) and (hprevopen<hprevclose) and   (hprevopen2==hprevclose2 or ((hprevhigh2 - hprevlow2) / numpy.abs(hprevclose2 - hprevopen2) >= 4 and (hprevclose2 - hprevopen2 !=0))) and (hprevclose - hprevopen >=(hprevopen3 - hprevclose3)/2) and hcurrentopen<hcurrentclose :
-                    signal2 = "Up"
+                    signal2 = "Up-5"
                 else:
                     pass
 
@@ -271,14 +271,14 @@ def tick():
 #THREE WHITE SOLDIERS
 
                 if ((thirtyprevopen<thirtyprevclose and thirtyprevopen2<thirtyprevclose2 and thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevopen5)  and  (thirtyprevhigh2-thirtyprevlow2>thirtyprevclose3-thirtyprevopen3) and  thirtyprevhigh2==thirtyprevclose2  and thirtyprevhigh-thirtyprevlow >=thirtyprevhigh2-thirtyprevlow2  and thirtyprevhigh==thirtyprevclose and thirtyprevopen==thirtyprevlow ) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-6"
                 else:
                     pass
 
 
 
                 if ((hprevopen<hprevclose and hprevopen2<hprevclose2 and hprevopen3<hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevopen5)  and  (hprevhigh2-hprevlow2>hprevclose3-hprevopen3) and  hprevhigh2==hprevclose2  and hprevhigh-hprevlow >=hprevhigh2-hprevlow2  and hprevhigh==hprevclose and hprevopen==hprevlow ) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up"
+                    signal2 = "Up-6"
                 else:
                     pass
 
@@ -287,14 +287,14 @@ def tick():
 
 
                 if ((thirtyprevopen>thirtyprevclose and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4 and thirtyprevopen5<thirtyprevopen5)  and  (thirtyprevhigh2-thirtyprevlow2>thirtyprevopen3 - thirtyprevclose3) and  thirtyprevlow2==thirtyprevclose2  and thirtyprevhigh-thirtyprevlow >=thirtyprevhigh2-thirtyprevlow2  and thirtyprevhigh==thirtyprevclose and thirtyprevopen==thirtyprevlow ) and thirtycurrentopen>thirtycurrentclose:
-                    signal1 = "Down"
+                    signal1 = "Down-6"
                 else:
                     pass
 
 
 
                 if ((hprevopen>hprevclose and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4<hprevclose4 and hprevopen5<hprevopen5)  and  (hprevhigh2-hprevlow2>hprevopen3 - hprevclose3) and  hprevlow2==hprevclose2  and hprevhigh-hprevlow >=hprevhigh2-hprevlow2  and hprevhigh==hprevclose and hprevopen==hprevlow ) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down"
+                    signal2 = "Down-6"
                 else:
                     pass
 
@@ -302,39 +302,39 @@ def tick():
 #PIERCING LINE
 
                 if (thirtyprevopen2>thirtyprevclose2 and thirtyprevopen<thirtyprevclose  and thirtyprevopen<thirtyprevclose2 and thirtyprevopen==thirtyprevlow) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-7"
                 else:
                     pass
 
 
 
                 if (hprevopen2>hprevclose2 and hprevopen<hprevclose  and hprevopen<hprevclose2 and hprevopen==hprevlow) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up"
+                    signal2 = "Up-7"
                 else:
                     pass
 
 
 #THREE LINE STRIKE
                 if ((thirtyprevopen<thirtyprevclose and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevopen5)  and thirtyprevopen==thirtyprevlow and thirtyprevclose> thirtyprevhigh4) and thirtycurrentopen<thirtycurrentclose:
-                    signal1 = "Up"
+                    signal1 = "Up-8"
                 else:
                     pass
 
 
                 if ((hprevopen<hprevclose and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevopen5)  and hprevopen==hprevlow and hprevclose> hprevhigh4) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up"
+                    signal2 = "Up-8"
                 else:
                     pass
 
 
 #TWO BLACK GAPING
                 if (thirtyprevopen>thirtyprevclose and thirtyprevopen==thirtyprevhigh and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4  and (thirtyprevhigh2-thirtyprevlow2)/(thirtyprevhigh3-thirtyprevlow3)>=1.5 and thirtyprevhigh2<thirtyprevlow3) and thirtycurrentopen>thirtycurrentclose :
-                    signal1 = "Down"
+                    signal1 = "Down-7"
                 else:
                     pass
 
                 if (hprevopen>hprevclose and hprevopen==hprevhigh and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4<hprevclose4  and (hprevhigh2-hprevlow2)/(hprevhigh3-hprevlow3)>=1.5 and hprevhigh2<hprevlow3) and hcurrentopen>hcurrentclose :
-                    signal2 = "Down"
+                    signal2 = "Down-7"
                 else:
                     pass
 
@@ -343,7 +343,7 @@ def tick():
 
 
                 print market, signal1, signal2
-                if signal1=="Down" or signal2=="Down" or signal1=="Up" or signal2=="Up":
+                if signal1=="Down-1" or signal2=="Down-1" or signal1=="Down-2" or signal2=="Down-2" or signal1=="Down-3" or signal2=="Down-3" or signal1=="Down-4" or signal2=="Down-4" or signal1=="Down-5" or signal2=="Down-5" or signal1=="Down-6" or signal2=="Down-6" or signal1=="Down-7" or signal2=="Down-7" or signal1=="Up-1" or signal2=="Up-1" or signal1=="Up-2" or signal2=="Up-2" or signal1=="Up-3" or signal2=="Up-3" or signal1=="Up-4" or signal2=="Up-4" or signal1=="Up-5" or signal2=="Up-5" or signal1=="Up-6" or signal2=="Up-6" or signal1=="Up-7" or signal2=="Up-7" or signal1=="Up-8" or signal2=="Up-8":
                     try:
                         printed=('      ' + str(market) + '  has thirtymin candle signal '+signal1 + ' and has hour candle signal  '+signal2)
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -366,7 +366,7 @@ def tick():
                         db.close()
 #
 
-                if (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last>candles_signal_price:
+                if (candles_signal_short=="Up-1" or candles_signal_short=="Up-2" or candles_signal_short=="Up-3" or candles_signal_short=="Up-4" or candles_signal_short=="Up-5" or candles_signal_short=="Up-6" or candles_signal_short=="Up-7" or candles_signal_short=="Up-8") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last>candles_signal_price:
                     print market, "prediction was successfull"
 
                     try:
@@ -383,7 +383,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_short=="Up") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last<candles_signal_price:
+                elif (candles_signal_short=="Up-1" or candles_signal_short=="Up-2" or candles_signal_short=="Up-3" or candles_signal_short=="Up-4" or candles_signal_short=="Up-5" or candles_signal_short=="Up-6" or candles_signal_short=="Up-7" or candles_signal_short=="Up-8") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last<candles_signal_price:
                     print market, "prediction was failed"
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
@@ -400,7 +400,7 @@ def tick():
                         db.close()
 
 
-                elif (candles_signal_short == "Down") and (
+                elif (candles_signal_short=="Down-1" or candles_signal_short=="Down-2" or candles_signal_short=="Down-3" or candles_signal_short=="Down-4" or candles_signal_short=="Down-5" or candles_signal_short=="Down-6" or candles_signal_short=="Down-7") and (
                         signal1 != "NONE" or currtime - candles_signal_time > 18000) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
@@ -417,7 +417,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_short == "Down" ) and (
+                elif (candles_signal_short=="Down-1" or candles_signal_short=="Down-2" or candles_signal_short=="Down-3" or candles_signal_short=="Down-4" or candles_signal_short=="Down-5" or candles_signal_short=="Down-6" or candles_signal_short=="Down-7") and (
                         signal1 != "NONE" or currtime - candles_signal_time > 18000) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
@@ -436,7 +436,7 @@ def tick():
 
 
 
-                elif (candles_signal_long == "Up") and (
+                elif (candles_signal_long == "Up-1" or candles_signal_long == "Up-2" or candles_signal_long == "Up-3" or candles_signal_long == "Up-4" or candles_signal_long == "Up-5" or candles_signal_long == "Up-6" or candles_signal_long == "Up-7" or candles_signal_long == "Up-8") and (
                         signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
                     print market, "prediction was successfull"
                     try:
@@ -453,7 +453,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_long == "Up") and (
+                elif (candles_signal_long == "Up-1" or candles_signal_long == "Up-2" or candles_signal_long == "Up-3" or candles_signal_long == "Up-4" or candles_signal_long == "Up-5" or candles_signal_long == "Up-6" or candles_signal_long == "Up-7" or candles_signal_long == "Up-8") and (
                         signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
                     print market, "prediction was failed"
                     try:
@@ -470,7 +470,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_long == "Down") and (
+                elif (candles_signal_long == "Down-1" or candles_signal_long == "Down-2" or candles_signal_long == "Down-3" or candles_signal_long == "Down-4" or candles_signal_long == "Down-5" or candles_signal_long == "Down-6" or candles_signal_long == "Down-7") and (
                                 signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
                     print market, "prediction was successfull"
                     try:
@@ -487,7 +487,7 @@ def tick():
                     finally:
                         db.close()
 
-                elif (candles_signal_long == "Down") and (
+                elif (candles_signal_long == "Down-1" or candles_signal_long == "Down-2" or candles_signal_long == "Down-3" or candles_signal_long == "Down-4" or candles_signal_long == "Down-5" or candles_signal_long == "Down-6" or candles_signal_long == "Down-7") and (
                                 signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
                     print market, "prediction was failed"
                     try:
@@ -522,7 +522,7 @@ def tick():
                         db.close()
 
 
-                elif (signal1=="Down" or signal2=="Down" or signal1=="Up" or signal2=="Up") :
+                elif (signal1=="Down-1" or signal2=="Down-1" or signal1=="Down-2" or signal2=="Down-2" or signal1=="Down-3" or signal2=="Down-3" or signal1=="Down-4" or signal2=="Down-4" or signal1=="Down-5" or signal2=="Down-5" or signal1=="Down-6" or signal2=="Down-6" or signal1=="Down-7" or signal2=="Down-7" or signal1=="Up-1" or signal2=="Up-1" or signal1=="Up-2" or signal2=="Up-2" or signal1=="Up-3" or signal2=="Up-3" or signal1=="Up-4" or signal2=="Up-4" or signal1=="Up-5" or signal2=="Up-5" or signal1=="Up-6" or signal2=="Up-6" or signal1=="Up-7" or signal2=="Up-7" or signal1=="Up-8" or signal2=="Up-8") :
 
                     if signal1!="NONE":
 
