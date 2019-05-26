@@ -211,8 +211,8 @@ def tick():
 #                    if ((stop_bot == 0) and ((HAD_trend == "STABLE" and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAH_trend == "UP" or HAH_trend == "Revers-UP")) or (HAD_trend == "UP" and HA_trend == "UP"  and (HAH_trend == "UP" or HAH_trend == "Revers-UP"))) and stop_bot_force == 0) and (
 #                                currtime - ha_time_second < 2000) and (currtime - strike_time > 18000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen  and fivemin!='D' and hour!='D' and percent_sql>0.0 :#and (currtime - strike_time2 > 18000)
 
-                    if ((stop_bot == 0) and stop_bot_force == 0) and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN"  and ((
-                                HA_trend == "UP" or HA_trend == "Revers-UP" or HA_trend == "STABLE" or ha_trend=="UP" or ha_trend == "Revers-UP" ) and (
+                    if ((stop_bot == 0) and stop_bot_force == 0) and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN" and had_trend != "DOWN" and had_trend != "Revers-DOWN"  and ((
+                                HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and ha_trend != "DOWN" and ha_trend != "Revers-DOWN" ) and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
                                 currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 18000):
