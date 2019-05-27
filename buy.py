@@ -63,6 +63,9 @@ def tick():
                     hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                     hourcurrentopen = float(hourlastcandle[0]['O'])
                     hourcurrenthigh = float(hourlastcandle[0]['H'])
+                    daylastcandle = get_candles(market, 'day')['result'][-1:]
+                    daycurrentopen = float(daylastcandle[0]['O'])
+                    daycurrenthigh = float(daylastcandle[0]['H'])
 #		    print days[dayNumber]
 
                     timestamp = int(time.time())
@@ -148,6 +151,14 @@ def tick():
                         hour='H'
                     else:
                         hour='D'
+                        
+                    if last>daycurrentopen:
+                        day='U'
+                    elif last==daycurrenthigh:
+                        day='H'
+                    else:
+                        day='D'                        
+                    
 
                     if fivemin=='D' and thirtymin=='D' and fivemin=='D':
                         candles_status='DOWN'
@@ -215,7 +226,7 @@ def tick():
                                 HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and ha_trend != "DOWN" and ha_trend != "Revers-DOWN" ) and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
-                                currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 18000):
+                                currtime - strike_time > 18000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 18000) and day=='U':
                             #balance_res = get_balance_from_market(market)
                             #current_balance = balance_res['result']['Available']
 
