@@ -41,7 +41,6 @@ echo "<table border='1'>
 <th>Volume</th>
 <th>Candles</th>
 <th>Candle_sig_short</th>
-<th>Candle_sig_long</th>
 <th>Score</th>
 <th>Score_direction</th>
 <th>Pos.tweets</th>
@@ -72,7 +71,6 @@ echo "<td>" . $row['percent_chg'] . "</td>";
 echo "<td>" . $row['volume'] . "</td>";
 echo "<td>" . $row['candles'] . "</td>";
 echo "<td>" . $row['candle_signal_short'] . "</td>";
-echo "<td>" . $row['candle_signal_long'] . "</td>";
 echo "<td>" . $row['score'] . "</td>";
 echo "<td>" . $row['score_direction'] . "</td>";
 echo "<td>" . $row['positive_sentiments'] . "</td>";
