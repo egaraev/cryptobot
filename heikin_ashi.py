@@ -522,8 +522,8 @@ def HA():
                 if (ha_direction_down0):
                     Ha_current_candle = "ha_direction_down0"
 
-                if (hah_direction_up_short0):
-                    Ha_current_candle = "hah_direction_up_short0"                    
+                if (ha_direction_up_short0):
+                    Ha_current_candle = "ha_direction_up_short0"                    
 
                 if (ha_direction_up_long_0):
                     Ha_current_candle = "ha_direction_up_long_0"
@@ -547,8 +547,8 @@ def HA():
                 if (ha_direction_down1):
                     Ha_previous_candle = "ha_direction_down1"
 
-                if (hah_direction_up_short1):
-                    Ha_previous_candle = "hah_direction_up_short1"                     
+                if (ha_direction_up_short1):
+                    Ha_previous_candle = "ha_direction_up_short1"                     
                     
                 if (ha_direction_up_long_1):
                     Ha_previous_candle = "ha_direction_up_long_1"
