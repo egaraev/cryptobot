@@ -49,74 +49,192 @@ def tick():
                 candles_signal_long = str(heikin_ashi(market, 30))
                 candles_signal_price = float(heikin_ashi(market, 32))
                 candles_signal_time=int(heikin_ashi(market, 31))
-                print "Gather thirtymin candle info for ", market
+                
+                
+                print "Gather 5hour HA candle info for ", market
 
-                thirtylastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                thirtycurrentlow = float(thirtylastcandle[0]['L'])*100000
-                thirtycurrenthigh = float(thirtylastcandle[0]['H'])*100000
-                thirtycurrentopen = float(thirtylastcandle[0]['O'])*100000
-                thirtycurrentclose = float(thirtylastcandle[0]['C'])*100000
-                thirtypreviouscandle = get_candles(market, 'thirtymin')['result'][-2:]
-                thirtyprevlow = float(thirtypreviouscandle[0]['L'])*100000
-                thirtyprevhigh = float(thirtypreviouscandle[0]['H'])*100000
-                thirtyprevopen = float(thirtypreviouscandle[0]['O'])*100000
-                thirtyprevclose = float(thirtypreviouscandle[0]['C'])*100000
-                thirtypreviouscandle2 = get_candles(market, 'thirtymin')['result'][-3:]
-                thirtyprevlow2 = float(thirtypreviouscandle2[0]['L'])*100000
-                thirtyprevhigh2 = float(thirtypreviouscandle2[0]['H'])*100000
-                thirtyprevopen2 = float(thirtypreviouscandle2[0]['O'])*100000
-                thirtyprevclose2 = float(thirtypreviouscandle2[0]['C'])*100000
-                thirtypreviouscandle3 = get_candles(market, 'thirtymin')['result'][-4:]
-                thirtyprevlow3 = float(thirtypreviouscandle3[0]['L'])*100000
-                thirtyprevhigh3 = float(thirtypreviouscandle3[0]['H'])*100000
-                thirtyprevopen3 = float(thirtypreviouscandle3[0]['O'])*100000
-                thirtyprevclose3 = float(thirtypreviouscandle3[0]['C'])*100000
-                thirtypreviouscandle4 = get_candles(market, 'thirtymin')['result'][-5:]
-                thirtyprevlow4 = float(thirtypreviouscandle4[0]['L'])*100000
-                thirtyprevhigh4 = float(thirtypreviouscandle4[0]['H'])*100000
-                thirtyprevopen4 = float(thirtypreviouscandle4[0]['O'])*100000
-                thirtyprevclose4 = float(thirtypreviouscandle4[0]['C'])*100000
-                thirtypreviouscandle5 = get_candles(market, 'thirtymin')['result'][-6:]
-                thirtyprevlow5 = float(thirtypreviouscandle5[0]['L'])*100000
-                thirtyprevhigh5 = float(thirtypreviouscandle5[0]['H'])*100000
-                thirtyprevopen5 = float(thirtypreviouscandle5[0]['O'])*100000
-                thirtyprevclose5 = float(thirtypreviouscandle5[0]['C'])*100000
+                ############
+                hourcandles = get_candles(market, 'hour')['result'][-25:]
+                hourcurrentlow = float(hourcandles[24]['L'])*100000
+                hourcurrenthigh = float(hourcandles[24]['H'])*100000
+                hourcurrentopen = float(hourcandles[24]['O'])*100000
+                hourcurrentclose = float(hourcandles[24]['C'])*100000
+
+                hourprevlow = float(hourcandles[23]['L'])*100000
+                hourprevhigh = float(hourcandles[23]['H'])*100000
+                hourprevopen = float(hourcandles[23]['O'])*100000
+                hourprevclose = float(hourcandles[23]['C'])*100000
+
+                hourprevlow2 = float(hourcandles[22]['L'])*100000
+                hourprevhigh2 = float(hourcandles[22]['H'])*100000
+                hourprevopen2 = float(hourcandles[22]['O'])*100000
+                hourprevclose2 = float(hourcandles[22]['C'])*100000
+
+                hourprevlow3 = float(hourcandles[21]['L'])*100000
+                hourprevhigh3 = float(hourcandles[21]['H'])*100000
+                #hourprevopen3 = float(hourcandles[21]['O'])*100000
+                #hourprevclose3 = float(hourcandles[21]['C'])*100000
 
 
+                hourprevlow4 = float(hourcandles[20]['L'])*100000
+                hourprevhigh4 = float(hourcandles[20]['H'])*100000
+                hourprevopen4 = float(hourcandles[20]['O'])*100000
+                #hourprevclose4 = float(hourcandles[20]['C'])*100000
 
 
-                print "Gather hour candle info for ", market
+                hourprevlow5 = float(hourcandles[19]['L'])*100000
+                hourprevhigh5 = float(hourcandles[19]['H'])*100000
+                #hourprevopen5 = float(hourcandles[19]['O'])*100000
+                hourprevclose5 = float(hourcandles[19]['C'])*100000
 
-                hlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hcurrentlow = float(hlastcandle[0]['L'])*100000
-                hcurrenthigh = float(hlastcandle[0]['H'])*100000
-                hcurrentopen = float(hlastcandle[0]['O'])*100000
-                hcurrentclose = float(hlastcandle[0]['C'])*100000
-                hpreviouscandle = get_candles(market, 'hour')['result'][-2:]
-                hprevlow = float(hpreviouscandle[0]['L'])*100000
-                hprevhigh = float(hpreviouscandle[0]['H'])*100000
-                hprevopen = float(hpreviouscandle[0]['O'])*100000
-                hprevclose = float(hpreviouscandle[0]['C'])*100000
-                hpreviouscandle2 = get_candles(market, 'hour')['result'][-3:]
-                hprevlow2 = float(hpreviouscandle2[0]['L'])*100000
-                hprevhigh2 = float(hpreviouscandle2[0]['H'])*100000
-                hprevopen2 = float(hpreviouscandle2[0]['O'])*100000
-                hprevclose2 = float(hpreviouscandle2[0]['C'])*100000
-                hpreviouscandle3 = get_candles(market, 'hour')['result'][-4:]
-                hprevlow3 = float(hpreviouscandle3[0]['L'])*100000
-                hprevhigh3 = float(hpreviouscandle3[0]['H'])*100000
-                hprevopen3 = float(hpreviouscandle3[0]['O'])*100000
-                hprevclose3 = float(hpreviouscandle3[0]['C'])*100000
-                hpreviouscandle4 = get_candles(market, 'hour')['result'][-5:]
-                hprevlow4 = float(hpreviouscandle4[0]['L'])*100000
-                hprevhigh4 = float(hpreviouscandle4[0]['H'])*100000
-                hprevopen4 = float(hpreviouscandle4[0]['O'])*100000
-                hprevclose4 = float(hpreviouscandle4[0]['C'])*100000
-                hpreviouscandle5 = get_candles(market, 'hour')['result'][-6:]
-                hprevlow5 = float(hpreviouscandle5[0]['L'])*100000
-                hprevhigh5 = float(hpreviouscandle5[0]['H'])*100000
-                hprevopen5 = float(hpreviouscandle5[0]['O'])*100000
-                hprevclose5 = float(hpreviouscandle5[0]['C'])*100000
+
+
+                hourprevlow6 = float(hourcandles[18]['L'])*100000
+                hourprevhigh6 = float(hourcandles[18]['H'])*100000
+                #hourprevopen6 = float(hourcandles[18]['O'])*100000
+                #hourprevclose6 = float(hourcandles[18]['C'])*100000
+
+
+                hourprevlow7 = float(hourcandles[17]['L'])*100000
+                hourprevhigh7 = float(hourcandles[17]['H'])*100000
+                #hourprevopen7 = float(hourcandles[17]['O'])*100000
+                #hourprevclose7 = float(hourcandles[17]['C'])*100000
+
+
+                hourprevlow8 = float(hourcandles[16]['L'])*100000
+                hourprevhigh8 = float(hourcandles[16]['H'])*100000
+                #hourprevopen8 = float(hourcandles[16]['O'])*100000
+                #hourprevclose8 = float(hourcandles[16]['C'])*100000
+
+
+                hourprevlow9 = float(hourcandles[15]['L'])*100000
+                hourprevhigh9 = float(hourcandles[15]['H'])*100000
+                hourprevopen9 = float(hourcandles[15]['O'])*100000
+                #hourprevclose9 = float(hourcandles[15]['C'])*100000
+
+                                hourprevlow10 = float(hourcandles[14]['L'])*100000
+                hourprevhigh10 = float(hourcandles[14]['H'])*100000
+                #hourprevopen10 = float(hourcandles[14]['O'])*100000
+                hourprevclose10 = float(hourcandles[14]['C'])*100000
+
+
+                hourprevlow11 = float(hourcandles[13]['L'])*100000
+                hourprevhigh11 = float(hourcandles[13]['H'])*100000
+                #hourprevopen11 = float(hourcandles[13]['O'])*100000
+                #hourprevclose11 = float(hourcandles[13]['C'])*100000
+
+
+                hourprevlow12 = float(hourcandles[12]['L'])*100000
+                hourprevhigh12 = float(hourcandles[12]['H'])*100000
+                #hourprevopen12 = float(hourcandles[12]['O'])*100000
+                #hourprevclose12 = float(hourcandles[12]['C'])*100000
+
+
+
+                hourprevlow13 = float(hourcandles[11]['L'])*100000
+                hourprevhigh13 = float(hourcandles[11]['H'])*100000
+                #hourprevopen13 = float(hourcandles[11]['O'])*100000
+                #hourprevclose13 = float(hourcandles[11]['C'])*100000
+
+
+                hourprevlow14 = float(hourcandles[10]['L'])*100000
+                hourprevhigh14 = float(hourcandles[10]['H'])*100000
+                hourprevopen14 = float(hourcandles[10]['O'])*100000
+                #hourprevclose14 = float(hourcandles[10]['C'])*100000
+
+
+
+                hourprevlow15 = float(hourcandles[9]['L'])*100000
+                hourprevhigh15 = float(hourcandles[9]['H'])*100000
+                #hourprevopen15 = float(hourcandles[9]['O'])*100000
+                hourprevclose15 = float(hourcandles[9]['C'])*100000
+
+
+                hourprevlow16 = float(hourcandles[8]['L'])*100000
+                hourprevhigh16 = float(hourcandles[8]['H'])*100000
+                #hourprevopen16 = float(hourcandles[8]['O'])*100000
+                #hourprevclose16 = float(hourcandles[8]['C'])*100000
+
+
+                hourprevlow17 = float(hourcandles[7]['L'])*100000
+                hourprevhigh17 = float(hourcandles[7]['H'])*100000
+                #hourprevopen17 = float(hourcandles[7]['O'])*100000
+                #hourprevclose17 = float(hourcandles[7]['C'])*100000
+
+
+
+                hourprevlow18 = float(hourcandles[6]['L'])*100000
+                hourprevhigh18 = float(hourcandles[6]['H'])*100000
+                #hourprevopen18 = float(hourcandles[6]['O'])*100000
+                #hourprevclose18 = float(hourcandles[6]['C'])*100000
+
+
+                hourprevlow19 = float(hourcandles[5]['L'])*100000
+                hourprevhigh19 = float(hourcandles[5]['H'])*100000
+                hourprevopen19 = float(hourcandles[5]['O'])*100000
+                #hourprevclose19 = float(hourcandles[5]['C'])*100000
+
+
+
+                hourprevlow20 = float(hourcandles[4]['L'])*100000
+                hourprevhigh20 = float(hourcandles[4]['H'])*100000
+                #hourprevopen20 = float(hourcandles[4]['O'])*100000
+                hourprevclose20 = float(hourcandles[4]['C'])*100000
+
+
+
+                hourprevlow21 = float(hourcandles[3]['L'])*100000
+                hourprevhigh21 = float(hourcandles[3]['H'])*100000
+                #hourprevopen21 = float(hourcandles[3]['O'])*100000
+                #hourprevclose21 = float(hourcandles[3]['C'])*100000
+
+
+
+                hourprevlow22 = float(hourcandles[2]['L'])*100000
+                hourprevhigh22 = float(hourcandles[2]['H'])*100000
+                #hourprevopen22 = float(hourcandles[2]['O'])*100000
+                #hourprevclose22 = float(hourcandles[2]['C'])*100000
+
+
+                hourprevlow23 = float(hourcandles[1]['L'])*100000
+                hourprevhigh23 = float(hourcandles[1]['H'])*100000
+                #hourprevopen23 = float(hourcandles[1]['O'])*100000
+                #hourprevclose23 = float(hourcandles[1]['C'])*100000
+
+
+                hourprevlow24 = float(hourcandles[0]['L'])*100000
+                hourprevhigh24 = float(hourcandles[0]['H'])*100000
+                hourprevopen24 = float(hourcandles[0]['O'])*100000
+                #hourprevclose24 = float(hourcandles[0]['C'])*100000
+
+                               ###########
+
+                fivehourcurrentlow = min(hourcurrentlow, hourprevlow, hourprevlow2, hourprevlow3, hourprevlow4)
+                fivehourcurrenthigh = max(hourcurrenthigh, hourprevhigh, hourprevhigh2, hourprevhigh3, hourprevhigh4)
+                fivehourcurrentopen = hourprevopen4
+                fivehourcurrentclose = hourcurrentclose
+
+                fivehourprevlow = min(hourprevlow5, hourprevlow6, hourprevlow7, hourprevlow8, hourprevlow9)
+                fivehourprevhigh = max(hourprevhigh5,hourprevhigh6, hourprevhigh7, hourprevhigh8, hourprevhigh9)
+                fivehourprevopen = hourprevopen9
+                fivehourprevclose = hourprevclose5
+                
+                fivehourprevlow2 = min(hourprevlow10, hourprevlow11, hourprevlow12, hourprevlow13, hourprevlow14)
+                fivehourprevhigh2 = max(hourprevhigh10,hourprevhigh11, hourprevhigh12, hourprevhigh13, hourprevhigh14)
+                fivehourprevopen2 = hourprevopen14
+                fivehourprevclose2 = hourprevclose10
+
+
+                fivehourprevlow3 = min(hourprevlow15, hourprevlow16, hourprevlow17, hourprevlow18, hourprevlow19)
+                fivehourprevhigh3 = max(hourprevhigh15,hourprevhigh16, hourprevhigh17, hourprevhigh18, hourprevhigh19)
+                fivehourprevopen3 = hourprevopen19
+                fivehourprevclose3 = hourprevclose15
+
+
+                fivehourprevlow4 = min(hourprevlow20, hourprevlow21, hourprevlow22, hourprevlow23, hourprevlow24)
+                fivehourprevhigh4 = max(hourprevhigh20,hourprevhigh21, hourprevhigh22, hourprevhigh23, hourprevhigh24)
+                fivehourprevopen4 = hourprevopen24
+                fivehourprevclose4 = hourprevclose20
 
 
 
@@ -125,100 +243,71 @@ def tick():
                 print "Starting candle patterns check for ", market
 #HAMMER
                 signal1="NONE"
-                signal2="NONE"
 
-                if (thirtyprevhigh==thirtyprevclose) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 > thirtyprevclose2) and thirtycurrentopen<thirtycurrentclose:
+
+                if (fivehourprevhigh==fivehourprevclose) and ((fivehourprevhigh - fivehourprevlow) / (fivehouryprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1="Up-1"
                 else:
                     pass
 
 
-                if (hprevhigh==hprevclose) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 > hprevclose2) and hcurrentopen<hcurrentclose:
-                    signal2="Up-1"
-                else:
-                    pass
 
 #HANGING MAN
-                if (thirtyprevhigh==thirtyprevopen) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 < thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
+                if (fivehourprevhigh==fivehourprevopen) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 < fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1="Down-1"
                 else:
                     pass
 
 
-                if (hprevhigh==hprevopen) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 < hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2="Down-1"
-                else:
-                    pass
 
 #INVERTED HAMMER
-                if (thirtyprevopen==thirtyprevlow) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 > thirtyprevclose2) and thirtycurrentopen<thirtycurrentclose:
+                if (fivehourprevopen==fivehourprevlow) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1="Up-2"
                 else:
                     pass
 
 
-                if (hprevopen==hprevlow) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 > hprevclose2) and hcurrentopen<hcurrentclose:
-                    signal2="Up-2"
-                else:
-                    pass
 
 #SHOOTING STAR
 
-                if (thirtyprevclose==thirtyprevlow) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) >= 2.5)  and (thirtyprevopen - thirtyprevclose !=0) and (thirtyprevopen2 < thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
+                if (fivehourprevclose==fivehourprevlow) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 < fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1="Down-2"
                 else:
                     pass
 
 
-                if (hprevclose==hprevlow) and ((hprevhigh - hprevlow) / (hprevopen - hprevclose) >= 2.5)  and (hprevopen - hprevclose !=0) and (hprevopen2 < hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2="Down-2"
-                else:
-                    pass
+
 
 
 #BULLISH ENGULFING
 
-                if ((thirtyprevopen2 > thirtyprevclose2) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevhigh2 - thirtyprevlow2) >= 1.5) and (thirtyprevhigh2 - thirtyprevlow2 !=0) and  (thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) <= 2) and (thirtyprevopen < thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
+                if ((fivehourprevopen2 > fivehourprevclose2) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevhigh2 - fivehourprevlow2) >= 1.5) and (fivehourprevhigh2 - fivehourprevlow2 !=0) and  (fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) <= 2) and (fivehourprevopen < fivehourprevclose) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-3"
                 else:
                     pass
 
 
 
-                if ((hprevopen2 > hprevclose2) and ((hprevhigh - hprevlow) / (hprevhigh2 - hprevlow2) >= 1.5) and (hprevhigh2 - hprevlow2 !=0) and  (hprevhigh - hprevlow) / (hprevopen - hprevclose) <= 2) and (hprevopen < hprevclose) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up-3"
-                else:
-                    pass
-
 
 #BEARISH ENGULFING
 
-                if ((thirtyprevopen2 < thirtyprevclose2) and ((thirtyprevhigh - thirtyprevlow) / (thirtyprevhigh2 - thirtyprevlow2) >= 1.5) and (thirtyprevhigh2 - thirtyprevlow2 !=0) and  (thirtyprevhigh - thirtyprevlow) / (thirtyprevopen - thirtyprevclose) <= 2)  and (thirtyprevopen > thirtyprevclose) and thirtycurrentopen>thirtycurrentclose:
+                if ((fivehourprevopen2 < fivehourprevclose2) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevhigh2 - fivehourprevlow2) >= 1.5) and (fivehourprevhigh2 - fivehourprevlow2 !=0) and  (fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) <= 2)  and (fivehourprevopen > fivehourprevclose) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1 = "Down-3"
                 else:
                     pass
 
 
 
-                if ((hprevopen2 < hprevclose2) and ((hprevhigh - hprevlow) / (hprevhigh2 - hprevlow2) >= 1.5) and (hprevhigh2 - hprevlow2 !=0) and  (hprevhigh - hprevlow) / (hprevopen - hprevclose) <= 2) and (hprevopen > hprevclose) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down-3"
-                else:
-                    pass
-
 
 #TWEEZER BOTTOMS
 
-                if (thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4) and (thirtyprevopen<thirtyprevclose) and thirtyprevlow==thirtyprevlow2  and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen2==thirtyprevhigh2 and thirtyprevhigh==thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
+                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4) and (fivehourprevopen<fivehourprevclose) and thirtyprevlow==thirtyprevlow2  and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen2==thirtyprevhigh2 and thirtyprevhigh==thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
                     signal1 = "Up-4"
                 else:
                     pass
 
 
 
-                if (hprevopen2>hprevclose2 and hprevopen3>thirtyprevclose3 and hprevopen4>hprevclose4) and (hprevopen<hprevclose) and hprevlow==hprevlow2  and ((hprevhigh - hprevlow) - (hprevopen - hprevclose) == (hprevhigh - hprevlow) - (hprevclose - hprevopen)  and hprevopen2==hprevhigh2 and hprevhigh==hprevclose) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up-4"
-                else:
-                    pass
 
 
 # TWEEZER TOPS
@@ -232,12 +321,6 @@ def tick():
 
 
 
-                if (hprevopen2<hprevclose2 and hprevopen3<hprevclose3 and hprevopen4<hprevclose4) and (hprevopen>hprevclose) and  hprevhigh==hprevhigh2 and ((hprevhigh - hprevlow) - (hprevopen - hprevclose) == (hprevhigh - hprevlow) - (hprevclose - hprevopen) and hprevopen==hprevhigh and hprevhigh2==hprevclose2) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down-4"
-                else:
-                    pass
-
-
 #EVENING STAR
                                                 # upper trend                                                                           #current candle is Down                             #short candle or doji
                 if (thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4 and thirtyprevopen5<thirtyprevclose5) and (thirtyprevopen>thirtyprevclose) and   (thirtyprevopen2==thirtyprevclose2 or ((thirtyprevhigh2 - thirtyprevlow2) / numpy.abs(thirtyprevclose2 - thirtyprevopen2) >= 4 and (thirtyprevclose2 - thirtyprevopen2 !=0))) and (thirtyprevopen-thirtyprevclose >=(thirtyprevclose3-thirtyprevopen3)/2) and thirtycurrentopen>thirtycurrentclose:
@@ -246,11 +329,6 @@ def tick():
                     pass
 
 
-
-                if (hprevopen3<hprevclose3 and hprevopen4<hprevclose4 and hprevopen5<hprevclose5) and (hprevopen>hprevclose) and   (hprevopen2==hprevclose2 or ((hprevhigh2 - hprevlow2) / numpy.abs(hprevclose2 - hprevopen2) >= 4 and (hprevclose2 - hprevopen2 !=0))) and (hprevopen-hprevclose >=(hprevclose3-hprevopen3)/2) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down-5"
-                else:
-                    pass
 
 
 #MORNING STAR
@@ -262,11 +340,6 @@ def tick():
 
 
 
-                if (hprevopen3>hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevclose5) and (hprevopen<hprevclose) and   (hprevopen2==hprevclose2 or ((hprevhigh2 - hprevlow2) / numpy.abs(hprevclose2 - hprevopen2) >= 4 and (hprevclose2 - hprevopen2 !=0))) and (hprevclose - hprevopen >=(hprevopen3 - hprevclose3)/2) and hcurrentopen<hcurrentclose :
-                    signal2 = "Up-5"
-                else:
-                    pass
-
 
 #THREE WHITE SOLDIERS
 
@@ -276,11 +349,6 @@ def tick():
                     pass
 
 
-
-                if ((hprevopen<hprevclose and hprevopen2<hprevclose2 and hprevopen3<hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevopen5)  and  (hprevhigh2-hprevlow2>hprevclose3-hprevopen3) and  hprevhigh2==hprevclose2  and hprevhigh-hprevlow >=hprevhigh2-hprevlow2  and hprevhigh==hprevclose and hprevopen==hprevlow ) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up-6"
-                else:
-                    pass
 
 
 #THREE BLACK CROWS
@@ -293,12 +361,6 @@ def tick():
 
 
 
-                if ((hprevopen>hprevclose and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4<hprevclose4 and hprevopen5<hprevopen5)  and  (hprevhigh2-hprevlow2>hprevopen3 - hprevclose3) and  hprevlow2==hprevclose2  and hprevhigh-hprevlow >=hprevhigh2-hprevlow2  and hprevhigh==hprevclose and hprevopen==hprevlow ) and hcurrentopen>hcurrentclose:
-                    signal2 = "Down-6"
-                else:
-                    pass
-
-
 #PIERCING LINE
 
                 if (thirtyprevopen2>thirtyprevclose2 and thirtyprevopen<thirtyprevclose  and thirtyprevopen<thirtyprevclose2 and thirtyprevopen==thirtyprevlow) and thirtycurrentopen<thirtycurrentclose:
@@ -308,21 +370,10 @@ def tick():
 
 
 
-                if (hprevopen2>hprevclose2 and hprevopen<hprevclose  and hprevopen<hprevclose2 and hprevopen==hprevlow) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up-7"
-                else:
-                    pass
-
 
 #THREE LINE STRIKE
                 if ((thirtyprevopen<thirtyprevclose and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevopen5)  and thirtyprevopen==thirtyprevlow and thirtyprevclose> thirtyprevhigh4) and thirtycurrentopen<thirtycurrentclose:
                     signal1 = "Up-8"
-                else:
-                    pass
-
-
-                if ((hprevopen<hprevclose and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4>hprevclose4 and hprevopen5>hprevopen5)  and hprevopen==hprevlow and hprevclose> hprevhigh4) and hcurrentopen<hcurrentclose:
-                    signal2 = "Up-8"
                 else:
                     pass
 
@@ -333,16 +384,11 @@ def tick():
                 else:
                     pass
 
-                if (hprevopen>hprevclose and hprevopen==hprevhigh and hprevopen2>hprevclose2 and hprevopen3>hprevclose3 and hprevopen4<hprevclose4  and (hprevhigh2-hprevlow2)/(hprevhigh3-hprevlow3)>=1.5 and hprevhigh2<hprevlow3) and hcurrentopen>hcurrentclose :
-                    signal2 = "Down-7"
-                else:
-                    pass
 
 
 
 
-
-                print market, signal1, signal2
+                print market, signal1
                 if signal1=="Down-1" or signal2=="Down-1" or signal1=="Down-2" or signal2=="Down-2" or signal1=="Down-3" or signal2=="Down-3" or signal1=="Down-4" or signal2=="Down-4" or signal1=="Down-5" or signal2=="Down-5" or signal1=="Down-6" or signal2=="Down-6" or signal1=="Down-7" or signal2=="Down-7" or signal1=="Up-1" or signal2=="Up-1" or signal1=="Up-2" or signal2=="Up-2" or signal1=="Up-3" or signal2=="Up-3" or signal1=="Up-4" or signal2=="Up-4" or signal1=="Up-5" or signal2=="Up-5" or signal1=="Up-6" or signal2=="Up-6" or signal1=="Up-7" or signal2=="Up-7" or signal1=="Up-8" or signal2=="Up-8":
                     try:
                         printed=('      ' + str(market) + '  has thirtymin candle signal '+signal1 + ' and has hour candle signal  '+signal2)
