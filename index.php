@@ -140,8 +140,7 @@ echo "<table border='1'>
 <th>% change</th>
 <th>Volume</th>
 <th>Peak time</th>
-<th>Candle 30m</th>
-<th>Candle 1h</th>
+<th>Candle 5h</th>
 <th>Score </th>
 <th>Score trend</th>
 <th>Positive tweets </th>
@@ -168,7 +167,6 @@ echo "<td>" . $row['percent_chg'] . "</td>";
 echo "<td>" . $row['volume'] . "</td>";
 echo "<td>" . $row['strike_date'] . "</td>";
 echo "<td>" . $row['candle_signal_short'] . "</td>";
-echo "<td>" . $row['candle_signal_long'] . "</td>";
 echo "<td>" . $row['score'] . "</td>";
 echo "<td>" . $row['score_direction'] . "</td>";
 echo "<td>" . $row['positive_sentiments'] . "</td>";
