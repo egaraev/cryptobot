@@ -507,39 +507,56 @@ def HA():
                     HA_trend = "STABLE"
 
 
-
+                    
+                    
+                if (ha_direction_spin0):
+                    Ha_current_candle = "ha_direction_spin0"
+                    
+                if (ha_direction_down_short0):
+                    Ha_current_candle = "ha_direction_down_short0"                    
+                    
+                   
+                if (ha_direction_down_long_0):
+                    Ha_current_candle = "ha_direction_down_long_0"                    
+                    
                 if (ha_direction_down0):
                     Ha_current_candle = "ha_direction_down0"
 
-                if (ha_direction_down_long_0):
-                    Ha_current_candle = "ha_direction_down_long_0"
-
-                if (ha_direction_spin0):
-                    Ha_current_candle = "ha_direction_spin0"
-
-                if (ha_direction_up0):
-                    Ha_current_candle = "ha_direction_up0"
+                if (hah_direction_up_short0):
+                    Ha_current_candle = "hah_direction_up_short0"                    
 
                 if (ha_direction_up_long_0):
                     Ha_current_candle = "ha_direction_up_long_0"
 
+                    
+                if (ha_direction_up0):
+                    Ha_current_candle = "ha_direction_up0"
 
 
+
+
+                if (ha_direction_spin1):
+                    Ha_previous_candle = "ha_direction_spin1"
+                    
+                if (ha_direction_down_short1):
+                    Ha_previous_candle = "ha_direction_down_short1"                    
+                    
+                if (ha_direction_down_long_1):
+                    Ha_previous_candle = "ha_direction_down_long_1" 
 
                 if (ha_direction_down1):
                     Ha_previous_candle = "ha_direction_down1"
 
-                if (ha_direction_down_long_1):
-                    Ha_previous_candle = "ha_direction_down_long_1"
-
-                if (ha_direction_spin1):
-                    Ha_previous_candle = "ha_direction_spin1"
+                if (hah_direction_up_short1):
+                    Ha_previous_candle = "hah_direction_up_short1"                     
+                    
+                if (ha_direction_up_long_1):
+                    Ha_previous_candle = "ha_direction_up_long_1"
 
                 if (ha_direction_up1):
                     Ha_previous_candle = "ha_direction_up1"
 
-                if (ha_direction_up_long_1):
-                    Ha_previous_candle = "ha_direction_up_long_1"
+
 
                 print Ha_current_candle, Ha_previous_candle
 
