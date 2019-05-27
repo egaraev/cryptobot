@@ -378,9 +378,8 @@ def tick():
                                                 '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                                     HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
                                                     hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
-                                                    fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
-                                                    candles_signal_long) + '  AI:' + str(
-                                                    ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous), currtime, market))
+                                                    fivemin) + ' CS ' + str(candles_signal_short) +  '  AI:' + str(
+                                                    ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous), currtime, market))
                                         cursor.execute(
                                             'update orders set sell = 6 where active=1 and market =("%s")' % market)
                                         if max_percent_sql > profit / 1.5:
@@ -435,7 +434,7 @@ def tick():
                                                     '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                                         HA_trend) + ' HAH: ' + str(
                                                         HAH_trend) + ' HC: ' + hour + ' 30mC: ' + thirtymin + ' 5mC: ' + fivemin + ' CS ' + str(
-                                                        candles_signal_short) + ' ' + str(candles_signal_long) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                                        candles_signal_short) +  ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
 
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
@@ -484,9 +483,8 @@ def tick():
                                                      HAD_trend) + ' HA: ' + str(
                                                      HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
                                                      hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
-                                                     fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
-                                                     candles_signal_long) + '  AI:' + str(
-                                                     ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                                     fivemin) + ' CS ' + str(candles_signal_short) + '  AI:' + str(
+                                                     ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
                                              newvalue = summ_serf() + procent_serf
@@ -528,9 +526,8 @@ def tick():
                                                  '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                                     HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
                                                     hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(
-                                                    fivemin) + ' CS ' + str(candles_signal_short) + ' ' + str(
-                                                    candles_signal_long) + '  AI:' + str(
-                                                    ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                                    fivemin) + ' CS ' + str(candles_signal_short) +  '  AI:' + str(
+                                                    ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                             cursor.execute(
                                                 "update markets set last_sell_sig = %s, strike_time2 = %s  where market = %s and active =1",
                                                 (sell_signal, currtime, market))
@@ -619,8 +616,8 @@ def tick():
                                                     (" 22  SL, p:   " + str(
                                                         format_float(newbid)) + " t:    " + str(currenttime) +
                                             '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
-                                                HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) +' '+str(candles_signal_long) + '  AI:'  + str(
-                                            ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + 'Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                                HA_trend) + ' HAH: ' + str(HAH_trend)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) + '  AI:'  + str(
+                                            ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
                                                 newvalue = summ_serf() + procent_serf
