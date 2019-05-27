@@ -54,7 +54,7 @@ echo "<table border='1'>
 <th>Max %</th>
 <th>Min %</th>
 <th>Reason_and_Parameters_used</th>
-<th>Signal history</th>
+<!––<th>Signal history</th>––>
 <th>Sell signal</th>
 </tr>";
 
@@ -69,7 +69,7 @@ echo "<td><b>" . $row['percent_serf'] . "</b></td>";
 echo "<td>" . $row['percent_serf_max'] . "</td>";
 echo "<td>" . $row['percent_serf_min'] . "</td>";
 echo "<td>" . $row['params'] . "</td>";
-echo "<td>" . $row['history'] . "</td>";
+//echo "<td>" . $row['history'] . "</td>";
 echo "<td>" . $row['sell'] . "</td>";
 echo "</tr>";
 }
