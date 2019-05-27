@@ -112,7 +112,7 @@ def tick():
                 hourprevopen9 = float(hourcandles[15]['O'])*100000
                 #hourprevclose9 = float(hourcandles[15]['C'])*100000
 
-                                hourprevlow10 = float(hourcandles[14]['L'])*100000
+                hourprevlow10 = float(hourcandles[14]['L'])*100000
                 hourprevhigh10 = float(hourcandles[14]['H'])*100000
                 #hourprevopen10 = float(hourcandles[14]['O'])*100000
                 hourprevclose10 = float(hourcandles[14]['C'])*100000
@@ -245,7 +245,7 @@ def tick():
                 signal1="NONE"
 
 
-                if (fivehourprevhigh==fivehourprevclose) and ((fivehourprevhigh - fivehourprevlow) / (fivehouryprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
+                if (fivehourprevhigh==fivehourprevclose) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1="Up-1"
                 else:
                     pass
@@ -301,7 +301,7 @@ def tick():
 
 #TWEEZER BOTTOMS
 
-                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4) and (fivehourprevopen<fivehourprevclose) and thirtyprevlow==thirtyprevlow2  and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen2==thirtyprevhigh2 and thirtyprevhigh==thirtyprevclose) and thirtycurrentopen<thirtycurrentclose:
+                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4) and (fivehourprevopen<fivehourprevclose) and fivehourprevlow==fivehourprevlow2  and ((fivehourprevhigh - fivehourprevlow) - (fivehourprevopen - fivehourprevclose) == (fivehourprevhigh - fivehourprevlow) - (fivehourprevclose - fivehourprevopen) and fivehourprevopen2==fivehourprevhigh2 and fivehourprevhigh==fivehourprevclose) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-4"
                 else:
                     pass
@@ -313,7 +313,7 @@ def tick():
 # TWEEZER TOPS
 
 
-                if (thirtyprevopen2<thirtyprevclose2 and thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4) and (thirtyprevopen>thirtyprevclose) and  thirtyprevhigh==thirtyprevhigh2 and ((thirtyprevhigh - thirtyprevlow) - (thirtyprevopen - thirtyprevclose) == (thirtyprevhigh - thirtyprevlow) - (thirtyprevclose - thirtyprevopen) and thirtyprevopen==thirtyprevhigh and thirtyprevhigh2==thirtyprevclose2) and thirtycurrentopen>thirtycurrentclose:
+                if (fivehourprevopen2<fivehourprevclose2 and fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4) and (fivehourprevopen>fivehourprevclose) and  fivehourprevhigh==fivehourprevhigh2 and ((fivehourprevhigh - fivehourprevlow) - (fivehourprevopen - fivehourprevclose) == (fivehourprevhigh - fivehourprevlow) - (fivehourprevclose - fivehourprevopen) and fivehourprevopen==fivehourprevhigh and fivehourprevhigh2==fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1 = "Down-4"
                 else:
                     pass
@@ -323,7 +323,7 @@ def tick():
 
 #EVENING STAR
                                                 # upper trend                                                                           #current candle is Down                             #short candle or doji
-                if (thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4 and thirtyprevopen5<thirtyprevclose5) and (thirtyprevopen>thirtyprevclose) and   (thirtyprevopen2==thirtyprevclose2 or ((thirtyprevhigh2 - thirtyprevlow2) / numpy.abs(thirtyprevclose2 - thirtyprevopen2) >= 4 and (thirtyprevclose2 - thirtyprevopen2 !=0))) and (thirtyprevopen-thirtyprevclose >=(thirtyprevclose3-thirtyprevopen3)/2) and thirtycurrentopen>thirtycurrentclose:
+                if (fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4 and fivehourprevopen5<fivehourprevclose5) and (fivehourprevopen>fivehourprevclose) and   (fivehourprevopen2==fivehourprevclose2 or ((fivehourprevhigh2 - fivehourprevlow2) / numpy.abs(fivehourprevclose2 - fivehourprevopen2) >= 4 and (fivehourprevclose2 - fivehourprevopen2 !=0))) and (fivehourprevopen-fivehourprevclose >=(fivehourprevclose3-fivehourprevopen3)/2) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1 = "Down-5"
                 else:
                     pass
@@ -333,7 +333,7 @@ def tick():
 
 #MORNING STAR
 
-                if (thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevclose5) and (thirtyprevopen<thirtyprevclose) and   (thirtyprevopen2==thirtyprevclose2 or ((thirtyprevhigh2 - thirtyprevlow2) / numpy.abs(thirtyprevclose2 - thirtyprevopen2) >= 4 and (thirtyprevclose2 - thirtyprevopen2 !=0))) and (thirtyprevclose - thirtyprevopen >=(thirtyprevopen3 - thirtyprevclose3)/2) and thirtycurrentopen<thirtycurrentclose:
+                if (fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevclose5) and (fivehourprevopen<fivehourprevclose) and   (fivehourprevopen2==fivehourprevclose2 or ((fivehourprevhigh2 - fivehourprevlow2) / numpy.abs(fivehourprevclose2 - fivehourprevopen2) >= 4 and (fivehourprevclose2 - fivehourprevopen2 !=0))) and (fivehourprevclose - fivehourprevopen >=(fivehourprevopen3 - fivehourprevclose3)/2) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-5"
                 else:
                     pass
@@ -343,7 +343,7 @@ def tick():
 
 #THREE WHITE SOLDIERS
 
-                if ((thirtyprevopen<thirtyprevclose and thirtyprevopen2<thirtyprevclose2 and thirtyprevopen3<thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevopen5)  and  (thirtyprevhigh2-thirtyprevlow2>thirtyprevclose3-thirtyprevopen3) and  thirtyprevhigh2==thirtyprevclose2  and thirtyprevhigh-thirtyprevlow >=thirtyprevhigh2-thirtyprevlow2  and thirtyprevhigh==thirtyprevclose and thirtyprevopen==thirtyprevlow ) and thirtycurrentopen<thirtycurrentclose:
+                if ((fivehourprevopen<fivehourprevclose and fivehourprevopen2<fivehourprevclose2 and fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevopen5)  and  (fivehourprevhigh2-fivehourprevlow2>fivehourprevclose3-fivehourprevopen3) and  fivehourprevhigh2==fivehourprevclose2  and fivehourprevhigh-fivehourprevlow >=fivehourprevhigh2-fivehourprevlow2  and fivehourprevhigh==fivehourprevclose and fivehourprevopen==fivehourprevlow ) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-6"
                 else:
                     pass
@@ -354,7 +354,7 @@ def tick():
 #THREE BLACK CROWS
 
 
-                if ((thirtyprevopen>thirtyprevclose and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4 and thirtyprevopen5<thirtyprevopen5)  and  (thirtyprevhigh2-thirtyprevlow2>thirtyprevopen3 - thirtyprevclose3) and  thirtyprevlow2==thirtyprevclose2  and thirtyprevhigh-thirtyprevlow >=thirtyprevhigh2-thirtyprevlow2  and thirtyprevhigh==thirtyprevclose and thirtyprevopen==thirtyprevlow ) and thirtycurrentopen>thirtycurrentclose:
+                if ((fivehourprevopen>fivehourprevclose and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4 and fivehourprevopen5<fivehourprevopen5)  and  (fivehourprevhigh2-fivehourprevlow2>fivehourprevopen3 - fivehourprevclose3) and  fivehourprevlow2==fivehourprevclose2  and fivehourprevhigh-fivehourprevlow >=fivehourprevhigh2-fivehourprevlow2  and fivehourprevhigh==fivehourprevclose and fivehourprevopen==fivehourprevlow ) and fivehourcurrentopen>fivehourcurrentclose:
                     signal1 = "Down-6"
                 else:
                     pass
@@ -363,7 +363,7 @@ def tick():
 
 #PIERCING LINE
 
-                if (thirtyprevopen2>thirtyprevclose2 and thirtyprevopen<thirtyprevclose  and thirtyprevopen<thirtyprevclose2 and thirtyprevopen==thirtyprevlow) and thirtycurrentopen<thirtycurrentclose:
+                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen<fivehourprevclose  and fivehourprevopen<fivehourprevclose2 and fivehourprevopen==fivehourprevlow) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-7"
                 else:
                     pass
@@ -372,14 +372,14 @@ def tick():
 
 
 #THREE LINE STRIKE
-                if ((thirtyprevopen<thirtyprevclose and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4>thirtyprevclose4 and thirtyprevopen5>thirtyprevopen5)  and thirtyprevopen==thirtyprevlow and thirtyprevclose> thirtyprevhigh4) and thirtycurrentopen<thirtycurrentclose:
+                if ((fivehourprevopen<fivehourprevclose and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevopen5)  and fivehourprevopen==fivehourprevlow and fivehourprevclose> fivehourprevhigh4) and fivehourcurrentopen<fivehourcurrentclose:
                     signal1 = "Up-8"
                 else:
                     pass
 
 
 #TWO BLACK GAPING
-                if (thirtyprevopen>thirtyprevclose and thirtyprevopen==thirtyprevhigh and thirtyprevopen2>thirtyprevclose2 and thirtyprevopen3>thirtyprevclose3 and thirtyprevopen4<thirtyprevclose4  and (thirtyprevhigh2-thirtyprevlow2)/(thirtyprevhigh3-thirtyprevlow3)>=1.5 and thirtyprevhigh2<thirtyprevlow3) and thirtycurrentopen>thirtycurrentclose :
+                if (fivehourprevopen>fivehourprevclose and fivehourprevopen==fivehourprevhigh and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4  and (fivehourprevhigh2-fivehourprevlow2)/(fivehourprevhigh3-fivehourprevlow3)>=1.5 and fivehourprevhigh2<fivehourprevlow3) and fivehourcurrentopen>fivehourcurrentclose :
                     signal1 = "Down-7"
                 else:
                     pass
@@ -389,19 +389,15 @@ def tick():
 
 
                 print market, signal1
-                if signal1=="Down-1" or signal2=="Down-1" or signal1=="Down-2" or signal2=="Down-2" or signal1=="Down-3" or signal2=="Down-3" or signal1=="Down-4" or signal2=="Down-4" or signal1=="Down-5" or signal2=="Down-5" or signal1=="Down-6" or signal2=="Down-6" or signal1=="Down-7" or signal2=="Down-7" or signal1=="Up-1" or signal2=="Up-1" or signal1=="Up-2" or signal2=="Up-2" or signal1=="Up-3" or signal2=="Up-3" or signal1=="Up-4" or signal2=="Up-4" or signal1=="Up-5" or signal2=="Up-5" or signal1=="Up-6" or signal2=="Up-6" or signal1=="Up-7" or signal2=="Up-7" or signal1=="Up-8" or signal2=="Up-8":
+                if signal1=="Down-1" or signal1=="Down-2" or signal1=="Down-3"  or signal1=="Down-4" or signal1=="Down-5"  or signal1=="Down-6" or signal1=="Down-7"  or signal1=="Up-1"  or signal1=="Up-2" or signal1=="Up-3" or signal1=="Up-4" or signal1=="Up-5" or signal1=="Up-6" or signal1=="Up-7" or signal1=="Up-8":
                     try:
-                        printed=('      ' + str(market) + '  has thirtymin candle signal '+signal1 + ' and has hour candle signal  '+signal2)
+                        printed=('      ' + str(market) + '  has candle signal '+signal1)
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         if status_orders(market, 4)==1:
-                            if (signal1!= "NONE"):
-                                cursor.execute(
-                                    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' 30m: ' + str(signal1), currtime, status_orders(market, 0)))
-                            elif (signal2!= "NONE"):
-                                cursor.execute(
-                                    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+' 1h: ' + str(signal2), currtime, status_orders(market, 0)))
+                            cursor.execute(
+                                    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' fivehour: ' + str(signal1), currtime, status_orders(market, 0)))
                         else:
                             pass
                         db.commit()
@@ -420,8 +416,8 @@ def tick():
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
                         cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
+                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
+                            (signal1, currtime, last, market))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -436,8 +432,8 @@ def tick():
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
                         cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
+                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
+                            (signal1,  currtime, last, market))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -454,8 +450,8 @@ def tick():
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
                         cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
+                            "update markets set candle_signal_short = %s,   candle_signal_time=%s, candle_signal_price=%s  where market = %s",
+                            (signal1, currtime, last, market))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -471,8 +467,8 @@ def tick():
                         cursor = db.cursor()
                         cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
                         cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
+                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
+                            (signal1, currtime, last, market))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -481,76 +477,7 @@ def tick():
                         db.close()
 
 
-
-                elif (candles_signal_long == "Up-1" or candles_signal_long == "Up-2" or candles_signal_long == "Up-3" or candles_signal_long == "Up-4" or candles_signal_long == "Up-5" or candles_signal_long == "Up-6" or candles_signal_long == "Up-7" or candles_signal_long == "Up-8") and (
-                        signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
-                    print market, "prediction was successfull"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal2))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (candles_signal_long == "Up-1" or candles_signal_long == "Up-2" or candles_signal_long == "Up-3" or candles_signal_long == "Up-4" or candles_signal_long == "Up-5" or candles_signal_long == "Up-6" or candles_signal_long == "Up-7" or candles_signal_long == "Up-8") and (
-                        signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
-                    print market, "prediction was failed"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal2))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (candles_signal_long == "Down-1" or candles_signal_long == "Down-2" or candles_signal_long == "Down-3" or candles_signal_long == "Down-4" or candles_signal_long == "Down-5" or candles_signal_long == "Down-6" or candles_signal_long == "Down-7") and (
-                                signal2 != "NONE" or currtime - candles_signal_time > 36000) and last < candles_signal_price:
-                    print market, "prediction was successfull"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal2))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (candles_signal_long == "Down-1" or candles_signal_long == "Down-2" or candles_signal_long == "Down-3" or candles_signal_long == "Down-4" or candles_signal_long == "Down-5" or candles_signal_long == "Down-6" or candles_signal_long == "Down-7") and (
-                                signal2 != "NONE" or currtime - candles_signal_time > 36000) and last > candles_signal_price:
-                    print market, "prediction was failed"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal2))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, signal2, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (signal1=="NONE" or signal2=="NONE") and currtime - candles_signal_time > 18000 :
+                elif (signal1=="NONE") and currtime - candles_signal_time > 18000 :
 
                     try:
                         print market, "lets update new predictions"
@@ -558,8 +485,7 @@ def tick():
                         cursor = db.cursor()
 
                         #printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
-                        cursor.execute("update markets set candle_signal_short = %s, candle_signal_long =%s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",(signal1, signal2, currtime, last, market))
-
+                        cursor.execute("update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",(signal1, currtime, last, market))
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -568,7 +494,7 @@ def tick():
                         db.close()
 
 
-                elif (signal1=="Down-1" or signal2=="Down-1" or signal1=="Down-2" or signal2=="Down-2" or signal1=="Down-3" or signal2=="Down-3" or signal1=="Down-4" or signal2=="Down-4" or signal1=="Down-5" or signal2=="Down-5" or signal1=="Down-6" or signal2=="Down-6" or signal1=="Down-7" or signal2=="Down-7" or signal1=="Up-1" or signal2=="Up-1" or signal1=="Up-2" or signal2=="Up-2" or signal1=="Up-3" or signal2=="Up-3" or signal1=="Up-4" or signal2=="Up-4" or signal1=="Up-5" or signal2=="Up-5" or signal1=="Up-6" or signal2=="Up-6" or signal1=="Up-7" or signal2=="Up-7" or signal1=="Up-8" or signal2=="Up-8") :
+                elif (signal1=="Down-1"  or signal1=="Down-2" or signal1=="Down-3"  or signal1=="Down-4" or signal1=="Down-5"  or signal1=="Down-6"  or signal1=="Down-7" or signal1=="Up-1" or signal1=="Up-2"  or signal1=="Up-3" or signal1=="Up-4" or signal1=="Up-5"  or signal1=="Up-6"  or signal1=="Up-7" or signal1=="Up-8") :
 
                     if signal1!="NONE":
 
@@ -586,24 +512,7 @@ def tick():
                             sys.exit(1)
                         finally:
                             db.close()
-                    elif signal2!="NONE":
 
-                        try:
-                            print market, "lets update new predictions"
-                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                            cursor = db.cursor()
-
-                            # printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
-                            cursor.execute(
-                                "update markets set candle_signal_long =%s,  candle_signal_price=%s  where market = %s",
-                                (signal2,  last, market))
-
-                            db.commit()
-                        except MySQLdb.Error, e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
-                            sys.exit(1)
-                        finally:
-                            db.close()
                     else:
                         pass
 
