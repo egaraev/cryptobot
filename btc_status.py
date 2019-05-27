@@ -67,29 +67,29 @@ def HA():
 
     market_summ = c.get_market_summaries().json()['result']
 
-    for summary in market_summ:  # Loop trough the market summary
-        try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
+#    for summary in market_summ:  # Loop trough the market summary
+#        try:
+#            if available_market_list(summary['MarketName']):
+#                market = summary['MarketName']
 
-                if (btc_status == "STOP"):
+#                if (btc_status == "STOP"):
 
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('update orders set sell = 7 where active=1 and market =("%s")' % market)
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-                else:
-                    pass
+#                    try:
+#                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+#                        cursor = db.cursor()
+#                        cursor.execute('update orders set sell = 7 where active=1 and market =("%s")' % market)
+#                        db.commit()
+#                    except MySQLdb.Error, e:
+#                        print "Error %d: %s" % (e.args[0], e.args[1])
+#                        sys.exit(1)
+#                    finally:
+#                        db.close()
+#                else:
+#                    pass
     
 
-        except:
-            continue
+#        except:
+#            continue
 
 
 def available_market_list(marketname):
