@@ -49,6 +49,7 @@ echo "<table border='1'>
 <th>Sell_orders_sum</th>
 <th>Buy_orders_count</th>
 <th>Sell_orders_count</th>
+<th>Spread</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -79,7 +80,7 @@ echo "<td>" . $row['buy_orders_sum'] . "</td>";
 echo "<td>" . $row['sell_orders_sum'] . "</td>";
 echo "<td>" . $row['buy_orders_count'] . "</td>";
 echo "<td>" . $row['sell_orders_count'] . "</td>";
-
+echo "<td>" . $row['spread'] . "</td>";
 
 echo "</tr>";
 }
