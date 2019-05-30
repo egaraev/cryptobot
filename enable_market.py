@@ -45,6 +45,16 @@ def ME():
                 spread = float(((ask / bid) - 1) * 100)
                 print market, percent_chg
 
+                try:
+                  db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                  cursor = db.cursor()
+                  cursor.execute("update markets set spread= %s where market =%s", (spread, market))
+                  db.commit()
+                except MySQLdb.Error, e:
+                  print "Error %d: %s" % (e.args[0], e.args[1])
+                  sys.exit(1)
+                finally:
+                  db.close()                
 
                 if percent_chg>percent_sql:
                     percent_grow=1
