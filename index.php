@@ -92,7 +92,7 @@ echo "<table border='1'>
 <th>Min % After</th>
 <th>Reason_and_Parameters_used</th>
 <th>Reason_to_sell</th>
-<th>Signal history</th>
+<!––<th>Signal history</th>-->
 <th>SELL signal</th>
 </tr>";
 
@@ -109,7 +109,7 @@ echo "<td>" . $row['aftercount'] . "</td>";
 echo "<td>" . $row['aftercount_min'] . "</td>";
 echo "<td>" . $row['params'] . "</td>";
 echo "<td>" . $row['reason_close'] . "</td>";
-echo "<td>" . $row['history'] . "</td>";
+//echo "<td>" . $row['history'] . "</td>";
 echo "<td>" . $row['sell'] . "</td>";
 echo "</tr>";
 }
