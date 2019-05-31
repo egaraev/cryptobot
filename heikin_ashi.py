@@ -651,7 +651,7 @@ def HA():
                 
                 
                 lastcandlesize = hourcurrenthigh-hourcurrentlow
-                candlesize=hourcurrenthigh/hourcurrentlow-1)*100
+                candlesize=(hourcurrenthigh/hourcurrentlow-1)*100
                 print candlesize
                 if ((hourcurrenthigh/hourcurrentlow-1)*100>3 and last>hourcurrentopen) 
                     print "We have peak situation, lets wait"
