@@ -459,7 +459,7 @@ def tick():
 
 
 
-                                elif ((newbid * (1 + profit / 2) < (bought_price_sql )) or procent_serf==min_percent_sql and score<2) and (sell_signal != 0): # #WAS profit2
+                                elif ((newbid * (1 + profit / 2) < (bought_price_sql )) and procent_serf==min_percent_sql and score<2) and (sell_signal != 0): # #WAS profit2
 
                                          print ('   16  -Trying to Sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD')
                                     # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
@@ -500,7 +500,7 @@ def tick():
                                          Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
-                                elif serf_usd >= 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen:   # # WAS profit2
+                                elif serf_usd > 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen:   # # WAS profit2
                                         print ('  18  - Trying to Sell ' + str(
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
