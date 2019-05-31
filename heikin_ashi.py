@@ -655,6 +655,21 @@ def HA():
                 print "Candle size is:", candlesize
                 if ((hourcurrenthigh/hourcurrentlow-1)*100>3 and last>hourcurrentopen): 
                     print "We have peak situation, lets wait"
+                    printed1=("We have peak situation, lets wait")
+                    
+                    try:
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                       #cursor.execute("update markets set strike_date=%s, strike_info=%s  where market = %s",(currenttime, printed1, market))
+                        cursor.execute(
+                            "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
+                            (currenttime, currtime, printed1, market))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
                     
                 
                     
