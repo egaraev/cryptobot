@@ -648,8 +648,23 @@ def HA():
                     finally:
                         db.close()
 
+                
+                
+                lastcandlesize = hourcurrenthigh-hourcurrentlow
+                candlesize=hourcurrenthigh/hourcurrentlow-1)*100
+                print candlesize
+                if ((hourcurrenthigh/hourcurrentlow-1)*100>3 and last>hourcurrentopen) 
+                    print "We have peak situation, lets wait"
+                    
+                
+                    
 
-
+                
+                
+                
+                
+                
+                
                 if ((ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_long_0 and ha_direction_up_long_1) or (ha_direction_up0 and ha_direction_up1 and ha_direction_up_longer) or (ha_trend!="DOWN" and ha_trend!="Revers-DOWN" and ha_trend!="STABLE" and hah_trend!="DOWN" and hah_trend!="Revers-DOWN" and hah_trend!="STABLE" ) and bought_quantity_sql > 0):
 
                     try:
