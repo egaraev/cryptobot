@@ -258,7 +258,7 @@ def tick():
                             ##Check if we have completelly green candle
 
 
-                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 4>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 7>=max_percent_sql >= 4 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
+                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 5>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 9>=max_percent_sql >= 5 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
                                 print ('   6 -Selling ' + str(format_float(
                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(newbid)) + '  and getting  +' + str(format_float(
