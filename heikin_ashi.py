@@ -627,10 +627,10 @@ def HA():
 
                 lastcandlesize= fivehourcurrenthigh-fivehourcurrentlow
                 prevcandlesize= fivehourprevhigh-fivehourprevlow
-                lastcandlebodysize = numpy.abs(fivehourcurrentopen - last)
+                lastcandlebodysize = numpy.abs(fivehourcurrentopen - last*100000)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and had_trend!="STABLE" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last*100000 and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and had_trend!="STABLE" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -653,7 +653,7 @@ def HA():
                 lastcandlesize = hourcurrenthigh-hourcurrentlow
                 candlesize=(hourcurrenthigh/hourcurrentlow-1)*100
                 print "Candle size is:", candlesize
-                if ((hourcurrenthigh/hourcurrentlow-1)*100>3 and last>hourcurrentopen): 
+                if ((hourcurrenthigh/hourcurrentlow-1)*100>3 and last*100000>hourcurrentopen): 
                     print "We have peak situation, lets wait"
                     printed1=("We have peak situation, lets wait")
                     
