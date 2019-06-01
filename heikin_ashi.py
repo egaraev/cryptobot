@@ -630,7 +630,7 @@ def HA():
                 lastcandlebodysize = numpy.abs(fivehourcurrentopen - last*100000)
                 prevcandlebodysize = numpy.abs(fivehourprevopen - fivehourprevclose)
 
-                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last*100000 and fivehourprevopen<fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and had_trend!="STABLE" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last*100000 and fivehourprevopen>fivehourprevclose and ha_direction_down0 and hah_trend!="UP" and hah_trend!="Revers-UP" and ha_trend!="UP" and ha_trend!="Revers-UP" and had_trend!="UP" and had_trend!="Revers-UP" and had_trend!="STABLE" and HAD_trend!="UP" and HAD_trend!="Revers-UP" and bought_quantity_sql > 0):
                     try:
                         db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -648,6 +648,32 @@ def HA():
                     finally:
                         db.close()
 
+                
+                if ((lastcandlesize>prevcandlesize or lastcandlebodysize>prevcandlebodysize) and fivehourcurrentopen>last*100000 and fivehourprevopen>fivehourprevclose and bought_quantity_sql > 0):
+                    try:
+                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        cursor = db.cursor()
+                        printed = ('      ' + market + '   Received HA sell signal  ' + '  ' + HA_trend)
+                        cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
+                        if status_orders(market, 4)==1:
+                            cursor.execute(
+                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                                market, str(serf) + ' HA_sell_signal ' + str(1),
+                                currtime, status_orders(market, 0)))
+                        db.commit()
+                    except MySQLdb.Error, e:
+                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        sys.exit(1)
+                    finally:
+                        db.close()
+                
+                
+                        
+                        
+                        
+                        
+                        
+                        
                 
                 
                 lastcandlesize = hourcurrenthigh-hourcurrentlow
