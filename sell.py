@@ -57,23 +57,23 @@ def tick():
 
                     #Candle analisys
                     lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                    currentlow = float(lastcandle[0]['L'])
-                    currentopen = float(lastcandle[0]['O'])
-                    currenthigh = float(lastcandle[0]['H'])
+                    currentlow = float("{0:.4f}".format(lastcandle[0]['L']))
+                    currentopen = float("{0:.4f}".format(lastcandle[0]['O']))
+                    currenthigh = float("{0:.4f}".format(lastcandle[0]['H']))
                     previouscandle = get_candles(market, 'thirtymin')['result'][-2:]
-                    prevclose = float(previouscandle[0]['C'])
+                    prevclose = float("{0:.4f}".format(previouscandle[0]['C']))
                     lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
-                    currentlow5 = float(lastcandle5[0]['L'])
-                    currentopen5 = float(lastcandle5[0]['O'])
-                    currenthigh5 = float(lastcandle5[0]['H'])
+                    currentlow5 = float("{0:.4f}".format(lastcandle5[0]['L']))
+                    currentopen5 = float("{0:.4f}".format(lastcandle5[0]['O']))
+                    currenthigh5 = float("{0:.4f}".format(lastcandle5[0]['H']))
                     previouscandle5 = get_candles(market, 'fivemin')['result'][-2:]
-                    prevclose5 = float(previouscandle5[0]['C'])
+                    prevclose5 = float("{0:.4f}".format(previouscandle5[0]['C']))
                     hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                    hourcurrentopen = float(hourlastcandle[0]['O'])
-                    hourcurrenthigh = float(hourlastcandle[0]['H'])
+                    hourcurrentopen = float("{0:.4f}".format(hourlastcandle[0]['O']))
+                    hourcurrenthigh = float("{0:.4f}".format(hourlastcandle[0]['H']))
                     hourprevcandle = get_candles(market, 'hour')['result'][-2:]
-                    hourprevopen = float(hourprevcandle[0]['O'])
-                    hourprevclose = float(hourprevcandle[0]['C'])
+                    hourprevopen = float("{0:.4f}".format(hourprevcandle[0]['O']))
+                    hourprevclose = float("{0:.4f}".format(hourprevcandle[0]['C']))
                     fivemin='NONE'
                     thirtymin='NONE'
                     hour='NONE'
@@ -83,9 +83,9 @@ def tick():
                     timestamp = int(time.time())
                     day_close = summary['PrevDay']   #Getting day of closing order
                 #Current prices
-                    last = float(summary['Last'])  #last price
-                    bid = float(summary['Bid'])    #sell price
-                    ask = float(summary['Ask'])    #buy price
+                    last = float("{0:.4f}".format(summary['Last']))  #last price
+                    bid = float("{0:.4f}".format(summary['Bid']))    #sell price
+                    ask = float("{0:.4f}".format(summary['Ask']))    #buy price
                 #How much market has been changed
 
 
@@ -459,7 +459,7 @@ def tick():
 
 
 
-                                elif ((newbid * (1 + profit / 2) < (bought_price_sql )) or procent_serf==min_percent_sql and score<2) and (sell_signal != 0): # #WAS profit2
+                                elif ((newbid * (1 + profit / 2) < (bought_price_sql )) or procent_serf==min_percent_sql and score<2) and (sell_signal == 2): # #WAS profit2
 
                                          print ('   16  -Trying to Sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD')
                                     # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
