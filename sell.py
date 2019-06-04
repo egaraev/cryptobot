@@ -101,6 +101,7 @@ def tick():
                 #Bought Quantity need for sell order, to know at which price we bought some currency
                     bought_price_sql = float(status_orders(market, 3))
                     bought_quantity_sql = float(status_orders(market, 2))
+                    danger_order=int(status_orders(market, 29))
                     sell_signal=status_orders(market, 23)
                     sell_quantity_sql = bought_quantity_sql
                     active = active_orders(market)
@@ -171,8 +172,11 @@ def tick():
                                 cursor.execute("update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",(procent_serf, market))
 
                         cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
+                        
                         if percent_serf_min(market)<(-1.5):
                             cursor.execute("update orders set danger_order = %s where market = %s and active =1" , (1, market))
+                        if percent_serf_max(market)>3.0:
+                            cursor.execute("update orders set danger_order = %s where market = %s and active =1" , (0, market))
                             
                         #cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf, market))   - for usd trading
                         cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf*BTC_price, market))
@@ -261,7 +265,7 @@ def tick():
                             ##Check if we have completelly green candle
 
 
-                            if ((serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 5>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 9>=max_percent_sql >= 5 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
+                            if ((serf_usd > 0 and 2.0>procent_serf>=0.7 and danger_order==1 and max_percent_sql - procent_serf >= 0.3) or  (serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 5>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 9>=max_percent_sql >= 5 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
                                 print ('   6 -Selling ' + str(format_float(
                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(newbid)) + '  and getting  +' + str(format_float(
