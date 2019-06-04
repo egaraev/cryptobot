@@ -171,6 +171,9 @@ def tick():
                                 cursor.execute("update orders set percent_serf=%s where market = %s and active =1 and open_sell=0 ",(procent_serf, market))
 
                         cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
+                        if percent_serf_min(market)<(-1.5):
+                            cursor.execute("update orders set danger_order = %s where market = %s and active =1" , (1, market))
+                            
                         #cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf, market))   - for usd trading
                         cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf*BTC_price, market))
                         cursor.execute(
