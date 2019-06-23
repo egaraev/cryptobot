@@ -117,9 +117,9 @@ def tick():
                     sell_summ = str(heikin_ashi(market, 41))
                     sell_count = str(heikin_ashi(market, 43))
                    
-                    hah_trend=heikin_ashi(market, 47)
+                    hah_trend=heikin_ashi(market, 49)
                     ha_trend=heikin_ashi(market, 48)
-                    had_trend = heikin_ashi(market, 49)
+                    had_trend = heikin_ashi(market, 47)
 
                     Ha_candle_current=heikin_ashi(market, 50)
                     Ha_candle_previous=heikin_ashi(market, 51)
