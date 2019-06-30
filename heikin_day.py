@@ -165,12 +165,66 @@ def HA():
                 if  had_trend != "Revers-DOWN" and   had_trend != "Revers-UP" and  had_trend != "DOWN" and had_trend != "UP":
                     had_trend = "STABLE"    
                     
+                    
+                if (had_direction_spin0):
+                    HaD_current_candle = "had_direction_spin0"
+                    
+                if (had_direction_down_short0):
+                    HaD_current_candle = "had_direction_down_short0"                    
+                    
+                   
+                if (had_direction_down_long_0):
+                    HaD_current_candle = "had_direction_down_long_0"                    
+                    
+                if (had_direction_down0):
+                    HaD_current_candle = "had_direction_down0"
+
+                if (had_direction_up_short0):
+                    HaD_current_candle = "had_direction_up_short0"                    
+
+                if (had_direction_up_long_0):
+                    HaD_current_candle = "had_direction_up_long_0"
+
+                    
+                if (had_direction_up0):
+                    HaD_current_candle = "had_direction_up0"
+
+
+
+
+                if (had_direction_spin1):
+                    HaD_previous_candle = "had_direction_spin1"
+                    
+                if (had_direction_down_short1):
+                    HaD_previous_candle = "had_direction_down_short1"                    
+                    
+                if (had_direction_down_long_1):
+                    HaD_previous_candle = "had_direction_down_long_1" 
+
+                if (had_direction_down1):
+                    HaD_previous_candle = "had_direction_down1"
+
+                if (had_direction_up_short1):
+                    HaD_previous_candle = "had_direction_up_short1"                     
+                    
+                if (had_direction_up_long_1):
+                    HaD_previous_candle = "had_direction_up_long_1"
+
+                if (had_direction_up1):
+                    HaD_previous_candle = "had_direction_up1"
+
+
+
+                print HaD_current_candle, HaD_previous_candle
+
+                    
+                    
 
                 print market, HAD_trend
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
-                    cursor.execute("update markets set current_price = %s, ha_direction_daily=%s  where market = %s",(last,  HAD_trend,  market))
+                    cursor.execute("update markets set current_price = %s, ha_direction_daily=%s, had_candle_previous=%s, had_candle_current=%s  where market = %s",(last,  HAD_trend, HaD_previous_candle, HaD_current_candle,  market))
                     cursor.execute("update markets set ha_day=%s  where market = %s",(had_trend,  market))
                     db.commit()
                 except MySQLdb.Error, e:
