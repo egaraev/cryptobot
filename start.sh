@@ -39,15 +39,15 @@ fi
 
 
 
-SERVICE2='server.py'
+#SERVICE2='server.py'
 
-if ps ax | grep -v grep | grep $SERVICE2 > /dev/null
-then
-    echo "$SERVICE2 service running "
-else
-    echo there is no such "$SERVICE2 service, starting"
-    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/webinterface/server.py
-fi
+#if ps ax | grep -v grep | grep $SERVICE2 > /dev/null
+#then
+#    echo "$SERVICE2 service running "
+#else
+#    echo there is no such "$SERVICE2 service, starting"
+#    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/webinterface/server.py
+#fi
 
 
 SERVICE3='neuralprediction.py'
@@ -144,17 +144,17 @@ else
 fi
 
 
-SERVICE10='btc_ha.py'
+#SERVICE10='btc_ha.py'
 
-if ps ax | grep -v grep | grep $SERVICE10 > /dev/null
-then
-    echo "$SERVICE10 service running "
-else
-    echo there is no such "$SERVICE10 service, starting"
-    cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 btc_ha.py
+#if ps ax | grep -v grep | grep $SERVICE10 > /dev/null
+#then
+#    echo "$SERVICE10 service running "
+#else
+#    echo there is no such "$SERVICE10 service, starting"
+#    cd /root/PycharmProjects/cryptobot
+#    /usr/bin/python2.7 btc_ha.py
 
-fi
+#fi
 
 
 
@@ -223,17 +223,17 @@ else
 fi
 
 
-SERVICE16='btc_status.py'
+#SERVICE16='btc_status.py'
 
-if ps ax | grep -v grep | grep $SERVICE16 > /dev/null
-then
-    echo "$SERVICE16 service running "
-else
-    echo there is no such "$SERVICE16 service, starting"
-    cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 btc_status.py
+#if ps ax | grep -v grep | grep $SERVICE16 > /dev/null
+#then
+#    echo "$SERVICE16 service running "
+#else
+#    echo there is no such "$SERVICE16 service, starting"
+#    cd /root/PycharmProjects/cryptobot
+#    /usr/bin/python2.7 btc_status.py
 
-fi
+#fi
 
 
 SERVICE17='candles.py'

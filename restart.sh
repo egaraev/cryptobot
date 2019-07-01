@@ -14,12 +14,12 @@ kill -9 $PID1
 
 
 
-PID2=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
-kill -9 $PID2
+#PID2=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID2
 
 
-PID22=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
-kill -9 $PID22
+#PID22=`ps aux | awk '/server.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID22
 
 
 
@@ -50,8 +50,8 @@ kill -9 $PID8
 PID9=`ps aux | awk '/check_market_profits.py/ && !/awk/ { print $2 }'`
 kill -9 $PID9
 
-PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
-kill -9 $PID10
+#PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID10
 
 
 PID11=`ps aux | awk '/chart_creator3.py/ && !/awk/ { print $2 }'`
@@ -74,8 +74,8 @@ PID15=`ps aux | awk '/statistic.py/ && !/awk/ { print $2 }'`
 kill -9 $PID15
 
 
-PID16=`ps aux | awk '/btc_status.py/ && !/awk/ { print $2 }'`
-kill -9 $PID16
+#PID16=`ps aux | awk '/btc_status.py/ && !/awk/ { print $2 }'`
+#kill -9 $PID16
 
 PID17=`ps aux | awk '/candles.py/ && !/awk/ { print $2 }'`
 kill -9 $PID17
