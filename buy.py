@@ -224,9 +224,77 @@ def tick():
 #                    if ((stop_bot == 0) and ((HAD_trend == "STABLE" and (HA_trend == "UP" or HA_trend == "Revers-UP") and (HAH_trend == "UP" or HAH_trend == "Revers-UP")) or (HAD_trend == "UP" and HA_trend == "UP"  and (HAH_trend == "UP" or HAH_trend == "Revers-UP"))) and stop_bot_force == 0) and (
 #                                currtime - ha_time_second < 2000) and (currtime - strike_time > 18000)  and current_order_count<=max_orders and last>fivehourcurrentopen and fivehourprevopen<fivehourprevclose and last>currentopen  and fivemin!='D' and hour!='D' and percent_sql>0.0 :#and (currtime - strike_time2 > 18000)
 
-                    if ((stop_bot == 0) and stop_bot_force == 0) and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN" and had_trend != "DOWN" and had_trend != "Revers-DOWN"  and ((
+                    if ((stop_bot == 0) and stop_bot_force == 0)  and HaD_candle_current=="had_direction_up0" and HAD_trend != "DOWN" and HAD_trend != "Revers-DOWN" and had_trend != "DOWN" and had_trend != "Revers-DOWN"  and ((
                                 HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and ha_trend != "DOWN" and ha_trend != "Revers-DOWN" ) and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP"))  and (
+                                        currtime - ha_time_second < 2000) and (
+                                currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U' and buy_count>sell_count:
+                            #balance_res = get_balance_from_market(market)
+                            #current_balance = balance_res['result']['Available']
+
+                            # If we have some currency on the balance
+                            if bought_quantity_sql !=0.0:
+                                print ('    2 - We already have ' + str(
+                                        format_float(bought_quantity_sql)) + '  ' + market + ' on our balance')
+                                try:
+                                    printed = ('    2 - We already have ' + str(
+                                        format_float(bought_quantity_sql)) + '  ' + market + ' on our balance')
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                    cursor = db.cursor()
+                                    cursor.execute(
+                                        'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                    db.commit()
+                                except MySQLdb.Error, e:
+                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    sys.exit(1)
+                                finally:
+                                    db.close()
+                            # if we have some active orders in sql
+                            elif active == 1 and iteration != 0:
+                                print  ('    3 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                                try:
+                                    printed = ('    3 - We already have ' + str(
+                                        float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                    cursor = db.cursor()
+                                    cursor.execute(
+                                        'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                    db.commit()
+                                except MySQLdb.Error, e:
+                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    sys.exit(1)
+                                finally:
+                                    db.close()
+                            else:
+                                # Buy some currency by market analize first time
+                                try:
+                                    print ('    4- Purchasing '  + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(newask)))
+                                    printed = ('    4- Purchasing '  + str(
+                                        format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(
+                                        format_float(newask)))
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                    cursor = db.cursor()
+                                    cursor.execute(
+                                        'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                    cursor.execute(
+                                        'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
+                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous) + ' HaD_cande_current: ' +str(HaD_candle_current) + ' HaD_candle_previous ' +str(HaD_candle_previous),
+                                        HA_trend))
+                                    cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
+                                                   (serf, market))
+                                    db.commit()
+                                except MySQLdb.Error, e:
+                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    sys.exit(1)
+                                finally:
+                                    db.close()
+                                Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "database-service")
+                                break
+
+                                ######################################## HA ONLY BUY
+                                
+                    if ((stop_bot == 0) and stop_bot_force == 0)  and HaD_candle_current=="had_direction_up0" and Ha_candle_current=="ha_direction_up0" and Ha_candle_previous=="ha_direction_down1" and (
+                                HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP")   and (
                                         currtime - ha_time_second < 2000) and (
                                 currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U':
                             #balance_res = get_balance_from_market(market)
@@ -268,8 +336,8 @@ def tick():
                             else:
                                 # Buy some currency by market analize first time
                                 try:
-                                    print ('    4- Purchasing (by ai_ha) '  + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(newask)))
-                                    printed = ('    4- Purchasing (by ai_ha) '  + str(
+                                    print ('    4- Purchasing (by ha) '  + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(newask)))
+                                    printed = ('    4- Purchasing (by ha) '  + str(
                                         format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(
                                         format_float(newask)))
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -278,7 +346,7 @@ def tick():
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     cursor.execute(
                                         'insert into orders(market, quantity, price, active, date, timestamp, iteration, btc_direction, params, heikin_ashi) values("%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
-                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous) + ' HaD_cande_current: ' +str(HaD_candle_current) + ' HaD_candle_previous ' +str(HaD_candle_previous),
+                                        market, buy_quantity, newask, "1", currenttime, timestamp, "1", btc_trend, 'HA_ONLY order,   BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend)  + '  had: ' + str(had_trend) + ' ha: ' + str(ha_trend) + ' hah: ' + str(hah_trend)   + '  %  ' + str(percent_sql) + '  vol  ' + str(volume_sql)  + ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin)+' CS '+str(candles_signal_short) + '  AI   ' + str(ai_prediction(market)) + ' Score: ' + str(score) + ' Score trend ' + str(score_trend) + ' Pos.tweets: '+str(positive)+ ' Neg.tweets: '+str(negative)+ ' Buy.summ: '+str(buy_summ)+ ' Buy.count: '+str(buy_count)+ ' Sell.summ: '+str(sell_summ)+ ' Sell.count: '+str(sell_count) + ' Weekday: '+str(dayofweek) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous) + ' HaD_cande_current: ' +str(HaD_candle_current) + ' HaD_candle_previous ' +str(HaD_candle_previous),
                                         HA_trend))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",
                                                    (serf, market))
@@ -289,8 +357,9 @@ def tick():
                                 finally:
                                     db.close()
                                 Mail("egaraev@gmail.com", "egaraev@gmail.com", "New purchase", printed, "database-service")
-                                break
-
+                                break                                
+                                
+                                
 
     ### BUY FOR HA_AI mode - END
 
