@@ -557,8 +557,29 @@ def HA():
                     Ha_previous_candle = "ha_direction_up1"
 
 
+                    
+                if (ha_direction_spin2):
+                    Ha_previous_candle_1 = "ha_direction_spin2"
+                    
+                if (ha_direction_down_short2):
+                    Ha_previous_candle_1 = "ha_direction_down_short2"                    
+                    
+                if (ha_direction_down_long_2):
+                    Ha_previous_candle_1 = "ha_direction_down_long_2" 
 
-                print Ha_current_candle, Ha_previous_candle
+                if (ha_direction_down2):
+                    Ha_previous_candle_1 = "ha_direction_down2"
+
+                if (ha_direction_up_short2):
+                    Ha_previous_candle_1 = "ha_direction_up_short2"                     
+                    
+                if (ha_direction_up_long_2):
+                    Ha_previous_candle_1 = "ha_direction_up_long_2"
+
+                if (ha_direction_up2):
+                    Ha_previous_candle_1 = "ha_direction_up2"
+
+                print Ha_current_candle, Ha_previous_candle, Ha_previous_candle_1
 
 
 
@@ -733,7 +754,7 @@ def HA():
                     cursor = db.cursor()
 
                     printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
-                    cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s, ha_candle_previous=%s, 	ha_candle_current=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, Ha_previous_candle, Ha_current_candle, market))
+                    cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s, ha_candle_previous=%s, 	ha_candle_current=%s, ha_candle_previos_1=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, Ha_previous_candle, Ha_current_candle, Ha_previous_candle_1, market))
                     if status_orders(market, 4) == 1:
                         cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, str(serf)+' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend), currtime, status_orders(market, 0)))
                     else:
