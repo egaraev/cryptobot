@@ -304,10 +304,10 @@ def tick():
 
                             # If we have some currency on the balance
                             if bought_quantity_sql !=0.0:
-                                print ('    2 - We already have ' + str(
+                                print ('    5 - We already have ' + str(
                                         format_float(bought_quantity_sql)) + '  ' + market + ' on our balance')
                                 try:
-                                    printed = ('    2 - We already have ' + str(
+                                    printed = ('    5 - We already have ' + str(
                                         format_float(bought_quantity_sql)) + '  ' + market + ' on our balance')
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
@@ -321,9 +321,9 @@ def tick():
                                     db.close()
                             # if we have some active orders in sql
                             elif active == 1 and iteration != 0:
-                                print  ('    3 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
+                                print  ('    6 - We already have ' + str(float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                                 try:
-                                    printed = ('    3 - We already have ' + str(
+                                    printed = ('    6 - We already have ' + str(
                                         float(status_orders(market, 2))) + ' units of ' + market + ' on our balance')
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
@@ -338,8 +338,8 @@ def tick():
                             else:
                                 # Buy some currency by market analize first time
                                 try:
-                                    print ('    4- Purchasing (by ha) '  + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(newask)))
-                                    printed = ('    4- Purchasing (by ha) '  + str(
+                                    print ('    7- Purchasing (by ha) '  + str(format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(format_float(newask)))
+                                    printed = ('    7- Purchasing (by ha) '  + str(
                                         format_float(buy_quantity)) + ' units of ' + market + ' for ' + str(
                                         format_float(newask)))
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
