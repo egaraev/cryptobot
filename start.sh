@@ -1,16 +1,5 @@
 #!/bin/bash
 
-#SERVICE1='main.py'
- 
-#if ps ax | grep -v grep | grep $SERVICE1 > /dev/null
-#then
-#    echo "$SERVICE1 service running "
-#else
-#    echo there is no such "$SERVICE1 service, starting"
-#    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/main.py
-#fi
-
-
 SERVICE0='buy.py'
 
 if ps ax | grep -v grep | grep $SERVICE0 > /dev/null
@@ -18,7 +7,8 @@ then
     echo "$SERVICE0 service running "
 else
     echo there is no such "$SERVICE0 service, starting"
-    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/buy.py
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 buy.py &
 fi
 
 
@@ -30,12 +20,9 @@ then
     echo "$SERVICE1 service running "
 else
     echo there is no such "$SERVICE1 service, starting"
-    /usr/bin/python2.7 /root/PycharmProjects/cryptobot/sell.py
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 sell.py &
 fi
-
-
-
-
 
 
 
@@ -59,7 +46,6 @@ else
     echo there is no such "$SERVICE3 service, starting"
     cd /root/PycharmProjects/cryptobot
     /usr/bin/python2.7 neuralprediction.py 
-#/usr/bin/python2.7 /root/PycharmProjects/cryptobot/neuralprediction.py
 
 fi
 
@@ -72,8 +58,7 @@ then
 else
     echo there is no such "$SERVICE4 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 heikin_ashi.py
-#/usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_ashi.py
+    /usr/bin/python2.7 heikin_ashi.py &
 
 fi
 
@@ -86,7 +71,7 @@ then
 else
     echo there is no such "$SERVICE5 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 enable_market.py
+    /usr/bin/python2.7 enable_market.py &
 
 fi
 
@@ -99,7 +84,7 @@ then
 else
     echo there is no such "$SERVICE6 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 heikin_day.py
+    /usr/bin/python2.7 heikin_day.py &
 
 fi
 
@@ -112,7 +97,7 @@ then
 else
     echo there is no such "$SERVICE7 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 chart_creator.py
+    /usr/bin/python2.7 chart_creator.py &
 
 fi
 
@@ -126,7 +111,7 @@ then
 else
     echo there is no such "$SERVICE8 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 check_market_profits.py
+    /usr/bin/python2.7 check_market_profits.py &
 
 fi
 
@@ -139,7 +124,7 @@ then
 else
     echo there is no such "$SERVICE9 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 chart_creator2.py
+    /usr/bin/python2.7 chart_creator2.py &
 
 fi
 
@@ -167,7 +152,7 @@ then
 else
     echo there is no such "$SERVICE8 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 check_ai.py
+    /usr/bin/python2.7 check_ai.py &
 
 fi
 
@@ -180,7 +165,7 @@ then
 else
     echo there is no such "$SERVICE12 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 chart_creator3.py
+    /usr/bin/python2.7 chart_creator3.py &
 
 fi
 
@@ -192,7 +177,7 @@ then
 else
     echo there is no such "$SERVICE13 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 aftercount.py
+    /usr/bin/python2.7 aftercount.py &
 
 fi
 
@@ -205,7 +190,7 @@ then
 else
     echo there is no such "$SERVICE14 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 chart_creator4.py
+    /usr/bin/python2.7 chart_creator4.py &
 
 fi
 
@@ -218,7 +203,7 @@ then
 else
     echo there is no such "$SERVICE15 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 statistic.py
+    /usr/bin/python2.7 statistic.py &
 
 fi
 
@@ -244,7 +229,7 @@ then
 else
     echo there is no such "$SERVICE17 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 candles.py
+    /usr/bin/python2.7 candles.py &
 
 fi
 
@@ -260,7 +245,7 @@ then
 else
     echo there is no such "$SERVICE18 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 check_candle_signals.py
+    /usr/bin/python2.7 check_candle_signals.py &
 
 fi
 
@@ -274,7 +259,7 @@ then
 else
     echo there is no such "$SERVICE19 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 chart_creator5.py
+    /usr/bin/python2.7 chart_creator5.py &
 
 fi
 
@@ -304,7 +289,7 @@ then
 else
     echo there is no such "$SERVICE21 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 order_counts.py
+    /usr/bin/python2.7 order_counts.py &
 
 fi
 
@@ -319,7 +304,7 @@ then
 else
     echo there is no such "$SERVICE22 service, starting"
     cd /root/PycharmProjects/cryptobot
-    /usr/bin/python2.7 stat.py
+    /usr/bin/python2.7 stat.py &
 
 fi
 
