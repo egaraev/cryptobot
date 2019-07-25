@@ -274,10 +274,10 @@ def learn():
                         last_word = last_line.split()[0]
                         last_word2 = last_line.split()[1]
                         #mean_price = (float(last_word) + float(last_word2)) / 2
-                        mean_price = float(last_word) / 10
+                        mean_price = float(last_word2) / 10
                         predicted_price = format(float(mean_price), '.6f')
 
-                    last_word = float(last_word)/10
+                    last_word = float(last_word2)/10
 
                     if last_word > current_price:
                         direction = 'UP'
@@ -480,10 +480,10 @@ def learn():
                         last_word = last_line.split()[0]
                         last_word2 = last_line.split()[1]
                         #mean_price = (float(last_word) + float(last_word2)) / 2
-                        mean_price = float(last_word) / 10
+                        mean_price = float(last_word2) / 10
                         predicted_price = format(float(mean_price), '.6f')
 
-                    last_word = float(last_word)/10
+                    last_word = float(last_word2)/10
 
                     if last_word > current_price:
                         direction = 'UP'
