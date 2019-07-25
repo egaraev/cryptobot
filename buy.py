@@ -298,7 +298,7 @@ def tick():
                     if ((stop_bot == 0) and stop_bot_force == 0)  and HaD_candle_current=="had_direction_up0" and Ha_candle_current=="ha_direction_up0" and (Ha_candle_previous=="ha_direction_down1" or Ha_candle_previous_1=="ha_direction_down2" or (Ha_candle_previous=="ha_direction_down1" and Ha_candle_previous_1=="ha_direction_down2")) and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP")   and (
                                         currtime - ha_time_second < 2000) and (
-                                currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U' and negative<15:
+                                currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U' and negative<'15':
                             #balance_res = get_balance_from_market(market)
                             #current_balance = balance_res['result']['Available']
 
