@@ -229,7 +229,7 @@ def tick():
                                 HA_trend != "DOWN" and HA_trend != "Revers-DOWN" and ha_trend != "DOWN" and ha_trend != "Revers-DOWN" ) and (
                                 HAH_trend == "UP" or HAH_trend == "Revers-UP" or hah_trend=="UP" or hah_trend=="Revers-UP"))  and (
                                         currtime - ha_time_second < 2000) and (
-                                currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U' and buy_count>sell_count:
+                                currtime - strike_time > 36000) and current_order_count <= max_orders and last>fivehourcurrentopen and last>currentopen and hour!='D' and (currtime - strike_time2 > 36000) and day=='U' and buy_count>sell_count and negative<'15':
                             #balance_res = get_balance_from_market(market)
                             #current_balance = balance_res['result']['Available']
 
