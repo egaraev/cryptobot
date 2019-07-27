@@ -19,10 +19,10 @@ import simplejson
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
 currtime = int(round(time.time()))
-starttime = str(currtime - 16000000) #for 1800 period 6 month
+starttime = str(currtime - 20000000) #for 1800 period 6 month
 #starttime = str(millis - 64000000) #for 7200 period 24 month
 period = str(1800)
-epochs = 50
+epochs = 100
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 
