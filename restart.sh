@@ -129,7 +129,15 @@ fi
 
 
 
-#PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
+PID10=`ps aux | awk '/btc_ha.py/ && !/awk/ { print $2 }'`
+echo "$PID10"
+if [ "$PID10" ]
+then
+        echo "Process exists, lets kill it"
+        kill $PID10
+else
+        echo "Process absent, moving to other process"
+fi
 
 
 
