@@ -37,17 +37,16 @@ fi
 #fi
 #+++++
 
-#SERVICE3='neuralprediction.py'
+SERVICE3='neuralprediction.py'
 
-#if ps ax | grep -v grep | grep $SERVICE3 > /dev/null
-#then
-#    echo "$SERVICE3 service running "
-#else
-#    echo there is no such "$SERVICE3 service, starting"
-#    cd /root/PycharmProjects/cryptobot
-#    /usr/bin/python2.7 neuralprediction.py 
-
-#fi
+if ps ax | grep -v grep | grep $SERVICE3 > /dev/null
+then
+    echo "$SERVICE3 service running "
+else
+    echo there is no such "$SERVICE3 service, starting"
+    cd /root/PycharmProjects/cryptobot
+    /usr/bin/python2.7 neuralprediction.py 
+fi
 
 
 #SERVICE4='heikin_ashi.py'
@@ -296,15 +295,15 @@ fi
 
 
 
-# SERVICE22='stat.py'
+ SERVICE22='stat.py'
 
-# if ps ax | grep -v grep | grep $SERVICE22 > /dev/null
-# then
-#     echo "$SERVICE22 service running "
-# else
-#     echo there is no such "$SERVICE22 service, starting"
-#     cd /root/PycharmProjects/cryptobot
-#     /usr/bin/python2.7 stat.py &
+ if ps ax | grep -v grep | grep $SERVICE22 > /dev/null
+ then
+     echo "$SERVICE22 service running "
+ else
+     echo there is no such "$SERVICE22 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 stat.py &
 
-# fi
+ fi
 
