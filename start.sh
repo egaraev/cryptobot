@@ -220,17 +220,17 @@ fi
 #fi
 
 
-# SERVICE17='candles.py'
+ SERVICE17='candles.py'
 
-# if ps ax | grep -v grep | grep $SERVICE17 > /dev/null
-# then
-#     echo "$SERVICE17 service running "
-# else
-#     echo there is no such "$SERVICE17 service, starting"
-#     cd /root/PycharmProjects/cryptobot
-#     /usr/bin/python2.7 candles.py &
+ if ps ax | grep -v grep | grep $SERVICE17 > /dev/null
+ then
+     echo "$SERVICE17 service running "
+ else
+     echo there is no such "$SERVICE17 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 candles.py &
 
-# fi
+ fi
 
 
 
@@ -265,17 +265,17 @@ fi
 
 
 
-# SERVICE20='score.py'
+ SERVICE20='score.py'
 
-# if ps ax | grep -v grep | grep $SERVICE20 > /dev/null
-# then
-#     echo "$SERVICE20 service running "
-# else
-#     echo there is no such "$SERVICE20 service, starting"
-#     cd /root/PycharmProjects/cryptobot
-#     /usr/bin/python2.7 score.py &
+ if ps ax | grep -v grep | grep $SERVICE20 > /dev/null
+ then
+     echo "$SERVICE20 service running "
+ else
+     echo there is no such "$SERVICE20 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 score.py &
 
-# fi
+ fi
 
 
 

@@ -12,7 +12,7 @@ import datetime
 c=Client(api_key='', api_secret='')
 
 
-TICK_INTERVAL = 60  # seconds
+TICK_INTERVAL = 600  # seconds
 
 
 
