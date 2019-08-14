@@ -317,7 +317,7 @@ def tick():
                                     sys.exit(1)
                                 finally:
                                     db.close()
-                                    Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
+                                Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
 
 
                             if serf_usd > 0  and (((currentopen == currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose and thirtymin=='U') or (currentopen == currentlow and currentopen < currenthigh and last > prevclose and thirtymin=='U') )):  #and slow_market==1
@@ -411,7 +411,7 @@ def tick():
                                         sys.exit(1)
                                     finally:
                                         db.close()
-
+                                    Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
 
 
@@ -643,6 +643,7 @@ def tick():
                                                 sys.exit(1)
                                             finally:
                                                 db.close()
+                                            Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
                                 else:
 
