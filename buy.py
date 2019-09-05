@@ -167,6 +167,9 @@ def tick():
                         candles_status='DOWN'
                     else:
                         candles_status='OK'
+                        
+                    fivehours= get_candles(market, 'fivemin')['result'][-10:]
+                    
 
 
 
