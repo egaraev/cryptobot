@@ -168,9 +168,22 @@ def tick():
                     else:
                         candles_status='OK'
                         
-                    fivehours= get_candles(market, 'fivemin')['result'][-10:]
+                    lasthour= get_candles(market, 'fivemin')['result'][-13:]
+                    currentmin = float(lasthour[12]['C'])*100000
+                    prev5min = float(lasthour[11]['C'])*100000
+                    prev5min1 = float(lasthour[10]['C'])*100000
+                    prev5min2 = float(lasthour[9]['C'])*100000
+                    prev5min3 = float(lasthour[8]['C'])*100000
+                    prev5min4 = float(lasthour[7]['C'])*100000
+                    prev5min5 = float(lasthour[6]['C'])*100000
+                    prev5min6 = float(lasthour[5]['C'])*100000
+                    prev5min7 = float(lasthour[4]['C'])*100000
+                    prev5min8 = float(lasthour[3]['C'])*100000
+                    prev5min9 = float(lasthour[2]['C'])*100000
+                    prev5min10 = float(lasthour[1]['C'])*100000
+                    prev5min11 = float(lasthour[0]['C'])*100000
                     
-
+                    print last, lasthour
 
 
 
