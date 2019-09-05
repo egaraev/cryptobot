@@ -286,5 +286,19 @@ else
 fi
 
 
+PID23=`ps aux | awk '/grow_percent.py/ && !/awk/ { print $2 }'`
+echo "$PID23"
+if [ "$PID23" ]
+then
+        echo "Process exists, lets kill it"
+        kill $PID23
+else
+        echo "Process absent, moving to other process"
+fi
+
+
+
+
+
 
 
