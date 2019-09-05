@@ -86,18 +86,21 @@ def tick():
 
 
 
- #               try:
- #                   print market, "lets update new score"
- #                   db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
- #                  cursor = db.cursor()
- #                   cursor.execute("update markets set score=%s, score_direction=%s  where market = %s",
- #                                  (score, score_trend, market))
- #                   db.commit()
- #               except MySQLdb.Error, e:
- #                   print "Error %d: %s" % (e.args[0], e.args[1])
- #                   sys.exit(1)
- #               finally:
- #                   db.close()
+                try:
+                    print market, "lets update new grow data"
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute("update markets set grow_hour=%s where market = %s",
+                                   (hourchange, market))
+		    cursor.execute("update stat set grow_hour=%s where market = %s",
+                                   (hourchange, market))
+	
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
 
 
         except:
