@@ -15,21 +15,13 @@ c = Client(api_key="", api_secret="")
 c1 = Client(api_key=config.key,
             api_secret=config.secret)  # Configuring bytrex client with API key/secret from config file
 
-TICK_INTERVAL = 300  # seconds
 
 
 # The main function
 def main():
     print('Starting score module')
+    tick()
 
-    # Running clock forever
-    while True:
-        start = time.time()
-        tick()
-        end = time.time()
-        # Sleep the thread if needed
-        if end - start < TICK_INTERVAL:
-            time.sleep(TICK_INTERVAL - (end - start))
 
 
 ################################################################################################################
