@@ -92,9 +92,6 @@ def tick():
                     cursor = db.cursor()
                     cursor.execute("update markets set grow_hour=%s where market = %s",
                                    (hourchange, market))
-		    cursor.execute("update stat set grow_hour=%s where market = %s",
-                                   (hourchange, market))
-	
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
