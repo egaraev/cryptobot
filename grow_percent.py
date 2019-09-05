@@ -64,8 +64,24 @@ def tick():
                     
                     
                     
-	        print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
-
+	        
+		prev5min11percent= prev5min11/prev5min10*100-100
+		prev5min10percent= prev5min10/prev5min9*100-100
+		prev5min9percent= prev5min9/prev5min8*100-100
+		prev5min8percent= prev5min8/prev5min7*100-100
+		prev5min7percent= prev5min7/prev5min6*100-100
+		prev5min6percent= prev5min6/prev5min5*100-100
+		prev5min5percent= prev5min5/prev5min4*100-100
+		prev5min4percent= prev5min4/prev5min3*100-100
+		prev5min3percent= prev5min3/prev5min2*100-100
+		prev5min2percent= prev5min2/prev5min1*100-100
+		prev5min1percent= prev5min1/prev5min*100-100
+		prev5minpercent= prev5min/currentmin*100-100
+		
+		print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
+		
+		print prev5minpercent, prev5min1percent, prev5min2percent, prev5min3percent, prev5min4percent, prev5min5percent, prev5min6percent, prev5min7percent, prev5min8percent, prev5min9percent, prev5min10percent, prev5min11percent
+		
 
 
 
