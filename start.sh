@@ -307,3 +307,15 @@ fi
 
  fi
 
+
+ SERVICE23='grow_percent.py'
+
+ if ps ax | grep -v grep | grep $SERVICE23 > /dev/null
+ then
+     echo "$SERVICE23 service running "
+ else
+     echo there is no such "$SERVICE23 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 grow_percent.py &
+
+ fi
