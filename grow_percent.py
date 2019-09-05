@@ -19,7 +19,7 @@ c1 = Client(api_key=config.key,
 
 # The main function
 def main():
-    print('Starting score module')
+    print('Starting grow_percent  module')
     tick()
 
 
@@ -28,7 +28,6 @@ def main():
 # what will be done every loop iteration
 def tick():
     market_summ = c.get_market_summaries().json()['result']
-    btc_trend = parameters()[12]
     currtime = int(round(time.time()))
 
 
@@ -65,7 +64,7 @@ def tick():
                     
                     
                     
-                print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
+	        print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
 
 
 
@@ -98,7 +97,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE  market = '%s'" % market)
+    cursor.execute("SELECT * FROM markets WHERE enabled=1 and  market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
