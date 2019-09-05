@@ -46,31 +46,6 @@ def tick():
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
 
-                # Candle analisys
-                lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                currentlow = float(lastcandle[0]['L'])
-                currentopen = float(lastcandle[0]['O'])
-                currenthigh = float(lastcandle[0]['H'])
-                previouscandle = get_candles(market, 'thirtymin')['result'][-2:]
-                prevclose = float(previouscandle[0]['C'])
-                lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
-                currentlow5 = float(lastcandle5[0]['L'])
-                currentopen5 = float(lastcandle5[0]['O'])
-                currenthigh5 = float(lastcandle5[0]['H'])
-                previouscandle5 = get_candles(market, 'fivemin')['result'][-2:]
-                prevclose5 = float(previouscandle5[0]['C'])
-                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hourcurrentopen = float(hourlastcandle[0]['O'])
-                hourcurrenthigh = float(hourlastcandle[0]['H'])
-                hourprevcandle = get_candles(market, 'hour')['result'][-2:]
-                hourprevopen = float(hourprevcandle[0]['O'])
-                hourprevclose = float(hourprevcandle[0]['C'])
-                fivemin = 'NONE'
-                thirtymin = 'NONE'
-                hour = 'NONE'
-                candles_signal_short = str(heikin_ashi(market, 29))
-                candles_signal_long = str(heikin_ashi(market, 30))
-
                 timestamp = int(time.time())
                 day_close = summary['PrevDay']  # Getting day of closing order
                 # Current prices
@@ -80,139 +55,41 @@ def tick():
                 bought_quantity_sql = float(status_orders(market, 2))
                 previous_score = float(heikin_ashi(market, 33))
                 now = datetime.datetime.now()
-
-                HA_trend = heikin_ashi(market, 10)
-                HAD_trend = heikin_ashi(market, 18)
-                HAH_trend = heikin_ashi(market, 20)
-
-
-                if last > currentopen5:
-                    fivemin = 'U'
-                elif last == currenthigh5:
-                    fivemin = 'H'
-                else:
-                    fivemin = 'D'
-
-                if last > currentopen:
-                    thirtymin = 'U'
-                elif last == currenthigh:
-                    thirtymin = 'H'
-                else:
-                    thirtymin = 'D'
-
-                if last > hourcurrentopen:
-                    hour = 'U'
-                elif last == hourcurrenthigh:
-                    hour = 'H'
-                else:
-                    hour = 'D'
+           
+                lasthour = get_candles(market, 'fivemin')['result'][-13:]
+                currentmin = float(lasthour[12]['C'])*100000
+                prev5min = float(lasthour[11]['C'])*100000
+                prev5min1 = float(lasthour[10]['C'])*100000
+                prev5min2 = float(lasthour[9]['C'])*100000
+                prev5min3 = float(lasthour[8]['C'])*100000
+                prev5min4 = float(lasthour[7]['C'])*100000
+                prev5min5 = float(lasthour[6]['C'])*100000
+                prev5min6 = float(lasthour[5]['C'])*100000
+                prev5min7 = float(lasthour[4]['C'])*100000
+                prev5min8 = float(lasthour[3]['C'])*100000
+                prev5min9 = float(lasthour[2]['C'])*100000
+                prev5min10 = float(lasthour[1]['C'])*100000
+                prev5min11 = float(lasthour[0]['C'])*100000
+                    
+                    
+                    
+                print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
 
 
 
 
-                ######################
-                score = 0
-                btc_score = 0
-                ha1_score = 0
-                ha2_score = 0
-                ha3_score = 0
-                ai_score = 0
-                cs_score = 0
-                cs1_score = 0
-                candle_score = 0
-                candle1_score = 0
-                candle2_score = 0
-
-                if btc_trend == "UP":
-                    btc_score = 1
-                else:
-                    btc_score = 0
-
-                if HAD_trend == "Revers-UP" or HAD_trend == "UP":
-                    ha1_score = 1
-                else:
-                    ha1_score = 0
-
-                if HA_trend == "Revers-UP" or HA_trend == "UP":
-                    ha2_score = 2
-                else:
-                    ha2_score = 0
-
-                if HAH_trend == "Revers-UP" or HAH_trend == "UP":
-                    ha3_score = 2
-                else:
-                    ha3_score = 0
-
-                if ai_prediction(market) == "UP":
-                    ai_score = 2
-                else:
-                    ai_score = 0
-
-                if candles_signal_short == "Up":
-                    cs_score = 2
-                else:
-                    cs_score = 0
-
-                if candles_signal_long == "Up":
-                    cs1_score = 2
-                else:
-                    cs1_score = 0
-
-                if hour == "U" or hour == "H":
-                    candle_score = 1
-                else:
-                    candle_score = 0
-
-                if thirtymin == "U" or thirtymin == "H":
-                    candle1_score = 0.5
-                else:
-                    candle1_score = 0
-
-                if fivemin == "U" or fivemin == "H":
-                    candle2_score = 0.5
-                else:
-                    candle2_score = 0
-
-                score = btc_score + ha1_score + ha2_score + ha3_score + ai_score + cs_score + cs1_score + candle_score + candle1_score + candle2_score
-                print market, "score is ", score
-
-                score_trend = "NONE"
-                if score - previous_score > 0:
-                    score_trend = "UP"
-                elif score - previous_score == 0:
-                    score_trend = "NEUTRAL"
-                else:
-                    score_trend = "DOWN"
-
-                serf = percent_serf(market)
-
-
-                try:
-                    print market, "lets update new score"
-                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                    cursor = db.cursor()
-                    cursor.execute("update markets set score=%s, score_direction=%s  where market = %s",
-                                   (score, score_trend, market))
-                    db.commit()
-                except MySQLdb.Error, e:
-                    print "Error %d: %s" % (e.args[0], e.args[1])
-                    sys.exit(1)
-                finally:
-                    db.close()
-
-                if (score_trend =="DOWN" or score_trend =="UP") and status_orders(market, 4)==1:
-
-                    try:
-                        print market, "lets update new score in history"
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' Score: ' + str(score)+' Score_trend: ' + str(score_trend), currtime, status_orders(market, 0)))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+ #               try:
+ #                   print market, "lets update new score"
+ #                   db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+ #                  cursor = db.cursor()
+ #                   cursor.execute("update markets set score=%s, score_direction=%s  where market = %s",
+ #                                  (score, score_trend, market))
+ #                   db.commit()
+ #               except MySQLdb.Error, e:
+ #                   print "Error %d: %s" % (e.args[0], e.args[1])
+ #                   sys.exit(1)
+ #               finally:
+ #                   db.close()
 
 
         except:
@@ -229,7 +106,7 @@ def available_market_list(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE active =1 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM markets WHERE  market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
