@@ -8,7 +8,7 @@ import time
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
 currtime = int(time.time())
-TICK_INTERVAL = 600  # seconds
+TICK_INTERVAL = 300  # seconds
 
 def main():
     print('Starting stat module')
