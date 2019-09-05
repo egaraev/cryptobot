@@ -183,7 +183,7 @@ def tick():
                     prev5min10 = float(lasthour[1]['C'])*100000
                     prev5min11 = float(lasthour[0]['C'])*100000
                     
-                    print last, lasthour
+                    print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11  
 
 
 
