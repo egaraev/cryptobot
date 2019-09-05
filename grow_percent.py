@@ -90,8 +90,8 @@ def tick():
                     print market, "lets update new grow data"
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
-                    cursor.execute("update markets set grow_hour=%s where market = %s",
-                                   (hourchange, market))
+                    cursor.execute("update markets set grow_hour=%s, grow_history=%s where market = %s",
+                                   (hourchange, "last 5 min "+prev5minpercent+" "+prev5min1percent+" "+prev5min2percent+" "+prev5min3percent+" "+prev5min4percent+" "+prev5min5percent+" "+prev5min6percent+" "+prev5min7percent+" "+prev5min8percent+" "+prev5min9percent+" "+prev5min10percent+" "+prev5min11percent,  market))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
