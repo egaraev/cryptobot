@@ -9,6 +9,7 @@ import hashlib
 import MySQLdb
 import sys
 import smtplib
+import math
 
 # c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
 c = Client(api_key="", api_secret="")
