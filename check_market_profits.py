@@ -22,7 +22,7 @@ def SUMM():
                     f= open('data/out2_tmp.csv', 'a')
                     print >> f, str(market)
                     f1=open('data/out3_tmp.csv', 'a')
-                    print >>f1, summ_serf(market)
+                    print >>f1, summ_serf(market)-count(market)*0.5
                     f2 = open('data/out4_tmp.csv', 'a')
                     print >> f2, count(market)
     os.rename('data/out2_tmp.csv', 'data/out2.csv')
