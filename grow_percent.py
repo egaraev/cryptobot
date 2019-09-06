@@ -91,7 +91,7 @@ def tick():
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute("update markets set grow_hour=%s, grow_history=%s where market = %s",
-                                   (hourchange, "last 5 min "+prev5minpercent+" "+prev5min1percent+" "+prev5min2percent+" "+prev5min3percent+" "+prev5min4percent+" "+prev5min5percent+" "+prev5min6percent+" "+prev5min7percent+" "+prev5min8percent+" "+prev5min9percent+" "+prev5min10percent+" "+prev5min11percent,  market))
+                                   (hourchange, "last 5 min "+str(format_float(prev5minpercent))+" "+str(format_float(prev5min1percent))+" "+str(format_float(prev5min2percent))+" "+str(format_float(prev5min3percent))+" "+str(format_float(prev5min4percent))+" "+str(format_float(prev5min5percent))+" "+str(format_float(prev5min6percent))+" "+str(format_float(prev5min7percent))+" "+str(format_float(prev5min8percent))+" "+str(format_float(prev5min9percent))+" "+str(format_float(prev5min10percent))+" "+str(format_float(prev5min11percent)),  market))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -201,6 +201,9 @@ def percent_serf(marketname):
         return float("{0:.2f}".format(row[0]))
     return 0
 
+
+def format_float(f):
+    return "%.4f" % f
 
 if __name__ == "__main__":
     main()
