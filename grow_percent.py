@@ -64,20 +64,72 @@ def tick():
                     
                     
                     
-	        
-		prev5min11percent= prev5min11/prev5min10*100-100
-		prev5min10percent= prev5min10/prev5min9*100-100
-		prev5min9percent= prev5min9/prev5min8*100-100
-		prev5min8percent= prev5min8/prev5min7*100-100
-		prev5min7percent= prev5min7/prev5min6*100-100
-		prev5min6percent= prev5min6/prev5min5*100-100
-		prev5min5percent= prev5min5/prev5min4*100-100
-		prev5min4percent= prev5min4/prev5min3*100-100
-		prev5min3percent= prev5min3/prev5min2*100-100
-		prev5min2percent= prev5min2/prev5min1*100-100
-		prev5min1percent= prev5min1/prev5min*100-100
-		prev5minpercent= prev5min/currentmin*100-100
-		hourchange= last*100000/prev5min11*100-100
+	        if prev5min11>=prev5min10:
+			prev5min11percent= abs(prev5min11/prev5min10*100-100)
+
+		else:
+			prev5min11percent= (prev5min11/prev5min10*100-100)*(-1)
+			
+		if prev5min10>=prev5min9:
+			prev5min10percent= abs(prev5min10/prev5min9*100-100)
+		else:
+			prev5min10percent= (prev5min10/prev5min9*100-100)*(-1)
+		
+		if prev5min9>=prev5min8:
+			prev5min9percent= abs(prev5min9/prev5min8*100-100)
+		else:
+			prev5min9percent= (prev5min9/prev5min8*100-100)*(-1)
+		
+		if prev5min8>=prev5min7:
+			prev5min8percent= abs(prev5min8/prev5min7*100-100)
+		else:
+			prev5min8percent= (prev5min8/prev5min7*100-100)*(-1)
+			
+		if prev5min7>=prev5min6:
+			prev5min7percent= abs(prev5min7/prev5min6*100-100)
+		else:
+			prev5min7percent= (prev5min7/prev5min6*100-100)*(-1)
+		
+		if prev5min6>=prev5min5:
+			prev5min6percent= abs(prev5min6/prev5min5*100-100)
+		else:
+			prev5min6percent= (rev5min6/prev5min5*100-100)*(-1)
+			
+		if prev5min5>=prev5min4:
+			prev5min5percent= abs(prev5min5/prev5min4*100-100)
+		else:
+			prev5min5percent= (prev5min5/prev5min4*100-100)*(-1)
+			
+		if prev5min4>=prev5min3:
+			prev5min4percent= abs(prev5min4/prev5min3*100-100)
+		else:
+			prev5min4percent= (prev5min4/prev5min3*100-100)*(-1)
+			
+		if prev5min3>=prev5min2:
+			prev5min3percent= abs(prev5min3/prev5min2*100-100)
+		else:
+			prev5min3percent= (prev5min3/prev5min2*100-100)*(-1)
+		
+		if prev5min2>=prev5min1:
+			prev5min2percent= abs(prev5min2/prev5min1*100-100)
+		else:
+			prev5min2percent= (prev5min2/prev5min1*100-100)*(-1)
+		
+		if prev5min1>=prev5min:
+			prev5min1percent= abs(prev5min1/prev5min*100-100)
+		else:
+			prev5min1percent= (prev5min1/prev5min*100-100)*(-1)
+			
+		if prev5min>=currentmin:
+			prev5minpercent= abs(prev5min/currentmin*100-100)
+		else:
+			prev5minpercent= (prev5min/currentmin*100-100)*(-1)
+		
+		if last*100000>=prev5min11:
+			hourchange= abs(last*100000/prev5min11*100-100)
+		else:
+			hourchange= (last*100000/prev5min11*100-100)*(-1)
+			
 		
 		print last*100000, currentmin, prev5min, prev5min1, prev5min2, prev5min3, prev5min4, prev5min5, prev5min6, prev5min7, prev5min8, prev5min9, prev5min10, prev5min11
 		
