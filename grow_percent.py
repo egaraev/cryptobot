@@ -65,63 +65,63 @@ def tick():
                     
                     
                     
-	        if prev5min11>=prev5min10:
+	        if prev5min10>=prev5min11:
 			prev5min11percent= math.fabs(prev5min11/prev5min10*100-100)
 
 		else:
 			prev5min11percent= -1*(prev5min11/prev5min10*100-100)
 			
-		if prev5min10>=prev5min9:
+		if prev5min9>=prev5min10:
 			prev5min10percent= math.fabs(prev5min10/prev5min9*100-100)
 		else:
 			prev5min10percent= -1*(prev5min10/prev5min9*100-100)
 		
-		if prev5min9>=prev5min8:
+		if prev5min8>=prev5min9:
 			prev5min9percent= math.fabs(prev5min9/prev5min8*100-100)
 		else:
 			prev5min9percent= -1*(prev5min9/prev5min8*100-100)
 		
-		if prev5min8>=prev5min7:
+		if prev5min7>=prev5min8:
 			prev5min8percent= math.fabs(prev5min8/prev5min7*100-100)
 		else:
 			prev5min8percent= -1*(prev5min8/prev5min7*100-100)
 			
-		if prev5min7>=prev5min6:
+		if prev5min6>=prev5min7:
 			prev5min7percent= math.fabs(prev5min7/prev5min6*100-100)
 		else:
 			prev5min7percent= -1*(prev5min7/prev5min6*100-100)
 		
-		if prev5min6>=prev5min5:
+		if prev5min5>=prev5min6:
 			prev5min6percent= math.fabs(prev5min6/prev5min5*100-100)
 		else:
 			prev5min6percent= -1*(rev5min6/prev5min5*100-100)
 			
-		if prev5min5>=prev5min4:
+		if prev5min4>=prev5min5:
 			prev5min5percent= math.fabs(prev5min5/prev5min4*100-100)
 		else:
 			prev5min5percent= -1*(prev5min5/prev5min4*100-100)
 			
-		if prev5min4>=prev5min3:
+		if prev5min3>=prev5min4:
 			prev5min4percent= math.fabs(prev5min4/prev5min3*100-100)
 		else:
 			prev5min4percent= -1*(prev5min4/prev5min3*100-100)
 			
-		if prev5min3>=prev5min2:
+		if prev5min2>=prev5min3:
 			prev5min3percent= math.fabs(prev5min3/prev5min2*100-100)
 		else:
 			prev5min3percent= -1*(prev5min3/prev5min2*100-100)
 		
-		if prev5min2>=prev5min1:
+		if prev5min1>=prev5min2:
 			prev5min2percent= math.fabs(prev5min2/prev5min1*100-100)
 		else:
 			prev5min2percent= -1*(prev5min2/prev5min1*100-100)
 		
-		if prev5min1>=prev5min:
+		if prev5min>=prev5min1:
 			prev5min1percent= math.fabs(prev5min1/prev5min*100-100)
 		else:
 			prev5min1percent= -1*(prev5min1/prev5min*100-100)
 			
-		if prev5min>=currentmin:
+		if currentmin>=prev5min:
 			prev5minpercent= math.fabs(prev5min/currentmin*100-100)
 		else:
 			prev5minpercent= -1*(prev5min/currentmin*100-100)
