@@ -38,17 +38,17 @@ def tick():
                 
                 print "Beginning of the minute: ", last
                 time.sleep(10)
-                print "First 10 seconds of the minute: ", last
+                print "First 10 seconds of the minute: ", float(summary['Last'])
                 time.sleep(10)
-                print "First 20 seconds of the minute: ", last
+                print "First 20 seconds of the minute: ", float(summary['Last'])
                 time.sleep(10)
-                print "First 30 seconds of the minute: ", last
+                print "First 30 seconds of the minute: ", float(summary['Last'])
                 time.sleep(10)
-                print "First 40 seconds of the minute: ", last
+                print "First 40 seconds of the minute: ", float(summary['Last'])
                 time.sleep(10)
-                print "First 50 seconds of the minute: ", last
+                print "First 50 seconds of the minute: ", float(summary['Last'])
                 time.sleep(10)
-                print "End of the minute: ", last
+                print "End of the minute: ", float(summary['Last'])
                 
                 
                 
