@@ -38,16 +38,34 @@ def tick():
                 
                 print "Beginning of the minute: ", last
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "First 10 seconds of the minute: ", c.get_market_summaries().json()['result']['Last']
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "First 20 seconds of the minute: ", c.get_market_summaries().json()['result']['Last']
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "First 30 seconds of the minute: ", c.get_market_summaries().json()['result']['Last']
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "First 40 seconds of the minute: ", c.get_market_summaries().json()['result']['Last']
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "First 50 seconds of the minute: ", c.get_market_summaries().json()['result']['Last']
                 time.sleep(10)
+                market_summ = c.get_market_summaries().json()['result']
+                market = summary['MarketName']
+                last = float(summary['Last'])
                 print "End of the minute: ", c.get_market_summaries().json()['result']['Last']
                 
                 
