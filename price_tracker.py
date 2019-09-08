@@ -8,6 +8,8 @@ import time
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
 currtime = int(time.time())
+now = datetime.datetime.now()
+currenttime = now.strftime("%Y-%m-%d %H:%M")
 #TICK_INTERVAL = 300  # seconds
 
 def main():
@@ -33,15 +35,17 @@ def tick():
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
-                now = datetime.datetime.now()
-                currenttime = now.strftime("%Y-%m-%d %H:%M")
-                
                 print "Beginning of the minute: ", last
-                time.sleep(10)
-                last = float(summary['Last'])
+                time.sleep(30)
+                
+            if available_market_list(summary['MarketName']):
+                market = summary['MarketName']
+                last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
-                time.sleep(10)
-                last = float(summary['Last'])
+                time.sleep(30)
+           
+
+
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
                 last = float(summary['Last'])
