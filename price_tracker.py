@@ -40,19 +40,21 @@ def tick():
                 
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
-                market = market_summ['MarketName']
+                market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
                 time.sleep(100)
            
 
             if available_market_list(summary['MarketName']):
+                market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
                 time.sleep(100)
                 
             if available_market_list(summary['MarketName']):
+                market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
@@ -60,6 +62,7 @@ def tick():
                 
                 
             if available_market_list(summary['MarketName']):
+                market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
@@ -67,12 +70,14 @@ def tick():
                 
                 
             if available_market_list(summary['MarketName']):
+                market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(100)
                 
             if available_market_list(summary['MarketName']):
+                market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
