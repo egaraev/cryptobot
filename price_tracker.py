@@ -71,7 +71,7 @@ def tick():
                 print "First 50 seconds of the minute: ", last
                 time.sleep(40)
                 
-             if available_market_list(summary['MarketName']):
+            if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
