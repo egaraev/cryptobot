@@ -35,6 +35,23 @@ def tick():
                 last = float(summary['Last'])  # last price
                 now = datetime.datetime.now()
                 currenttime = now.strftime("%Y-%m-%d %H:%M")
+                
+                print "Beginning of the minute: ", last
+                time.sleep(10)
+                print "First 10 seconds of the minute: ", last
+                time.sleep(10)
+                print "First 20 seconds of the minute: ", last
+                time.sleep(10)
+                print "First 30 seconds of the minute: ", last
+                time.sleep(10)
+                print "First 40 seconds of the minute: ", last
+                time.sleep(10)
+                print "First 50 seconds of the minute: ", last
+                time.sleep(10)
+                print "End of the minute: ", last
+                
+                
+                
 
 
 
