@@ -83,7 +83,7 @@ def tick():
             continue               
                 
                 
-     for summary in market_summ: #Loop trough the market summary
+    for summary in market_summ: #Loop trough the market summary
         try:                  
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
@@ -95,7 +95,7 @@ def tick():
         except:
             continue 
             
-     for summary in market_summ: #Loop trough the market summary
+    for summary in market_summ: #Loop trough the market summary
         try:                
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
@@ -108,7 +108,7 @@ def tick():
             continue
             
 
-     for summary in market_summ: #Loop trough the market summary
+    for summary in market_summ: #Loop trough the market summary
         try:    
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
