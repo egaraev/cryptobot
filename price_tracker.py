@@ -30,7 +30,6 @@ def tick():
     market_summ = c.get_market_summaries().json()['result']
     #print market_count()
     #print c.get_market_summaries().json()['result']
-    last =0
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
@@ -38,8 +37,14 @@ def tick():
                 last = float(summary['Last'])  # last price
                 print "Beginning of the minute: ", last
                 time.sleep(50)
-            last=0
+                last=0
                 
+        except:
+            continue              
+                
+                
+    for summary in market_summ: #Loop trough the market summary
+        try:
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
@@ -47,41 +52,64 @@ def tick():
                 print "First 10 seconds of the minute: ", last
                 time.sleep(50)
                 last=0
-
+        except:
+            continue   
+    
+    for summary in market_summ: #Loop trough the market summary
+        try:    
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
                 time.sleep(50)
-            last=0
-                
+                last=0
+                    
+        except:
+            continue
+            
+            
+            
+    for summary in market_summ: #Loop trough the market summary
+        try:                   
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
                 time.sleep(50)
-            last=0
+                last=0
+        except:
+            continue               
                 
                 
+     for summary in market_summ: #Loop trough the market summary
+        try:                  
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
                 time.sleep(50)
-            last=0
-                
-                
+                last=0
+        except:
+            continue 
+            
+     for summary in market_summ: #Loop trough the market summary
+        try:                
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(50)
-            last=0
-                
+                last=0
+        except:
+            continue
+            
+
+     for summary in market_summ: #Loop trough the market summary
+        try:    
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
