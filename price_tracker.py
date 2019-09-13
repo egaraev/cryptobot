@@ -38,7 +38,7 @@ def tick():
                 last = float(summary['Last'])  # last price
                 print "Beginning of the minute: ", last
                 time.sleep(50)
-                last=0
+            last=0
                 
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
@@ -54,7 +54,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
                 time.sleep(50)
-                last=0
+            last=0
                 
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
@@ -62,7 +62,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
                 time.sleep(50)
-                last=0
+            last=0
                 
                 
             if available_market_list(summary['MarketName']):
@@ -71,7 +71,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
                 time.sleep(50)
-                last=0
+            last=0
                 
                 
             if available_market_list(summary['MarketName']):
@@ -80,7 +80,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(50)
-                last=0
+             last=0
                 
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
