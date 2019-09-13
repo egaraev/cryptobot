@@ -80,7 +80,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(50)
-             last=0
+            last=0
                 
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
