@@ -36,8 +36,19 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
                 print "Beginning of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set firstsecond= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
                 
         except:
             continue              
