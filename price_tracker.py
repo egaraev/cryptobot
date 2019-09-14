@@ -10,19 +10,19 @@ c=Client(api_key='', api_secret='')
 currtime = int(time.time())
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
-#TICK_INTERVAL = 300  # seconds
+TICK_INTERVAL = 60  # seconds
 
 def main():
     print('Starting price_tracking module')
 
     # Running clock forever
-#    while True:
-#        start = time.time()
-    tick()
-#        end = time.time()
+    while True:
+        start = time.time()
+        tick()
+        end = time.time()
         # Sleep the thread if needed
-#        if end - start < TICK_INTERVAL:
-#            time.sleep(TICK_INTERVAL - (end - start))
+        if end - start < TICK_INTERVAL:
+            time.sleep(TICK_INTERVAL - (end - start))
 
 
 
