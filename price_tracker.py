@@ -49,6 +49,7 @@ def tick():
                     cursor.execute(
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
+                    cursor.execute('insert into prices(market, start_price, time) values("%s", "%s", "%s")' % (market, last, currtime))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -178,6 +179,9 @@ def tick():
                     cursor.execute(
                         "update markets set sixtyseconds= %s  where market = %s",
                         (last, market))
+                    cursor.execute(
+                        "update prices set end_prices= %s  where market = %s and time =%s",
+                        (last, market, currtime))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
