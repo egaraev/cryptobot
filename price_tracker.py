@@ -29,31 +29,7 @@ def main():
 def tick():
     market_summ = c.get_market_summaries().json()['result']
     #print market_count()
-    #print c.get_market_summaries().json()['result']
-    for summary in market_summ: #Loop trough the market summary
-        try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
-                last = float(summary['Last'])  # last price
-                print "Beginning of the minute: ", last
-                time.sleep(10)
-                try:
-                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                    cursor = db.cursor()
-                    cursor.execute(
-                        "update markets set firstsecond= %s  where market = %s",
-                        (last, market))
-                    db.commit()
-                except MySQLdb.Error, e:
-                    print "Error %d: %s" % (e.args[0], e.args[1])
-                    sys.exit(1)
-                finally:
-                    db.close()
-                
-        except:
-            continue              
-                
-                
+    #print c.get_market_summaries().json()['result']                      
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
