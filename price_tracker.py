@@ -38,7 +38,7 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -66,7 +66,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -93,7 +93,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -119,7 +119,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -143,7 +143,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -169,7 +169,7 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
                 time.sleep(10)
-                print currtime
+                print int(time.time())
                 
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
