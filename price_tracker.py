@@ -28,7 +28,7 @@ def main():
 
 def tick():
     market_summ = c.get_market_summaries().json()['result']
-    #print market_count()
+    print currenttime
     #print c.get_market_summaries().json()['result']                      
     for summary in market_summ: #Loop trough the market summary
         try:
