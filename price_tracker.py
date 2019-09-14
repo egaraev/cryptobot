@@ -28,7 +28,7 @@ def main():
 
 def tick():
     market_summ = c.get_market_summaries().json()['result']
-    print currenttime
+    #print currenttime
     #print c.get_market_summaries().json()['result']                      
     for summary in market_summ: #Loop trough the market summary
         try:
@@ -38,6 +38,7 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
                 time.sleep(10)
+                print currtime
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -65,6 +66,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
+                print currtime
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -91,6 +93,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
                 time.sleep(10)
+                print currtime
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -116,6 +119,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
                 time.sleep(10)
+                print currtime
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -139,6 +143,7 @@ def tick():
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
                 time.sleep(10)
+                print currtime
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -164,6 +169,7 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
                 time.sleep(10)
+                print currtime
                 
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
