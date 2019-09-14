@@ -180,7 +180,7 @@ def tick():
                         "update markets set sixtyseconds= %s  where market = %s",
                         (last, market))
                     cursor.execute(
-                        "update prices set end_prices= %s  where market = %s and time =%s",
+                        "update prices set end_price= %s  where market = %s and time =%s",
                         (last, market, currtime))
                     db.commit()
                 except MySQLdb.Error, e:
