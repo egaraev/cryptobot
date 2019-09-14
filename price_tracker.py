@@ -13,7 +13,7 @@ currenttime = now.strftime("%Y-%m-%d %H:%M")
 #TICK_INTERVAL = 300  # seconds
 
 def main():
-    print('Starting stat module')
+    print('Starting price_tracking module')
 
     # Running clock forever
 #    while True:
@@ -50,8 +50,20 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set tenseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+                
         except:
             continue   
     
@@ -62,8 +74,19 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 20 seconds of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set twentyseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
                     
         except:
             continue
@@ -77,8 +100,20 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 30 seconds of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set thirtyseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+                
         except:
             continue               
                 
@@ -90,8 +125,19 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 40 seconds of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set fourtyseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
         except:
             continue 
             
@@ -102,8 +148,20 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price  
                 print "First 50 seconds of the minute: ", last
-                time.sleep(50)
-                last=0
+                time.sleep(10)
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set fiftyseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+
         except:
             continue
             
@@ -116,38 +174,21 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
                 
-                
-                
-
-
-
-#                try:
-#                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-#                    cursor = db.cursor()
-#                    cursor.execute(
-#                        "update markets set date= %s  where market = %s",
-#                        (currenttime, market))
-#                    cursor.execute('INSERT INTO stat (market, date, current_price, ai_price, ai_direction, ha_direction_hour, ha_direction, ha_direction_daily, percent_chg, volume, candles, candle_signal_short, score, score_direction, positive_sentiments, negative_sentiments, buy_orders_sum, sell_orders_sum, buy_orders_count, sell_orders_count, ha_hour, ha_fivehour, ha_day, ha_candle_previous, ha_candle_current, spread, grow_hour, grow_history, active) SELECT market, date, current_price, ai_price, ai_direction, ha_direction_hour, ha_direction, ha_direction_daily, percent_chg, volume, candles, candle_signal_short,  score, score_direction, positive_sentiments, negative_sentiments, buy_orders_sum, sell_orders_sum, buy_orders_count, sell_orders_count, ha_hour, ha_fivehour, ha_day, ha_candle_previous, ha_candle_current, spread, grow_hour, grow_history, active FROM markets WHERE market="%s"' % (market))
-#                    db.commit()
-#                except MySQLdb.Error, e:
-#                    print "Error %d: %s" % (e.args[0], e.args[1])
-#                    sys.exit(1)
-#                finally:
-#                    db.close()
-
-
-
-
-
-
-
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set sixtyseconds= %s  where market = %s",
+                        (last, market))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+                    
         except:
             continue
-
-
-
-
-
 
 
 
