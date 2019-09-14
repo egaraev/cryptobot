@@ -184,6 +184,7 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
+                time.sleep(10)
                 
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
