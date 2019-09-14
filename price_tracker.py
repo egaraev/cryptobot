@@ -42,6 +42,9 @@ def tick():
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
+                        "update markets set tenseconds= %s, twentyseconds= %s, thirtyseconds= %s, fourtyseconds= %s, fiftyseconds= %s, sixtyseconds= %s   where market = %s",
+                        (0,0,0,0,0,0, market))
+                    cursor.execute(
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
                     db.commit()
