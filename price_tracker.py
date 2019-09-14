@@ -241,6 +241,20 @@ def available_market_list(marketname):
 
 
 
+def get_prices(marketname, value):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM prices WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
+
+
+
 
 if __name__ == "__main__":
     main()
