@@ -10,7 +10,7 @@ c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
 
 now = datetime.datetime.now()
-currenttime = now.strftime("%Y-%m-%d %H:%M")
+
 TICK_INTERVAL = 60  # seconds
 
 def main():
@@ -30,6 +30,7 @@ def main():
 def tick():
     market_summ = c.get_market_summaries().json()['result']
     currtime = int(time.time())
+    currenttime = now.strftime("%Y-%m-%d %H:%M")
     #print currenttime
     #print c.get_market_summaries().json()['result']                      
     for summary in market_summ: #Loop trough the market summary
@@ -52,7 +53,7 @@ def tick():
                     cursor.execute(
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
-                    cursor.execute('insert into prices(market, start_price, time) values("%s", "%s", "%s")' % (market, last, currtime))
+                    cursor.execute('insert into prices(market, start_price, time, date) values("%s", "%s", "%s")' % (market, last, currtime, currenttime))
                                     
                     
                     db.commit()
