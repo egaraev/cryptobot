@@ -501,7 +501,9 @@ def tick():
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
                                              newvalue = summ_serf() + (procent_serf-0.5)
-                                             cursor.execute(currenttime, newvalue, market))
+                                             cursor.execute(
+                                                'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                                                currenttime, newvalue, market))
                                              db.commit()
                                          except MySQLdb.Error, e:
                                              print "Error %d: %s" % (e.args[0], e.args[1])
