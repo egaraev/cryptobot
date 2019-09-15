@@ -66,7 +66,7 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
-                test= get_prices(market, time, 2)
+                test= get_prices(currtime, 2)
                 print test
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
