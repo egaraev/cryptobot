@@ -41,6 +41,7 @@ def tick():
                 print "First 10 seconds of the minute: ", last
                 time.sleep(10)
                 print currtime
+		print summ_percent(market)
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -279,6 +280,22 @@ def get_prices(timestamp, value):
             return row[value]
 
     return False
+
+
+def summ_percent(marketname):
+    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT SUM(percent_change) FROM prices order by id desc limit 5 WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        #if row[0] is not None:
+	if row[1] == marketname:
+            return float("{0:.2f}".format(row[0]))
+            # return 0
+        else:
+            return 0
+
 
 
 
