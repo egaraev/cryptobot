@@ -53,7 +53,7 @@ def tick():
                     cursor.execute(
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
-                    cursor.execute('insert into prices(market, start_price, time, date) values("%s", "%s", "%s")' % (market, last, currtime, currenttime))
+                    cursor.execute('insert into prices(market, start_price, time, date) values("%s", "%s", "%s", "%s")' % (market, last, currtime, currenttime))
                                     
                     
                     db.commit()
