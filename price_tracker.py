@@ -245,15 +245,14 @@ def available_market_list(marketname):
 
 
 
-def get_prices(marketname, timestamp, value):
+def get_prices(timestamp, value):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
     time = timestamp
-    cursor.execute("SELECT * FROM prices WHERE market = '%s' and time = '%s'" % market % time)
+    cursor.execute("SELECT * FROM prices WHERE time = '%s'" % time)
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname and row[5] == timestamp:
+        if row[5] == timestamp:
             return row[value]
 
     return False
