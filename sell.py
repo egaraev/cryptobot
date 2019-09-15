@@ -227,7 +227,7 @@ def tick():
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("33 , Force_stop_bot p:    " + str(format_float(newbid)) + "    t:   " + str(currenttime),currtime, market))
-                                newvalue = summ_serf() + (procent_serf-0.5)
+                                newvalue = summ_serf() + procent_serf
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                 cursor.execute('update orders set active = 0 where market =("%s")' % market)
                                 db.commit()
@@ -309,7 +309,7 @@ def tick():
                                             (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
-                                    newvalue = summ_serf() + (procent_serf-0.5)
+                                    newvalue = summ_serf() + procent_serf
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                     db.commit()
                                 except MySQLdb.Error, e:
@@ -401,7 +401,7 @@ def tick():
                                                 (currtime, market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
-                                        newvalue = summ_serf() + (procent_serf-0.5)
+                                        newvalue = summ_serf() + procent_serf
                                         cursor.execute(
                                             'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                             currenttime, newvalue, market))
@@ -451,7 +451,7 @@ def tick():
 
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
-                                            newvalue = summ_serf() + (procent_serf-0.5)
+                                            newvalue = summ_serf() + procent_serf
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                                 currenttime, newvalue, market))
@@ -500,9 +500,8 @@ def tick():
                                                      ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
-                                             newvalue = summ_serf() + (procent_serf-0.5)
+                                             newvalue = summ_serf() + procent_serf
                                              cursor.execute(
-                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                                  currenttime, newvalue, market))
                                              db.commit()
                                          except MySQLdb.Error, e:
@@ -546,7 +545,7 @@ def tick():
                                                 (sell_signal, currtime, market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
-                                            newvalue = summ_serf() + (procent_serf-0.5)
+                                            newvalue = summ_serf() + procent_serf
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                                 currenttime, newvalue, market))
@@ -633,7 +632,7 @@ def tick():
                                             ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
-                                                newvalue = summ_serf() + (procent_serf-0.5)
+                                                newvalue = summ_serf() + procent_serf
                                                 cursor.execute(
                                                     'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
                                                     currenttime, newvalue, market))
