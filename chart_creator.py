@@ -16,7 +16,7 @@ from sqlalchemy import create_engine
 
 
 engine = create_engine('mysql+pymysql://cryptouser:123456@database-service:3306/cryptodb')
-df = pd.read_sql_query('SELECT serf-0.5 FROM statistics', engine)
+df = pd.read_sql_query('SELECT serf FROM statistics', engine)
 
 #df['day'] = df['date'].astype(str).str[:10]
 #df = df.drop('date', 1)
