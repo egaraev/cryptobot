@@ -196,9 +196,9 @@ def tick():
                 end_minute= get_prices(currtime, 3)
                 
                 if end_minute>=beginning_minute:
-			        percent_change= math.fabs(beginning_minute/end_minute*100-100)
-		        else:
-			        percent_change= -1*(beginning_minute/end_minute*100-100)
+			percent_change= math.fabs(beginning_minute/end_minute*100-100)
+		else:
+			percent_change= -1*(beginning_minute/end_minute*100-100)
                     
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
