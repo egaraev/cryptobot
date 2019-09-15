@@ -37,9 +37,7 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price 
-                
                 print "First 10 seconds of the minute: ", last
-
                 time.sleep(10)
                 print currtime
                 try:
@@ -251,7 +249,7 @@ def get_prices(marketname, value):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM prices WHERE market = '%s' and time = '%s'" % market, time)
+    cursor.execute("SELECT * FROM prices WHERE market = '%s' and time = '%s'" % market and % time)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
