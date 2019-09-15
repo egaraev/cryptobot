@@ -297,6 +297,15 @@ else
 fi
 
 
+PID24=`ps aux | awk '/price_tracker.py/ && !/awk/ { print $2 }'`
+echo "$PID24"
+if [ "$PID24" ]
+then
+        echo "Process exists, lets kill it"
+        kill $PID24
+else
+        echo "Process absent, moving to other process"
+fi
 
 
 
