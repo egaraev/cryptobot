@@ -286,7 +286,7 @@ def summ_percent(marketname):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
-    cursor.execute("SELECT SUM(percent_change) FROM prices order by id desc limit 5 WHERE market = '%s'" % market)
+    cursor.execute("SELECT SUM(percent_change) FROM prices WHERE market = '%s' order by id desc limit 5" % market)
     r = cursor.fetchall()
     for row in r:
         if row[0] is not None:
