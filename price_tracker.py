@@ -4,6 +4,7 @@ import MySQLdb
 import sys
 import datetime
 import time
+import math
 
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
