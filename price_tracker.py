@@ -50,6 +50,8 @@ def tick():
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
                     cursor.execute('insert into prices(market, start_price, time) values("%s", "%s", "%s")' % (market, last, currtime))
+                                    
+                    
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
@@ -66,8 +68,6 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
-                test= get_prices(currtime, 2)
-                print test
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
                 print currtime
@@ -173,6 +173,7 @@ def tick():
                 last = float(summary['Last'])  # last price                
                 print "End of the minute: ", last
                 time.sleep(10)
+                
                 print currtime
                 
                 try:
@@ -184,6 +185,27 @@ def tick():
                     cursor.execute(
                         "update prices set end_price= %s  where market = %s and time =%s",
                         (last, market, currtime))
+                    db.commit()
+                except MySQLdb.Error, e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+                    
+                beginning_minute= get_prices(currtime, 2)    
+                end_minute= get_prices(currtime, 3)
+                
+                if end_minute>=beginning_minute:
+			        percent_change= math.fabs(beginning_minute/end_minute*100-100)
+		        else:
+			        percent_change= -1*(beginning_minute/end_minute*100-100)
+                    
+                try:
+                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update prices set percent_change= %s  where market = %s and time =%s",
+                        (percent_change, market, currtime))
                     db.commit()
                 except MySQLdb.Error, e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
