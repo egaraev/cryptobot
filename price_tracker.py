@@ -204,7 +204,7 @@ def tick():
 		else:
 			percent_change= -1*(beginning_minute/end_minute*100-100)
 			
-		print percent_change
+		print "Percent change is : " percent_change
                     
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
