@@ -52,6 +52,7 @@ echo "<table border='1'>
 <th>Spread</th>
 <th>Grow_hour_%</th>
 <th>Grow_history_%</th>
+<th>Fivemins_history_%</th>
 <th>Active</th>
 </tr>";
 
@@ -85,7 +86,8 @@ echo "<td>" . $row['buy_orders_count'] . "</td>";
 echo "<td>" . $row['sell_orders_count'] . "</td>";
 echo "<td>" . $row['spread'] . "</td>";
 echo "<td>" . $row['grow_hour'] . "</td>";
-echo "<td>" . $row['grow_history'] . "</td>";  
+echo "<td>" . $row['grow_history'] . "</td>"; 
+echo "<td>" . $row['grow_fivemins'] . "</td>";    
 echo "<td>" . $row['active'] . "</td>"; 
 echo "</tr>";
 }
