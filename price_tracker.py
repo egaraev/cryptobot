@@ -38,6 +38,7 @@ def tick():
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
                 print "First 10 seconds of the minute: ", last
+                print get_prices(market, 2)
                 time.sleep(10)
                 print currtime
                 try:
@@ -210,6 +211,8 @@ def status_orders(marketname, value):
 
 
 
+
+
 def heikin_ashi(marketname, value):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
@@ -245,7 +248,7 @@ def get_prices(marketname, value):
     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM prices WHERE market = '%s'" % market)
+    cursor.execute("SELECT * FROM prices WHERE market = '%s' and time = '%s'" % market, % time)
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
