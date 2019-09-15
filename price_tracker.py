@@ -253,7 +253,7 @@ def get_prices(marketname, timestamp, value):
     cursor.execute("SELECT * FROM prices WHERE market = '%s' and time = '%s'" % market % time)
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == marketname and row[5] == timestamp:
             return row[value]
 
     return False
