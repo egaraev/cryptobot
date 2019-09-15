@@ -42,6 +42,7 @@ def tick():
                 time.sleep(10)
                 print currtime
 		summa=summ_percent(market)
+		print summa
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
