@@ -500,9 +500,8 @@ def tick():
                                                      ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
-                                             newvalue = summ_serf() + procent_serf
-                                             cursor.execute(
-                                                 currenttime, newvalue, market))
+                                             newvalue = summ_serf() + (procent_serf-0.5)
+                                             cursor.execute(currenttime, newvalue, market))
                                              db.commit()
                                          except MySQLdb.Error, e:
                                              print "Error %d: %s" % (e.args[0], e.args[1])
