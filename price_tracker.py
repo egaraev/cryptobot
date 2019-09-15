@@ -37,9 +37,9 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price 
-                test= get_prices(market, 2)
+                
                 print "First 10 seconds of the minute: ", last
-                print test
+
                 time.sleep(10)
                 print currtime
                 try:
@@ -67,7 +67,9 @@ def tick():
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
-                last = float(summary['Last'])  # last price  
+                last = float(summary['Last'])  # last price
+                test= get_prices(market, 2)
+                print test
                 print "First 20 seconds of the minute: ", last
                 time.sleep(10)
                 print currtime
