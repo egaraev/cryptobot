@@ -289,8 +289,8 @@ def summ_percent(marketname):
     cursor.execute("SELECT SUM(percent_change) FROM prices order by id desc limit 5 WHERE market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        #if row[0] is not None:
-	if row[1] == marketname:
+        if row[0] is not None:
+	#if row[1] == marketname:
             return float("{0:.2f}".format(row[0]))
             # return 0
         else:
