@@ -41,7 +41,7 @@ def tick():
                 print "First 10 seconds of the minute: ", last
                 time.sleep(10)
                 print currtime
-		summa=summ_percent(market)
+		summa=float(summ_percent(market))
 		print summa
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -292,7 +292,7 @@ def summ_percent(marketname):
     for row in r:
         if row[0] is not None:
 	#if row[1] == marketname:
-            return float("{0:.2f}".format(row[0]))
+            return float("{0:.5f}".format(row[0]))
             # return 0
         else:
             return 0
