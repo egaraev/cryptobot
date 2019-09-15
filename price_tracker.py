@@ -41,13 +41,13 @@ def tick():
                 print "First 10 seconds of the minute: ", last
                 time.sleep(10)
                 print currtime
-		print summ_percent(market)
+		summa=summ_percent(market)
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
-                        "update markets set tenseconds= %s, twentyseconds= %s, thirtyseconds= %s, fourtyseconds= %s, fiftyseconds= %s, sixtyseconds= %s   where market = %s",
-                        (0,0,0,0,0,0, market))
+                        "update markets set tenseconds= %s, twentyseconds= %s, thirtyseconds= %s, fourtyseconds= %s, fiftyseconds= %s, sixtyseconds= %s, grow_fivemins= %s   where market = %s",
+                        (0,0,0,0,0,0,summa, market))
                     cursor.execute(
                         "update markets set tenseconds= %s  where market = %s",
                         (last, market))
