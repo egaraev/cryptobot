@@ -5,7 +5,7 @@ import sys
 import datetime
 import time
 import math
-sys.stdout = open('/root/price_tracker', 'w')
+sys.stdout = open('/root/price_tracker', 'a')
 
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key='', api_secret='')
