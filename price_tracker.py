@@ -31,7 +31,7 @@ def main():
 def tick():
     market_summ = c.get_market_summaries().json()['result']
     currtime = int(time.time())
-    currenttime = now.strftime("%Y-%m-%d %H:%M")
+    
     #print currenttime
     #print c.get_market_summaries().json()['result']                      
     for summary in market_summ: #Loop trough the market summary
@@ -39,8 +39,9 @@ def tick():
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
-                last = float(summary['Last'])  # last price 
-                print "First 10 seconds of the minute: ", last
+                last = float(summary['Last'])  # last price
+		currenttime = now.strftime("%Y-%m-%d %H:%M")
+                print currenttime, "  First 10 seconds of the minute: ", last
                 time.sleep(10)
                 #print currtime
 		summa=float(summ_percent(market))
@@ -175,8 +176,9 @@ def tick():
             if available_market_list(summary['MarketName']):
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
-                last = float(summary['Last'])  # last price                
-                print  "End of the minute: ", last
+                last = float(summary['Last'])  # last price
+		currenttime = now.strftime("%Y-%m-%d %H:%M")
+                print currenttime, "  End of the minute: ", last
                 time.sleep(10)
                 
                # print currtime
