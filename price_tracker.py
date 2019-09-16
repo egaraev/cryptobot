@@ -176,7 +176,7 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price                
-                print "End of the minute: ", last
+                print  "End of the minute: ", last
                 time.sleep(10)
                 
                # print currtime
@@ -205,7 +205,7 @@ def tick():
 		else:
 			percent_change= -1*(beginning_minute/end_minute*100-100)
 			
-		print "Percent change is : ", percent_change
+		print currenttime, "  Percent change is :  ", percent_change
                     
                 try:
                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
