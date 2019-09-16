@@ -40,6 +40,7 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
+		now = datetime.datetime.now()
 		currenttime = now.strftime("%Y-%m-%d %H:%M")
                 print currenttime, "  First 10 seconds of the minute: ", last
                 time.sleep(10)
@@ -177,6 +178,7 @@ def tick():
                 market_summ = c.get_market_summaries().json()['result']
                 market = summary['MarketName']
                 last = float(summary['Last'])  # last price
+		now = datetime.datetime.now()
 		currenttime = now.strftime("%Y-%m-%d %H:%M")
                 print currenttime, "  End of the minute: ", last
                 time.sleep(10)
