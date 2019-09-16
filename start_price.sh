@@ -3,8 +3,8 @@
 
  if ps ax | grep -v grep | grep $SERVICE24 > /dev/null
  then
-     #echo "$SERVICE24 service running "
-     exit
+     echo "$SERVICE24 service running "
+     #exit
  else
      #echo there is no such "$SERVICE24 service, starting"
      cd /root/PycharmProjects/cryptobot
