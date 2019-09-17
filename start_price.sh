@@ -8,6 +8,6 @@
  else
      #echo there is no such "$SERVICE24 service, starting"
      cd /root/PycharmProjects/cryptobot
-     stdbuf -oL /usr/bin/python2.7 price_tracker.py >> /root/price_tracker
+     stdbuf -oL /usr/bin/python2.7 price_tracker.py >> /var/www/html/price.txt 
 
  fi
