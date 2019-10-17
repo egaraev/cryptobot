@@ -226,7 +226,12 @@ def tick():
                                 db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("33 , Force_stop_bot p:    " + str(format_float(newbid)) + "    t:   " + str(currenttime),currtime, market))
+                                cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("33 , Force_stop_bot p:    " + str(format_float(newbid)) + "    t:   " + str(currenttime)  +
+                                            '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
+                                                HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
+                                                hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + ' CS ' + str(
+                                                candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
+                                                ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                 newvalue = summ_serf() + (procent_serf-0.5)
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                 cursor.execute('update orders set active = 0 where market =("%s")' % market)
@@ -298,7 +303,7 @@ def tick():
                                                 HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
                                                 hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + ' CS ' + str(
                                                 candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
-                                                ai_prediction(market)),currtime,
+                                                ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime,
                                             market))
                                     if sell_signal == 0:
                                         cursor.execute(
