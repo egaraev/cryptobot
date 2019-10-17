@@ -232,6 +232,8 @@ def tick():
                                                 hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + ' CS ' + str(
                                                 candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
                                                 ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                netto_value=procent_serf-0.5
+                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                 newvalue = summ_serf() + (procent_serf-0.5)
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                 cursor.execute('update orders set active = 0 where market =("%s")' % market)
@@ -314,6 +316,8 @@ def tick():
                                             (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
+                                    netto_value=procent_serf-0.5
+                                    cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                     newvalue = summ_serf() + (procent_serf-0.5)
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                     db.commit()
@@ -406,6 +410,8 @@ def tick():
                                                 (currtime, market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
+                                        netto_value=procent_serf-0.5
+                                        cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                         newvalue = summ_serf() + (procent_serf-0.5)
                                         cursor.execute(
                                             'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -456,6 +462,8 @@ def tick():
 
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
+                                            netto_value=procent_serf-0.5
+                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -505,6 +513,8 @@ def tick():
                                                      ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
+                                             netto_value=procent_serf-0.5
+                                             cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                              newvalue = summ_serf() + (procent_serf-0.5)
                                              cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -551,6 +561,8 @@ def tick():
                                                 (sell_signal, currtime, market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
+                                            netto_value=procent_serf-0.5
+                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -638,6 +650,8 @@ def tick():
                                             ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
+                                                netto_value=procent_serf-0.5
+                                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                                 newvalue = summ_serf() + (procent_serf-0.5)
                                                 cursor.execute(
                                                     'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
