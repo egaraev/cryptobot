@@ -203,7 +203,8 @@ echo $row['btc_ha_direction_day'];
 
 /////
 
-$result6 = mysqli_query($con,"SELECT SUM(percent_serf)-COUNT(percent_serf)*0.5 FROM orders where active = 0");
+//$result6 = mysqli_query($con,"SELECT SUM(percent_serf)-COUNT(percent_serf)*0.5 FROM orders where active = 0");
+$result6 = mysqli_query($con,"SELECT SUM(percent_serf) FROM orders where active = 0");
 echo "<br><b>Total summ %</b><br>";
 $row = mysqli_fetch_array($result6);
 echo $row['0'];
