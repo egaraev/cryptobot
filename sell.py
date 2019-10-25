@@ -54,6 +54,7 @@ def tick():
             try:
                 if available_market_list(summary['MarketName']):
                     market = summary['MarketName']
+                    print "1"
 
                     #Candle analisys
                     lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
@@ -87,6 +88,7 @@ def tick():
                     bid = float("{0:.4f}".format(summary['Bid']))    #sell price
                     ask = float("{0:.4f}".format(summary['Ask']))    #buy price
                 #How much market has been changed
+                    print "2"
 
 
                 #HOW MUCH TO BUY
@@ -94,6 +96,9 @@ def tick():
                 #BOUGHT PRICE
 
                     newbid=bid - bid*0.002
+                    print "3"
+                    
+                    
 
 
                     #bought_price = get_closed_orders(market, 'PricePerUnit')
@@ -126,6 +131,7 @@ def tick():
                     slow_market=heikin_ashi(market, 3)
                     normal_candles=heikin_ashi(market, 19)
                     score=float(heikin_ashi(market, 33))
+                    print "4"
 
                     if last>currentopen5:
                         fivemin='U'
