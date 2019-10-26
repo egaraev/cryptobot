@@ -238,11 +238,11 @@ def tick():
                                                 hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + ' CS ' + str(
                                                 candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
                                                 ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
-                                netto_value=procent_serf-0.5
+                                cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                netto_value=float(procent_serf-0.5)
                                 cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                 newvalue = summ_serf() + (procent_serf-0.5)
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
-                                cursor.execute('update orders set active = 0 where market =("%s")' % market)
                                 db.commit()
                             except MySQLdb.Error, e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
@@ -322,7 +322,7 @@ def tick():
                                             (currtime, market))
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
-                                    netto_value=procent_serf-0.5
+                                    netto_value=float(procent_serf-0.5)
                                     cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                     newvalue = summ_serf() + (procent_serf-0.5)
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
@@ -416,7 +416,7 @@ def tick():
                                                 (currtime, market))
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
-                                        netto_value=procent_serf-0.5
+                                        netto_value=float(procent_serf-0.5)
                                         cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                         newvalue = summ_serf() + (procent_serf-0.5)
                                         cursor.execute(
@@ -468,7 +468,7 @@ def tick():
 
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
-                                            netto_value=procent_serf-0.5
+                                            netto_value=float(procent_serf-0.5)
                                             cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
@@ -519,7 +519,7 @@ def tick():
                                                      ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
-                                             netto_value=procent_serf-0.5
+                                             netto_value=float(procent_serf-0.5)
                                              cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                              newvalue = summ_serf() + (procent_serf-0.5)
                                              cursor.execute(
@@ -567,7 +567,7 @@ def tick():
                                                 (sell_signal, currtime, market))
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
-                                            netto_value=procent_serf-0.5
+                                            netto_value=float(procent_serf-0.5)
                                             cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
@@ -656,7 +656,7 @@ def tick():
                                             ai_prediction(market)) + ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
-                                                netto_value=procent_serf-0.5
+                                                netto_value=float(procent_serf-0.5)
                                                 cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
                                                 newvalue = summ_serf() + (procent_serf-0.5)
                                                 cursor.execute(
