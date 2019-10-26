@@ -301,14 +301,14 @@ def tick():
                                     format_float(newbid)) + '  and getting  +' + str(format_float(
                                     ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                     format_float((
-                                                     newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                                     newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                 try:
                                     printed = ('   6 -Selling ' + str(format_float(
                                         sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(newbid)) + '  and getting  +' + str(format_float(
                                         ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                         format_float((
-                                                         newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
+                                                         newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
@@ -394,13 +394,13 @@ def tick():
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(ask)) + '  and get  + ' + str(
-                                        format_float(serf * BTC_price)) + ' USD')
+                                        format_float(serf * BTC_price)) + ' USD'    + ' and ' + procent_serf +'  %')
                                     try:
                                         printed = ('    10  - Trying to Sell ' + str(
                                             format_float(
                                                 sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                             format_float(ask)) + '  and get  + ' + str(
-                                            format_float(serf * BTC_price)) + ' USD')
+                                            format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                         db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                              "cryptodb")
                                         cursor = db.cursor()
@@ -451,14 +451,14 @@ def tick():
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(newbid)) + '  and get  + ' + str(
-                                        format_float(serf * BTC_price)) + ' USD')
+                                        format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                         # print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
                                             printed = ('    14  - Trying to sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get  + ' + str(
-                                                format_float(serf * BTC_price)) + ' USD')
+                                                format_float(serf * BTC_price)) + ' USD'  + ' and ' + procent_serf +'  %')
                                             db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -511,7 +511,7 @@ def tick():
                                                  format_float(
                                                      sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                  format_float(newbid)) + '  and lose  ' + str(
-                                                 format_float(serf * BTC_price)) + ' USD')
+                                                 format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                              db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                   "cryptodb")
                                              cursor = db.cursor()
@@ -550,14 +550,14 @@ def tick():
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(newbid)) + '  and get + ' + str(
-                                        format_float(serf * BTC_price)) + ' USD')
+                                        format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                         # print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
                                             printed = ('  18  - Trying to Sell ' + str(
                                                 format_float(
                                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                 format_float(newbid)) + '  and get + ' + str(
-                                                format_float(serf * BTC_price)) + ' USD')
+                                                format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                             db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                  "cryptodb")
                                             cursor = db.cursor()
@@ -644,14 +644,14 @@ def tick():
 #                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
                                 elif (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)): # #WAS profit2
-                                            print ('  22 Prod - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD')
+                                            print ('  22 Prod - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                             # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                             try:
                                                 printed = ('  22 Prod - Trying to sell ' + str(
                                                     format_float(
                                                         sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                                     format_float(newbid)) + '  and lose  ' + str(
-                                                    format_float(serf * BTC_price)) + ' USD')
+                                                    format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                                 db = MySQLdb.connect("database-service", "cryptouser", "123456",
                                                                      "cryptodb")
                                                 cursor = db.cursor()
