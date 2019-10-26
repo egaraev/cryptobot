@@ -102,30 +102,30 @@ fi
 
 
 
-# SERVICE8='check_market_profits.py'
+ SERVICE8='check_market_profits.py'
 
-# if ps ax | grep -v grep | grep $SERVICE8 > /dev/null
-# then
-#     echo "$SERVICE8 service running "
-# else
-#     echo there is no such "$SERVICE8 service, starting"
-#     cd /root/PycharmProjects/cryptobot
-#     /usr/bin/python2.7 check_market_profits.py &
+ if ps ax | grep -v grep | grep $SERVICE8 > /dev/null
+ then
+     echo "$SERVICE8 service running "
+ else
+     echo there is no such "$SERVICE8 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 check_market_profits.py &
 
-# fi
+ fi
 
 
-# SERVICE9='chart_creator2.py'
+ SERVICE9='chart_creator2.py'
 
-# if ps ax | grep -v grep | grep $SERVICE9 > /dev/null
-# then
-#     echo "$SERVICE9 service running "
-# else
-#     echo there is no such "$SERVICE9 service, starting"
-#     cd /root/PycharmProjects/cryptobot
-#     /usr/bin/python2.7 chart_creator2.py &
+ if ps ax | grep -v grep | grep $SERVICE9 > /dev/null
+ then
+     echo "$SERVICE9 service running "
+ else
+     echo there is no such "$SERVICE9 service, starting"
+     cd /root/PycharmProjects/cryptobot
+     /usr/bin/python2.7 chart_creator2.py &
 
-# fi
+ fi
 
 
 #SERVICE10='btc_ha.py'
