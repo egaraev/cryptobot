@@ -1,6 +1,28 @@
-* * * * * /root/PycharmProjects/cryptobot/start.sh >> /root/crontab.out
-0 * * * * /root/PycharmProjects/cryptobot/restart.sh >/dev/null 2>&1
-0 0 * * * yes | cp /var/www/cgi-bin/view.py /root/PycharmProjects/cryptobot/  >/dev/null 2>&1
-*/10  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/enable_market.py >> /root/crontab.out
-*/5  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator.py >> /root/crontab.out
-*/5  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/config_sync.py >> /root/crontab.out
+*/1 * * * * /root/PycharmProjects/cryptobot/start.sh >> /root/crontab.out
+*/1 * * * * /root/PycharmProjects/cryptobot/start_price.sh >> /var/www/html/price.txt 
+0 * * * * /root/PycharmProjects/cryptobot/restart.sh >> /root/crontab.out 
+0 * * * * /root/PycharmProjects/cryptobot/clean.sh >/dev/null 2>&1
+0 0 * * * yes | cp /root/PycharmProjects/cryptobot/index.php  /var/www/html/index.php  >/dev/null 2>&1
+0 0 * * * yes | cp /root/PycharmProjects/cryptobot/stat.php /var/www/html/stat.php  >/dev/null 2>&1
+*/5 * * * * cat /var/www/html/price.txt | grep "Percent change is :" | awk -F: '{if($3<-0.3 || $3>0.3)print$1$2$3}' | sed 's/Percent//g' | sed 's/change//g' |  sed 's/is//g'>/var/www/html/price_filter.txt
+
+*/5 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_ashi.py >> /root/crontab.out
+*/5 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/enable_market.py >> /root/crontab.out 
+*/5 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/aftercount.py >> /root/crontab.out
+*/5 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/order_counts.py >> /root/crontab.out
+
+*/10 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_day.py >> /root/crontab.out
+
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_market_profits.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator2.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_ai.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator3.py
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator4.py  
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/statistic.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_candle_signals.py 
+*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator5.py 
+
+*/30 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/btc_ha.py >> /root/crontab.out 
+*/30 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/btc_status.py >> /root/crontab.out
+*/30  * * * * /usr/bin/python2.7 /root/PycharmProjects/cryptobot/sentiment.py >> /root/crontab.out
