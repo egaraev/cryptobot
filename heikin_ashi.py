@@ -658,10 +658,11 @@ def HA():
                         printed = ('      ' + market + '   Received HA sell signal  ' + '  ' + HA_trend)
                         cursor.execute('update orders set sell = 2 where active=1 and market =("%s")' % market)
                         if status_orders(market, 4)==1:
-                            cursor.execute(
-                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-                                market, str(serf) + ' HA_sell_signal ' + str(2),
-                                currtime, status_orders(market, 0)))
+                            #cursor.execute(
+                            #    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                            #    market, str(serf) + ' HA_sell_signal ' + str(2),
+                            #    currtime, status_orders(market, 0)))
+                            print "OK"
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -677,10 +678,11 @@ def HA():
                         printed = ('      ' + market + '   Received HA sell signal  ' + '  ' + HA_trend)
                         cursor.execute('update orders set sell = 1 where active=1 and market =("%s")' % market)
                         if status_orders(market, 4)==1:
-                            cursor.execute(
-                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-                                market, str(serf) + ' HA_sell_signal ' + str(1),
-                                currtime, status_orders(market, 0)))
+                            #cursor.execute(
+                            #    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                            #    market, str(serf) + ' HA_sell_signal ' + str(1),
+                            #    currtime, status_orders(market, 0)))
+                            print "OK"
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -735,10 +737,11 @@ def HA():
                         printed = ('      '+ market + '   Received HA sell signal  ' + '  ' + HA_trend)
                         cursor.execute('update orders set sell = 0 where active=1 and market =("%s")' % market)
                         if status_orders(market, 4)==1:
-                            cursor.execute(
-                                'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-                                market, str(serf) + ' HA_sell_signal ' + str(0),
-                                currtime, status_orders(market, 0)))
+                            #cursor.execute(
+                            #    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                            #    market, str(serf) + ' HA_sell_signal ' + str(0),
+                            #    currtime, status_orders(market, 0)))
+                            print "OK"
                         db.commit()
                     except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -756,7 +759,8 @@ def HA():
                     printed = ('      '+ market + '   The HA_hour is  ' + HA_trend + '  and HAH is ' + HAH_trend)
                     cursor.execute("update markets set current_price = %s, ha_direction =%s,  ha_direction_hour=%s, ha_candle_previous=%s, 	ha_candle_current=%s, ha_candle_previos_1=%s  where market = %s and active =1",(last, HA_trend,  HAH_trend, Ha_previous_candle, Ha_current_candle, Ha_previous_candle_1, market))
                     if status_orders(market, 4) == 1:
-                        cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, str(serf)+' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend), currtime, status_orders(market, 0)))
+                        #cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, str(serf)+' HA: ' + str(HA_trend) + ' HAH: ' + str(HAH_trend), currtime, status_orders(market, 0)))
+                        print "OK"
                     else:
                         pass
                     cursor.execute("update markets set  ha_fivehour =%s,  ha_hour=%s  where market = %s and active =1",(ha_trend,  hah_trend, market))
