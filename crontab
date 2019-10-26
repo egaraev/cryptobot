@@ -13,15 +13,7 @@
 
 */10 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/heikin_day.py >> /root/crontab.out
 
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator.py 
-#*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_market_profits.py 
-#*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator2.py 
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_ai.py 
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator3.py
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator4.py  
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/statistic.py 
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/check_candle_signals.py 
-*/15 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/chart_creator5.py 
+*/15 * * * *  /root/PycharmProjects/cryptobot/start_charts.sh >> /root/crontab.out 
 
 */30 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/btc_ha.py >> /root/crontab.out 
 */30 * * * *  /usr/bin/python2.7 /root/PycharmProjects/cryptobot/btc_status.py >> /root/crontab.out
