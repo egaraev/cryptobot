@@ -396,8 +396,9 @@ def tick():
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                         if status_orders(market, 4)==1:
-                            cursor.execute(
-                                    'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' fivehour: ' + str(signal1), currtime, status_orders(market, 0)))
+                            #cursor.execute(
+                             #       'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' fivehour: ' + str(signal1), currtime, status_orders(market, 0)))
+                            print "OK"
                         else:
                             pass
                         db.commit()
