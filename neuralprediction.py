@@ -304,8 +304,9 @@ def learn():
                         cursor.execute('update markets set ai_price = %s, ai_time = %s, ai_direction =%s, ai_prev_price = %s, ai_time_human=%s  where market =%s',(predicted_price, currtime, direction, current_price, currenttime, market))
                         cursor.execute('insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         if status_orders(market, 4) == 1:
-                            cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
-                            market, str(serf) + ' AI: ' + str(direction), currtime))
+                            #cursor.execute('insert into orderlogs(market, signals, time) values("%s", "%s", "%s")' % (
+                            #market, str(serf) + ' AI: ' + str(direction), currtime))
+                            print "OK"
                         else:
                             pass
                         db.commit()
@@ -512,8 +513,9 @@ def learn():
                             'insert into predictions (ai_price, ai_time, ai_direction, ai_prev_price, ai_time_human, market, log ) values ("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (
                             predicted_price, currtime, direction, current_price, currenttime, market, printed))
                         if status_orders(market, 4) == 1:
-                            cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
-                            market, str(serf) + ' AI: ' + str(direction), currtime, status_orders(market, 0)))
+                            #cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (
+                            #market, str(serf) + ' AI: ' + str(direction), currtime, status_orders(market, 0)))
+                            print "OK"
                         else:
                             pass
                         db.commit()
