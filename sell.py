@@ -334,7 +334,7 @@ def tick():
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
                                     netto_value=float(procent_serf-0.5)
-                                    cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                    cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                     newvalue = summ_serf() + (procent_serf-0.5)
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                     db.commit()
@@ -428,7 +428,7 @@ def tick():
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
                                         netto_value=float(procent_serf-0.5)
-                                        cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                        cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                         newvalue = summ_serf() + (procent_serf-0.5)
                                         cursor.execute(
                                             'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -480,7 +480,7 @@ def tick():
                                             cursor.execute(
                                                 'update orders set sell = 5 where active=1 and market =("%s")' % market)
                                             netto_value=float(procent_serf-0.5)
-                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -531,7 +531,7 @@ def tick():
                                              cursor.execute(
                                                  'update orders set active = 0 where market =("%s")' % market)
                                              netto_value=float(procent_serf-0.5)
-                                             cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                             cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                              newvalue = summ_serf() + (procent_serf-0.5)
                                              cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -579,7 +579,7 @@ def tick():
                                             cursor.execute(
                                                 'update orders set active = 0 where market =("%s")' % market)
                                             netto_value=float(procent_serf-0.5)
-                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                            cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                             newvalue = summ_serf() + (procent_serf-0.5)
                                             cursor.execute(
                                                 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
@@ -668,7 +668,7 @@ def tick():
                                                 cursor.execute(
                                                     'update orders set active = 0 where market =("%s")' % market)
                                                 netto_value=float(procent_serf-0.5)
-                                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                                 newvalue = summ_serf() + (procent_serf-0.5)
                                                 cursor.execute(
                                                     'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
