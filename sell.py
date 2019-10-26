@@ -248,7 +248,7 @@ def tick():
                                 print "1.7"
                                 netto_value=float(procent_serf-0.5)
                                 print "1.8"
-                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                 print "1.9"
                                 newvalue = summ_serf() + (procent_serf-0.5)
                                 print "1.10"
