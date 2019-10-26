@@ -201,18 +201,18 @@ def tick():
                     db.close()
 
                 if (score_trend =="DOWN" or score_trend =="UP") and status_orders(market, 4)==1:
-
-                    try:
-                        print market, "lets update new score in history"
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' Score: ' + str(score)+' Score_trend: ' + str(score_trend), currtime, status_orders(market, 0)))
-                        db.commit()
-                    except MySQLdb.Error, e:
+                    print market, "lets update new score in history"
+                    #try:
+                        #print market, "lets update new score in history"
+                        #db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        #cursor = db.cursor()
+                        #cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' Score: ' + str(score)+' Score_trend: ' + str(score_trend), currtime, status_orders(market, 0)))
+                        #db.commit()
+                    #except MySQLdb.Error, e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
+                        #sys.exit(1)
+                    #finally:
+                        #db.close()
 
 
         except:
