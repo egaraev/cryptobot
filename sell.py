@@ -228,21 +228,32 @@ def tick():
                             print ('    33 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf * BTC_price)) + ' USD')
                             # print ('22 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                             try:
+                                print "1.1"
                                 printed = ('    33 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf*BTC_price)) + ' USD')
+                                print "1.2"
                                 db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                print "1.3"
                                 cursor = db.cursor()
+                                print "1.4"
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                                print "1.5"
                                 cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("33 , Force_stop_bot p:    " + str(format_float(newbid)) + "    t:   " + str(currenttime)  +
                                             '  BTC: ' + str(btc_trend) + '  HAD: ' + str(HAD_trend) + ' HA: ' + str(
                                                 HA_trend) + ' HAH: ' + str(HAH_trend) + ' HC: ' + str(
                                                 hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin) + ' CS ' + str(
                                                 candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
                                                 ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime, market))
+                                print "1.6"
                                 cursor.execute('update orders set active = 0 where market =("%s")' % market)
+                                print "1.7"
                                 netto_value=float(procent_serf-0.5)
+                                print "1.8"
                                 cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 ORDER BY order_id DESC LIMIT 1 where market =%s', (netto_value,market))
+                                print "1.9"
                                 newvalue = summ_serf() + (procent_serf-0.5)
+                                print "1.10"
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
+                                print "1.11"
                                 db.commit()
                             except MySQLdb.Error, e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
