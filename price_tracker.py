@@ -218,7 +218,7 @@ def tick():
                         "update prices set percent_change= %s  where market = %s and time =%s",
                         (percent_change, market, currtime))
 		    if (status_orders(market, 4)==1) and (percent_change>0.01 or percent_change<-0.01):
-                            cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, percent_change, currtime, status_orders(market, 0)))
+                            cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market, float("{0:.3f}".format(percent_change)), currtime, status_orders(market, 0)))
                     else:
                     	pass
                     db.commit()
