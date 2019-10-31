@@ -293,9 +293,11 @@ def tick():
                             # If curent balance of this currency more then zero
                         elif bought_quantity_sql > 0:
                             ##Check if we have completelly green candle
+                            
 
-
+                            print "Check reason 4"
                             if ((serf_usd > 0 and 2.0>procent_serf>=0.7 and danger_order==1 and max_percent_sql - procent_serf >= 0.3) or  (serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 5>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 9>=max_percent_sql >= 5 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
+                                print "Reason 4 is OK"
                                 print ('   6 -Selling ' + str(format_float(
                                     sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                     format_float(newbid)) + '  and getting  +' + str(format_float(
@@ -303,6 +305,7 @@ def tick():
                                     format_float((
                                                      newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                 try:
+                                    print "Connecting to Mysql to perform seel for reason 4"
                                     printed = ('   6 -Selling ' + str(format_float(
                                         sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
                                         format_float(newbid)) + '  and getting  +' + str(format_float(
@@ -311,9 +314,11 @@ def tick():
                                                          newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
+                                    print "Inserting into logs for reason 4"
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (
                                         currenttime, printed))
                                     # cursor.execute('update orders set active = 0, reason_close = "12 Take profit" where market =("%s")' % market)
+                                    print "Changing db to sell"
                                     cursor.execute(
                                         'update orders set reason_close =%s, sell_time=%s  where active=1 and market =%s', (
                                             "4  TP , price:    " + str(
@@ -324,18 +329,25 @@ def tick():
                                                 candles_signal_short) + ' ' + str(candles_signal_long) + '  AI:' + str(
                                                 ai_prediction(market))+ ' Ha_cande_current: ' +str(Ha_candle_current) + ' Ha_candle_previous ' +str(Ha_candle_previous),currtime,
                                             market))
+                                    print "4.1"
                                     if sell_signal == 0:
                                         cursor.execute(
                                             'update orders set sell = 4 where active=1 and market =("%s")' % market)
+                                    print "4.2"
                                     if max_percent_sql > profit / 1.5:
                                         cursor.execute(
                                             "update markets set strike_time= %s  where market = %s",
                                             (currtime, market))
+                                    print "4.3"
                                     cursor.execute(
                                         'update orders set active = 0 where market =("%s")' % market)
+                                    print "4.4"
                                     netto_value=float(procent_serf-0.5)
+                                    print "4.5"
                                     cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
+                                    print "4.6"
                                     newvalue = summ_serf() + (procent_serf-0.5)
+                                    print "4.7"
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                     db.commit()
                                 except MySQLdb.Error, e:
