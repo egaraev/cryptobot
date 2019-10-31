@@ -556,7 +556,7 @@ def tick():
                                              db.close()
                                          Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
-                                print "Checking reason 14"
+                                #print "Checking reason 14"
                                 elif (serf_usd > 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen):   # # WAS profit2
                                         print ('  18  - Trying to Sell ' + str(
                                         format_float(
@@ -654,7 +654,7 @@ def tick():
 #                                        finally:
 #                                            db.close()
 #                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
-                                print "Checking reason 22"
+                                #print "Checking reason 22"
                                 elif (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)): # #WAS profit2
                                             print ('  22 Prod - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                             # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
