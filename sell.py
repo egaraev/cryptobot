@@ -556,8 +556,8 @@ def tick():
                                              db.close()
                                          Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
-                                print "Checking reason 14"
-                                elif serf_usd > 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen:   # # WAS profit2
+                                #print "Checking reason 14"
+                                elif (serf_usd > 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen):   # # WAS profit2
                                         print ('  18  - Trying to Sell ' + str(
                                         format_float(
                                             sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
