@@ -209,7 +209,7 @@ def tick():
                         #cursor.execute('insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' Score: ' + str(score)+' Score_trend: ' + str(score_trend), currtime, status_orders(market, 0)))
                         #db.commit()
                     #except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        #print "Error %d: %s" % (e.args[0], e.args[1])
                         #sys.exit(1)
                     #finally:
                         #db.close()
