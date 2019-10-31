@@ -296,7 +296,7 @@ def tick():
                             
 
                             print "Check reason 4"
-                            print serf_usd, procent_serf, danger_order, max_percent_sql, hour, and thirtymin, fivemin, slow_market
+                            print serf_usd, procent_serf, danger_order, max_percent_sql, hour, thirtymin, fivemin, slow_market
                             if ((serf_usd > 0 and 2.0>procent_serf>=0.7 and danger_order==1 and max_percent_sql - procent_serf >= 0.3) or  (serf_usd > 0 and max_percent_sql - procent_serf >= 1 and 3>=max_percent_sql >= 2 and fivemin=='D' ) or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.5 and 5>=max_percent_sql >= 3 and thirtymin=='D' and fivemin=='D')   or (serf_usd > 0 and max_percent_sql - procent_serf >= 1.8 and 9>=max_percent_sql >= 5 and hour=='D' and thirtymin=='D' and fivemin=='D')  and slow_market==1):
                                 print "Reason 4 is OK"
                                 print ('   6 -Selling ' + str(format_float(
