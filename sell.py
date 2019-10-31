@@ -400,7 +400,7 @@ def tick():
 
 
                             else:
-
+                                print "Checking reason 6"
                                 if  (serf_usd > 0 and newbid > bought_price_sql * ( 1 + profit)):    # # WAS profit2
                                     print ('    10  - Trying to Sell ' + str(
                                         format_float(
@@ -457,7 +457,7 @@ def tick():
 
 
 
-
+                                print "Checking reason 5"
                                 if (ai_prediction(market) != 'NEUTRAL' and ai_prediction(market) == 'DOWN') and newbid > bought_price_sql * ( 1 + profit/3) and currtime-ai_time_second<7200 and last<hourcurrentopen and (sell_signal != 0):  # #WAS profit2
                                         print ('    14  - Trying to sell ' + str(
                                         format_float(
@@ -513,7 +513,7 @@ def tick():
 
 
 
-
+                                print "Checking reason 13"
                                 elif ((newbid * (1 + profit / 2) < (bought_price_sql )) or procent_serf==min_percent_sql and score<2) and (sell_signal == 2): # #WAS profit2
 
                                          print ('   16  -Trying to Sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD')
@@ -556,7 +556,7 @@ def tick():
                                              db.close()
                                          Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
 
-
+                                print "Checking reason 14"
                                 elif serf_usd > 0 and 2.0>procent_serf>=0.7 and (sell_signal != 0) and last<currentopen:   # # WAS profit2
                                         print ('  18  - Trying to Sell ' + str(
                                         format_float(
@@ -654,7 +654,7 @@ def tick():
 #                                        finally:
 #                                            db.close()
 #                                        Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
-
+                                print "Checking reason 22"
                                 elif (newbid * bought_quantity_sql * (1 + profit) < (bought_price_sql * bought_quantity_sql)): # #WAS profit2
                                             print ('  22 Prod - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and lose  ' + str(format_float(serf * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                             # print ('Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
