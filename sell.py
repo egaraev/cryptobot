@@ -131,7 +131,7 @@ def tick():
                     slow_market=heikin_ashi(market, 3)
                     normal_candles=heikin_ashi(market, 19)
                     score=float(heikin_ashi(market, 33))
-                    candles=heikin_ashi(market, 28)
+                    candles=list(heikin_ashi(market, 28))
                     print "4"
                     print candles[0]
 
