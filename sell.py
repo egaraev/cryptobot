@@ -75,9 +75,6 @@ def tick():
                     hourprevcandle = get_candles(market, 'hour')['result'][-2:]
                     hourprevopen = float("{0:.4f}".format(hourprevcandle[0]['O']))
                     hourprevclose = float("{0:.4f}".format(hourprevcandle[0]['C']))
-                    fivemin='NONE'
-                    thirtymin='NONE'
-                    hour='NONE'
                     candles_signal_short = str(heikin_ashi(market, 29))
                     candles_signal_long = str(heikin_ashi(market, 30))
 
@@ -133,32 +130,13 @@ def tick():
                     score=float(heikin_ashi(market, 33))
                     candles=heikin_ashi(market, 28)
                     print "4"
-                    firstvalue=(candles.split())[1]
-                    secondvalue=(candles.split())[3]
-                    thirdvalue=(candles.split())[5]
+                    hour=(candles.split())[1]
+                    thirtymin=(candles.split())[3]
+                    fivemin=(candles.split())[5]
                     
-                    print firstvalue, secondvalue, thirdvalue
+                    #print firstvalue, secondvalue, thirdvalue
 
-                    if last>currentopen5:
-                        fivemin='U'
-                    elif last==currenthigh5:
-                        fivemin='H'
-                    else:
-                        fivemin='D'
 
-                    if last>currentopen:
-                        thirtymin='U'
-                    elif last==currenthigh:
-                        thirtymin='H'
-                    else:
-                        thirtymin='D'
-
-                    if last>hourcurrentopen:
-                        hour='U'
-                    elif last==hourcurrenthigh:
-                        hour='H'
-                    else:
-                        hour='D'
 
                     print "Market prameters configured, moving to selling for ", market
 
