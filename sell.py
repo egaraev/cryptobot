@@ -133,7 +133,7 @@ def tick():
                     score=float(heikin_ashi(market, 33))
                     candles=heikin_ashi(market, 28)
                     print "4"
-                    print(candles.split(': '))
+                    print(candles.split())
 
                     if last>currentopen5:
                         fivemin='U'
