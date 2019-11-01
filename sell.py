@@ -131,9 +131,9 @@ def tick():
                     slow_market=heikin_ashi(market, 3)
                     normal_candles=heikin_ashi(market, 19)
                     score=float(heikin_ashi(market, 33))
-                    candles=list(heikin_ashi(market, 28))
+                    candles=heikin_ashi(market, 28)
                     print "4"
-                    print candles[0]
+                    print(candles.split(': '))
 
                     if last>currentopen5:
                         fivemin='U'
