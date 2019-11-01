@@ -287,13 +287,13 @@ def tick():
                                 #print ('   6 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  +' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                 try:
                                     print "Connecting to Mysql to perform sell for reason 4"
-                                    #printed = ('   6 -Selling ' + str(format_float(
-                                    #    sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
-                                    #    format_float(newbid)) + '  and getting  +' + str(format_float(
-                                    #    ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
-                                    #    format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
+                                    printed = ('   6 -Selling ' + str(format_float(
+                                        sell_quantity_sql)) + ' units of ' + market + ' for ' + str(
+                                        format_float(newbid)) + '  and getting  +' + str(format_float(
+                                        ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
+                                        format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                     print "Connecting to Mysql to perform sell for reason 4.1"
-                                    db = MySQLdb.connect("database-service", "cryptouser", "1234567", "cryptodb")
+                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     print "Connecting to Mysql to perform sell for reason 4.2"
                                     cursor = db.cursor()
                                     print "Inserting into logs for reason 4"
