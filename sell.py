@@ -292,7 +292,7 @@ def tick():
                                         ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' + ' or ' + str(
                                         format_float((newbid * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD'   + ' and ' + procent_serf +'  %')
                                     print "Connecting to Mysql to perform sell for reason 4.1"
-                                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                    db = MySQLdb.connect("database-service", "cryptouser", "1234567", "cryptodb")
                                     print "Connecting to Mysql to perform sell for reason 4.2"
                                     cursor = db.cursor()
                                     print "Inserting into logs for reason 4"
