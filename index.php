@@ -1,5 +1,7 @@
 <a href="stat.php">Link to STAT Page</a>
 <br><a href="price.txt">Link to Price percent change Page</a><br>
+<br><a href="price_filter.txt">Link to filtered price change page</a><br>
+
 
 <?php
 $con=mysqli_connect("database-service","cryptouser","123456","cryptodb");
