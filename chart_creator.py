@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import MySQLdb
+#import MySQLdb
 import pandas as pd
 import pymysql
 from sqlalchemy import create_engine
@@ -26,7 +26,7 @@ df = pd.read_sql_query('SELECT serf FROM statistics', engine)
 
 df.to_csv('data/out.csv', header=None, sep=' ')
 
-print df
+print (df)
 
 #days, summ = np.loadtxt("out.csv", unpack=True, converters={ 0: mdates.strpdate2num('%Y-%m-%d %H:%M')})
 days, summ = np.loadtxt("data/out.csv", unpack=True)

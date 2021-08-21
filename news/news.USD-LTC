@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Litecoin&#8221; Feed" href="https://transcriptdaily.com/search/Litecoin/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million - Transcript Daily</title>
+<meta name="description" content="Read Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/litecoin-cash-lcc-achieves-market-capitalization-of-10-38-million.html" rel="bookmark" title="Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2540.png&amp;w=150&amp;zc=1" alt="Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/litecoin-cash-lcc-achieves-market-capitalization-of-10-38-million.html" rel="bookmark" title="Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million"><h2>Litecoin Cash (LCC) Achieves Market Capitalization of $10.38 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Cash (CURRENCY:LCC) traded 10% higher  against the US dollar during the 24 hour period ending at 15:00 PM E.T. on August 20th. Litecoin Cash has a market cap of $10.38 million and approximately $4,859.00 worth of Litecoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/litecoin-cash-lcc-achieves-market-capitalization-of-10-38-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/litecoin-24-hour-trading-volume-reaches-1-93-billion-ltc.html" rel="bookmark" title="Litecoin 24 Hour Trading Volume Reaches $1.93 Billion (LTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin 24 Hour Trading Volume Reaches $1.93 Billion (LTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/litecoin-24-hour-trading-volume-reaches-1-93-billion-ltc.html" rel="bookmark" title="Litecoin 24 Hour Trading Volume Reaches $1.93 Billion (LTC)"><h2>Litecoin 24 Hour Trading Volume Reaches $1.93 Billion (LTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded 6.7% higher  against the dollar during the 24-hour period ending at 12:00 PM E.T. on August 20th. One Litecoin coin can currently be purchased for $182.37 or 0.00375999 BTC on major exchanges. In the...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/litecoin-24-hour-trading-volume-reaches-1-93-billion-ltc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/litecoin-cash-price-tops-0-0142-on-major-exchanges-lcc.html" rel="bookmark" title="Litecoin Cash Price Tops $0.0142 on Major Exchanges (LCC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2540.png&amp;w=150&amp;zc=1" alt="Litecoin Cash Price Tops $0.0142 on Major Exchanges (LCC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/litecoin-cash-price-tops-0-0142-on-major-exchanges-lcc.html" rel="bookmark" title="Litecoin Cash Price Tops $0.0142 on Major Exchanges (LCC)"><h2>Litecoin Cash Price Tops $0.0142 on Major Exchanges (LCC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Cash (CURRENCY:LCC) traded 11.4% higher  against the U.S. dollar during the 24 hour period ending at 10:00 AM ET on August 11th. One Litecoin Cash coin can currently be purchased for about $0.0142 or 0.00000031 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/litecoin-cash-price-tops-0-0142-on-major-exchanges-lcc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/litecoin-plus-lcp-price-hits-0-0505-on-exchanges.html" rel="bookmark" title="Litecoin Plus (LCP) Price Hits $0.0505 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lcp.png&amp;w=150&amp;zc=1" alt="Litecoin Plus (LCP) Price Hits $0.0505 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/litecoin-plus-lcp-price-hits-0-0505-on-exchanges.html" rel="bookmark" title="Litecoin Plus (LCP) Price Hits $0.0505 on Exchanges"><h2>Litecoin Plus (LCP) Price Hits $0.0505 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Plus (CURRENCY:LCP) traded up 10% against the U.S. dollar during the twenty-four hour period ending at 15:00 PM ET on August 9th. One Litecoin Plus coin can currently be purchased for about $0.0505 or 0.00000109 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/litecoin-plus-lcp-price-hits-0-0505-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/litecoin-plus-hits-one-day-volume-of-70-00-lcp.html" rel="bookmark" title="Litecoin Plus Hits One Day Volume of $70.00 (LCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lcp.png&amp;w=150&amp;zc=1" alt="Litecoin Plus Hits One Day Volume of $70.00 (LCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/litecoin-plus-hits-one-day-volume-of-70-00-lcp.html" rel="bookmark" title="Litecoin Plus Hits One Day Volume of $70.00 (LCP)"><h2>Litecoin Plus Hits One Day Volume of $70.00 (LCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Plus (CURRENCY:LCP) traded 1% higher  against the U.S. dollar during the 24-hour period ending at 17:00 PM Eastern on August 8th. Litecoin Plus has a market cap of $130,117.40 and approximately $70.00 worth of Litecoin Plus...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/litecoin-plus-hits-one-day-volume-of-70-00-lcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/litecoin-trading-7-2-higher-over-last-week-ltc.html" rel="bookmark" title="Litecoin Trading 7.2% Higher  Over Last Week (LTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin Trading 7.2% Higher  Over Last Week (LTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/litecoin-trading-7-2-higher-over-last-week-ltc.html" rel="bookmark" title="Litecoin Trading 7.2% Higher  Over Last Week (LTC)"><h2>Litecoin Trading 7.2% Higher  Over Last Week (LTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded up 4.4% against the US dollar during the 24-hour period ending at 17:00 PM E.T. on August 7th. Litecoin has a total market cap of $10.34 billion and approximately $2.07 billion worth of Litecoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/litecoin-trading-7-2-higher-over-last-week-ltc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/litecoin-cash-lcc-reaches-1-day-volume-of-1900-00.html" rel="bookmark" title="Litecoin Cash (LCC) Reaches 1-Day Volume of $1,900.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2540.png&amp;w=150&amp;zc=1" alt="Litecoin Cash (LCC) Reaches 1-Day Volume of $1,900.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/litecoin-cash-lcc-reaches-1-day-volume-of-1900-00.html" rel="bookmark" title="Litecoin Cash (LCC) Reaches 1-Day Volume of $1,900.00"><h2>Litecoin Cash (LCC) Reaches 1-Day Volume of $1,900.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Cash (CURRENCY:LCC) traded up 9% against the US dollar during the twenty-four hour period ending at 22:00 PM E.T. on August 6th. Over the last week, Litecoin Cash has traded down 8.6% against the US dollar. One Litecoin Cash...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/litecoin-cash-lcc-reaches-1-day-volume-of-1900-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/litecoin-ltc-24-hour-volume-hits-1-61-billion.html" rel="bookmark" title="Litecoin (LTC) 24-Hour Volume Hits $1.61 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin (LTC) 24-Hour Volume Hits $1.61 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/litecoin-ltc-24-hour-volume-hits-1-61-billion.html" rel="bookmark" title="Litecoin (LTC) 24-Hour Volume Hits $1.61 Billion"><h2>Litecoin (LTC) 24-Hour Volume Hits $1.61 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded 1.2% higher  against the U.S. dollar during the 24-hour period ending at 21:00 PM E.T. on August 5th. One Litecoin coin can currently be bought for about $142.91 or 0.00355882 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/06/litecoin-ltc-24-hour-volume-hits-1-61-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/litecoin-trading-up-4-7-this-week-ltc.html" rel="bookmark" title="Litecoin Trading Up 4.7% This Week (LTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin Trading Up 4.7% This Week (LTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/litecoin-trading-up-4-7-this-week-ltc.html" rel="bookmark" title="Litecoin Trading Up 4.7% This Week (LTC)"><h2>Litecoin Trading Up 4.7% This Week (LTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded down 4.1% against the U.S. dollar during the 1-day period ending at 12:00 PM Eastern on August 3rd. One Litecoin coin can now be purchased for approximately $138.36 or 0.00362919 BTC on exchanges. During...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/litecoin-trading-up-4-7-this-week-ltc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/litecoin-plus-price-up-24-9-over-last-7-days-lcp.html" rel="bookmark" title="Litecoin Plus Price Up 24.9% Over Last 7 Days (LCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lcp.png&amp;w=150&amp;zc=1" alt="Litecoin Plus Price Up 24.9% Over Last 7 Days (LCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/litecoin-plus-price-up-24-9-over-last-7-days-lcp.html" rel="bookmark" title="Litecoin Plus Price Up 24.9% Over Last 7 Days (LCP)"><h2>Litecoin Plus Price Up 24.9% Over Last 7 Days (LCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Plus (CURRENCY:LCP) traded 1.1% lower  against the US dollar during the twenty-four hour period ending at 0:00 AM ET on July 31st. Litecoin Plus has a market capitalization of $145,516.68 and $37.00 worth of Litecoin Plus...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/litecoin-plus-price-up-24-9-over-last-7-days-lcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/31/litecoin-cash-reaches-market-capitalization-of-9-30-million-lcc.html" rel="bookmark" title="Litecoin Cash Reaches Market Capitalization of $9.30 Million (LCC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2540.png&amp;w=150&amp;zc=1" alt="Litecoin Cash Reaches Market Capitalization of $9.30 Million (LCC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/31/litecoin-cash-reaches-market-capitalization-of-9-30-million-lcc.html" rel="bookmark" title="Litecoin Cash Reaches Market Capitalization of $9.30 Million (LCC)"><h2>Litecoin Cash Reaches Market Capitalization of $9.30 Million (LCC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 31st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Cash (CURRENCY:LCC) traded 0.6% lower  against the dollar during the 1 day period ending at 8:00 AM E.T. on July 31st. Over the last seven days, Litecoin Cash has traded 13.8% higher  against the dollar. Litecoin Cash has...&nbsp;<a href='https://transcriptdaily.com/2021/07/31/litecoin-cash-reaches-market-capitalization-of-9-30-million-lcc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/litecoin-plus-24-hour-volume-hits-69-00-lcp.html" rel="bookmark" title="Litecoin Plus 24 Hour Volume Hits $69.00 (LCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lcp.png&amp;w=150&amp;zc=1" alt="Litecoin Plus 24 Hour Volume Hits $69.00 (LCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/litecoin-plus-24-hour-volume-hits-69-00-lcp.html" rel="bookmark" title="Litecoin Plus 24 Hour Volume Hits $69.00 (LCP)"><h2>Litecoin Plus 24 Hour Volume Hits $69.00 (LCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Plus (CURRENCY:LCP) traded 3.9% higher  against the US dollar during the 24-hour period ending at 14:00 PM E.T. on July 29th. One Litecoin Plus coin can currently be purchased for $0.0497 or 0.00000125 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/07/29/litecoin-plus-24-hour-volume-hits-69-00-lcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/litecoin-reaches-market-cap-of-9-32-billion-ltc.html" rel="bookmark" title="Litecoin Reaches Market Cap of $9.32 Billion (LTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin Reaches Market Cap of $9.32 Billion (LTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/litecoin-reaches-market-cap-of-9-32-billion-ltc.html" rel="bookmark" title="Litecoin Reaches Market Cap of $9.32 Billion (LTC)"><h2>Litecoin Reaches Market Cap of $9.32 Billion (LTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded 1.9% higher  against the U.S. dollar during the 1 day period ending at 10:00 AM Eastern on July 29th. Litecoin has a market capitalization of $9.32 billion and approximately $1.65 billion worth of Litecoin...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/litecoin-reaches-market-cap-of-9-32-billion-ltc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/litecoin-plus-lcp-price-up-27-3-over-last-week.html" rel="bookmark" title="Litecoin Plus (LCP) Price Up 27.3% Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lcp.png&amp;w=150&amp;zc=1" alt="Litecoin Plus (LCP) Price Up 27.3% Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/litecoin-plus-lcp-price-up-27-3-over-last-week.html" rel="bookmark" title="Litecoin Plus (LCP) Price Up 27.3% Over Last Week"><h2>Litecoin Plus (LCP) Price Up 27.3% Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Plus (CURRENCY:LCP) traded down 0.8% against the US dollar during the 1 day period ending at 19:00 PM E.T. on July 27th. One Litecoin Plus coin can currently be bought for $0.0472 or 0.00000123 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/litecoin-plus-lcp-price-up-27-3-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/litecoin-ltc-price-reaches-132-41-on-top-exchanges.html" rel="bookmark" title="Litecoin (LTC) Price Reaches $132.41 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2.png&amp;w=150&amp;zc=1" alt="Litecoin (LTC) Price Reaches $132.41 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/litecoin-ltc-price-reaches-132-41-on-top-exchanges.html" rel="bookmark" title="Litecoin (LTC) Price Reaches $132.41 on Top Exchanges"><h2>Litecoin (LTC) Price Reaches $132.41 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin (CURRENCY:LTC) traded up 5.9% against the U.S. dollar during the twenty-four hour period ending at 17:00 PM E.T. on July 26th. Litecoin has a total market cap of $8.84 billion and $2.08 billion worth of Litecoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/litecoin-ltc-price-reaches-132-41-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/litecoin-cash-trading-up-13-8-over-last-7-days-lcc.html" rel="bookmark" title="Litecoin Cash Trading Up 13.8% Over Last 7 Days (LCC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2540.png&amp;w=150&amp;zc=1" alt="Litecoin Cash Trading Up 13.8% Over Last 7 Days (LCC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/litecoin-cash-trading-up-13-8-over-last-7-days-lcc.html" rel="bookmark" title="Litecoin Cash Trading Up 13.8% Over Last 7 Days (LCC)"><h2>Litecoin Cash Trading Up 13.8% Over Last 7 Days (LCC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Litecoin Cash (CURRENCY:LCC) traded up 10.8% against the dollar during the 1 day period ending at 23:00 PM ET on July 25th. One Litecoin Cash coin can currently be purchased for $0.0127 or 0.00000033 BTC on popular exchanges. In the...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/litecoin-cash-trading-up-13-8-over-last-7-days-lcc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/24/litecointoken-hits-market-cap-of-3753-15-ltk.html" rel="bookmark" title="LitecoinToken Hits Market Cap of $3,753.15 (LTK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3807.png&amp;w=150&amp;zc=1" alt="LitecoinToken Hits Market Cap of $3,753.15 (LTK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/24/litecointoken-hits-market-cap-of-3753-15-ltk.html" rel="bookmark" title="LitecoinToken Hits Market Cap of $3,753.15 (LTK)"><h2>LitecoinToken Hits Market Cap of $3,753.15 (LTK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 24th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						LitecoinToken (CURRENCY:LTK) traded 33.3% lower  against the U.S. dollar during the 1-day period ending at 17:00 PM ET on July 24th. During the last seven days, LitecoinToken has traded 20% lower  against the U.S. dollar. One LitecoinToken...&nbsp;<a href='https://transcriptdaily.com/2021/07/24/litecointoken-hits-market-cap-of-3753-15-ltk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/masari-hits-market-capitalization-of-923181-59-msr.html" rel="bookmark" title="Masari Hits Market Capitalization of $923,181.59 (MSR)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2674.png&amp;w=150&amp;zc=1" alt="Masari Hits Market Capitalization of $923,181.59 (MSR)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/masari-hits-market-capitalization-of-923181-59-msr.html" rel="bookmark" title="Masari Hits Market Capitalization of $923,181.59 (MSR)"><h2>Masari Hits Market Capitalization of $923,181.59 (MSR)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Masari (CURRENCY:MSR) traded 12.8% lower  against the U.S. dollar during the one day period ending at 8:00 AM E.T. on August 21st. Masari has a total market capitalization of $923,181.59 and approximately $4,321.00 worth of Masari...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/masari-hits-market-capitalization-of-923181-59-msr.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/arionum-aro-price-tops-0-0005-on-major-exchanges.html" rel="bookmark" title="Arionum (ARO) Price Tops $0.0005 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/aro.jpg&amp;w=150&amp;zc=1" alt="Arionum (ARO) Price Tops $0.0005 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/arionum-aro-price-tops-0-0005-on-major-exchanges.html" rel="bookmark" title="Arionum (ARO) Price Tops $0.0005 on Major Exchanges"><h2>Arionum (ARO) Price Tops $0.0005 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Arionum (CURRENCY:ARO) traded 3.2% higher  against the dollar during the twenty-four hour period ending at 0:00 AM E.T. on August 20th. Arionum has a market cap of $77,597.56 and approximately $20.00 worth of Arionum was traded on...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/arionum-aro-price-tops-0-0005-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/straks-stak-reaches-1-day-volume-of-2-00.html" rel="bookmark" title="STRAKS (STAK) Reaches 1-Day Volume of $2.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2332.png&amp;w=150&amp;zc=1" alt="STRAKS (STAK) Reaches 1-Day Volume of $2.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/straks-stak-reaches-1-day-volume-of-2-00.html" rel="bookmark" title="STRAKS (STAK) Reaches 1-Day Volume of $2.00"><h2>STRAKS (STAK) Reaches 1-Day Volume of $2.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						STRAKS (CURRENCY:STAK) traded 30.7% higher  against the dollar during the 24 hour period ending at 22:00 PM Eastern on August 20th. STRAKS has a market cap of $45,655.14 and $2.00 worth of STRAKS was traded on exchanges in the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/straks-stak-reaches-1-day-volume-of-2-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/flexacoin-price-hits-0-0061-on-top-exchanges-fxc.html" rel="bookmark" title="Flexacoin Price Hits $0.0061 on Top Exchanges (FXC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/fxc.png&amp;w=150&amp;zc=1" alt="Flexacoin Price Hits $0.0061 on Top Exchanges (FXC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/flexacoin-price-hits-0-0061-on-top-exchanges-fxc.html" rel="bookmark" title="Flexacoin Price Hits $0.0061 on Top Exchanges (FXC)"><h2>Flexacoin Price Hits $0.0061 on Top Exchanges (FXC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Flexacoin (CURRENCY:FXC) traded up 5.6% against the US dollar during the one day period ending at 21:00 PM E.T. on August 20th. One Flexacoin coin can currently be purchased for about $0.0061 or 0.00000026 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/flexacoin-price-hits-0-0061-on-top-exchanges-fxc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/gcn-coin-gcn-price-reaches-0-0000.html" rel="bookmark" title="GCN Coin (GCN) Price Reaches $0.0000" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/730.png&amp;w=150&amp;zc=1" alt="GCN Coin (GCN) Price Reaches $0.0000" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/gcn-coin-gcn-price-reaches-0-0000.html" rel="bookmark" title="GCN Coin (GCN) Price Reaches $0.0000"><h2>GCN Coin (GCN) Price Reaches $0.0000</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						GCN Coin (CURRENCY:GCN) traded up 4% against the US dollar during the one day period ending at 20:00 PM E.T. on August 20th. GCN Coin has a total market cap of $92,658.88 and $5.00 worth of GCN Coin was traded on exchanges in the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/gcn-coin-gcn-price-reaches-0-0000.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/globalboost-y-24-hour-volume-reaches-69603-00-bsty.html" rel="bookmark" title="GlobalBoost-Y 24 Hour Volume Reaches $69,603.00 (BSTY)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/644.png&amp;w=150&amp;zc=1" alt="GlobalBoost-Y 24 Hour Volume Reaches $69,603.00 (BSTY)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/globalboost-y-24-hour-volume-reaches-69603-00-bsty.html" rel="bookmark" title="GlobalBoost-Y 24 Hour Volume Reaches $69,603.00 (BSTY)"><h2>GlobalBoost-Y 24 Hour Volume Reaches $69,603.00 (BSTY)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						GlobalBoost-Y (CURRENCY:BSTY) traded 52.4% higher  against the US dollar during the 1-day period ending at 19:00 PM E.T. on August 20th. One GlobalBoost-Y coin can now be purchased for $0.0816 or 0.00000166 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/20/globalboost-y-24-hour-volume-reaches-69603-00-bsty.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/bitzeny-price-reaches-0-0064-on-major-exchanges-zny.html" rel="bookmark" title="Bitzeny Price Reaches $0.0064 on Major Exchanges (ZNY)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/990.png&amp;w=150&amp;zc=1" alt="Bitzeny Price Reaches $0.0064 on Major Exchanges (ZNY)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/bitzeny-price-reaches-0-0064-on-major-exchanges-zny.html" rel="bookmark" title="Bitzeny Price Reaches $0.0064 on Major Exchanges (ZNY)"><h2>Bitzeny Price Reaches $0.0064 on Major Exchanges (ZNY)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitzeny (CURRENCY:ZNY) traded 19.4% lower  against the U.S. dollar during the 24-hour period ending at 18:00 PM E.T. on August 20th. Bitzeny has a market capitalization of $482,748.38 and $529.00 worth of Bitzeny was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/bitzeny-price-reaches-0-0064-on-major-exchanges-zny.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/gamecredits-game-hits-one-day-trading-volume-of-1-27-million.html" rel="bookmark" title="GameCredits (GAME) Hits One Day Trading Volume of $1.27 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/576.png&amp;w=150&amp;zc=1" alt="GameCredits (GAME) Hits One Day Trading Volume of $1.27 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/gamecredits-game-hits-one-day-trading-volume-of-1-27-million.html" rel="bookmark" title="GameCredits (GAME) Hits One Day Trading Volume of $1.27 Million"><h2>GameCredits (GAME) Hits One Day Trading Volume of $1.27 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						GameCredits (CURRENCY:GAME) traded up 11.1% against the U.S. dollar during the 1-day period ending at 16:00 PM E.T. on August 20th. One GameCredits coin can currently be bought for about $0.18 or 0.00000379 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/20/gamecredits-game-hits-one-day-trading-volume-of-1-27-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/monacoin-mona-price-up-3-2-this-week.html" rel="bookmark" title="MonaCoin (MONA) Price Up 3.2% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/213.png&amp;w=150&amp;zc=1" alt="MonaCoin (MONA) Price Up 3.2% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/monacoin-mona-price-up-3-2-this-week.html" rel="bookmark" title="MonaCoin (MONA) Price Up 3.2% This Week"><h2>MonaCoin (MONA) Price Up 3.2% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						MonaCoin (CURRENCY:MONA) traded up 4.4% against the US dollar during the 1 day period ending at 15:00 PM Eastern on August 20th. One MonaCoin coin can currently be purchased for about $1.60 or 0.00003298 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/monacoin-mona-price-up-3-2-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/unify-unify-reaches-1-day-trading-volume-of-14539-00.html" rel="bookmark" title="Unify (UNIFY) Reaches 1-Day Trading Volume of $14,539.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1736.png&amp;w=150&amp;zc=1" alt="Unify (UNIFY) Reaches 1-Day Trading Volume of $14,539.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/unify-unify-reaches-1-day-trading-volume-of-14539-00.html" rel="bookmark" title="Unify (UNIFY) Reaches 1-Day Trading Volume of $14,539.00"><h2>Unify (UNIFY) Reaches 1-Day Trading Volume of $14,539.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Unify (CURRENCY:UNIFY) traded up 4.3% against the dollar during the 1-day period ending at 15:00 PM E.T. on August 20th. Unify has a market cap of $17,627.34 and approximately $14,539.00 worth of Unify was traded on exchanges in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/unify-unify-reaches-1-day-trading-volume-of-14539-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/lotto-price-hits-0-0184-on-top-exchanges-lotto.html" rel="bookmark" title="Lotto Price Hits $0.0184 on Top Exchanges (LOTTO)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lot.png&amp;w=150&amp;zc=1" alt="Lotto Price Hits $0.0184 on Top Exchanges (LOTTO)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/lotto-price-hits-0-0184-on-top-exchanges-lotto.html" rel="bookmark" title="Lotto Price Hits $0.0184 on Top Exchanges (LOTTO)"><h2>Lotto Price Hits $0.0184 on Top Exchanges (LOTTO)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lotto (CURRENCY:LOTTO) traded 0.9% lower  against the U.S. dollar during the 1-day period ending at 12:00 PM E.T. on August 20th. Lotto has a total market capitalization of $36.78 million and $251,521.00 worth of Lotto was traded on...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/lotto-price-hits-0-0184-on-top-exchanges-lotto.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/woodcoin-log-market-cap-hits-435839-94.html" rel="bookmark" title="Woodcoin (LOG) Market Cap Hits $435,839.94" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/log.png&amp;w=150&amp;zc=1" alt="Woodcoin (LOG) Market Cap Hits $435,839.94" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/woodcoin-log-market-cap-hits-435839-94.html" rel="bookmark" title="Woodcoin (LOG) Market Cap Hits $435,839.94"><h2>Woodcoin (LOG) Market Cap Hits $435,839.94</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Woodcoin (CURRENCY:LOG) traded up 19.4% against the dollar during the 1-day period ending at 10:00 AM ET on August 20th. One Woodcoin coin can currently be purchased for $0.0542 or 0.00000112 BTC on cryptocurrency exchanges. Woodcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/woodcoin-log-market-cap-hits-435839-94.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/primas-pst-achieves-market-cap-of-1-25-million.html" rel="bookmark" title="Primas (PST) Achieves Market Cap of $1.25 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1930.png&amp;w=150&amp;zc=1" alt="Primas (PST) Achieves Market Cap of $1.25 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/primas-pst-achieves-market-cap-of-1-25-million.html" rel="bookmark" title="Primas (PST) Achieves Market Cap of $1.25 Million"><h2>Primas (PST) Achieves Market Cap of $1.25 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Primas (CURRENCY:PST) traded up 1.5% against the U.S. dollar during the one day period ending at 8:00 AM ET on August 20th. In the last week, Primas has traded 11.2% lower  against the U.S. dollar. Primas has a market cap of $1.25...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/primas-pst-achieves-market-cap-of-1-25-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/bitcoal-24-hour-volume-reaches-232-00-coal.html" rel="bookmark" title="BitCoal 24 Hour Volume Reaches $232.00 (COAL)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1824.png&amp;w=150&amp;zc=1" alt="BitCoal 24 Hour Volume Reaches $232.00 (COAL)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/bitcoal-24-hour-volume-reaches-232-00-coal.html" rel="bookmark" title="BitCoal 24 Hour Volume Reaches $232.00 (COAL)"><h2>BitCoal 24 Hour Volume Reaches $232.00 (COAL)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitCoal (CURRENCY:COAL) traded down 9% against the dollar during the one day period ending at 7:00 AM Eastern on August 20th. One BitCoal coin can now be bought for about $0.0057 or 0.00000012 BTC on cryptocurrency exchanges. BitCoal...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/bitcoal-24-hour-volume-reaches-232-00-coal.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html" rel="bookmark" title="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html" rel="bookmark" title="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)"><h2>Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lightning Bitcoin (CURRENCY:LBTC) traded 8.1% lower  against the U.S. dollar during the twenty-four hour period ending at 7:00 AM Eastern on August 20th. One Lightning Bitcoin coin can now be bought for about $2.37 or 0.00005029 BTC...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/expanse-24-hour-volume-reaches-12030-00-exp.html" rel="bookmark" title="Expanse 24 Hour Volume Reaches $12,030.00 (EXP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1070.png&amp;w=150&amp;zc=1" alt="Expanse 24 Hour Volume Reaches $12,030.00 (EXP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/expanse-24-hour-volume-reaches-12030-00-exp.html" rel="bookmark" title="Expanse 24 Hour Volume Reaches $12,030.00 (EXP)"><h2>Expanse 24 Hour Volume Reaches $12,030.00 (EXP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Expanse (CURRENCY:EXP) traded 4.2% higher  against the US dollar during the twenty-four hour period ending at 0:00 AM ET on August 19th. During the last week, Expanse has traded down 9.3% against the US dollar. One Expanse coin can...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/expanse-24-hour-volume-reaches-12030-00-exp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/dopecoin-24-hour-trading-volume-tops-25803-00-dope.html" rel="bookmark" title="DopeCoin 24 Hour Trading Volume Tops $25,803.00 (DOPE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/145.png&amp;w=150&amp;zc=1" alt="DopeCoin 24 Hour Trading Volume Tops $25,803.00 (DOPE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/dopecoin-24-hour-trading-volume-tops-25803-00-dope.html" rel="bookmark" title="DopeCoin 24 Hour Trading Volume Tops $25,803.00 (DOPE)"><h2>DopeCoin 24 Hour Trading Volume Tops $25,803.00 (DOPE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DopeCoin (CURRENCY:DOPE) traded 8.7% lower  against the US dollar during the one day period ending at 0:00 AM ET on August 19th. In the last week, DopeCoin has traded 10.8% lower  against the US dollar. DopeCoin has a total market...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/dopecoin-24-hour-trading-volume-tops-25803-00-dope.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/handshake-hns-price-hits-0-27-on-major-exchanges.html" rel="bookmark" title="Handshake (HNS) Price Hits $0.27 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/hns.png&amp;w=150&amp;zc=1" alt="Handshake (HNS) Price Hits $0.27 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/handshake-hns-price-hits-0-27-on-major-exchanges.html" rel="bookmark" title="Handshake (HNS) Price Hits $0.27 on Major Exchanges"><h2>Handshake (HNS) Price Hits $0.27 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Handshake (CURRENCY:HNS) traded up 18.5% against the US dollar during the 24 hour period ending at 23:00 PM Eastern on August 19th. Handshake has a total market capitalization of $111.60 million and $1.30 million worth of Handshake...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/handshake-hns-price-hits-0-27-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/dynamic-trading-34-8-lower-over-last-7-days-dyn.html" rel="bookmark" title="Dynamic  Trading 34.8% Lower  Over Last 7 Days (DYN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1587.png&amp;w=150&amp;zc=1" alt="Dynamic  Trading 34.8% Lower  Over Last 7 Days (DYN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/dynamic-trading-34-8-lower-over-last-7-days-dyn.html" rel="bookmark" title="Dynamic  Trading 34.8% Lower  Over Last 7 Days (DYN)"><h2>Dynamic  Trading 34.8% Lower  Over Last 7 Days (DYN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Dynamic (CURRENCY:DYN) traded up 8.2% against the US dollar during the 24-hour period ending at 23:00 PM E.T. on August 19th. Dynamic has a market cap of $4.66 million and approximately $84.00 worth of Dynamic was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/dynamic-trading-34-8-lower-over-last-7-days-dyn.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/omni-omni-price-hits-3-92-on-top-exchanges.html" rel="bookmark" title="Omni (OMNI) Price Hits $3.92 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/83.png&amp;w=150&amp;zc=1" alt="Omni (OMNI) Price Hits $3.92 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/omni-omni-price-hits-3-92-on-top-exchanges.html" rel="bookmark" title="Omni (OMNI) Price Hits $3.92 on Top Exchanges"><h2>Omni (OMNI) Price Hits $3.92 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Omni (CURRENCY:OMNI) traded up 7.9% against the US dollar during the 1-day period ending at 19:00 PM ET on August 19th. Omni has a market capitalization of $2.21 million and approximately $57,147.00 worth of Omni was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/omni-omni-price-hits-3-92-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/bytom-btm-price-reaches-0-0915-on-major-exchanges.html" rel="bookmark" title="Bytom (BTM) Price Reaches $0.0915 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1866.png&amp;w=150&amp;zc=1" alt="Bytom (BTM) Price Reaches $0.0915 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/bytom-btm-price-reaches-0-0915-on-major-exchanges.html" rel="bookmark" title="Bytom (BTM) Price Reaches $0.0915 on Major Exchanges"><h2>Bytom (BTM) Price Reaches $0.0915 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bytom (CURRENCY:BTM) traded down 5.8% against the US dollar during the twenty-four hour period ending at 17:00 PM E.T. on August 19th. Bytom has a total market capitalization of $132.91 million and $59.30 million worth of Bytom was...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/bytom-btm-price-reaches-0-0915-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/grin-market-capitalization-reaches-27-30-million-grin.html" rel="bookmark" title="Grin Market Capitalization Reaches $27.30 Million (GRIN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/grin.png&amp;w=150&amp;zc=1" alt="Grin Market Capitalization Reaches $27.30 Million (GRIN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/grin-market-capitalization-reaches-27-30-million-grin.html" rel="bookmark" title="Grin Market Capitalization Reaches $27.30 Million (GRIN)"><h2>Grin Market Capitalization Reaches $27.30 Million (GRIN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Grin (CURRENCY:GRIN) traded 0.9% lower  against the dollar during the 1-day period ending at 17:00 PM ET on August 19th. Grin has a total market cap of $27.30 million and $3.59 million worth of Grin was traded on exchanges in the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/grin-market-capitalization-reaches-27-30-million-grin.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/smartcash-price-tops-0-0067-smart.html" rel="bookmark" title="SmartCash Price Tops $0.0067  (SMART)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1828.png&amp;w=150&amp;zc=1" alt="SmartCash Price Tops $0.0067  (SMART)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/smartcash-price-tops-0-0067-smart.html" rel="bookmark" title="SmartCash Price Tops $0.0067  (SMART)"><h2>SmartCash Price Tops $0.0067  (SMART)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						SmartCash (CURRENCY:SMART) traded 3.1% lower  against the U.S. dollar during the 24-hour period ending at 16:00 PM Eastern on August 19th. During the last week, SmartCash has traded up 4.9% against the U.S. dollar. SmartCash has a...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/smartcash-price-tops-0-0067-smart.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/matrix-ai-network-price-reaches-0-0318-man.html" rel="bookmark" title="Matrix AI Network Price Reaches $0.0318  (MAN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2474.png&amp;w=150&amp;zc=1" alt="Matrix AI Network Price Reaches $0.0318  (MAN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/matrix-ai-network-price-reaches-0-0318-man.html" rel="bookmark" title="Matrix AI Network Price Reaches $0.0318  (MAN)"><h2>Matrix AI Network Price Reaches $0.0318  (MAN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Matrix AI Network (CURRENCY:MAN) traded 8.2% lower  against the U.S. dollar during the 24 hour period ending at 12:00 PM ET on August 19th. Matrix AI Network has a total market capitalization of $6.81 million and approximately $306,683.00...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/matrix-ai-network-price-reaches-0-0318-man.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/fedoracoin-tips-hits-one-day-volume-of-64293-00.html" rel="bookmark" title="FedoraCoin (TIPS) Hits One Day Volume of $64,293.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/87.png&amp;w=150&amp;zc=1" alt="FedoraCoin (TIPS) Hits One Day Volume of $64,293.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/fedoracoin-tips-hits-one-day-volume-of-64293-00.html" rel="bookmark" title="FedoraCoin (TIPS) Hits One Day Volume of $64,293.00"><h2>FedoraCoin (TIPS) Hits One Day Volume of $64,293.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FedoraCoin (CURRENCY:TIPS) traded up 0.3% against the U.S. dollar during the twenty-four hour period ending at 8:00 AM Eastern on August 19th. FedoraCoin has a market capitalization of $3.35 million and approximately $64,293.00 worth...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/fedoracoin-tips-hits-one-day-volume-of-64293-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/lethean-trading-down-35-1-this-week-lthn.html" rel="bookmark" title="Lethean Trading Down 35.1% This Week (LTHN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lthn.png&amp;w=150&amp;zc=1" alt="Lethean Trading Down 35.1% This Week (LTHN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/lethean-trading-down-35-1-this-week-lthn.html" rel="bookmark" title="Lethean Trading Down 35.1% This Week (LTHN)"><h2>Lethean Trading Down 35.1% This Week (LTHN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lethean (CURRENCY:LTHN) traded 29.9% lower  against the U.S. dollar during the one day period ending at 7:00 AM E.T. on August 19th. During the last seven days, Lethean has traded down 35.1% against the U.S. dollar. Lethean has a total...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/lethean-trading-down-35-1-this-week-lthn.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/digitalcoin-dgc-1-day-volume-reaches-9-00.html" rel="bookmark" title="Digitalcoin (DGC) 1-Day Volume Reaches $9.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/18.png&amp;w=150&amp;zc=1" alt="Digitalcoin (DGC) 1-Day Volume Reaches $9.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/digitalcoin-dgc-1-day-volume-reaches-9-00.html" rel="bookmark" title="Digitalcoin (DGC) 1-Day Volume Reaches $9.00"><h2>Digitalcoin (DGC) 1-Day Volume Reaches $9.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Digitalcoin (CURRENCY:DGC) traded down 9.2% against the dollar during the twenty-four hour period ending at 23:00 PM ET on August 18th. Digitalcoin has a market capitalization of $366,933.17 and $9.00 worth of Digitalcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/digitalcoin-dgc-1-day-volume-reaches-9-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html" rel="bookmark" title="Precium One Day Trading Volume Tops $12.00 (PCM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/pcm.png&amp;w=150&amp;zc=1" alt="Precium One Day Trading Volume Tops $12.00 (PCM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html" rel="bookmark" title="Precium One Day Trading Volume Tops $12.00 (PCM)"><h2>Precium One Day Trading Volume Tops $12.00 (PCM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Precium (CURRENCY:PCM) traded 23.9% higher  against the US dollar during the 1-day period ending at 23:00 PM ET on August 18th. One Precium coin can now be bought for approximately $0.0006 or 0.00000001 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html" rel="bookmark" title="Precium One Day Trading Volume Tops $12.00 (PCM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/pcm.png&amp;w=150&amp;zc=1" alt="Precium One Day Trading Volume Tops $12.00 (PCM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html" rel="bookmark" title="Precium One Day Trading Volume Tops $12.00 (PCM)"><h2>Precium One Day Trading Volume Tops $12.00 (PCM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Precium (CURRENCY:PCM) traded 23.9% higher  against the US dollar during the 1-day period ending at 23:00 PM ET on August 18th. One Precium coin can now be bought for approximately $0.0006 or 0.00000001 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/precium-one-day-trading-volume-tops-12-00-pcm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html" rel="bookmark" title="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/990.png&amp;w=150&amp;zc=1" alt="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html" rel="bookmark" title="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges"><h2>Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitzeny (CURRENCY:ZNY) traded down 5.8% against the US dollar during the 24 hour period ending at 23:00 PM ET on August 18th. In the last week, Bitzeny has traded up 358.3% against the US dollar. One Bitzeny coin can currently be purchased...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html" rel="bookmark" title="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/990.png&amp;w=150&amp;zc=1" alt="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html" rel="bookmark" title="Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges"><h2>Bitzeny (ZNY) Price Tops $0.0085 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitzeny (CURRENCY:ZNY) traded down 5.8% against the US dollar during the 24 hour period ending at 23:00 PM ET on August 18th. In the last week, Bitzeny has traded up 358.3% against the US dollar. One Bitzeny coin can currently be purchased...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/bitzeny-zny-price-tops-0-0085-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/actinium-trading-down-15-8-over-last-7-days-acm.html" rel="bookmark" title="Actinium Trading Down 15.8% Over Last 7 Days (ACM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/acm.png&amp;w=150&amp;zc=1" alt="Actinium Trading Down 15.8% Over Last 7 Days (ACM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/actinium-trading-down-15-8-over-last-7-days-acm.html" rel="bookmark" title="Actinium Trading Down 15.8% Over Last 7 Days (ACM)"><h2>Actinium Trading Down 15.8% Over Last 7 Days (ACM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Actinium (CURRENCY:ACM) traded 15.4% lower  against the US dollar during the 1 day period ending at 21:00 PM ET on August 18th. In the last week, Actinium has traded down 15.8% against the US dollar. One Actinium coin can currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/actinium-trading-down-15-8-over-last-7-days-acm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/polymath-poly-trading-3-9-lower-over-last-week.html" rel="bookmark" title="Polymath (POLY)  Trading 3.9% Lower  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2496.png&amp;w=150&amp;zc=1" alt="Polymath (POLY)  Trading 3.9% Lower  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/polymath-poly-trading-3-9-lower-over-last-week.html" rel="bookmark" title="Polymath (POLY)  Trading 3.9% Lower  Over Last Week"><h2>Polymath (POLY)  Trading 3.9% Lower  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polymath (CURRENCY:POLY) traded down 4.6% against the US dollar during the 1 day period ending at 13:00 PM E.T. on August 18th. One Polymath coin can now be purchased for about $0.30 or 0.00000654 BTC on popular exchanges. Polymath...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/polymath-poly-trading-3-9-lower-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Litecoin" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Litecoin Cash</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Litecoin Cash with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:litecoin-cash" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/nike-inc-nysenke-stock-holdings-decreased-by-private-advisory-group-llc.html">NIKE, Inc. (NYSE:NKE) Stock Holdings Decreased by Private Advisory Group LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-sells-480-shares-of-schwab-u-s-large-cap-growth-etf-nysearcaschg.html">First Personal Financial Services Sells 480 Shares of Schwab U.S. Large-Cap Growth ETF (NYSEARCA:SCHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-purchases-shares-of-4320-the-sherwin-williams-company-nyseshw.html">First Personal Financial Services Purchases Shares of 4,320 The Sherwin-Williams Company (NYSE:SHW)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/exxon-mobil-co-nysexom-shares-sold-by-first-personal-financial-services.html">Exxon Mobil Co. (NYSE:XOM) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/clark-capital-management-group-inc-grows-position-in-the-tjx-companies-inc-nysetjx.html">Clark Capital Management Group Inc. Grows Position in The TJX Companies, Inc. (NYSE:TJX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/1785-shares-in-fedex-co-nysefdx-acquired-by-srs-capital-advisors-inc.html">1,785 Shares in FedEx Co. (NYSE:FDX) Acquired by SRS Capital Advisors Inc.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/corundum-group-inc-decreases-holdings-in-caterpillar-inc-nysecat.html">Corundum Group Inc. Decreases Holdings in Caterpillar Inc. (NYSE:CAT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/td-capital-management-llc-purchases-new-holdings-in-micron-technology-inc-nasdaqmu.html">TD Capital Management LLC Purchases New Holdings in Micron Technology, Inc. (NASDAQ:MU)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/arcadia-investment-management-corp-mi-decreases-stock-position-in-veeva-systems-inc-nyseveev.html">Arcadia Investment Management Corp MI Decreases Stock Position in Veeva Systems Inc. (NYSE:VEEV)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-2-35-million-stake-in-spdr-sp-regional-banking-etf-nysearcakre.html">Capital Insight Partners LLC Has $2.35 Million Stake in SPDR S&#038;P Regional Banking ETF (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-1-94-million-position-in-unilever-plc-nyseul.html">Capital Insight Partners LLC Has $1.94 Million Position in Unilever PLC (NYSE:UL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/proshares-sp-500-aristocrats-etf-batsnobl-shares-sold-by-first-personal-financial-services.html">ProShares S&#038;P 500 Aristocrats ETF (BATS:NOBL) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/zacks-analysts-expect-vereit-inc-nysever-will-announce-quarterly-sales-of-296-94-million.html">Zacks: Analysts Expect VEREIT, Inc. (NYSE:VER) Will Announce Quarterly Sales of $296.94 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html">Neblio Hits Market Cap of $29.97 Million (NEBL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/rent-a-center-nasdaqrcii-updates-fy-2021-earnings-guidance-2.html">Rent-A-Center (NASDAQ:RCII) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html">I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html">FUZE Token (FUZE) Trading Down 1% This Week</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html">Mysterium (MYST) Price Tops $0.41</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html">Kin (KIN) 24-Hour Volume Hits $6.82 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/haemonetics-nysehae-issues-fy-2022-earnings-guidance.html">Haemonetics (NYSE:HAE) Issues FY 2022 Earnings Guidance</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77579065&PostDate=2021-8-21&type=g&id=69562&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

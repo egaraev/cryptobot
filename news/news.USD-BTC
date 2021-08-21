@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Bitcoin&#8221; Feed" href="https://transcriptdaily.com/search/Bitcoin/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC) - Transcript Daily</title>
+<meta name="description" content="Read Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC) at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/bitcoin-plus-price-tops-15-24-on-major-exchanges-xbc.html" rel="bookmark" title="Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/293.png&amp;w=150&amp;zc=1" alt="Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/bitcoin-plus-price-tops-15-24-on-major-exchanges-xbc.html" rel="bookmark" title="Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC)"><h2>Bitcoin Plus Price Tops $15.24 on Major Exchanges (XBC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Plus (CURRENCY:XBC) traded up 5.1% against the US dollar during the 1 day period ending at 23:00 PM Eastern on August 20th. Bitcoin Plus has a total market capitalization of $2.52 million and approximately $114,908.00 worth...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/bitcoin-plus-price-tops-15-24-on-major-exchanges-xbc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html" rel="bookmark" title="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2575.png&amp;w=150&amp;zc=1" alt="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html" rel="bookmark" title="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)"><h2>Bitcoin Private Price Up 15.3% Over Last Week (BTCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (CURRENCY:BTCP) traded up 19.3% against the U.S. dollar during the twenty-four hour period ending at 20:00 PM Eastern on August 20th. One Bitcoin Private coin can now be purchased for $1.35 or 0.00002746 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html" rel="bookmark" title="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2575.png&amp;w=150&amp;zc=1" alt="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html" rel="bookmark" title="Bitcoin Private Price Up 15.3% Over Last Week (BTCP)"><h2>Bitcoin Private Price Up 15.3% Over Last Week (BTCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (CURRENCY:BTCP) traded up 19.3% against the U.S. dollar during the twenty-four hour period ending at 20:00 PM Eastern on August 20th. One Bitcoin Private coin can now be purchased for $1.35 or 0.00002746 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/bitcoin-private-price-up-15-3-over-last-week-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/microbitcoin-mbc-trading-5-higher-over-last-week.html" rel="bookmark" title="MicroBitcoin (MBC) Trading 5% Higher  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3507.png&amp;w=150&amp;zc=1" alt="MicroBitcoin (MBC) Trading 5% Higher  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/microbitcoin-mbc-trading-5-higher-over-last-week.html" rel="bookmark" title="MicroBitcoin (MBC) Trading 5% Higher  Over Last Week"><h2>MicroBitcoin (MBC) Trading 5% Higher  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						MicroBitcoin (CURRENCY:MBC) traded down 0.1% against the dollar during the 1 day period ending at 10:00 AM E.T. on August 20th. MicroBitcoin has a market cap of $503,625.10 and approximately $45.00 worth of MicroBitcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/microbitcoin-mbc-trading-5-higher-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/bitcoinz-trading-0-6-higher-over-last-week-btcz.html" rel="bookmark" title="BitcoinZ Trading 0.6% Higher  Over Last Week (BTCZ)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2041.png&amp;w=150&amp;zc=1" alt="BitcoinZ Trading 0.6% Higher  Over Last Week (BTCZ)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/bitcoinz-trading-0-6-higher-over-last-week-btcz.html" rel="bookmark" title="BitcoinZ Trading 0.6% Higher  Over Last Week (BTCZ)"><h2>BitcoinZ Trading 0.6% Higher  Over Last Week (BTCZ)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinZ (CURRENCY:BTCZ) traded 13.5% higher  against the U.S. dollar during the 1 day period ending at 9:00 AM E.T. on August 20th. Over the last seven days, BitcoinZ has traded up 0.6% against the U.S. dollar. One BitcoinZ coin can...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/bitcoinz-trading-0-6-higher-over-last-week-btcz.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html" rel="bookmark" title="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html" rel="bookmark" title="Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)"><h2>Lightning Bitcoin 24 Hour Trading Volume Hits $311,806.00 (LBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lightning Bitcoin (CURRENCY:LBTC) traded 8.1% lower  against the U.S. dollar during the twenty-four hour period ending at 7:00 AM Eastern on August 20th. One Lightning Bitcoin coin can now be bought for about $2.37 or 0.00005029 BTC...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/lightning-bitcoin-24-hour-trading-volume-hits-311806-00-lbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/bitcoin-classic-hits-market-cap-of-136317-14-bxc.html" rel="bookmark" title="Bitcoin Classic Hits Market Cap of $136,317.14 (BXC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bxc.png&amp;w=150&amp;zc=1" alt="Bitcoin Classic Hits Market Cap of $136,317.14 (BXC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/bitcoin-classic-hits-market-cap-of-136317-14-bxc.html" rel="bookmark" title="Bitcoin Classic Hits Market Cap of $136,317.14 (BXC)"><h2>Bitcoin Classic Hits Market Cap of $136,317.14 (BXC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Classic (CURRENCY:BXC) traded 11.8% higher  against the US dollar during the 24-hour period ending at 0:00 AM E.T. on August 18th. Bitcoin Classic has a market capitalization of $136,317.14 and approximately $283.00 worth of...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/bitcoin-classic-hits-market-cap-of-136317-14-bxc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/bitcoin-sv-bsv-24-hour-volume-hits-304-04-million.html" rel="bookmark" title="Bitcoin SV (BSV) 24 Hour Volume Hits $304.04 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bsv1.png&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) 24 Hour Volume Hits $304.04 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/bitcoin-sv-bsv-24-hour-volume-hits-304-04-million.html" rel="bookmark" title="Bitcoin SV (BSV) 24 Hour Volume Hits $304.04 Million"><h2>Bitcoin SV (BSV) 24 Hour Volume Hits $304.04 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (CURRENCY:BSV) traded 0.1% lower  against the US dollar during the one day period ending at 23:00 PM E.T. on August 18th. One Bitcoin SV coin can now be purchased for approximately $155.61 or 0.00352107 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/19/bitcoin-sv-bsv-24-hour-volume-hits-304-04-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/ibitcoin-price-down-37-8-this-week-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Price Down 37.8% This Week (Î¤BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9114.png&amp;w=150&amp;zc=1" alt="Ï„Bitcoin Price Down 37.8% This Week (Î¤BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/ibitcoin-price-down-37-8-this-week-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Price Down 37.8% This Week (Î¤BTC)"><h2>Ï„Bitcoin Price Down 37.8% This Week (Î¤BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ï„Bitcoin (CURRENCY:Î¤BTC) traded up 1.8% against the US dollar during the twenty-four hour period ending at 21:00 PM ET on August 18th. In the last seven days, Ï„Bitcoin has traded 37.8% lower  against the US dollar. One Ï„Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/ibitcoin-price-down-37-8-this-week-i%c2%a4btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/bitcoin-gold-price-tops-60-88-on-major-exchanges-btg.html" rel="bookmark" title="Bitcoin Gold Price Tops $60.88 on Major Exchanges (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2083.png&amp;w=150&amp;zc=1" alt="Bitcoin Gold Price Tops $60.88 on Major Exchanges (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/bitcoin-gold-price-tops-60-88-on-major-exchanges-btg.html" rel="bookmark" title="Bitcoin Gold Price Tops $60.88 on Major Exchanges (BTG)"><h2>Bitcoin Gold Price Tops $60.88 on Major Exchanges (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (CURRENCY:BTG) traded 5.8% lower  against the U.S. dollar during the 1 day period ending at 16:00 PM ET on August 18th. Bitcoin Gold has a total market cap of $1.07 billion and approximately $50.55 million worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/bitcoin-gold-price-tops-60-88-on-major-exchanges-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/bitcoin-cash-bch-hits-market-capitalization-of-11-99-billion.html" rel="bookmark" title="Bitcoin Cash (BCH) Hits Market Capitalization of $11.99 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1831.png&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH) Hits Market Capitalization of $11.99 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/bitcoin-cash-bch-hits-market-capitalization-of-11-99-billion.html" rel="bookmark" title="Bitcoin Cash (BCH) Hits Market Capitalization of $11.99 Billion"><h2>Bitcoin Cash (BCH) Hits Market Capitalization of $11.99 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (CURRENCY:BCH) traded down 3.3% against the US dollar during the 1 day period ending at 16:00 PM E.T. on August 18th. During the last seven days, Bitcoin Cash has traded 1.4% higher  against the US dollar. Bitcoin Cash...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/bitcoin-cash-bch-hits-market-capitalization-of-11-99-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/bitcoin-btc-one-day-volume-hits-34-26-billion.html" rel="bookmark" title="Bitcoin (BTC) One Day Volume Hits $34.26 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1.png&amp;w=150&amp;zc=1" alt="Bitcoin (BTC) One Day Volume Hits $34.26 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/bitcoin-btc-one-day-volume-hits-34-26-billion.html" rel="bookmark" title="Bitcoin (BTC) One Day Volume Hits $34.26 Billion"><h2>Bitcoin (BTC) One Day Volume Hits $34.26 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (CURRENCY:BTC) traded 1.4% lower  against the dollar during the 1-day period ending at 16:00 PM ET on August 18th. One Bitcoin coin can currently be bought for approximately $44,895.69 on cryptocurrency exchanges. Bitcoin has...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/bitcoin-btc-one-day-volume-hits-34-26-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/rsk-smart-bitcoin-reaches-market-cap-of-89-53-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Reaches Market Cap of $89.53 Million (RBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rbtc.png&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin Reaches Market Cap of $89.53 Million (RBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/rsk-smart-bitcoin-reaches-market-cap-of-89-53-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Reaches Market Cap of $89.53 Million (RBTC)"><h2>RSK Smart Bitcoin Reaches Market Cap of $89.53 Million (RBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (CURRENCY:RBTC) traded 1% lower  against the US dollar during the twenty-four hour period ending at 14:00 PM ET on August 18th. One RSK Smart Bitcoin coin can now be purchased for $45,367.70 or 0.99379248 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/rsk-smart-bitcoin-reaches-market-cap-of-89-53-million-rbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/bitcoin-rhodium-price-down-41-4-this-week-xrc.html" rel="bookmark" title="Bitcoin Rhodium Price Down 41.4% This Week (XRC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium Price Down 41.4% This Week (XRC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/bitcoin-rhodium-price-down-41-4-this-week-xrc.html" rel="bookmark" title="Bitcoin Rhodium Price Down 41.4% This Week (XRC)"><h2>Bitcoin Rhodium Price Down 41.4% This Week (XRC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Rhodium (CURRENCY:XRC) traded 14.2% higher  against the dollar during the one day period ending at 7:00 AM E.T. on August 18th. One Bitcoin Rhodium coin can currently be bought for approximately $2.09 or 0.00006552 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/18/bitcoin-rhodium-price-down-41-4-this-week-xrc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/0xbitcoin-0xbtc-price-hits-0-56-on-major-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Hits $0.56 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbtc.jpg&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Price Hits $0.56 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/0xbitcoin-0xbtc-price-hits-0-56-on-major-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Hits $0.56 on Major Exchanges"><h2>0xBitcoin (0xBTC) Price Hits $0.56 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (CURRENCY:0xBTC) traded 19% lower  against the U.S. dollar during the 24 hour period ending at 21:00 PM E.T. on August 17th. Over the last week, 0xBitcoin has traded 8.8% lower  against the U.S. dollar. 0xBitcoin has a market...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/0xbitcoin-0xbtc-price-hits-0-56-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/bitcoin-gold-24-hour-trading-volume-tops-75-34-million-btg.html" rel="bookmark" title="Bitcoin Gold 24 Hour Trading Volume Tops $75.34 Million (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2083.png&amp;w=150&amp;zc=1" alt="Bitcoin Gold 24 Hour Trading Volume Tops $75.34 Million (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/bitcoin-gold-24-hour-trading-volume-tops-75-34-million-btg.html" rel="bookmark" title="Bitcoin Gold 24 Hour Trading Volume Tops $75.34 Million (BTG)"><h2>Bitcoin Gold 24 Hour Trading Volume Tops $75.34 Million (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (CURRENCY:BTG) traded 7.2% lower  against the US dollar during the one day period ending at 19:00 PM ET on August 17th. In the last week, Bitcoin Gold has traded 5.2% higher  against the US dollar. Bitcoin Gold has a total...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/bitcoin-gold-24-hour-trading-volume-tops-75-34-million-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/bitcoin-cash-trading-9-higher-over-last-week-bch.html" rel="bookmark" title="Bitcoin Cash Trading 9% Higher  Over Last Week (BCH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1831.png&amp;w=150&amp;zc=1" alt="Bitcoin Cash Trading 9% Higher  Over Last Week (BCH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/bitcoin-cash-trading-9-higher-over-last-week-bch.html" rel="bookmark" title="Bitcoin Cash Trading 9% Higher  Over Last Week (BCH)"><h2>Bitcoin Cash Trading 9% Higher  Over Last Week (BCH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (CURRENCY:BCH) traded 4.8% lower  against the U.S. dollar during the 24 hour period ending at 19:00 PM E.T. on August 17th. In the last seven days, Bitcoin Cash has traded 9% higher  against the U.S. dollar. One Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/bitcoin-cash-trading-9-higher-over-last-week-bch.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/microbitcoin-price-up-9-7-over-last-week-mbc.html" rel="bookmark" title="MicroBitcoin Price Up 9.7% Over Last Week (MBC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3507.png&amp;w=150&amp;zc=1" alt="MicroBitcoin Price Up 9.7% Over Last Week (MBC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/microbitcoin-price-up-9-7-over-last-week-mbc.html" rel="bookmark" title="MicroBitcoin Price Up 9.7% Over Last Week (MBC)"><h2>MicroBitcoin Price Up 9.7% Over Last Week (MBC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						MicroBitcoin (CURRENCY:MBC) traded up 6.4% against the US dollar during the twenty-four hour period ending at 17:00 PM ET on August 17th. One MicroBitcoin coin can now be bought for about $0.0000 or 0.00000000 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/17/microbitcoin-price-up-9-7-over-last-week-mbc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/bitcoinz-price-up-4-over-last-7-days-btcz.html" rel="bookmark" title="BitcoinZ Price Up 4% Over Last 7 Days (BTCZ)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2041.png&amp;w=150&amp;zc=1" alt="BitcoinZ Price Up 4% Over Last 7 Days (BTCZ)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/bitcoinz-price-up-4-over-last-7-days-btcz.html" rel="bookmark" title="BitcoinZ Price Up 4% Over Last 7 Days (BTCZ)"><h2>BitcoinZ Price Up 4% Over Last 7 Days (BTCZ)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinZ (CURRENCY:BTCZ) traded down 10.3% against the dollar during the twenty-four hour period ending at 16:00 PM E.T. on August 17th. BitcoinZ has a total market cap of $3.16 million and $3,777.00 worth of BitcoinZ was traded on...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/bitcoinz-price-up-4-over-last-7-days-btcz.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/bitcoin-plus-xbc-1-day-trading-volume-reaches-125394-00.html" rel="bookmark" title="Bitcoin Plus (XBC) 1-Day Trading Volume Reaches $125,394.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/293.png&amp;w=150&amp;zc=1" alt="Bitcoin Plus (XBC) 1-Day Trading Volume Reaches $125,394.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/bitcoin-plus-xbc-1-day-trading-volume-reaches-125394-00.html" rel="bookmark" title="Bitcoin Plus (XBC) 1-Day Trading Volume Reaches $125,394.00"><h2>Bitcoin Plus (XBC) 1-Day Trading Volume Reaches $125,394.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Plus (CURRENCY:XBC) traded down 3.3% against the U.S. dollar during the 24 hour period ending at 16:00 PM E.T. on August 17th. In the last seven days, Bitcoin Plus has traded 29.6% higher  against the U.S. dollar. One Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/bitcoin-plus-xbc-1-day-trading-volume-reaches-125394-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/lightning-bitcoin-lbtc-price-tops-2-54.html" rel="bookmark" title="Lightning Bitcoin (LBTC) Price Tops $2.54" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin (LBTC) Price Tops $2.54" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/lightning-bitcoin-lbtc-price-tops-2-54.html" rel="bookmark" title="Lightning Bitcoin (LBTC) Price Tops $2.54"><h2>Lightning Bitcoin (LBTC) Price Tops $2.54</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lightning Bitcoin (CURRENCY:LBTC) traded up 30.6% against the U.S. dollar during the 1-day period ending at 14:00 PM ET on August 17th. Over the last seven days, Lightning Bitcoin has traded 20.2% higher  against the U.S. dollar. Lightning...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/lightning-bitcoin-lbtc-price-tops-2-54.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/bitcoin-diamond-trading-up-5-1-over-last-7-days-bcd.html" rel="bookmark" title="Bitcoin Diamond Trading Up 5.1% Over Last 7 Days (BCD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2222.png&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Trading Up 5.1% Over Last 7 Days (BCD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/bitcoin-diamond-trading-up-5-1-over-last-7-days-bcd.html" rel="bookmark" title="Bitcoin Diamond Trading Up 5.1% Over Last 7 Days (BCD)"><h2>Bitcoin Diamond Trading Up 5.1% Over Last 7 Days (BCD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (CURRENCY:BCD) traded 8.2% lower  against the U.S. dollar during the one day period ending at 22:00 PM ET on August 16th. One Bitcoin Diamond coin can currently be bought for about $2.75 or 0.00005948 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/bitcoin-diamond-trading-up-5-1-over-last-7-days-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/bitcoinz-btcz-price-up-3-4-over-last-7-days.html" rel="bookmark" title="BitcoinZ (BTCZ) Price Up 3.4% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2041.png&amp;w=150&amp;zc=1" alt="BitcoinZ (BTCZ) Price Up 3.4% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/bitcoinz-btcz-price-up-3-4-over-last-7-days.html" rel="bookmark" title="BitcoinZ (BTCZ) Price Up 3.4% Over Last 7 Days"><h2>BitcoinZ (BTCZ) Price Up 3.4% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinZ (CURRENCY:BTCZ) traded down 2.6% against the dollar during the one day period ending at 19:00 PM E.T. on August 16th. During the last seven days, BitcoinZ has traded 3.4% higher  against the dollar. BitcoinZ has a total market...&nbsp;<a href='https://transcriptdaily.com/2021/08/16/bitcoinz-btcz-price-up-3-4-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/bitcoin-standard-hashrate-token-price-up-21-1-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Up 21.1% Over Last Week (BTCST)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btcst.png&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Price Up 21.1% Over Last Week (BTCST)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/bitcoin-standard-hashrate-token-price-up-21-1-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Up 21.1% Over Last Week (BTCST)"><h2>Bitcoin Standard Hashrate Token Price Up 21.1% Over Last Week (BTCST)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (CURRENCY:BTCST) traded 7% higher  against the dollar during the twenty-four hour period ending at 22:00 PM E.T. on August 15th. Over the last seven days, Bitcoin Standard Hashrate Token has traded 21.1%...&nbsp;<a href='https://transcriptdaily.com/2021/08/16/bitcoin-standard-hashrate-token-price-up-21-1-over-last-week-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/bitcoinpos-bps-tops-one-day-volume-of-3913-00.html" rel="bookmark" title="BitcoinPoS (BPS) Tops One Day Volume of $3,913.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bps.png&amp;w=150&amp;zc=1" alt="BitcoinPoS (BPS) Tops One Day Volume of $3,913.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/bitcoinpos-bps-tops-one-day-volume-of-3913-00.html" rel="bookmark" title="BitcoinPoS (BPS) Tops One Day Volume of $3,913.00"><h2>BitcoinPoS (BPS) Tops One Day Volume of $3,913.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinPoS (CURRENCY:BPS) traded up 8.7% against the dollar during the one day period ending at 19:00 PM ET on August 15th. One BitcoinPoS coin can currently be purchased for approximately $0.54 or 0.00001152 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/15/bitcoinpos-bps-tops-one-day-volume-of-3913-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/bitcoinus-bits-hits-market-cap-of-3477-93.html" rel="bookmark" title="Bitcoinus (BITS) Hits Market Cap of $3,477.93" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bits.png&amp;w=150&amp;zc=1" alt="Bitcoinus (BITS) Hits Market Cap of $3,477.93" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/bitcoinus-bits-hits-market-cap-of-3477-93.html" rel="bookmark" title="Bitcoinus (BITS) Hits Market Cap of $3,477.93"><h2>Bitcoinus (BITS) Hits Market Cap of $3,477.93</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoinus (CURRENCY:BITS) traded up 0% against the US dollar during the 24 hour period ending at 17:00 PM Eastern on August 15th. Bitcoinus has a total market cap of $3,477.93 and $4.00 worth of Bitcoinus was traded on exchanges in...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/bitcoinus-bits-hits-market-cap-of-3477-93.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/bitcoin-confidential-hits-one-day-volume-of-59654-00-bc.html" rel="bookmark" title="Bitcoin Confidential Hits One Day Volume of $59,654.00 (BC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential Hits One Day Volume of $59,654.00 (BC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/bitcoin-confidential-hits-one-day-volume-of-59654-00-bc.html" rel="bookmark" title="Bitcoin Confidential Hits One Day Volume of $59,654.00 (BC)"><h2>Bitcoin Confidential Hits One Day Volume of $59,654.00 (BC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Confidential (CURRENCY:BC) traded 4% higher  against the US dollar during the twenty-four hour period ending at 14:00 PM Eastern on August 15th. Over the last seven days, Bitcoin Confidential has traded 25.4% higher  against...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/bitcoin-confidential-hits-one-day-volume-of-59654-00-bc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/0xbitcoin-0xbtc-price-tops-0-63-on-major-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Tops $0.63 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbtc.jpg&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Price Tops $0.63 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/0xbitcoin-0xbtc-price-tops-0-63-on-major-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Tops $0.63 on Major Exchanges"><h2>0xBitcoin (0xBTC) Price Tops $0.63 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (CURRENCY:0xBTC) traded down 0.8% against the US dollar during the 24-hour period ending at 11:00 AM ET on August 15th. One 0xBitcoin coin can currently be purchased for $0.63 or 0.00001367 BTC on exchanges. During the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/0xbitcoin-0xbtc-price-tops-0-63-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/bitcoinhd-achieves-market-cap-of-13-10-million-bhd.html" rel="bookmark" title="BitcoinHD Achieves Market Cap of $13.10 Million (BHD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bhd.png&amp;w=150&amp;zc=1" alt="BitcoinHD Achieves Market Cap of $13.10 Million (BHD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/bitcoinhd-achieves-market-cap-of-13-10-million-bhd.html" rel="bookmark" title="BitcoinHD Achieves Market Cap of $13.10 Million (BHD)"><h2>BitcoinHD Achieves Market Cap of $13.10 Million (BHD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinHD (CURRENCY:BHD) traded down 4.4% against the dollar during the 24-hour period ending at 20:00 PM E.T. on August 14th. One BitcoinHD coin can currently be bought for $2.15 or 0.00004566 BTC on major exchanges. In the last seven...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/bitcoinhd-achieves-market-cap-of-13-10-million-bhd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/bitcoin-rhodium-xrc-achieves-market-capitalization-of-2-58-million.html" rel="bookmark" title="Bitcoin Rhodium (XRC) Achieves Market Capitalization of $2.58 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium (XRC) Achieves Market Capitalization of $2.58 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/bitcoin-rhodium-xrc-achieves-market-capitalization-of-2-58-million.html" rel="bookmark" title="Bitcoin Rhodium (XRC) Achieves Market Capitalization of $2.58 Million"><h2>Bitcoin Rhodium (XRC) Achieves Market Capitalization of $2.58 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Rhodium (CURRENCY:XRC) traded up 14.2% against the US dollar during the 1 day period ending at 17:00 PM E.T. on August 14th. During the last week, Bitcoin Rhodium has traded down 41.4% against the US dollar. One Bitcoin Rhodium...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/bitcoin-rhodium-xrc-achieves-market-capitalization-of-2-58-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/bitcoin-confidential-bc-price-up-9-5-this-week.html" rel="bookmark" title="Bitcoin Confidential (BC) Price Up 9.5% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential (BC) Price Up 9.5% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/bitcoin-confidential-bc-price-up-9-5-this-week.html" rel="bookmark" title="Bitcoin Confidential (BC) Price Up 9.5% This Week"><h2>Bitcoin Confidential (BC) Price Up 9.5% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Confidential (CURRENCY:BC) traded up 4.2% against the US dollar during the 1-day period ending at 17:00 PM ET on August 14th. One Bitcoin Confidential coin can now be bought for approximately $0.0002 or 0.00000000 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/14/bitcoin-confidential-bc-price-up-9-5-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/ibitcoin-reaches-one-day-volume-of-21261-00-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Reaches One Day Volume of $21,261.00 (Î¤BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9114.png&amp;w=150&amp;zc=1" alt="Ï„Bitcoin Reaches One Day Volume of $21,261.00 (Î¤BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/ibitcoin-reaches-one-day-volume-of-21261-00-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Reaches One Day Volume of $21,261.00 (Î¤BTC)"><h2>Ï„Bitcoin Reaches One Day Volume of $21,261.00 (Î¤BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ï„Bitcoin (CURRENCY:Î¤BTC) traded 2.7% lower  against the U.S. dollar during the one day period ending at 17:00 PM ET on August 14th. Ï„Bitcoin has a market cap of $2.30 million and approximately $21,261.00 worth of Ï„Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/ibitcoin-reaches-one-day-volume-of-21261-00-i%c2%a4btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/bitcoin-24-hour-trading-volume-hits-33-17-billion-btc.html" rel="bookmark" title="Bitcoin 24-Hour Trading Volume Hits $33.17 Billion (BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1.png&amp;w=150&amp;zc=1" alt="Bitcoin 24-Hour Trading Volume Hits $33.17 Billion (BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/bitcoin-24-hour-trading-volume-hits-33-17-billion-btc.html" rel="bookmark" title="Bitcoin 24-Hour Trading Volume Hits $33.17 Billion (BTC)"><h2>Bitcoin 24-Hour Trading Volume Hits $33.17 Billion (BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (CURRENCY:BTC) traded 1.2% higher  against the U.S. dollar during the twenty-four hour period ending at 11:00 AM Eastern on August 14th. One Bitcoin coin can currently be purchased for approximately $46,874.77 on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/bitcoin-24-hour-trading-volume-hits-33-17-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/rsk-smart-bitcoin-rbtc-reaches-market-cap-of-92-04-million.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Reaches Market Cap of $92.04 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rbtc.png&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) Reaches Market Cap of $92.04 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/rsk-smart-bitcoin-rbtc-reaches-market-cap-of-92-04-million.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Reaches Market Cap of $92.04 Million"><h2>RSK Smart Bitcoin (RBTC) Reaches Market Cap of $92.04 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (CURRENCY:RBTC) traded down 0.1% against the U.S. dollar during the 24-hour period ending at 9:00 AM ET on August 14th. In the last week, RSK Smart Bitcoin has traded up 6.6% against the U.S. dollar. One RSK Smart...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/rsk-smart-bitcoin-rbtc-reaches-market-cap-of-92-04-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html" rel="bookmark" title="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html" rel="bookmark" title="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)"><h2>Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Group (OTCMKTS:BTGGF) and Syneos Health (NASDAQ:SYNH) are both medical companies, but which is the superior investment? We will contrast the two businesses based on the strength of their profitability, institutional ownership,...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/ibitcoin-achieves-market-capitalization-of-2-37-million-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Achieves Market Capitalization of $2.37 Million (Î¤BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9114.png&amp;w=150&amp;zc=1" alt="Ï„Bitcoin Achieves Market Capitalization of $2.37 Million (Î¤BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/ibitcoin-achieves-market-capitalization-of-2-37-million-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Achieves Market Capitalization of $2.37 Million (Î¤BTC)"><h2>Ï„Bitcoin Achieves Market Capitalization of $2.37 Million (Î¤BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ï„Bitcoin (CURRENCY:Î¤BTC) traded 11% higher  against the U.S. dollar during the 24 hour period ending at 19:00 PM ET on August 13th. Ï„Bitcoin has a total market cap of $2.37 million and $189,627.00 worth of Ï„Bitcoin was...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/ibitcoin-achieves-market-capitalization-of-2-37-million-i%c2%a4btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/bitcoin-2-price-up-48-8-over-last-week-btc2.html" rel="bookmark" title="Bitcoin 2 Price Up 48.8% Over Last Week (BTC2)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc2.png&amp;w=150&amp;zc=1" alt="Bitcoin 2 Price Up 48.8% Over Last Week (BTC2)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/bitcoin-2-price-up-48-8-over-last-week-btc2.html" rel="bookmark" title="Bitcoin 2 Price Up 48.8% Over Last Week (BTC2)"><h2>Bitcoin 2 Price Up 48.8% Over Last Week (BTC2)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin 2 (CURRENCY:BTC2) traded 16.2% higher  against the US dollar during the 24-hour period ending at 16:00 PM E.T. on August 13th. Bitcoin 2 has a total market capitalization of $14.86 million and $526.00 worth of Bitcoin 2 was...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/bitcoin-2-price-up-48-8-over-last-week-btc2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/synchrobitcoin-24-hour-volume-reaches-119-00-snb.html" rel="bookmark" title="SynchroBitcoin 24 Hour Volume Reaches $119.00 (SNB)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/snb.png&amp;w=150&amp;zc=1" alt="SynchroBitcoin 24 Hour Volume Reaches $119.00 (SNB)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/synchrobitcoin-24-hour-volume-reaches-119-00-snb.html" rel="bookmark" title="SynchroBitcoin 24 Hour Volume Reaches $119.00 (SNB)"><h2>SynchroBitcoin 24 Hour Volume Reaches $119.00 (SNB)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						SynchroBitcoin (CURRENCY:SNB) traded 2.4% higher  against the US dollar during the twenty-four hour period ending at 15:00 PM ET on August 13th. During the last week, SynchroBitcoin has traded down 30.3% against the US dollar. One...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/synchrobitcoin-24-hour-volume-reaches-119-00-snb.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/lightning-bitcoin-trading-up-128-this-week-lbtc.html" rel="bookmark" title="Lightning Bitcoin Trading Up 128% This Week (LBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin Trading Up 128% This Week (LBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/lightning-bitcoin-trading-up-128-this-week-lbtc.html" rel="bookmark" title="Lightning Bitcoin Trading Up 128% This Week (LBTC)"><h2>Lightning Bitcoin Trading Up 128% This Week (LBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lightning Bitcoin (CURRENCY:LBTC) traded 10.7% higher  against the dollar during the twenty-four hour period ending at 9:00 AM Eastern on August 13th. During the last seven days, Lightning Bitcoin has traded 128% higher  against the...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/lightning-bitcoin-trading-up-128-this-week-lbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/bitcoinhd-trading-4-8-higher-this-week-bhd.html" rel="bookmark" title="BitcoinHD Trading 4.8% Higher  This Week (BHD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bhd.png&amp;w=150&amp;zc=1" alt="BitcoinHD Trading 4.8% Higher  This Week (BHD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/bitcoinhd-trading-4-8-higher-this-week-bhd.html" rel="bookmark" title="BitcoinHD Trading 4.8% Higher  This Week (BHD)"><h2>BitcoinHD Trading 4.8% Higher  This Week (BHD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinHD (CURRENCY:BHD) traded down 2.1% against the U.S. dollar during the 24 hour period ending at 0:00 AM E.T. on August 12th. Over the last week, BitcoinHD has traded up 4.8% against the U.S. dollar. BitcoinHD has a market capitalization...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/bitcoinhd-trading-4-8-higher-this-week-bhd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/bitcoin-confidential-trading-down-2-6-over-last-week-bc.html" rel="bookmark" title="Bitcoin Confidential Trading Down 2.6% Over Last Week (BC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential Trading Down 2.6% Over Last Week (BC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/bitcoin-confidential-trading-down-2-6-over-last-week-bc.html" rel="bookmark" title="Bitcoin Confidential Trading Down 2.6% Over Last Week (BC)"><h2>Bitcoin Confidential Trading Down 2.6% Over Last Week (BC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Confidential (CURRENCY:BC) traded 5.7% lower  against the U.S. dollar during the twenty-four hour period ending at 21:00 PM ET on August 12th. Bitcoin Confidential has a total market cap of $1.03 million and approximately $38,967.00...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/bitcoin-confidential-trading-down-2-6-over-last-week-bc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/0xbitcoin-0xbtc-hits-market-cap-of-3-66-million.html" rel="bookmark" title="0xBitcoin (0xBTC) Hits Market Cap of $3.66 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbtc.jpg&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Hits Market Cap of $3.66 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/0xbitcoin-0xbtc-hits-market-cap-of-3-66-million.html" rel="bookmark" title="0xBitcoin (0xBTC) Hits Market Cap of $3.66 Million"><h2>0xBitcoin (0xBTC) Hits Market Cap of $3.66 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (CURRENCY:0xBTC) traded down 7.3% against the US dollar during the one day period ending at 18:00 PM ET on August 12th. During the last week, 0xBitcoin has traded up 16.7% against the US dollar. One 0xBitcoin coin can currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/0xbitcoin-0xbtc-hits-market-cap-of-3-66-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/bitcoin-interest-bci-price-up-150-8-this-week.html" rel="bookmark" title="Bitcoin Interest (BCI) Price Up 150.8% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bci.jpg&amp;w=150&amp;zc=1" alt="Bitcoin Interest (BCI) Price Up 150.8% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/bitcoin-interest-bci-price-up-150-8-this-week.html" rel="bookmark" title="Bitcoin Interest (BCI) Price Up 150.8% This Week"><h2>Bitcoin Interest (BCI) Price Up 150.8% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Interest (CURRENCY:BCI) traded up 167% against the U.S. dollar during the twenty-four hour period ending at 15:00 PM Eastern on August 12th. In the last seven days, Bitcoin Interest has traded up 150.8% against the U.S. dollar....&nbsp;<a href='https://transcriptdaily.com/2021/08/12/bitcoin-interest-bci-price-up-150-8-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/lightning-bitcoin-lbtc-market-cap-reaches-7-25-million.html" rel="bookmark" title="Lightning Bitcoin (LBTC) Market Cap Reaches $7.25 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin (LBTC) Market Cap Reaches $7.25 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/lightning-bitcoin-lbtc-market-cap-reaches-7-25-million.html" rel="bookmark" title="Lightning Bitcoin (LBTC) Market Cap Reaches $7.25 Million"><h2>Lightning Bitcoin (LBTC) Market Cap Reaches $7.25 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lightning Bitcoin (CURRENCY:LBTC) traded down 7.2% against the dollar during the twenty-four hour period ending at 11:00 AM Eastern on August 12th. Lightning Bitcoin has a market capitalization of $7.25 million and approximately $156,123.00...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/lightning-bitcoin-lbtc-market-cap-reaches-7-25-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/bitcoin-classic-bxc-reaches-1-day-volume-of-870-00.html" rel="bookmark" title="Bitcoin Classic (BXC) Reaches 1-Day Volume of $870.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bxc.png&amp;w=150&amp;zc=1" alt="Bitcoin Classic (BXC) Reaches 1-Day Volume of $870.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/bitcoin-classic-bxc-reaches-1-day-volume-of-870-00.html" rel="bookmark" title="Bitcoin Classic (BXC) Reaches 1-Day Volume of $870.00"><h2>Bitcoin Classic (BXC) Reaches 1-Day Volume of $870.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Classic (CURRENCY:BXC) traded 41.8% higher  against the U.S. dollar during the 1-day period ending at 20:00 PM E.T. on August 11th. Bitcoin Classic has a market cap of $163,114.18 and approximately $870.00 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/bitcoin-classic-bxc-reaches-1-day-volume-of-870-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/bitcoin-gold-tops-24-hour-trading-volume-of-56-04-million-btg.html" rel="bookmark" title="Bitcoin Gold Tops 24-Hour Trading Volume of $56.04 Million (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2083.png&amp;w=150&amp;zc=1" alt="Bitcoin Gold Tops 24-Hour Trading Volume of $56.04 Million (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/bitcoin-gold-tops-24-hour-trading-volume-of-56-04-million-btg.html" rel="bookmark" title="Bitcoin Gold Tops 24-Hour Trading Volume of $56.04 Million (BTG)"><h2>Bitcoin Gold Tops 24-Hour Trading Volume of $56.04 Million (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (CURRENCY:BTG) traded 2.7% higher  against the US dollar during the 24 hour period ending at 7:00 AM ET on August 11th. One Bitcoin Gold coin can currently be purchased for $60.06 or 0.00130601 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/bitcoin-gold-tops-24-hour-trading-volume-of-56-04-million-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/bitcoinpos-one-day-trading-volume-reaches-7385-00-bps.html" rel="bookmark" title="BitcoinPoS One Day Trading Volume Reaches $7,385.00 (BPS)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bps.png&amp;w=150&amp;zc=1" alt="BitcoinPoS One Day Trading Volume Reaches $7,385.00 (BPS)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/bitcoinpos-one-day-trading-volume-reaches-7385-00-bps.html" rel="bookmark" title="BitcoinPoS One Day Trading Volume Reaches $7,385.00 (BPS)"><h2>BitcoinPoS One Day Trading Volume Reaches $7,385.00 (BPS)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinPoS (CURRENCY:BPS) traded 11.2% lower  against the U.S. dollar during the 24 hour period ending at 20:00 PM E.T. on August 10th. One BitcoinPoS coin can currently be purchased for approximately $0.57 or 0.00001240 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/bitcoinpos-one-day-trading-volume-reaches-7385-00-bps.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/bitcoin-confidential-bc-price-tops-0-0001-on-exchanges.html" rel="bookmark" title="Bitcoin Confidential (BC) Price Tops $0.0001 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential (BC) Price Tops $0.0001 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/bitcoin-confidential-bc-price-tops-0-0001-on-exchanges.html" rel="bookmark" title="Bitcoin Confidential (BC) Price Tops $0.0001 on Exchanges"><h2>Bitcoin Confidential (BC) Price Tops $0.0001 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Confidential (CURRENCY:BC) traded 1.3% lower  against the dollar during the 24-hour period ending at 15:00 PM ET on August 10th. Bitcoin Confidential has a market cap of $1.06 million and $48,274.00 worth of Bitcoin Confidential...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/bitcoin-confidential-bc-price-tops-0-0001-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/microbitcoin-one-day-trading-volume-reaches-67-00-mbc.html" rel="bookmark" title="MicroBitcoin One Day Trading Volume Reaches $67.00 (MBC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3507.png&amp;w=150&amp;zc=1" alt="MicroBitcoin One Day Trading Volume Reaches $67.00 (MBC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/microbitcoin-one-day-trading-volume-reaches-67-00-mbc.html" rel="bookmark" title="MicroBitcoin One Day Trading Volume Reaches $67.00 (MBC)"><h2>MicroBitcoin One Day Trading Volume Reaches $67.00 (MBC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						MicroBitcoin (CURRENCY:MBC) traded 1.6% higher  against the dollar during the 1-day period ending at 7:00 AM Eastern on August 10th. One MicroBitcoin coin can now be bought for $0.0000 or 0.00000000 BTC on major cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/10/microbitcoin-one-day-trading-volume-reaches-67-00-mbc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/bitcoin-incognito-xbi-trading-25-2-higher-over-last-week.html" rel="bookmark" title="Bitcoin Incognito (XBI) Trading 25.2% Higher  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btci.jpg&amp;w=150&amp;zc=1" alt="Bitcoin Incognito (XBI) Trading 25.2% Higher  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/bitcoin-incognito-xbi-trading-25-2-higher-over-last-week.html" rel="bookmark" title="Bitcoin Incognito (XBI) Trading 25.2% Higher  Over Last Week"><h2>Bitcoin Incognito (XBI) Trading 25.2% Higher  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Incognito (CURRENCY:XBI) traded up 6.7% against the U.S. dollar during the one day period ending at 22:00 PM E.T. on August 9th. Bitcoin Incognito has a market cap of $95,779.73 and $29.00 worth of Bitcoin Incognito was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/bitcoin-incognito-xbi-trading-25-2-higher-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Bitcoin" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Bitcoin Plus</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Bitcoin Plus with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:bitcoin-plus" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/nike-inc-nysenke-stock-holdings-decreased-by-private-advisory-group-llc.html">NIKE, Inc. (NYSE:NKE) Stock Holdings Decreased by Private Advisory Group LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-sells-480-shares-of-schwab-u-s-large-cap-growth-etf-nysearcaschg.html">First Personal Financial Services Sells 480 Shares of Schwab U.S. Large-Cap Growth ETF (NYSEARCA:SCHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-purchases-shares-of-4320-the-sherwin-williams-company-nyseshw.html">First Personal Financial Services Purchases Shares of 4,320 The Sherwin-Williams Company (NYSE:SHW)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/exxon-mobil-co-nysexom-shares-sold-by-first-personal-financial-services.html">Exxon Mobil Co. (NYSE:XOM) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/clark-capital-management-group-inc-grows-position-in-the-tjx-companies-inc-nysetjx.html">Clark Capital Management Group Inc. Grows Position in The TJX Companies, Inc. (NYSE:TJX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/1785-shares-in-fedex-co-nysefdx-acquired-by-srs-capital-advisors-inc.html">1,785 Shares in FedEx Co. (NYSE:FDX) Acquired by SRS Capital Advisors Inc.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/corundum-group-inc-decreases-holdings-in-caterpillar-inc-nysecat.html">Corundum Group Inc. Decreases Holdings in Caterpillar Inc. (NYSE:CAT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/td-capital-management-llc-purchases-new-holdings-in-micron-technology-inc-nasdaqmu.html">TD Capital Management LLC Purchases New Holdings in Micron Technology, Inc. (NASDAQ:MU)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/arcadia-investment-management-corp-mi-decreases-stock-position-in-veeva-systems-inc-nyseveev.html">Arcadia Investment Management Corp MI Decreases Stock Position in Veeva Systems Inc. (NYSE:VEEV)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-2-35-million-stake-in-spdr-sp-regional-banking-etf-nysearcakre.html">Capital Insight Partners LLC Has $2.35 Million Stake in SPDR S&#038;P Regional Banking ETF (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-1-94-million-position-in-unilever-plc-nyseul.html">Capital Insight Partners LLC Has $1.94 Million Position in Unilever PLC (NYSE:UL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/proshares-sp-500-aristocrats-etf-batsnobl-shares-sold-by-first-personal-financial-services.html">ProShares S&#038;P 500 Aristocrats ETF (BATS:NOBL) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/zacks-analysts-expect-vereit-inc-nysever-will-announce-quarterly-sales-of-296-94-million.html">Zacks: Analysts Expect VEREIT, Inc. (NYSE:VER) Will Announce Quarterly Sales of $296.94 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html">Neblio Hits Market Cap of $29.97 Million (NEBL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/rent-a-center-nasdaqrcii-updates-fy-2021-earnings-guidance-2.html">Rent-A-Center (NASDAQ:RCII) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html">I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html">FUZE Token (FUZE) Trading Down 1% This Week</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html">Mysterium (MYST) Price Tops $0.41</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html">Kin (KIN) 24-Hour Volume Hits $6.82 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/haemonetics-nysehae-issues-fy-2022-earnings-guidance.html">Haemonetics (NYSE:HAE) Issues FY 2022 Earnings Guidance</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77579065&PostDate=2021-8-21&type=g&id=69562&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

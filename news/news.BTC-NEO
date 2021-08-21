@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;NEO&#8221; Feed" href="https://transcriptdaily.com/search/NEO/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG) - Transcript Daily</title>
+<meta name="description" content="Read Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG) at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/beacon-investment-advisory-services-inc-acquires-313645-shares-of-neogen-co-nasdaqneog.html" rel="bookmark" title="Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogen-corp-logo.gif&amp;w=150&amp;zc=1" alt="Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/beacon-investment-advisory-services-inc-acquires-313645-shares-of-neogen-co-nasdaqneog.html" rel="bookmark" title="Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG)"><h2>Beacon Investment Advisory Services Inc. Acquires 313,645 Shares of Neogen Co. (NASDAQ:NEOG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Beacon Investment Advisory Services Inc. increased its holdings in shares of  Neogen Co. (NASDAQ:NEOG) by 95.1% during the second quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/beacon-investment-advisory-services-inc-acquires-313645-shares-of-neogen-co-nasdaqneog.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/neoen-s-a-otcmktsnospf-short-interest-update.html" rel="bookmark" title="Neoen S.A. (OTCMKTS:NOSPF) Short Interest Update" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neoen-sa-logo.png&amp;w=150&amp;zc=1" alt="Neoen S.A. (OTCMKTS:NOSPF) Short Interest Update" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/neoen-s-a-otcmktsnospf-short-interest-update.html" rel="bookmark" title="Neoen S.A. (OTCMKTS:NOSPF) Short Interest Update"><h2>Neoen S.A. (OTCMKTS:NOSPF) Short Interest Update</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neoen S.A. (OTCMKTS:NOSPF) was the target of a large decline in short interest in July. As of July 30th, there was short interest totalling 54,600 shares,  a decline of 31.1% from the July 15th total of 79,300 shares. Based on an average...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/neoen-s-a-otcmktsnospf-short-interest-update.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/neogenomics-inc-nasdaqneo-shares-bought-by-exchange-traded-concepts-llc.html" rel="bookmark" title="NeoGenomics, Inc. (NASDAQ:NEO) Shares Bought by Exchange Traded Concepts LLC" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="NeoGenomics, Inc. (NASDAQ:NEO) Shares Bought by Exchange Traded Concepts LLC" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/neogenomics-inc-nasdaqneo-shares-bought-by-exchange-traded-concepts-llc.html" rel="bookmark" title="NeoGenomics, Inc. (NASDAQ:NEO) Shares Bought by Exchange Traded Concepts LLC"><h2>NeoGenomics, Inc. (NASDAQ:NEO) Shares Bought by Exchange Traded Concepts LLC</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Exchange Traded Concepts LLC lifted its holdings in shares of  NeoGenomics, Inc. (NASDAQ:NEO) by 15.6% during the 2nd quarter, according to its most recent 13F filing with the SEC. The institutional investor  owned 72,632 shares of...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/neogenomics-inc-nasdaqneo-shares-bought-by-exchange-traded-concepts-llc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/state-of-michigan-retirement-system-sells-5100-shares-of-syneos-health-inc-nasdaqsynh.html" rel="bookmark" title="State of Michigan Retirement System Sells 5,100 Shares of Syneos Health, Inc. (NASDAQ:SYNH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="State of Michigan Retirement System Sells 5,100 Shares of Syneos Health, Inc. (NASDAQ:SYNH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/state-of-michigan-retirement-system-sells-5100-shares-of-syneos-health-inc-nasdaqsynh.html" rel="bookmark" title="State of Michigan Retirement System Sells 5,100 Shares of Syneos Health, Inc. (NASDAQ:SYNH)"><h2>State of Michigan Retirement System Sells 5,100 Shares of Syneos Health, Inc. (NASDAQ:SYNH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						State of Michigan Retirement System cut its position in  Syneos Health, Inc. (NASDAQ:SYNH) by 16.7% in the 2nd quarter, according to its most recent disclosure with the SEC. The fund owned 25,503 shares of the company&#8217;s stock...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/state-of-michigan-retirement-system-sells-5100-shares-of-syneos-health-inc-nasdaqsynh.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/neogames-nasdaqngms-trading-down-7.html" rel="bookmark" title="NeoGames (NASDAQ:NGMS) Trading Down 7%" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogames-sa-logo.png&amp;w=150&amp;zc=1" alt="NeoGames (NASDAQ:NGMS) Trading Down 7%" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/neogames-nasdaqngms-trading-down-7.html" rel="bookmark" title="NeoGames (NASDAQ:NGMS) Trading Down 7%"><h2>NeoGames (NASDAQ:NGMS) Trading Down 7%</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoGames S.A. (NASDAQ:NGMS)&#8217;s share price fell 7% on Monday . The stock traded as low as $41.11 and last traded at $42.31. 1,011 shares were traded  during trading, a decline of 99% from the average session volume of 162,580...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/neogames-nasdaqngms-trading-down-7.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/sunbelt-securities-inc-purchases-shares-of-5157-oneok-inc-nyseoke.html" rel="bookmark" title="Sunbelt Securities Inc. Purchases Shares of 5,157 ONEOK, Inc. (NYSE:OKE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Sunbelt Securities Inc. Purchases Shares of 5,157 ONEOK, Inc. (NYSE:OKE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/sunbelt-securities-inc-purchases-shares-of-5157-oneok-inc-nyseoke.html" rel="bookmark" title="Sunbelt Securities Inc. Purchases Shares of 5,157 ONEOK, Inc. (NYSE:OKE)"><h2>Sunbelt Securities Inc. Purchases Shares of 5,157 ONEOK, Inc. (NYSE:OKE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Sunbelt Securities Inc. purchased a new stake in shares of  ONEOK, Inc. (NYSE:OKE) in the second quarter, according to its most recent disclosure with the SEC. The firm purchased 5,157 shares of the utilities provider&#8217;s stock,...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/sunbelt-securities-inc-purchases-shares-of-5157-oneok-inc-nyseoke.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/syneos-health-inc-nasdaqsynh-given-consensus-rating-of-buy-by-analysts.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Given Consensus Rating of &#8220;Buy&#8221; by Analysts" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health, Inc. (NASDAQ:SYNH) Given Consensus Rating of &#8220;Buy&#8221; by Analysts" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/syneos-health-inc-nasdaqsynh-given-consensus-rating-of-buy-by-analysts.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Given Consensus Rating of &#8220;Buy&#8221; by Analysts"><h2>Syneos Health, Inc. (NASDAQ:SYNH) Given Consensus Rating of &#8220;Buy&#8221; by Analysts</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Syneos Health, Inc. (NASDAQ:SYNH) has been given an average rating of &#8220;Buy&#8221; by the eleven research firms that are  covering the stock, MarketBeat reports. One investment analyst  has rated the stock with a hold rating and...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/syneos-health-inc-nasdaqsynh-given-consensus-rating-of-buy-by-analysts.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo-critical-survey.html" rel="bookmark" title="Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO) Critical Survey" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO) Critical Survey" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo-critical-survey.html" rel="bookmark" title="Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO) Critical Survey"><h2>Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO) Critical Survey</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Rennova Health (OTCMKTS:RNVAD) and NeoGenomics (NASDAQ:NEO) are both medical companies, but which is the superior investment? We will compare the two businesses based on the strength of their profitability, dividends, valuation, earnings,...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo-critical-survey.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/infineon-technologies-ag-otcmktsifnny-sees-significant-drop-in-short-interest.html" rel="bookmark" title="Infineon Technologies AG (OTCMKTS:IFNNY) Sees Significant Drop in Short Interest" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/infineon-technologies-ag-logo.png&amp;w=150&amp;zc=1" alt="Infineon Technologies AG (OTCMKTS:IFNNY) Sees Significant Drop in Short Interest" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/infineon-technologies-ag-otcmktsifnny-sees-significant-drop-in-short-interest.html" rel="bookmark" title="Infineon Technologies AG (OTCMKTS:IFNNY) Sees Significant Drop in Short Interest"><h2>Infineon Technologies AG (OTCMKTS:IFNNY) Sees Significant Drop in Short Interest</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Infineon Technologies AG (OTCMKTS:IFNNY) was the target of a significant decline in short interest during the month of July. As of July 30th, there was short interest totalling 19,200 shares,  a decline of 45.3% from the July 15th...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/infineon-technologies-ag-otcmktsifnny-sees-significant-drop-in-short-interest.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/rfg-advisory-llc-raises-holdings-in-oneok-inc-nyseoke.html" rel="bookmark" title="RFG Advisory LLC Raises Holdings in ONEOK, Inc. (NYSE:OKE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="RFG Advisory LLC Raises Holdings in ONEOK, Inc. (NYSE:OKE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/rfg-advisory-llc-raises-holdings-in-oneok-inc-nyseoke.html" rel="bookmark" title="RFG Advisory LLC Raises Holdings in ONEOK, Inc. (NYSE:OKE)"><h2>RFG Advisory LLC Raises Holdings in ONEOK, Inc. (NYSE:OKE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RFG Advisory LLC lifted its stake in  ONEOK, Inc. (NYSE:OKE) by 4.5% during the second quarter, according to its most recent disclosure with the Securities &amp; Exchange Commission. The fund owned 27,567 shares of the utilities provider&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/rfg-advisory-llc-raises-holdings-in-oneok-inc-nyseoke.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/oneok-inc-nyseoke-shares-bought-by-alliancebernstein-l-p.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Bought by Alliancebernstein L.P." class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="ONEOK, Inc. (NYSE:OKE) Shares Bought by Alliancebernstein L.P." />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/oneok-inc-nyseoke-shares-bought-by-alliancebernstein-l-p.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Bought by Alliancebernstein L.P."><h2>ONEOK, Inc. (NYSE:OKE) Shares Bought by Alliancebernstein L.P.</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Alliancebernstein L.P. raised its stake in  ONEOK, Inc. (NYSE:OKE) by 4.2% in the second quarter, HoldingsChannel.com reports. The fund owned 643,198 shares of the utilities provider&#8217;s stock after buying an additional 25,914...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/oneok-inc-nyseoke-shares-bought-by-alliancebernstein-l-p.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/128-12-million-in-sales-expected-for-neogenomics-inc-nasdaqneo-this-quarter.html" rel="bookmark" title="$128.12 Million in Sales Expected for NeoGenomics, Inc. (NASDAQ:NEO) This Quarter" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="$128.12 Million in Sales Expected for NeoGenomics, Inc. (NASDAQ:NEO) This Quarter" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/128-12-million-in-sales-expected-for-neogenomics-inc-nasdaqneo-this-quarter.html" rel="bookmark" title="$128.12 Million in Sales Expected for NeoGenomics, Inc. (NASDAQ:NEO) This Quarter"><h2>$128.12 Million in Sales Expected for NeoGenomics, Inc. (NASDAQ:NEO) This Quarter</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Analysts expect NeoGenomics, Inc. (NASDAQ:NEO) to report $128.12 million in sales for the current quarter, according to Zacks. Three analysts have issued estimates for NeoGenomics&#8217; earnings, with the lowest sales estimate coming...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/128-12-million-in-sales-expected-for-neogenomics-inc-nasdaqneo-this-quarter.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/critical-review-rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo.html" rel="bookmark" title="Critical Review: Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Critical Review: Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/critical-review-rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo.html" rel="bookmark" title="Critical Review: Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO)"><h2>Critical Review: Rennova Health (OTCMKTS:RNVAD) vs. NeoGenomics (NASDAQ:NEO)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Rennova Health (OTCMKTS:RNVAD) and NeoGenomics (NASDAQ:NEO) are both medical companies, but which is the better investment? We will compare the two businesses based on the strength of their profitability, valuation, institutional ownership,...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/critical-review-rennova-health-otcmktsrnvad-vs-neogenomics-nasdaqneo.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/syneos-health-nasdaqsynh-issues-fy-2021-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Issues FY 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health (NASDAQ:SYNH) Issues FY 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/syneos-health-nasdaqsynh-issues-fy-2021-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Issues FY 2021 Earnings Guidance"><h2>Syneos Health (NASDAQ:SYNH) Issues FY 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Syneos Health (NASDAQ:SYNH) updated its FY 2021 earnings guidance on Monday. The company provided EPS guidance of $4.250-$4.430 for the period, compared to the Thomson Reuters consensus EPS estimate of $4.310. The company issued revenue...&nbsp;<a href='https://transcriptdaily.com/2021/08/16/syneos-health-nasdaqsynh-issues-fy-2021-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/neoworld-cash-price-up-15-over-last-7-days-nash.html" rel="bookmark" title="NeoWorld Cash Price Up 15% Over Last 7 Days (NASH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/nash.png&amp;w=150&amp;zc=1" alt="NeoWorld Cash Price Up 15% Over Last 7 Days (NASH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/neoworld-cash-price-up-15-over-last-7-days-nash.html" rel="bookmark" title="NeoWorld Cash Price Up 15% Over Last 7 Days (NASH)"><h2>NeoWorld Cash Price Up 15% Over Last 7 Days (NASH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoWorld Cash (CURRENCY:NASH) traded 3.6% higher  against the U.S. dollar during the 24 hour period ending at 13:00 PM E.T. on August 15th. Over the last week, NeoWorld Cash has traded 15% higher  against the U.S. dollar. NeoWorld...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/neoworld-cash-price-up-15-over-last-7-days-nash.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/scotiabank-increases-neo-performance-materials-otcmktsnopmf-price-target-to-c28-00.html" rel="bookmark" title="Scotiabank Increases Neo Performance Materials (OTCMKTS:NOPMF) Price Target to C$28.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neo-performance-materials-inc-logo.png&amp;w=150&amp;zc=1" alt="Scotiabank Increases Neo Performance Materials (OTCMKTS:NOPMF) Price Target to C$28.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/scotiabank-increases-neo-performance-materials-otcmktsnopmf-price-target-to-c28-00.html" rel="bookmark" title="Scotiabank Increases Neo Performance Materials (OTCMKTS:NOPMF) Price Target to C$28.00"><h2>Scotiabank Increases Neo Performance Materials (OTCMKTS:NOPMF) Price Target to C$28.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neo Performance Materials (OTCMKTS:NOPMF) had its price target upped by equities research analysts at Scotiabank  from C$27.00 to C$28.00 in a research note issued on Friday, The Fly reports. The brokerage currently has an &#8220;outperform&#8221;...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/scotiabank-increases-neo-performance-materials-otcmktsnopmf-price-target-to-c28-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/q3-2021-eps-estimates-for-reneo-pharmaceuticals-inc-decreased-by-piper-sandler-nasdaqrphm.html" rel="bookmark" title="Q3 2021 EPS Estimates for Reneo Pharmaceuticals, Inc. Decreased by Piper Sandler (NASDAQ:RPHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks.jpg&amp;w=150&amp;zc=1" alt="Q3 2021 EPS Estimates for Reneo Pharmaceuticals, Inc. Decreased by Piper Sandler (NASDAQ:RPHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/q3-2021-eps-estimates-for-reneo-pharmaceuticals-inc-decreased-by-piper-sandler-nasdaqrphm.html" rel="bookmark" title="Q3 2021 EPS Estimates for Reneo Pharmaceuticals, Inc. Decreased by Piper Sandler (NASDAQ:RPHM)"><h2>Q3 2021 EPS Estimates for Reneo Pharmaceuticals, Inc. Decreased by Piper Sandler (NASDAQ:RPHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						
+Reneo Pharmaceuticals, Inc. (NASDAQ:RPHM) &#8211; Research analysts at  Piper Sandler lowered their Q3 2021 EPS estimates for shares of Reneo Pharmaceuticals  in a report released on  Wednesday, August 11th. Piper Sandler analyst...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/q3-2021-eps-estimates-for-reneo-pharmaceuticals-inc-decreased-by-piper-sandler-nasdaqrphm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/neo-performance-materials-tseneo-pt-raised-to-c28-00-at-scotiabank.html" rel="bookmark" title="Neo Performance Materials (TSE:NEO) PT Raised to C$28.00 at Scotiabank" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks.jpg&amp;w=150&amp;zc=1" alt="Neo Performance Materials (TSE:NEO) PT Raised to C$28.00 at Scotiabank" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/neo-performance-materials-tseneo-pt-raised-to-c28-00-at-scotiabank.html" rel="bookmark" title="Neo Performance Materials (TSE:NEO) PT Raised to C$28.00 at Scotiabank"><h2>Neo Performance Materials (TSE:NEO) PT Raised to C$28.00 at Scotiabank</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neo Performance Materials (TSE:NEO) had its price target boosted by Scotiabank from C$27.00 to C$28.00 in a research report sent to investors on Friday, BayStreet.CA reports.
+Separately, Raymond James  reissued an outperform rating...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/neo-performance-materials-tseneo-pt-raised-to-c28-00-at-scotiabank.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html" rel="bookmark" title="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html" rel="bookmark" title="Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)"><h2>Financial Contrast: Bitcoin Group (OTCMKTS:BTGGF) &amp; Syneos Health (NASDAQ:SYNH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Group (OTCMKTS:BTGGF) and Syneos Health (NASDAQ:SYNH) are both medical companies, but which is the superior investment? We will contrast the two businesses based on the strength of their profitability, institutional ownership,...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/financial-contrast-bitcoin-group-otcmktsbtggf-syneos-health-nasdaqsynh.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/reneo-pharmaceuticals-nasdaqrphm-lowered-to-sell-at-zacks-investment-research.html" rel="bookmark" title="Reneo Pharmaceuticals (NASDAQ:RPHM) Lowered to Sell at Zacks Investment Research" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks.jpg&amp;w=150&amp;zc=1" alt="Reneo Pharmaceuticals (NASDAQ:RPHM) Lowered to Sell at Zacks Investment Research" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/reneo-pharmaceuticals-nasdaqrphm-lowered-to-sell-at-zacks-investment-research.html" rel="bookmark" title="Reneo Pharmaceuticals (NASDAQ:RPHM) Lowered to Sell at Zacks Investment Research"><h2>Reneo Pharmaceuticals (NASDAQ:RPHM) Lowered to Sell at Zacks Investment Research</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Reneo Pharmaceuticals (NASDAQ:RPHM) was downgraded by Zacks Investment Research from a &#8220;hold&#8221; rating to a &#8220;sell&#8221; rating in a report issued on Saturday, Zacks.com reports. 
+According to Zacks, &#8220;Reneo Pharmaceuticals...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/reneo-pharmaceuticals-nasdaqrphm-lowered-to-sell-at-zacks-investment-research.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/neonode-nasdaqneon-crown-electrokinetics-nasdaqcrkn-critical-analysis.html" rel="bookmark" title="Neonode (NASDAQ:NEON) &amp; Crown ElectroKinetics (NASDAQ:CRKN) Critical Analysis" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/crown-electrokinetics-corp-logo.png&amp;w=150&amp;zc=1" alt="Neonode (NASDAQ:NEON) &amp; Crown ElectroKinetics (NASDAQ:CRKN) Critical Analysis" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/neonode-nasdaqneon-crown-electrokinetics-nasdaqcrkn-critical-analysis.html" rel="bookmark" title="Neonode (NASDAQ:NEON) &amp; Crown ElectroKinetics (NASDAQ:CRKN) Critical Analysis"><h2>Neonode (NASDAQ:NEON) &amp; Crown ElectroKinetics (NASDAQ:CRKN) Critical Analysis</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neonode (NASDAQ:NEON) and Crown ElectroKinetics (NASDAQ:CRKN) are both small-cap computer and technology companies, but which is the better business? We will contrast the two companies based on the strength of their institutional ownership,...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/neonode-nasdaqneon-crown-electrokinetics-nasdaqcrkn-critical-analysis.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/neo-price-reaches-51-72-on-major-exchanges-neo.html" rel="bookmark" title="Neo Price Reaches $51.72 on Major Exchanges (NEO)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1376.png&amp;w=150&amp;zc=1" alt="Neo Price Reaches $51.72 on Major Exchanges (NEO)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/neo-price-reaches-51-72-on-major-exchanges-neo.html" rel="bookmark" title="Neo Price Reaches $51.72 on Major Exchanges (NEO)"><h2>Neo Price Reaches $51.72 on Major Exchanges (NEO)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neo (CURRENCY:NEO) traded 8% higher  against the U.S. dollar during the 1 day period ending at 14:00 PM E.T. on August 13th. One Neo coin can now be purchased for $51.72 or 0.00111358 BTC on cryptocurrency exchanges. Neo has a market...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/neo-price-reaches-51-72-on-major-exchanges-neo.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/neo-performance-materials-otcmktsnopmf-price-target-raised-to-c28-00-at-scotiabank.html" rel="bookmark" title="Neo Performance Materials (OTCMKTS:NOPMF) Price Target Raised to C$28.00 at Scotiabank" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neo-performance-materials-inc-logo.png&amp;w=150&amp;zc=1" alt="Neo Performance Materials (OTCMKTS:NOPMF) Price Target Raised to C$28.00 at Scotiabank" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/neo-performance-materials-otcmktsnopmf-price-target-raised-to-c28-00-at-scotiabank.html" rel="bookmark" title="Neo Performance Materials (OTCMKTS:NOPMF) Price Target Raised to C$28.00 at Scotiabank"><h2>Neo Performance Materials (OTCMKTS:NOPMF) Price Target Raised to C$28.00 at Scotiabank</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neo Performance Materials (OTCMKTS:NOPMF) had its target price increased by equities research analysts at Scotiabank  from C$27.00 to C$28.00 in a research note issued to investors on Friday, The Fly reports. The firm presently has...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/neo-performance-materials-otcmktsnopmf-price-target-raised-to-c28-00-at-scotiabank.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/neo-performance-materials-inc-tseneo-announces-quarterly-dividend-of-0-10.html" rel="bookmark" title="Neo Performance Materials Inc. (TSE:NEO) Announces Quarterly Dividend of $0.10" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks.jpg&amp;w=150&amp;zc=1" alt="Neo Performance Materials Inc. (TSE:NEO) Announces Quarterly Dividend of $0.10" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/neo-performance-materials-inc-tseneo-announces-quarterly-dividend-of-0-10.html" rel="bookmark" title="Neo Performance Materials Inc. (TSE:NEO) Announces Quarterly Dividend of $0.10"><h2>Neo Performance Materials Inc. (TSE:NEO) Announces Quarterly Dividend of $0.10</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neo Performance Materials Inc. (TSE:NEO) announced a quarterly dividend on Wednesday, August 11th, Zacks reports. Stockholders of record on Monday, September 20th will be given a dividend of 0.10 per share on Wednesday, September 29th....&nbsp;<a href='https://transcriptdaily.com/2021/08/13/neo-performance-materials-inc-tseneo-announces-quarterly-dividend-of-0-10.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/oneok-inc-nyseoke-shares-acquired-by-next-financial-group-inc.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Acquired by NEXT Financial Group Inc" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="ONEOK, Inc. (NYSE:OKE) Shares Acquired by NEXT Financial Group Inc" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/oneok-inc-nyseoke-shares-acquired-by-next-financial-group-inc.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Acquired by NEXT Financial Group Inc"><h2>ONEOK, Inc. (NYSE:OKE) Shares Acquired by NEXT Financial Group Inc</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NEXT Financial Group Inc grew its stake in  ONEOK, Inc. (NYSE:OKE) by 16.9% during the second quarter, HoldingsChannel.com reports. The firm owned 9,223 shares of the utilities provider&#8217;s stock after purchasing an additional...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/oneok-inc-nyseoke-shares-acquired-by-next-financial-group-inc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/infineon-technologies-otcmktsifnnf-earns-buy-rating-from-credit-suisse-group.html" rel="bookmark" title="Infineon Technologies (OTCMKTS:IFNNF) Earns &#8220;Buy&#8221; Rating from Credit Suisse Group" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/infineon-technolog-logo.jpg&amp;w=150&amp;zc=1" alt="Infineon Technologies (OTCMKTS:IFNNF) Earns &#8220;Buy&#8221; Rating from Credit Suisse Group" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/infineon-technologies-otcmktsifnnf-earns-buy-rating-from-credit-suisse-group.html" rel="bookmark" title="Infineon Technologies (OTCMKTS:IFNNF) Earns &#8220;Buy&#8221; Rating from Credit Suisse Group"><h2>Infineon Technologies (OTCMKTS:IFNNF) Earns &#8220;Buy&#8221; Rating from Credit Suisse Group</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Credit Suisse Group reiterated their buy rating on shares of Infineon Technologies (OTCMKTS:IFNNF)  in a research note issued to investors on Tuesday, AnalystRatings.com reports.
+Separately, Norddeutsche Landesbank  reiterated a buy...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/infineon-technologies-otcmktsifnnf-earns-buy-rating-from-credit-suisse-group.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/state-of-alaska-department-of-revenue-raises-stock-position-in-neogen-co-nasdaqneog.html" rel="bookmark" title="State of Alaska Department of Revenue Raises Stock Position in Neogen Co. (NASDAQ:NEOG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogen-corp-logo.gif&amp;w=150&amp;zc=1" alt="State of Alaska Department of Revenue Raises Stock Position in Neogen Co. (NASDAQ:NEOG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/state-of-alaska-department-of-revenue-raises-stock-position-in-neogen-co-nasdaqneog.html" rel="bookmark" title="State of Alaska Department of Revenue Raises Stock Position in Neogen Co. (NASDAQ:NEOG)"><h2>State of Alaska Department of Revenue Raises Stock Position in Neogen Co. (NASDAQ:NEOG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						State of Alaska Department of Revenue raised its stake in  Neogen Co. (NASDAQ:NEOG) by 99.9% in the second quarter, according to the company in its most recent disclosure with the Securities and Exchange Commission. The institutional...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/state-of-alaska-department-of-revenue-raises-stock-position-in-neogen-co-nasdaqneog.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/d-e-shaw-co-inc-lowers-stock-holdings-in-syneos-health-inc-nasdaqsynh.html" rel="bookmark" title="D. E. Shaw &#038; Co. Inc. Lowers Stock Holdings in Syneos Health, Inc. (NASDAQ:SYNH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="D. E. Shaw &#038; Co. Inc. Lowers Stock Holdings in Syneos Health, Inc. (NASDAQ:SYNH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/d-e-shaw-co-inc-lowers-stock-holdings-in-syneos-health-inc-nasdaqsynh.html" rel="bookmark" title="D. E. Shaw &#038; Co. Inc. Lowers Stock Holdings in Syneos Health, Inc. (NASDAQ:SYNH)"><h2>D. E. Shaw &#038; Co. Inc. Lowers Stock Holdings in Syneos Health, Inc. (NASDAQ:SYNH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						D. E. Shaw &#038; Co. Inc. trimmed its holdings in shares of  Syneos Health, Inc. (NASDAQ:SYNH) by 96.4% in the 1st quarter, according to its most recent disclosure with the SEC. The fund owned 3,359 shares of the company&#8217;s stock...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/d-e-shaw-co-inc-lowers-stock-holdings-in-syneos-health-inc-nasdaqsynh.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/neoleukin-therapeutics-nasdaqnltx-rating-reiterated-by-hc-wainwright.html" rel="bookmark" title="Neoleukin Therapeutics (NASDAQ:NLTX) Rating Reiterated by HC Wainwright" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neoleukin-therapeutics-inc-logo.png&amp;w=150&amp;zc=1" alt="Neoleukin Therapeutics (NASDAQ:NLTX) Rating Reiterated by HC Wainwright" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/neoleukin-therapeutics-nasdaqnltx-rating-reiterated-by-hc-wainwright.html" rel="bookmark" title="Neoleukin Therapeutics (NASDAQ:NLTX) Rating Reiterated by HC Wainwright"><h2>Neoleukin Therapeutics (NASDAQ:NLTX) Rating Reiterated by HC Wainwright</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						HC Wainwright reiterated their buy rating on shares of Neoleukin Therapeutics (NASDAQ:NLTX)  in a report released on Monday, Price Targets.com reports. The firm currently has a $22.00 price objective on the stock.
+Other equities analysts...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/neoleukin-therapeutics-nasdaqnltx-rating-reiterated-by-hc-wainwright.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/neonode-nasdaqneon-posts-earnings-results-meets-estimates.html" rel="bookmark" title="Neonode (NASDAQ:NEON) Posts  Earnings Results, Meets Estimates" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neonode-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Neonode (NASDAQ:NEON) Posts  Earnings Results, Meets Estimates" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/neonode-nasdaqneon-posts-earnings-results-meets-estimates.html" rel="bookmark" title="Neonode (NASDAQ:NEON) Posts  Earnings Results, Meets Estimates"><h2>Neonode (NASDAQ:NEON) Posts  Earnings Results, Meets Estimates</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neonode (NASDAQ:NEON) issued its quarterly earnings results on Wednesday. The electronics maker reported ($0.14) earnings per share (EPS) for the quarter, hitting analysts&#8217; consensus estimates of ($0.14), MarketWatch Earnings...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/neonode-nasdaqneon-posts-earnings-results-meets-estimates.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/neogames-nasdaqngms-releases-earnings-results-misses-estimates-by-0-04-eps.html" rel="bookmark" title="NeoGames (NASDAQ:NGMS) Releases  Earnings Results, Misses Estimates By $0.04 EPS" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogames-sa-logo.png&amp;w=150&amp;zc=1" alt="NeoGames (NASDAQ:NGMS) Releases  Earnings Results, Misses Estimates By $0.04 EPS" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/neogames-nasdaqngms-releases-earnings-results-misses-estimates-by-0-04-eps.html" rel="bookmark" title="NeoGames (NASDAQ:NGMS) Releases  Earnings Results, Misses Estimates By $0.04 EPS"><h2>NeoGames (NASDAQ:NGMS) Releases  Earnings Results, Misses Estimates By $0.04 EPS</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoGames (NASDAQ:NGMS) issued its quarterly earnings results on Wednesday. The company reported $0.10 EPS for the quarter, missing analysts&#8217; consensus estimates of $0.14 by ($0.04), MarketWatch Earnings reports.  NeoGames updated...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/neogames-nasdaqngms-releases-earnings-results-misses-estimates-by-0-04-eps.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/0-04-eps-expected-for-neophotonics-co-nysenptn-this-quarter.html" rel="bookmark" title="-$0.04 EPS Expected for NeoPhotonics Co. (NYSE:NPTN) This Quarter" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neophotonics-corp-logo.jpg&amp;w=150&amp;zc=1" alt="-$0.04 EPS Expected for NeoPhotonics Co. (NYSE:NPTN) This Quarter" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/0-04-eps-expected-for-neophotonics-co-nysenptn-this-quarter.html" rel="bookmark" title="-$0.04 EPS Expected for NeoPhotonics Co. (NYSE:NPTN) This Quarter"><h2>-$0.04 EPS Expected for NeoPhotonics Co. (NYSE:NPTN) This Quarter</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Analysts predict that NeoPhotonics Co. (NYSE:NPTN) will announce ($0.04) earnings per share (EPS) for the current fiscal quarter, according to Zacks. Four analysts have made estimates for NeoPhotonics&#8217; earnings. The lowest EPS...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/0-04-eps-expected-for-neophotonics-co-nysenptn-this-quarter.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/reneo-pharmaceuticals-nasdaqrphm-posts-earnings-results-misses-estimates-by-0-06-eps.html" rel="bookmark" title="Reneo Pharmaceuticals (NASDAQ:RPHM) Posts  Earnings Results, Misses Estimates By $0.06 EPS" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks.jpg&amp;w=150&amp;zc=1" alt="Reneo Pharmaceuticals (NASDAQ:RPHM) Posts  Earnings Results, Misses Estimates By $0.06 EPS" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/reneo-pharmaceuticals-nasdaqrphm-posts-earnings-results-misses-estimates-by-0-06-eps.html" rel="bookmark" title="Reneo Pharmaceuticals (NASDAQ:RPHM) Posts  Earnings Results, Misses Estimates By $0.06 EPS"><h2>Reneo Pharmaceuticals (NASDAQ:RPHM) Posts  Earnings Results, Misses Estimates By $0.06 EPS</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Reneo Pharmaceuticals (NASDAQ:RPHM) announced its quarterly earnings data on Wednesday. The company reported ($0.43) earnings per share for the quarter, missing analysts&#8217; consensus estimates of ($0.37) by ($0.06), MarketWatch...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/reneo-pharmaceuticals-nasdaqrphm-posts-earnings-results-misses-estimates-by-0-06-eps.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/morgan-stanley-cuts-neogenomics-nasdaqneo-price-target-to-58-00.html" rel="bookmark" title="Morgan Stanley Cuts NeoGenomics (NASDAQ:NEO) Price Target to $58.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Morgan Stanley Cuts NeoGenomics (NASDAQ:NEO) Price Target to $58.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/morgan-stanley-cuts-neogenomics-nasdaqneo-price-target-to-58-00.html" rel="bookmark" title="Morgan Stanley Cuts NeoGenomics (NASDAQ:NEO) Price Target to $58.00"><h2>Morgan Stanley Cuts NeoGenomics (NASDAQ:NEO) Price Target to $58.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoGenomics (NASDAQ:NEO) had its target price cut by Morgan Stanley from $64.00 to $58.00 in a report issued on Monday, Price Targets.com reports. They currently have an overweight rating on the medical research company&#8217;s stock.
+A...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/morgan-stanley-cuts-neogenomics-nasdaqneo-price-target-to-58-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/syneos-health-nasdaqsynh-updates-fy-2021-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Updates FY 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health (NASDAQ:SYNH) Updates FY 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/syneos-health-nasdaqsynh-updates-fy-2021-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Updates FY 2021 Earnings Guidance"><h2>Syneos Health (NASDAQ:SYNH) Updates FY 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Syneos Health (NASDAQ:SYNH) issued an update on its FY 2021 earnings guidance on Monday morning. The company provided earnings per share guidance of $4.250-$4.430 for the period, compared to the Thomson Reuters consensus earnings per...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/syneos-health-nasdaqsynh-updates-fy-2021-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/neoworld-cash-nash-market-capitalization-reaches-249058-41.html" rel="bookmark" title="NeoWorld Cash (NASH) Market Capitalization Reaches $249,058.41" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/nash.png&amp;w=150&amp;zc=1" alt="NeoWorld Cash (NASH) Market Capitalization Reaches $249,058.41" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/neoworld-cash-nash-market-capitalization-reaches-249058-41.html" rel="bookmark" title="NeoWorld Cash (NASH) Market Capitalization Reaches $249,058.41"><h2>NeoWorld Cash (NASH) Market Capitalization Reaches $249,058.41</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoWorld Cash (CURRENCY:NASH) traded up 19.3% against the U.S. dollar during the one day period ending at 14:00 PM E.T. on August 10th. Over the last seven days, NeoWorld Cash has traded 4.5% lower  against the U.S. dollar. NeoWorld...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/neoworld-cash-nash-market-capitalization-reaches-249058-41.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/loopring-neo-lrn-1-day-trading-volume-hits-30-00.html" rel="bookmark" title="Loopring [NEO] (LRN) 1-Day Trading Volume Hits $30.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lrn.jpg&amp;w=150&amp;zc=1" alt="Loopring [NEO] (LRN) 1-Day Trading Volume Hits $30.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/loopring-neo-lrn-1-day-trading-volume-hits-30-00.html" rel="bookmark" title="Loopring [NEO] (LRN) 1-Day Trading Volume Hits $30.00"><h2>Loopring [NEO] (LRN) 1-Day Trading Volume Hits $30.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Loopring [NEO] (CURRENCY:LRN) traded up 6.8% against the U.S. dollar during the one day period ending at 14:00 PM Eastern on August 10th. Loopring [NEO] has a market capitalization of $1.60 million and approximately $30.00 worth of...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/loopring-neo-lrn-1-day-trading-volume-hits-30-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/oneok-inc-nyseoke-shares-sold-by-lexaurum-advisors-llc.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Sold by LexAurum Advisors LLC" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="ONEOK, Inc. (NYSE:OKE) Shares Sold by LexAurum Advisors LLC" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/oneok-inc-nyseoke-shares-sold-by-lexaurum-advisors-llc.html" rel="bookmark" title="ONEOK, Inc. (NYSE:OKE) Shares Sold by LexAurum Advisors LLC"><h2>ONEOK, Inc. (NYSE:OKE) Shares Sold by LexAurum Advisors LLC</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						LexAurum Advisors LLC decreased its stake in  ONEOK, Inc. (NYSE:OKE) by 4.1% during the 2nd quarter, according to the company in its most recent disclosure with the Securities &amp; Exchange Commission. The firm owned 42,780 shares...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/oneok-inc-nyseoke-shares-sold-by-lexaurum-advisors-llc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/syneos-health-inc-nasdaqsynh-shares-purchased-by-state-of-alaska-department-of-revenue.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Shares Purchased by State of Alaska Department of Revenue" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health, Inc. (NASDAQ:SYNH) Shares Purchased by State of Alaska Department of Revenue" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/syneos-health-inc-nasdaqsynh-shares-purchased-by-state-of-alaska-department-of-revenue.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Shares Purchased by State of Alaska Department of Revenue"><h2>Syneos Health, Inc. (NASDAQ:SYNH) Shares Purchased by State of Alaska Department of Revenue</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						State of Alaska Department of Revenue increased its stake in shares of  Syneos Health, Inc. (NASDAQ:SYNH) by 21.5% in the 2nd quarter, HoldingsChannel reports. The firm owned 15,729 shares of the company&#8217;s stock after purchasing...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/syneos-health-inc-nasdaqsynh-shares-purchased-by-state-of-alaska-department-of-revenue.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/neogenomics-neo-buy-rating-reaffirmed-at-needham-company-llc.html" rel="bookmark" title="NeoGenomics&#8217; (NEO) &#8220;Buy&#8221; Rating Reaffirmed at Needham &#038; Company LLC" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogenomics-inc-logo.jpg&amp;w=150&amp;zc=1" alt="NeoGenomics&#8217; (NEO) &#8220;Buy&#8221; Rating Reaffirmed at Needham &#038; Company LLC" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/neogenomics-neo-buy-rating-reaffirmed-at-needham-company-llc.html" rel="bookmark" title="NeoGenomics&#8217; (NEO) &#8220;Buy&#8221; Rating Reaffirmed at Needham &#038; Company LLC"><h2>NeoGenomics&#8217; (NEO) &#8220;Buy&#8221; Rating Reaffirmed at Needham &#038; Company LLC</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Needham &#038; Company LLC reiterated their buy rating on shares of NeoGenomics (NASDAQ:NEO)  in a research report report published on Monday, Analyst Price Targets reports. Needham &#038; Company LLC currently has a $55.00 price target...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/neogenomics-neo-buy-rating-reaffirmed-at-needham-company-llc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/neonode-neon-scheduled-to-post-quarterly-earnings-on-wednesday.html" rel="bookmark" title="Neonode (NEON) Scheduled to Post Quarterly Earnings on Wednesday" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neonode-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Neonode (NEON) Scheduled to Post Quarterly Earnings on Wednesday" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/neonode-neon-scheduled-to-post-quarterly-earnings-on-wednesday.html" rel="bookmark" title="Neonode (NEON) Scheduled to Post Quarterly Earnings on Wednesday"><h2>Neonode (NEON) Scheduled to Post Quarterly Earnings on Wednesday</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neonode (NASDAQ:NEON) is scheduled to issue its quarterly earnings data before the market opens  on Wednesday, August 11th. Parties that are interested in registering for the company&#8217;s conference call can do so using this link....&nbsp;<a href='https://transcriptdaily.com/2021/08/10/neonode-neon-scheduled-to-post-quarterly-earnings-on-wednesday.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/research-analysts-offer-predictions-for-oneok-inc-s-fy2021-earnings-nyseoke.html" rel="bookmark" title="Research Analysts Offer Predictions for ONEOK, Inc.&#8217;s FY2021 Earnings (NYSE:OKE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/oneok-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Research Analysts Offer Predictions for ONEOK, Inc.&#8217;s FY2021 Earnings (NYSE:OKE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/research-analysts-offer-predictions-for-oneok-inc-s-fy2021-earnings-nyseoke.html" rel="bookmark" title="Research Analysts Offer Predictions for ONEOK, Inc.&#8217;s FY2021 Earnings (NYSE:OKE)"><h2>Research Analysts Offer Predictions for ONEOK, Inc.&#8217;s FY2021 Earnings (NYSE:OKE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						
+ONEOK, Inc. (NYSE:OKE) &#8211; Analysts at  Truist Securiti decreased their FY2021 earnings per share estimates for ONEOK  in a research report issued on  Thursday, August 5th. Truist Securiti analyst T. Richardson now expects that...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/research-analysts-offer-predictions-for-oneok-inc-s-fy2021-earnings-nyseoke.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/neoworld-cash-nash-market-capitalization-achieves-215818-15.html" rel="bookmark" title="NeoWorld Cash (NASH) Market Capitalization Achieves $215,818.15" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/nash.png&amp;w=150&amp;zc=1" alt="NeoWorld Cash (NASH) Market Capitalization Achieves $215,818.15" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/neoworld-cash-nash-market-capitalization-achieves-215818-15.html" rel="bookmark" title="NeoWorld Cash (NASH) Market Capitalization Achieves $215,818.15"><h2>NeoWorld Cash (NASH) Market Capitalization Achieves $215,818.15</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoWorld Cash (CURRENCY:NASH) traded down 2.2% against the U.S. dollar during the twenty-four hour period ending at 16:00 PM E.T. on August 9th. One NeoWorld Cash coin can now be bought for about $0.0000 or 0.00000000 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/09/neoworld-cash-nash-market-capitalization-achieves-215818-15.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/syneos-health-nasdaqsynh-releases-fy21-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Releases FY21 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health (NASDAQ:SYNH) Releases FY21 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/syneos-health-nasdaqsynh-releases-fy21-earnings-guidance.html" rel="bookmark" title="Syneos Health (NASDAQ:SYNH) Releases FY21 Earnings Guidance"><h2>Syneos Health (NASDAQ:SYNH) Releases FY21 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Syneos Health (NASDAQ:SYNH) issued an update on its FY21 earnings guidance on Monday morning. The company provided earnings per share (EPS) guidance of $4.25-4.43 for the period, compared to the Thomson Reuters consensus estimate of...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/syneos-health-nasdaqsynh-releases-fy21-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/neogen-co-nasdaqneog-shares-acquired-by-new-mexico-educational-retirement-board.html" rel="bookmark" title="Neogen Co. (NASDAQ:NEOG) Shares Acquired by New Mexico Educational Retirement Board" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogen-corp-logo.gif&amp;w=150&amp;zc=1" alt="Neogen Co. (NASDAQ:NEOG) Shares Acquired by New Mexico Educational Retirement Board" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/neogen-co-nasdaqneog-shares-acquired-by-new-mexico-educational-retirement-board.html" rel="bookmark" title="Neogen Co. (NASDAQ:NEOG) Shares Acquired by New Mexico Educational Retirement Board"><h2>Neogen Co. (NASDAQ:NEOG) Shares Acquired by New Mexico Educational Retirement Board</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						New Mexico Educational Retirement Board grew its holdings in  Neogen Co. (NASDAQ:NEOG) by 136.6% during the 2nd quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The fund owned...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/neogen-co-nasdaqneog-shares-acquired-by-new-mexico-educational-retirement-board.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/neogames-ngms-set-to-announce-earnings-on-wednesday.html" rel="bookmark" title="NeoGames (NGMS) Set to Announce Earnings on Wednesday" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogames-sa-logo.png&amp;w=150&amp;zc=1" alt="NeoGames (NGMS) Set to Announce Earnings on Wednesday" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/neogames-ngms-set-to-announce-earnings-on-wednesday.html" rel="bookmark" title="NeoGames (NGMS) Set to Announce Earnings on Wednesday"><h2>NeoGames (NGMS) Set to Announce Earnings on Wednesday</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						NeoGames (NASDAQ:NGMS) will be posting its quarterly earnings results after the market closes  on Wednesday, August 11th. Analysts expect NeoGames to post earnings of $0.12 per share for the quarter.  NeoGames has set its FY 2021 guidance...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/neogames-ngms-set-to-announce-earnings-on-wednesday.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/syneos-health-inc-nasdaqsynh-expected-to-post-quarterly-sales-of-1-27-billion.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Expected to Post Quarterly Sales of $1.27 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/inc-research-holdings-inc-logo.jpg&amp;w=150&amp;zc=1" alt="Syneos Health, Inc. (NASDAQ:SYNH) Expected to Post Quarterly Sales of $1.27 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/syneos-health-inc-nasdaqsynh-expected-to-post-quarterly-sales-of-1-27-billion.html" rel="bookmark" title="Syneos Health, Inc. (NASDAQ:SYNH) Expected to Post Quarterly Sales of $1.27 Billion"><h2>Syneos Health, Inc. (NASDAQ:SYNH) Expected to Post Quarterly Sales of $1.27 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Equities research analysts predict that Syneos Health, Inc. (NASDAQ:SYNH) will report $1.27 billion in sales for the current fiscal quarter, Zacks Investment Research reports. Four analysts have made estimates for Syneos Health&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/syneos-health-inc-nasdaqsynh-expected-to-post-quarterly-sales-of-1-27-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/neogen-co-nasdaqneog-shares-purchased-by-carnegie-capital-asset-management-llc.html" rel="bookmark" title="Neogen Co. (NASDAQ:NEOG) Shares Purchased by Carnegie Capital Asset Management LLC" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neogen-corp-logo.gif&amp;w=150&amp;zc=1" alt="Neogen Co. (NASDAQ:NEOG) Shares Purchased by Carnegie Capital Asset Management LLC" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/neogen-co-nasdaqneog-shares-purchased-by-carnegie-capital-asset-management-llc.html" rel="bookmark" title="Neogen Co. (NASDAQ:NEOG) Shares Purchased by Carnegie Capital Asset Management LLC"><h2>Neogen Co. (NASDAQ:NEOG) Shares Purchased by Carnegie Capital Asset Management LLC</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Carnegie Capital Asset Management LLC increased its holdings in shares of  Neogen Co. (NASDAQ:NEOG) by 95.9% in the second quarter, Holdings Channel reports. The firm owned 248,142 shares of the company&#8217;s stock after buying an...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/neogen-co-nasdaqneog-shares-purchased-by-carnegie-capital-asset-management-llc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/earneo-rno-price-reaches-0-0215-on-exchanges.html" rel="bookmark" title="Earneo (RNO) Price Reaches $0.0215 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3679.png&amp;w=150&amp;zc=1" alt="Earneo (RNO) Price Reaches $0.0215 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/earneo-rno-price-reaches-0-0215-on-exchanges.html" rel="bookmark" title="Earneo (RNO) Price Reaches $0.0215 on Exchanges"><h2>Earneo (RNO) Price Reaches $0.0215 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Earneo (CURRENCY:RNO) traded 9.3% lower  against the U.S. dollar during the 1 day period ending at 9:00 AM ET on August 8th. Earneo has a market cap of $5.47 million and $1,110.00 worth of Earneo was traded on exchanges in the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/earneo-rno-price-reaches-0-0215-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/neophotonics-nysenptn-downgraded-by-zacks-investment-research-to-sell.html" rel="bookmark" title="NeoPhotonics (NYSE:NPTN) Downgraded by Zacks Investment Research to &#8220;Sell&#8221;" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/neophotonics-corp-logo.jpg&amp;w=150&amp;zc=1" alt="NeoPhotonics (NYSE:NPTN) Downgraded by Zacks Investment Research to &#8220;Sell&#8221;" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/neophotonics-nysenptn-downgraded-by-zacks-investment-research-to-sell.html" rel="bookmark" title="NeoPhotonics (NYSE:NPTN) Downgraded by Zacks Investment Research to &#8220;Sell&#8221;"><h2>NeoPhotonics (NYSE:NPTN) Downgraded by Zacks Investment Research to &#8220;Sell&#8221;</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Zacks Investment Research cut shares of NeoPhotonics (NYSE:NPTN) from a hold rating to a sell rating in a report released on Thursday morning, Zacks.com reports. 
+According to Zacks, &#8220;NeoPhotonics Corporation is engaged in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/neophotonics-nysenptn-downgraded-by-zacks-investment-research-to-sell.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=NEO" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Neogen</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Neogen with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="NASDAQ:NEOG" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/privia-health-group-nasdaqprva-upgraded-at-zacks-investment-research.html">Privia Health Group (NASDAQ:PRVA) Upgraded at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/orchard-therapeutics-nasdaqortx-cut-to-neutral-at-jpmorgan-chase-co.html">Orchard Therapeutics (NASDAQ:ORTX) Cut to Neutral at JPMorgan Chase &#038; Co.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/ntt-data-otcmktsntdty-upgraded-to-buy-by-mizuho.html">NTT DATA (OTCMKTS:NTDTY) Upgraded to &#8220;Buy&#8221; by Mizuho</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/zacks-investment-research-upgrades-new-jersey-resources-nysenjr-to-buy.html">Zacks Investment Research Upgrades New Jersey Resources (NYSE:NJR) to &#8220;Buy&#8221;</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/cantor-fitzgerald-equities-analysts-increase-earnings-estimates-for-aspira-womens-health-inc-nasdaqawh.html">Cantor Fitzgerald Equities Analysts Increase Earnings Estimates for Aspira Women&#8217;s Health Inc. (NASDAQ:AWH)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/jefferies-financial-group-weighs-in-on-swiss-re-ags-fy2021-earnings-otcmktsssrey.html">Jefferies Financial Group Weighs in on Swiss Re AG&#8217;s FY2021 Earnings (OTCMKTS:SSREY)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/fy2021-eps-estimates-for-the-lion-electric-company-nyselev-cut-by-analyst.html">FY2021 EPS Estimates for The Lion Electric Company (NYSE:LEV) Cut by Analyst</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/national-bank-financial-equities-analysts-cut-earnings-estimates-for-auto-prop-reit-tseapr.html">National Bank Financial Equities Analysts Cut Earnings Estimates for Auto Prop Reit (TSE:APR)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/brinker-international-inc-nyseeat-to-post-fy2021-earnings-of-3-20-per-share-keycorp-forecasts.html">Brinker International, Inc. (NYSE:EAT) to Post FY2021 Earnings of $3.20 Per Share, KeyCorp Forecasts</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/astronova-nasdaqalot-downgraded-to-hold-at-zacks-investment-research.html">AstroNova (NASDAQ:ALOT) Downgraded to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/allot-communications-nasdaqallt-lifted-to-buy-at-zacks-investment-research.html">Allot Communications (NASDAQ:ALLT) Lifted to &#8220;Buy&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/abcellera-biologics-nasdaqabcl-rating-lowered-to-hold-at-zacks-investment-research.html">AbCellera Biologics (NASDAQ:ABCL) Rating Lowered to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/afya-nasdaqafya-upgraded-to-hold-at-zacks-investment-research.html">Afya (NASDAQ:AFYA) Upgraded to &#8220;Hold&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/british-land-lonblnd-price-target-raised-to-gbx-618.html">British Land (LON:BLND) Price Target Raised to GBX 618</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/analysts-anticipate-general-electric-nysege-will-announce-quarterly-sales-of-19-34-billion.html">Analysts Anticipate General Electric (NYSE:GE) Will Announce Quarterly Sales of $19.34 Billion</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/head-to-head-review-computer-services-otcmktscsvi-and-marathon-digital-nasdaqmara.html">Head to Head Review: Computer Services (OTCMKTS:CSVI) and Marathon Digital (NASDAQ:MARA)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/titan-machinery-nasdaqtitn-national-waste-management-otcmktsnwmh-head-to-head-contrast.html">Titan Machinery (NASDAQ:TITN) &amp; National Waste Management (OTCMKTS:NWMH) Head-To-Head Contrast</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/just-eat-takeaway-com-lonjet-given-a-gbx-9800-price-target-at-ubs-group.html">Just Eat Takeaway.com (LON:JET) Given a GBX 9,800 Price Target at UBS Group</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/royal-bank-of-canada-reaffirms-outperform-rating-for-algonquin-power-utilities-tseaqn.html">Royal Bank of Canada Reaffirms &#8220;Outperform&#8221; Rating for Algonquin Power &#038; Utilities (TSE:AQN)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/short-interest-in-ecofin-sustainable-and-social-impact-term-fund-nyseteaf-expands-by-27-3.html">Short Interest in Ecofin Sustainable and Social Impact Term Fund (NYSE:TEAF) Expands By 27.3%</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77506735&PostDate=2021-8-20&type=o&tertiary=1&id=59328&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

@@ -1,4 +1,4 @@
-import MySQLdb
+import pymysql
 from pybittrex.client import Client
 import os
 
@@ -18,14 +18,14 @@ def AI():
     for summary in market_summ: #Loop trough the market summary
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
+                print (market)
                 if summ_ai(market)>-1:
-                    print market, summ_ai(market), count(market)
-                    f= open('data/out18_tmp.csv', 'a')
-                    print >> f, str(market)
-                    f1=open('data/out19_tmp.csv', 'a')
-                    print >>f1, summ_ai(market)
-                    f2 = open('data/out20_tmp.csv', 'a')
-                    print >> f2, count(market)
+                   f= open('data/out18_tmp.csv', 'a')
+                   print (str(market), file=f)
+                   f1=open('data/out19_tmp.csv', 'a')
+                   print (summ_ai(market), file=f1)
+                   f2 = open('data/out20_tmp.csv', 'a')
+                   print (count(market), file=f2)
     os.rename('data/out18_tmp.csv', 'data/out18.csv')
     os.rename('data/out19_tmp.csv', 'data/out19.csv')
     os.rename('data/out20_tmp.csv', 'data/out20.csv')
@@ -34,7 +34,7 @@ def AI():
 
 
 def summ_ai(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT SUM(result) FROM candlepredict where market= '%s'" % market)
@@ -50,7 +50,7 @@ def summ_ai(marketname):
 
 
 def count(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT COUNT(*) FROM candlepredict where market= '%s'" % market)
@@ -64,7 +64,7 @@ def count(marketname):
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE enabled =1")

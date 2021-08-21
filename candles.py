@@ -1,40 +1,42 @@
 import time
 import config
 from pybittrex.client import Client
-import MySQLdb
-import sys
+import pymysql
 import requests
 import hashlib
 import hmac
-import numpy
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import io, base64, os, json, re, sys 
+import glob
+import shutil
+import pandas as pd
+import numpy as np
 import datetime
-#c1 = Client(api_key=config.key, api_secret=config.secret)
+import warnings
+warnings.filterwarnings('ignore')
+import matplotlib.dates as mdates
+from mpl_finance import candlestick_ohlc
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
+from datetime import timedelta, date
+currtime = int(round(time.time()))
 c=Client(api_key='', api_secret='')
 
-
-TICK_INTERVAL = 600  # seconds
 
 
 
 
 def main():
     print('Starting candle patterns module')
-
-
-    # Running clock forever
-    while True:
-        start = time.time()
-        tick()
-        end = time.time()
-        # Sleep the thread if needed
-        if end - start < TICK_INTERVAL:
-            time.sleep(TICK_INTERVAL - (end - start))
+    tick()
 
 
 def tick():
     currtime = int(round(time.time()))
     now = datetime.datetime.now()
     currenttime = now.strftime("%Y-%m-%d %H:%M")
+    currentdate = now.strftime("%Y-%m-%d")
 
     market_summ = c.get_market_summaries().json()['result']
     for summary in market_summ: #Loop trough the market summary
@@ -43,488 +45,303 @@ def tick():
                 market = summary['MarketName']
                 #active_order= status_orders(market, 4)
                 last = float(summary['Last'])  # last price
-                serf = percent_serf(market)
-                #print last
-                candles_signal_short = str(heikin_ashi(market, 29))
-                candles_signal_long = str(heikin_ashi(market, 30))
-                candles_signal_price = float(heikin_ashi(market, 32))
-                candles_signal_time=int(heikin_ashi(market, 31))
-                
-                
-                print "Gather 5hour HA candle info for ", market
-
-                ############
-                hourcandles = get_candles(market, 'hour')['result'][-25:]
-                hourcurrentlow = float(hourcandles[24]['L'])*100000
-                hourcurrenthigh = float(hourcandles[24]['H'])*100000
-                hourcurrentopen = float(hourcandles[24]['O'])*100000
-                hourcurrentclose = float(hourcandles[24]['C'])*100000
-
-                hourprevlow = float(hourcandles[23]['L'])*100000
-                hourprevhigh = float(hourcandles[23]['H'])*100000
-                hourprevopen = float(hourcandles[23]['O'])*100000
-                hourprevclose = float(hourcandles[23]['C'])*100000
-
-                hourprevlow2 = float(hourcandles[22]['L'])*100000
-                hourprevhigh2 = float(hourcandles[22]['H'])*100000
-                hourprevopen2 = float(hourcandles[22]['O'])*100000
-                hourprevclose2 = float(hourcandles[22]['C'])*100000
-
-                hourprevlow3 = float(hourcandles[21]['L'])*100000
-                hourprevhigh3 = float(hourcandles[21]['H'])*100000
-                #hourprevopen3 = float(hourcandles[21]['O'])*100000
-                #hourprevclose3 = float(hourcandles[21]['C'])*100000
-
-
-                hourprevlow4 = float(hourcandles[20]['L'])*100000
-                hourprevhigh4 = float(hourcandles[20]['H'])*100000
-                hourprevopen4 = float(hourcandles[20]['O'])*100000
-                #hourprevclose4 = float(hourcandles[20]['C'])*100000
-
-
-                hourprevlow5 = float(hourcandles[19]['L'])*100000
-                hourprevhigh5 = float(hourcandles[19]['H'])*100000
-                #hourprevopen5 = float(hourcandles[19]['O'])*100000
-                hourprevclose5 = float(hourcandles[19]['C'])*100000
-
-
-
-                hourprevlow6 = float(hourcandles[18]['L'])*100000
-                hourprevhigh6 = float(hourcandles[18]['H'])*100000
-                #hourprevopen6 = float(hourcandles[18]['O'])*100000
-                #hourprevclose6 = float(hourcandles[18]['C'])*100000
-
-
-                hourprevlow7 = float(hourcandles[17]['L'])*100000
-                hourprevhigh7 = float(hourcandles[17]['H'])*100000
-                #hourprevopen7 = float(hourcandles[17]['O'])*100000
-                #hourprevclose7 = float(hourcandles[17]['C'])*100000
-
-
-                hourprevlow8 = float(hourcandles[16]['L'])*100000
-                hourprevhigh8 = float(hourcandles[16]['H'])*100000
-                #hourprevopen8 = float(hourcandles[16]['O'])*100000
-                #hourprevclose8 = float(hourcandles[16]['C'])*100000
-
-
-                hourprevlow9 = float(hourcandles[15]['L'])*100000
-                hourprevhigh9 = float(hourcandles[15]['H'])*100000
-                hourprevopen9 = float(hourcandles[15]['O'])*100000
-                #hourprevclose9 = float(hourcandles[15]['C'])*100000
-
-                hourprevlow10 = float(hourcandles[14]['L'])*100000
-                hourprevhigh10 = float(hourcandles[14]['H'])*100000
-                #hourprevopen10 = float(hourcandles[14]['O'])*100000
-                hourprevclose10 = float(hourcandles[14]['C'])*100000
-
-
-                hourprevlow11 = float(hourcandles[13]['L'])*100000
-                hourprevhigh11 = float(hourcandles[13]['H'])*100000
-                #hourprevopen11 = float(hourcandles[13]['O'])*100000
-                #hourprevclose11 = float(hourcandles[13]['C'])*100000
-
-
-                hourprevlow12 = float(hourcandles[12]['L'])*100000
-                hourprevhigh12 = float(hourcandles[12]['H'])*100000
-                #hourprevopen12 = float(hourcandles[12]['O'])*100000
-                #hourprevclose12 = float(hourcandles[12]['C'])*100000
-
-
-
-                hourprevlow13 = float(hourcandles[11]['L'])*100000
-                hourprevhigh13 = float(hourcandles[11]['H'])*100000
-                #hourprevopen13 = float(hourcandles[11]['O'])*100000
-                #hourprevclose13 = float(hourcandles[11]['C'])*100000
-
-
-                hourprevlow14 = float(hourcandles[10]['L'])*100000
-                hourprevhigh14 = float(hourcandles[10]['H'])*100000
-                hourprevopen14 = float(hourcandles[10]['O'])*100000
-                #hourprevclose14 = float(hourcandles[10]['C'])*100000
-
-
-
-                hourprevlow15 = float(hourcandles[9]['L'])*100000
-                hourprevhigh15 = float(hourcandles[9]['H'])*100000
-                #hourprevopen15 = float(hourcandles[9]['O'])*100000
-                hourprevclose15 = float(hourcandles[9]['C'])*100000
-
-
-                hourprevlow16 = float(hourcandles[8]['L'])*100000
-                hourprevhigh16 = float(hourcandles[8]['H'])*100000
-                #hourprevopen16 = float(hourcandles[8]['O'])*100000
-                #hourprevclose16 = float(hourcandles[8]['C'])*100000
-
-
-                hourprevlow17 = float(hourcandles[7]['L'])*100000
-                hourprevhigh17 = float(hourcandles[7]['H'])*100000
-                #hourprevopen17 = float(hourcandles[7]['O'])*100000
-                #hourprevclose17 = float(hourcandles[7]['C'])*100000
-
-
-
-                hourprevlow18 = float(hourcandles[6]['L'])*100000
-                hourprevhigh18 = float(hourcandles[6]['H'])*100000
-                #hourprevopen18 = float(hourcandles[6]['O'])*100000
-                #hourprevclose18 = float(hourcandles[6]['C'])*100000
-
-
-                hourprevlow19 = float(hourcandles[5]['L'])*100000
-                hourprevhigh19 = float(hourcandles[5]['H'])*100000
-                hourprevopen19 = float(hourcandles[5]['O'])*100000
-                #hourprevclose19 = float(hourcandles[5]['C'])*100000
-
-
-
-                hourprevlow20 = float(hourcandles[4]['L'])*100000
-                hourprevhigh20 = float(hourcandles[4]['H'])*100000
-                #hourprevopen20 = float(hourcandles[4]['O'])*100000
-                hourprevclose20 = float(hourcandles[4]['C'])*100000
-
-
-
-                hourprevlow21 = float(hourcandles[3]['L'])*100000
-                hourprevhigh21 = float(hourcandles[3]['H'])*100000
-                #hourprevopen21 = float(hourcandles[3]['O'])*100000
-                #hourprevclose21 = float(hourcandles[3]['C'])*100000
-
-
-
-                hourprevlow22 = float(hourcandles[2]['L'])*100000
-                hourprevhigh22 = float(hourcandles[2]['H'])*100000
-                #hourprevopen22 = float(hourcandles[2]['O'])*100000
-                #hourprevclose22 = float(hourcandles[2]['C'])*100000
-
-
-                hourprevlow23 = float(hourcandles[1]['L'])*100000
-                hourprevhigh23 = float(hourcandles[1]['H'])*100000
-                #hourprevopen23 = float(hourcandles[1]['O'])*100000
-                #hourprevclose23 = float(hourcandles[1]['C'])*100000
-
-
-                hourprevlow24 = float(hourcandles[0]['L'])*100000
-                hourprevhigh24 = float(hourcandles[0]['H'])*100000
-                hourprevopen24 = float(hourcandles[0]['O'])*100000
-                #hourprevclose24 = float(hourcandles[0]['C'])*100000
-
-                               ###########
-
-                fivehourcurrentlow = min(hourcurrentlow, hourprevlow, hourprevlow2, hourprevlow3, hourprevlow4)
-                fivehourcurrenthigh = max(hourcurrenthigh, hourprevhigh, hourprevhigh2, hourprevhigh3, hourprevhigh4)
-                fivehourcurrentopen = hourprevopen4
-                fivehourcurrentclose = hourcurrentclose
-
-                fivehourprevlow = min(hourprevlow5, hourprevlow6, hourprevlow7, hourprevlow8, hourprevlow9)
-                fivehourprevhigh = max(hourprevhigh5,hourprevhigh6, hourprevhigh7, hourprevhigh8, hourprevhigh9)
-                fivehourprevopen = hourprevopen9
-                fivehourprevclose = hourprevclose5
-                
-                fivehourprevlow2 = min(hourprevlow10, hourprevlow11, hourprevlow12, hourprevlow13, hourprevlow14)
-                fivehourprevhigh2 = max(hourprevhigh10,hourprevhigh11, hourprevhigh12, hourprevhigh13, hourprevhigh14)
-                fivehourprevopen2 = hourprevopen14
-                fivehourprevclose2 = hourprevclose10
-
-
-                fivehourprevlow3 = min(hourprevlow15, hourprevlow16, hourprevlow17, hourprevlow18, hourprevlow19)
-                fivehourprevhigh3 = max(hourprevhigh15,hourprevhigh16, hourprevhigh17, hourprevhigh18, hourprevhigh19)
-                fivehourprevopen3 = hourprevopen19
-                fivehourprevclose3 = hourprevclose15
-
-
-                fivehourprevlow4 = min(hourprevlow20, hourprevlow21, hourprevlow22, hourprevlow23, hourprevlow24)
-                fivehourprevhigh4 = max(hourprevhigh20,hourprevhigh21, hourprevhigh22, hourprevhigh23, hourprevhigh24)
-                fivehourprevopen4 = hourprevopen24
-                fivehourprevclose4 = hourprevclose20
-
-
-
-
-
-                print "Starting candle patterns check for ", market
-#HAMMER
-                signal1="NONE"
-
-
-                if (fivehourprevhigh==fivehourprevclose) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1="Up-1"
-                else:
-                    pass
-
-
-
-#HANGING MAN
-                if (fivehourprevhigh==fivehourprevopen) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 < fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1="Down-1"
-                else:
-                    pass
-
-
-
-#INVERTED HAMMER
-                if (fivehourprevopen==fivehourprevlow) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 > fivehourprevclose2) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1="Up-2"
-                else:
-                    pass
-
-
-
-#SHOOTING STAR
-
-                if (fivehourprevclose==fivehourprevlow) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) >= 2.5)  and (fivehourprevopen - fivehourprevclose !=0) and (fivehourprevopen2 < fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1="Down-2"
-                else:
-                    pass
-
-
-
-
-
-#BULLISH ENGULFING
-
-                if ((fivehourprevopen2 > fivehourprevclose2) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevhigh2 - fivehourprevlow2) >= 1.5) and (fivehourprevhigh2 - fivehourprevlow2 !=0) and  (fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) <= 2) and (fivehourprevopen < fivehourprevclose) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-3"
-                else:
-                    pass
-
-
-
-
-#BEARISH ENGULFING
-
-                if ((fivehourprevopen2 < fivehourprevclose2) and ((fivehourprevhigh - fivehourprevlow) / (fivehourprevhigh2 - fivehourprevlow2) >= 1.5) and (fivehourprevhigh2 - fivehourprevlow2 !=0) and  (fivehourprevhigh - fivehourprevlow) / (fivehourprevopen - fivehourprevclose) <= 2)  and (fivehourprevopen > fivehourprevclose) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1 = "Down-3"
-                else:
-                    pass
-
-
-
-
-#TWEEZER BOTTOMS
-
-                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4) and (fivehourprevopen<fivehourprevclose) and fivehourprevlow==fivehourprevlow2  and ((fivehourprevhigh - fivehourprevlow) - (fivehourprevopen - fivehourprevclose) == (fivehourprevhigh - fivehourprevlow) - (fivehourprevclose - fivehourprevopen) and fivehourprevopen2==fivehourprevhigh2 and fivehourprevhigh==fivehourprevclose) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-4"
-                else:
-                    pass
-
-
-
-
-
-# TWEEZER TOPS
-
-
-                if (fivehourprevopen2<fivehourprevclose2 and fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4) and (fivehourprevopen>fivehourprevclose) and  fivehourprevhigh==fivehourprevhigh2 and ((fivehourprevhigh - fivehourprevlow) - (fivehourprevopen - fivehourprevclose) == (fivehourprevhigh - fivehourprevlow) - (fivehourprevclose - fivehourprevopen) and fivehourprevopen==fivehourprevhigh and fivehourprevhigh2==fivehourprevclose2) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1 = "Down-4"
-                else:
-                    pass
-
-
-
-
-#EVENING STAR
-                                                # upper trend                                                                           #current candle is Down                             #short candle or doji
-                if (fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4 and fivehourprevopen5<fivehourprevclose5) and (fivehourprevopen>fivehourprevclose) and   (fivehourprevopen2==fivehourprevclose2 or ((fivehourprevhigh2 - fivehourprevlow2) / numpy.abs(fivehourprevclose2 - fivehourprevopen2) >= 4 and (fivehourprevclose2 - fivehourprevopen2 !=0))) and (fivehourprevopen-fivehourprevclose >=(fivehourprevclose3-fivehourprevopen3)/2) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1 = "Down-5"
-                else:
-                    pass
-
-
-
-
-#MORNING STAR
-
-                if (fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevclose5) and (fivehourprevopen<fivehourprevclose) and   (fivehourprevopen2==fivehourprevclose2 or ((fivehourprevhigh2 - fivehourprevlow2) / numpy.abs(fivehourprevclose2 - fivehourprevopen2) >= 4 and (fivehourprevclose2 - fivehourprevopen2 !=0))) and (fivehourprevclose - fivehourprevopen >=(fivehourprevopen3 - fivehourprevclose3)/2) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-5"
-                else:
-                    pass
-
-
-
-
-#THREE WHITE SOLDIERS
-
-                if ((fivehourprevopen<fivehourprevclose and fivehourprevopen2<fivehourprevclose2 and fivehourprevopen3<fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevopen5)  and  (fivehourprevhigh2-fivehourprevlow2>fivehourprevclose3-fivehourprevopen3) and  fivehourprevhigh2==fivehourprevclose2  and fivehourprevhigh-fivehourprevlow >=fivehourprevhigh2-fivehourprevlow2  and fivehourprevhigh==fivehourprevclose and fivehourprevopen==fivehourprevlow ) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-6"
-                else:
-                    pass
-
-
-
-
-#THREE BLACK CROWS
-
-
-                if ((fivehourprevopen>fivehourprevclose and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4 and fivehourprevopen5<fivehourprevopen5)  and  (fivehourprevhigh2-fivehourprevlow2>fivehourprevopen3 - fivehourprevclose3) and  fivehourprevlow2==fivehourprevclose2  and fivehourprevhigh-fivehourprevlow >=fivehourprevhigh2-fivehourprevlow2  and fivehourprevhigh==fivehourprevclose and fivehourprevopen==fivehourprevlow ) and fivehourcurrentopen>fivehourcurrentclose:
-                    signal1 = "Down-6"
-                else:
-                    pass
-
-
-
-#PIERCING LINE
-
-                if (fivehourprevopen2>fivehourprevclose2 and fivehourprevopen<fivehourprevclose  and fivehourprevopen<fivehourprevclose2 and fivehourprevopen==fivehourprevlow) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-7"
-                else:
-                    pass
-
-
-
-
-#THREE LINE STRIKE
-                if ((fivehourprevopen<fivehourprevclose and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4>fivehourprevclose4 and fivehourprevopen5>fivehourprevopen5)  and fivehourprevopen==fivehourprevlow and fivehourprevclose> fivehourprevhigh4) and fivehourcurrentopen<fivehourcurrentclose:
-                    signal1 = "Up-8"
-                else:
-                    pass
-
-
-#TWO BLACK GAPING
-                if (fivehourprevopen>fivehourprevclose and fivehourprevopen==fivehourprevhigh and fivehourprevopen2>fivehourprevclose2 and fivehourprevopen3>fivehourprevclose3 and fivehourprevopen4<fivehourprevclose4  and (fivehourprevhigh2-fivehourprevlow2)/(fivehourprevhigh3-fivehourprevlow3)>=1.5 and fivehourprevhigh2<fivehourprevlow3) and fivehourcurrentopen>fivehourcurrentclose :
-                    signal1 = "Down-7"
-                else:
-                    pass
-
-
-
-
-
-                print market, signal1
-                if signal1=="Down-1" or signal1=="Down-2" or signal1=="Down-3"  or signal1=="Down-4" or signal1=="Down-5"  or signal1=="Down-6" or signal1=="Down-7"  or signal1=="Up-1"  or signal1=="Up-2" or signal1=="Up-3" or signal1=="Up-4" or signal1=="Up-5" or signal1=="Up-6" or signal1=="Up-7" or signal1=="Up-8":
-                    try:
-                        printed=('      ' + str(market) + '  has candle signal '+signal1)
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                        if status_orders(market, 4)==1:
-                            #cursor.execute(
-                             #       'insert into orderlogs(market, signals, time, orderid) values("%s", "%s", "%s", "%s")' % (market,  str(serf)+ ' fivehour: ' + str(signal1), currtime, status_orders(market, 0)))
-                            print "OK"
-                        else:
-                            pass
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-#
-
-                if (candles_signal_short=="Up-1" or candles_signal_short=="Up-2" or candles_signal_short=="Up-3" or candles_signal_short=="Up-4" or candles_signal_short=="Up-5" or candles_signal_short=="Up-6" or candles_signal_short=="Up-7" or candles_signal_short=="Up-8") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last>candles_signal_price:
-                    print market, "prediction was successfull"
-
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (candles_signal_short=="Up-1" or candles_signal_short=="Up-2" or candles_signal_short=="Up-3" or candles_signal_short=="Up-4" or candles_signal_short=="Up-5" or candles_signal_short=="Up-6" or candles_signal_short=="Up-7" or candles_signal_short=="Up-8") and (signal1!="NONE" or currtime-candles_signal_time>18000) and last<candles_signal_price:
-                    print market, "prediction was failed"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1,  currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-
-                elif (candles_signal_short=="Down-1" or candles_signal_short=="Down-2" or candles_signal_short=="Down-3" or candles_signal_short=="Down-4" or candles_signal_short=="Down-5" or candles_signal_short=="Down-6" or candles_signal_short=="Down-7") and (
-                        signal1 != "NONE" or currtime - candles_signal_time > 18000) and last < candles_signal_price:
-                    print market, "prediction was successfull"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 1, signal1))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s,   candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-                elif (candles_signal_short=="Down-1" or candles_signal_short=="Down-2" or candles_signal_short=="Down-3" or candles_signal_short=="Down-4" or candles_signal_short=="Down-5" or candles_signal_short=="Down-6" or candles_signal_short=="Down-7") and (
-                        signal1 != "NONE" or currtime - candles_signal_time > 18000) and last > candles_signal_price:
-                    print market, "prediction was failed"
-                    try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456","cryptodb")
-                        cursor = db.cursor()
-                        cursor.execute('insert into candlepredict(market, result, signals) values("%s", "%s", "%s")' % (market, 0, signal1))
-                        cursor.execute(
-                            "update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",
-                            (signal1, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-
-                elif (signal1=="NONE") and currtime - candles_signal_time > 18000 :
-
-                    try:
-                        print market, "lets update new predictions"
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                        cursor = db.cursor()
-
-                        #printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
-                        cursor.execute("update markets set candle_signal_short = %s,  candle_signal_time=%s, candle_signal_price=%s  where market = %s",(signal1, currtime, last, market))
-                        db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
-                        sys.exit(1)
-                    finally:
-                        db.close()
-
-
-                elif (signal1=="Down-1"  or signal1=="Down-2" or signal1=="Down-3"  or signal1=="Down-4" or signal1=="Down-5"  or signal1=="Down-6"  or signal1=="Down-7" or signal1=="Up-1" or signal1=="Up-2"  or signal1=="Up-3" or signal1=="Up-4" or signal1=="Up-5"  or signal1=="Up-6"  or signal1=="Up-7" or signal1=="Up-8") :
-
-                    if signal1!="NONE":
-
-                        try:
-                            print market, "lets update new predictions"
-                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                            cursor = db.cursor()
-
-                            #printed = ('      '+ market + '   The HA_hour is  '  + '  and HAH is ' )
-                            cursor.execute("update markets set candle_signal_short = %s,  candle_signal_price=%s  where market = %s",(signal1, last, market))
-
-                            db.commit()
-                        except MySQLdb.Error, e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
-                            sys.exit(1)
-                        finally:
-                            db.close()
-
-                    else:
-                        pass
-
+#######################
+                daylastcandle = get_candles(market, 'day')['result'][-1:]
+                daycurrentdate = (daylastcandle[0]['T'])
+                split_string = daycurrentdate.split("T", 1)
+                daycurrentdate = split_string[0]
+                daycurrentdate = datetime.date(*(int(s) for s in daycurrentdate.split('-')))
+                daycurrentlow = float(daylastcandle[0]['L'])
+                daycurrenthigh = float(daylastcandle[0]['H'])
+                daycurrentopen = float(daylastcandle[0]['O'])
+                daycurrentclose = float(daylastcandle[0]['C'])
+                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
+                dayprevdate = (daypreviouscandle[0]['T'])
+                split_string = dayprevdate.split("T", 1)
+                dayprevdate = split_string[0]
+                dayprevdate = datetime.date(*(int(s) for s in dayprevdate.split('-')))
+                dayprevlow = float(daypreviouscandle[0]['L'])
+                dayprevhigh = float(daypreviouscandle[0]['H'])
+                dayprevopen = float(daypreviouscandle[0]['O'])
+                dayprevclose = float(daypreviouscandle[0]['C'])
+                daypreviouscandle2 = get_candles(market, 'day')['result'][-3:]
+                dayprevdate2 = (daypreviouscandle2[0]['T'])
+                split_string = dayprevdate2.split("T", 1)
+                dayprevdate2 = split_string[0]
+                dayprevdate2 = datetime.date(*(int(s) for s in dayprevdate2.split('-')))
+                dayprevlow2 = float(daypreviouscandle2[0]['L'])
+                dayprevhigh2 = float(daypreviouscandle2[0]['H'])
+                dayprevopen2 = float(daypreviouscandle2[0]['O'])
+                dayprevclose2 = float(daypreviouscandle2[0]['C'])
+                daypreviouscandle3 = get_candles(market, 'day')['result'][-4:]
+                dayprevdate3 = (daypreviouscandle3[0]['T'])
+                split_string = dayprevdate3.split("T", 1)
+                dayprevdate3 = split_string[0]
+                dayprevdate3 = datetime.date(*(int(s) for s in dayprevdate3.split('-')))
+                dayprevlow3 = float(daypreviouscandle3[0]['L'])
+                dayprevhigh3 = float(daypreviouscandle3[0]['H'])
+                dayprevopen3 = float(daypreviouscandle3[0]['O'])
+                dayprevclose3 = float(daypreviouscandle3[0]['C'])				
+                daypreviouscandle4 = get_candles(market, 'day')['result'][-5:]
+                dayprevdate4 = (daypreviouscandle4[0]['T'])
+                split_string = dayprevdate4.split("T", 1)
+                dayprevdate4 = split_string[0]
+                dayprevdate4 = datetime.date(*(int(s) for s in dayprevdate4.split('-')))
+                dayprevlow4 = float(daypreviouscandle4[0]['L'])
+                dayprevhigh4 = float(daypreviouscandle4[0]['H'])
+                dayprevopen4 = float(daypreviouscandle4[0]['O'])
+                dayprevclose4 = float(daypreviouscandle4[0]['C'])				
+                daypreviouscandle5 = get_candles(market, 'day')['result'][-6:]
+                dayprevdate5 = (daypreviouscandle5[0]['T'])
+                split_string = dayprevdate5.split("T", 1)
+                dayprevdate5 = split_string[0]
+                dayprevdate5 = datetime.date(*(int(s) for s in dayprevdate5.split('-')))
+                dayprevlow5 = float(daypreviouscandle5[0]['L'])
+                dayprevhigh5 = float(daypreviouscandle5[0]['H'])
+                dayprevopen5 = float(daypreviouscandle5[0]['O'])
+                dayprevclose5 = float(daypreviouscandle5[0]['C'])				
+                daypreviouscandle6 = get_candles(market, 'day')['result'][-7:]
+                dayprevdate6 = (daypreviouscandle6[0]['T'])
+                split_string = dayprevdate6.split("T", 1)
+                dayprevdate6 = split_string[0]
+                dayprevdate6 = datetime.date(*(int(s) for s in dayprevdate6.split('-')))
+                dayprevlow6 = float(daypreviouscandle6[0]['L'])
+                dayprevhigh6 = float(daypreviouscandle6[0]['H'])
+                dayprevopen6 = float(daypreviouscandle6[0]['O'])
+                dayprevclose6 = float(daypreviouscandle6[0]['C'])				
+                daypreviouscandle7 = get_candles(market, 'day')['result'][-8:]
+                dayprevdate7 = (daypreviouscandle7[0]['T'])
+                split_string = dayprevdate7.split("T", 1)
+                dayprevdate7 = split_string[0]
+                dayprevdate7 = datetime.date(*(int(s) for s in dayprevdate7.split('-')))
+                dayprevlow7 = float(daypreviouscandle7[0]['L'])
+                dayprevhigh7 = float(daypreviouscandle7[0]['H'])
+                dayprevopen7 = float(daypreviouscandle7[0]['O'])
+                dayprevclose7 = float(daypreviouscandle7[0]['C'])				
+                daypreviouscandle8 = get_candles(market, 'day')['result'][-9:]
+                dayprevdate8 = (daypreviouscandle8[0]['T'])
+                split_string = dayprevdate8.split("T", 1)
+                dayprevdate8 = split_string[0]
+                dayprevdate8 = datetime.date(*(int(s) for s in dayprevdate8.split('-')))
+                dayprevlow8 = float(daypreviouscandle8[0]['L'])
+                dayprevhigh8 = float(daypreviouscandle8[0]['H'])
+                dayprevopen8 = float(daypreviouscandle8[0]['O'])
+                dayprevclose8 = float(daypreviouscandle8[0]['C'])					
+                daypreviouscandle9 = get_candles(market, 'day')['result'][-10:]
+                dayprevdate9 = (daypreviouscandle9[0]['T'])
+                split_string = dayprevdate9.split("T", 1)
+                dayprevdate9 = split_string[0]
+                dayprevdate9 = datetime.date(*(int(s) for s in dayprevdate9.split('-')))
+                dayprevlow9 = float(daypreviouscandle9[0]['L'])
+                dayprevhigh9 = float(daypreviouscandle9[0]['H'])
+                dayprevopen9 = float(daypreviouscandle9[0]['O'])
+                dayprevclose9 = float(daypreviouscandle9[0]['C'])				
+                daypreviouscandle10 = get_candles(market, 'day')['result'][-11:]
+                dayprevdate10 = (daypreviouscandle10[0]['T'])
+                split_string = dayprevdate10.split("T", 1)
+                dayprevdate10 = split_string[0]
+                dayprevdate10 = datetime.date(*(int(s) for s in dayprevdate10.split('-')))
+                dayprevlow10 = float(daypreviouscandle10[0]['L'])
+                dayprevhigh10 = float(daypreviouscandle10[0]['H'])
+                dayprevopen10 = float(daypreviouscandle10[0]['O'])
+                dayprevclose10 = float(daypreviouscandle10[0]['C'])				
+                daypreviouscandle11 = get_candles(market, 'day')['result'][-12:]
+                dayprevdate11 = (daypreviouscandle11[0]['T'])
+                split_string = dayprevdate11.split("T", 1)
+                dayprevdate11 = split_string[0]
+                dayprevdate11 = datetime.date(*(int(s) for s in dayprevdate11.split('-')))
+                dayprevlow11 = float(daypreviouscandle11[0]['L'])
+                dayprevhigh11 = float(daypreviouscandle11[0]['H'])
+                dayprevopen11 = float(daypreviouscandle11[0]['O'])
+                dayprevclose11 = float(daypreviouscandle11[0]['C'])				
+                daypreviouscandle12 = get_candles(market, 'day')['result'][-13:]
+                dayprevdate12 = (daypreviouscandle12[0]['T'])
+                split_string = dayprevdate12.split("T", 1)
+                dayprevdate12 = split_string[0]
+                dayprevdate12 = datetime.date(*(int(s) for s in dayprevdate12.split('-')))
+                dayprevlow12 = float(daypreviouscandle12[0]['L'])
+                dayprevhigh12 = float(daypreviouscandle12[0]['H'])
+                dayprevopen12 = float(daypreviouscandle12[0]['O'])
+                dayprevclose12 = float(daypreviouscandle12[0]['C'])				
+                daypreviouscandle13 = get_candles(market, 'day')['result'][-14:]
+                dayprevdate13 = (daypreviouscandle13[0]['T'])
+                split_string = dayprevdate13.split("T", 1)
+                dayprevdate13 = split_string[0]
+                dayprevdate13 = datetime.date(*(int(s) for s in dayprevdate13.split('-')))
+                dayprevlow13 = float(daypreviouscandle13[0]['L'])
+                dayprevhigh13 = float(daypreviouscandle13[0]['H'])
+                dayprevopen13 = float(daypreviouscandle13[0]['O'])
+                dayprevclose13 = float(daypreviouscandle13[0]['C'])				
+                daypreviouscandle14 = get_candles(market, 'day')['result'][-15:]
+                dayprevdate14 = (daypreviouscandle14[0]['T'])
+                split_string = dayprevdate14.split("T", 1)
+                dayprevdate14 = split_string[0]
+                dayprevdate14 = datetime.date(*(int(s) for s in dayprevdate14.split('-')))
+                dayprevlow14 = float(daypreviouscandle14[0]['L'])
+                dayprevhigh14 = float(daypreviouscandle14[0]['H'])
+                dayprevopen14 = float(daypreviouscandle14[0]['O'])
+                dayprevclose14 = float(daypreviouscandle14[0]['C'])				
+
+				
+				
+                data = [[dayprevdate14, dayprevopen14, dayprevhigh14, dayprevlow14, dayprevclose14], [dayprevdate13, dayprevopen13, dayprevhigh13, dayprevlow13, dayprevclose13], [dayprevdate12, dayprevopen12, dayprevhigh12, dayprevlow12, dayprevclose12], [dayprevdate11, dayprevopen11, dayprevhigh11, dayprevlow11, dayprevclose11], [dayprevdate10, dayprevopen10, dayprevhigh10, dayprevlow10, dayprevclose10], [dayprevdate9, dayprevopen9, dayprevhigh9, dayprevlow9, dayprevclose9], [dayprevdate8, dayprevopen8, dayprevhigh8, dayprevlow8, dayprevclose8], [dayprevdate7, dayprevopen7, dayprevhigh7, dayprevlow7, dayprevclose7], [dayprevdate6, dayprevopen6, dayprevhigh6, dayprevlow6, dayprevclose6], [dayprevdate5, dayprevopen5, dayprevhigh5, dayprevlow5, dayprevclose5], [dayprevdate4, dayprevopen4, dayprevhigh4, dayprevlow4, dayprevclose4], [dayprevdate3, dayprevopen3, dayprevhigh3, dayprevlow3, dayprevclose3], [dayprevdate2, dayprevopen2, dayprevhigh2, dayprevlow2, dayprevclose2], [dayprevdate, dayprevopen, dayprevhigh, dayprevlow, dayprevclose], [daycurrentdate, daycurrentopen, daycurrenthigh, daycurrentlow, daycurrentclose]]
+                df = pd.DataFrame(list(data), columns=['Date', 'Open', 'High', 'Low', 'Close'])
+                #print (df)
+                ohlc_df = df.copy()
+                ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
+                #last_pattern=''		  
+                df=candle_df(df)
+                #print (df)
+                candle_score=market_values(market,68)
+                candle_pattern=market_values(market,69)
+                candletime=market_values(market,70)
+                buy_df = df.copy()
+                #print (buy_df)
+                candle_scored_buy= buy_df[(buy_df['candle_score'] > 0)]
+                #print (market, candle_scored_buy)
+                candle_scored_sell= df[(df['candle_score'] < 0)]		  
+                labels_buy=(candle_scored_buy['candle_pattern'].tolist())
+                labels_sell=(candle_scored_sell['candle_pattern'].tolist())	
+				
+		     
+                #print (buy_df)
+                ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
+                legend_elements = [Line2D([0], [0], marker="^", color='w', label='B_R -> Bullish_Reversal', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='T_w_s -> Three_white_soldiers', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='T_b -> Tweezer_Bottom', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='M_S -> Morning_Star', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='BU_HR -> Bullish_Harami', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='BU_R -> Bullish_Reversal', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='Bu_E -> Bullish_Engulfing', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='P_L -> Piercing_Line_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='H_M_Bu -> Hanging_Man_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='P_L -> Piercing_Line_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_b_c -> Three_black_crows', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_b_g -> Two_black_gapping', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_t -> Tweezer_Top', markersize=15), Line2D([0], [0], marker="v", color='r', label='E_S -> Evening_Star', markersize=15), Line2D([0], [0], marker="v", color='r', label='BE_HR -> Bearish_Harami', markersize=15), Line2D([0], [0], marker="v", color='r', label='BE_R -> Bearish_Reversal', markersize=15), Line2D([0], [0], marker="v", color='r', label='SS_BE -> Shooting_Star_Bearish', markersize=15), Line2D([0], [0], marker="v", color='r', label='Be_E -> Bearish_Engulfing', markersize=15), Line2D([0], [0], marker="v", color='r', label='H_M_Be -> Hanging_Man_bearish', markersize=15), Line2D([0], [0], marker="v", color='r', label='SS_BU -> Shooting_Star_Bullish', markersize=15)]		  
+		  
+		  
+                #print (ohlc_df)		  
+		  
+                fig, ax = plt.subplots(figsize=(20, 15))
+                ax.legend(handles=legend_elements, loc='upper left')
+                # Converts raw mdate numbers to dates
+                ax.xaxis_date()
+                plt.xlabel("Date")	  
+                # Making candlestick plot
+                candlestick_ohlc(ax, ohlc_df.values, width = 0.8, colorup = 'g', colordown = 'r', alpha = 0.8)
+                plt.ylabel("Price")
+                plt.title(market) 	  
+                ax2 = ax.twinx()
+		  
+		  
+                candle_scored_buy['Date'] = ohlc_df['Date']
+                x=candle_scored_buy['Date'].tolist()
+                y=candle_scored_buy['candle_score'].tolist()
+                n = labels_buy
+      
+                #fig, ax2 = plt.subplots()
+                ax2.axhline(y=2)
+                ax2.plot([x], [2], marker='o', markersize=1)
+                ax2.scatter(x, y, c='g', marker="^", s=120)
+
+                for i, txt in enumerate(n):
+                   ax2.annotate(txt, (x[i], y[i]))
+
+
+                x1=candle_scored_sell['Date'].tolist()
+                y1=candle_scored_sell['candle_score'].tolist()
+                n1 = labels_sell
+      
+                #fig, ax2 = plt.subplots()
+                ax2.scatter(x1, y1, c='r', marker="v", s=120)
+
+                for a, txt1 in enumerate(n1):
+                   ax2.annotate(txt1, (x1[a], y1[a]))	
+          
+                ax2.axhline(y=-2)	
+		  
+		  
+
+		  
+                plt.gcf().autofmt_xdate()   # Beautify the x-labels
+                plt.autoscale(tight=True)
+                plt.grid()
+                ax.grid(True)
+                plt.savefig('/root/PycharmProjects/cryptobot/images/candlesticks.png')
+		  
+                newfilename=("{}_candlesticks.png".format(market))
+                my_path = "/root/PycharmProjects/cryptobot/images/candlesticks.png"
+                new_name = os.path.join(os.path.dirname(my_path), newfilename)
+                os.rename(my_path, new_name)
+
+                print (new_name)
+
+                # src_dir = "/root/PycharmProjects/cryptobot/images/"
+                # dst_dir = "/var/www/html/images/"
+                # for pngfile in glob.iglob(os.path.join(src_dir, "*.png")):
+                    # shutil.copy(pngfile, dst_dir)
+
+                new_df= (buy_df.iloc[-2:])
+                print (new_df)
+                sum_score = new_df['candle_score'].sum()
+
+                last_df= buy_df.iloc[-1]
+                last_pattern = last_df['candle_pattern']
+
+				
+                new_df_check_patten=(buy_df.iloc[-2:])
+                previous_day_pattern=(new_df_check_patten.iloc[:1])
+                previous_day_pattern=previous_day_pattern.iloc[-1]
+                previous_day_pattern=previous_day_pattern['candle_pattern']
+                #print (sum_score)
+
+                try:
+                    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute("update markets set candle_score='%s'  where market='%s'" % (sum_score, market))
+                    cursor.execute("update history set candle_score='%s'  where market='%s' and date='%s'" % (sum_score, market, currentdate))
+                    db.commit()
+                except pymysql.Error as e:
+                    print ("Error %d: %s" % (e.args[0], e.args[1]))
+                    sys.exit(1)
+                finally:
+                    db.close()	
+			  
+	
+			  
+                if (last_pattern =="" and previous_day_pattern!=candle_pattern):
+                  try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s' where market='%s'" % (" ", market))			  
+                     db.commit()
+                  except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+                  finally:
+                     db.close()				  
+
+
+
+                if (last_pattern =="" and currtime-candletime>259200):
+                  try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s' where market='%s'" % (" ", market))			  
+                     db.commit()
+                  except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+                  finally:
+                     db.close()	
+
+
+				 
+                if last_pattern !="":
+                  print (last_pattern, previous_day_pattern)
+
+                  try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s', candle_time='%s'  where market='%s'" % (last_pattern, currtime, market))			  
+                     db.commit()
+                  except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+                  finally:
+                     db.close()
 
                 else:
-                    pass
-
-
-
-
-
+                    pass 	
 
 
         except:
@@ -532,9 +349,161 @@ def tick():
 
 
 
+def candle_score(lst_0,lst_1,lst_2,lst_3):    
+    
+    O_0,H_0,L_0,C_0=lst_0[0],lst_0[1],lst_0[2],lst_0[3]  #current
+    O_1,H_1,L_1,C_1=lst_1[0],lst_1[1],lst_1[2],lst_1[3]  #previous
+    O_2,H_2,L_2,C_2=lst_2[0],lst_2[1],lst_2[2],lst_2[3]  #previous2
+    O_3,H_3,L_3,C_3=lst_3[0],lst_3[1],lst_3[2],lst_3[3]  #previous3
+    
+    DojiSize = 0.1
+
+# UP trend: (C_2>C_3)
+# Green candles before: (C_3 > O_3) & (C_2 > O_2)
+#DOWN trend: (C_2<C_3)
+# Red candles before: (C_3 < O_3) & (C_2 < O_2)
+    
+    doji=(abs(O_0 - C_0) <= (H_0 - L_0) * DojiSize)	
+    Hammer=(((H_0 - L_0)>3*(O_0 -C_0)) &  ((C_0 - L_0)/(.001 + H_0 - L_0) > 0.6) & ((O_0 - L_0)/(.001 + H_0 - L_0) > 0.6))
+    Hammer_Bullish=(((H_0 - L_0)>3*(C_0 -O_0)) &  ((O_0 - L_0)/(.001 + H_0 - L_0) > 0.6) & ((C_0 - L_0)/(.001 + H_0 - L_0) > 0.6))
+	
+    Inverted_Hammer=(((H_0 - L_0)>3*(O_0 -C_0)) &  ((H_0 - C_0)/(.001 + H_0 - L_0) > 0.6) & ((H_0 - O_0)/(.001 + H_0 - L_0) > 0.6))
+    Inverted_Hammer_Bullish=(((H_0 - L_0)>3*(C_0 -O_0)) &  ((H_0 - O_0)/(.001 + H_0 - L_0) > 0.6) & ((H_0 - C_0)/(.001 + H_0 - L_0) > 0.6))    
+    
+    Bullish_Reversal = (O_2 > C_2)&(O_1 > C_1)&doji
+    Bearish_Reversal = (O_2 < C_2)&(O_1 < C_1)&doji
+    
+    Evening_Star= (C_3 > O_3) & (C_2 > O_2) & (C_1 < O_1) & (O_1 > C_2) & (O_0 <O_1) & (C_0 < O_0 ) & ((C_2-O_2)>(O_1-C_1)) & ((O_0-C_0)>(O_1-C_1))
+
+    Morning_Star= (C_3 < O_3) & (C_2 < O_2) & (C_1 > O_1) & (O_1 < C_2) & (O_0 > O_1) & (C_0 > O_0 )	 & ((O_2- C_2)>(C_1 - O_1)) & ((C_0-O_0)>(C_1-O_1))
+	
+
+    Shooting_Star_Bearish=(O_1 < C_1) & (O_0 > C_1) & ((H_0 - max(O_0, C_0)) >= abs(O_0 - C_0) * 3) & ((min(C_0, O_0) - L_0 )<= abs(O_0 - C_0)) & Inverted_Hammer
+    
+    Shooting_Star_Bullish=(O_1 > C_1) & (O_0 < C_1) & ((H_0 - max(O_0, C_0)) >= abs(O_0 - C_0) * 3) & ((min(C_0, O_0) - L_0 )<= abs(O_0 - C_0)) & Inverted_Hammer	
+    
+    Bearish_Harami =  (O_2 < C_2)&  (C_2<C_1)&  (C_1 > O_1) & (O_0 > C_0) & (O_0 <= C_1) & (O_1 < C_0) & ((O_0 - C_0) < (C_1 - O_1)) & ((C_1 - O_1)/(O_0 - C_0)>=2)
+	
+    Bullish_Harami =  (C_2 < O_2)&  (C_1<C_2)&  (O_1 > C_1) & (C_0 > O_0) & (C_0 <= O_1) & (C_1 < O_0) & ((C_0 - O_0) < (O_1 - C_1)) & ((O_1 - C_1)/(C_0 - O_0)>=2)	
+	
+    Bearish_Engulfing=((C_1 > O_1) & (O_0 > C_0)) & ((O_0 > C_1) & (O_1 > C_0)) & ((O_0 - C_0) > (C_1 - O_1 ))  & (C_2 > O_2)
+    
+    Bullish_Engulfing=(O_1 > C_1) & (C_0 > O_0) & (C_0 > O_1) & (C_1 > O_0) & ((C_0 - O_0) > (O_1 - C_1 ))  & (C_2 < O_2)	
+	
+    Piercing_Line_bullish=(C_1 < O_1) & (C_0 > O_0) & (O_0 < L_1) & (C_0 > C_1)& (C_0>((O_1 + C_1)/2)) & (C_0 < O_1)
+	
+    Hanging_Man_bullish=(C_1 < O_1) & (O_0 < L_1) & (C_0>((O_1 + C_1)/2)) & (C_0 < O_1) & Hammer
+
+    Hanging_Man_bearish=(C_1 > O_1) & (C_0>((O_1 + C_1)/2)) & (C_0 < O_1) & Hammer
+	
+    Tweezer_Top = (C_3 > O_3) & (C_2 > O_2) & (C_1>O_1) & (C_0<O_0) & (C_1==O_0)
+	
+    Tweezer_Bottom=(C_3 < O_3) & (C_2 < O_2) & (C_1<O_1) & (C_0>O_0) & (O_1==C_0)
+
+    Two_black_gapping = (C_3 > O_3) & (C_2 > O_2) & (C_1<O_1) & (C_0<O_0) & (L_1>H_0)	
+
+    Three_white_soldiers=(C_3 < O_3) & (C_2 > O_2) & (C_1 > O_1) & (C_0 > O_0)  & (O_0>O_1) &(O_1>O_2) & (L_3<L_2)
+
+    Three_black_crows=(C_3 > O_3) & (C_2 < O_2) & (C_1 < O_1) & (C_0 < O_0)	& (O_0<O_1) &(O_1<O_2) & (L_3>L_2)
+
+    strCandle=''
+    candle_score=0
+    
+#    if doji:
+#        strCandle='doji'
+    if    Three_black_crows:
+        strCandle=strCandle+'/ '+'T_b_c-v'
+        candle_score=candle_score-1	
+    if    Three_white_soldiers:
+        strCandle=strCandle+'/ '+'T_w_s-^'
+        candle_score=candle_score+1			
+    if    Two_black_gapping:
+        strCandle=strCandle+'/ '+'T_b_g-v'
+        candle_score=candle_score-1		
+    if    Tweezer_Top:
+        strCandle=strCandle+'/ '+'T_t-v'
+        candle_score=candle_score-1
+    if    Tweezer_Bottom:
+        strCandle=strCandle+'/ '+'T_b-^'
+        candle_score=candle_score+1		
+    if    Evening_Star:
+        strCandle=strCandle+'/ '+'E_S-v'
+        candle_score=candle_score-1	
+    if    Morning_Star:
+        strCandle=strCandle+'/ '+'M_S-^'
+        candle_score=candle_score+1		
+    if    Bullish_Harami:
+        strCandle=strCandle+'/ '+'BU_HR-^'
+        candle_score=candle_score+1
+    if    Bearish_Harami:
+        strCandle=strCandle+'/ '+'BE_HR-v'
+        candle_score=candle_score-1	
+    if    Bullish_Reversal:
+        strCandle=strCandle+'/ '+'BU_R-^'
+        candle_score=candle_score+1
+    if    Bearish_Reversal:
+        strCandle=strCandle+'/ '+'BE_R-v'
+        candle_score=candle_score-1		
+#    if    Hammer:
+#        strCandle=strCandle+'/ '+'H'
+#    if    Inverted_Hammer:
+#        strCandle=strCandle+'/ '+'I_H'
+    if Shooting_Star_Bearish:
+        strCandle=strCandle+'/ '+'SS_BE-v'
+        candle_score=candle_score-1
+    if Shooting_Star_Bullish:
+        strCandle=strCandle+'/ '+'SS_BU-v'
+        candle_score=candle_score-1		
+    if    Bearish_Engulfing:
+        strCandle=strCandle+'/ '+'Be_E-v'
+        candle_score=candle_score-1
+    if    Bullish_Engulfing:
+        strCandle=strCandle+'/ '+'Bu_E-^'
+        candle_score=candle_score+1
+    if    Piercing_Line_bullish:
+        strCandle=strCandle+'/ '+'P_L-^'
+        candle_score=candle_score+1
+    if    Hanging_Man_bearish:
+        strCandle=strCandle+'/ '+'H_M_Be-v'
+        candle_score=candle_score-1
+    if    Hanging_Man_bullish:
+        strCandle=strCandle+'/ '+'H_M_Bu-^'
+        candle_score=candle_score+1
+
+
+
+		
+        
+    #return candle_score
+    return candle_score,strCandle
+
+
+def candle_df(df):
+
+    df_candle=df.copy()
+    df_candle['candle_score']=0
+    df_candle['candle_pattern']=''
+
+
+    for c in range(2,len(df_candle)):
+        cscore,cpattern=0,''
+        lst_3=[df_candle['Open'].iloc[c-3],df_candle['High'].iloc[c-3],df_candle['Low'].iloc[c-3],df_candle['Close'].iloc[c-3]]
+        lst_2=[df_candle['Open'].iloc[c-2],df_candle['High'].iloc[c-2],df_candle['Low'].iloc[c-2],df_candle['Close'].iloc[c-2]]
+        lst_1=[df_candle['Open'].iloc[c-1],df_candle['High'].iloc[c-1],df_candle['Low'].iloc[c-1],df_candle['Close'].iloc[c-1]]
+        lst_0=[df_candle['Open'].iloc[c],df_candle['High'].iloc[c],df_candle['Low'].iloc[c],df_candle['Close'].iloc[c]]
+        cscore,cpattern=candle_score(lst_0,lst_1,lst_2,lst_3)    
+        df_candle['candle_score'].iat[c]=cscore
+        df_candle['candle_pattern'].iat[c]=cpattern
+    
+    #df_candle['candle_cumsum']=df_candle['candle_score'].rolling(3).sum()
+    
+    return df_candle			
+
+
+
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -547,11 +516,14 @@ def status_orders(marketname, value):
     return 0
 
 
+
+	
 def available_market_list(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
-    cursor.execute("SELECT * FROM markets WHERE enabled =1 and market = '%s'" % market)
+    cursor.execute("SELECT * FROM `markets` where  enabled=1 and market = '%s'" % market)
+
     r = cursor.fetchall()
     for row in r:
         if row[1] == marketname:
@@ -559,22 +531,18 @@ def available_market_list(marketname):
 
     return False
 
+
 def get_candles(market, tick_interval):
-    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
-    return signed_request(url)
-
-
-def signed_request(url):
-    now = time.time()
-    url += '&nonce=' + str(now)
-    signed = hmac.new(config.secret, url.encode('utf-8'), hashlib.sha512).hexdigest()
-    headers = {'apisign': signed}
-    r = requests.get(url, headers=headers)
+    url = ('https://bittrex.com/api/v2.0/pub/market/GetTicks?marketName=' + market +'&tickInterval=' + str(tick_interval))
+    r = requests.get(url)
+    requests.session().close()
     return r.json()
 
 
+
+
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
@@ -586,7 +554,7 @@ def heikin_ashi(marketname, value):
     return False
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -600,7 +568,7 @@ def status_orders(marketname, value):
 
 
 def percent_serf(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT percent_serf FROM orders WHERE active =1 and market = '%s'" % market)
@@ -609,6 +577,18 @@ def percent_serf(marketname):
         return float("{0:.2f}".format(row[0]))
     return 0
 
+
+def market_values(marketname, value):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT * FROM markets WHERE market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        if row[1] == marketname:
+            return row[value]
+
+    return False
 
 
 def format_float(f):

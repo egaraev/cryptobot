@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;ETC&#8221; Feed" href="https://transcriptdaily.com/search/ETC/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings - Transcript Daily</title>
+<meta name="description" content="Read Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/petco-health-and-wellness-nasdaqwoof-stock-price-up-3-8-after-strong-earnings.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/petco-health-and-wellness-nasdaqwoof-stock-price-up-3-8-after-strong-earnings.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings"><h2>Petco Health and Wellness (NASDAQ:WOOF) Stock Price Up 3.8% After Strong Earnings</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Shares of Petco Health and Wellness Company, Inc. (NASDAQ:WOOF) rose 3.8% during trading on Thursday following a better than expected earnings announcement. The company traded as high as $20.16 and last traded at $20.03. Approximately...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/petco-health-and-wellness-nasdaqwoof-stock-price-up-3-8-after-strong-earnings.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/head-to-head-review-fleetcor-technologies-nyseflt-first-advantage-nysefa.html" rel="bookmark" title="Head to Head Review: FLEETCOR Technologies (NYSE:FLT) &amp; First Advantage (NYSE:FA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="Head to Head Review: FLEETCOR Technologies (NYSE:FLT) &amp; First Advantage (NYSE:FA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/head-to-head-review-fleetcor-technologies-nyseflt-first-advantage-nysefa.html" rel="bookmark" title="Head to Head Review: FLEETCOR Technologies (NYSE:FLT) &amp; First Advantage (NYSE:FA)"><h2>Head to Head Review: FLEETCOR Technologies (NYSE:FLT) &amp; First Advantage (NYSE:FA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						First Advantage (NYSE:FA) and FLEETCOR Technologies (NYSE:FLT) are both business services companies, but which is the superior investment? We will contrast the two businesses based on the strength of their earnings, institutional ownership,...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/head-to-head-review-fleetcor-technologies-nyseflt-first-advantage-nysefa.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/petco-health-and-wellness-nasdaqwoof-releases-earnings-results-beats-expectations-by-0-05-eps.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Releases  Earnings Results, Beats Expectations By $0.05 EPS" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Petco Health and Wellness (NASDAQ:WOOF) Releases  Earnings Results, Beats Expectations By $0.05 EPS" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/petco-health-and-wellness-nasdaqwoof-releases-earnings-results-beats-expectations-by-0-05-eps.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Releases  Earnings Results, Beats Expectations By $0.05 EPS"><h2>Petco Health and Wellness (NASDAQ:WOOF) Releases  Earnings Results, Beats Expectations By $0.05 EPS</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Petco Health and Wellness (NASDAQ:WOOF) posted its quarterly earnings results on Wednesday. The company reported $0.25 EPS for the quarter, topping analysts&#8217; consensus estimates of $0.20 by $0.05, MarketWatch Earnings reports....&nbsp;<a href='https://transcriptdaily.com/2021/08/20/petco-health-and-wellness-nasdaqwoof-releases-earnings-results-beats-expectations-by-0-05-eps.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-pt-lowered-to-68-00.html" rel="bookmark" title="Farfetch (NYSE:FTCH) PT Lowered to $68.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="Farfetch (NYSE:FTCH) PT Lowered to $68.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-pt-lowered-to-68-00.html" rel="bookmark" title="Farfetch (NYSE:FTCH) PT Lowered to $68.00"><h2>Farfetch (NYSE:FTCH) PT Lowered to $68.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Farfetch (NYSE:FTCH) had its price objective reduced by research analysts at The Goldman Sachs Group  from $71.00 to $68.00 in a report released on Friday, The Fly reports. The brokerage currently has a &#8220;buy&#8221; rating on...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-pt-lowered-to-68-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/metcash-limited-asxmts-insider-acquires-a1384783-84-in-stock.html" rel="bookmark" title="Metcash Limited (ASX:MTS) Insider Acquires A$1,384,783.84 in Stock" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/metcash-limited-logo.jpg&amp;w=150&amp;zc=1" alt="Metcash Limited (ASX:MTS) Insider Acquires A$1,384,783.84 in Stock" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/metcash-limited-asxmts-insider-acquires-a1384783-84-in-stock.html" rel="bookmark" title="Metcash Limited (ASX:MTS) Insider Acquires A$1,384,783.84 in Stock"><h2>Metcash Limited (ASX:MTS) Insider Acquires A$1,384,783.84 in Stock</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Metcash Limited (ASX:MTS) insider Jeff Adams acquired 331,288 shares of Metcash stock in a transaction dated Monday, August 16th. The stock was bought at an average price of A$4.18 ($2.99) per share, for a total transaction of A$1,384,783.84...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/metcash-limited-asxmts-insider-acquires-a1384783-84-in-stock.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html" rel="bookmark" title="Ethereum Classic (ETC) Trading Up 11.7% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Trading Up 11.7% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html" rel="bookmark" title="Ethereum Classic (ETC) Trading Up 11.7% This Week"><h2>Ethereum Classic (ETC) Trading Up 11.7% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded up 7.9% against the U.S. dollar during the twenty-four hour period ending at 12:00 PM E.T. on August 20th. One Ethereum Classic coin can now be bought for about $69.05 or 0.00142034 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-issues-quarterly-earnings-results.html" rel="bookmark" title="Farfetch (NYSE:FTCH) Issues Quarterly  Earnings Results" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="Farfetch (NYSE:FTCH) Issues Quarterly  Earnings Results" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-issues-quarterly-earnings-results.html" rel="bookmark" title="Farfetch (NYSE:FTCH) Issues Quarterly  Earnings Results"><h2>Farfetch (NYSE:FTCH) Issues Quarterly  Earnings Results</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Farfetch (NYSE:FTCH) released its earnings results on Wednesday. The company reported $0.24 EPS for the quarter, beating analysts&#8217; consensus estimates of ($0.38) by $0.62, Fidelity Earnings reports. Farfetch had a negative return...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/farfetch-nyseftch-issues-quarterly-earnings-results.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/credit-suisse-group-upgrades-petco-health-and-wellness-nasdaqwoof-to-outperform.html" rel="bookmark" title="Credit Suisse Group Upgrades Petco Health and Wellness (NASDAQ:WOOF) to &#8220;Outperform&#8221;" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Credit Suisse Group Upgrades Petco Health and Wellness (NASDAQ:WOOF) to &#8220;Outperform&#8221;" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/credit-suisse-group-upgrades-petco-health-and-wellness-nasdaqwoof-to-outperform.html" rel="bookmark" title="Credit Suisse Group Upgrades Petco Health and Wellness (NASDAQ:WOOF) to &#8220;Outperform&#8221;"><h2>Credit Suisse Group Upgrades Petco Health and Wellness (NASDAQ:WOOF) to &#8220;Outperform&#8221;</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Petco Health and Wellness (NASDAQ:WOOF) was upgraded by analysts at Credit Suisse Group from a &#8220;neutral&#8221; rating to an &#8220;outperform&#8221; rating in a research report issued on Friday, The Fly reports.
+Other equities...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/credit-suisse-group-upgrades-petco-health-and-wellness-nasdaqwoof-to-outperform.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/fleetcor-technologies-inc-nyseflt-shares-sold-by-epiq-partners-llc.html" rel="bookmark" title="FLEETCOR Technologies, Inc. (NYSE:FLT) Shares Sold by Epiq Partners LLC" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies, Inc. (NYSE:FLT) Shares Sold by Epiq Partners LLC" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/fleetcor-technologies-inc-nyseflt-shares-sold-by-epiq-partners-llc.html" rel="bookmark" title="FLEETCOR Technologies, Inc. (NYSE:FLT) Shares Sold by Epiq Partners LLC"><h2>FLEETCOR Technologies, Inc. (NYSE:FLT) Shares Sold by Epiq Partners LLC</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Epiq Partners LLC trimmed its position in  FLEETCOR Technologies, Inc. (NYSE:FLT) by 10.5% in the second quarter, Holdings Channel reports. The firm owned 850 shares of the business services provider&#8217;s stock after selling 100...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/fleetcor-technologies-inc-nyseflt-shares-sold-by-epiq-partners-llc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/highland-capital-management-llc-acquires-new-position-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Highland Capital Management LLC Acquires New Position in FLEETCOR Technologies, Inc. (NYSE:FLT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="Highland Capital Management LLC Acquires New Position in FLEETCOR Technologies, Inc. (NYSE:FLT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/highland-capital-management-llc-acquires-new-position-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Highland Capital Management LLC Acquires New Position in FLEETCOR Technologies, Inc. (NYSE:FLT)"><h2>Highland Capital Management LLC Acquires New Position in FLEETCOR Technologies, Inc. (NYSE:FLT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Highland Capital Management LLC acquired a new stake in shares of  FLEETCOR Technologies, Inc. (NYSE:FLT) in the second quarter, HoldingsChannel reports. The institutional investor  acquired 9,071 shares of the business services provider&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/highland-capital-management-llc-acquires-new-position-in-fleetcor-technologies-inc-nyseflt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/rfg-advisory-llc-purchases-new-shares-in-farfetch-ltd-nyseftch.html" rel="bookmark" title="RFG Advisory LLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="RFG Advisory LLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/rfg-advisory-llc-purchases-new-shares-in-farfetch-ltd-nyseftch.html" rel="bookmark" title="RFG Advisory LLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)"><h2>RFG Advisory LLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RFG Advisory LLC purchased a new stake in  Farfetch Ltd (NYSE:FTCH) in the second quarter, Holdings Channel.com reports. The fund purchased 4,700 shares of the company&#8217;s stock, valued at approximately $237,000. 
+Other large investors...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/rfg-advisory-llc-purchases-new-shares-in-farfetch-ltd-nyseftch.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance-2.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance-2.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance"><h2>FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) issued an update on its FY 2021 earnings guidance on Wednesday morning. The company provided EPS guidance of $12.800-$13.000 for the period, compared to the Thomson Reuters consensus EPS estimate of...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/texas-permanent-school-fund-decreases-stock-position-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Texas Permanent School Fund Decreases Stock Position in FLEETCOR Technologies, Inc. (NYSE:FLT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="Texas Permanent School Fund Decreases Stock Position in FLEETCOR Technologies, Inc. (NYSE:FLT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/texas-permanent-school-fund-decreases-stock-position-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Texas Permanent School Fund Decreases Stock Position in FLEETCOR Technologies, Inc. (NYSE:FLT)"><h2>Texas Permanent School Fund Decreases Stock Position in FLEETCOR Technologies, Inc. (NYSE:FLT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Texas Permanent School Fund cut its holdings in  FLEETCOR Technologies, Inc. (NYSE:FLT) by 0.6% during the 2nd quarter, according to its most recent 13F filing with the Securities &amp; Exchange Commission. The institutional investor...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/texas-permanent-school-fund-decreases-stock-position-in-fleetcor-technologies-inc-nyseflt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-releases-fy-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Releases FY 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (NYSE:FLT) Releases FY 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-releases-fy-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Releases FY 2021 Earnings Guidance"><h2>FLEETCOR Technologies (NYSE:FLT) Releases FY 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) issued an update on its FY 2021 earnings guidance on Wednesday morning. The company provided earnings per share (EPS) guidance of $12.800-$13.000 for the period, compared to the Thomson Reuters consensus...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-releases-fy-2021-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-issues-q3-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues Q3 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (NYSE:FLT) Issues Q3 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-issues-q3-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues Q3 2021 Earnings Guidance"><h2>FLEETCOR Technologies (NYSE:FLT) Issues Q3 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) updated its third quarter 2021 earnings guidance on Wednesday. The company provided EPS guidance of $3.350-$3.550 for the period, compared to the Thomson Reuters consensus EPS estimate of $3.330. The...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/fleetcor-technologies-nyseflt-issues-q3-2021-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html" rel="bookmark" title="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html" rel="bookmark" title="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges"><h2>Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded up 4.3% against the U.S. dollar during the twenty-four hour period ending at 14:00 PM E.T. on August 13th. During the last week, Ethereum Classic has traded 16.3% higher  against the U.S. dollar....&nbsp;<a href='https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/ramaco-resources-nasdaqmetc-upgraded-by-thestreet-to-b.html" rel="bookmark" title="Ramaco Resources (NASDAQ:METC) Upgraded by TheStreet to &#8220;B-&#8220;" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/romaco-resourcs-logo.png&amp;w=150&amp;zc=1" alt="Ramaco Resources (NASDAQ:METC) Upgraded by TheStreet to &#8220;B-&#8220;" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/ramaco-resources-nasdaqmetc-upgraded-by-thestreet-to-b.html" rel="bookmark" title="Ramaco Resources (NASDAQ:METC) Upgraded by TheStreet to &#8220;B-&#8220;"><h2>Ramaco Resources (NASDAQ:METC) Upgraded by TheStreet to &#8220;B-&#8220;</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ramaco Resources (NASDAQ:METC) was upgraded by research analysts at TheStreet from a &#8220;c&#8221; rating to a &#8220;b-&#8221; rating in a research report issued to clients and investors on Monday, TheStreetRatingsTable reports.
+A...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/ramaco-resources-nasdaqmetc-upgraded-by-thestreet-to-b.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/petco-health-and-wellness-nasdaqwoof-upgraded-to-buy-by-zacks-investment-research.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Upgraded to &#8220;Buy&#8221; by Zacks Investment Research" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Petco Health and Wellness (NASDAQ:WOOF) Upgraded to &#8220;Buy&#8221; by Zacks Investment Research" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/petco-health-and-wellness-nasdaqwoof-upgraded-to-buy-by-zacks-investment-research.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Upgraded to &#8220;Buy&#8221; by Zacks Investment Research"><h2>Petco Health and Wellness (NASDAQ:WOOF) Upgraded to &#8220;Buy&#8221; by Zacks Investment Research</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Zacks Investment Research upgraded shares of Petco Health and Wellness (NASDAQ:WOOF) from a hold rating to a buy rating in a research note published on Tuesday morning, Zacks.com reports. They currently have $22.00 price objective...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/petco-health-and-wellness-nasdaqwoof-upgraded-to-buy-by-zacks-investment-research.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/fleetcor-technologies-nyseflt-rating-increased-to-b-at-thestreet.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Rating Increased to B at TheStreet" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (NYSE:FLT) Rating Increased to B at TheStreet" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/fleetcor-technologies-nyseflt-rating-increased-to-b-at-thestreet.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Rating Increased to B at TheStreet"><h2>FLEETCOR Technologies (NYSE:FLT) Rating Increased to B at TheStreet</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) was upgraded by equities researchers at TheStreet from a &#8220;c+&#8221; rating to a &#8220;b&#8221; rating in a note issued to investors on Friday, TheStreetRatingsTable reports.
+Several other equities...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/fleetcor-technologies-nyseflt-rating-increased-to-b-at-thestreet.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/jefferies-financial-group-initiates-coverage-on-petco-health-and-wellness-nasdaqwoof.html" rel="bookmark" title="Jefferies Financial Group Initiates Coverage on Petco Health and Wellness (NASDAQ:WOOF)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Jefferies Financial Group Initiates Coverage on Petco Health and Wellness (NASDAQ:WOOF)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/jefferies-financial-group-initiates-coverage-on-petco-health-and-wellness-nasdaqwoof.html" rel="bookmark" title="Jefferies Financial Group Initiates Coverage on Petco Health and Wellness (NASDAQ:WOOF)"><h2>Jefferies Financial Group Initiates Coverage on Petco Health and Wellness (NASDAQ:WOOF)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jefferies Financial Group assumed coverage on shares of Petco Health and Wellness (NASDAQ:WOOF) in a research note published on Friday, Price Targets.com reports. The firm issued a buy rating and a $24.00 target price on the stock.
+WOOF...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/jefferies-financial-group-initiates-coverage-on-petco-health-and-wellness-nasdaqwoof.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/fetch-ai-price-reaches-0-41-on-exchanges-fet.html" rel="bookmark" title="Fetch.ai Price Reaches $0.41 on Exchanges (FET)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/fet.png&amp;w=150&amp;zc=1" alt="Fetch.ai Price Reaches $0.41 on Exchanges (FET)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/fetch-ai-price-reaches-0-41-on-exchanges-fet.html" rel="bookmark" title="Fetch.ai Price Reaches $0.41 on Exchanges (FET)"><h2>Fetch.ai Price Reaches $0.41 on Exchanges (FET)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Fetch.ai (CURRENCY:FET) traded up 5.7% against the dollar during the 24 hour period ending at 12:00 PM E.T. on August 9th. One Fetch.ai coin can now be bought for about $0.41 or 0.00000883 BTC on exchanges. During the last seven days,...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/fetch-ai-price-reaches-0-41-on-exchanges-fet.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance.html" rel="bookmark" title="FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance"><h2>FLEETCOR Technologies (NYSE:FLT) Issues FY 2021 Earnings Guidance</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) issued an update on its FY 2021 earnings guidance on Wednesday morning. The company provided EPS guidance of $12.800-$13.000 for the period, compared to the Thomson Reuters consensus EPS estimate of...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/fleetcor-technologies-nyseflt-issues-fy-2021-earnings-guidance.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/b-riley-boosts-ramaco-resources-nasdaqmetc-price-target-to-9-50.html" rel="bookmark" title="B. Riley Boosts Ramaco Resources (NASDAQ:METC) Price Target to $9.50" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/romaco-resourcs-logo.png&amp;w=150&amp;zc=1" alt="B. Riley Boosts Ramaco Resources (NASDAQ:METC) Price Target to $9.50" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/b-riley-boosts-ramaco-resources-nasdaqmetc-price-target-to-9-50.html" rel="bookmark" title="B. Riley Boosts Ramaco Resources (NASDAQ:METC) Price Target to $9.50"><h2>B. Riley Boosts Ramaco Resources (NASDAQ:METC) Price Target to $9.50</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ramaco Resources (NASDAQ:METC) had its price target lifted by B. Riley from $8.00 to $9.50 in a research report released on Wednesday, The Fly reports. The firm currently has a buy rating on the energy company&#8217;s stock. B. Riley...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/b-riley-boosts-ramaco-resources-nasdaqmetc-price-target-to-9-50.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/schroder-investment-management-group-grows-holdings-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Schroder Investment Management Group Grows Holdings in FLEETCOR Technologies, Inc. (NYSE:FLT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="Schroder Investment Management Group Grows Holdings in FLEETCOR Technologies, Inc. (NYSE:FLT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/schroder-investment-management-group-grows-holdings-in-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="Schroder Investment Management Group Grows Holdings in FLEETCOR Technologies, Inc. (NYSE:FLT)"><h2>Schroder Investment Management Group Grows Holdings in FLEETCOR Technologies, Inc. (NYSE:FLT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Schroder Investment Management Group grew its stake in shares of  FLEETCOR Technologies, Inc. (NYSE:FLT) by 1.3% in the first quarter, HoldingsChannel reports. The fund owned 23,532 shares of the business services provider&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/08/06/schroder-investment-management-group-grows-holdings-in-fleetcor-technologies-inc-nyseflt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/05/eutelsat-communications-etcmy-buy-rating-reaffirmed-at-societe-generale.html" rel="bookmark" title="Eutelsat Communications&#8217; (ETCMY) &#8220;Buy&#8221; Rating Reaffirmed at Societe Generale" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/eutelsat-communications-sa-logo.png&amp;w=150&amp;zc=1" alt="Eutelsat Communications&#8217; (ETCMY) &#8220;Buy&#8221; Rating Reaffirmed at Societe Generale" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/05/eutelsat-communications-etcmy-buy-rating-reaffirmed-at-societe-generale.html" rel="bookmark" title="Eutelsat Communications&#8217; (ETCMY) &#8220;Buy&#8221; Rating Reaffirmed at Societe Generale"><h2>Eutelsat Communications&#8217; (ETCMY) &#8220;Buy&#8221; Rating Reaffirmed at Societe Generale</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 5th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Eutelsat Communications (OTCMKTS:ETCMY)&#8216;s stock had its &#8220;buy&#8221; rating reaffirmed by equities research analysts at Societe Generale in a report issued on Thursday, The Fly reports.
+ETCMY has been the topic of a number...&nbsp;<a href='https://transcriptdaily.com/2021/08/05/eutelsat-communications-etcmy-buy-rating-reaffirmed-at-societe-generale.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/05/jetcoin-jet-price-reaches-0-0539-on-top-exchanges.html" rel="bookmark" title="Jetcoin (JET) Price Reaches $0.0539 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1787.png&amp;w=150&amp;zc=1" alt="Jetcoin (JET) Price Reaches $0.0539 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/05/jetcoin-jet-price-reaches-0-0539-on-top-exchanges.html" rel="bookmark" title="Jetcoin (JET) Price Reaches $0.0539 on Top Exchanges"><h2>Jetcoin (JET) Price Reaches $0.0539 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 5th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jetcoin (CURRENCY:JET) traded up 8.3% against the dollar during the twenty-four hour period ending at 22:00 PM ET on August 4th. Jetcoin has a market capitalization of $688,222.43 and approximately $913,868.00 worth of Jetcoin was...&nbsp;<a href='https://transcriptdaily.com/2021/08/05/jetcoin-jet-price-reaches-0-0539-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html" rel="bookmark" title="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html" rel="bookmark" title="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)"><h2>Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 4th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded 0.8% lower  against the U.S. dollar during the 1-day period ending at 9:00 AM Eastern on August 4th. One Ethereum Classic coin can now be purchased for about $49.22 or 0.00125558 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/04/jetcoin-reaches-24-hour-volume-of-810285-00-jet.html" rel="bookmark" title="Jetcoin Reaches 24-Hour Volume of $810,285.00 (JET)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1787.png&amp;w=150&amp;zc=1" alt="Jetcoin Reaches 24-Hour Volume of $810,285.00 (JET)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/04/jetcoin-reaches-24-hour-volume-of-810285-00-jet.html" rel="bookmark" title="Jetcoin Reaches 24-Hour Volume of $810,285.00 (JET)"><h2>Jetcoin Reaches 24-Hour Volume of $810,285.00 (JET)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 4th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jetcoin (CURRENCY:JET) traded 0.7% higher  against the U.S. dollar during the 1-day period ending at 8:00 AM Eastern on August 4th. During the last week, Jetcoin has traded up 6.8% against the U.S. dollar. One Jetcoin coin can currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/04/jetcoin-reaches-24-hour-volume-of-810285-00-jet.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/eutelsat-communications-etcmy-overweight-rating-reiterated-at-barclays.html" rel="bookmark" title="Eutelsat Communications&#8217; (ETCMY) Overweight Rating Reiterated at Barclays" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/eutelsat-communications-sa-logo.png&amp;w=150&amp;zc=1" alt="Eutelsat Communications&#8217; (ETCMY) Overweight Rating Reiterated at Barclays" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/eutelsat-communications-etcmy-overweight-rating-reiterated-at-barclays.html" rel="bookmark" title="Eutelsat Communications&#8217; (ETCMY) Overweight Rating Reiterated at Barclays"><h2>Eutelsat Communications&#8217; (ETCMY) Overweight Rating Reiterated at Barclays</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Eutelsat Communications (OTCMKTS:ETCMY)&#8216;s stock had its &#8220;overweight&#8221; rating restated by stock analysts at Barclays in a research report issued to clients and investors on Tuesday, The Fly reports.
+Other equities analysts...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/eutelsat-communications-etcmy-overweight-rating-reiterated-at-barclays.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/ramaco-resources-nasdaqmetc-releases-quarterly-earnings-results.html" rel="bookmark" title="Ramaco Resources (NASDAQ:METC) Releases Quarterly  Earnings Results" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/romaco-resourcs-logo.png&amp;w=150&amp;zc=1" alt="Ramaco Resources (NASDAQ:METC) Releases Quarterly  Earnings Results" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/ramaco-resources-nasdaqmetc-releases-quarterly-earnings-results.html" rel="bookmark" title="Ramaco Resources (NASDAQ:METC) Releases Quarterly  Earnings Results"><h2>Ramaco Resources (NASDAQ:METC) Releases Quarterly  Earnings Results</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ramaco Resources (NASDAQ:METC) posted its earnings results on Sunday. The energy company reported $0.23 EPS for the quarter, topping the Thomson Reuters&#8217; consensus estimate of $0.07 by $0.16, MarketWatch Earnings reports. Ramaco...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/ramaco-resources-nasdaqmetc-releases-quarterly-earnings-results.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/jetcoin-jet-trading-9-1-higher-over-last-week.html" rel="bookmark" title="Jetcoin (JET) Trading 9.1% Higher  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1787.png&amp;w=150&amp;zc=1" alt="Jetcoin (JET) Trading 9.1% Higher  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/jetcoin-jet-trading-9-1-higher-over-last-week.html" rel="bookmark" title="Jetcoin (JET) Trading 9.1% Higher  Over Last Week"><h2>Jetcoin (JET) Trading 9.1% Higher  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jetcoin (CURRENCY:JET) traded down 4.2% against the US dollar during the 24-hour period ending at 11:00 AM Eastern on August 3rd. In the last seven days, Jetcoin has traded up 9.1% against the US dollar. One Jetcoin coin can currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/jetcoin-jet-trading-9-1-higher-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html" rel="bookmark" title="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html" rel="bookmark" title="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion"><h2>Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 2nd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded down 1.8% against the U.S. dollar during the one day period ending at 15:00 PM ET on August 2nd. Ethereum Classic has a total market capitalization of $6.62 billion and $2.27 billion worth of...&nbsp;<a href='https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/fletcher-building-limited-otcmktsfrcef-short-interest-update.html" rel="bookmark" title="Fletcher Building Limited (OTCMKTS:FRCEF) Short Interest Update" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/fletcher-building-limited-logo.png&amp;w=150&amp;zc=1" alt="Fletcher Building Limited (OTCMKTS:FRCEF) Short Interest Update" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/fletcher-building-limited-otcmktsfrcef-short-interest-update.html" rel="bookmark" title="Fletcher Building Limited (OTCMKTS:FRCEF) Short Interest Update"><h2>Fletcher Building Limited (OTCMKTS:FRCEF) Short Interest Update</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Fletcher Building Limited (OTCMKTS:FRCEF) was the recipient of a significant increase in short interest in the month of July. As of July 15th, there was short interest totalling 38,700 shares,  an increase of 66.1% from the June 30th...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/fletcher-building-limited-otcmktsfrcef-short-interest-update.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/renaissance-technologies-llc-sells-2103-shares-of-ramaco-resources-inc-nasdaqmetc.html" rel="bookmark" title="Renaissance Technologies LLC Sells 2,103 Shares of Ramaco Resources, Inc. (NASDAQ:METC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/romaco-resourcs-logo.png&amp;w=150&amp;zc=1" alt="Renaissance Technologies LLC Sells 2,103 Shares of Ramaco Resources, Inc. (NASDAQ:METC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/renaissance-technologies-llc-sells-2103-shares-of-ramaco-resources-inc-nasdaqmetc.html" rel="bookmark" title="Renaissance Technologies LLC Sells 2,103 Shares of Ramaco Resources, Inc. (NASDAQ:METC)"><h2>Renaissance Technologies LLC Sells 2,103 Shares of Ramaco Resources, Inc. (NASDAQ:METC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Renaissance Technologies LLC decreased its stake in  Ramaco Resources, Inc. (NASDAQ:METC) by 3.1% in the 1st quarter, Holdings Channel.com reports. The firm owned 65,166 shares of the energy company&#8217;s stock after selling 2,103...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/renaissance-technologies-llc-sells-2103-shares-of-ramaco-resources-inc-nasdaqmetc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/scanetchain-trading-26-3-lower-over-last-7-days-swc.html" rel="bookmark" title="Scanetchain  Trading 26.3% Lower  Over Last 7 Days (SWC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/swc.png&amp;w=150&amp;zc=1" alt="Scanetchain  Trading 26.3% Lower  Over Last 7 Days (SWC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/scanetchain-trading-26-3-lower-over-last-7-days-swc.html" rel="bookmark" title="Scanetchain  Trading 26.3% Lower  Over Last 7 Days (SWC)"><h2>Scanetchain  Trading 26.3% Lower  Over Last 7 Days (SWC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Scanetchain (CURRENCY:SWC) traded up 1.3% against the US dollar during the 24-hour period ending at 0:00 AM ET on July 31st. One Scanetchain coin can currently be bought for approximately $0.0000 or 0.00000000 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/scanetchain-trading-26-3-lower-over-last-7-days-swc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/31/jetcoin-jet-trading-up-17-1-this-week.html" rel="bookmark" title="Jetcoin (JET) Trading Up 17.1% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1787.png&amp;w=150&amp;zc=1" alt="Jetcoin (JET) Trading Up 17.1% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/31/jetcoin-jet-trading-up-17-1-this-week.html" rel="bookmark" title="Jetcoin (JET) Trading Up 17.1% This Week"><h2>Jetcoin (JET) Trading Up 17.1% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 31st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jetcoin (CURRENCY:JET) traded up 3.5% against the U.S. dollar during the one day period ending at 19:00 PM ET on July 31st. One Jetcoin coin can now be purchased for $0.0474 or 0.00000118 BTC on popular cryptocurrency exchanges. Jetcoin...&nbsp;<a href='https://transcriptdaily.com/2021/07/31/jetcoin-jet-trading-up-17-1-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/31/fletcher-building-limited-otcmktsfcrey-short-interest-update.html" rel="bookmark" title="Fletcher Building Limited (OTCMKTS:FCREY) Short Interest Update" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/fletcher-building-limited-logo.png&amp;w=150&amp;zc=1" alt="Fletcher Building Limited (OTCMKTS:FCREY) Short Interest Update" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/31/fletcher-building-limited-otcmktsfcrey-short-interest-update.html" rel="bookmark" title="Fletcher Building Limited (OTCMKTS:FCREY) Short Interest Update"><h2>Fletcher Building Limited (OTCMKTS:FCREY) Short Interest Update</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 31st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Fletcher Building Limited (OTCMKTS:FCREY) saw a large decline in short interest in the month of July. As of July 15th, there was short interest totalling 200 shares,  a decline of 50.0% from the June 30th total of 400 shares. Based...&nbsp;<a href='https://transcriptdaily.com/2021/07/31/fletcher-building-limited-otcmktsfcrey-short-interest-update.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/31/fy2021-eps-estimates-for-farfetch-ltd-nyseftch-lowered-by-keycorp.html" rel="bookmark" title="FY2021 EPS Estimates for Farfetch Ltd (NYSE:FTCH) Lowered by KeyCorp" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="FY2021 EPS Estimates for Farfetch Ltd (NYSE:FTCH) Lowered by KeyCorp" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/31/fy2021-eps-estimates-for-farfetch-ltd-nyseftch-lowered-by-keycorp.html" rel="bookmark" title="FY2021 EPS Estimates for Farfetch Ltd (NYSE:FTCH) Lowered by KeyCorp"><h2>FY2021 EPS Estimates for Farfetch Ltd (NYSE:FTCH) Lowered by KeyCorp</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 31st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						
+Farfetch Ltd (NYSE:FTCH) &#8211; Investment analysts at  KeyCorp dropped their FY2021 earnings per share (EPS) estimates for Farfetch  in a research report issued to clients and investors on  Monday, July 26th. KeyCorp analyst E....&nbsp;<a href='https://transcriptdaily.com/2021/07/31/fy2021-eps-estimates-for-farfetch-ltd-nyseftch-lowered-by-keycorp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/30/hrt-financial-lp-sells-10684-shares-of-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="HRT Financial LP Sells 10,684 Shares of FLEETCOR Technologies, Inc. (NYSE:FLT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="HRT Financial LP Sells 10,684 Shares of FLEETCOR Technologies, Inc. (NYSE:FLT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/30/hrt-financial-lp-sells-10684-shares-of-fleetcor-technologies-inc-nyseflt.html" rel="bookmark" title="HRT Financial LP Sells 10,684 Shares of FLEETCOR Technologies, Inc. (NYSE:FLT)"><h2>HRT Financial LP Sells 10,684 Shares of FLEETCOR Technologies, Inc. (NYSE:FLT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 30th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						HRT Financial LP reduced its position in  FLEETCOR Technologies, Inc. (NYSE:FLT) by 91.8% during the first quarter, according to the company in its most recent 13F filing with the SEC. The fund owned 955 shares of the business services...&nbsp;<a href='https://transcriptdaily.com/2021/07/30/hrt-financial-lp-sells-10684-shares-of-fleetcor-technologies-inc-nyseflt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/ramaco-resources-metc-to-release-quarterly-earnings-on-monday.html" rel="bookmark" title="Ramaco Resources (METC) to Release Quarterly Earnings on Monday" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/romaco-resourcs-logo.png&amp;w=150&amp;zc=1" alt="Ramaco Resources (METC) to Release Quarterly Earnings on Monday" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/ramaco-resources-metc-to-release-quarterly-earnings-on-monday.html" rel="bookmark" title="Ramaco Resources (METC) to Release Quarterly Earnings on Monday"><h2>Ramaco Resources (METC) to Release Quarterly Earnings on Monday</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ramaco Resources (NASDAQ:METC) is set to post its quarterly earnings results after the market closes  on Monday, August 2nd. Analysts expect Ramaco Resources to post earnings of $0.07 per share for the quarter. 
+Ramaco Resources (NASDAQ:METC)...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/ramaco-resources-metc-to-release-quarterly-earnings-on-monday.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/jetcoin-price-up-15-4-over-last-7-days-jet.html" rel="bookmark" title="Jetcoin Price Up 15.4% Over Last 7 Days (JET)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1787.png&amp;w=150&amp;zc=1" alt="Jetcoin Price Up 15.4% Over Last 7 Days (JET)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/jetcoin-price-up-15-4-over-last-7-days-jet.html" rel="bookmark" title="Jetcoin Price Up 15.4% Over Last 7 Days (JET)"><h2>Jetcoin Price Up 15.4% Over Last 7 Days (JET)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Jetcoin (CURRENCY:JET) traded 1.5% lower  against the dollar during the 1-day period ending at 8:00 AM E.T. on July 29th. Jetcoin has a market cap of $583,186.25 and $734,132.00 worth of Jetcoin was traded on exchanges in the last...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/jetcoin-price-up-15-4-over-last-7-days-jet.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/28/fleetcor-technologies-flt-to-release-quarterly-earnings-on-wednesday.html" rel="bookmark" title="FLEETCOR Technologies (FLT) to Release Quarterly Earnings on Wednesday" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies (FLT) to Release Quarterly Earnings on Wednesday" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/28/fleetcor-technologies-flt-to-release-quarterly-earnings-on-wednesday.html" rel="bookmark" title="FLEETCOR Technologies (FLT) to Release Quarterly Earnings on Wednesday"><h2>FLEETCOR Technologies (FLT) to Release Quarterly Earnings on Wednesday</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 28th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FLEETCOR Technologies (NYSE:FLT) will issue its quarterly earnings data after the market closes  on Wednesday, August 4th. Analysts expect the company to announce earnings of $2.76 per share for the quarter. 
+FLEETCOR Technologies...&nbsp;<a href='https://transcriptdaily.com/2021/07/28/fleetcor-technologies-flt-to-release-quarterly-earnings-on-wednesday.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/analysts-expect-farfetch-ltd-nyseftch-will-announce-earnings-of-0-38-per-share.html" rel="bookmark" title="Analysts Expect Farfetch Ltd (NYSE:FTCH) Will Announce Earnings of -$0.38 Per Share" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="Analysts Expect Farfetch Ltd (NYSE:FTCH) Will Announce Earnings of -$0.38 Per Share" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/analysts-expect-farfetch-ltd-nyseftch-will-announce-earnings-of-0-38-per-share.html" rel="bookmark" title="Analysts Expect Farfetch Ltd (NYSE:FTCH) Will Announce Earnings of -$0.38 Per Share"><h2>Analysts Expect Farfetch Ltd (NYSE:FTCH) Will Announce Earnings of -$0.38 Per Share</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wall Street analysts expect that Farfetch Ltd (NYSE:FTCH) will announce earnings of ($0.38) per share for the current fiscal quarter, according to Zacks Investment Research. Four analysts have issued estimates for Farfetch&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/analysts-expect-farfetch-ltd-nyseftch-will-announce-earnings-of-0-38-per-share.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/petco-health-and-wellness-nasdaqwoof-lifted-to-buy-at-zacks-investment-research.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Lifted to Buy at Zacks Investment Research" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Petco Health and Wellness (NASDAQ:WOOF) Lifted to Buy at Zacks Investment Research" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/petco-health-and-wellness-nasdaqwoof-lifted-to-buy-at-zacks-investment-research.html" rel="bookmark" title="Petco Health and Wellness (NASDAQ:WOOF) Lifted to Buy at Zacks Investment Research"><h2>Petco Health and Wellness (NASDAQ:WOOF) Lifted to Buy at Zacks Investment Research</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Petco Health and Wellness (NASDAQ:WOOF) was upgraded by Zacks Investment Research from a &#8220;hold&#8221; rating to a &#8220;buy&#8221; rating in a research note issued to investors on Tuesday, Zacks.com reports. The brokerage currently...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/petco-health-and-wellness-nasdaqwoof-lifted-to-buy-at-zacks-investment-research.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/ameritas-investment-company-llc-purchases-new-position-in-ishares-evolved-u-s-technology-etf-batsietc.html" rel="bookmark" title="Ameritas Investment Company LLC Purchases New Position in iShares Evolved U.S. Technology ETF (BATS:IETC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks6.jpg&amp;w=150&amp;zc=1" alt="Ameritas Investment Company LLC Purchases New Position in iShares Evolved U.S. Technology ETF (BATS:IETC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/ameritas-investment-company-llc-purchases-new-position-in-ishares-evolved-u-s-technology-etf-batsietc.html" rel="bookmark" title="Ameritas Investment Company LLC Purchases New Position in iShares Evolved U.S. Technology ETF (BATS:IETC)"><h2>Ameritas Investment Company LLC Purchases New Position in iShares Evolved U.S. Technology ETF (BATS:IETC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ameritas Investment Company LLC purchased a new stake in  iShares Evolved U.S. Technology ETF (BATS:IETC) in the 1st quarter, according to the company in its most recent 13F filing with the SEC. The fund purchased 1,005 shares of the...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/ameritas-investment-company-llc-purchases-new-position-in-ishares-evolved-u-s-technology-etf-batsietc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/janus-henderson-group-plc-purchases-new-shares-in-farfetch-ltd-nyseftch.html" rel="bookmark" title="Janus Henderson Group PLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="Janus Henderson Group PLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/janus-henderson-group-plc-purchases-new-shares-in-farfetch-ltd-nyseftch.html" rel="bookmark" title="Janus Henderson Group PLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)"><h2>Janus Henderson Group PLC Purchases New Shares in Farfetch Ltd (NYSE:FTCH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Janus Henderson Group PLC purchased a new stake in shares of  Farfetch Ltd (NYSE:FTCH) in the first quarter, according to its most recent disclosure with the Securities and Exchange Commission. The firm purchased 13,000 shares of the...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/janus-henderson-group-plc-purchases-new-shares-in-farfetch-ltd-nyseftch.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/bamco-inc-ny-takes-position-in-petco-health-and-wellness-company-inc-nasdaqwoof.html" rel="bookmark" title="Bamco Inc. NY Takes Position in Petco Health and Wellness Company, Inc. (NASDAQ:WOOF)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/petco-health-and-wellness-company-inc-logo.jpg?v=20210319140206&amp;w=150&amp;zc=1" alt="Bamco Inc. NY Takes Position in Petco Health and Wellness Company, Inc. (NASDAQ:WOOF)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/bamco-inc-ny-takes-position-in-petco-health-and-wellness-company-inc-nasdaqwoof.html" rel="bookmark" title="Bamco Inc. NY Takes Position in Petco Health and Wellness Company, Inc. (NASDAQ:WOOF)"><h2>Bamco Inc. NY Takes Position in Petco Health and Wellness Company, Inc. (NASDAQ:WOOF)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bamco Inc. NY acquired a new stake in  Petco Health and Wellness Company, Inc. (NASDAQ:WOOF) during the 1st quarter, according to its most recent filing with the Securities and Exchange Commission (SEC). The firm acquired 385,000 shares...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/bamco-inc-ny-takes-position-in-petco-health-and-wellness-company-inc-nasdaqwoof.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/500000-shares-in-farfetch-ltd-nyseftch-acquired-by-blackstone-group-inc.html" rel="bookmark" title="500,000 Shares in Farfetch Ltd (NYSE:FTCH) Acquired by Blackstone Group Inc." class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/farfetch-ltd-logo.jpg&amp;w=150&amp;zc=1" alt="500,000 Shares in Farfetch Ltd (NYSE:FTCH) Acquired by Blackstone Group Inc." />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/500000-shares-in-farfetch-ltd-nyseftch-acquired-by-blackstone-group-inc.html" rel="bookmark" title="500,000 Shares in Farfetch Ltd (NYSE:FTCH) Acquired by Blackstone Group Inc."><h2>500,000 Shares in Farfetch Ltd (NYSE:FTCH) Acquired by Blackstone Group Inc.</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Blackstone Group Inc. acquired a new position in  Farfetch Ltd (NYSE:FTCH) during the first quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/500000-shares-in-farfetch-ltd-nyseftch-acquired-by-blackstone-group-inc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html" rel="bookmark" title="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html" rel="bookmark" title="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)"><h2>Ethereum Classic Price Tops $50.83 on Exchanges (ETC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded 6.1% higher  against the dollar during the 24-hour period ending at 21:00 PM ET on July 25th. In the last seven days, Ethereum Classic has traded 23.5% higher  against the dollar. Ethereum Classic...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/24/fleetcor-technologies-inc-nyseflt-receives-310-00-consensus-pt-from-analysts.html" rel="bookmark" title="FLEETCOR Technologies, Inc. (NYSE:FLT) Receives $310.00 Consensus PT from Analysts" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/drone-delivery-can-logo.jpg&amp;w=150&amp;zc=1" alt="FLEETCOR Technologies, Inc. (NYSE:FLT) Receives $310.00 Consensus PT from Analysts" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/24/fleetcor-technologies-inc-nyseflt-receives-310-00-consensus-pt-from-analysts.html" rel="bookmark" title="FLEETCOR Technologies, Inc. (NYSE:FLT) Receives $310.00 Consensus PT from Analysts"><h2>FLEETCOR Technologies, Inc. (NYSE:FLT) Receives $310.00 Consensus PT from Analysts</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 24th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Shares of FLEETCOR Technologies, Inc. (NYSE:FLT) have been given an average rating of &#8220;Buy&#8221; by the fifteen brokerages that are currently  covering the stock, MarketBeat reports. Four analysts have rated the stock with a...&nbsp;<a href='https://transcriptdaily.com/2021/07/24/fleetcor-technologies-inc-nyseflt-receives-310-00-consensus-pt-from-analysts.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=ETC" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Petco Health and Wellness</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Petco Health and Wellness with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="NASDAQ:WOOF" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/nike-inc-nysenke-stock-holdings-decreased-by-private-advisory-group-llc.html">NIKE, Inc. (NYSE:NKE) Stock Holdings Decreased by Private Advisory Group LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-sells-480-shares-of-schwab-u-s-large-cap-growth-etf-nysearcaschg.html">First Personal Financial Services Sells 480 Shares of Schwab U.S. Large-Cap Growth ETF (NYSEARCA:SCHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-purchases-shares-of-4320-the-sherwin-williams-company-nyseshw.html">First Personal Financial Services Purchases Shares of 4,320 The Sherwin-Williams Company (NYSE:SHW)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/exxon-mobil-co-nysexom-shares-sold-by-first-personal-financial-services.html">Exxon Mobil Co. (NYSE:XOM) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/clark-capital-management-group-inc-grows-position-in-the-tjx-companies-inc-nysetjx.html">Clark Capital Management Group Inc. Grows Position in The TJX Companies, Inc. (NYSE:TJX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/1785-shares-in-fedex-co-nysefdx-acquired-by-srs-capital-advisors-inc.html">1,785 Shares in FedEx Co. (NYSE:FDX) Acquired by SRS Capital Advisors Inc.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/corundum-group-inc-decreases-holdings-in-caterpillar-inc-nysecat.html">Corundum Group Inc. Decreases Holdings in Caterpillar Inc. (NYSE:CAT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/td-capital-management-llc-purchases-new-holdings-in-micron-technology-inc-nasdaqmu.html">TD Capital Management LLC Purchases New Holdings in Micron Technology, Inc. (NASDAQ:MU)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/arcadia-investment-management-corp-mi-decreases-stock-position-in-veeva-systems-inc-nyseveev.html">Arcadia Investment Management Corp MI Decreases Stock Position in Veeva Systems Inc. (NYSE:VEEV)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-2-35-million-stake-in-spdr-sp-regional-banking-etf-nysearcakre.html">Capital Insight Partners LLC Has $2.35 Million Stake in SPDR S&#038;P Regional Banking ETF (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-1-94-million-position-in-unilever-plc-nyseul.html">Capital Insight Partners LLC Has $1.94 Million Position in Unilever PLC (NYSE:UL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/proshares-sp-500-aristocrats-etf-batsnobl-shares-sold-by-first-personal-financial-services.html">ProShares S&#038;P 500 Aristocrats ETF (BATS:NOBL) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/zacks-analysts-expect-vereit-inc-nysever-will-announce-quarterly-sales-of-296-94-million.html">Zacks: Analysts Expect VEREIT, Inc. (NYSE:VER) Will Announce Quarterly Sales of $296.94 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html">Neblio Hits Market Cap of $29.97 Million (NEBL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/rent-a-center-nasdaqrcii-updates-fy-2021-earnings-guidance-2.html">Rent-A-Center (NASDAQ:RCII) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html">I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html">FUZE Token (FUZE) Trading Down 1% This Week</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html">Mysterium (MYST) Price Tops $0.41</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html">Kin (KIN) 24-Hour Volume Hits $6.82 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/haemonetics-nysehae-issues-fy-2022-earnings-guidance.html">Haemonetics (NYSE:HAE) Issues FY 2022 Earnings Guidance</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77579065&PostDate=2021-8-21&type=g&id=69562&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

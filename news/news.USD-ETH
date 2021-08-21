@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Ethereum&#8221; Feed" href="https://transcriptdaily.com/search/Ethereum/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Ethereum Classic (ETC) Trading Up 11.7% This Week - Transcript Daily</title>
+<meta name="description" content="Read Ethereum Classic (ETC) Trading Up 11.7% This Week at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html" rel="bookmark" title="Ethereum Classic (ETC) Trading Up 11.7% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Trading Up 11.7% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html" rel="bookmark" title="Ethereum Classic (ETC) Trading Up 11.7% This Week"><h2>Ethereum Classic (ETC) Trading Up 11.7% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 20th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded up 7.9% against the U.S. dollar during the twenty-four hour period ending at 12:00 PM E.T. on August 20th. One Ethereum Classic coin can now be bought for about $69.05 or 0.00142034 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/20/ethereum-classic-etc-trading-up-11-7-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/ethereum-push-notification-service-push-trading-24-2-higher-this-week.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Trading 24.2% Higher  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service (PUSH) Trading 24.2% Higher  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/ethereum-push-notification-service-push-trading-24-2-higher-this-week.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Trading 24.2% Higher  This Week"><h2>Ethereum Push Notification Service (PUSH) Trading 24.2% Higher  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded up 6.8% against the U.S. dollar during the 1 day period ending at 18:00 PM ET on August 19th. Over the last week, Ethereum Push Notification Service has traded up 24.2% against...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/ethereum-push-notification-service-push-trading-24-2-higher-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/ethereum-meta-price-tops-0-0000-on-exchanges-ethm.html" rel="bookmark" title="Ethereum Meta Price Tops $0.0000 on Exchanges (ETHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta Price Tops $0.0000 on Exchanges (ETHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/ethereum-meta-price-tops-0-0000-on-exchanges-ethm.html" rel="bookmark" title="Ethereum Meta Price Tops $0.0000 on Exchanges (ETHM)"><h2>Ethereum Meta Price Tops $0.0000 on Exchanges (ETHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded down 3.7% against the dollar during the 1-day period ending at 14:00 PM Eastern on August 19th. In the last week, Ethereum Meta has traded up 6.9% against the dollar. Ethereum Meta has a total market...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/ethereum-meta-price-tops-0-0000-on-exchanges-ethm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/grayscale-ethereum-trust-eth-otcmktsethe-sees-significant-drop-in-short-interest.html" rel="bookmark" title="Grayscale Ethereum Trust (ETH) (OTCMKTS:ETHE) Sees Significant Drop in Short Interest" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks12.jpg&amp;w=150&amp;zc=1" alt="Grayscale Ethereum Trust (ETH) (OTCMKTS:ETHE) Sees Significant Drop in Short Interest" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/grayscale-ethereum-trust-eth-otcmktsethe-sees-significant-drop-in-short-interest.html" rel="bookmark" title="Grayscale Ethereum Trust (ETH) (OTCMKTS:ETHE) Sees Significant Drop in Short Interest"><h2>Grayscale Ethereum Trust (ETH) (OTCMKTS:ETHE) Sees Significant Drop in Short Interest</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Grayscale Ethereum Trust (ETH) (OTCMKTS:ETHE) was the recipient of a significant drop in short interest during the month of July. As of July 30th, there was short interest totalling 4,460,100 shares,  a drop of 38.2% from the July...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/grayscale-ethereum-trust-eth-otcmktsethe-sees-significant-drop-in-short-interest.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/ethereum-yield-achieves-market-cap-of-492694-69-ethy.html" rel="bookmark" title="Ethereum Yield Achieves Market Cap of $492,694.69 (ETHY)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethereum-yield-trans1.png&amp;w=150&amp;zc=1" alt="Ethereum Yield Achieves Market Cap of $492,694.69 (ETHY)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/ethereum-yield-achieves-market-cap-of-492694-69-ethy.html" rel="bookmark" title="Ethereum Yield Achieves Market Cap of $492,694.69 (ETHY)"><h2>Ethereum Yield Achieves Market Cap of $492,694.69 (ETHY)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Yield (CURRENCY:ETHY) traded 1.6% lower  against the U.S. dollar during the 24-hour period ending at 14:00 PM Eastern on August 18th. Ethereum Yield has a market cap of $492,694.69 and approximately $297.00 worth of Ethereum...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/ethereum-yield-achieves-market-cap-of-492694-69-ethy.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/ethereum-meta-ethm-price-reaches-0-0000-on-top-exchanges.html" rel="bookmark" title="Ethereum Meta (ETHM) Price Reaches $0.0000 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta (ETHM) Price Reaches $0.0000 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/ethereum-meta-ethm-price-reaches-0-0000-on-top-exchanges.html" rel="bookmark" title="Ethereum Meta (ETHM) Price Reaches $0.0000 on Top Exchanges"><h2>Ethereum Meta (ETHM) Price Reaches $0.0000 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded up 7.8% against the dollar during the one day period ending at 19:00 PM ET on August 17th. During the last week, Ethereum Meta has traded up 20.7% against the dollar. Ethereum Meta has a market...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/ethereum-meta-ethm-price-reaches-0-0000-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/ethereum-eth-price-down-3-9-over-last-7-days.html" rel="bookmark" title="Ethereum (ETH) Price Down 3.9% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1027.png&amp;w=150&amp;zc=1" alt="Ethereum (ETH) Price Down 3.9% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/ethereum-eth-price-down-3-9-over-last-7-days.html" rel="bookmark" title="Ethereum (ETH) Price Down 3.9% Over Last 7 Days"><h2>Ethereum (ETH) Price Down 3.9% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum (CURRENCY:ETH) traded down 4.5% against the US dollar during the 1 day period ending at 18:00 PM Eastern on August 17th. Ethereum has a total market cap of $355.67 billion and $25.26 billion worth of Ethereum was traded on...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/ethereum-eth-price-down-3-9-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/ethereum-gold-market-cap-hits-209675-51-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Hits $209,675.51 (ETG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2074.png&amp;w=150&amp;zc=1" alt="Ethereum Gold Market Cap Hits $209,675.51 (ETG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/ethereum-gold-market-cap-hits-209675-51-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Hits $209,675.51 (ETG)"><h2>Ethereum Gold Market Cap Hits $209,675.51 (ETG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Gold (CURRENCY:ETG) traded down 4.9% against the U.S. dollar during the 24 hour period ending at 16:00 PM E.T. on August 17th. One Ethereum Gold coin can now be bought for $0.0104 or 0.00000023 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/17/ethereum-gold-market-cap-hits-209675-51-etg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/ethereum-eth-price-tops-3171-84.html" rel="bookmark" title="Ethereum (ETH) Price Tops $3,171.84" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1027.png&amp;w=150&amp;zc=1" alt="Ethereum (ETH) Price Tops $3,171.84" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/ethereum-eth-price-tops-3171-84.html" rel="bookmark" title="Ethereum (ETH) Price Tops $3,171.84"><h2>Ethereum (ETH) Price Tops $3,171.84</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum (CURRENCY:ETH) traded down 4% against the US dollar during the one day period ending at 21:00 PM ET on August 16th. One Ethereum coin can now be bought for $3,171.84 or 0.06860820 BTC on major exchanges. During the last seven...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/ethereum-eth-price-tops-3171-84.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/ethereum-push-notification-service-hits-one-day-trading-volume-of-3-04-million-push.html" rel="bookmark" title="Ethereum Push Notification Service Hits One Day Trading Volume of $3.04 Million (PUSH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service Hits One Day Trading Volume of $3.04 Million (PUSH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/ethereum-push-notification-service-hits-one-day-trading-volume-of-3-04-million-push.html" rel="bookmark" title="Ethereum Push Notification Service Hits One Day Trading Volume of $3.04 Million (PUSH)"><h2>Ethereum Push Notification Service Hits One Day Trading Volume of $3.04 Million (PUSH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded up 0.9% against the dollar during the 1-day period ending at 10:00 AM ET on August 16th. Ethereum Push Notification Service has a total market cap of $14.46 million and approximately...&nbsp;<a href='https://transcriptdaily.com/2021/08/16/ethereum-push-notification-service-hits-one-day-trading-volume-of-3-04-million-push.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/iethereum-ieth-trading-6-higher-over-last-7-days.html" rel="bookmark" title="iEthereum (IETH) Trading 6% Higher  Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2104.png&amp;w=150&amp;zc=1" alt="iEthereum (IETH) Trading 6% Higher  Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/iethereum-ieth-trading-6-higher-over-last-7-days.html" rel="bookmark" title="iEthereum (IETH) Trading 6% Higher  Over Last 7 Days"><h2>iEthereum (IETH) Trading 6% Higher  Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						iEthereum (CURRENCY:IETH) traded 0.6% lower  against the U.S. dollar during the 1-day period ending at 8:00 AM ET on August 15th. During the last seven days, iEthereum has traded 6% higher  against the U.S. dollar. One iEthereum coin...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/iethereum-ieth-trading-6-higher-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html" rel="bookmark" title="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html" rel="bookmark" title="Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges"><h2>Ethereum Classic (ETC) Price Hits $62.03 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded up 4.3% against the U.S. dollar during the twenty-four hour period ending at 14:00 PM E.T. on August 13th. During the last week, Ethereum Classic has traded 16.3% higher  against the U.S. dollar....&nbsp;<a href='https://transcriptdaily.com/2021/08/13/ethereum-classic-etc-price-hits-62-03-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/ethereum-gold-market-cap-reaches-431486-94-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Reaches $431,486.94 (ETG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2074.png&amp;w=150&amp;zc=1" alt="Ethereum Gold Market Cap Reaches $431,486.94 (ETG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/ethereum-gold-market-cap-reaches-431486-94-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Reaches $431,486.94 (ETG)"><h2>Ethereum Gold Market Cap Reaches $431,486.94 (ETG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Gold (CURRENCY:ETG) traded 38.1% lower  against the US dollar during the twenty-four hour period ending at 22:00 PM Eastern on August 12th. Ethereum Gold has a market capitalization of $431,486.94 and approximately $17.00...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/ethereum-gold-market-cap-reaches-431486-94-etg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/ethereum-yield-ethy-trading-28-5-higher-over-last-week.html" rel="bookmark" title="Ethereum Yield (ETHY) Trading 28.5% Higher  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethereum-yield-trans1.png&amp;w=150&amp;zc=1" alt="Ethereum Yield (ETHY) Trading 28.5% Higher  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/ethereum-yield-ethy-trading-28-5-higher-over-last-week.html" rel="bookmark" title="Ethereum Yield (ETHY) Trading 28.5% Higher  Over Last Week"><h2>Ethereum Yield (ETHY) Trading 28.5% Higher  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Yield (CURRENCY:ETHY) traded up 2.6% against the U.S. dollar during the one day period ending at 8:00 AM E.T. on August 11th. Ethereum Yield has a total market capitalization of $499,788.18 and $452.00 worth of Ethereum Yield...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/ethereum-yield-ethy-trading-28-5-higher-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/ethereum-push-notification-service-push-tops-24-hour-volume-of-5-07-million.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Tops 24-Hour Volume of $5.07 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service (PUSH) Tops 24-Hour Volume of $5.07 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/ethereum-push-notification-service-push-tops-24-hour-volume-of-5-07-million.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Tops 24-Hour Volume of $5.07 Million"><h2>Ethereum Push Notification Service (PUSH) Tops 24-Hour Volume of $5.07 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded up 4.6% against the dollar during the 24 hour period ending at 16:00 PM ET on August 9th. Ethereum Push Notification Service has a total market capitalization of $13.83 million...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/ethereum-push-notification-service-push-tops-24-hour-volume-of-5-07-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/ethereum-yield-ethy-trading-up-15-this-week.html" rel="bookmark" title="Ethereum Yield (ETHY) Trading Up 15% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethereum-yield-trans1.png&amp;w=150&amp;zc=1" alt="Ethereum Yield (ETHY) Trading Up 15% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/ethereum-yield-ethy-trading-up-15-this-week.html" rel="bookmark" title="Ethereum Yield (ETHY) Trading Up 15% This Week"><h2>Ethereum Yield (ETHY) Trading Up 15% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Yield (CURRENCY:ETHY) traded down 3.3% against the US dollar during the 24-hour period ending at 15:00 PM ET on August 8th. Ethereum Yield has a market capitalization of $461,725.61 and $63.00 worth of Ethereum Yield was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/ethereum-yield-ethy-trading-up-15-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/ethereum-meta-market-capitalization-tops-638758-16-ethm.html" rel="bookmark" title="Ethereum Meta Market Capitalization Tops $638,758.16 (ETHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta Market Capitalization Tops $638,758.16 (ETHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/ethereum-meta-market-capitalization-tops-638758-16-ethm.html" rel="bookmark" title="Ethereum Meta Market Capitalization Tops $638,758.16 (ETHM)"><h2>Ethereum Meta Market Capitalization Tops $638,758.16 (ETHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded up 1.1% against the U.S. dollar during the 1 day period ending at 7:00 AM E.T. on August 7th. One Ethereum Meta coin can currently be purchased for about $0.0000 or 0.00000000 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/ethereum-meta-market-capitalization-tops-638758-16-ethm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/ethereum-push-notification-service-trading-20-higher-this-week-push.html" rel="bookmark" title="Ethereum Push Notification Service Trading 20% Higher  This Week (PUSH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service Trading 20% Higher  This Week (PUSH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/ethereum-push-notification-service-trading-20-higher-this-week-push.html" rel="bookmark" title="Ethereum Push Notification Service Trading 20% Higher  This Week (PUSH)"><h2>Ethereum Push Notification Service Trading 20% Higher  This Week (PUSH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded 7.4% higher  against the U.S. dollar during the 1-day period ending at 0:00 AM Eastern on August 6th. Ethereum Push Notification Service has a market capitalization of $9.71...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/ethereum-push-notification-service-trading-20-higher-this-week-push.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/iethereum-price-down-10-this-week-ieth.html" rel="bookmark" title="iEthereum Price Down 10% This Week (IETH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2104.png&amp;w=150&amp;zc=1" alt="iEthereum Price Down 10% This Week (IETH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/iethereum-price-down-10-this-week-ieth.html" rel="bookmark" title="iEthereum Price Down 10% This Week (IETH)"><h2>iEthereum Price Down 10% This Week (IETH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						iEthereum (CURRENCY:IETH) traded down 7.6% against the dollar during the one day period ending at 18:00 PM ET on August 6th. During the last week, iEthereum has traded down 10% against the dollar. iEthereum has a market capitalization...&nbsp;<a href='https://transcriptdaily.com/2021/08/06/iethereum-price-down-10-this-week-ieth.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html" rel="bookmark" title="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html" rel="bookmark" title="Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)"><h2>Ethereum Classic 24 Hour Volume Hits $1.96 Billion (ETC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 4th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded 0.8% lower  against the U.S. dollar during the 1-day period ending at 9:00 AM Eastern on August 4th. One Ethereum Classic coin can now be purchased for about $49.22 or 0.00125558 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/04/ethereum-classic-24-hour-volume-hits-1-96-billion-etc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/04/ethereumx-24-hour-trading-volume-hits-800-00-etx.html" rel="bookmark" title="EthereumX 24 Hour Trading Volume Hits $800.00 (ETX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3771.png&amp;w=150&amp;zc=1" alt="EthereumX 24 Hour Trading Volume Hits $800.00 (ETX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/04/ethereumx-24-hour-trading-volume-hits-800-00-etx.html" rel="bookmark" title="EthereumX 24 Hour Trading Volume Hits $800.00 (ETX)"><h2>EthereumX 24 Hour Trading Volume Hits $800.00 (ETX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 4th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						EthereumX (CURRENCY:ETX) traded up 18.7% against the US dollar during the 24 hour period ending at 8:00 AM E.T. on August 4th. One EthereumX coin can currently be bought for $0.0013 or 0.00000003 BTC on popular exchanges. EthereumX...&nbsp;<a href='https://transcriptdaily.com/2021/08/04/ethereumx-24-hour-trading-volume-hits-800-00-etx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/04/iethereum-price-down-23-7-over-last-week-ieth.html" rel="bookmark" title="iEthereum Price Down 23.7% Over Last Week (IETH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2104.png&amp;w=150&amp;zc=1" alt="iEthereum Price Down 23.7% Over Last Week (IETH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/04/iethereum-price-down-23-7-over-last-week-ieth.html" rel="bookmark" title="iEthereum Price Down 23.7% Over Last Week (IETH)"><h2>iEthereum Price Down 23.7% Over Last Week (IETH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 4th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						iEthereum (CURRENCY:IETH) traded 2.2% lower  against the dollar during the 1 day period ending at 8:00 AM E.T. on August 4th. iEthereum has a total market cap of $1.92 million and approximately $85.00 worth of iEthereum was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/04/iethereum-price-down-23-7-over-last-week-ieth.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/ethereumx-etx-24-hour-trading-volume-hits-1842-00.html" rel="bookmark" title="EthereumX (ETX) 24-Hour Trading Volume Hits $1,842.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3771.png&amp;w=150&amp;zc=1" alt="EthereumX (ETX) 24-Hour Trading Volume Hits $1,842.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/ethereumx-etx-24-hour-trading-volume-hits-1842-00.html" rel="bookmark" title="EthereumX (ETX) 24-Hour Trading Volume Hits $1,842.00"><h2>EthereumX (ETX) 24-Hour Trading Volume Hits $1,842.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						EthereumX (CURRENCY:ETX) traded down 36% against the U.S. dollar during the 1 day period ending at 12:00 PM Eastern on August 3rd. One EthereumX coin can now be bought for approximately $0.0009 or 0.00000002 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/ethereumx-etx-24-hour-trading-volume-hits-1842-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html" rel="bookmark" title="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html" rel="bookmark" title="Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion"><h2>Ethereum Classic (ETC) Achieves Market Capitalization of $6.62 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 2nd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded down 1.8% against the U.S. dollar during the one day period ending at 15:00 PM ET on August 2nd. Ethereum Classic has a total market capitalization of $6.62 billion and $2.27 billion worth of...&nbsp;<a href='https://transcriptdaily.com/2021/08/02/ethereum-classic-etc-achieves-market-capitalization-of-6-62-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/02/ethereum-push-notification-service-push-price-tops-1-05.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Price Tops $1.05" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service (PUSH) Price Tops $1.05" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/02/ethereum-push-notification-service-push-price-tops-1-05.html" rel="bookmark" title="Ethereum Push Notification Service (PUSH) Price Tops $1.05"><h2>Ethereum Push Notification Service (PUSH) Price Tops $1.05</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 2nd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded down 5.5% against the dollar during the 24-hour period ending at 22:00 PM ET on August 1st. Ethereum Push Notification Service has a market capitalization of $8.30 million and...&nbsp;<a href='https://transcriptdaily.com/2021/08/02/ethereum-push-notification-service-push-price-tops-1-05.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/ethereumx-etx-market-capitalization-achieves-158502-01.html" rel="bookmark" title="EthereumX (ETX) Market Capitalization Achieves $158,502.01" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3771.png&amp;w=150&amp;zc=1" alt="EthereumX (ETX) Market Capitalization Achieves $158,502.01" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/ethereumx-etx-market-capitalization-achieves-158502-01.html" rel="bookmark" title="EthereumX (ETX) Market Capitalization Achieves $158,502.01"><h2>EthereumX (ETX) Market Capitalization Achieves $158,502.01</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						EthereumX (CURRENCY:ETX) traded down 18.9% against the US dollar during the 24-hour period ending at 17:00 PM E.T. on August 1st. EthereumX has a total market capitalization of $158,502.01 and approximately $504.00 worth of EthereumX...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/ethereumx-etx-market-capitalization-achieves-158502-01.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/ethereum-one-day-volume-reaches-18-19-billion-eth.html" rel="bookmark" title="Ethereum One Day Volume Reaches $18.19 Billion (ETH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1027.png&amp;w=150&amp;zc=1" alt="Ethereum One Day Volume Reaches $18.19 Billion (ETH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/ethereum-one-day-volume-reaches-18-19-billion-eth.html" rel="bookmark" title="Ethereum One Day Volume Reaches $18.19 Billion (ETH)"><h2>Ethereum One Day Volume Reaches $18.19 Billion (ETH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum (CURRENCY:ETH) traded up 4.4% against the US dollar during the 24 hour period ending at 21:00 PM ET on July 31st. One Ethereum coin can currently be purchased for approximately $2,568.86 or 0.06151447 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/01/ethereum-one-day-volume-reaches-18-19-billion-eth.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/30/ethereum-push-notification-service-price-up-29-over-last-7-days-push.html" rel="bookmark" title="Ethereum Push Notification Service Price Up 29% Over Last 7 Days (PUSH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service Price Up 29% Over Last 7 Days (PUSH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/30/ethereum-push-notification-service-price-up-29-over-last-7-days-push.html" rel="bookmark" title="Ethereum Push Notification Service Price Up 29% Over Last 7 Days (PUSH)"><h2>Ethereum Push Notification Service Price Up 29% Over Last 7 Days (PUSH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 30th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded 1.5% higher  against the U.S. dollar during the 24-hour period ending at 13:00 PM E.T. on July 30th. During the last week, Ethereum Push Notification Service has traded up 29%...&nbsp;<a href='https://transcriptdaily.com/2021/07/30/ethereum-push-notification-service-price-up-29-over-last-7-days-push.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/ethereum-meta-one-day-trading-volume-reaches-6280-00-ethm.html" rel="bookmark" title="Ethereum Meta One Day Trading Volume Reaches $6,280.00 (ETHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta One Day Trading Volume Reaches $6,280.00 (ETHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/ethereum-meta-one-day-trading-volume-reaches-6280-00-ethm.html" rel="bookmark" title="Ethereum Meta One Day Trading Volume Reaches $6,280.00 (ETHM)"><h2>Ethereum Meta One Day Trading Volume Reaches $6,280.00 (ETHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded 9.6% lower  against the US dollar during the 24-hour period ending at 16:00 PM E.T. on July 29th. Ethereum Meta has a total market cap of $765,767.01 and approximately $6,280.00 worth of Ethereum...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/ethereum-meta-one-day-trading-volume-reaches-6280-00-ethm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/iethereum-trading-8-5-lower-over-last-week-ieth.html" rel="bookmark" title="iEthereum  Trading 8.5% Lower  Over Last Week (IETH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2104.png&amp;w=150&amp;zc=1" alt="iEthereum  Trading 8.5% Lower  Over Last Week (IETH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/iethereum-trading-8-5-lower-over-last-week-ieth.html" rel="bookmark" title="iEthereum  Trading 8.5% Lower  Over Last Week (IETH)"><h2>iEthereum  Trading 8.5% Lower  Over Last Week (IETH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						iEthereum (CURRENCY:IETH) traded 8.5% lower  against the dollar during the twenty-four hour period ending at 17:00 PM E.T. on July 27th. One iEthereum coin can now be purchased for $0.13 or 0.00000337 BTC on popular exchanges. iEthereum...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/iethereum-trading-8-5-lower-over-last-week-ieth.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/ethereum-eth-price-tops-2234-91-on-major-exchanges.html" rel="bookmark" title="Ethereum (ETH) Price Tops $2,234.91 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1027.png&amp;w=150&amp;zc=1" alt="Ethereum (ETH) Price Tops $2,234.91 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/ethereum-eth-price-tops-2234-91-on-major-exchanges.html" rel="bookmark" title="Ethereum (ETH) Price Tops $2,234.91 on Major Exchanges"><h2>Ethereum (ETH) Price Tops $2,234.91 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum (CURRENCY:ETH) traded down 7.6% against the US dollar during the 24-hour period ending at 15:00 PM ET on July 27th. One Ethereum coin can currently be purchased for $2,234.91 or 0.05890816 BTC on exchanges. During the last...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/ethereum-eth-price-tops-2234-91-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/ethereum-meta-24-hour-volume-reaches-1735-00-ethm.html" rel="bookmark" title="Ethereum Meta 24-Hour Volume Reaches $1,735.00 (ETHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta 24-Hour Volume Reaches $1,735.00 (ETHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/ethereum-meta-24-hour-volume-reaches-1735-00-ethm.html" rel="bookmark" title="Ethereum Meta 24-Hour Volume Reaches $1,735.00 (ETHM)"><h2>Ethereum Meta 24-Hour Volume Reaches $1,735.00 (ETHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded up 4.7% against the dollar during the 24-hour period ending at 0:00 AM ET on July 26th. One Ethereum Meta coin can currently be bought for approximately $0.0001 or 0.00000000 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/ethereum-meta-24-hour-volume-reaches-1735-00-ethm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/ethereum-push-notification-service-price-hits-1-01-on-major-exchanges-push.html" rel="bookmark" title="Ethereum Push Notification Service Price Hits $1.01 on Major Exchanges (PUSH)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/push.png&amp;w=150&amp;zc=1" alt="Ethereum Push Notification Service Price Hits $1.01 on Major Exchanges (PUSH)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/ethereum-push-notification-service-price-hits-1-01-on-major-exchanges-push.html" rel="bookmark" title="Ethereum Push Notification Service Price Hits $1.01 on Major Exchanges (PUSH)"><h2>Ethereum Push Notification Service Price Hits $1.01 on Major Exchanges (PUSH)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Push Notification Service (CURRENCY:PUSH) traded 5.7% higher  against the dollar during the 24-hour period ending at 7:00 AM E.T. on July 26th. Ethereum Push Notification Service has a total market capitalization of $8.04...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/ethereum-push-notification-service-price-hits-1-01-on-major-exchanges-push.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html" rel="bookmark" title="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1321.png&amp;w=150&amp;zc=1" alt="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html" rel="bookmark" title="Ethereum Classic Price Tops $50.83 on Exchanges (ETC)"><h2>Ethereum Classic Price Tops $50.83 on Exchanges (ETC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Classic (CURRENCY:ETC) traded 6.1% higher  against the dollar during the 24-hour period ending at 21:00 PM ET on July 25th. In the last seven days, Ethereum Classic has traded 23.5% higher  against the dollar. Ethereum Classic...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/ethereum-classic-price-tops-50-83-on-exchanges-etc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/25/ethereum-eth-hits-market-cap-of-251-77-billion.html" rel="bookmark" title="Ethereum (ETH) Hits Market Cap of $251.77 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1027.png&amp;w=150&amp;zc=1" alt="Ethereum (ETH) Hits Market Cap of $251.77 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/25/ethereum-eth-hits-market-cap-of-251-77-billion.html" rel="bookmark" title="Ethereum (ETH) Hits Market Cap of $251.77 Billion"><h2>Ethereum (ETH) Hits Market Cap of $251.77 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 25th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum (CURRENCY:ETH) traded up 0.6% against the US dollar during the 24-hour period ending at 0:00 AM Eastern on July 24th. One Ethereum coin can currently be purchased for about $2,155.01 or 0.06301427 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/07/25/ethereum-eth-hits-market-cap-of-251-77-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/25/ethereumx-etx-market-cap-reaches-207422-69.html" rel="bookmark" title="EthereumX (ETX) Market Cap Reaches $207,422.69" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3771.png&amp;w=150&amp;zc=1" alt="EthereumX (ETX) Market Cap Reaches $207,422.69" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/25/ethereumx-etx-market-cap-reaches-207422-69.html" rel="bookmark" title="EthereumX (ETX) Market Cap Reaches $207,422.69"><h2>EthereumX (ETX) Market Cap Reaches $207,422.69</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 25th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						EthereumX (CURRENCY:ETX) traded down 10.5% against the U.S. dollar during the 24 hour period ending at 23:00 PM Eastern on July 24th. Over the last week, EthereumX has traded 11.9% higher  against the U.S. dollar. EthereumX has a market...&nbsp;<a href='https://transcriptdaily.com/2021/07/25/ethereumx-etx-market-cap-reaches-207422-69.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/24/ethereum-meta-market-capitalization-tops-1-99-million-ethm.html" rel="bookmark" title="Ethereum Meta Market Capitalization Tops $1.99 Million (ETHM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ethm.jpg&amp;w=150&amp;zc=1" alt="Ethereum Meta Market Capitalization Tops $1.99 Million (ETHM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/24/ethereum-meta-market-capitalization-tops-1-99-million-ethm.html" rel="bookmark" title="Ethereum Meta Market Capitalization Tops $1.99 Million (ETHM)"><h2>Ethereum Meta Market Capitalization Tops $1.99 Million (ETHM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 24th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Meta (CURRENCY:ETHM) traded 36.9% lower  against the dollar during the twenty-four hour period ending at 15:00 PM Eastern on July 24th. One Ethereum Meta coin can now be purchased for approximately $0.0000 or 0.00000000 BTC...&nbsp;<a href='https://transcriptdaily.com/2021/07/24/ethereum-meta-market-capitalization-tops-1-99-million-ethm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/24/ethereum-gold-market-cap-reaches-331691-73-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Reaches $331,691.73 (ETG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2074.png&amp;w=150&amp;zc=1" alt="Ethereum Gold Market Cap Reaches $331,691.73 (ETG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/24/ethereum-gold-market-cap-reaches-331691-73-etg.html" rel="bookmark" title="Ethereum Gold Market Cap Reaches $331,691.73 (ETG)"><h2>Ethereum Gold Market Cap Reaches $331,691.73 (ETG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 24th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ethereum Gold (CURRENCY:ETG) traded 55.9% lower  against the U.S. dollar during the twenty-four hour period ending at 0:00 AM Eastern on July 23rd. Ethereum Gold has a total market capitalization of $331,691.73 and $38.00 worth of...&nbsp;<a href='https://transcriptdaily.com/2021/07/24/ethereum-gold-market-cap-reaches-331691-73-etg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html" rel="bookmark" title="Neblio Hits Market Cap of $29.97 Million (NEBL)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1955.png&amp;w=150&amp;zc=1" alt="Neblio Hits Market Cap of $29.97 Million (NEBL)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html" rel="bookmark" title="Neblio Hits Market Cap of $29.97 Million (NEBL)"><h2>Neblio Hits Market Cap of $29.97 Million (NEBL)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neblio (CURRENCY:NEBL) traded 1.8% lower  against the U.S. dollar during the 1 day period ending at 12:00 PM E.T. on August 21st. In the last week, Neblio has traded 8.7% higher  against the U.S. dollar. Neblio has a market cap of...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html" rel="bookmark" title="I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/495.png&amp;w=150&amp;zc=1" alt="I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html" rel="bookmark" title="I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00"><h2>I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						I/O Coin (CURRENCY:IOC) traded down 5.4% against the U.S. dollar during the 1-day period ending at 12:00 PM Eastern on August 21st. One I/O Coin coin can currently be bought for about $0.11 or 0.00000217 BTC on popular exchanges. I/O...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html" rel="bookmark" title="Kin (KIN) 24-Hour Volume Hits $6.82 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1993.png&amp;w=150&amp;zc=1" alt="Kin (KIN) 24-Hour Volume Hits $6.82 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html" rel="bookmark" title="Kin (KIN) 24-Hour Volume Hits $6.82 Million"><h2>Kin (KIN) 24-Hour Volume Hits $6.82 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Kin (CURRENCY:KIN) traded 5.2% lower  against the US dollar during the 24 hour period ending at 12:00 PM ET on August 21st. Over the last week, Kin has traded 70.8% higher  against the US dollar. One Kin coin can now be bought for...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html" rel="bookmark" title="Mysterium (MYST) Price Tops $0.41" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1721.png&amp;w=150&amp;zc=1" alt="Mysterium (MYST) Price Tops $0.41" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html" rel="bookmark" title="Mysterium (MYST) Price Tops $0.41"><h2>Mysterium (MYST) Price Tops $0.41</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Mysterium (CURRENCY:MYST) traded down 0.3% against the US dollar during the 1-day period ending at 12:00 PM ET on August 21st. Over the last seven days, Mysterium has traded up 1.5% against the US dollar. One Mysterium coin can now...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html" rel="bookmark" title="FUZE Token (FUZE) Trading Down 1% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/4104.png&amp;w=150&amp;zc=1" alt="FUZE Token (FUZE) Trading Down 1% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html" rel="bookmark" title="FUZE Token (FUZE) Trading Down 1% This Week"><h2>FUZE Token (FUZE) Trading Down 1% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FUZE Token (CURRENCY:FUZE) traded 1.2% lower  against the dollar during the one day period ending at 12:00 PM ET on August 21st. In the last seven days, FUZE Token has traded down 1% against the dollar. One FUZE Token coin can now...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/innova-inn-hits-24-hour-trading-volume-of-223-00.html" rel="bookmark" title="Innova (INN) Hits 24 Hour Trading Volume of $223.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/inn.png&amp;w=150&amp;zc=1" alt="Innova (INN) Hits 24 Hour Trading Volume of $223.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/innova-inn-hits-24-hour-trading-volume-of-223-00.html" rel="bookmark" title="Innova (INN) Hits 24 Hour Trading Volume of $223.00"><h2>Innova (INN) Hits 24 Hour Trading Volume of $223.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Innova (CURRENCY:INN) traded down 2.5% against the US dollar during the one day period ending at 11:00 AM Eastern on August 21st. One Innova coin can currently be bought for about $0.0594 or 0.00000121 BTC on major cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/innova-inn-hits-24-hour-trading-volume-of-223-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/peanut-nux-hits-24-hour-trading-volume-of-1-58-million.html" rel="bookmark" title="Peanut (NUX) Hits 24 Hour Trading Volume of $1.58 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/peanuttrade.png&amp;w=150&amp;zc=1" alt="Peanut (NUX) Hits 24 Hour Trading Volume of $1.58 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/peanut-nux-hits-24-hour-trading-volume-of-1-58-million.html" rel="bookmark" title="Peanut (NUX) Hits 24 Hour Trading Volume of $1.58 Million"><h2>Peanut (NUX) Hits 24 Hour Trading Volume of $1.58 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Peanut (CURRENCY:NUX) traded down 7.4% against the US dollar during the 1-day period ending at 11:00 AM Eastern on August 21st. Peanut has a market cap of $4.07 million and $1.58 million worth of Peanut was traded on exchanges in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/peanut-nux-hits-24-hour-trading-volume-of-1-58-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html" rel="bookmark" title="Bitsum.money (BSM) Market Capitalization Tops $120,041.87" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2648.png&amp;w=150&amp;zc=1" alt="Bitsum.money (BSM) Market Capitalization Tops $120,041.87" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html" rel="bookmark" title="Bitsum.money (BSM) Market Capitalization Tops $120,041.87"><h2>Bitsum.money (BSM) Market Capitalization Tops $120,041.87</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitsum.money (CURRENCY:BSM) traded up 19.4% against the U.S. dollar during the 1-day period ending at 11:00 AM E.T. on August 21st. One Bitsum.money coin can now be bought for about $0.0001 or 0.00000000 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html" rel="bookmark" title="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8752.png&amp;w=150&amp;zc=1" alt="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html" rel="bookmark" title="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)"><h2>Landbox Price Reaches $0.0091 on Major Exchanges (LAND)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Landbox (CURRENCY:LAND) traded 0.8% lower  against the US dollar during the twenty-four hour period ending at 11:00 AM ET on August 21st. Over the last seven days, Landbox has traded 10% lower  against the US dollar. Landbox has a...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/uniswap-uni-price-tops-28-98.html" rel="bookmark" title="Uniswap (UNI) Price Tops $28.98" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/uni.png&amp;w=150&amp;zc=1" alt="Uniswap (UNI) Price Tops $28.98" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/uniswap-uni-price-tops-28-98.html" rel="bookmark" title="Uniswap (UNI) Price Tops $28.98"><h2>Uniswap (UNI) Price Tops $28.98</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Uniswap (CURRENCY:UNI) traded up 0.8% against the US dollar during the twenty-four hour period ending at 11:00 AM ET on August 21st. One Uniswap coin can currently be bought for $28.98 or 0.00059102 BTC on exchanges. Over the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/uniswap-uni-price-tops-28-98.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/aax-token-aab-reaches-24-hour-trading-volume-of-39094-00.html" rel="bookmark" title="AAX Token (AAB) Reaches 24-Hour Trading Volume of $39,094.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/aax.png&amp;w=150&amp;zc=1" alt="AAX Token (AAB) Reaches 24-Hour Trading Volume of $39,094.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/aax-token-aab-reaches-24-hour-trading-volume-of-39094-00.html" rel="bookmark" title="AAX Token (AAB) Reaches 24-Hour Trading Volume of $39,094.00"><h2>AAX Token (AAB) Reaches 24-Hour Trading Volume of $39,094.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						AAX Token (CURRENCY:AAB) traded 0.2% lower  against the dollar during the 1 day period ending at 11:00 AM Eastern on August 21st. Over the last week, AAX Token has traded down 1.4% against the dollar. AAX Token has a market cap of...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/aax-token-aab-reaches-24-hour-trading-volume-of-39094-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html" rel="bookmark" title="KnoxFS (new) Price Down 7.6% This Week (KFX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8177.png&amp;w=150&amp;zc=1" alt="KnoxFS (new) Price Down 7.6% This Week (KFX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html" rel="bookmark" title="KnoxFS (new) Price Down 7.6% This Week (KFX)"><h2>KnoxFS (new) Price Down 7.6% This Week (KFX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						KnoxFS (new) (CURRENCY:KFX) traded up 1.5% against the US dollar during the 1 day period ending at 11:00 AM E.T. on August 21st. KnoxFS (new) has a market cap of $292,803.55 and $5,753.00 worth of KnoxFS (new) was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Ethereum" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Ethereum Classic</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Ethereum Classic with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:ethereum-classic" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/nike-inc-nysenke-stock-holdings-decreased-by-private-advisory-group-llc.html">NIKE, Inc. (NYSE:NKE) Stock Holdings Decreased by Private Advisory Group LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-sells-480-shares-of-schwab-u-s-large-cap-growth-etf-nysearcaschg.html">First Personal Financial Services Sells 480 Shares of Schwab U.S. Large-Cap Growth ETF (NYSEARCA:SCHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-purchases-shares-of-4320-the-sherwin-williams-company-nyseshw.html">First Personal Financial Services Purchases Shares of 4,320 The Sherwin-Williams Company (NYSE:SHW)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/exxon-mobil-co-nysexom-shares-sold-by-first-personal-financial-services.html">Exxon Mobil Co. (NYSE:XOM) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/clark-capital-management-group-inc-grows-position-in-the-tjx-companies-inc-nysetjx.html">Clark Capital Management Group Inc. Grows Position in The TJX Companies, Inc. (NYSE:TJX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/1785-shares-in-fedex-co-nysefdx-acquired-by-srs-capital-advisors-inc.html">1,785 Shares in FedEx Co. (NYSE:FDX) Acquired by SRS Capital Advisors Inc.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/corundum-group-inc-decreases-holdings-in-caterpillar-inc-nysecat.html">Corundum Group Inc. Decreases Holdings in Caterpillar Inc. (NYSE:CAT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/td-capital-management-llc-purchases-new-holdings-in-micron-technology-inc-nasdaqmu.html">TD Capital Management LLC Purchases New Holdings in Micron Technology, Inc. (NASDAQ:MU)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/arcadia-investment-management-corp-mi-decreases-stock-position-in-veeva-systems-inc-nyseveev.html">Arcadia Investment Management Corp MI Decreases Stock Position in Veeva Systems Inc. (NYSE:VEEV)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-2-35-million-stake-in-spdr-sp-regional-banking-etf-nysearcakre.html">Capital Insight Partners LLC Has $2.35 Million Stake in SPDR S&#038;P Regional Banking ETF (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-1-94-million-position-in-unilever-plc-nyseul.html">Capital Insight Partners LLC Has $1.94 Million Position in Unilever PLC (NYSE:UL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/proshares-sp-500-aristocrats-etf-batsnobl-shares-sold-by-first-personal-financial-services.html">ProShares S&#038;P 500 Aristocrats ETF (BATS:NOBL) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/zacks-analysts-expect-vereit-inc-nysever-will-announce-quarterly-sales-of-296-94-million.html">Zacks: Analysts Expect VEREIT, Inc. (NYSE:VER) Will Announce Quarterly Sales of $296.94 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html">Neblio Hits Market Cap of $29.97 Million (NEBL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/rent-a-center-nasdaqrcii-updates-fy-2021-earnings-guidance-2.html">Rent-A-Center (NASDAQ:RCII) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html">I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html">FUZE Token (FUZE) Trading Down 1% This Week</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html">Mysterium (MYST) Price Tops $0.41</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html">Kin (KIN) 24-Hour Volume Hits $6.82 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/haemonetics-nysehae-issues-fy-2022-earnings-guidance.html">Haemonetics (NYSE:HAE) Issues FY 2022 Earnings Guidance</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77579065&PostDate=2021-8-21&type=g&id=69562&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

@@ -1,6 +1,6 @@
 import config
 from pybittrex.client import Client
-import MySQLdb
+import pymysql
 import sys
 import datetime
 import time
@@ -46,7 +46,7 @@ def ME():
                 if order_id!=0 and currtime - close_date(market)<432000:
 
                     try:
-                        db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                        db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
 
                         if procent_serf>=percent_serf(market) and procent_serf>=aftercount:
@@ -59,8 +59,8 @@ def ME():
                                 (procent_serf, market, order_id))
 
                         db.commit()
-                    except MySQLdb.Error, e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
+                    except pymysql.Error as e:
+                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                         sys.exit(1)
                     finally:
                         db.close()
@@ -68,29 +68,29 @@ def ME():
                     pass
 
 
-                if order_id != 0 and currtime - close_date(market) < 80000 and aftercount-percent_serf(market)>=10:
-                 try:
-                     print "We have peak situation, lets wait"
-                     db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
-                     cursor = db.cursor()
-                     printed1 = ("We have peak situation, lets wait")
-                     cursor.execute(
-                         "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
-                         (currenttime, currtime, printed1, market))
-                     db.commit()
-                 except MySQLdb.Error, e:
-                     print "Error %d: %s" % (e.args[0], e.args[1])
-                     sys.exit(1)
-                 finally:
-                     db.close()
-                else:
-                    pass
+                # if order_id != 0 and currtime - close_date(market) < 80000 and aftercount-percent_serf(market)>=10:
+                 # try:
+                     # print "We have peak situation, lets wait"
+                     # db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                     # cursor = db.cursor()
+                     # printed1 = ("We have peak situation, lets wait")
+                     # cursor.execute(
+                         # "update markets set strike_date=%s, strike_time2=%s, strike_info=%s  where market = %s",
+                         # (currenttime, currtime, printed1, market))
+                     # db.commit()
+                 # except pymysql.Error as e:
+                     # print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     # sys.exit(1)
+                 # finally:
+                     # db.close()
+                # else:
+                    # pass
 
 
 
 
 
-                #print market, percent_serf(market), procent_serf, aftercount, min_percent
+                print (market, percent_serf(market), procent_serf, aftercount, min_percent)
 
         except:
             continue
@@ -98,7 +98,7 @@ def ME():
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE  enabled=1 and market = '%s'" % market)
@@ -111,7 +111,7 @@ def available_market_list(marketname):
 
 
 def closed_orders_id(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT order_id FROM orders where active=0 and market= '%s' order by order_id desc" % market)
@@ -124,7 +124,7 @@ def closed_orders_id(marketname):
 
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 0 and market = '%s' order by order_id desc" % market)
@@ -138,7 +138,7 @@ def status_orders(marketname, value):
 
 
 def percent_serf(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT percent_serf FROM orders WHERE active=0 and market= '%s' order by order_id desc" % market)
@@ -149,7 +149,7 @@ def percent_serf(marketname):
 
 
 def close_date(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT sell_time FROM orders WHERE active=0 and market= '%s' order by order_id desc" % market)
