@@ -50,7 +50,7 @@ def neural():
     for market in markets: #Loop trough the stock summary
         try:
           market=(market[0])
-          name=market_full_name(market, 3)
+          name=market_full_name(market, 1)
           previous_predicted_price = market_full_name(market, 11)
           crypto=market[4:]
           market1 = crypto+"-USD"

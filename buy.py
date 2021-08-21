@@ -191,7 +191,7 @@ def tick():
                     finally:
                         db.close()
                         ########
-                    print ("bliad")
+
                     max_percent_sql = status_orders(market, 15)
                     print "Updated serf and procent serf stuff for" , market
 

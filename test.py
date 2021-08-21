@@ -19,3 +19,4 @@ market = crypto+"-USD"
 print (market)
 df = si.get_data(market)
 print (df)
+
