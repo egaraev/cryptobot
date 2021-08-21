@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Augur&#8221; Feed" href="https://transcriptdaily.com/search/Augur/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million - Transcript Daily</title>
+<meta name="description" content="Read Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/augur-rep-reaches-24-hour-trading-volume-of-116-82-million.html" rel="bookmark" title="Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1104.png&amp;w=150&amp;zc=1" alt="Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/augur-rep-reaches-24-hour-trading-volume-of-116-82-million.html" rel="bookmark" title="Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million"><h2>Augur (REP) Reaches 24-Hour Trading Volume of $116.82 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Augur (CURRENCY:REP) traded 7.9% lower  against the US dollar during the twenty-four hour period ending at 21:00 PM Eastern on August 17th. Augur has a market capitalization of $284.77 million and $116.82 million worth of Augur was...&nbsp;<a href='https://transcriptdaily.com/2021/08/18/augur-rep-reaches-24-hour-trading-volume-of-116-82-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/augur-rep-market-capitalization-tops-308-42-million.html" rel="bookmark" title="Augur (REP) Market Capitalization Tops $308.42 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1104.png&amp;w=150&amp;zc=1" alt="Augur (REP) Market Capitalization Tops $308.42 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/augur-rep-market-capitalization-tops-308-42-million.html" rel="bookmark" title="Augur (REP) Market Capitalization Tops $308.42 Million"><h2>Augur (REP) Market Capitalization Tops $308.42 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Augur (CURRENCY:REP) traded up 1.9% against the US dollar during the 1-day period ending at 13:00 PM E.T. on August 14th. During the last seven days, Augur has traded 7.9% higher  against the US dollar. One Augur coin can now be purchased...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/augur-rep-market-capitalization-tops-308-42-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/23/augur-rep-price-reaches-15-89-on-major-exchanges.html" rel="bookmark" title="Augur (REP) Price Reaches $15.89 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1104.png&amp;w=150&amp;zc=1" alt="Augur (REP) Price Reaches $15.89 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/23/augur-rep-price-reaches-15-89-on-major-exchanges.html" rel="bookmark" title="Augur (REP) Price Reaches $15.89 on Major Exchanges"><h2>Augur (REP) Price Reaches $15.89 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 23rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Augur (CURRENCY:REP) traded down 2.7% against the dollar during the 1 day period ending at 13:00 PM E.T. on July 23rd. Augur has a total market capitalization of $174.77 million and $38.77 million worth of Augur was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/07/23/augur-rep-price-reaches-15-89-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/seagate-technology-nasdaqstx-lowered-to-hold-at-zacks-investment-research.html" rel="bookmark" title="Seagate Technology (NASDAQ:STX) Lowered to Hold at Zacks Investment Research" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/seagate-technology-plc-logo.jpg?v2&amp;w=150&amp;zc=1" alt="Seagate Technology (NASDAQ:STX) Lowered to Hold at Zacks Investment Research" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/seagate-technology-nasdaqstx-lowered-to-hold-at-zacks-investment-research.html" rel="bookmark" title="Seagate Technology (NASDAQ:STX) Lowered to Hold at Zacks Investment Research"><h2>Seagate Technology (NASDAQ:STX) Lowered to Hold at Zacks Investment Research</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Zacks Investment Research cut shares of Seagate Technology (NASDAQ:STX) from a buy rating to a hold rating in a report published on Friday, Zacks.com reports. The firm currently has $95.00 target price on the data storage provider&#8217;s...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/seagate-technology-nasdaqstx-lowered-to-hold-at-zacks-investment-research.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/numeraire-nmr-tops-24-hour-volume-of-33-23-million.html" rel="bookmark" title="Numeraire (NMR) Tops 24 Hour Volume of $33.23 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1732.png&amp;w=150&amp;zc=1" alt="Numeraire (NMR) Tops 24 Hour Volume of $33.23 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/numeraire-nmr-tops-24-hour-volume-of-33-23-million.html" rel="bookmark" title="Numeraire (NMR) Tops 24 Hour Volume of $33.23 Million"><h2>Numeraire (NMR) Tops 24 Hour Volume of $33.23 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Numeraire (CURRENCY:NMR) traded 1.1% higher  against the dollar during the 1-day period ending at 18:00 PM Eastern on August 15th. Numeraire has a total market capitalization of $419.13 million and $33.23 million worth of Numeraire...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/numeraire-nmr-tops-24-hour-volume-of-33-23-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/numeraire-trading-up-8-7-over-last-week-nmr.html" rel="bookmark" title="Numeraire Trading Up 8.7% Over Last Week (NMR)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1732.png&amp;w=150&amp;zc=1" alt="Numeraire Trading Up 8.7% Over Last Week (NMR)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/numeraire-trading-up-8-7-over-last-week-nmr.html" rel="bookmark" title="Numeraire Trading Up 8.7% Over Last Week (NMR)"><h2>Numeraire Trading Up 8.7% Over Last Week (NMR)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Numeraire (CURRENCY:NMR) traded 6% higher  against the dollar during the one day period ending at 0:00 AM E.T. on August 13th. During the last week, Numeraire has traded 8.7% higher  against the dollar. One Numeraire coin can now be...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/numeraire-trading-up-8-7-over-last-week-nmr.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/12/adient-nyseadnt-lifted-to-hold-at-zacks-investment-research.html" rel="bookmark" title="Adient (NYSE:ADNT) Lifted to &#8220;Hold&#8221; at Zacks Investment Research" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/adient-logo.jpg&amp;w=150&amp;zc=1" alt="Adient (NYSE:ADNT) Lifted to &#8220;Hold&#8221; at Zacks Investment Research" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/12/adient-nyseadnt-lifted-to-hold-at-zacks-investment-research.html" rel="bookmark" title="Adient (NYSE:ADNT) Lifted to &#8220;Hold&#8221; at Zacks Investment Research"><h2>Adient (NYSE:ADNT) Lifted to &#8220;Hold&#8221; at Zacks Investment Research</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 12th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Adient (NYSE:ADNT) was upgraded by Zacks Investment Research from a &#8220;sell&#8221; rating to a &#8220;hold&#8221; rating in a note issued to investors on Thursday, Zacks.com reports. The brokerage presently has a $43.00 price objective...&nbsp;<a href='https://transcriptdaily.com/2021/08/12/adient-nyseadnt-lifted-to-hold-at-zacks-investment-research.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/numeraire-nmr-price-up-4-4-over-last-7-days.html" rel="bookmark" title="Numeraire (NMR) Price Up 4.4% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1732.png&amp;w=150&amp;zc=1" alt="Numeraire (NMR) Price Up 4.4% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/numeraire-nmr-price-up-4-4-over-last-7-days.html" rel="bookmark" title="Numeraire (NMR) Price Up 4.4% Over Last 7 Days"><h2>Numeraire (NMR) Price Up 4.4% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Numeraire (CURRENCY:NMR) traded up 2.4% against the U.S. dollar during the twenty-four hour period ending at 12:00 PM E.T. on August 7th. Numeraire has a market capitalization of $276.46 million and approximately $38.52 million worth...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/numeraire-nmr-price-up-4-4-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/30/numeraire-nmr-1-day-trading-volume-hits-18-00-million.html" rel="bookmark" title="Numeraire (NMR) 1-Day Trading Volume Hits $18.00 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1732.png&amp;w=150&amp;zc=1" alt="Numeraire (NMR) 1-Day Trading Volume Hits $18.00 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/30/numeraire-nmr-1-day-trading-volume-hits-18-00-million.html" rel="bookmark" title="Numeraire (NMR) 1-Day Trading Volume Hits $18.00 Million"><h2>Numeraire (NMR) 1-Day Trading Volume Hits $18.00 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jul 30th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Numeraire (CURRENCY:NMR) traded up 4.8% against the dollar during the 1 day period ending at 20:00 PM Eastern on July 29th. During the last seven days, Numeraire has traded 21.1% higher  against the dollar. Numeraire has a market capitalization...&nbsp;<a href='https://transcriptdaily.com/2021/07/30/numeraire-nmr-1-day-trading-volume-hits-18-00-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/numeraire-nmr-market-cap-hits-201-46-million.html" rel="bookmark" title="Numeraire (NMR) Market Cap Hits $201.46 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1732.png&amp;w=150&amp;zc=1" alt="Numeraire (NMR) Market Cap Hits $201.46 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/numeraire-nmr-market-cap-hits-201-46-million.html" rel="bookmark" title="Numeraire (NMR) Market Cap Hits $201.46 Million"><h2>Numeraire (NMR) Market Cap Hits $201.46 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Numeraire (CURRENCY:NMR) traded 0.1% higher  against the dollar during the 1 day period ending at 23:00 PM Eastern on July 28th. Numeraire has a market capitalization of $201.46 million and approximately $20.14 million worth of Numeraire...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/numeraire-nmr-market-cap-hits-201-46-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+									</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Augur</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Augur with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:augur" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/privia-health-group-nasdaqprva-upgraded-at-zacks-investment-research.html">Privia Health Group (NASDAQ:PRVA) Upgraded at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/orchard-therapeutics-nasdaqortx-cut-to-neutral-at-jpmorgan-chase-co.html">Orchard Therapeutics (NASDAQ:ORTX) Cut to Neutral at JPMorgan Chase &#038; Co.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/ntt-data-otcmktsntdty-upgraded-to-buy-by-mizuho.html">NTT DATA (OTCMKTS:NTDTY) Upgraded to &#8220;Buy&#8221; by Mizuho</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/zacks-investment-research-upgrades-new-jersey-resources-nysenjr-to-buy.html">Zacks Investment Research Upgrades New Jersey Resources (NYSE:NJR) to &#8220;Buy&#8221;</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/cantor-fitzgerald-equities-analysts-increase-earnings-estimates-for-aspira-womens-health-inc-nasdaqawh.html">Cantor Fitzgerald Equities Analysts Increase Earnings Estimates for Aspira Women&#8217;s Health Inc. (NASDAQ:AWH)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/jefferies-financial-group-weighs-in-on-swiss-re-ags-fy2021-earnings-otcmktsssrey.html">Jefferies Financial Group Weighs in on Swiss Re AG&#8217;s FY2021 Earnings (OTCMKTS:SSREY)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/fy2021-eps-estimates-for-the-lion-electric-company-nyselev-cut-by-analyst.html">FY2021 EPS Estimates for The Lion Electric Company (NYSE:LEV) Cut by Analyst</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/national-bank-financial-equities-analysts-cut-earnings-estimates-for-auto-prop-reit-tseapr.html">National Bank Financial Equities Analysts Cut Earnings Estimates for Auto Prop Reit (TSE:APR)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/brinker-international-inc-nyseeat-to-post-fy2021-earnings-of-3-20-per-share-keycorp-forecasts.html">Brinker International, Inc. (NYSE:EAT) to Post FY2021 Earnings of $3.20 Per Share, KeyCorp Forecasts</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/astronova-nasdaqalot-downgraded-to-hold-at-zacks-investment-research.html">AstroNova (NASDAQ:ALOT) Downgraded to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/allot-communications-nasdaqallt-lifted-to-buy-at-zacks-investment-research.html">Allot Communications (NASDAQ:ALLT) Lifted to &#8220;Buy&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/abcellera-biologics-nasdaqabcl-rating-lowered-to-hold-at-zacks-investment-research.html">AbCellera Biologics (NASDAQ:ABCL) Rating Lowered to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/afya-nasdaqafya-upgraded-to-hold-at-zacks-investment-research.html">Afya (NASDAQ:AFYA) Upgraded to &#8220;Hold&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/british-land-lonblnd-price-target-raised-to-gbx-618.html">British Land (LON:BLND) Price Target Raised to GBX 618</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/analysts-anticipate-general-electric-nysege-will-announce-quarterly-sales-of-19-34-billion.html">Analysts Anticipate General Electric (NYSE:GE) Will Announce Quarterly Sales of $19.34 Billion</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/head-to-head-review-computer-services-otcmktscsvi-and-marathon-digital-nasdaqmara.html">Head to Head Review: Computer Services (OTCMKTS:CSVI) and Marathon Digital (NASDAQ:MARA)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/titan-machinery-nasdaqtitn-national-waste-management-otcmktsnwmh-head-to-head-contrast.html">Titan Machinery (NASDAQ:TITN) &amp; National Waste Management (OTCMKTS:NWMH) Head-To-Head Contrast</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/just-eat-takeaway-com-lonjet-given-a-gbx-9800-price-target-at-ubs-group.html">Just Eat Takeaway.com (LON:JET) Given a GBX 9,800 Price Target at UBS Group</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/royal-bank-of-canada-reaffirms-outperform-rating-for-algonquin-power-utilities-tseaqn.html">Royal Bank of Canada Reaffirms &#8220;Outperform&#8221; Rating for Algonquin Power &#038; Utilities (TSE:AQN)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/short-interest-in-ecofin-sustainable-and-social-impact-term-fund-nyseteaf-expands-by-27-3.html">Short Interest in Ecofin Sustainable and Social Impact Term Fund (NYSE:TEAF) Expands By 27.3%</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77506735&PostDate=2021-8-20&type=o&tertiary=1&id=59328&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

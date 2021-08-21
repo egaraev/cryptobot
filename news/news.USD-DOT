@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Polkadot&#8221; Feed" href="https://transcriptdaily.com/search/Polkadot/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Polkadot Reaches One Day Volume of $1.62 Billion (DOT) - Transcript Daily</title>
+<meta name="description" content="Read Polkadot Reaches One Day Volume of $1.62 Billion (DOT) at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot-2.html" rel="bookmark" title="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6636.png&amp;w=150&amp;zc=1" alt="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot-2.html" rel="bookmark" title="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)"><h2>Polkadot Reaches One Day Volume of $1.62 Billion (DOT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polkadot (CURRENCY:DOT) traded down 3.2% against the US dollar during the 1-day period ending at 20:00 PM Eastern on August 2nd. Polkadot has a market capitalization of $17.61 billion and approximately $1.62 billion worth of Polkadot...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot.html" rel="bookmark" title="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6636.png&amp;w=150&amp;zc=1" alt="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot.html" rel="bookmark" title="Polkadot Reaches One Day Volume of $1.62 Billion (DOT)"><h2>Polkadot Reaches One Day Volume of $1.62 Billion (DOT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polkadot (CURRENCY:DOT) traded down 3.2% against the US dollar during the 1-day period ending at 20:00 PM Eastern on August 2nd. Polkadot has a market capitalization of $17.61 billion and approximately $1.62 billion worth of Polkadot...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/polkadot-reaches-one-day-volume-of-1-62-billion-dot.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/polkadot-24-hour-trading-volume-reaches-1-03-billion-dot.html" rel="bookmark" title="Polkadot 24 Hour Trading Volume Reaches $1.03 Billion (DOT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6636.png&amp;w=150&amp;zc=1" alt="Polkadot 24 Hour Trading Volume Reaches $1.03 Billion (DOT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/polkadot-24-hour-trading-volume-reaches-1-03-billion-dot.html" rel="bookmark" title="Polkadot 24 Hour Trading Volume Reaches $1.03 Billion (DOT)"><h2>Polkadot 24 Hour Trading Volume Reaches $1.03 Billion (DOT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polkadot (CURRENCY:DOT) traded 3% higher  against the U.S. dollar during the one day period ending at 15:00 PM ET on July 29th. Polkadot has a total market cap of $14.63 billion and approximately $1.03 billion worth of Polkadot was...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/polkadot-24-hour-trading-volume-reaches-1-03-billion-dot.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/29/green-polkadot-box-incorporated-otcmktsgpdb-short-interest-update-2.html" rel="bookmark" title="Green PolkaDot Box Incorporated (OTCMKTS:GPDB) Short Interest Update" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks2.jpg&amp;w=150&amp;zc=1" alt="Green PolkaDot Box Incorporated (OTCMKTS:GPDB) Short Interest Update" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/29/green-polkadot-box-incorporated-otcmktsgpdb-short-interest-update-2.html" rel="bookmark" title="Green PolkaDot Box Incorporated (OTCMKTS:GPDB) Short Interest Update"><h2>Green PolkaDot Box Incorporated (OTCMKTS:GPDB) Short Interest Update</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 29th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Green PolkaDot Box Incorporated (OTCMKTS:GPDB) was the recipient of a significant increase in short interest during the month of July. As of July 15th, there was short interest totalling 700 shares,  an increase of 133.3% from the...&nbsp;<a href='https://transcriptdaily.com/2021/07/29/green-polkadot-box-incorporated-otcmktsgpdb-short-interest-update-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/28/polkadot-dot-trading-up-29-6-over-last-week.html" rel="bookmark" title="Polkadot (DOT) Trading Up 29.6% Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6636.png&amp;w=150&amp;zc=1" alt="Polkadot (DOT) Trading Up 29.6% Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/28/polkadot-dot-trading-up-29-6-over-last-week.html" rel="bookmark" title="Polkadot (DOT) Trading Up 29.6% Over Last Week"><h2>Polkadot (DOT) Trading Up 29.6% Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 28th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polkadot (CURRENCY:DOT) traded up 1.9% against the U.S. dollar during the 24-hour period ending at 20:00 PM E.T. on July 27th. Polkadot has a market cap of $13.93 billion and $1.12 billion worth of Polkadot was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/07/28/polkadot-dot-trading-up-29-6-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/25/polkadot-achieves-market-capitalization-of-13-00-billion-dot.html" rel="bookmark" title="Polkadot Achieves Market Capitalization of $13.00 Billion (DOT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6636.png&amp;w=150&amp;zc=1" alt="Polkadot Achieves Market Capitalization of $13.00 Billion (DOT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/25/polkadot-achieves-market-capitalization-of-13-00-billion-dot.html" rel="bookmark" title="Polkadot Achieves Market Capitalization of $13.00 Billion (DOT)"><h2>Polkadot Achieves Market Capitalization of $13.00 Billion (DOT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jul 25th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Polkadot (CURRENCY:DOT) traded 2.1% lower  against the dollar during the one day period ending at 11:00 AM Eastern on July 25th. In the last week, Polkadot has traded 7.2% higher  against the dollar. Polkadot has a total market capitalization...&nbsp;<a href='https://transcriptdaily.com/2021/07/25/polkadot-achieves-market-capitalization-of-13-00-billion-dot.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html" rel="bookmark" title="Kin (KIN) 24-Hour Volume Hits $6.82 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1993.png&amp;w=150&amp;zc=1" alt="Kin (KIN) 24-Hour Volume Hits $6.82 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html" rel="bookmark" title="Kin (KIN) 24-Hour Volume Hits $6.82 Million"><h2>Kin (KIN) 24-Hour Volume Hits $6.82 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Kin (CURRENCY:KIN) traded 5.2% lower  against the US dollar during the 24 hour period ending at 12:00 PM ET on August 21st. Over the last week, Kin has traded 70.8% higher  against the US dollar. One Kin coin can now be bought for...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html" rel="bookmark" title="FUZE Token (FUZE) Trading Down 1% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/4104.png&amp;w=150&amp;zc=1" alt="FUZE Token (FUZE) Trading Down 1% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html" rel="bookmark" title="FUZE Token (FUZE) Trading Down 1% This Week"><h2>FUZE Token (FUZE) Trading Down 1% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						FUZE Token (CURRENCY:FUZE) traded 1.2% lower  against the dollar during the one day period ending at 12:00 PM ET on August 21st. In the last seven days, FUZE Token has traded down 1% against the dollar. One FUZE Token coin can now...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html" rel="bookmark" title="Bitsum.money (BSM) Market Capitalization Tops $120,041.87" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2648.png&amp;w=150&amp;zc=1" alt="Bitsum.money (BSM) Market Capitalization Tops $120,041.87" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html" rel="bookmark" title="Bitsum.money (BSM) Market Capitalization Tops $120,041.87"><h2>Bitsum.money (BSM) Market Capitalization Tops $120,041.87</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitsum.money (CURRENCY:BSM) traded up 19.4% against the U.S. dollar during the 1-day period ending at 11:00 AM E.T. on August 21st. One Bitsum.money coin can now be bought for about $0.0001 or 0.00000000 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/bitsum-money-bsm-market-capitalization-tops-120041-87.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html" rel="bookmark" title="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8752.png&amp;w=150&amp;zc=1" alt="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html" rel="bookmark" title="Landbox Price Reaches $0.0091 on Major Exchanges (LAND)"><h2>Landbox Price Reaches $0.0091 on Major Exchanges (LAND)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Landbox (CURRENCY:LAND) traded 0.8% lower  against the US dollar during the twenty-four hour period ending at 11:00 AM ET on August 21st. Over the last seven days, Landbox has traded 10% lower  against the US dollar. Landbox has a...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/landbox-price-reaches-0-0091-on-major-exchanges-land.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html" rel="bookmark" title="KnoxFS (new) Price Down 7.6% This Week (KFX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8177.png&amp;w=150&amp;zc=1" alt="KnoxFS (new) Price Down 7.6% This Week (KFX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html" rel="bookmark" title="KnoxFS (new) Price Down 7.6% This Week (KFX)"><h2>KnoxFS (new) Price Down 7.6% This Week (KFX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						KnoxFS (new) (CURRENCY:KFX) traded up 1.5% against the US dollar during the 1 day period ending at 11:00 AM E.T. on August 21st. KnoxFS (new) has a market cap of $292,803.55 and $5,753.00 worth of KnoxFS (new) was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/knoxfs-new-price-down-7-6-this-week-kfx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/kattana-ktn-24-hour-volume-reaches-695716-00.html" rel="bookmark" title="Kattana (KTN) 24 Hour Volume Reaches $695,716.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ktn.png&amp;w=150&amp;zc=1" alt="Kattana (KTN) 24 Hour Volume Reaches $695,716.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/kattana-ktn-24-hour-volume-reaches-695716-00.html" rel="bookmark" title="Kattana (KTN) 24 Hour Volume Reaches $695,716.00"><h2>Kattana (KTN) 24 Hour Volume Reaches $695,716.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Kattana (CURRENCY:KTN) traded 9.4% lower  against the US dollar during the 24-hour period ending at 11:00 AM E.T. on August 21st. Kattana has a market capitalization of $9.89 million and approximately $695,716.00 worth of Kattana was...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/kattana-ktn-24-hour-volume-reaches-695716-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/iq-cash-price-reaches-0-0134-on-exchanges-iq.html" rel="bookmark" title="IQ.cash Price Reaches $0.0134 on Exchanges (IQ)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/iq.png&amp;w=150&amp;zc=1" alt="IQ.cash Price Reaches $0.0134 on Exchanges (IQ)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/iq-cash-price-reaches-0-0134-on-exchanges-iq.html" rel="bookmark" title="IQ.cash Price Reaches $0.0134 on Exchanges (IQ)"><h2>IQ.cash Price Reaches $0.0134 on Exchanges (IQ)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						IQ.cash (CURRENCY:IQ) traded 10.2% higher  against the US dollar during the 1 day period ending at 10:00 AM E.T. on August 21st. IQ.cash has a market capitalization of $160,788.58 and approximately $14,979.00 worth of IQ.cash was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/iq-cash-price-reaches-0-0134-on-exchanges-iq.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/chartex-market-capitalization-reaches-430581-09-chart.html" rel="bookmark" title="ChartEx Market Capitalization Reaches $430,581.09 (CHART)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/chart.jpg&amp;w=150&amp;zc=1" alt="ChartEx Market Capitalization Reaches $430,581.09 (CHART)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/chartex-market-capitalization-reaches-430581-09-chart.html" rel="bookmark" title="ChartEx Market Capitalization Reaches $430,581.09 (CHART)"><h2>ChartEx Market Capitalization Reaches $430,581.09 (CHART)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						ChartEx (CURRENCY:CHART) traded 22.4% higher  against the US dollar during the one day period ending at 10:00 AM ET on August 21st. Over the last week, ChartEx has traded 79% higher  against the US dollar. ChartEx has a total market...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/chartex-market-capitalization-reaches-430581-09-chart.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/float-protocol-price-hits-135-59-bank.html" rel="bookmark" title="Float Protocol Price Hits $135.59  (BANK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8612.png&amp;w=150&amp;zc=1" alt="Float Protocol Price Hits $135.59  (BANK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/float-protocol-price-hits-135-59-bank.html" rel="bookmark" title="Float Protocol Price Hits $135.59  (BANK)"><h2>Float Protocol Price Hits $135.59  (BANK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Float Protocol (CURRENCY:BANK) traded up 3.2% against the U.S. dollar during the 24-hour period ending at 8:00 AM ET on August 21st. During the last week, Float Protocol has traded down 4.9% against the U.S. dollar. Float Protocol...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/float-protocol-price-hits-135-59-bank.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/deepbrain-chain-reaches-one-day-volume-of-488048-00-dbc.html" rel="bookmark" title="DeepBrain Chain Reaches One Day Volume of $488,048.00 (DBC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2316.png&amp;w=150&amp;zc=1" alt="DeepBrain Chain Reaches One Day Volume of $488,048.00 (DBC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/deepbrain-chain-reaches-one-day-volume-of-488048-00-dbc.html" rel="bookmark" title="DeepBrain Chain Reaches One Day Volume of $488,048.00 (DBC)"><h2>DeepBrain Chain Reaches One Day Volume of $488,048.00 (DBC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DeepBrain Chain (CURRENCY:DBC) traded up 1% against the U.S. dollar during the 1-day period ending at 9:00 AM E.T. on August 21st. One DeepBrain Chain coin can currently be bought for about $0.0077 or 0.00000016 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/deepbrain-chain-reaches-one-day-volume-of-488048-00-dbc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/konomi-network-kono-trading-up-8-4-over-last-week.html" rel="bookmark" title="Konomi Network (KONO) Trading Up 8.4% Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8697.png&amp;w=150&amp;zc=1" alt="Konomi Network (KONO) Trading Up 8.4% Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/konomi-network-kono-trading-up-8-4-over-last-week.html" rel="bookmark" title="Konomi Network (KONO) Trading Up 8.4% Over Last Week"><h2>Konomi Network (KONO) Trading Up 8.4% Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Konomi Network (CURRENCY:KONO) traded down 1.9% against the dollar during the 24-hour period ending at 9:00 AM Eastern on August 21st. Over the last seven days, Konomi Network has traded 8.4% higher  against the dollar. One Konomi...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/konomi-network-kono-trading-up-8-4-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/ito-utility-token-iut-market-cap-reaches-233437-06.html" rel="bookmark" title="ITO Utility Token (IUT) Market Cap Reaches $233,437.06" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/4737.png&amp;w=150&amp;zc=1" alt="ITO Utility Token (IUT) Market Cap Reaches $233,437.06" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/ito-utility-token-iut-market-cap-reaches-233437-06.html" rel="bookmark" title="ITO Utility Token (IUT) Market Cap Reaches $233,437.06"><h2>ITO Utility Token (IUT) Market Cap Reaches $233,437.06</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						ITO Utility Token (CURRENCY:IUT) traded up 1.7% against the dollar during the one day period ending at 9:00 AM Eastern on August 21st. ITO Utility Token has a market cap of $233,437.06 and approximately $1.00 worth of ITO Utility Token...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/ito-utility-token-iut-market-cap-reaches-233437-06.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/valobit-vbit-trading-2-3-higher-over-last-7-days.html" rel="bookmark" title="Valobit (VBIT) Trading 2.3% Higher  Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6947.png&amp;w=150&amp;zc=1" alt="Valobit (VBIT) Trading 2.3% Higher  Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/valobit-vbit-trading-2-3-higher-over-last-7-days.html" rel="bookmark" title="Valobit (VBIT) Trading 2.3% Higher  Over Last 7 Days"><h2>Valobit (VBIT) Trading 2.3% Higher  Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Valobit (CURRENCY:VBIT) traded down 3.8% against the dollar during the twenty-four hour period ending at 9:00 AM ET on August 21st. In the last week, Valobit has traded 2.3% higher  against the dollar. Valobit has a market capitalization...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/valobit-vbit-trading-2-3-higher-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/mirrored-amazon-hits-market-cap-of-27-09-million-mamzn.html" rel="bookmark" title="Mirrored Amazon Hits Market Cap of $27.09 Million (mAMZN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8016.png&amp;w=150&amp;zc=1" alt="Mirrored Amazon Hits Market Cap of $27.09 Million (mAMZN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/mirrored-amazon-hits-market-cap-of-27-09-million-mamzn.html" rel="bookmark" title="Mirrored Amazon Hits Market Cap of $27.09 Million (mAMZN)"><h2>Mirrored Amazon Hits Market Cap of $27.09 Million (mAMZN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Mirrored Amazon (CURRENCY:mAMZN) traded 0.3% lower  against the U.S. dollar during the 24-hour period ending at 8:00 AM Eastern on August 21st. Mirrored Amazon has a market cap of $27.09 million and $22,643.00 worth of Mirrored Amazon...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/mirrored-amazon-hits-market-cap-of-27-09-million-mamzn.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/hacken-token-1-day-trading-volume-reaches-796934-00-hai.html" rel="bookmark" title="Hacken Token 1-Day Trading Volume Reaches $796,934.00 (HAI)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/hai.png&amp;w=150&amp;zc=1" alt="Hacken Token 1-Day Trading Volume Reaches $796,934.00 (HAI)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/hacken-token-1-day-trading-volume-reaches-796934-00-hai.html" rel="bookmark" title="Hacken Token 1-Day Trading Volume Reaches $796,934.00 (HAI)"><h2>Hacken Token 1-Day Trading Volume Reaches $796,934.00 (HAI)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Hacken Token (CURRENCY:HAI) traded up 3.7% against the dollar during the 1-day period ending at 8:00 AM E.T. on August 21st. Over the last seven days, Hacken Token has traded down 5.3% against the dollar. Hacken Token has a market...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/hacken-token-1-day-trading-volume-reaches-796934-00-hai.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/kebab-token-hits-one-day-volume-of-242-00-kebab.html" rel="bookmark" title="Kebab Token Hits One Day Volume of $242.00 (KEBAB)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8334.png&amp;w=150&amp;zc=1" alt="Kebab Token Hits One Day Volume of $242.00 (KEBAB)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/kebab-token-hits-one-day-volume-of-242-00-kebab.html" rel="bookmark" title="Kebab Token Hits One Day Volume of $242.00 (KEBAB)"><h2>Kebab Token Hits One Day Volume of $242.00 (KEBAB)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Kebab Token (CURRENCY:KEBAB) traded 0% higher  against the dollar during the 24-hour period ending at 7:00 AM Eastern on August 21st. One Kebab Token coin can now be bought for $0.0500 or 0.00000103 BTC on popular exchanges. During...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/kebab-token-hits-one-day-volume-of-242-00-kebab.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/wrapped-bnb-price-up-10-5-over-last-week-wbnb.html" rel="bookmark" title="Wrapped BNB Price Up 10.5% Over Last Week (WBNB)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/binance.png&amp;w=150&amp;zc=1" alt="Wrapped BNB Price Up 10.5% Over Last Week (WBNB)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/wrapped-bnb-price-up-10-5-over-last-week-wbnb.html" rel="bookmark" title="Wrapped BNB Price Up 10.5% Over Last Week (WBNB)"><h2>Wrapped BNB Price Up 10.5% Over Last Week (WBNB)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped BNB (CURRENCY:WBNB) traded 5.5% higher  against the U.S. dollar during the 1 day period ending at 8:00 AM ET on August 21st. One Wrapped BNB coin can now be purchased for approximately $450.45 or 0.00928154 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/wrapped-bnb-price-up-10-5-over-last-week-wbnb.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/sun-old-sun-market-capitalization-achieves-152457-26.html" rel="bookmark" title="SUN (old) (SUN) Market Capitalization Achieves $152,457.26" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/sun.png&amp;w=150&amp;zc=1" alt="SUN (old) (SUN) Market Capitalization Achieves $152,457.26" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/sun-old-sun-market-capitalization-achieves-152457-26.html" rel="bookmark" title="SUN (old) (SUN) Market Capitalization Achieves $152,457.26"><h2>SUN (old) (SUN) Market Capitalization Achieves $152,457.26</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						SUN (old) (CURRENCY:SUN) traded down 5.6% against the U.S. dollar during the 24-hour period ending at 7:00 AM E.T. on August 21st. During the last week, SUN (old) has traded 99.9% lower  against the U.S. dollar. One SUN (old) coin...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/sun-old-sun-market-capitalization-achieves-152457-26.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/quantis-network-quan-hits-one-day-volume-of-50-00.html" rel="bookmark" title="Quantis Network (QUAN) Hits One Day Volume of $50.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3390.png&amp;w=150&amp;zc=1" alt="Quantis Network (QUAN) Hits One Day Volume of $50.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/quantis-network-quan-hits-one-day-volume-of-50-00.html" rel="bookmark" title="Quantis Network (QUAN) Hits One Day Volume of $50.00"><h2>Quantis Network (QUAN) Hits One Day Volume of $50.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Quantis Network (CURRENCY:QUAN) traded up 3.3% against the U.S. dollar during the twenty-four hour period ending at 7:00 AM Eastern on August 21st. Quantis Network has a market capitalization of $19,293.83 and approximately $50.00...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/quantis-network-quan-hits-one-day-volume-of-50-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/kineko-kko-reaches-market-capitalization-of-2-78-million.html" rel="bookmark" title="Kineko (KKO) Reaches Market Capitalization of $2.78 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9718.png&amp;w=150&amp;zc=1" alt="Kineko (KKO) Reaches Market Capitalization of $2.78 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/kineko-kko-reaches-market-capitalization-of-2-78-million.html" rel="bookmark" title="Kineko (KKO) Reaches Market Capitalization of $2.78 Million"><h2>Kineko (KKO) Reaches Market Capitalization of $2.78 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Kineko (CURRENCY:KKO) traded up 3.6% against the dollar during the 1 day period ending at 7:00 AM E.T. on August 21st. Kineko has a market capitalization of $2.78 million and $71,147.00 worth of Kineko was traded on exchanges in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/kineko-kko-reaches-market-capitalization-of-2-78-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/wownero-wow-achieves-market-capitalization-of-21-09-million.html" rel="bookmark" title="Wownero (WOW) Achieves Market Capitalization of $21.09 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wow.png&amp;w=150&amp;zc=1" alt="Wownero (WOW) Achieves Market Capitalization of $21.09 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/wownero-wow-achieves-market-capitalization-of-21-09-million.html" rel="bookmark" title="Wownero (WOW) Achieves Market Capitalization of $21.09 Million"><h2>Wownero (WOW) Achieves Market Capitalization of $21.09 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wownero (CURRENCY:WOW) traded 0.1% higher  against the U.S. dollar during the 24 hour period ending at 7:00 AM E.T. on August 21st. Wownero has a total market cap of $21.09 million and $106,736.00 worth of Wownero was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/wownero-wow-achieves-market-capitalization-of-21-09-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/akash-network-akt-price-reaches-3-24-on-top-exchanges.html" rel="bookmark" title="Akash Network (AKT) Price Reaches $3.24 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/akt.png&amp;w=150&amp;zc=1" alt="Akash Network (AKT) Price Reaches $3.24 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/akash-network-akt-price-reaches-3-24-on-top-exchanges.html" rel="bookmark" title="Akash Network (AKT) Price Reaches $3.24 on Top Exchanges"><h2>Akash Network (AKT) Price Reaches $3.24 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Akash Network (CURRENCY:AKT) traded 2.1% higher  against the U.S. dollar during the 24-hour period ending at 7:00 AM Eastern on August 21st. One Akash Network coin can currently be purchased for approximately $3.24 or 0.00006673 BTC...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/akash-network-akt-price-reaches-3-24-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/unifarm-ufarm-price-down-42-1-over-last-week.html" rel="bookmark" title="UniFarm (UFARM) Price Down 42.1% Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9262.png&amp;w=150&amp;zc=1" alt="UniFarm (UFARM) Price Down 42.1% Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/unifarm-ufarm-price-down-42-1-over-last-week.html" rel="bookmark" title="UniFarm (UFARM) Price Down 42.1% Over Last Week"><h2>UniFarm (UFARM) Price Down 42.1% Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						UniFarm (CURRENCY:UFARM) traded down 9.5% against the dollar during the twenty-four hour period ending at 7:00 AM ET on August 21st. One UniFarm coin can now be bought for $0.0364 or 0.00000075 BTC on major exchanges. UniFarm has a...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/unifarm-ufarm-price-down-42-1-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/micromines-micro-price-reaches-0-0000.html" rel="bookmark" title="Micromines (MICRO) Price Reaches $0.0000" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3610.png&amp;w=150&amp;zc=1" alt="Micromines (MICRO) Price Reaches $0.0000" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/micromines-micro-price-reaches-0-0000.html" rel="bookmark" title="Micromines (MICRO) Price Reaches $0.0000"><h2>Micromines (MICRO) Price Reaches $0.0000</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Micromines (CURRENCY:MICRO) traded up 1.5% against the dollar during the 24 hour period ending at 7:00 AM ET on August 21st. Micromines has a total market capitalization of $70,280.90 and $57.00 worth of Micromines was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/micromines-micro-price-reaches-0-0000.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/javascript-token-js-price-tops-0-0017-on-top-exchanges.html" rel="bookmark" title="JavaScript Token (JS) Price Tops $0.0017 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2100.png&amp;w=150&amp;zc=1" alt="JavaScript Token (JS) Price Tops $0.0017 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/javascript-token-js-price-tops-0-0017-on-top-exchanges.html" rel="bookmark" title="JavaScript Token (JS) Price Tops $0.0017 on Top Exchanges"><h2>JavaScript Token (JS) Price Tops $0.0017 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						JavaScript Token (CURRENCY:JS) traded up 113% against the dollar during the 24 hour period ending at 7:00 AM ET on August 21st. In the last week, JavaScript Token has traded 117% higher  against the dollar. JavaScript Token has a total...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/javascript-token-js-price-tops-0-0017-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/paris-saint-germain-fan-token-price-tops-34-64-psg.html" rel="bookmark" title="Paris Saint-Germain Fan Token Price Tops $34.64  (PSG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/psg.png&amp;w=150&amp;zc=1" alt="Paris Saint-Germain Fan Token Price Tops $34.64  (PSG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/paris-saint-germain-fan-token-price-tops-34-64-psg.html" rel="bookmark" title="Paris Saint-Germain Fan Token Price Tops $34.64  (PSG)"><h2>Paris Saint-Germain Fan Token Price Tops $34.64  (PSG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Paris Saint-Germain Fan Token (CURRENCY:PSG) traded 1.7% higher  against the U.S. dollar during the 1-day period ending at 0:00 AM ET on August 20th. Paris Saint-Germain Fan Token has a market cap of $100.68 million and approximately...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/paris-saint-germain-fan-token-price-tops-34-64-psg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/lithium-lith-trading-16-9-lower-this-week.html" rel="bookmark" title="Lithium (LITH)  Trading 16.9% Lower  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1.png&amp;w=150&amp;zc=1" alt="Lithium (LITH)  Trading 16.9% Lower  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/lithium-lith-trading-16-9-lower-this-week.html" rel="bookmark" title="Lithium (LITH)  Trading 16.9% Lower  This Week"><h2>Lithium (LITH)  Trading 16.9% Lower  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lithium (CURRENCY:LITH) traded up 0.8% against the dollar during the twenty-four hour period ending at 0:00 AM Eastern on August 20th. Lithium has a total market cap of $18.56 million and approximately $7.39 million worth of Lithium...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/lithium-lith-trading-16-9-lower-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/link-machine-learning-lml-price-down-13-7-over-last-week.html" rel="bookmark" title="Link Machine Learning (LML) Price Down 13.7% Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3636.png&amp;w=150&amp;zc=1" alt="Link Machine Learning (LML) Price Down 13.7% Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/link-machine-learning-lml-price-down-13-7-over-last-week.html" rel="bookmark" title="Link Machine Learning (LML) Price Down 13.7% Over Last Week"><h2>Link Machine Learning (LML) Price Down 13.7% Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Link Machine Learning (CURRENCY:LML) traded down 2.5% against the U.S. dollar during the twenty-four hour period ending at 0:00 AM E.T. on August 20th. During the last week, Link Machine Learning has traded 13.7% lower  against the...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/link-machine-learning-lml-price-down-13-7-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/oceanex-token-oce-trading-14-9-higher-over-last-week.html" rel="bookmark" title="OceanEx Token (OCE) Trading 14.9% Higher  Over Last Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/oce.png&amp;w=150&amp;zc=1" alt="OceanEx Token (OCE) Trading 14.9% Higher  Over Last Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/oceanex-token-oce-trading-14-9-higher-over-last-week.html" rel="bookmark" title="OceanEx Token (OCE) Trading 14.9% Higher  Over Last Week"><h2>OceanEx Token (OCE) Trading 14.9% Higher  Over Last Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						OceanEx Token (CURRENCY:OCE) traded down 2.2% against the U.S. dollar during the twenty-four hour period ending at 23:00 PM E.T. on August 20th. During the last week, OceanEx Token has traded 14.9% higher  against the U.S. dollar....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/oceanex-token-oce-trading-14-9-higher-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/zrcoin-achieves-market-cap-of-1-28-million-zrc.html" rel="bookmark" title="ZrCoin Achieves Market Cap of $1.28 Million (ZRC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1726.png&amp;w=150&amp;zc=1" alt="ZrCoin Achieves Market Cap of $1.28 Million (ZRC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/zrcoin-achieves-market-cap-of-1-28-million-zrc.html" rel="bookmark" title="ZrCoin Achieves Market Cap of $1.28 Million (ZRC)"><h2>ZrCoin Achieves Market Cap of $1.28 Million (ZRC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						ZrCoin (CURRENCY:ZRC) traded 3.8% higher  against the U.S. dollar during the one day period ending at 23:00 PM ET on August 20th. One ZrCoin coin can now be bought for $0.26 or 0.00000526 BTC on popular cryptocurrency exchanges. ZrCoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/zrcoin-achieves-market-cap-of-1-28-million-zrc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/gamee-reaches-market-cap-of-7-65-million-gmee.html" rel="bookmark" title="GAMEE Reaches Market Cap of $7.65 Million (GMEE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9103.png&amp;w=150&amp;zc=1" alt="GAMEE Reaches Market Cap of $7.65 Million (GMEE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/gamee-reaches-market-cap-of-7-65-million-gmee.html" rel="bookmark" title="GAMEE Reaches Market Cap of $7.65 Million (GMEE)"><h2>GAMEE Reaches Market Cap of $7.65 Million (GMEE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						GAMEE (CURRENCY:GMEE) traded down 4.2% against the US dollar during the 24-hour period ending at 23:00 PM E.T. on August 20th. One GAMEE coin can currently be bought for about $0.14 or 0.00000277 BTC on popular exchanges. Over the...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/gamee-reaches-market-cap-of-7-65-million-gmee.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/raydium-ray-trading-58-2-higher-this-week.html" rel="bookmark" title="Raydium (RAY) Trading 58.2% Higher  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8526.png&amp;w=150&amp;zc=1" alt="Raydium (RAY) Trading 58.2% Higher  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/raydium-ray-trading-58-2-higher-this-week.html" rel="bookmark" title="Raydium (RAY) Trading 58.2% Higher  This Week"><h2>Raydium (RAY) Trading 58.2% Higher  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Raydium (CURRENCY:RAY) traded up 3% against the dollar during the twenty-four hour period ending at 23:00 PM ET on August 20th. Raydium has a total market cap of $464.97 million and approximately $121.14 million worth of Raydium was...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/raydium-ray-trading-58-2-higher-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/fuse-network-fuse-price-up-9-9-over-last-7-days.html" rel="bookmark" title="Fuse Network (FUSE) Price Up 9.9% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/5634.png&amp;w=150&amp;zc=1" alt="Fuse Network (FUSE) Price Up 9.9% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/fuse-network-fuse-price-up-9-9-over-last-7-days.html" rel="bookmark" title="Fuse Network (FUSE) Price Up 9.9% Over Last 7 Days"><h2>Fuse Network (FUSE) Price Up 9.9% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Fuse Network (CURRENCY:FUSE) traded 18% higher  against the dollar during the twenty-four hour period ending at 23:00 PM Eastern on August 20th. One Fuse Network coin can now be bought for about $0.0802 or 0.00000164 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/21/fuse-network-fuse-price-up-9-9-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/mirrored-ishares-silver-trust-1-day-volume-reaches-123846-00-mslv.html" rel="bookmark" title="Mirrored iShares Silver Trust 1-Day Volume Reaches $123,846.00 (mSLV)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/8026.png&amp;w=150&amp;zc=1" alt="Mirrored iShares Silver Trust 1-Day Volume Reaches $123,846.00 (mSLV)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/mirrored-ishares-silver-trust-1-day-volume-reaches-123846-00-mslv.html" rel="bookmark" title="Mirrored iShares Silver Trust 1-Day Volume Reaches $123,846.00 (mSLV)"><h2>Mirrored iShares Silver Trust 1-Day Volume Reaches $123,846.00 (mSLV)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Mirrored iShares Silver Trust (CURRENCY:mSLV) traded 1.3% lower  against the US dollar during the 24-hour period ending at 23:00 PM E.T. on August 20th. In the last week, Mirrored iShares Silver Trust has traded 1.2% lower  against...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/mirrored-ishares-silver-trust-1-day-volume-reaches-123846-00-mslv.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/counos-x-ccxx-trading-0-lower-this-week.html" rel="bookmark" title="Counos X (CCXX)  Trading 0% Lower  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ccxx.png&amp;w=150&amp;zc=1" alt="Counos X (CCXX)  Trading 0% Lower  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/counos-x-ccxx-trading-0-lower-this-week.html" rel="bookmark" title="Counos X (CCXX)  Trading 0% Lower  This Week"><h2>Counos X (CCXX)  Trading 0% Lower  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Counos X (CURRENCY:CCXX) traded 0.9% higher  against the US dollar during the 1-day period ending at 22:00 PM Eastern on August 20th. One Counos X coin can currently be bought for $102.06 or 0.00207838 BTC on exchanges. Over the last...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/counos-x-ccxx-trading-0-lower-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/fundamenta-market-capitalization-achieves-402550-52-fmta.html" rel="bookmark" title="Fundamenta Market Capitalization Achieves $402,550.52 (FMTA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/7560.png&amp;w=150&amp;zc=1" alt="Fundamenta Market Capitalization Achieves $402,550.52 (FMTA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/fundamenta-market-capitalization-achieves-402550-52-fmta.html" rel="bookmark" title="Fundamenta Market Capitalization Achieves $402,550.52 (FMTA)"><h2>Fundamenta Market Capitalization Achieves $402,550.52 (FMTA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Fundamenta (CURRENCY:FMTA) traded 7.1% lower  against the U.S. dollar during the 1-day period ending at 22:00 PM Eastern on August 20th. One Fundamenta coin can now be bought for $0.42 or 0.00000857 BTC on popular exchanges. Fundamenta...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/fundamenta-market-capitalization-achieves-402550-52-fmta.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/phantasma-energy-trading-13-9-lower-over-last-week-kcal.html" rel="bookmark" title="Phantasma Energy  Trading 13.9% Lower  Over Last Week (KCAL)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/kcal.png&amp;w=150&amp;zc=1" alt="Phantasma Energy  Trading 13.9% Lower  Over Last Week (KCAL)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/phantasma-energy-trading-13-9-lower-over-last-week-kcal.html" rel="bookmark" title="Phantasma Energy  Trading 13.9% Lower  Over Last Week (KCAL)"><h2>Phantasma Energy  Trading 13.9% Lower  Over Last Week (KCAL)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Phantasma Energy (CURRENCY:KCAL) traded up 1.4% against the US dollar during the 24 hour period ending at 22:00 PM Eastern on August 20th. One Phantasma Energy coin can now be purchased for about $0.0284 or 0.00000058 BTC on popular...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/phantasma-energy-trading-13-9-lower-over-last-week-kcal.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/sf-capital-sfcp-1-day-volume-hits-41-00.html" rel="bookmark" title="SF Capital (SFCP) 1-Day Volume Hits $41.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3856.png&amp;w=150&amp;zc=1" alt="SF Capital (SFCP) 1-Day Volume Hits $41.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/sf-capital-sfcp-1-day-volume-hits-41-00.html" rel="bookmark" title="SF Capital (SFCP) 1-Day Volume Hits $41.00"><h2>SF Capital (SFCP) 1-Day Volume Hits $41.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						SF Capital (CURRENCY:SFCP) traded 18.7% higher  against the U.S. dollar during the 1 day period ending at 22:00 PM ET on August 20th. In the last seven days, SF Capital has traded 25.1% higher  against the U.S. dollar. One SF Capital...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/sf-capital-sfcp-1-day-volume-hits-41-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/libertas-token-libertas-24-hour-volume-hits-2188-00.html" rel="bookmark" title="Libertas Token (LIBERTAS) 24 Hour Volume Hits $2,188.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/5997.png&amp;w=150&amp;zc=1" alt="Libertas Token (LIBERTAS) 24 Hour Volume Hits $2,188.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/libertas-token-libertas-24-hour-volume-hits-2188-00.html" rel="bookmark" title="Libertas Token (LIBERTAS) 24 Hour Volume Hits $2,188.00"><h2>Libertas Token (LIBERTAS) 24 Hour Volume Hits $2,188.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Libertas Token (CURRENCY:LIBERTAS) traded up 5.1% against the dollar during the one day period ending at 21:00 PM E.T. on August 20th. During the last seven days, Libertas Token has traded 0.9% higher  against the dollar. Libertas...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/libertas-token-libertas-24-hour-volume-hits-2188-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/merculet-reaches-market-capitalization-of-3-83-million-mvp.html" rel="bookmark" title="Merculet Reaches Market Capitalization of $3.83 Million (MVP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/mvp.jpg&amp;w=150&amp;zc=1" alt="Merculet Reaches Market Capitalization of $3.83 Million (MVP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/merculet-reaches-market-capitalization-of-3-83-million-mvp.html" rel="bookmark" title="Merculet Reaches Market Capitalization of $3.83 Million (MVP)"><h2>Merculet Reaches Market Capitalization of $3.83 Million (MVP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Merculet (CURRENCY:MVP) traded down 0.5% against the U.S. dollar during the 24-hour period ending at 21:00 PM E.T. on August 20th. In the last seven days, Merculet has traded 16% higher  against the U.S. dollar. One Merculet coin can...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/merculet-reaches-market-capitalization-of-3-83-million-mvp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/solrise-finance-slrs-market-capitalization-tops-14-75-million.html" rel="bookmark" title="Solrise Finance (SLRS) Market Capitalization Tops $14.75 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9989.png&amp;w=150&amp;zc=1" alt="Solrise Finance (SLRS) Market Capitalization Tops $14.75 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/solrise-finance-slrs-market-capitalization-tops-14-75-million.html" rel="bookmark" title="Solrise Finance (SLRS) Market Capitalization Tops $14.75 Million"><h2>Solrise Finance (SLRS) Market Capitalization Tops $14.75 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Solrise Finance (CURRENCY:SLRS) traded 1.8% higher  against the dollar during the one day period ending at 21:00 PM Eastern on August 20th. In the last week, Solrise Finance has traded 7.6% lower  against the dollar. Solrise Finance...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/solrise-finance-slrs-market-capitalization-tops-14-75-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/earnbase-enb-hits-market-cap-of-590886-89.html" rel="bookmark" title="Earnbase (ENB) Hits Market Cap of $590,886.89" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/7716.png&amp;w=150&amp;zc=1" alt="Earnbase (ENB) Hits Market Cap of $590,886.89" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/earnbase-enb-hits-market-cap-of-590886-89.html" rel="bookmark" title="Earnbase (ENB) Hits Market Cap of $590,886.89"><h2>Earnbase (ENB) Hits Market Cap of $590,886.89</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Earnbase (CURRENCY:ENB) traded down 0.4% against the U.S. dollar during the twenty-four hour period ending at 21:00 PM ET on August 20th. During the last week, Earnbase has traded down 5.7% against the U.S. dollar. One Earnbase coin...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/earnbase-enb-hits-market-cap-of-590886-89.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/medicalchain-trading-9-5-lower-over-last-7-days-mtn.html" rel="bookmark" title="Medicalchain  Trading 9.5% Lower  Over Last 7 Days (MTN)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2497.png&amp;w=150&amp;zc=1" alt="Medicalchain  Trading 9.5% Lower  Over Last 7 Days (MTN)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/medicalchain-trading-9-5-lower-over-last-7-days-mtn.html" rel="bookmark" title="Medicalchain  Trading 9.5% Lower  Over Last 7 Days (MTN)"><h2>Medicalchain  Trading 9.5% Lower  Over Last 7 Days (MTN)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Medicalchain (CURRENCY:MTN) traded up 0.5% against the US dollar during the one day period ending at 21:00 PM E.T. on August 20th. Over the last week, Medicalchain has traded down 9.5% against the US dollar. One Medicalchain coin can...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/medicalchain-trading-9-5-lower-over-last-7-days-mtn.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/21/mining-core-coin-price-reaches-0-0006-on-exchanges-mcc.html" rel="bookmark" title="Mining Core Coin Price Reaches $0.0006 on Exchanges (MCC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/mcclogo.png&amp;w=150&amp;zc=1" alt="Mining Core Coin Price Reaches $0.0006 on Exchanges (MCC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/21/mining-core-coin-price-reaches-0-0006-on-exchanges-mcc.html" rel="bookmark" title="Mining Core Coin Price Reaches $0.0006 on Exchanges (MCC)"><h2>Mining Core Coin Price Reaches $0.0006 on Exchanges (MCC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 21st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Mining Core Coin (CURRENCY:MCC) traded up 21.9% against the U.S. dollar during the one day period ending at 21:00 PM Eastern on August 20th. During the last week, Mining Core Coin has traded down 3.3% against the U.S. dollar. One Mining...&nbsp;<a href='https://transcriptdaily.com/2021/08/21/mining-core-coin-price-reaches-0-0006-on-exchanges-mcc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Polkadot" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Polkadot</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Polkadot with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:polkadot" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/nike-inc-nysenke-stock-holdings-decreased-by-private-advisory-group-llc.html">NIKE, Inc. (NYSE:NKE) Stock Holdings Decreased by Private Advisory Group LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-sells-480-shares-of-schwab-u-s-large-cap-growth-etf-nysearcaschg.html">First Personal Financial Services Sells 480 Shares of Schwab U.S. Large-Cap Growth ETF (NYSEARCA:SCHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/first-personal-financial-services-purchases-shares-of-4320-the-sherwin-williams-company-nyseshw.html">First Personal Financial Services Purchases Shares of 4,320 The Sherwin-Williams Company (NYSE:SHW)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/exxon-mobil-co-nysexom-shares-sold-by-first-personal-financial-services.html">Exxon Mobil Co. (NYSE:XOM) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/clark-capital-management-group-inc-grows-position-in-the-tjx-companies-inc-nysetjx.html">Clark Capital Management Group Inc. Grows Position in The TJX Companies, Inc. (NYSE:TJX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/1785-shares-in-fedex-co-nysefdx-acquired-by-srs-capital-advisors-inc.html">1,785 Shares in FedEx Co. (NYSE:FDX) Acquired by SRS Capital Advisors Inc.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/corundum-group-inc-decreases-holdings-in-caterpillar-inc-nysecat.html">Corundum Group Inc. Decreases Holdings in Caterpillar Inc. (NYSE:CAT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/td-capital-management-llc-purchases-new-holdings-in-micron-technology-inc-nasdaqmu.html">TD Capital Management LLC Purchases New Holdings in Micron Technology, Inc. (NASDAQ:MU)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/arcadia-investment-management-corp-mi-decreases-stock-position-in-veeva-systems-inc-nyseveev.html">Arcadia Investment Management Corp MI Decreases Stock Position in Veeva Systems Inc. (NYSE:VEEV)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-2-35-million-stake-in-spdr-sp-regional-banking-etf-nysearcakre.html">Capital Insight Partners LLC Has $2.35 Million Stake in SPDR S&#038;P Regional Banking ETF (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/capital-insight-partners-llc-has-1-94-million-position-in-unilever-plc-nyseul.html">Capital Insight Partners LLC Has $1.94 Million Position in Unilever PLC (NYSE:UL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/proshares-sp-500-aristocrats-etf-batsnobl-shares-sold-by-first-personal-financial-services.html">ProShares S&#038;P 500 Aristocrats ETF (BATS:NOBL) Shares Sold by First Personal Financial Services</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/zacks-analysts-expect-vereit-inc-nysever-will-announce-quarterly-sales-of-296-94-million.html">Zacks: Analysts Expect VEREIT, Inc. (NYSE:VER) Will Announce Quarterly Sales of $296.94 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/neblio-hits-market-cap-of-29-97-million-nebl.html">Neblio Hits Market Cap of $29.97 Million (NEBL)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/rent-a-center-nasdaqrcii-updates-fy-2021-earnings-guidance-2.html">Rent-A-Center (NASDAQ:RCII) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/i-o-coin-ioc-hits-24-hour-trading-volume-of-1165-00.html">I/O Coin (IOC) Hits 24 Hour Trading Volume of $1,165.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/fuze-token-fuze-trading-down-1-this-week.html">FUZE Token (FUZE) Trading Down 1% This Week</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/mysterium-myst-price-tops-0-41.html">Mysterium (MYST) Price Tops $0.41</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/kin-kin-24-hour-volume-hits-6-82-million.html">Kin (KIN) 24-Hour Volume Hits $6.82 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/21/haemonetics-nysehae-issues-fy-2022-earnings-guidance.html">Haemonetics (NYSE:HAE) Issues FY 2022 Earnings Guidance</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77579065&PostDate=2021-8-21&type=g&id=69562&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

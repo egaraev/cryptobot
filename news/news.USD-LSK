@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Lisk&#8221; Feed" href="https://transcriptdaily.com/search/Lisk/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million - Transcript Daily</title>
+<meta name="description" content="Read Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/lisk-machine-learning-lml-achieves-market-capitalization-of-2-82-million.html" rel="bookmark" title="Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3636.png&amp;w=150&amp;zc=1" alt="Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/lisk-machine-learning-lml-achieves-market-capitalization-of-2-82-million.html" rel="bookmark" title="Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million"><h2>Lisk Machine Learning (LML) Achieves Market Capitalization of $2.82 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk Machine Learning (CURRENCY:LML) traded down 8.3% against the dollar during the one day period ending at 7:00 AM E.T. on August 17th. Over the last seven days, Lisk Machine Learning has traded up 12.9% against the dollar. One Lisk...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/lisk-machine-learning-lml-achieves-market-capitalization-of-2-82-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/lisk-machine-learning-lml-tops-24-hour-volume-of-28003-00.html" rel="bookmark" title="Lisk Machine Learning (LML) Tops 24 Hour Volume of $28,003.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3636.png&amp;w=150&amp;zc=1" alt="Lisk Machine Learning (LML) Tops 24 Hour Volume of $28,003.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/lisk-machine-learning-lml-tops-24-hour-volume-of-28003-00.html" rel="bookmark" title="Lisk Machine Learning (LML) Tops 24 Hour Volume of $28,003.00"><h2>Lisk Machine Learning (LML) Tops 24 Hour Volume of $28,003.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk Machine Learning (CURRENCY:LML) traded down 8.3% against the US dollar during the 24 hour period ending at 9:00 AM ET on August 16th. One Lisk Machine Learning coin can now be purchased for approximately $0.0235 or 0.00000053...&nbsp;<a href='https://transcriptdaily.com/2021/08/16/lisk-machine-learning-lml-tops-24-hour-volume-of-28003-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/lisk-price-reaches-4-07-on-top-exchanges-lsk.html" rel="bookmark" title="Lisk Price Reaches $4.07 on Top Exchanges (LSK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1214.png&amp;w=150&amp;zc=1" alt="Lisk Price Reaches $4.07 on Top Exchanges (LSK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/lisk-price-reaches-4-07-on-top-exchanges-lsk.html" rel="bookmark" title="Lisk Price Reaches $4.07 on Top Exchanges (LSK)"><h2>Lisk Price Reaches $4.07 on Top Exchanges (LSK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk (CURRENCY:LSK) traded up 4.8% against the dollar during the 24-hour period ending at 7:00 AM ET on August 11th. One Lisk coin can now be purchased for $4.07 or 0.00008853 BTC on major exchanges. Lisk has a market cap of $524.43...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/lisk-price-reaches-4-07-on-top-exchanges-lsk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/lisk-machine-learning-lml-24-hour-volume-hits-117582-00.html" rel="bookmark" title="Lisk Machine Learning (LML) 24 Hour Volume Hits $117,582.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3636.png&amp;w=150&amp;zc=1" alt="Lisk Machine Learning (LML) 24 Hour Volume Hits $117,582.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/lisk-machine-learning-lml-24-hour-volume-hits-117582-00.html" rel="bookmark" title="Lisk Machine Learning (LML) 24 Hour Volume Hits $117,582.00"><h2>Lisk Machine Learning (LML) 24 Hour Volume Hits $117,582.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk Machine Learning (CURRENCY:LML) traded up 9.9% against the U.S. dollar during the 1 day period ending at 23:00 PM E.T. on August 6th. Lisk Machine Learning has a total market cap of $3.08 million and $117,582.00 worth of Lisk...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/lisk-machine-learning-lml-24-hour-volume-hits-117582-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/31/lisk-lsk-market-cap-reaches-373-69-million.html" rel="bookmark" title="Lisk (LSK) Market Cap Reaches $373.69 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1214.png&amp;w=150&amp;zc=1" alt="Lisk (LSK) Market Cap Reaches $373.69 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/31/lisk-lsk-market-cap-reaches-373-69-million.html" rel="bookmark" title="Lisk (LSK) Market Cap Reaches $373.69 Million"><h2>Lisk (LSK) Market Cap Reaches $373.69 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jul 31st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk (CURRENCY:LSK) traded up 9.6% against the U.S. dollar during the twenty-four hour period ending at 0:00 AM E.T. on July 30th. Lisk has a total market capitalization of $373.69 million and approximately $45.06 million worth of...&nbsp;<a href='https://transcriptdaily.com/2021/07/31/lisk-lsk-market-cap-reaches-373-69-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/28/lisk-market-cap-reaches-338-34-million-lsk.html" rel="bookmark" title="Lisk Market Cap Reaches $338.34 Million (LSK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1214.png&amp;w=150&amp;zc=1" alt="Lisk Market Cap Reaches $338.34 Million (LSK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/28/lisk-market-cap-reaches-338-34-million-lsk.html" rel="bookmark" title="Lisk Market Cap Reaches $338.34 Million (LSK)"><h2>Lisk Market Cap Reaches $338.34 Million (LSK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 28th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk (CURRENCY:LSK) traded 0.7% higher  against the US dollar during the one day period ending at 13:00 PM E.T. on July 28th. One Lisk coin can now be purchased for approximately $2.63 or 0.00006638 BTC on major exchanges. Lisk has...&nbsp;<a href='https://transcriptdaily.com/2021/07/28/lisk-market-cap-reaches-338-34-million-lsk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/27/lisk-market-capitalization-achieves-334-10-million-lsk.html" rel="bookmark" title="Lisk Market Capitalization Achieves $334.10 Million (LSK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1214.png&amp;w=150&amp;zc=1" alt="Lisk Market Capitalization Achieves $334.10 Million (LSK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/27/lisk-market-capitalization-achieves-334-10-million-lsk.html" rel="bookmark" title="Lisk Market Capitalization Achieves $334.10 Million (LSK)"><h2>Lisk Market Capitalization Achieves $334.10 Million (LSK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jul 27th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk (CURRENCY:LSK) traded 5.1% lower  against the U.S. dollar during the 24-hour period ending at 16:00 PM ET on July 27th. Lisk has a market capitalization of $334.10 million and $46.26 million worth of Lisk was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2021/07/27/lisk-market-capitalization-achieves-334-10-million-lsk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/07/26/lisk-hits-24-hour-volume-of-39-14-million-lsk.html" rel="bookmark" title="Lisk Hits 24-Hour Volume of $39.14 Million (LSK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1214.png&amp;w=150&amp;zc=1" alt="Lisk Hits 24-Hour Volume of $39.14 Million (LSK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/07/26/lisk-hits-24-hour-volume-of-39-14-million-lsk.html" rel="bookmark" title="Lisk Hits 24-Hour Volume of $39.14 Million (LSK)"><h2>Lisk Hits 24-Hour Volume of $39.14 Million (LSK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jul 26th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Lisk (CURRENCY:LSK) traded 3.6% higher  against the US dollar during the twenty-four hour period ending at 18:00 PM Eastern on July 26th. During the last seven days, Lisk has traded 11.2% higher  against the US dollar. One Lisk coin...&nbsp;<a href='https://transcriptdaily.com/2021/07/26/lisk-hits-24-hour-volume-of-39-14-million-lsk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/rise-rise-reaches-1-day-trading-volume-of-50-00.html" rel="bookmark" title="Rise (RISE) Reaches 1-Day Trading Volume of $50.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1294.png&amp;w=150&amp;zc=1" alt="Rise (RISE) Reaches 1-Day Trading Volume of $50.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/rise-rise-reaches-1-day-trading-volume-of-50-00.html" rel="bookmark" title="Rise (RISE) Reaches 1-Day Trading Volume of $50.00"><h2>Rise (RISE) Reaches 1-Day Trading Volume of $50.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Rise (CURRENCY:RISE) traded down 2.8% against the dollar during the twenty-four hour period ending at 18:00 PM E.T. on August 19th. One Rise coin can currently be purchased for about $0.0078 or 0.00000017 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/19/rise-rise-reaches-1-day-trading-volume-of-50-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/19/ddkoin-price-tops-0-59-on-major-exchanges-ddk.html" rel="bookmark" title="DDKoin Price Tops $0.59 on Major Exchanges (DDK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ddk.png&amp;w=150&amp;zc=1" alt="DDKoin Price Tops $0.59 on Major Exchanges (DDK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/19/ddkoin-price-tops-0-59-on-major-exchanges-ddk.html" rel="bookmark" title="DDKoin Price Tops $0.59 on Major Exchanges (DDK)"><h2>DDKoin Price Tops $0.59 on Major Exchanges (DDK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 19th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DDKoin (CURRENCY:DDK) traded 1.3% higher  against the US dollar during the twenty-four hour period ending at 21:00 PM Eastern on August 18th. Over the last seven days, DDKoin has traded 3.1% higher  against the US dollar. DDKoin has...&nbsp;<a href='https://transcriptdaily.com/2021/08/19/ddkoin-price-tops-0-59-on-major-exchanges-ddk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/18/rise-one-day-volume-reaches-54-00-rise.html" rel="bookmark" title="Rise One Day Volume Reaches $54.00 (RISE)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1294.png&amp;w=150&amp;zc=1" alt="Rise One Day Volume Reaches $54.00 (RISE)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/18/rise-one-day-volume-reaches-54-00-rise.html" rel="bookmark" title="Rise One Day Volume Reaches $54.00 (RISE)"><h2>Rise One Day Volume Reaches $54.00 (RISE)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 18th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Rise (CURRENCY:RISE) traded 0% lower  against the U.S. dollar during the one day period ending at 23:00 PM E.T. on August 17th. One Rise coin can currently be bought for about $0.0061 or 0.00000014 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/18/rise-one-day-volume-reaches-54-00-rise.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/17/dubaicoin-reaches-24-hour-trading-volume-of-552181-00-dbix.html" rel="bookmark" title="DubaiCoin Reaches 24 Hour Trading Volume of $552,181.00 (DBIX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin Reaches 24 Hour Trading Volume of $552,181.00 (DBIX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/17/dubaicoin-reaches-24-hour-trading-volume-of-552181-00-dbix.html" rel="bookmark" title="DubaiCoin Reaches 24 Hour Trading Volume of $552,181.00 (DBIX)"><h2>DubaiCoin Reaches 24 Hour Trading Volume of $552,181.00 (DBIX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 17th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded up 1,078.2% against the U.S. dollar during the 1 day period ending at 14:00 PM Eastern on August 17th. During the last seven days, DubaiCoin has traded up 1,027.6% against the U.S. dollar. One DubaiCoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/17/dubaicoin-reaches-24-hour-trading-volume-of-552181-00-dbix.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges-2.html" rel="bookmark" title="BitTorrent (BTT) Price Tops $0.0047 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent (BTT) Price Tops $0.0047 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges-2.html" rel="bookmark" title="BitTorrent (BTT) Price Tops $0.0047 on Exchanges"><h2>BitTorrent (BTT) Price Tops $0.0047 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded down 1.2% against the U.S. dollar during the 24-hour period ending at 0:00 AM ET on August 15th. One BitTorrent coin can now be purchased for $0.0047 or 0.00000010 BTC on popular cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges.html" rel="bookmark" title="BitTorrent (BTT) Price Tops $0.0047 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent (BTT) Price Tops $0.0047 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges.html" rel="bookmark" title="BitTorrent (BTT) Price Tops $0.0047 on Exchanges"><h2>BitTorrent (BTT) Price Tops $0.0047 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 16th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded down 1.2% against the U.S. dollar during the 24-hour period ending at 0:00 AM ET on August 15th. One BitTorrent coin can now be purchased for $0.0047 or 0.00000010 BTC on popular cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/16/bittorrent-btt-price-tops-0-0047-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/stratis-trading-7-2-higher-over-last-7-days-strax.html" rel="bookmark" title="Stratis Trading 7.2% Higher  Over Last 7 Days (STRAX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1343.png&amp;w=150&amp;zc=1" alt="Stratis Trading 7.2% Higher  Over Last 7 Days (STRAX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/stratis-trading-7-2-higher-over-last-7-days-strax.html" rel="bookmark" title="Stratis Trading 7.2% Higher  Over Last 7 Days (STRAX)"><h2>Stratis Trading 7.2% Higher  Over Last 7 Days (STRAX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Stratis (CURRENCY:STRAX) traded 0.6% lower  against the US dollar during the twenty-four hour period ending at 10:00 AM Eastern on August 15th. Over the last seven days, Stratis has traded up 7.2% against the US dollar. Stratis has...&nbsp;<a href='https://transcriptdaily.com/2021/08/15/stratis-trading-7-2-higher-over-last-7-days-strax.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/dubaicoin-dbix-hits-24-hour-volume-of-552181-00.html" rel="bookmark" title="DubaiCoin (DBIX) Hits 24 Hour Volume of $552,181.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin (DBIX) Hits 24 Hour Volume of $552,181.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/dubaicoin-dbix-hits-24-hour-volume-of-552181-00.html" rel="bookmark" title="DubaiCoin (DBIX) Hits 24 Hour Volume of $552,181.00"><h2>DubaiCoin (DBIX) Hits 24 Hour Volume of $552,181.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded up 1,078.2% against the US dollar during the twenty-four hour period ending at 22:00 PM E.T. on August 14th. One DubaiCoin coin can now be bought for approximately $1.20 or 0.00003094 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/15/dubaicoin-dbix-hits-24-hour-volume-of-552181-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/15/whitecoin-xwc-reaches-one-day-trading-volume-of-23-48-million.html" rel="bookmark" title="WhiteCoin (XWC) Reaches One Day Trading Volume of $23.48 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/268.png&amp;w=150&amp;zc=1" alt="WhiteCoin (XWC) Reaches One Day Trading Volume of $23.48 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/15/whitecoin-xwc-reaches-one-day-trading-volume-of-23-48-million.html" rel="bookmark" title="WhiteCoin (XWC) Reaches One Day Trading Volume of $23.48 Million"><h2>WhiteCoin (XWC) Reaches One Day Trading Volume of $23.48 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 15th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						WhiteCoin (CURRENCY:XWC) traded down 0.3% against the US dollar during the 1-day period ending at 21:00 PM E.T. on August 14th. One WhiteCoin coin can now be purchased for approximately $1.00 or 0.00002106 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/15/whitecoin-xwc-reaches-one-day-trading-volume-of-23-48-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/sentinel-protocol-upp-price-tops-0-19-on-major-exchanges.html" rel="bookmark" title="Sentinel Protocol (UPP) Price Tops $0.19 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/uppjpg.png&amp;w=150&amp;zc=1" alt="Sentinel Protocol (UPP) Price Tops $0.19 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/sentinel-protocol-upp-price-tops-0-19-on-major-exchanges.html" rel="bookmark" title="Sentinel Protocol (UPP) Price Tops $0.19 on Major Exchanges"><h2>Sentinel Protocol (UPP) Price Tops $0.19 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Sentinel Protocol (CURRENCY:UPP) traded down 0.1% against the US dollar during the 24-hour period ending at 18:00 PM ET on August 14th. One Sentinel Protocol coin can currently be purchased for $0.19 or 0.00000397 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/14/sentinel-protocol-upp-price-tops-0-19-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/waves-waves-trading-53-3-higher-this-week.html" rel="bookmark" title="Waves (WAVES) Trading 53.3% Higher  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1274.png&amp;w=150&amp;zc=1" alt="Waves (WAVES) Trading 53.3% Higher  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/waves-waves-trading-53-3-higher-this-week.html" rel="bookmark" title="Waves (WAVES) Trading 53.3% Higher  This Week"><h2>Waves (WAVES) Trading 53.3% Higher  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Waves (CURRENCY:WAVES) traded 27.3% higher  against the dollar during the 24-hour period ending at 13:00 PM E.T. on August 14th. In the last week, Waves has traded up 53.3% against the dollar. One Waves coin can currently be purchased...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/waves-waves-trading-53-3-higher-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/whitecoin-price-reaches-1-02-on-exchanges-xwc.html" rel="bookmark" title="WhiteCoin Price Reaches $1.02 on Exchanges (XWC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/268.png&amp;w=150&amp;zc=1" alt="WhiteCoin Price Reaches $1.02 on Exchanges (XWC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/whitecoin-price-reaches-1-02-on-exchanges-xwc.html" rel="bookmark" title="WhiteCoin Price Reaches $1.02 on Exchanges (XWC)"><h2>WhiteCoin Price Reaches $1.02 on Exchanges (XWC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						WhiteCoin (CURRENCY:XWC) traded down 1.1% against the U.S. dollar during the 24 hour period ending at 0:00 AM ET on August 13th. WhiteCoin has a total market capitalization of $748.49 million and approximately $26.78 million worth...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/whitecoin-price-reaches-1-02-on-exchanges-xwc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/whitecoin-xwc-trading-0-4-higher-this-week.html" rel="bookmark" title="WhiteCoin (XWC) Trading 0.4% Higher  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/268.png&amp;w=150&amp;zc=1" alt="WhiteCoin (XWC) Trading 0.4% Higher  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/whitecoin-xwc-trading-0-4-higher-this-week.html" rel="bookmark" title="WhiteCoin (XWC) Trading 0.4% Higher  This Week"><h2>WhiteCoin (XWC) Trading 0.4% Higher  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						WhiteCoin (CURRENCY:XWC) traded down 1.1% against the U.S. dollar during the 24 hour period ending at 0:00 AM ET on August 13th. WhiteCoin has a total market capitalization of $748.49 million and approximately $26.78 million worth...&nbsp;<a href='https://transcriptdaily.com/2021/08/14/whitecoin-xwc-trading-0-4-higher-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/14/gny-reaches-market-cap-of-90-58-million-gny.html" rel="bookmark" title="GNY Reaches Market Cap of $90.58 Million (GNY)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/gny.png&amp;w=150&amp;zc=1" alt="GNY Reaches Market Cap of $90.58 Million (GNY)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/14/gny-reaches-market-cap-of-90-58-million-gny.html" rel="bookmark" title="GNY Reaches Market Cap of $90.58 Million (GNY)"><h2>GNY Reaches Market Cap of $90.58 Million (GNY)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 14th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						GNY (CURRENCY:GNY) traded 5.2% higher  against the U.S. dollar during the 24 hour period ending at 23:00 PM Eastern on August 13th. One GNY coin can currently be purchased for about $0.47 or 0.00000990 BTC on major cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/14/gny-reaches-market-cap-of-90-58-million-gny.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/nxt-nxt-reaches-market-capitalization-of-19-22-million.html" rel="bookmark" title="Nxt (NXT) Reaches Market Capitalization of $19.22 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/66.png&amp;w=150&amp;zc=1" alt="Nxt (NXT) Reaches Market Capitalization of $19.22 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/nxt-nxt-reaches-market-capitalization-of-19-22-million.html" rel="bookmark" title="Nxt (NXT) Reaches Market Capitalization of $19.22 Million"><h2>Nxt (NXT) Reaches Market Capitalization of $19.22 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Nxt (CURRENCY:NXT) traded up 4.3% against the U.S. dollar during the 24-hour period ending at 17:00 PM ET on August 13th. One Nxt coin can currently be bought for approximately $0.0192 or 0.00000040 BTC on popular cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/13/nxt-nxt-reaches-market-capitalization-of-19-22-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/bittorrent-btt-price-up-26-9-this-week.html" rel="bookmark" title="BitTorrent (BTT) Price Up 26.9% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent (BTT) Price Up 26.9% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/bittorrent-btt-price-up-26-9-this-week.html" rel="bookmark" title="BitTorrent (BTT) Price Up 26.9% This Week"><h2>BitTorrent (BTT) Price Up 26.9% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded up 5.4% against the U.S. dollar during the 24 hour period ending at 13:00 PM ET on August 13th. BitTorrent has a market capitalization of $3.11 billion and approximately $759.38 million worth of BitTorrent...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/bittorrent-btt-price-up-26-9-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/bittorrent-btt-achieves-market-capitalization-of-3-11-billion.html" rel="bookmark" title="BitTorrent (BTT) Achieves Market Capitalization of $3.11 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent (BTT) Achieves Market Capitalization of $3.11 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/bittorrent-btt-achieves-market-capitalization-of-3-11-billion.html" rel="bookmark" title="BitTorrent (BTT) Achieves Market Capitalization of $3.11 Billion"><h2>BitTorrent (BTT) Achieves Market Capitalization of $3.11 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded up 5.4% against the US dollar during the 1-day period ending at 13:00 PM Eastern on August 13th. During the last seven days, BitTorrent has traded 26.9% higher  against the US dollar. BitTorrent has...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/bittorrent-btt-achieves-market-capitalization-of-3-11-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/dubaicoin-trading-1027-6-higher-this-week-dbix.html" rel="bookmark" title="DubaiCoin Trading 1,027.6% Higher  This Week (DBIX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin Trading 1,027.6% Higher  This Week (DBIX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/dubaicoin-trading-1027-6-higher-this-week-dbix.html" rel="bookmark" title="DubaiCoin Trading 1,027.6% Higher  This Week (DBIX)"><h2>DubaiCoin Trading 1,027.6% Higher  This Week (DBIX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded 1,078.2% higher  against the U.S. dollar during the 24 hour period ending at 8:00 AM E.T. on August 13th. One DubaiCoin coin can currently be bought for $1.20 or 0.00003094 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/dubaicoin-trading-1027-6-higher-this-week-dbix.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/13/skycoin-trading-up-12-8-over-last-week-sky.html" rel="bookmark" title="Skycoin Trading Up 12.8% Over Last Week (SKY)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1619.png&amp;w=150&amp;zc=1" alt="Skycoin Trading Up 12.8% Over Last Week (SKY)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/13/skycoin-trading-up-12-8-over-last-week-sky.html" rel="bookmark" title="Skycoin Trading Up 12.8% Over Last Week (SKY)"><h2>Skycoin Trading Up 12.8% Over Last Week (SKY)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 13th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Skycoin (CURRENCY:SKY) traded 3.3% lower  against the US dollar during the twenty-four hour period ending at 20:00 PM ET on August 12th. Over the last seven days, Skycoin has traded 12.8% higher  against the US dollar. Skycoin has...&nbsp;<a href='https://transcriptdaily.com/2021/08/13/skycoin-trading-up-12-8-over-last-week-sky.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/neblio-trading-up-30-3-over-last-week-nebl.html" rel="bookmark" title="Neblio Trading Up 30.3% Over Last Week (NEBL)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1955.png&amp;w=150&amp;zc=1" alt="Neblio Trading Up 30.3% Over Last Week (NEBL)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/neblio-trading-up-30-3-over-last-week-nebl.html" rel="bookmark" title="Neblio Trading Up 30.3% Over Last Week (NEBL)"><h2>Neblio Trading Up 30.3% Over Last Week (NEBL)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neblio (CURRENCY:NEBL) traded up 6.5% against the US dollar during the one day period ending at 10:00 AM E.T. on August 11th. One Neblio coin can currently be bought for $1.38 or 0.00002981 BTC on popular exchanges. Neblio has a market...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/neblio-trading-up-30-3-over-last-week-nebl.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/11/dubaicoin-trading-1027-6-higher-over-last-week-dbix.html" rel="bookmark" title="DubaiCoin Trading 1,027.6% Higher  Over Last Week (DBIX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin Trading 1,027.6% Higher  Over Last Week (DBIX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/11/dubaicoin-trading-1027-6-higher-over-last-week-dbix.html" rel="bookmark" title="DubaiCoin Trading 1,027.6% Higher  Over Last Week (DBIX)"><h2>DubaiCoin Trading 1,027.6% Higher  Over Last Week (DBIX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 11th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded 1,078.2% higher  against the U.S. dollar during the 24-hour period ending at 20:00 PM ET on August 10th. DubaiCoin has a market cap of $5.12 million and approximately $552,181.00 worth of DubaiCoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/11/dubaicoin-trading-1027-6-higher-over-last-week-dbix.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/skycoin-sky-tops-one-day-trading-volume-of-906668-00.html" rel="bookmark" title="Skycoin (SKY) Tops One Day Trading Volume of $906,668.00" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1619.png&amp;w=150&amp;zc=1" alt="Skycoin (SKY) Tops One Day Trading Volume of $906,668.00" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/skycoin-sky-tops-one-day-trading-volume-of-906668-00.html" rel="bookmark" title="Skycoin (SKY) Tops One Day Trading Volume of $906,668.00"><h2>Skycoin (SKY) Tops One Day Trading Volume of $906,668.00</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Skycoin (CURRENCY:SKY) traded 4% higher  against the US dollar during the 1-day period ending at 14:00 PM E.T. on August 10th. Skycoin has a total market cap of $29.97 million and approximately $906,668.00 worth of Skycoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/skycoin-sky-tops-one-day-trading-volume-of-906668-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/neblio-reaches-market-capitalization-of-22-43-million-nebl.html" rel="bookmark" title="Neblio Reaches Market Capitalization of $22.43 Million (NEBL)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1955.png&amp;w=150&amp;zc=1" alt="Neblio Reaches Market Capitalization of $22.43 Million (NEBL)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/neblio-reaches-market-capitalization-of-22-43-million-nebl.html" rel="bookmark" title="Neblio Reaches Market Capitalization of $22.43 Million (NEBL)"><h2>Neblio Reaches Market Capitalization of $22.43 Million (NEBL)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Neblio (CURRENCY:NEBL) traded 0.6% lower  against the US dollar during the 24 hour period ending at 12:00 PM E.T. on August 10th. Neblio has a total market cap of $22.43 million and approximately $1.26 million worth of Neblio was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/neblio-reaches-market-capitalization-of-22-43-million-nebl.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/10/dubaicoin-price-hits-1-20-on-exchanges-dbix.html" rel="bookmark" title="DubaiCoin Price Hits $1.20 on Exchanges (DBIX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin Price Hits $1.20 on Exchanges (DBIX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/10/dubaicoin-price-hits-1-20-on-exchanges-dbix.html" rel="bookmark" title="DubaiCoin Price Hits $1.20 on Exchanges (DBIX)"><h2>DubaiCoin Price Hits $1.20 on Exchanges (DBIX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 10th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded up 1,078.2% against the U.S. dollar during the one day period ending at 22:00 PM E.T. on August 9th. One DubaiCoin coin can now be bought for approximately $1.20 or 0.00003094 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/10/dubaicoin-price-hits-1-20-on-exchanges-dbix.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/ark-1-day-trading-volume-hits-8-85-million-ark.html" rel="bookmark" title="Ark 1-Day Trading Volume Hits $8.85 Million (ARK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1586.png&amp;w=150&amp;zc=1" alt="Ark 1-Day Trading Volume Hits $8.85 Million (ARK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/ark-1-day-trading-volume-hits-8-85-million-ark.html" rel="bookmark" title="Ark 1-Day Trading Volume Hits $8.85 Million (ARK)"><h2>Ark 1-Day Trading Volume Hits $8.85 Million (ARK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Ark (CURRENCY:ARK) traded 1.6% higher  against the U.S. dollar during the twenty-four hour period ending at 14:00 PM ET on August 9th. One Ark coin can now be bought for about $1.25 or 0.00002717 BTC on popular exchanges. Ark has a...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/ark-1-day-trading-volume-hits-8-85-million-ark.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/09/stratis-strax-price-hits-2-05-on-major-exchanges.html" rel="bookmark" title="Stratis (STRAX) Price Hits $2.05 on Major Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1343.png&amp;w=150&amp;zc=1" alt="Stratis (STRAX) Price Hits $2.05 on Major Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/09/stratis-strax-price-hits-2-05-on-major-exchanges.html" rel="bookmark" title="Stratis (STRAX) Price Hits $2.05 on Major Exchanges"><h2>Stratis (STRAX) Price Hits $2.05 on Major Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 9th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Stratis (CURRENCY:STRAX) traded up 1.1% against the U.S. dollar during the 1 day period ending at 12:00 PM Eastern on August 9th. One Stratis coin can now be bought for approximately $2.05 or 0.00004480 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/09/stratis-strax-price-hits-2-05-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/bittorrent-reaches-24-hour-trading-volume-of-660-98-million-btt.html" rel="bookmark" title="BitTorrent Reaches 24 Hour Trading Volume of $660.98 Million (BTT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent Reaches 24 Hour Trading Volume of $660.98 Million (BTT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/bittorrent-reaches-24-hour-trading-volume-of-660-98-million-btt.html" rel="bookmark" title="BitTorrent Reaches 24 Hour Trading Volume of $660.98 Million (BTT)"><h2>BitTorrent Reaches 24 Hour Trading Volume of $660.98 Million (BTT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded 0.9% lower  against the dollar during the 24-hour period ending at 14:00 PM E.T. on August 8th. BitTorrent has a market capitalization of $2.46 billion and approximately $660.98 million worth of BitTorrent...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/bittorrent-reaches-24-hour-trading-volume-of-660-98-million-btt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/whitecoin-xwc-price-hits-1-06.html" rel="bookmark" title="WhiteCoin (XWC) Price Hits $1.06" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/268.png&amp;w=150&amp;zc=1" alt="WhiteCoin (XWC) Price Hits $1.06" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/whitecoin-xwc-price-hits-1-06.html" rel="bookmark" title="WhiteCoin (XWC) Price Hits $1.06"><h2>WhiteCoin (XWC) Price Hits $1.06</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						WhiteCoin (CURRENCY:XWC) traded 2.4% higher  against the US dollar during the one day period ending at 9:00 AM E.T. on August 8th. One WhiteCoin coin can now be bought for about $1.06 or 0.00002347 BTC on popular exchanges. WhiteCoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/whitecoin-xwc-price-hits-1-06.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/sentinel-protocol-upp-price-reaches-0-18-on-exchanges.html" rel="bookmark" title="Sentinel Protocol (UPP) Price Reaches $0.18 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/uppjpg.png&amp;w=150&amp;zc=1" alt="Sentinel Protocol (UPP) Price Reaches $0.18 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/sentinel-protocol-upp-price-reaches-0-18-on-exchanges.html" rel="bookmark" title="Sentinel Protocol (UPP) Price Reaches $0.18 on Exchanges"><h2>Sentinel Protocol (UPP) Price Reaches $0.18 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Sentinel Protocol (CURRENCY:UPP) traded down 1.9% against the dollar during the 24 hour period ending at 23:00 PM E.T. on August 7th. One Sentinel Protocol coin can currently be purchased for approximately $0.18 or 0.00000416 BTC on...&nbsp;<a href='https://transcriptdaily.com/2021/08/08/sentinel-protocol-upp-price-reaches-0-18-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/08/ddkoin-ddk-hits-market-capitalization-of-1-02-million.html" rel="bookmark" title="DDKoin (DDK) Hits Market Capitalization of $1.02 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ddk.png&amp;w=150&amp;zc=1" alt="DDKoin (DDK) Hits Market Capitalization of $1.02 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/08/ddkoin-ddk-hits-market-capitalization-of-1-02-million.html" rel="bookmark" title="DDKoin (DDK) Hits Market Capitalization of $1.02 Million"><h2>DDKoin (DDK) Hits Market Capitalization of $1.02 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 8th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DDKoin (CURRENCY:DDK) traded down 0.7% against the U.S. dollar during the 1 day period ending at 22:00 PM ET on August 7th. One DDKoin coin can currently be bought for about $0.60 or 0.00001360 BTC on major cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/08/ddkoin-ddk-hits-market-capitalization-of-1-02-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/07/dubaicoin-dbix-price-tops-1-20.html" rel="bookmark" title="DubaiCoin (DBIX) Price Tops $1.20" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin (DBIX) Price Tops $1.20" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/07/dubaicoin-dbix-price-tops-1-20.html" rel="bookmark" title="DubaiCoin (DBIX) Price Tops $1.20"><h2>DubaiCoin (DBIX) Price Tops $1.20</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 7th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded 1,078.2% higher  against the U.S. dollar during the 1 day period ending at 12:00 PM Eastern on August 7th. One DubaiCoin coin can now be purchased for $1.20 or 0.00003094 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/07/dubaicoin-dbix-price-tops-1-20.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/bittorrent-hits-market-cap-of-2-48-billion-btt.html" rel="bookmark" title="BitTorrent Hits Market Cap of $2.48 Billion (BTT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent Hits Market Cap of $2.48 Billion (BTT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/bittorrent-hits-market-cap-of-2-48-billion-btt.html" rel="bookmark" title="BitTorrent Hits Market Cap of $2.48 Billion (BTT)"><h2>BitTorrent Hits Market Cap of $2.48 Billion (BTT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded 8.5% higher  against the U.S. dollar during the 24-hour period ending at 19:00 PM ET on August 6th. One BitTorrent coin can currently be bought for approximately $0.0038 or 0.00000009 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2021/08/06/bittorrent-hits-market-cap-of-2-48-billion-btt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/ddkoin-24-hour-trading-volume-reaches-9854-00-ddk.html" rel="bookmark" title="DDKoin 24-Hour Trading Volume Reaches $9,854.00 (DDK)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/ddk.png&amp;w=150&amp;zc=1" alt="DDKoin 24-Hour Trading Volume Reaches $9,854.00 (DDK)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/ddkoin-24-hour-trading-volume-reaches-9854-00-ddk.html" rel="bookmark" title="DDKoin 24-Hour Trading Volume Reaches $9,854.00 (DDK)"><h2>DDKoin 24-Hour Trading Volume Reaches $9,854.00 (DDK)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DDKoin (CURRENCY:DDK) traded 0.7% lower  against the U.S. dollar during the 1 day period ending at 8:00 AM E.T. on August 6th. Over the last week, DDKoin has traded 3.1% higher  against the U.S. dollar. One DDKoin coin can currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/06/ddkoin-24-hour-trading-volume-reaches-9854-00-ddk.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/energycoin-enrg-price-hits-0-0008-on-top-exchanges.html" rel="bookmark" title="Energycoin (ENRG) Price Hits $0.0008 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/322.png&amp;w=150&amp;zc=1" alt="Energycoin (ENRG) Price Hits $0.0008 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/energycoin-enrg-price-hits-0-0008-on-top-exchanges.html" rel="bookmark" title="Energycoin (ENRG) Price Hits $0.0008 on Top Exchanges"><h2>Energycoin (ENRG) Price Hits $0.0008 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Energycoin (CURRENCY:ENRG) traded 8.2% higher  against the U.S. dollar during the 1 day period ending at 22:00 PM Eastern on August 5th. Over the last seven days, Energycoin has traded 12.3% higher  against the U.S. dollar. Energycoin...&nbsp;<a href='https://transcriptdaily.com/2021/08/06/energycoin-enrg-price-hits-0-0008-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/06/bittorrent-trading-27-1-higher-over-last-week-btt.html" rel="bookmark" title="BitTorrent Trading 27.1% Higher  Over Last Week (BTT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent Trading 27.1% Higher  Over Last Week (BTT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/06/bittorrent-trading-27-1-higher-over-last-week-btt.html" rel="bookmark" title="BitTorrent Trading 27.1% Higher  Over Last Week (BTT)"><h2>BitTorrent Trading 27.1% Higher  Over Last Week (BTT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Aug 6th, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded 5.5% higher  against the US dollar during the 1-day period ending at 21:00 PM Eastern on August 5th. One BitTorrent coin can now be purchased for approximately $0.0036 or 0.00000009 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2021/08/06/bittorrent-trading-27-1-higher-over-last-week-btt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/td-securities-boosts-magellan-aerospace-tsemal-price-target-to-c12-50.html" rel="bookmark" title="TD Securities Boosts Magellan Aerospace (TSE:MAL) Price Target to C$12.50" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/generic-stocks2.jpg&amp;w=150&amp;zc=1" alt="TD Securities Boosts Magellan Aerospace (TSE:MAL) Price Target to C$12.50" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/td-securities-boosts-magellan-aerospace-tsemal-price-target-to-c12-50.html" rel="bookmark" title="TD Securities Boosts Magellan Aerospace (TSE:MAL) Price Target to C$12.50"><h2>TD Securities Boosts Magellan Aerospace (TSE:MAL) Price Target to C$12.50</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Magellan Aerospace (TSE:MAL) had its target price raised by equities research analysts at TD Securities  from C$11.50 to C$12.50 in a research report issued to clients and investors on Tuesday, PriceTargets.com reports. The firm currently...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/td-securities-boosts-magellan-aerospace-tsemal-price-target-to-c12-50.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/03/dubaicoin-trading-up-1027-6-over-last-7-days-dbix.html" rel="bookmark" title="DubaiCoin Trading Up 1,027.6% Over Last 7 Days (DBIX)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin Trading Up 1,027.6% Over Last 7 Days (DBIX)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/03/dubaicoin-trading-up-1027-6-over-last-7-days-dbix.html" rel="bookmark" title="DubaiCoin Trading Up 1,027.6% Over Last 7 Days (DBIX)"><h2>DubaiCoin Trading Up 1,027.6% Over Last 7 Days (DBIX)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 3rd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded up 1,078.2% against the dollar during the 1-day period ending at 8:00 AM E.T. on August 3rd. During the last week, DubaiCoin has traded 1,027.6% higher  against the dollar. DubaiCoin has a total market...&nbsp;<a href='https://transcriptdaily.com/2021/08/03/dubaicoin-trading-up-1027-6-over-last-7-days-dbix.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/02/rise-rise-trading-down-34-over-last-7-days.html" rel="bookmark" title="Rise (RISE) Trading Down 34% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1294.png&amp;w=150&amp;zc=1" alt="Rise (RISE) Trading Down 34% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/02/rise-rise-trading-down-34-over-last-7-days.html" rel="bookmark" title="Rise (RISE) Trading Down 34% Over Last 7 Days"><h2>Rise (RISE) Trading Down 34% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Aug 2nd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Rise (CURRENCY:RISE) traded up 3.1% against the U.S. dollar during the 24 hour period ending at 22:00 PM Eastern on August 1st. Rise has a market capitalization of $455,493.99 and $10.00 worth of Rise was traded on exchanges in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/02/rise-rise-trading-down-34-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/02/nxt-price-up-16-9-over-last-week-nxt.html" rel="bookmark" title="Nxt Price Up 16.9% Over Last Week (NXT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/66.png&amp;w=150&amp;zc=1" alt="Nxt Price Up 16.9% Over Last Week (NXT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/02/nxt-price-up-16-9-over-last-week-nxt.html" rel="bookmark" title="Nxt Price Up 16.9% Over Last Week (NXT)"><h2>Nxt Price Up 16.9% Over Last Week (NXT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Aug 2nd, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Nxt (CURRENCY:NXT) traded 5% lower  against the dollar during the 24 hour period ending at 21:00 PM E.T. on August 1st. Nxt has a market cap of $14.68 million and approximately $889,719.00 worth of Nxt was traded on exchanges in the...&nbsp;<a href='https://transcriptdaily.com/2021/08/02/nxt-price-up-16-9-over-last-week-nxt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/bittorrent-price-hits-0-0030-on-major-exchanges-btt.html" rel="bookmark" title="BitTorrent Price Hits $0.0030 on Major Exchanges (BTT)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btt.png&amp;w=150&amp;zc=1" alt="BitTorrent Price Hits $0.0030 on Major Exchanges (BTT)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/bittorrent-price-hits-0-0030-on-major-exchanges-btt.html" rel="bookmark" title="BitTorrent Price Hits $0.0030 on Major Exchanges (BTT)"><h2>BitTorrent Price Hits $0.0030 on Major Exchanges (BTT)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitTorrent (CURRENCY:BTT) traded up 4.7% against the US dollar during the one day period ending at 18:00 PM ET on August 1st. One BitTorrent coin can now be bought for $0.0030 or 0.00000007 BTC on major exchanges. During the last seven...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/bittorrent-price-hits-0-0030-on-major-exchanges-btt.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/dubaicoin-dbix-price-hits-1-20.html" rel="bookmark" title="DubaiCoin (DBIX) Price Hits $1.20" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1611.png&amp;w=150&amp;zc=1" alt="DubaiCoin (DBIX) Price Hits $1.20" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/dubaicoin-dbix-price-hits-1-20.html" rel="bookmark" title="DubaiCoin (DBIX) Price Hits $1.20"><h2>DubaiCoin (DBIX) Price Hits $1.20</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						DubaiCoin (CURRENCY:DBIX) traded up 1,078.2% against the dollar during the one day period ending at 13:00 PM Eastern on August 1st. DubaiCoin has a market cap of $5.12 million and approximately $552,181.00 worth of DubaiCoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/dubaicoin-dbix-price-hits-1-20.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2021/08/01/whitecoin-reaches-market-cap-of-742-24-million-xwc.html" rel="bookmark" title="WhiteCoin Reaches Market Cap of $742.24 Million (XWC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/268.png&amp;w=150&amp;zc=1" alt="WhiteCoin Reaches Market Cap of $742.24 Million (XWC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2021/08/01/whitecoin-reaches-market-cap-of-742-24-million-xwc.html" rel="bookmark" title="WhiteCoin Reaches Market Cap of $742.24 Million (XWC)"><h2>WhiteCoin Reaches Market Cap of $742.24 Million (XWC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Aug 1st, 2021 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						WhiteCoin (CURRENCY:XWC) traded 0.6% lower  against the US dollar during the one day period ending at 12:00 PM Eastern on August 1st. WhiteCoin has a total market cap of $742.24 million and $31.51 million worth of WhiteCoin was traded...&nbsp;<a href='https://transcriptdaily.com/2021/08/01/whitecoin-reaches-market-cap-of-742-24-million-xwc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Lisk" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Lisk Machine Learning</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Lisk Machine Learning with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:lisk-machine-learning" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/biosyent-cverx-stock-crosses-above-200-day-moving-average-of-0-00.html">BioSyent (CVE:RX) Stock Crosses Above 200-Day Moving Average of $0.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/worley-limited-otcmktswygpy-sees-significant-growth-in-short-interest.html">Worley Limited (OTCMKTS:WYGPY) Sees Significant Growth in Short Interest</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/privia-health-group-nasdaqprva-upgraded-at-zacks-investment-research.html">Privia Health Group (NASDAQ:PRVA) Upgraded at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/orchard-therapeutics-nasdaqortx-cut-to-neutral-at-jpmorgan-chase-co.html">Orchard Therapeutics (NASDAQ:ORTX) Cut to Neutral at JPMorgan Chase &#038; Co.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/ntt-data-otcmktsntdty-upgraded-to-buy-by-mizuho.html">NTT DATA (OTCMKTS:NTDTY) Upgraded to &#8220;Buy&#8221; by Mizuho</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/zacks-investment-research-upgrades-new-jersey-resources-nysenjr-to-buy.html">Zacks Investment Research Upgrades New Jersey Resources (NYSE:NJR) to &#8220;Buy&#8221;</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/cantor-fitzgerald-equities-analysts-increase-earnings-estimates-for-aspira-womens-health-inc-nasdaqawh.html">Cantor Fitzgerald Equities Analysts Increase Earnings Estimates for Aspira Women&#8217;s Health Inc. (NASDAQ:AWH)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/jefferies-financial-group-weighs-in-on-swiss-re-ags-fy2021-earnings-otcmktsssrey.html">Jefferies Financial Group Weighs in on Swiss Re AG&#8217;s FY2021 Earnings (OTCMKTS:SSREY)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/fy2021-eps-estimates-for-the-lion-electric-company-nyselev-cut-by-analyst.html">FY2021 EPS Estimates for The Lion Electric Company (NYSE:LEV) Cut by Analyst</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/national-bank-financial-equities-analysts-cut-earnings-estimates-for-auto-prop-reit-tseapr.html">National Bank Financial Equities Analysts Cut Earnings Estimates for Auto Prop Reit (TSE:APR)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/brinker-international-inc-nyseeat-to-post-fy2021-earnings-of-3-20-per-share-keycorp-forecasts.html">Brinker International, Inc. (NYSE:EAT) to Post FY2021 Earnings of $3.20 Per Share, KeyCorp Forecasts</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/astronova-nasdaqalot-downgraded-to-hold-at-zacks-investment-research.html">AstroNova (NASDAQ:ALOT) Downgraded to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/allot-communications-nasdaqallt-lifted-to-buy-at-zacks-investment-research.html">Allot Communications (NASDAQ:ALLT) Lifted to &#8220;Buy&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/abcellera-biologics-nasdaqabcl-rating-lowered-to-hold-at-zacks-investment-research.html">AbCellera Biologics (NASDAQ:ABCL) Rating Lowered to Hold at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/afya-nasdaqafya-upgraded-to-hold-at-zacks-investment-research.html">Afya (NASDAQ:AFYA) Upgraded to &#8220;Hold&#8221; at Zacks Investment Research</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/british-land-lonblnd-price-target-raised-to-gbx-618.html">British Land (LON:BLND) Price Target Raised to GBX 618</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/analysts-anticipate-general-electric-nysege-will-announce-quarterly-sales-of-19-34-billion.html">Analysts Anticipate General Electric (NYSE:GE) Will Announce Quarterly Sales of $19.34 Billion</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/head-to-head-review-computer-services-otcmktscsvi-and-marathon-digital-nasdaqmara.html">Head to Head Review: Computer Services (OTCMKTS:CSVI) and Marathon Digital (NASDAQ:MARA)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/titan-machinery-nasdaqtitn-national-waste-management-otcmktsnwmh-head-to-head-contrast.html">Titan Machinery (NASDAQ:TITN) &amp; National Waste Management (OTCMKTS:NWMH) Head-To-Head Contrast</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/08/20/just-eat-takeaway-com-lonjet-given-a-gbx-9800-price-target-at-ubs-group.html">Just Eat Takeaway.com (LON:JET) Given a GBX 9,800 Price Target at UBS Group</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2021 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=77506070&PostDate=2021-8-20&type=a&tertiary=1&id=1640923&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8' id='wp-embed-js'></script>
+</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

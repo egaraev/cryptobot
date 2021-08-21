@@ -1,6 +1,8 @@
+from bittrex.bittrex import *
 import config
+import pybittrex
 from pybittrex.client import Client
-import MySQLdb
+import pymysql
 import sys
 import datetime
 import time
@@ -27,7 +29,7 @@ def ME():
     bot_mode=parameters()[23]
     #print bot_mode
 
-#    print c.get_market_summaries().json()['result']
+
     for summary in market_summ: #Loop trough the market summary
         try:
             if available_market_list(summary['MarketName']):
@@ -43,14 +45,14 @@ def ME():
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
-                print market, percent_chg
+                #print market, percent_chg
 
                 try:
-                  db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                  db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                   cursor = db.cursor()
                   cursor.execute("update markets set spread= %s where market =%s", (spread, market))
                   db.commit()
-                except MySQLdb.Error, e:
+                except pymysql.Error as e:
                   print "Error %d: %s" % (e.args[0], e.args[1])
                   sys.exit(1)
                 finally:
@@ -62,6 +64,7 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
+                print market, percent_grow
 
                 #Candle analisys
                 lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
@@ -74,6 +77,7 @@ def ME():
 
                 daylastcandle = get_candles(market, 'day')['result'][-1:]
                 daycurrentopen = float(daylastcandle[0]['O'])
+                #print lastcandle
 
                 fivemin='NONE'
                 thirtymin='NONE'
@@ -104,13 +108,13 @@ def ME():
                 #print market, last, hour, thirtymin, fivemin
 
                 try:
-                    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute(
                         "update markets set percent_chg= %s, volume=%s, candles=%s where enabled=1 and market = %s",
                         (percent_chg, volume, ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin), market))
                     db.commit()
-                except MySQLdb.Error, e:
+                except pymysql.Error as e:
                     print "Error %d: %s" % (e.args[0], e.args[1])
                     sys.exit(1)
                 finally:
@@ -130,11 +134,11 @@ def ME():
                             print market, "We are disabling this currency"
                             try:
                                 printed = ('    We are disabling this currency  ' + market)
-                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
-                            except MySQLdb.Error, e:
+                            except pymysql.Error as e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
                                 sys.exit(1)
                             finally:
@@ -144,11 +148,11 @@ def ME():
                             print market, "We are disabling this currency"
                             try:
                                 printed = ('    We are disabling this currency because of HA  ' + market)
-                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
-                            except MySQLdb.Error, e:
+                            except pymysql.Error as e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
                                 sys.exit(1)
                             finally:
@@ -158,11 +162,11 @@ def ME():
                     if spread<0.5 and (percent_grow==1 or percent_grow==0) and (market_count() <=max_markets) and (HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN"):
                         print market, "We need to enable those currencies"
                         try:
-                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                             db.commit()
-                        except MySQLdb.Error, e:
+                        except pymysql.Error as e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
                             sys.exit(1)
                         finally:
@@ -180,12 +184,12 @@ def ME():
                             print market, "Prod We are disabling this currency"
                             try:
                                 printed = ('    We are disabling this currency  ' + market)
-                                db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute(
                                     'update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
-                            except MySQLdb.Error, e:
+                            except pymysql.Error as e:
                                 print "Error %d: %s" % (e.args[0], e.args[1])
                                 sys.exit(1)
                             finally:
@@ -194,11 +198,11 @@ def ME():
                     if spread < 0.5 and (percent_grow == 1 or percent_grow == 0) and market_count() <= max_markets:
                         print market, "Prod We need to enable those currencies"
                         try:
-                            db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+                            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                             db.commit()
-                        except MySQLdb.Error, e:
+                        except pymysql.Error as e:
                             print "Error %d: %s" % (e.args[0], e.args[1])
                             sys.exit(1)
                         finally:
@@ -209,7 +213,7 @@ def ME():
             continue
 
 def open_buy_sql(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT active FROM orders WHERE active =1 and market = '%s'" % market)
@@ -224,7 +228,7 @@ def open_buy_sql(marketname):
 
 
 def available_market_list(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE  enabled=1 and market = '%s'" % market)
@@ -237,7 +241,7 @@ def available_market_list(marketname):
 
 
 def open_buy(marketname):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT active FROM orders WHERE active =2 and market = '%s'" % market)
@@ -250,7 +254,7 @@ def open_buy(marketname):
 
 
 def get_balance_from_market(market_type):
-    markets_res = c1.get_markets().json()
+    markets_res = c1.get_markets()
     markets = markets_res['result']
     #print markets
     for market in markets:
@@ -268,7 +272,7 @@ def get_balance(currency):
 
 
 def parameters():
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM parameters")
     r = cursor.fetchall()
@@ -281,7 +285,7 @@ def parameters():
 
 
 def market_count():
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     #market=marketname
     cursor.execute("SELECT COUNT(*) FROM markets where enabled=1 and active=1")
@@ -294,7 +298,7 @@ def market_count():
 
 
 def status_orders(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     cursor.execute("SELECT * FROM orders WHERE active = 1 and market = '%s'" % market)
@@ -307,7 +311,7 @@ def status_orders(marketname, value):
 
 
 def has_open_order(market, order_type):
-    orders_res = c1.get_open_orders(market).json()
+    orders_res = c1.get_open_orders(market)
     orders = orders_res['result']
     if orders is None or len(orders) == 0:
         return False
@@ -320,7 +324,7 @@ def has_open_order(market, order_type):
 
 
 def percent(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market=marketname
     min_percent_chg = float(parameters()[7])
@@ -338,7 +342,7 @@ def percent(marketname, value):
 
 
 def heikin_ashi(marketname, value):
-    db = MySQLdb.connect("database-service", "cryptouser", "123456", "cryptodb")
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
     market = marketname
     cursor.execute("SELECT * FROM markets WHERE enabled=1 and market = '%s'" % market)
@@ -354,6 +358,7 @@ def heikin_ashi(marketname, value):
 def get_candles(market, tick_interval):
     url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
     return signed_request(url)
+
 
 
 def signed_request(url):
