@@ -51,12 +51,13 @@ def neural():
         try:
           market=(market[0])
           name=market_full_name(market, 1)
-          previous_predicted_price = market_full_name(market, 11)
+          previous_predicted_price = market_full_name(market, 75)
+#          print (previous_predicted_price)
           crypto=market[4:]
           market1 = crypto+"-USD"
           ticker= market1
           print ("Now lets test the model")
-          print (ticker, futuredate)
+#          print (ticker, futuredate)
           ticker_data_filename = os.path.join("/root/PycharmProjects/cryptobot/data", f"{ticker}_{date_now}.csv")
           print ("model name to save")
           model_name = f"{date_now}_{ticker}-{LOSS}-{CELL.__name__}-seq-{N_STEPS}-step-{LOOKUP_STEP}-layers-{N_LAYERS}-units-{UNITS}"
