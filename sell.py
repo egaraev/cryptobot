@@ -57,12 +57,14 @@ def tick():
                     currentopen = float("{0:.4f}".format(lastcandle[0]['O']))
                     currenthigh = float("{0:.4f}".format(lastcandle[0]['H']))
                     previouscandle = get_candles(market, 'thirtymin')['result'][-2:]
+                    prevhigh = float("{0:.4f}".format(previouscandle[0]['H']))
                     prevclose = float("{0:.4f}".format(previouscandle[0]['C']))
                     lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
                     currentlow5 = float("{0:.4f}".format(lastcandle5[0]['L']))
                     currentopen5 = float("{0:.4f}".format(lastcandle5[0]['O']))
                     currenthigh5 = float("{0:.4f}".format(lastcandle5[0]['H']))
                     previouscandle5 = get_candles(market, 'fivemin')['result'][-2:]
+                    prevhigh5 = float("{0:.4f}".format(previouscandle5[0]['H']))
                     prevclose5 = float("{0:.4f}".format(previouscandle5[0]['C']))
                     hourlastcandle = get_candles(market, 'hour')['result'][-1:]
                     hourcurrentopen = float("{0:.4f}".format(hourlastcandle[0]['O']))
@@ -283,7 +285,7 @@ def tick():
                                 #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
 
 
-                            if procent_serf > 0  and (((currentopen == currentlow and prevclose <= currentopen and currentopen < currenthigh and last > prevclose and thirtymin=='U') or (currentopen == currentlow and currentopen < currenthigh and last > prevclose and thirtymin=='U') )):  #and slow_market==1
+                            if procent_serf > 0  and (((currentopen == currentlow and prevhigh <= currentopen and currentopen < currenthigh and last > prevhigh and thirtymin=='U') or (currentopen == currentlow and currentopen < currenthigh and last > prevhigh and thirtymin=='U') )):  #and slow_market==1
 
                                     print ("We have GREEN candle for " + market + " and it is better to wait, before sell")
                                     try:
@@ -305,7 +307,7 @@ def tick():
 
 
 
-                            elif procent_serf > 0  and (((currentopen5 == currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin=='U') or (currentopen5 == currentlow5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin=='U'))): #and normal_candles==1
+                            elif procent_serf > 0  and (((currentopen5 == currentlow5 and prevhigh5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevhigh5 and fivemin=='U') or (currentopen5 == currentlow5 and currentopen5 < currenthigh5 and last > prevhigh5 and fivemin=='U'))): #and normal_candles==1
                                     print ("We have good trend for " + market)
 
                                     try:
