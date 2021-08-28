@@ -68,11 +68,13 @@ echo "<table border='1'>
 <th>AI Predicted chart for 1 month</th>
 <th>AI forecast directtion</th>
 <th>Heikin_ashi direction chart</th>
+<th>klinger oscillator chart</th>
 <th>Heikin_ashi direction</th>
 <th>Trend</th>
 <th>Candle pattern</th>
 <th>Candle score</th>
 <th>Hour candle</th>
+<th>MACD signal</th>
 <th>News</th>
 <th>History</th>
 </tr>";
@@ -89,11 +91,13 @@ echo "<td><b>" . $row['predicted_price'] . "</b></td>";
 echo "<td><a href='images/". $row['market'] ."_result.png'><img src='images/". $row['market'] ."_result.png' width='250px' height='250px'></td>";
 echo "<td><b>" . $row['ai_direction'] . "</b></td>";
 echo "<td><a href='images/". $row['market'] ."_hachart.png'><img src='images/". $row['market'] ."_hachart.png' width='280px' height='250px'></td>";
+echo "<td><a href='images/". $row['market'] ."_kov_results.png'><img src='images/". $row['market'] ."_kov_results.png' width='280px' height='250px'></td>";
 echo "<td>" . $row['ha_day'] . "</td>";
 echo "<td>" . $row['trend'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";
 echo "<td>" . $row['candle_score'] . "</td>";
 echo "<td>" . $row['hour_candle_direction'] . "</td>";
+echo "<td>" . $row['macd_signal'] . "</td>";
 echo "<td><pre>" . $row['news'] . "</pre></td>";
 echo "<td><pre><p><a href='#". $row['market'] ."' rel='modal:open'>Open details</a></p></pre></td>";
 echo "</tr>";

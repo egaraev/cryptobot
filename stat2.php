@@ -25,18 +25,21 @@ $result = mysqli_query($con,"SELECT * FROM markets where active = 1");
 echo "<table border='1'>
 <tr>
 <th>Crypto name</th>
+<th>MACD indicator</th>
+<th>Candle Patterns Chart</th>
 <th>Historical Chart for news, tweets, indicators</th>
 <th>AI Historical Chart for machine learning predictions</th>
-<th>Candle Patterns Chart</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
 echo "<td>" . $row['market'] . "</td>";
+echo "<td><a href='images/". $row['market'] ."_macd_results.png'><img src='images/". $row['market'] ."_macd_results.png' width='1000px' height='700px'></td>";
+echo "<td><a href='images/". $row['market'] ."_candlesticks.png'><img src='images/". $row['market'] ."_candlesticks.png' width='1000px' height='700px'></td>";
 echo "<td><a href='images/". $row['market'] ."_history.png'><img src='images/". $row['market'] ."_history.png' width='1000px' height='700px'></td>";
 echo "<td><a href='images/". $row['market'] ."_ai_history.png'><img src='images/". $row['market'] ."_ai_history.png' width='1000px' height='700px'></td>";
-echo "<td><a href='images/". $row['market'] ."_candlesticks.png'><img src='images/". $row['market'] ."_candlesticks.png' width='1000px' height='700px'></td>";
+
 echo "</tr>";
 }
 echo "</table>";
