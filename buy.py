@@ -115,8 +115,10 @@ def tick():
                     candle_pattern=heikin_ashi(market,69)
                     previous_date = str(heikin_ashi(market,46))
                     trend = str(heikin_ashi(market,78))					
-                    macd = str(heikin_ashi(market,79))			
-
+                    macd = str(heikin_ashi(market,79))
+                    kov = str(heikin_ashi(market,80))					
+                    obv = str(heikin_ashi(market,81))
+					
                     fivemin = 'NONE'
                     thirtymin='NONE'
                     hour='NONE'
@@ -243,7 +245,7 @@ def tick():
                                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                    cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score)+ ' Candle_pattern: ' + str(candle_pattern)+ ' News_score: ' + str(news_score)+ ' H_candle_dir: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd) ))
+                                    cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score)+ ' Candle_pattern: ' + str(candle_pattern)+ ' News_score: ' + str(news_score)+ ' H_candle_dir: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd) +' KOV: ' +str(kov)  +' OBV: ' +str(obv)))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",(serf, market))
                                     db.commit()
                                 except pymysql.Error as e:

@@ -8,7 +8,7 @@ import numpy as np
 from math import floor
 import pymysql
 import matplotlib.pyplot as plt
-from tti.indicators import KlingerOscillator
+from tti.indicators import OnBalanceVolume
 currtime = int(round(time.time()))
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
@@ -16,14 +16,14 @@ cursor.execute("SELECT market FROM markets WHERE  enabled=1")
 markets=cursor.fetchall()
 
 def main():
-    print('Starting Klinger Oscillator module')
+    print('Starting OnBalance volume module')
 
-    kov_analyze()
+    obv_analyze()
 	
 	
 
 
-def kov_analyze():
+def obv_analyze():
     currtime = int(round(time.time()))
     now = datetime.datetime.now()
     currenttime = now.strftime("%Y-%m-%d %H:%M")
@@ -38,27 +38,27 @@ def kov_analyze():
           df = df.iloc[: , :-1]
           df = df[-200:]
           #print (df)
-          kov = KlingerOscillator(input_data=df)
-          kov_signal = kov.getTiSignal()
-          print (kov_signal)
-          kov.getTiGraph().savefig('/root/PycharmProjects/cryptobot/images/kov_results.png')
-          newfilename=("{}_kov_results.png".format(market))
-          my_path = "/root/PycharmProjects/cryptobot/images/kov_results.png"
+          obv = OnBalanceVolume(input_data=df)
+          obv_signal = obv.getTiSignal()
+          print (obv_signal)
+          obv.getTiGraph().savefig('/root/PycharmProjects/cryptobot/images/obv_results.png')
+          newfilename=("{}_obv_results.png".format(market))
+          my_path = "/root/PycharmProjects/cryptobot/images/obv_results.png"
           new_name = os.path.join(os.path.dirname(my_path), newfilename)
           os.rename(my_path, new_name)
           print (new_name)
-          if kov_signal == ('hold', 0):
-             print ("KOV is 0, nothing to do")
+          if obv_signal == ('hold', 0):
+             print ("obv is 0, nothing to do")
           else:
-             if kov_signal == ('buy', -1):
+             if obv_signal == ('buy', -1):
                 signal = "Buy"
              else:
                 signal = "Sell"
              try:
                  db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                  cursor = db.cursor()
-                 cursor.execute("update markets set kov_signal='%s'  where market='%s'" % (signal, market))
-                 cursor.execute("update history set kov_signal='%s'  where market='%s' and date='%s'" % (signal, market, currentdate))
+                 cursor.execute("update markets set obv_signal='%s'  where market='%s'" % (signal, market))
+                 cursor.execute("update history set obv_signal='%s'  where market='%s' and date='%s'" % (signal, market, currentdate))
                  db.commit()
              except pymysql.Error as e:
                  print ("Error %d: %s" % (e.args[0], e.args[1]))
