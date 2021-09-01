@@ -289,6 +289,7 @@ def tick():
                     cursor = db.cursor()
                     cursor.execute("update markets set candle_score='%s'  where market='%s'" % (sum_score, market))
                     cursor.execute("update history set candle_score='%s'  where market='%s' and date='%s'" % (sum_score, market, currentdate))
+                    cursor.execute("update history set candle_pattern='%s'  where market='%s' and date='%s'" % (last_pattern, market, currentdate))
                     db.commit()
                 except pymysql.Error as e:
                     print ("Error %d: %s" % (e.args[0], e.args[1]))
@@ -332,7 +333,8 @@ def tick():
                   try:
                      db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                      cursor = db.cursor()
-                     cursor.execute("update markets set candle_pattern='%s', candle_time='%s'  where market='%s'" % (last_pattern, currtime, market))			  
+                     cursor.execute("update markets set candle_pattern='%s', candle_time='%s'  where market='%s'" % (last_pattern, currtime, market))
+					 
                      db.commit()
                   except pymysql.Error as e:
                      print ("Error %d: %s" % (e.args[0], e.args[1]))

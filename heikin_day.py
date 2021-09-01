@@ -475,6 +475,7 @@ def HA():
                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
                     cursor.execute("update markets set ha_day=%s, ha_time_second=%s  where market = %s",(HAD_trend, currtime, market))
+                    cursor.execute("update history set ha_day='%s'  where market='%s' and date='%s'" % (HAD_trend, market, currentdate))
                     db.commit()
                 except pymysql.Error as e:
                     print ("Error %d: %s" % (e.args[0], e.args[1]))

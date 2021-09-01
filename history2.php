@@ -26,6 +26,8 @@ echo "<table border='1'>
 <th>MACD signal</th>
 <th>KOV signal</th>
 <th>OBV signal</th>
+<th>HeikinAshi trend</th>
+<th>Candle pattern</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -44,6 +46,9 @@ echo "<td>" . $row['news_score'] . "</td>";
 echo "<td>" . $row['macd_signal'] . "</td>";
 echo "<td>" . $row['kov_signal'] . "</td>";
 echo "<td>" . $row['obv_signal'] . "</td>";
+echo "<td>" . $row['ha_day'] . "</td>";
+echo "<td>" . $row['candle_pattern'] . "</td>";
+
 echo "</tr>";
 }
 echo "</table>";

@@ -174,7 +174,7 @@ def tick():
 
                         cursor.execute("update orders set serf = %s where market = %s and active =1" , (serf, market))
                         
-                        if percent_serf_min(market)<(-5):
+                        if percent_serf_min(market)<(-7.5):
                             cursor.execute("update orders set danger_order = %s where market = %s and active =1" , (1, market))
                         if percent_serf_max(market)>2.5:
                             cursor.execute("update orders set danger_order = %s where market = %s and active =1" , (0, market))
@@ -260,7 +260,7 @@ def tick():
                             
 
                             print "Check reason 2"
-                            if ((2.0>procent_serf>=0.7 and danger_order==1 and max_percent_sql - procent_serf >= 0.3) or  (max_percent_sql - procent_serf >= 0.8 and 5>=max_percent_sql >= 2 and candle_direction=='D' )   or (max_percent_sql - procent_serf >= 1.5 and 9>=max_percent_sql >= 5 and candle_direction=='D' and hour_candle_direction=='D')):
+                            if ((3.0>procent_serf>=1.3 and danger_order==1 and max_percent_sql - procent_serf >= 0.3) or  (max_percent_sql - procent_serf >= 0.8 and 5>=max_percent_sql >= 3 and candle_direction=='D' )   or (max_percent_sql - procent_serf >= 1.5 and 9>=max_percent_sql >= 5 and candle_direction=='D' and hour_candle_direction=='D')):
                                 
                                 print "Reason 2 is OK"
                                 
