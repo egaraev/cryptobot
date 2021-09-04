@@ -14,6 +14,9 @@ currenttime = now.strftime("%Y-%m-%d %H:%M")
 c1 = Client(api_key=config.key, api_secret=config.secret)
 c=Client(api_key="", api_secret="")
 currtime = int(time.time())
+currentdate = now.strftime("%Y-%m-%d")
+
+
 
 def main():
     print('Starting enabling market module')
@@ -45,12 +48,17 @@ def ME():
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
-                #print market, percent_chg
+                prev_volume = float(previous_volume(market))
+                print prev_volume				
+                volume_chg = float(((volume / prev_volume)-1)*100)
+                print market,  volume_chg
 
                 try:
                   db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                   cursor = db.cursor()
                   cursor.execute("update markets set spread= %s where market =%s", (spread, market))
+                  cursor.execute("update history set volume_chg= '%s' where market=%s and date=%s", (volume_chg, market, currentdate))
+                  cursor.execute("update history set volume= '%s' where market=%s and date=%s", (volume, market, currentdate))
                   db.commit()
                 except pymysql.Error as e:
                   print "Error %d: %s" % (e.args[0], e.args[1])
@@ -64,7 +72,7 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
-                print market, percent_grow
+                #print market, percent_grow
 
                 #Candle analisys
                 lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
@@ -119,7 +127,7 @@ def ME():
                     sys.exit(1)
                 finally:
                     db.close()
-                print market, bought_quantity_sql, HAD_trend, spread, market_count()
+                #print market, bought_quantity_sql, HAD_trend, spread, market_count()
 
 
 
@@ -329,9 +337,6 @@ def percent(marketname, value):
     market=marketname
     min_percent_chg = float(parameters()[7])
     order_devider = parameters()[6]
-    #cursor.execute("SELECT * FROM markets where percent_chg>(SELECT AVG(percent_chg)/1.5 FROM markets where percent_chg>'%s') and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC  limit 10" % min_percent_chg)
-#    cursor.execute(
-#        "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN' and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     cursor.execute(
         "SELECT * FROM markets where percent_chg>'%s' and ha_direction_daily!='DOWN' and ha_direction_daily!='Revers-DOWN'  and enabled=1 ORDER BY volume DESC" % min_percent_chg)
     r = cursor.fetchall()
@@ -340,6 +345,18 @@ def percent(marketname, value):
             return row[value]
     return 0
 
+
+
+def previous_volume(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute(
+        "SELECT volume FROM history where market='%s' ORDER BY id DESC LIMIT 1, 1" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return (row[0])
+    return 0
 
 def heikin_ashi(marketname, value):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")

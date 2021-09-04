@@ -24,10 +24,10 @@ echo "<table border='1'>
 <th>Twitter ratio</th>
 <th>News score</th>
 <th>MACD signal</th>
-<th>KOV signal</th>
 <th>OBV signal</th>
 <th>HeikinAshi trend</th>
 <th>Candle pattern</th>
+<th>Volume change</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -44,10 +44,10 @@ $tweets_ratio = number_format($tweet_ratio, 2, '.', '');
 echo "<td>" . $tweets_ratio . "</td>";        
 echo "<td>" . $row['news_score'] . "</td>";
 echo "<td>" . $row['macd_signal'] . "</td>";
-echo "<td>" . $row['kov_signal'] . "</td>";
 echo "<td>" . $row['obv_signal'] . "</td>";
 echo "<td>" . $row['ha_day'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";
+echo "<td>" . $row['volume_chg'] . "</td>";
 
 echo "</tr>";
 }
