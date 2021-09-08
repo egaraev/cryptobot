@@ -49,9 +49,9 @@ def ME():
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
                 prev_volume = float(previous_volume(market))
-                print prev_volume				
+                #print prev_volume				
                 volume_chg = float(((volume / prev_volume)-1)*100)
-                print market,  volume_chg
+                #print market,  volume_chg
 
                 try:
                   db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -73,62 +73,6 @@ def ME():
                 else:
                     percent_grow=0
                 #print market, percent_grow
-
-                #Candle analisys
-                lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                currentopen = float(lastcandle[0]['O'])
-
-                lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
-                currentopen5 = float(lastcandle5[0]['O'])
-                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hourcurrentopen = float(hourlastcandle[0]['O'])
-
-                daylastcandle = get_candles(market, 'day')['result'][-1:]
-                daycurrentopen = float(daylastcandle[0]['O'])
-                #print lastcandle
-
-                fivemin='NONE'
-                thirtymin='NONE'
-                hour='NONE'
-                day='NONE'
-
-                if last>currentopen5:
-                    fivemin='U'
-                else:
-                    fivemin='D'
-
-                if last>currentopen:
-                    thirtymin='U'
-                else:
-                    thirtymin='D'
-
-                if last>hourcurrentopen:
-                    hour='U'
-                else:
-                    hour='D'
-
-                if last>daycurrentopen:
-                    day='U'
-                else:
-                    day='D'
-
-
-                #print market, last, hour, thirtymin, fivemin
-
-                try:
-                    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
-                    cursor = db.cursor()
-                    cursor.execute(
-                        "update markets set percent_chg= %s, volume=%s, candles=%s where enabled=1 and market = %s",
-                        (percent_chg, volume, ' HC: ' + str(hour) + ' 30mC: ' + str(thirtymin) + ' 5mC: ' + str(fivemin), market))
-                    db.commit()
-                except pymysql.Error as e:
-                    print "Error %d: %s" % (e.args[0], e.args[1])
-                    sys.exit(1)
-                finally:
-                    db.close()
-                #print market, bought_quantity_sql, HAD_trend, spread, market_count()
-
 
 
 
@@ -215,6 +159,70 @@ def ME():
                             sys.exit(1)
                         finally:
                             db.close()
+
+
+
+                #Candle analisys	
+                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
+                hourcurentopen = float(hourlastcandle[0]['O'])	
+                hourpreviouscandle = get_candles(market, 'hour')['result'][-2:]				
+                hourprevopen=(hourpreviouscandle[0]['O'])				
+                hourprevclose=float(hourpreviouscandle[0]['C'])	
+                hourprevlow=float(hourpreviouscandle[0]['L'])	
+                hourprevhigh=float(hourpreviouscandle[0]['H'])
+                daylastcandle = get_candles(market, 'day')['result'][-1:]
+                daycurrentlow = float(daylastcandle[0]['L'])
+                daycurrenthigh = float(daylastcandle[0]['H'])
+                daycurrentopen = float(daylastcandle[0]['O'])
+                daycurrentclose = float(daylastcandle[0]['C'])
+                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
+                dayprevlow = float(daypreviouscandle[0]['L'])
+                dayprevhigh = float(daypreviouscandle[0]['H'])
+                dayprevopen = float(daypreviouscandle[0]['O'])
+                dayprevclose = float(daypreviouscandle[0]['C'])
+                day_candle = 'NONE'
+                prevhour_candle='NONE'
+                hourcandle_dir='NONE'
+                candle_dir='NONE'
+                if hourprevclose > hourprevopen:
+                   prevhour_candle = 'U'
+                else:
+                   prevhour_candle = 'D'		  
+		  
+                if last > hourcurentopen and last > hourprevclose and prevhour_candle=='U':
+                   hourcandle_dir = 'U'
+                else:
+                   hourcandle_dir = 'D'
+
+                if last > daycurrentopen:
+                   day_candle = 'U'
+                else:
+                   day_candle = 'D'
+
+                if dayprevclose > dayprevopen:
+                   prevday_candle = 'U'
+                else:
+                   prevday_candle = 'D'
+
+                if last > daycurrentopen and last > dayprevclose and prevday_candle=='U':
+                   candle_dir = 'U'
+                else:
+                   candle_dir = 'D'
+
+                try:
+                    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                    cursor = db.cursor()
+                    cursor.execute(
+                        "update markets set percent_chg= %s, volume=%s, candle_direction=%s, hour_candle_direction=%s, daycurrentopen=%s, hourcurrentopen=%s where enabled=1 and market = %s",
+                        (percent_chg, volume, candle_dir, hourcandle_dir, daycurrentopen, hourcurentopen, market))
+                    cursor.execute("update history set day_direction= %s where market=%s and date=%s", (candle_dir, market, currentdate))
+                    db.commit()
+                except pymysql.Error as e:
+                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    sys.exit(1)
+                finally:
+                    db.close()
+
 
 
         except:
@@ -372,9 +380,16 @@ def heikin_ashi(marketname, value):
 
 
 
+# def get_candles(market, tick_interval):
+    # url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
+    # return signed_request(url)
+
+
 def get_candles(market, tick_interval):
-    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
-    return signed_request(url)
+    url = ('https://bittrex.com/api/v2.0/pub/market/GetTicks?marketName=' + market +'&tickInterval=' + str(tick_interval))
+    r = requests.get(url)
+    requests.session().close()
+    return r.json()
 
 
 

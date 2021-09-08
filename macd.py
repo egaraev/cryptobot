@@ -93,7 +93,7 @@ def macd_analyze():
           frames = [close_price, macd, signal, macd_signal, position]
           strategy = pd.concat(frames, join = 'inner', axis = 1)
 
-          print (strategy)
+          #print (strategy)
           macd_signal= strategy.iloc[-1]
           macd_signal = int(macd_signal['macd_signal'])
           if macd_signal == 0:

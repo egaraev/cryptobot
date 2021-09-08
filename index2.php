@@ -74,6 +74,7 @@ echo "<table border='1'>
 <th>Candle pattern</th>
 <th>Candle score</th>
 <th>Hour candle</th>
+<th>Day candle</th>
 <th>MACD signal</th>
 <th>OBV signal</th>
 <th>News</th>
@@ -99,6 +100,7 @@ echo "<td>" . $row['trend'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";
 echo "<td>" . $row['candle_score'] . "</td>";
 echo "<td>" . $row['hour_candle_direction'] . "</td>";
+echo "<td>" . $row['day_direction'] . "</td>";
 echo "<td>" . $row['macd_signal'] . "</td>";
 //echo "<td>" . $row['kov_signal'] . "</td>";
 echo "<td>" . $row['obv_signal'] . "</td>";

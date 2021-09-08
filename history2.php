@@ -28,6 +28,7 @@ echo "<table border='1'>
 <th>HeikinAshi trend</th>
 <th>Candle pattern</th>
 <th>Volume change</th>
+<th>Day direction</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result))
@@ -48,7 +49,7 @@ echo "<td>" . $row['obv_signal'] . "</td>";
 echo "<td>" . $row['ha_day'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";
 echo "<td>" . $row['volume_chg'] . "</td>";
-
+echo "<td>" . $row['day_direction'] . "</td>";
 echo "</tr>";
 }
 echo "</table>";

@@ -34,12 +34,14 @@ def tick():
     #BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
     currtime = int(time.time())
     debug_mode=parameters()[10]
-    max_orders = parameters()[5]
-    current_order_count = order_count()
+    max_orders = int(parameters()[5])
+    current_order_count = int(order_count())
     bot_mode=parameters()[23]
     bot_token= parameters()[30]
     bot_chatID= parameters()[31]
     #print (bot_token, bot_chatID)
+    now = datetime.datetime.now()
+    currentdate = now.strftime("%Y-%m-%d")
 
     print "Global buy parameters configured, moving to market loop"
     dayofweek=weekday()
@@ -51,29 +53,6 @@ def tick():
                 if available_market_list(summary['MarketName']):
                     market = summary['MarketName']
                     print (market)
-                    #Candle analisys
-                    lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                    currentopen = float(lastcandle[0]['O'])
-                    currenthigh = float(lastcandle[0]['H'])
-                    hourpreviouscandle4 = get_candles(market, 'hour')['result'][-5:]
-                    hourprevopen4 = float(hourpreviouscandle4[0]['O'])
-                    fivehourcurrentopen = hourprevopen4
-                    hourpreviouscandle9 = get_candles(market, 'hour')['result'][-10:]
-                    hourprevopen9 = float(hourpreviouscandle9[0]['O'])
-                    hourpreviouscandle5 = get_candles(market, 'hour')['result'][-6:]
-                    hourprevclose5 = float(hourpreviouscandle5[0]['C'])
-                    fivehourprevopen = hourprevopen9
-                    fivehourprevclose = hourprevclose5
-                    lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
-                    currentlow5 = float(lastcandle5[0]['L'])
-                    currentopen5 = float(lastcandle5[0]['O'])
-                    currenthigh5 = float(lastcandle5[0]['H'])
-                    hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                    hourcurrentopen = float(hourlastcandle[0]['O'])
-                    hourcurrenthigh = float(hourlastcandle[0]['H'])
-                    daylastcandle = get_candles(market, 'day')['result'][-1:]
-                    daycurrentopen = float(daylastcandle[0]['O'])
-                    daycurrenthigh = float(daylastcandle[0]['H'])
                     timestamp = int(time.time())
                     day_close = summary['PrevDay']   #Getting day of closing order
                 #Current prices
@@ -119,46 +98,21 @@ def tick():
                     kov = str(heikin_ashi(market,80))					
                     obv = str(heikin_ashi(market,81))
 					
-                    fivemin = 'NONE'
-                    thirtymin='NONE'
-                    hour='NONE'
-                    candles_status='OK'
+
+                    candles_status='NONE'
                     #print (percent_sql)
 
-
-                    if last>currentopen5:
-                        fivemin='U'
-                    elif last==currenthigh5:
-                        fivemin='H'
-                    else:
-                        fivemin='D'
-
-                    if last>currentopen:
-                        thirtymin='U'
-                    elif last==currenthigh:
-                        thirtymin='H'
-                    else:
-                        thirtymin='D'
-
-                    if last>hourcurrentopen:
-                        hour='U'
-                    elif last==hourcurrenthigh:
-                        hour='H'
-                    else:
-                        hour='D'
-                        
-                    if last>daycurrentopen:
-                        day='U'
-                    elif last==daycurrenthigh:
-                        day='H'
-                    else:
-                        day='D'                        
+                 
                     
 
-                    if fivemin=='D' and thirtymin=='D' and fivemin=='D':
+                    if  candle_direction=='U' and hour_candle_direction=='U':
+                        candles_status='OK'
+                    elif candle_direction=='D' and hour_candle_direction=='D':
                         candles_status='DOWN'
                     else:
-                        candles_status='OK'
+                        candles_status='STABLE'
+                    
+                    #print current_order_count, max_orders
                         
   
                     
@@ -185,7 +139,7 @@ def tick():
                         #cursor.execute("update orders set serf_usd = %s where market = %s and active =1", (serf*BTC_price, market))
                         cursor.execute(
                             "update markets set current_price = %s  where market = %s and active =1",
-                            (newbid, market))
+                            (newbid,  market))
                         db.commit()
                     except pymysql.Error as e:
                         print "Error %d: %s" % (e.args[0], e.args[1])
@@ -202,7 +156,7 @@ def tick():
     #FIRST ITERATION - BUY
                     #spread=((ask/bid)-1)*100
                     print "Starting buying mechanizm for " , market
-                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14 and news_score>=0.9 and candle_direction=="U" and hour_candle_direction=="U":
+                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14 and news_score>=0.9 and candles_status=='OK' and macd=="buy" and current_order_count <= max_orders:
                     #if ((stop_bot == 0) and stop_bot_force == 0):
                             # If we have some currency on the balance
                             if bought_quantity_sql !=0.0:
@@ -245,7 +199,7 @@ def tick():
                                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                    cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score)+ ' Candle_pattern: ' + str(candle_pattern)+ ' News_score: ' + str(news_score)+ ' H_candle_dir: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd)  +' OBV: ' +str(obv)))
+                                    cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Day_candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score)+ ' Candle_pattern: ' + str(candle_pattern)+ ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd)  +' OBV: ' +str(obv)))
                                     cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",(serf, market))
                                     db.commit()
                                 except pymysql.Error as e:
@@ -978,9 +932,15 @@ def order_uuid(market):
 
 
 
+# def get_candles(market, tick_interval):
+    # url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
+    # return signed_request(url)
+
 def get_candles(market, tick_interval):
-    url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
-    return signed_request(url)
+    url = ('https://bittrex.com/api/v2.0/pub/market/GetTicks?marketName=' + market +'&tickInterval=' + str(tick_interval))
+    r = requests.get(url)
+    requests.session().close()
+    return r.json()
 
 
 def signed_request(url):

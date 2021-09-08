@@ -45,7 +45,7 @@ def SL():
           df['date_index'] = pd.to_datetime(df['date_index'])
           df= df.set_index('date_index')
           df=df.sort_index()
-          print (df)
+          #print (df)
           
 
           rc('mathtext', default='regular')
