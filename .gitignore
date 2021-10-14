@@ -6,4 +6,5 @@ results
 images
 *pyc
 *.idea*
-
+logs
+csvc
