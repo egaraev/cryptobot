@@ -22,7 +22,7 @@ def SL():
         try:
           market=(market[0])
           print (date_exist(market, currenttime))
-#          print (market, currenttime)
+          print (market, currenttime)
           if date_exist(market, currenttime) != 1:
              try:
                  db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")

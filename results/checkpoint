@@ -1,2 +1,2 @@
-model_checkpoint_path: "2021-08-22_ADA-USD-mse-LSTM-seq-100-step-30-layers-3-units-256"
-all_model_checkpoint_paths: "2021-08-22_ADA-USD-mse-LSTM-seq-100-step-30-layers-3-units-256"
+model_checkpoint_path: "2021-09-22_ADA-USD-mse-LSTM-seq-100-step-30-layers-3-units-256"
+all_model_checkpoint_paths: "2021-09-22_ADA-USD-mse-LSTM-seq-100-step-30-layers-3-units-256"

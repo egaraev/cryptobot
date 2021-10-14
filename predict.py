@@ -34,7 +34,7 @@ futuredate = date.today() + timedelta(days=30)
 ###
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT market FROM markets WHERE enabled=1")
+cursor.execute("SELECT market FROM markets WHERE enabled=1 and ai_active=1")
 markets=cursor.fetchall()
 #date_now = time.strftime("%Y-%m-%d")
 from PIL import Image, ExifTags

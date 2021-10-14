@@ -37,6 +37,7 @@ def ME():
         try:
             if available_market_list(summary['MarketName']):
                 market = summary['MarketName']
+
                 day_close = summary['PrevDay']  # Getting day of closing order
                 volume = int(summary['BaseVolume'])
                 last = float(summary['Last'])  #last price
@@ -48,10 +49,9 @@ def ME():
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
-                prev_volume = float(previous_volume(market))
-                #print prev_volume				
+                prev_volume = float(previous_volume(market))		
                 volume_chg = float(((volume / prev_volume)-1)*100)
-                #print market,  volume_chg
+
 
                 try:
                   db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -72,7 +72,7 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
-                #print market, percent_grow
+                print market, percent_grow
 
 
 
@@ -204,11 +204,12 @@ def ME():
                 else:
                    prevday_candle = 'D'
 
-                if last > daycurrentopen and last > dayprevclose and prevday_candle=='U':
+                if last > daycurrentopen and last > dayprevclose: # and prevday_candle=='U':
                    candle_dir = 'U'
                 else:
                    candle_dir = 'D'
 
+                print market, hourcandle_dir, candle_dir
                 try:
                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()

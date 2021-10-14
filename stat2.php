@@ -19,7 +19,7 @@ table, th, td {
 <br><b>Stats</b><br>";
 
 
-$result = mysqli_query($con,"SELECT * FROM markets where active = 1");
+$result = mysqli_query($con,"SELECT * FROM markets where enabled = 1");
 
 
 echo "<table border='1'>

@@ -94,6 +94,13 @@ def macd_analyze():
           strategy = pd.concat(frames, join = 'inner', axis = 1)
 
           #print (strategy)
+          row_ix = strategy.shape[0]-strategy.ne(0).values[::-1].argmax(0)-1
+          first_max = strategy.values[row_ix, range(strategy.shape[1])]
+          out = pd.DataFrame([first_max], columns=strategy.columns)
+          #print (out)
+          last_macd_signal = int(out['macd_signal'])
+          print (last_macd_signal)
+		  
           macd_signal= strategy.iloc[-1]
           macd_signal = int(macd_signal['macd_signal'])
           if macd_signal == 0:
@@ -114,6 +121,25 @@ def macd_analyze():
                  sys.exit(1)
              finally:
                  db.close()
+
+
+
+          if last_macd_signal == 1:
+                signal = "Buy"
+          else:
+                signal = "Sell"
+          try:
+                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                 cursor = db.cursor()
+                 cursor.execute("update markets set macd_signal='%s'  where market='%s'" % (signal, market))
+                 db.commit()
+          except pymysql.Error as e:
+                 print ("Error %d: %s" % (e.args[0], e.args[1]))
+                 sys.exit(1)
+          finally:
+                 db.close()
+
+
 		  
 
 

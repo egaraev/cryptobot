@@ -112,7 +112,7 @@ def tick():
                     else:
                         candles_status='STABLE'
                     
-                    #print current_order_count, max_orders
+                    print market, candles_status, HAD_trend
                         
   
                     
@@ -156,7 +156,8 @@ def tick():
     #FIRST ITERATION - BUY
                     #spread=((ask/bid)-1)*100
                     print "Starting buying mechanizm for " , market
-                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14 and news_score>=0.9 and candles_status=='OK' and macd=="buy" and current_order_count <= max_orders:
+                    #print tweet_positive, tweet_negative, HAD_trend, candle_score, tweet_polarity, candles_status, macd, current_order_count, max_orders
+                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14  and candles_status=='OK' and macd=="Buy" and current_order_count <= max_orders and news_score>=0.9:
                     #if ((stop_bot == 0) and stop_bot_force == 0):
                             # If we have some currency on the balance
                             if bought_quantity_sql !=0.0:

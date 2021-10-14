@@ -29,7 +29,7 @@ currentdate = now.strftime("%Y/%m/%d")
 ###
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT * FROM markets WHERE active=1")
+cursor.execute("SELECT * FROM markets WHERE enabled=1")
 markets=cursor.fetchall()
 ###
 
