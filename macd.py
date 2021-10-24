@@ -41,7 +41,7 @@ def macd_analyze():
           df = df[-300:]
           #print (df)
           new_macd = get_macd(df['close'], 26, 12, 6)
-         # print (new_macd)
+          #print (new_macd)
           buy_price, sell_price, macd_signal = implement_macd_strategy(df['close'], new_macd)
 
           ax1 = plt.subplot2grid((8,1), (0,0), rowspan = 5, colspan = 1)

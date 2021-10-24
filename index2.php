@@ -28,7 +28,7 @@ table, th, td {
 }
 </style>
 </head>
-<body bgcolor=#abcaf2><h2>Cyptobot`s View Page</h2>
+<body bgcolor=#abcaf2><h2>Cryptobot`s View Page</h2>
 <a href='stat2.php'><font size='+2'><b>Link to candle analyze and history statistics page</b></font></a><br>
 <br><b>Logs</b><br>";
 
@@ -68,7 +68,7 @@ echo "<table border='1'>
 <th>AI Predicted chart for 1 month</th>
 <th>AI forecast directtion</th>
 <th>Heikin_ashi direction chart</th>
-<th>On-Balance Volume chart</th>
+<th>OBV chart</th>
 <th>Heikin_ashi direction</th>
 <th>Trend</th>
 <th>Candle pattern</th>
@@ -76,6 +76,7 @@ echo "<table border='1'>
 <th>Hour candle</th>
 <th>Day candle</th>
 <th>MACD signal</th>
+<th>OBV signal</th>
 <th>News</th>
 <th>History</th>
 </tr>";
@@ -102,7 +103,7 @@ echo "<td>" . $row['hour_candle_direction'] . "</td>";
 echo "<td>" . $row['candle_direction'] . "</td>";
 echo "<td>" . $row['macd_signal'] . "</td>";
 //echo "<td>" . $row['kov_signal'] . "</td>";
-//echo "<td>" . $row['obv_signal'] . "</td>";
+echo "<td>" . $row['obv_signal'] . "</td>";
 echo "<td><pre>" . $row['news'] . "</pre></td>";
 echo "<td><pre><p><a href='#". $row['market'] ."' rel='modal:open'>Open details</a></p></pre></td>";
 echo "</tr>";

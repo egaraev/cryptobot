@@ -30,6 +30,7 @@ def ME():
     market_summ = c.get_market_summaries().json()['result']
     max_markets = parameters()[6]
     bot_mode=parameters()[23]
+    #print market_summ
     #print bot_mode
 
 
@@ -49,16 +50,19 @@ def ME():
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
-                prev_volume = float(previous_volume(market))		
-                volume_chg = float(((volume / prev_volume)-1)*100)
+                # print "3"
+                # prev_volume = float(previous_volume(market))
+                # print "4"				
+                # volume_chg = float(((volume / prev_volume)-1)*100)
+                # print market
 
 
                 try:
                   db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                   cursor = db.cursor()
                   cursor.execute("update markets set spread= %s where market =%s", (spread, market))
-                  cursor.execute("update history set volume_chg= '%s' where market=%s and date=%s", (volume_chg, market, currentdate))
-                  cursor.execute("update history set volume= '%s' where market=%s and date=%s", (volume, market, currentdate))
+                  # cursor.execute("update history set volume_chg= '%s' where market=%s and date=%s", (volume_chg, market, currentdate))
+                  # cursor.execute("update history set volume= '%s' where market=%s and date=%s", (volume, market, currentdate))
                   db.commit()
                 except pymysql.Error as e:
                   print "Error %d: %s" % (e.args[0], e.args[1])
@@ -356,16 +360,16 @@ def percent(marketname, value):
 
 
 
-def previous_volume(marketname):
-    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
-    cursor = db.cursor()
-    market=marketname
-    cursor.execute(
-        "SELECT volume FROM history where market='%s' ORDER BY id DESC LIMIT 1, 1" % market)
-    r = cursor.fetchall()
-    for row in r:
-        return (row[0])
-    return 0
+# def previous_volume(marketname):
+    # db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    # cursor = db.cursor()
+    # market=marketname
+    # cursor.execute(
+        # "SELECT volume FROM history where market='%s' ORDER BY id DESC LIMIT 1, 1" % market)
+    # r = cursor.fetchall()
+    # for row in r:
+        # return (row[0])
+    # return 0
 
 def heikin_ashi(marketname, value):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")

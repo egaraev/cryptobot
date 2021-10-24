@@ -119,7 +119,7 @@ def tick():
                     trend = str(heikin_ashi(market,78))	
                     macd = str(heikin_ashi(market,79))                    
                     kov = str(heikin_ashi(market,80))
-                    #obv = str(heikin_ashi(market,81))
+                    obv = str(heikin_ashi(market,81))
                     #Candle analisys
 
                     # fivemin='NONE'
@@ -216,7 +216,7 @@ def tick():
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("1 , Force_stop_bot p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								+ '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								+ ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend) + ' MACD: ' + str(macd)  ,currtime, market))
+								+ ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend) + ' MACD: ' + str(macd) + ' OBV: ' +str(obv) + ' OBV: ' +str(obv)  ,currtime, market))
                                 cursor.execute('update orders set active = 0 where market =("%s")' % market)      
                                 cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                 newvalue = summ_serf() + (procent_serf-0.5)
@@ -276,7 +276,7 @@ def tick():
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("2 , Floating_TP   p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								    + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								    + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend) + ' MACD: ' + str(macd)  ,currtime, market))
+								    + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend) + ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                     cursor.execute('update orders set active = 0 where market =("%s")' % market)      
                                     cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                     newvalue = summ_serf() + (procent_serf-0.5)
@@ -333,7 +333,8 @@ def tick():
 
                             else:
                                 print "Checking reason 3"
-                                if  procent_serf>=18: 
+                                #if  procent_serf>=18: 
+                                if  procent_serf>=18 and (max_percent_sql - procent_serf > 1):
 
                                     try:
                                         netto_value=float(procent_serf-0.5)
@@ -344,7 +345,7 @@ def tick():
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                         cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("3 , Fixed_TP p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -375,7 +376,7 @@ def tick():
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("4 , Floating_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("4 , Floating_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -404,7 +405,7 @@ def tick():
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("4 , MACD_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("4 , MACD_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -435,7 +436,7 @@ def tick():
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                         cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("5 , Fixed_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -456,7 +457,7 @@ def tick():
 									
 
                             print "Checking reason 7"
-                            if (1.0>procent_serf>=-5 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -10 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-7.5 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -12 and timestamp-timestamp_old >=3500000 and (candle_score<0 or news_score<0)):
+                            if (1.0>procent_serf>=-10 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-15 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=3500000 and (candle_score<0 or news_score<0)):
                                 try:
                                         netto_value=float(procent_serf-0.5)
                                         print ('    6  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and losing  '   + ' and ' + str(netto_value) +'  %')
@@ -466,7 +467,7 @@ def tick():
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                         cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("6 , Long_lasting_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -487,7 +488,7 @@ def tick():
 
 
                             print "Checking reason 8"
-                            if (macd=="sell"):
+                            if (macd=="Sell"):
                                 try:
                                         netto_value=float(procent_serf-0.5)
                                         print ('    7  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + ' and ' + str(netto_value) +'  %')
@@ -497,7 +498,7 @@ def tick():
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                         cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("7 , MACD_SELL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd)  ,currtime, market))
+								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -1017,25 +1018,25 @@ def tick():
 
 
 
-                            elif serf_usd > 0 and (((
-                                                                        currentopen5 == currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin == 'U') or (
-                                            currentopen5 == currentlow5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin == 'U'))):
-                                print ("We have good trend for " + market)
+                            # elif serf_usd > 0 and (((
+                                                                        # currentopen5 == currentlow5 and prevclose5 <= currentopen5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin == 'U') or (
+                                            # currentopen5 == currentlow5 and currentopen5 < currenthigh5 and last > prevclose5 and fivemin == 'U'))):
+                                # print ("We have good trend for " + market)
 
-                                try:
-                                    printed = ("   8  - We have good short term trend for " + market)
-                                    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
-                                    cursor = db.cursor()
-                                    cursor.execute(
-                                        'insert into logs(date, log_entry) values("%s", "%s")' % (
-                                            currenttime, printed))
-                                    db.commit()
-                                except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
-                                    sys.exit(1)
-                                finally:
-                                    db.close()
-                                pass
+                                # try:
+                                    # printed = ("   8  - We have good short term trend for " + market)
+                                    # db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+                                    # cursor = db.cursor()
+                                    # cursor.execute(
+                                        # 'insert into logs(date, log_entry) values("%s", "%s")' % (
+                                            # currenttime, printed))
+                                    # db.commit()
+                                # except pymysql.Error as e:
+                                    # print "Error %d: %s" % (e.args[0], e.args[1])
+                                    # sys.exit(1)
+                                # finally:
+                                    # db.close()
+                                # pass
 
 
 
