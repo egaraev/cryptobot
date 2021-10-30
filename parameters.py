@@ -4,7 +4,7 @@ from tensorflow.keras.layers import LSTM
 
 
 # Window size or the sequence length
-N_STEPS = 100
+N_STEPS = 200
 # Lookup step, 1 is the next day
 LOOKUP_STEP = 30
 

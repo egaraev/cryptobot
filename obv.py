@@ -37,9 +37,11 @@ def obv_analyze():
            market1 = crypto+"-USD"
            df = si.get_data(market1)
            df = df.iloc[: , :-1]
-           df = df[-100:]
+           df = df[-60:]
            df = df.reset_index().rename({'index':'date'}, axis = 'columns')
+           #df  = df.dropna()
            #print (df)
+
            market_df = df[['date', 'adjclose', 'volume']]
            market_df.columns = ['date', 'close', 'volume']
            market_df = market_df.sort_values('date')
@@ -62,7 +64,7 @@ def obv_analyze():
            plt.plot(df['date'], df['close'], label='Close', color='black')
            plt.plot(df['date'], buy_price, marker = '^', color = 'green', markersize = 8, label = 'BUY SIGNAL', linewidth = 0)
            plt.plot(df['date'], sell_price, marker = 'v', color = 'r', markersize = 8, label = 'SELL SIGNAL', linewidth = 0)
-           plt.legend(loc='upper right')
+           plt.legend(loc='upper left')
            plt.grid()
            # Get second axis
            ax2 = ax.twinx()
@@ -77,7 +79,7 @@ def obv_analyze():
                else:
                   ax2.bar(new_obv['date'][i], new_obv['hist'][i], color = '#26a69a') 
 				 
-           plt.legend(loc='upper left')
+           plt.legend(loc='upper right')
            #plt.show()
            plt.savefig('/root/PycharmProjects/cryptobot/images/obv_results.png')
            newfilename=("{}_obv_results.png".format(market))
@@ -194,7 +196,7 @@ def on_balance_volume(data, close_col='close', vol_col='volume', trend_periods=2
        
         data_tmp.set_value(index, 'obv', current_obv)
     data_tmp['obv_ema' + str(trend_periods)] = data_tmp['obv'].ewm(ignore_na=False, min_periods=0, com=trend_periods, adjust=True).mean()
-   
+    
     return data_tmp
 
 
