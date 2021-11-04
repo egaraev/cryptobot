@@ -100,19 +100,19 @@ def SL():
           plt.gcf().autofmt_xdate()   # Beautify the x-labels
 
 
-          plt.savefig('/root/PycharmProjects/cryptobot/images/history.png')
+          plt.savefig('/root/PycharmProjects/cryptobot/images/temp/history.png')
 		  
           newfilename=("{}_history.png".format(market))
-          my_path = "/root/PycharmProjects/cryptobot/images/history.png"
+          my_path = "/root/PycharmProjects/cryptobot/images/temp/history.png"
           new_name = os.path.join(os.path.dirname(my_path), newfilename)
           os.rename(my_path, new_name)
 
           print (new_name)
 
-          # src_dir = "/root/PycharmProjects/cryptobot/images/"
-          # dst_dir = "/var/www/html/images/"
-          # for pngfile in glob.iglob(os.path.join(src_dir, "*.png")):
-            # shutil.copy(pngfile, dst_dir)
+          src_dir = "/root/PycharmProjects/cryptobot/images/temp/"
+          dst_dir = "/root/PycharmProjects/cryptobot/images/"
+          for pngfile in glob.iglob(os.path.join(src_dir, "*history.png")):
+            shutil.copy(pngfile, dst_dir)
 
 
 

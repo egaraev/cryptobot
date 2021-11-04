@@ -152,6 +152,19 @@ echo "</table>";
 
 
 ////////////
+echo "<br>";
+echo "<td><a href='images/crypto_results.png'><img src='images/crypto_results.png' width='800px' height='400px'></a></td>";
+echo "<td><a href='images/crypto_results2.png'><img src='images/crypto_results2.png' width='800px' height='400px'></a></td>";
+
+
+$result5 = mysqli_query($con,"SELECT SUM(percent_serf) FROM orders where active = 0");
+echo "<br><b>Total summ %</b><br>";
+$row = mysqli_fetch_array($result5);
+#echo $row['0'];
+echo "<td>" . $row['0'] . "</td>";
+echo "<br>";
+//////
+
 
 $result4 = mysqli_query($con,"SELECT * FROM orders where active = 0");
 echo "<br><b>Closed orders</b><br>";
@@ -189,15 +202,7 @@ echo "</tr>";
 }
 echo "</table>";
 
-echo "<td><a href='images/crypto_results.png'><img src='images/crypto_results.png' width='800px' height='400px'></a></td>";
-echo "<td><a href='images/crypto_results2.png'><img src='images/crypto_results2.png' width='800px' height='400px'></a></td>";
 
-
-$result5 = mysqli_query($con,"SELECT SUM(percent_serf) FROM orders where active = 0");
-echo "<br><b>Total summ %</b><br>";
-$row = mysqli_fetch_array($result5);
-#echo $row['0'];
-echo "<td>" . $row['0'] . "</td>";
 
 
 mysqli_close($con);

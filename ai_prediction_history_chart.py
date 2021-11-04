@@ -15,7 +15,7 @@ import pandas as pd
 from datetime import datetime
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT market FROM markets WHERE active=1")
+cursor.execute("SELECT market FROM markets WHERE enabled=1")
 markets=cursor.fetchall()
 
 def main():
@@ -76,19 +76,19 @@ def SL():
           plt.gcf().autofmt_xdate()   # Beautify the x-labels
 
 
-          plt.savefig('/root/PycharmProjects/cryptobot/images/ai_history.png')
+          plt.savefig('/root/PycharmProjects/cryptobot/images/temp/ai_history.png')
 		  
           newfilename=("{}_ai_history.png".format(market))
-          my_path = "/root/PycharmProjects/cryptobot/images/ai_history.png"
+          my_path = "/root/PycharmProjects/cryptobot/images/temp/ai_history.png"
           new_name = os.path.join(os.path.dirname(my_path), newfilename)
           os.rename(my_path, new_name)
 
           print (new_name)
 
-          # src_dir = "/root/PycharmProjects/cryptobot/images/"
-          # dst_dir = "/var/www/html/images/"
-          # for pngfile in glob.iglob(os.path.join(src_dir, "*.png")):
-            # shutil.copy(pngfile, dst_dir)
+          src_dir = "/root/PycharmProjects/cryptobot/images/temp"
+          dst_dir = "/root/PycharmProjects/cryptobot/images/"
+          for pngfile in glob.iglob(os.path.join(src_dir, "*_ai_history.png")):
+            shutil.copy(pngfile, dst_dir)
 
 
 

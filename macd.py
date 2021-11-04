@@ -3,6 +3,8 @@ import datetime
 import time 
 from datetime import timedelta, date
 import os, sys
+import glob
+import shutil
 import pandas as pd
 import numpy as np
 from math import floor
@@ -61,11 +63,17 @@ def macd_analyze():
                  ax2.bar(new_macd.index[i], new_macd['hist'][i], color = '#26a69a')
     
           plt.legend(loc = 'lower right')
-          plt.savefig('/root/PycharmProjects/cryptobot/images/macd_results.png', bbox_inches='tight')    
+          plt.savefig('/root/PycharmProjects/cryptobot/images/temp/macd_results.png', bbox_inches='tight')    
           newfilename=("{}_macd_results.png".format(market))
-          my_path = "/root/PycharmProjects/cryptobot/images/macd_results.png"
+          my_path = "/root/PycharmProjects/cryptobot/images/temp/macd_results.png"
           new_name = os.path.join(os.path.dirname(my_path), newfilename)
           os.rename(my_path, new_name)
+
+          src_dir = "/root/PycharmProjects/cryptobot/images/temp"
+          dst_dir = "/root/PycharmProjects/cryptobot/images/"
+          for pngfile in glob.iglob(os.path.join(src_dir, "*macd_results.png")):
+             shutil.copy(pngfile, dst_dir)
+
 
           print (new_name)
 

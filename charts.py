@@ -79,18 +79,21 @@ def prices():
           plt.autoscale(tight=True)
           plt.grid()
           ax.grid(True)
-          plt.savefig('/root/PycharmProjects/cryptobot/images/charts.png')
+          plt.savefig('/root/PycharmProjects/cryptobot/images/temp/charts.png')
           plt.clf()
           plt.cla()
           plt.close()
           newfilename=("{}_chart.png".format(market))
-          my_path = "/root/PycharmProjects/cryptobot/images/charts.png"
+          my_path = "/root/PycharmProjects/cryptobot/images/temp/charts.png"
           new_name = os.path.join(os.path.dirname(my_path), newfilename)
           os.rename(my_path, new_name)
 
           print (new_name)
-          #time.sleep(50)
 
+          src_dir = "/root/PycharmProjects/cryptobot/images/temp/"
+          dst_dir = "/root/PycharmProjects/cryptobot/images/"
+          for pngfile in glob.iglob(os.path.join(src_dir, "*charts.png")):
+            shutil.copy(pngfile, dst_dir)
 
         except:
             continue
