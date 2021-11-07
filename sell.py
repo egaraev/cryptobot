@@ -51,6 +51,26 @@ def tick():
                 if available_market_list(summary['MarketName']):
                     market = summary['MarketName']
                     print market
+                    macd_fluc = macd_fluctuation(market)
+                    macd_first_day=macd_fluc[0]
+                    macd_second_day=macd_fluc[1]
+                    macd_third_day=macd_fluc[2]
+                    if (macd_third_day!='' and macd_second_day!='' and macd_first_day!='') or  (macd_third_day!='' and macd_second_day!='')  or (macd_third_day!=''  and macd_first_day!=''):
+                       macd_fluct_status = 'positive'
+                    else:
+                        macd_fluct_status = 'negative'	
+
+                    obv_fluc = obv_fluctuation(market)
+                    obv_first_day=obv_fluc[0]
+                    obv_second_day=obv_fluc[1]
+                    obv_third_day=obv_fluc[2]
+                    if (obv_third_day!='' and obv_second_day!='' and obv_first_day!='') or  (obv_third_day!='' and obv_second_day!='')  or (obv_third_day!=''  and obv_first_day!=''):
+                       obv_fluct_status = 'positive'
+                    else:
+                        obv_fluct_status = 'negative'	
+
+                    # print obv_third_day, obv_second_day, obv_first_day	
+                    # print macd_third_day, macd_second_day, macd_first_day					
                     previous_order_sell_time = previous_order(market)
                     previous_order_serf = previous_serf(market)
                     #print previous_order_sell_time, previous_order_serf
@@ -488,7 +508,7 @@ def tick():
 
 
                             print "Checking reason 8"
-                            if (macd=="Sell"):
+                            if (macd=="Sell" and macd_fluct_status == 'negative'):
                                 try:
                                         netto_value=float(procent_serf-0.5)
                                         print ('    7  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + ' and ' + str(netto_value) +'  %')
@@ -1256,6 +1276,34 @@ def tick():
 
 ### FUNCTIONS
 ###############################################################################################################
+
+
+def macd_fluctuation(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT GROUP_CONCAT(macd_signal) FROM `history` WHERE market='%s' order by id desc" % market)
+    res = cursor.fetchall()
+    for row in res:
+       r = list(row[0].split(","))
+       r = r[-3:]
+       return (r)
+    return 0
+
+
+def obv_fluctuation(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT GROUP_CONCAT(obv_signal) FROM `history` WHERE market='%s' order by id desc" % market)
+    res = cursor.fetchall()
+    for row in res:
+       r = list(row[0].split(","))
+       r = r[-3:]
+       return (r)
+    return 0
+
+
 
 def heikin_ashi(marketname, value):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")

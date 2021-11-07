@@ -64,7 +64,7 @@ def HA():
                 df = pd.DataFrame(hist)
                 df = df.reset_index(level=['Date'])
 
-                #print (market, df)
+                #print (df)
                 # Current prices
                 last = float(summary['Last'])  # last price
                 bid = float(summary['Bid'])  # sell price
@@ -89,9 +89,10 @@ def HA():
                 dayprevdate12 = (df['Date'][2]).date()          
                 dayprevdate13 = (df['Date'][1]).date()
                 dayprevdate14 = (df['Date'][0]).date()
-				
-                heikin_ashi_df = heikin_ashi_func(df)
 
+                heikin_ashi_df = heikin_ashi_func(df)
+                #print (daycurrentdate)
+                
 
 				
 				
@@ -101,11 +102,11 @@ def HA():
                 date=[dayprevdate14, dayprevdate13, dayprevdate12, dayprevdate11, dayprevdate10, dayprevdate9, dayprevdate8, dayprevdate7, dayprevdate6, dayprevdate5, dayprevdate4, dayprevdate3, dayprevdate2, dayprevdate, daycurrentdate]
                 ohlc_df['Date']=date
                 ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
-                
+               # print(date)                 
 
                 ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
                 #print (ohlc_df.info())
-                #print(ohlc_df)   
+  
                 fig, ax = plt.subplots(figsize=(8, 4))
                 ax.xaxis_date()
 
@@ -117,16 +118,16 @@ def HA():
                 plt.autoscale(tight=True)  				
                 plt.grid()
                 ax.grid(True)
-                plt.savefig('/root/PycharmProjects/cryptobot/images/temp/hacharts.png')				
+                plt.savefig('/root/PycharmProjects/cryptobot/images/temp/hachart.png')				
                 newfilename=("{}_hachart.png".format(market))
-                my_path = "/root/PycharmProjects/cryptobot/images/temp/hacharts.png"		
+                my_path = "/root/PycharmProjects/cryptobot/images/temp/hachart.png"		
                 new_name = os.path.join(os.path.dirname(my_path), newfilename)
                 os.rename(my_path, new_name)
                 print (new_name)
 
                 src_dir = "/root/PycharmProjects/cryptobot/images/temp/"
                 dst_dir = "/root/PycharmProjects/cryptobot/images/"
-                for pngfile in glob.iglob(os.path.join(src_dir, "*hacharts.png")):
+                for pngfile in glob.iglob(os.path.join(src_dir, "*_hachart.png")):
                     shutil.copy(pngfile, dst_dir)
 
 				
