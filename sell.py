@@ -55,22 +55,22 @@ def tick():
                     macd_first_day=macd_fluc[0]
                     macd_second_day=macd_fluc[1]
                     macd_third_day=macd_fluc[2]
-                    if (macd_third_day!='' and macd_second_day!='' and macd_first_day!='') or  (macd_third_day!='' and macd_second_day!='')  or (macd_third_day!=''  and macd_first_day!=''):
+                    if (macd_third_day!='none' and macd_second_day!='none' and macd_first_day!='none') or  (macd_third_day!='none' and macd_second_day!='none')  or (macd_third_day!='none'  and macd_first_day!='none'):
                        macd_fluct_status = 'positive'
                     else:
-                        macd_fluct_status = 'negative'	
+                       macd_fluct_status = 'negative'	
 
                     obv_fluc = obv_fluctuation(market)
                     obv_first_day=obv_fluc[0]
                     obv_second_day=obv_fluc[1]
                     obv_third_day=obv_fluc[2]
-                    if (obv_third_day!='' and obv_second_day!='' and obv_first_day!='') or  (obv_third_day!='' and obv_second_day!='')  or (obv_third_day!=''  and obv_first_day!=''):
+                    if (obv_third_day!='none' and obv_second_day!='none' and obv_first_day!='none') or  (obv_third_day!='none' and obv_second_day!='none')  or (obv_third_day!='none'  and obv_first_day!='none'):
                        obv_fluct_status = 'positive'
                     else:
-                        obv_fluct_status = 'negative'	
+                       obv_fluct_status = 'negative'	
 
-                    # print obv_third_day, obv_second_day, obv_first_day	
-                    # print macd_third_day, macd_second_day, macd_first_day					
+                    print macd_fluct_status, obv_fluct_status	
+                    print macd_third_day, macd_second_day, macd_first_day					
                     previous_order_sell_time = previous_order(market)
                     previous_order_serf = previous_serf(market)
                     #print previous_order_sell_time, previous_order_serf
@@ -229,8 +229,8 @@ def tick():
                             print "Checking reason 1"
                             try:
                                 netto_value=float(procent_serf-0.5)
-                                print ('    1 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  '     + ' and ' + str(netto_value) +'  %')
-                                printed = ('    1 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  '     + ' and ' + str(netto_value) +'  %')
+                                print ('    1 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  '  + str(netto_value) +'  %')
+                                printed = ('    1 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  '  + str(netto_value) +'  %')
                                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -289,8 +289,8 @@ def tick():
                                 
                                 try:
                                     netto_value=float(procent_serf-0.5)
-                                    print ('    2  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + ' and ' + str(netto_value) +'  %')
-                                    printed = ('    2 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + ' and ' + str(netto_value) +'  %')
+                                    print ('    2  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + str(netto_value) +'  %')
+                                    printed = ('    2 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + str(netto_value) +'  %')
                                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                     cursor = db.cursor()
                                     cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -358,8 +358,8 @@ def tick():
 
                                     try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    3  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    3 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    3  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + str(netto_value) +'  %')
+                                        printed = ('    3 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + str(netto_value) +'  %')
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -390,8 +390,8 @@ def tick():
                             if procent_serf <= -15  and  percent_serf_max(market) < 0.1  and candle_direction=='D' and HAD_trend!="UP" and HAD_trend!="Revers-UP" and candle_score<=0:
                                 try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    4  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    4 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    4  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + str(netto_value) +'  %')
+                                        printed = ('    4 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + str(netto_value) +'  %')
 
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
@@ -419,13 +419,13 @@ def tick():
                             if procent_serf <= -20  and  macd=="Sell"  and candle_direction=='D' and HAD_trend!="UP" and HAD_trend!="Revers-UP" and HAD_trend!="STABLE" and candle_score<=0:
                                 try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    4  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    4 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    5  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + str(netto_value) +'  %')
+                                        printed = ('    5 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + str(netto_value) +'  %')
 
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("4 , MACD_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("5 , MACD_SL  p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend)  + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
                                         cursor.execute(
                                             'update orders set active = 0 where market =("%s")' % market)
@@ -449,12 +449,12 @@ def tick():
                             if procent_serf <= -30:
                                 try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    5  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    5 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    6  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting  '   + str(netto_value) +'  %')
+                                        printed = ('    6 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting   '     + str(netto_value) +'  %')
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("5 , Fixed_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("6 , Fixed_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
 								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
@@ -480,12 +480,12 @@ def tick():
                             if (1.0>procent_serf>=-10 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-15 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=3500000 and (candle_score<0 or news_score<0)):
                                 try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    6  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and losing  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    6 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    7  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and losing  '   + str(netto_value) +'  %')
+                                        printed = ('    7 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing   '     + str(netto_value) +'  %')
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("6 , Long_lasting_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("7 , Long_lasting_SL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
 								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
@@ -511,12 +511,12 @@ def tick():
                             if (macd=="Sell" and macd_fluct_status == 'negative'):
                                 try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    7  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    7 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or losing   '     + ' and ' + str(netto_value) +'  %')
+                                        print ('    8  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + str(netto_value) +'  %')
+                                        printed = ('    8 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or losing   '     + str(netto_value) +'  %')
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("7 , MACD_SELL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
+                                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("8 , MACD_SELL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
 								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
 								        + ' Tweet_polarity: ' + str(tweet_polarity) + ' Tweet_score: ' + str(tweet_score) + ' Candle_pattern: ' + str(candle_pattern) + ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
                                         cursor.execute('update orders set active = 0 where market =("%s")' % market)   
@@ -812,8 +812,8 @@ def tick():
                         else:  
                             try:
                                 netto_value=float(procent_serf-0.5)
-                                print ('    1 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                printed = ('    1 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                print ('    1 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                printed = ('    1 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                 cursor = db.cursor()
                                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -991,8 +991,8 @@ def tick():
                                     
                                     try:
                                         netto_value=float(procent_serf-0.5)
-                                        print ('    2 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                        printed = ('    2 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                        print ('    2 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                        printed = ('    2 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                         cursor = db.cursor()
                                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -1084,8 +1084,8 @@ def tick():
                                         # Lets Sell some
                                         try:
                                             netto_value=float(procent_serf-0.5)
-                                            print ('    3 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                            printed = ('    3 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                            print ('    3 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                            printed = ('    3 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -1133,8 +1133,8 @@ def tick():
                                         # print ('23 - Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(ask)) + '  and losing  ' + str(format_float(ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql)) + ' BTC' ' or ' + str(format_float((ask * bought_quantity_sql - bought_price_sql * bought_quantity_sql) * BTC_price)) + ' USD')
                                         try:
                                             netto_value=float(procent_serf-0.5)
-                                            print ('    4 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                            printed = ('    4 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                            print ('    4 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                            printed = ('    4 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -1180,8 +1180,8 @@ def tick():
  
                                         try:
                                             netto_value=float(procent_serf-0.5)
-                                            print ('    5 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                            printed = ('    5 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                            print ('    5 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                            printed = ('    5 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
@@ -1227,8 +1227,8 @@ def tick():
 
                                         try:
                                             netto_value=float(procent_serf-0.5)
-                                            print ('    6 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
-                                            printed = ('    6 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + ' and ' + str(netto_value) +'  %')
+                                            print ('    6 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and losing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
+                                            printed = ('    6 - Trying to sell ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and loosing  ' + str(format_float(serf)) + ' USD'    + str(netto_value) +'  %')
                                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                                             cursor = db.cursor()
                                             cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
