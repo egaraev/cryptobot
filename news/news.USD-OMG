@@ -436,26 +436,26 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
         <div>
         <h3>Recent News</h3>
             <ul>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/poshmark-nasdaqposh-trading-up-6-4.html">Poshmark (NASDAQ:POSH) Trading Up 6.4%</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/perseus-mining-tsepru-reaches-new-52-week-high-at-1-66.html">Perseus Mining (TSE:PRU) Reaches New 52-Week High at $1.66</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/trex-company-inc-nysetrex-svp-sells-281650-00-in-stock.html">Trex Company, Inc. (NYSE:TREX) SVP Sells $281,650.00 in Stock</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/legacy-housing-nasdaqlegh-shares-gap-up-to-26-37.html">Legacy Housing (NASDAQ:LEGH) Shares Gap Up to $26.37</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/steel-partners-nysesplp-shares-gap-up-to-31-79.html">Steel Partners (NYSE:SPLP) Shares Gap Up to $31.79</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/procept-biorobotics-nasdaqprct-shares-gap-down-to-41-91.html">Procept BioRobotics (NASDAQ:PRCT) Shares Gap Down to $41.91</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/ppg-industries-nyseppg-sees-large-volume-increase.html">PPG Industries (NYSE:PPG) Sees Large Volume Increase</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/13602-shares-in-vanguard-materials-etf-nysearcavaw-purchased-by-flow-traders-u-s-llc.html">13,602 Shares in Vanguard Materials ETF (NYSEARCA:VAW) Purchased by Flow Traders U.S. LLC</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/flow-traders-u-s-llc-increases-stock-holdings-in-direxion-daily-small-cap-bear-3x-shares-nysearcatza.html">Flow Traders U.S. LLC Increases Stock Holdings in Direxion Daily Small Cap Bear 3X Shares (NYSEARCA:TZA)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/draftkings-nasdaqdkng-price-target-cut-to-50-00-by-analysts-at-truist.html">DraftKings (NASDAQ:DKNG) Price Target Cut to $50.00 by Analysts at Truist</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/sonim-technologies-nasdaqsonm-announces-earnings-results-misses-expectations-by-0-61-eps.html">Sonim Technologies (NASDAQ:SONM) Announces  Earnings Results, Misses Expectations By $0.61 EPS</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/montrose-environmental-group-inc-nysemeg-receives-44-92-consensus-pt-from-brokerages.html">Montrose Environmental Group, Inc. (NYSE:MEG) Receives $44.92 Consensus PT from Brokerages</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/stonebridge-capital-advisors-llc-purchases-304-shares-of-nucor-co-nysenue.html">Stonebridge Capital Advisors LLC Purchases 304 Shares of Nucor Co. (NYSE:NUE)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/stonebridge-capital-advisors-llc-sells-183-shares-of-marathon-petroleum-co-nysempc.html">Stonebridge Capital Advisors LLC Sells 183 Shares of Marathon Petroleum Co. (NYSE:MPC)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/decibel-therapeutics-nasdaqdbtx-issues-earnings-results.html">Decibel Therapeutics (NASDAQ:DBTX) Issues  Earnings Results</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/uranium-royalty-nasdaquroy-trading-down-2-3.html">Uranium Royalty (NASDAQ:UROY) Trading Down 2.3%</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/neptune-digital-assets-cvenda-shares-down-7-7.html">Neptune Digital Assets (CVE:NDA)  Shares Down 7.7%</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/investment-analysts-recent-ratings-changes-for-agnico-eagle-mines-aem.html">Investment Analysts&#8217; Recent Ratings Changes for Agnico Eagle Mines (AEM)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/american-resources-nasdaqarec-upgraded-at-hc-wainwright.html">American Resources (NASDAQ:AREC) Upgraded at HC Wainwright</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/12/hut-8-mining-tsehut-given-buy-rating-at-hc-wainwright.html">Hut 8 Mining (TSE:HUT) Given &#8220;Buy&#8221; Rating at HC Wainwright</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/rackspace-technology-nasdaqrxt-releases-q4-2021-earnings-guidance.html">Rackspace Technology (NASDAQ:RXT) Releases Q4 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/short-interest-in-nuveen-municipal-income-fund-inc-nysenmi-increases-by-60-5.html">Short Interest in Nuveen Municipal Income Fund, Inc. (NYSE:NMI) Increases By 60.5%</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/vectrus-nysevec-updates-fy-2021-earnings-guidance.html">Vectrus (NYSE:VEC) Updates FY 2021 Earnings Guidance</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/copa-nysecpa-issues-earnings-results-beats-estimates-by-0-87-eps.html">Copa (NYSE:CPA) Issues  Earnings Results, Beats Estimates By $0.87 EPS</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/mmtec-inc-nasdaqmtc-sees-significant-growth-in-short-interest.html">Mmtec, Inc. (NASDAQ:MTC) Sees Significant Growth in Short Interest</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/stantec-tsestn-reaches-new-1-year-high-at-72-21.html">Stantec (TSE:STN) Reaches New 1-Year High at $72.21</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/pershing-square-holdings-ltd-otcmktspshzf-short-interest-update.html">Pershing Square Holdings, Ltd. (OTCMKTS:PSHZF) Short Interest Update</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/4thpillar-technologies-four-reaches-market-capitalization-of-1-58-million.html">4THPILLAR TECHNOLOGIES (FOUR) Reaches Market Capitalization of $1.58 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/btc-lite-btcl-reaches-market-cap-of-76381-52.html">BTC Lite (BTCL) Reaches Market Cap of $76,381.52</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/fyooz-fyz-price-hits-0-12-on-major-exchanges.html">Fyooz (FYZ) Price Hits $0.12 on Major Exchanges</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/senso-price-reaches-2-52-on-exchanges-senso.html">SENSO Price Reaches $2.52 on Exchanges (SENSO)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/omeros-co-nasdaqomer-expected-to-post-earnings-of-0-27-per-share.html">Omeros Co. (NASDAQ:OMER) Expected to Post Earnings of -$0.27 Per Share</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/procore-technologies-inc-nasdaqpcor-receives-average-recommendation-of-buy-from-analysts.html">Procore Technologies, Inc. (NASDAQ:PCOR) Receives Average Recommendation of &#8220;Buy&#8221; from Analysts</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/1-69-earnings-per-share-expected-for-cbre-group-inc-nysecbre-this-quarter.html">$1.69 Earnings Per Share Expected for CBRE Group, Inc. (NYSE:CBRE) This Quarter</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/makiswap-trading-31-5-lower-over-last-week-maki.html">MakiSwap  Trading 31.5% Lower  Over Last Week (MAKI)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/lockheed-martin-co-nyselmt-is-cypress-capital-groups-6th-largest-position.html">Lockheed Martin Co. (NYSE:LMT) is Cypress Capital Group&#8217;s 6th Largest Position</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/trinity-legacy-partners-llc-has-3-42-million-stake-in-verizon-communications-inc-nysevz.html">Trinity Legacy Partners LLC Has $3.42 Million Stake in Verizon Communications Inc. (NYSE:VZ)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/wedbush-securities-inc-sells-198-shares-of-lockheed-martin-co-nyselmt.html">Wedbush Securities Inc. Sells 198 Shares of Lockheed Martin Co. (NYSE:LMT)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/chevron-co-nysecvx-shares-sold-by-american-national-bank.html">Chevron Co. (NYSE:CVX) Shares Sold by American National Bank</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2021/11/18/private-trust-co-na-sells-1538-shares-of-alibaba-group-holding-limited-nysebaba.html">Private Trust Co. NA Sells 1,538 Shares of Alibaba Group Holding Limited (NYSE:BABA)</a></li>
                         </ul>
         </div>  
 </div>
@@ -479,7 +479,7 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
 	    </span>
 	</div>	
 	<!-- Begin Internal Tracking Pixel 2 -->
-		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=81114599&PostDate=2021-11-12&type=a&id=1676048&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=81379731&PostDate=2021-11-18&type=f&id=10524514&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
 		<!-- End Internal Tracking Pixel 2-->
 </footer>
 		<script type='text/javascript' src='https://transcriptdaily.com/wp-includes/js/wp-embed.min.js?ver=5.8.2' id='wp-embed-js'></script>

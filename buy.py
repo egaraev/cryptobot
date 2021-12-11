@@ -101,7 +101,28 @@ def tick():
 
                     candles_status='NONE'
                     #print (percent_sql)
+					
+                    macd_fluc = macd_fluctuation(market)
+                    macd_first_day=macd_fluc[0]
+                    macd_second_day=macd_fluc[1]
+                    macd_third_day=macd_fluc[2]
+                    if (macd_third_day!='none' and macd_second_day!='none' and macd_first_day!='none') or  (macd_third_day!='none' and macd_second_day!='none')  or (macd_third_day!='none'  and macd_first_day!='none') or (macd_third_day!=macd_first_day) or (macd_second_day!=macd_third_day):
+                       macd_fluct_status = 'fluctuation'
+                    else:
+                       macd_fluct_status = 'not-fluctuation'	
 
+                    obv_fluc = obv_fluctuation(market)
+                    obv_first_day=obv_fluc[0]
+                    obv_second_day=obv_fluc[1]
+                    obv_third_day=obv_fluc[2]
+                    if (obv_third_day!='none' and obv_second_day!='none' and obv_first_day!='none') or  (obv_third_day!='none' and obv_second_day!='none')  or (obv_third_day!='none'  and obv_first_day!='none') or (obv_third_day!=obv_first_day) or (obv_second_day!=obv_third_day):
+                       obv_fluct_status = 'fluctuation'
+                    else:
+                       obv_fluct_status = 'not-fluctuation'	
+
+                    print macd_fluct_status, obv_fluct_status	
+                    print macd_third_day, macd_second_day, macd_first_day
+                    print obv_third_day, obv_second_day, obv_first_day 					
                  
                     
 
@@ -157,7 +178,7 @@ def tick():
                     #spread=((ask/bid)-1)*100
                     print "Starting buying mechanizm for " , market
                     #print tweet_positive, tweet_negative, HAD_trend, candle_score, tweet_polarity, candles_status, macd, current_order_count, max_orders
-                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14  and candles_status=='OK' and macd=="Buy" and current_order_count <= max_orders and news_score>=0.9 and obv=="Buy":
+                    if ((stop_bot == 0) and stop_bot_force == 0) and tweet_positive>tweet_negative and HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0 and tweet_polarity>0.14  and candles_status=='OK' and macd=="Buy" and current_order_count <= max_orders and news_score>=0.9 and obv=="Buy" and macd_fluct_status=='not-fluctuation' and obv_fluct_status=='not-fluctuation':
                     #if ((stop_bot == 0) and stop_bot_force == 0):
                             # If we have some currency on the balance
                             if bought_quantity_sql !=0.0:
@@ -654,6 +675,33 @@ def tick():
 
 ### FUNCTIONS
 ###############################################################################################################
+
+def macd_fluctuation(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT GROUP_CONCAT(macd_signal) FROM `history` WHERE market='%s' order by id desc" % market)
+    res = cursor.fetchall()
+    for row in res:
+       r = list(row[0].split(","))
+       r = r[-3:]
+       return (r)
+    return 0
+
+
+def obv_fluctuation(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+    cursor = db.cursor()
+    market = marketname
+    cursor.execute("SELECT GROUP_CONCAT(obv_signal) FROM `history` WHERE market='%s' order by id desc" % market)
+    res = cursor.fetchall()
+    for row in res:
+       r = list(row[0].split(","))
+       r = r[-3:]
+       return (r)
+    return 0
+
+
 
 def heikin_ashi(marketname, value):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")

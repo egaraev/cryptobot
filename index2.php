@@ -55,7 +55,7 @@ echo "</table>";
 //////////////
 
 
-$result2 = mysqli_query($con,"SELECT * FROM markets where active = 1 and enabled=1");
+$result2 = mysqli_query($con,"SELECT * FROM markets where  enabled=1");
 echo "<br><b>Current stocks</b><br>";
 
 echo "<table border='1'>
@@ -109,7 +109,7 @@ echo "<td><pre><p><a href='#". $row['market'] ."' rel='modal:open'>Open details<
 echo "</tr>";
 }
 echo "</table>";
-$result2 = mysqli_query($con,"SELECT * FROM markets where active = 1");
+$result2 = mysqli_query($con,"SELECT * FROM markets where enabled = 1");
 while($row = mysqli_fetch_array($result2))
 {
 	echo'<div id="'.$row['market'].'" class="modal">'.

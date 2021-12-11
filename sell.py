@@ -55,19 +55,19 @@ def tick():
                     macd_first_day=macd_fluc[0]
                     macd_second_day=macd_fluc[1]
                     macd_third_day=macd_fluc[2]
-                    if (macd_third_day!='none' and macd_second_day!='none' and macd_first_day!='none') or  (macd_third_day!='none' and macd_second_day!='none')  or (macd_third_day!='none'  and macd_first_day!='none'):
-                       macd_fluct_status = 'positive'
+                    if (macd_third_day!='none' and macd_second_day!='none' and macd_first_day!='none') or  (macd_third_day!='none' and macd_second_day!='none')  or (macd_third_day!='none'  and macd_first_day!='none')  or (macd_third_day!=macd_first_day) or (macd_second_day!=macd_third_day):
+                       macd_fluct_status = 'fluctuation'
                     else:
-                       macd_fluct_status = 'negative'	
+                       macd_fluct_status = 'not-fluctuation'	
 
                     obv_fluc = obv_fluctuation(market)
                     obv_first_day=obv_fluc[0]
                     obv_second_day=obv_fluc[1]
                     obv_third_day=obv_fluc[2]
-                    if (obv_third_day!='none' and obv_second_day!='none' and obv_first_day!='none') or  (obv_third_day!='none' and obv_second_day!='none')  or (obv_third_day!='none'  and obv_first_day!='none'):
-                       obv_fluct_status = 'positive'
+                    if (obv_third_day!='none' and obv_second_day!='none' and obv_first_day!='none') or  (obv_third_day!='none' and obv_second_day!='none')  or (obv_third_day!='none'  and obv_first_day!='none') or (obv_third_day!=obv_first_day) or (obv_second_day!=obv_third_day):
+                       obv_fluct_status = 'fluctuation'
                     else:
-                       obv_fluct_status = 'negative'	
+                       obv_fluct_status = 'not-fluctuation'	
 
                     print macd_fluct_status, obv_fluct_status	
                     print macd_third_day, macd_second_day, macd_first_day					
@@ -508,7 +508,7 @@ def tick():
 
 
                             print "Checking reason 8"
-                            if (macd=="Sell" and macd_fluct_status == 'negative'):
+                            if (macd=="Sell" and macd_fluct_status == 'not-fluctuation'):
                                 try:
                                         netto_value=float(procent_serf-0.5)
                                         print ('    8  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + str(netto_value) +'  %')

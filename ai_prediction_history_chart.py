@@ -37,10 +37,11 @@ def SL():
           data=cursor.fetchall()
 
           df = pd.DataFrame(data)
+          #print (df)		  
 
           #df.set_index('date')
           df.columns = ['date',  'price', 'predicted_price']
-		  
+          #print (df)		  
           df['date_index'] = df['date']
           df['date_index'] = pd.to_datetime(df['date_index'])
           df= df.set_index('date_index')
@@ -72,7 +73,7 @@ def SL():
  #         ax.set_xticklabels([])
           ax.grid()
           ax.set_xlabel("Date")
-          ax.set_ylabel(r"Stock Price")
+          ax.set_ylabel(r"Crypto Price")
           plt.gcf().autofmt_xdate()   # Beautify the x-labels
 
 
