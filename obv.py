@@ -91,7 +91,7 @@ def obv_analyze():
            print (new_name)
 
            src_dir = "/root/PycharmProjects/cryptobot/images/temp"
-           dst_dir = "/root/PycharmProjects/cryptobot/images/"
+           dst_dir = "/root/PycharmProjects/cryptobot/images/cryptobot/"
            for pngfile in glob.iglob(os.path.join(src_dir, "*obv_results.png")):
              shutil.copy(pngfile, dst_dir)
 

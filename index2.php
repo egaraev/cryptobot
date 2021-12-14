@@ -94,7 +94,7 @@ echo "<td><a href='images/". $row['market'] ."_result.png'><img src='images/". $
 echo "<td><b>" . $row['ai_direction'] . "</b></td>";
 echo "<td><a href='images/". $row['market'] ."_hachart.png'><img src='images/". $row['market'] ."_hachart.png' width='280px' height='250px'></td>";
 //echo "<td><a href='images/". $row['market'] ."_kov_results.png'><img src='images/". $row['market'] ."_kov_results.png' width='280px' height='250px'></td>";
-echo "<td><a href='images/". $row['market'] ."_obv_results.png'><img src='images/". $row['market'] ."_obv_results.png' width='280px' height='250px'></td>";
+echo "<td><a href='images/cryptobot/". $row['market'] ."_obv_results.png'><img src='images/cryptobot/". $row['market'] ."_obv_results.png' width='280px' height='250px'></td>";
 echo "<td>" . $row['ha_day'] . "</td>";
 echo "<td>" . $row['trend'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";
