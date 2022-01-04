@@ -77,8 +77,6 @@ echo "<table border='1'>
 <th>Day candle</th>
 <th>MACD signal</th>
 <th>OBV signal</th>
-<th>News</th>
-<th>History</th>
 </tr>";
 
 while($row = mysqli_fetch_array($result2))
@@ -104,8 +102,8 @@ echo "<td>" . $row['candle_direction'] . "</td>";
 echo "<td>" . $row['macd_signal'] . "</td>";
 //echo "<td>" . $row['kov_signal'] . "</td>";
 echo "<td>" . $row['obv_signal'] . "</td>";
-echo "<td><pre>" . $row['news'] . "</pre></td>";
-echo "<td><pre><p><a href='#". $row['market'] ."' rel='modal:open'>Open details</a></p></pre></td>";
+//echo "<td><pre>" . $row['news'] . "</pre></td>";
+//echo "<td><pre><p><a href='#". $row['market'] ."' rel='modal:open'>Open details</a></p></pre></td>";
 echo "</tr>";
 }
 echo "</table>";

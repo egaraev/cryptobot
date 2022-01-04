@@ -40,6 +40,7 @@ def obv_analyze():
            df = si.get_data(market1)
            df = df.iloc[: , :-1]
            df = df[-60:]
+           #print (df)
            df = df.reset_index().rename({'index':'date'}, axis = 'columns')
            #df  = df.dropna()
            #print (df)

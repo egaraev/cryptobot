@@ -477,7 +477,7 @@ def tick():
 									
 
                             print "Checking reason 7"
-                            if (1.0>procent_serf>=-10 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-15 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=3500000 and (candle_score<0 or news_score<0)):
+                            if (1.0>procent_serf>=-10 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-15 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=3500000 and candle_score<0) : # and (candle_score<0 or news_score<0)):
                                 try:
                                         netto_value=float(procent_serf-0.5)
                                         print ('    7  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and losing  '   + str(netto_value) +'  %')

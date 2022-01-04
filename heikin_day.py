@@ -63,7 +63,8 @@ def HA():
                 hist = stock.history(period="{}d".format(days))
                 df = pd.DataFrame(hist)
                 df = df.reset_index(level=['Date'])
-
+                #print (df)
+                #pd.set_option('display.float_format', lambda x: '%0.2f' % x)
                 #print (df)
                 # Current prices
                 last = float(summary['Last'])  # last price
@@ -102,7 +103,8 @@ def HA():
                 date=[dayprevdate14, dayprevdate13, dayprevdate12, dayprevdate11, dayprevdate10, dayprevdate9, dayprevdate8, dayprevdate7, dayprevdate6, dayprevdate5, dayprevdate4, dayprevdate3, dayprevdate2, dayprevdate, daycurrentdate]
                 ohlc_df['Date']=date
                 ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
-               # print(date)                 
+                
+                #print(ohlc_df)                 
 
                 ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
                 #print (ohlc_df.info())

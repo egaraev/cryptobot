@@ -49,10 +49,10 @@ def main():
        fivemin_day = str(df.iloc[index]['day'])
        buy(row)
        if index % 3 == 0:
-          heikin_ashi(df_day, fivemin_day, row)
-          candles(df_day, fivemin_day, row)	
-          obv(df_day, fivemin_day, row)
-          macd(df_day, fivemin_day, row)	  
+          #heikin_ashi(df_day, fivemin_day, row)
+          #candles(df_day, fivemin_day, row)	
+          #obv(df_day, fivemin_day, row)
+          #macd(df_day, fivemin_day, row)	  
           time.sleep(5)
 
 
@@ -76,10 +76,14 @@ def heikin_ashi(df_day, fivemin_day, row):
         print ("Starting heikin ashi module")
         df_day_today = df_day.loc[df_day['T'] == fivemin_day]
         df_day_index = int(df_day_today.index.tolist()[0])
-        df_day = df_day.iloc[df_day_index-15:df_day_index]	
+        df_day = df_day.iloc[df_day_index-14:df_day_index]	
         df_day = df_day.append(row, ignore_index=True)
-        del df_day["day"] 		
-        print (df_day)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'Date', 'O': 'Open', 'H': 'High', 'L': 'Low', 'C': 'Close', 'V': 'Volume' }, axis=1, inplace=True)
+        df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
+        df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date 		
+        #print (df_day)
 
 
 
@@ -90,8 +94,12 @@ def candles(df_day, fivemin_day, row):
         df_day_index = int(df_day_today.index.tolist()[0])
         df_day = df_day.iloc[df_day_index-15:df_day_index]	
         df_day = df_day.append(row, ignore_index=True)
-        del df_day["day"] 		
-        print (df_day)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'Date', 'O': 'Open', 'H': 'High', 'L': 'Low', 'C': 'Close', 'V': 'Volume' }, axis=1, inplace=True)
+        df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
+        df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date  		
+        #print (df_day)
 
 
 def obv(df_day, fivemin_day, row):
@@ -100,8 +108,16 @@ def obv(df_day, fivemin_day, row):
         df_day_index = int(df_day_today.index.tolist()[0])
         df_day = df_day.iloc[df_day_index-15:df_day_index]	
         df_day = df_day.append(row, ignore_index=True)
-        del df_day["day"] 		
-        print (df_day)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'date', 'O': 'open', 'H': 'high', 'L': 'low', 'C': 'close', 'V': 'volume' }, axis=1, inplace=True)
+        df_day['adjclose'] = df_day['close'].values
+        df_day = df_day[['date', 'open', 'high', 'low', 'close', 'adjclose', 'volume']]
+        df_day['date'] = pd.to_datetime(df_day['date']).dt.date 
+        del df_day.index.name
+        df_day.set_index('date', inplace=True)
+        del df_day.index.name		
+        #print (df_day)
 
 
 def macd(df_day, fivemin_day, row):
@@ -110,8 +126,16 @@ def macd(df_day, fivemin_day, row):
         df_day_index = int(df_day_today.index.tolist()[0])
         df_day = df_day.iloc[df_day_index-15:df_day_index]	
         df_day = df_day.append(row, ignore_index=True)
-        del df_day["day"] 		
-        print (df_day)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'date', 'O': 'open', 'H': 'high', 'L': 'low', 'C': 'close', 'V': 'volume' }, axis=1, inplace=True)
+        df_day['adjclose'] = df_day['close'].values
+        df_day = df_day[['date', 'open', 'high', 'low', 'close', 'adjclose', 'volume']]
+        df_day['date'] = pd.to_datetime(df_day['date']).dt.date 
+        del df_day.index.name
+        df_day.set_index('date', inplace=True)
+        del df_day.index.name
+        #print (df_day)
 
 
 

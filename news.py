@@ -167,7 +167,7 @@ def news():
                  db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                  cursor = db.cursor()
                  cursor.execute('update markets set news = %s where market=%s',(news, market))
-                 cursor.execute('insert into logs(date, log_entry) values("%s", "%s")', (currenttime, printed))
+                 #cursor.execute('insert into logs(date, log_entry) values("%s", "%s")', (currenttime, printed))
                  db.commit()
           except pymysql.Error as e:
                  print ("Error %d: %s" % (e.args[0], e.args[1]))

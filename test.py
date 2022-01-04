@@ -19,14 +19,14 @@ plt.style.use('fivethirtyeight')
 #print (my_bittrex.get_balance('ETH'))
 #print (my_bittrex.buy_limit('USD-ETH', '0.00160951', '3083.394') )
 
-market="USD-LTC"
+market="USD-BTC"
 crypto=market[4:]
 market = crypto+"-USD"
 print (market)
 df = si.get_data(market)
 df = df.iloc[: , :-1]
 df = df[-365:]
-#print (df)
+print (df)
 
 
 

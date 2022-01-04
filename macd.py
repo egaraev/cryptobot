@@ -41,7 +41,7 @@ def macd_analyze():
           df = si.get_data(market1)
           df = df.iloc[: , :-1]
           df = df[-300:]
-          print (df)
+          #print (df)
           new_macd = get_macd(df['close'], 26, 12, 6)
           #print (new_macd)
           buy_price, sell_price, macd_signal = implement_macd_strategy(df['close'], new_macd)
