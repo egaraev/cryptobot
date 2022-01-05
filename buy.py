@@ -43,6 +43,7 @@ def tick():
     now = datetime.datetime.now()
     currentdate = now.strftime("%Y-%m-%d")
 
+
     print "Global buy parameters configured, moving to market loop"
     dayofweek=weekday()
 

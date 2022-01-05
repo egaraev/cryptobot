@@ -3,7 +3,7 @@ import numpy as np
 import ast
 import time
 import pymysql
-
+import datetime as dt
 
 #Read the data for fivemin
 dictionary = []
@@ -62,7 +62,8 @@ def buy(row):
         print ("Starting buying mechanizm")
         buy_size = parameters()[0]	
         market= "USD-BTC"
-        #timestamp = int(time.time())
+        iso_8601= str(row['T'])		
+        timestamp = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
         #day_close = summary['PrevDay']   #Getting day of closing order
     #Current prices
         last = float(row['C'])  #last price
@@ -139,6 +140,13 @@ def macd(df_day, fivemin_day, row):
 
 
 
+
+def epoch_seconds_from_iso_8601_with_tz_offset(iso_8601):
+    """ Convert ISO 8601 with a timezone offset to unix timestamp """
+    iso_8601_dt = dt.datetime.strptime(iso_8601, '%Y-%m-%d %H:%M:%S')
+    utc_at_epoch = dt.datetime(1970, 1, 1)
+    epoch_without_tz_offset = int((iso_8601_dt - utc_at_epoch).total_seconds())
+    return epoch_without_tz_offset
 
 
 def parameters():
