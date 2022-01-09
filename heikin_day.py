@@ -92,7 +92,7 @@ def HA():
                 dayprevdate14 = (df['Date'][0]).date()
 
                 heikin_ashi_df = heikin_ashi_func(df)
-                #print (daycurrentdate)
+      
                 
 
 				

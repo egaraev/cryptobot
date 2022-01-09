@@ -62,7 +62,7 @@ def tick():
                 ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
                 #last_pattern=''		  
                 df=candle_df(df)
-                #print (df)
+                print (df)
                 candle_score=market_values(market,68)
                 candle_pattern=market_values(market,69)
                 candletime=int(market_values(market,70))

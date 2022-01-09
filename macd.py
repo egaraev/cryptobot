@@ -76,6 +76,7 @@ def macd_analyze():
 
 
           print (new_name)
+          #print (macd_signal)		  
 
           position = []
           for i in range(len(macd_signal)):

@@ -42,7 +42,7 @@ def tick():
     #print (bot_token, bot_chatID)
     now = datetime.datetime.now()
     currentdate = now.strftime("%Y-%m-%d")
-
+    #print (now)
 
     print "Global buy parameters configured, moving to market loop"
     dayofweek=weekday()
