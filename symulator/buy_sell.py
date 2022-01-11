@@ -45,6 +45,8 @@ except:
     print("Unable to read the file")
 	
 df = pd.DataFrame(dictionary, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
+
+#print (df)
 df['T'] = pd.to_datetime(df['T'])
 arr = df["T"].to_numpy()
 arr = np.datetime_as_string(arr, unit='D')
@@ -63,9 +65,20 @@ try:
     file.close()
 except:
     print("Unable to read the file")
+
 df_sum = pd.DataFrame(dictionary_sum, columns=['Last', 'Bid', 'Ask', 'OpenBuyOrders', 'OpenSellOrders', 'PrevDay', 'Volume'])
+
+(df_sum['Volume']) = 150000000 * df_sum['Volume']
+#print (df_sum)
 df_out = pd.concat([df, df_sum], axis=1)
 df = df_out
+
+del df["V"]
+df.rename(columns={'Volume':'V'}, inplace=True)
+vol = df.pop('V')
+df.insert(4, 'V', vol)
+
+#print (df)
 
 #Read the data for day
 dictionary_day = []
@@ -81,7 +94,7 @@ except:
 	
 df_day = pd.DataFrame(dictionary_day, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
 df_day['T'] = pd.to_datetime(df_day['T'])
-
+#print (df_day)
 
 #Read the data for hour
 dictionary_hour = []
@@ -149,6 +162,7 @@ def main():
             buy(row, market)
             sell(row, market)			
             if index % 3 == 0:
+               dashboard(market, row)
                heikin_ashi_module(market, df_day, fivemin_day, row)
                obv(market, df_day, fivemin_day, row)
                macd_module(market, df_day, fivemin_day, row)	
@@ -159,7 +173,6 @@ def main():
             elif index % 5 == 0:
                profit_chart()			
                candle_charts(market, df_day, fivemin_day, row)			   
-               dashboard(market, row)
                aftercount(market, row)
                trend_analizer(market)
                #time.sleep(1)
@@ -929,23 +942,31 @@ def obv(market, df_day, fivemin_day, row):
         currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
         currenttime = now[:-3]
         df_day_today = df_day.loc[df_day['T'] == fivemin_day]
+        #print (row)
+
         df_day_index = int(df_day_today.index.tolist()[0])
-        df_day = df_day.iloc[df_day_index-60:df_day_index]	
+        df_day = df_day.iloc[df_day_index-59:df_day_index]
+        #print (df_day)		
         df_day = df_day.append(row, ignore_index=True)
+        #print (df_day)
         del df_day["day"]
         del df_day["BV"]
+
         df_day.rename({ 'T': 'date', 'O': 'open', 'H': 'high', 'L': 'low', 'C': 'close', 'V': 'volume' }, axis=1, inplace=True)
         df_day['adjclose'] = df_day['close'].values
+        #print (fivemin_day)
         df_day = df_day[['date', 'open', 'high', 'low', 'close', 'adjclose', 'volume']]
         df_day['date'] = pd.to_datetime(df_day['date']).dt.date 
         del df_day.index.name
         df_day.set_index('date', inplace=True)
         del df_day.index.name		
         df = df_day 
-        df = df.reset_index().rename({'index':'date'}, axis = 'columns')        		
+        df = df.reset_index().rename({'index':'date'}, axis = 'columns')
+        #print (df)		
         market_df = df[['date', 'adjclose', 'volume']]
         market_df.columns = ['date', 'close', 'volume']
         market_df = market_df.sort_values('date')
+        #print (market_df)
         df = on_balance_volume(market_df)
         new_df = df.copy()
         new_df = new_df.drop(['close', 'volume'], axis = 1)
@@ -1061,7 +1082,7 @@ def macd_module(market, df_day, fivemin_day, row):
         currenttime = now[:-3]		
         df_day_today = df_day.loc[df_day['T'] == fivemin_day]
         df_day_index = int(df_day_today.index.tolist()[0])
-        df_day = df_day.iloc[df_day_index-60:df_day_index]	
+        df_day = df_day.iloc[df_day_index-59:df_day_index]	
         df_day = df_day.append(row, ignore_index=True)
         del df_day["day"]
         del df_day["BV"]
@@ -1196,7 +1217,6 @@ def candle_patterns(market, df_day, fivemin_day, row):
         df_day = df_day.append(row, ignore_index=True)
         del df_day["day"]
         del df_day["BV"]
-        del df_day["Volume"]
         df_day.rename({ 'T': 'Date', 'O': 'Open', 'H': 'High', 'L': 'Low', 'C': 'Close', 'V': 'Volume' }, axis=1, inplace=True)
         df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
         df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date  		
@@ -1520,7 +1540,7 @@ def enable_market(market, row, df_hour, df_day):
     HAD_trend = heikin_ashi(market, 18)
     ha_time_second = heikin_ashi(market, 23)
     spread = float(((ask / bid) - 1) * 100)
-    volume = (row['Volume'])	
+    volume = (row['V'])	
 
     try:
         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
@@ -1656,13 +1676,27 @@ def enable_market(market, row, df_hour, df_day):
 def tweeter_charts(market, df_tw, row):
         print ("Starting tweeter chart module")
         now = str(row['T'])
-        currentdate = now[:-9] 		
+        currentdate = now[:-9] 
+        currenttime = now[:-3]		
         today_tweet = df_tw.loc[df_tw['Date'] == currentdate]
         positive=float(today_tweet['Positive'])
         negative=float(today_tweet['Negative'])
         neutral= (100 - negative - positive)
         labels = 'Neutral', 'Negative', 'Positive' 
+        printed = (market, "Positive tweets percentage: {} %".format(positive), "Negative tweets percentage: {} %".format(negative))
         #print (neutral, negative, positive)
+        try:
+            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+            cursor = db.cursor()
+            cursor.execute('update markets set positive_sentiments = %s, negative_sentiments =%s where market=%s',(positive, negative,  market))
+            cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+            cursor.execute("update history set positive_tweets = %s, negative_tweets =%s  where market='%s' and date='%s'" % (positive, negative, market, currentdate))
+            db.commit()
+        except pymysql.Error as e:
+            print ("Error %d: %s" % (e.args[0], e.args[1]))
+            sys.exit(1)
+        finally:
+            db.close()
         sizes = (neutral, negative, positive)
         colors = ["#1f77b4",  "#fe2d00", "#2ca02c"]				
         explode = (0, 0.1, 0)  
