@@ -69,6 +69,8 @@ echo "<table border='1'>
 <th>AI forecast directtion</th>
 <th>Heikin_ashi direction chart</th>
 <th>OBV chart</th>
+<th>MACD direction</th>
+<th>Candle patterns chart</th>
 <th>Heikin_ashi direction</th>
 <th>Trend</th>
 <th>Candle pattern</th>
@@ -93,6 +95,8 @@ echo "<td><b>" . $row['ai_direction'] . "</b></td>";
 echo "<td><a href='images/". $row['market'] ."_hachart.png'><img src='images/". $row['market'] ."_hachart.png' width='280px' height='250px'></td>";
 //echo "<td><a href='images/". $row['market'] ."_kov_results.png'><img src='images/". $row['market'] ."_kov_results.png' width='280px' height='250px'></td>";
 echo "<td><a href='images/cryptobot/". $row['market'] ."_obv_results.png'><img src='images/cryptobot/". $row['market'] ."_obv_results.png' width='280px' height='250px'></td>";
+echo "<td><a href='images/". $row['market'] ."_macd_results.png'><img src='images/". $row['market'] ."_macd_results.png' width='280px' height='250px'></td>";
+echo "<td><a href='images/". $row['market'] ."_candlesticks.png'><img src='images/". $row['market'] ."_candlesticks.png' width='280px' height='250px'></td>";
 echo "<td>" . $row['ha_day'] . "</td>";
 echo "<td>" . $row['trend'] . "</td>";
 echo "<td>" . $row['candle_pattern'] . "</td>";

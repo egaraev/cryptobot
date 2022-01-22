@@ -40,7 +40,7 @@ def macd_analyze():
           print (market1)
           df = si.get_data(market1)
           df = df.iloc[: , :-1]
-          df = df[-300:]
+          df = df[-59:]
           #print (df)
           new_macd = get_macd(df['close'], 26, 12, 6)
           #print (new_macd)

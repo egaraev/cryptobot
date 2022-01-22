@@ -40,10 +40,10 @@ def obv_analyze():
            df = si.get_data(market1)
            df = df.iloc[: , :-1]
            df = df[-60:]
-           print (df)
+           #print (df)
            df = df.reset_index().rename({'index':'date'}, axis = 'columns')
            #df  = df.dropna()
-           #print (df)
+           print (df)
 
            market_df = df[['date', 'adjclose', 'volume']]
            market_df.columns = ['date', 'close', 'volume']

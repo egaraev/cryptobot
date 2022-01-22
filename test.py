@@ -17,7 +17,7 @@ last_date = result[-1]
 
 
 try:
-    file = open("data/hist_data_day.txt", "r")
+    file = open("hist_data_day.txt", "r")
     contents = file.read()
     dictionary = ast.literal_eval(contents)
     dict_without_last_day= dictionary[:-1]	
@@ -31,7 +31,7 @@ except:
 
 
 try:
-      history_file = open('data/hist_data_day.txt', 'w')
+      history_file = open('hist_data_day.txt', 'w')
       history_file.write(str(dict_without_last_day))
       history_file.write(',')
       history_file.write(str(last_date))

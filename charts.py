@@ -31,7 +31,7 @@ from yahoo_fin.stock_info import *
 ###
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT market FROM markets WHERE active=1 and enabled=1")
+cursor.execute("SELECT market FROM markets WHERE  enabled=1")
 markets=cursor.fetchall()
 days=15
 
@@ -53,7 +53,8 @@ def prices():
           stock = yf.Ticker(market1)
           hist = stock.history(period="{}d".format(days))
           df = pd.DataFrame(hist)
-          df = df.reset_index(level=['Date'])                    
+          df = df.reset_index(level=['Date'])    
+          print (df)		  
 
           ohlc_df = df.copy()
           ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]

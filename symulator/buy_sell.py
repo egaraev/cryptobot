@@ -154,33 +154,42 @@ market= "USD-BTC"
 
 
 
-#Start the main function
+#Start the main function  (1 week is about 20 mins of symulation)
 def main():
-    for index, row in df.iterrows():
+    for i,(index,row) in enumerate(df.iterrows()):
+#        if i < 5: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 min, then it starts at 22:00
         try:         
-            fivemin_day = str(df.iloc[index]['day'])		
+            fivemin_day = str(df.iloc[index]['day'])	
+            print (fivemin_day)			
             buy(row, market)
-            sell(row, market)			
-            if index % 3 == 0:
+            sell(row, market)
+            if index % 2 == 0:	# every 10 mins
+               enable_market(market, row, df_hour, df_day)	
+               #time.sleep(1)			   
+            if index % 3 == 0: #every 15 mins
                dashboard(market, row)
                heikin_ashi_module(market, df_day, fivemin_day, row)
                obv(market, df_day, fivemin_day, row)
                macd_module(market, df_day, fivemin_day, row)	
                candle_patterns(market, df_day, fivemin_day, row)
-               enable_market(market, row, df_hour, df_day)
-               tweeter_charts(market, df_tw, row)
                #time.sleep(1)			   
-            elif index % 5 == 0:
-               profit_chart()			
-               candle_charts(market, df_day, fivemin_day, row)			   
+            if index % 5 == 0: # every 25 mins
+               profit_chart()
                aftercount(market, row)
                trend_analizer(market)
                #time.sleep(1)
-            elif index % 10 == 0:
-               tweeter_charts(market, df_tw, row)			
-               #time.sleep(1)
+            if index % 150 == 0:  # every 12 hours			
+               tweeter_charts_img(market, df_tw, row)
+               heikin_ashi_module_img(market, df_day, fivemin_day, row)	
+               obv_img(market, df_day, fivemin_day, row)
+               macd_module_img(market, df_day, fivemin_day, row)	
+               candle_patterns_img(market, df_day, fivemin_day, row)
+               candle_charts_img(market, df_day, fivemin_day, row)				   
+               #time.sleep(1)	    
         except:
-             continue
+            break
+        #if i > 20: break
+
 
 
 ####### BUY START ################
@@ -207,7 +216,7 @@ def buy(row, market):
         iteration = int(iteration_orders(market))
         timestamp_old = int(timestamp_orders(market))
         currenttime = now[:-3]
-        print (currenttime, last)
+        #print (currenttime, last)
         HAD_trend=heikin_ashi(market, 18)
         candle_direction=heikin_ashi(market, 77)
         hour_candle_direction=heikin_ashi(market, 76)
@@ -250,7 +259,7 @@ def buy(row, market):
         else:
             candles_status='STABLE'
                     
-        print (market, candles_status, HAD_trend)		
+        #print (market, candles_status, HAD_trend)		
 
         print ("Market parameters configured, moving to buy for ", market)
         try:
@@ -784,6 +793,174 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
         ohlc_df['Date']=date
         ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
         ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
+
+					
+        HAD_PREV_Close4 = ohlc_df['Close'][dayid-4]
+        HAD_PREV_Open4 = ohlc_df['Open'][dayid-4]
+        HAD_PREV_Low4 = ohlc_df['High'][dayid-4]
+        HAD_PREV_High4 = ohlc_df['Low'][dayid-4]
+        HAD_PREV_Close3 = ohlc_df['Close'][dayid-3]
+        HAD_PREV_Open3 = ohlc_df['Open'][dayid-3]
+        HAD_PREV_High3 = ohlc_df['High'][dayid-3]
+        HAD_PREV_Low3 = ohlc_df['Low'][dayid-3]
+        HAD_PREV_Close2 = ohlc_df['Close'][dayid-2]
+        HAD_PREV_Open2 = ohlc_df['Open'][dayid-2]
+        HAD_PREV_High2 = ohlc_df['High'][dayid-2]
+        HAD_PREV_Low2 = ohlc_df['Low'][dayid-2]
+        HAD_PREV_Close = ohlc_df['Close'][dayid-1]
+        HAD_PREV_Open = ohlc_df['Open'][dayid-1]
+        HAD_PREV_High = ohlc_df['High'][dayid-1]
+        HAD_PREV_Low = ohlc_df['Low'][dayid-1]
+        HAD_Close = ohlc_df['Close'][dayid]
+        HAD_Open = ohlc_df['Open'][dayid]
+        HAD_High = ohlc_df['High'][dayid]
+        HAD_Low = ohlc_df['Low'][dayid]				
+        HAD_trend = "NONE"
+        had_direction_down_short0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 2)  and (HAD_Open - HAD_Close !=0)
+        had_direction_down_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 2) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+        had_direction_down_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 2) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+        had_direction_down_shorter0 =((HAD_High - HAD_Low) / (HAD_Open - HAD_Close) >= 4)  and (HAD_Open - HAD_Close !=0)
+        had_direction_down_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Open - HAD_PREV_Close) >= 4) and (HAD_PREV_Open - HAD_PREV_Close !=0)
+        had_direction_down_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Open2 - HAD_PREV_Close2) >= 4) and (HAD_PREV_Open2 - HAD_PREV_Close2 !=0)
+        had_direction_down0 = (HAD_Close < HAD_Open)
+        had_direction_down1 = (HAD_PREV_Close < HAD_PREV_Open)
+        had_direction_down2 = (HAD_PREV_Close2 < HAD_PREV_Open2)
+        had_direction_down_long_0 = (HAD_Open == HAD_High and HAD_Close < HAD_Open)
+        had_direction_down_long_1 = (HAD_PREV_Open == HAD_PREV_High and HAD_PREV_Close < HAD_PREV_Open)
+        had_direction_down_long_2 = (HAD_PREV_Open2 == HAD_PREV_High2 and HAD_PREV_Close2 < HAD_PREV_Open2)
+        had_direction_down_longer = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+        had_direction_down_longermax = (numpy.abs(HAD_Open - HAD_Close) > numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) > numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2 ) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+        had_direction_down_smaller = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and had_direction_down0 and had_direction_down1)
+        had_direction_down_smaller1 = (numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down1 and had_direction_down2)
+        had_direction_down_smallermax = (numpy.abs(HAD_Open - HAD_Close) < numpy.abs(HAD_PREV_Open - HAD_PREV_Close) and numpy.abs(HAD_PREV_Open - HAD_PREV_Close) < numpy.abs(HAD_PREV_Open2 - HAD_PREV_Close2) and had_direction_down0 and had_direction_down1 and had_direction_down2)
+        had_direction_spin0 = (HAD_Open == HAD_Close)
+        had_direction_spin1 = (HAD_PREV_Open == HAD_PREV_Close)
+        had_direction_spin2 = (HAD_PREV_Open2 == HAD_PREV_Close2)
+        had_direction_up_short0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 2) and (HAD_Close - HAD_Open !=0)
+        had_direction_up_short1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 2) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+        had_direction_up_short2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 2) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+        had_direction_up_shorter0 = ((HAD_High - HAD_Low) / (HAD_Close - HAD_Open) >= 4) and (HAD_Close - HAD_Open !=0)
+        had_direction_up_shorter1 = ((HAD_PREV_High - HAD_PREV_Low) / (HAD_PREV_Close - HAD_PREV_Open) >= 4) and (HAD_PREV_Close - HAD_PREV_Open !=0)
+        had_direction_up_shorter2 = ((HAD_PREV_High2 - HAD_PREV_Low2) / (HAD_PREV_Close2 - HAD_PREV_Open2) >= 4) and (HAD_PREV_Close2 - HAD_PREV_Open2 !=0)
+        had_direction_up0 = (HAD_Close > HAD_Open)
+        had_direction_up1 = (HAD_PREV_Close > HAD_PREV_Open)
+        had_direction_up2 = (HAD_PREV_Close2 > HAD_PREV_Open2)
+        had_direction_up_long_0 = (HAD_Open == HAD_Low and HAD_Close > HAD_Open)
+        had_direction_up_long_1 = (HAD_PREV_Open == HAD_PREV_Low and HAD_PREV_Close > HAD_PREV_Open)
+        had_direction_up_long_2 = (HAD_PREV_Open2 == HAD_PREV_Low2 and HAD_PREV_Close2 > HAD_PREV_Open2)
+        had_direction_up_longer = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+        had_direction_up_longermax = (numpy.abs(HAD_Close - HAD_Open) > numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) > numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+        had_direction_up_smaller = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and had_direction_up0 and had_direction_up1)
+        had_direction_up_smaller1 = (numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up1 and had_direction_up2)
+        had_direction_up_smallermax = (numpy.abs(HAD_Close - HAD_Open) < numpy.abs(HAD_PREV_Close - HAD_PREV_Open) and numpy.abs(HAD_PREV_Close - HAD_PREV_Open) < numpy.abs(HAD_PREV_Close2 - HAD_PREV_Open2) and had_direction_up0 and had_direction_up1 and had_direction_up2)
+
+        if (((had_direction_down_long_0 and had_direction_down0) or (had_direction_down_long_0 and had_direction_down_long_1 and had_direction_down0) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longer) or (had_direction_down_long_0 or had_direction_down_long_1 and had_direction_down_longermax and had_direction_down_longer) and had_direction_down0) or (had_direction_down0 and had_direction_down1 and had_direction_down2)):
+                    HAD_trend = "DOWN"
+        elif (((had_direction_up_long_0 and had_direction_up0) or (had_direction_up_long_0 and had_direction_up_long_1 and had_direction_up0) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer) or (had_direction_up_long_0 or had_direction_up_long_1 and had_direction_up_longer and had_direction_up_longermax) and had_direction_up0) or (had_direction_up0 and had_direction_up1 and had_direction_up2)):
+                    HAD_trend = "UP"
+        elif ((had_direction_up_short2 and had_direction_spin1 and had_direction_up0) or (had_direction_down_short2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_down_short1 and had_direction_spin0) or (had_direction_down_long_2 and had_direction_down_short1 and had_direction_up_long_0) or (had_direction_down_long_2 and had_direction_up_short1 and had_direction_up_long_0) or (had_direction_down2 and had_direction_up_long_0 and had_direction_up1 and had_direction_up_longer) or (had_direction_down_long_2 and had_direction_down_smaller1 and had_direction_up0) or (had_direction_down_long_2 and had_direction_down_short1 and  had_direction_up_long_0) or (had_direction_down_longermax and had_direction_up_short0) and had_direction_down1 and had_direction_down2):
+                    HAD_trend = "Revers-UP"
+        elif ((had_direction_down_short2 and had_direction_spin1 and had_direction_down0) or (had_direction_up_short2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_up_short1 and had_direction_spin0) or (had_direction_up_long_2 and had_direction_up_short1 and had_direction_down_long_0) or (had_direction_up_long_2 and had_direction_down_short1 and had_direction_down_long_0) or (had_direction_up2 and had_direction_down_long_0 and had_direction_down1 and had_direction_down_longer) or (had_direction_up_long_2 and had_direction_up_smaller1 and had_direction_down0) or (had_direction_up_long_2 and had_direction_up_short1 and  had_direction_down_long_0) or (had_direction_up_longermax and had_direction_down_short0) and had_direction_up1 and had_direction_up2):
+                    HAD_trend = "Revers-DOWN"
+        else:
+                    HAD_trend = "STABLE"  
+
+        if (had_direction_spin0):
+                    HaD_current_candle = "had_direction_spin0"
+        if (had_direction_down_short0):
+                    HaD_current_candle = "had_direction_down_short0"                    
+        if (had_direction_down_long_0):
+                    HaD_current_candle = "had_direction_down_long_0"                    
+        if (had_direction_down0):
+                    HaD_current_candle = "had_direction_down0"
+        if (had_direction_up_short0):
+                    HaD_current_candle = "had_direction_up_short0"                    
+        if (had_direction_up_long_0):
+                    HaD_current_candle = "had_direction_up_long_0"
+        if (had_direction_up0):
+                    HaD_current_candle = "had_direction_up0"
+        if (had_direction_spin1):
+                    HaD_previous_candle = "had_direction_spin1" 
+        if (had_direction_down_short1):
+                    HaD_previous_candle = "had_direction_down_short1"                    
+        if (had_direction_down_long_1):
+                    HaD_previous_candle = "had_direction_down_long_1" 
+        if (had_direction_down1):
+                    HaD_previous_candle = "had_direction_down1"
+        if (had_direction_up_short1):
+                    HaD_previous_candle = "had_direction_up_short1"                     
+        if (had_direction_up_long_1):
+                    HaD_previous_candle = "had_direction_up_long_1"
+        if (had_direction_up1):
+                    HaD_previous_candle = "had_direction_up1"				
+				
+        print (market, HAD_trend)
+        try:
+            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+            cursor = db.cursor()
+            cursor.execute("update markets set current_price = %s, ha_direction_daily=%s, had_candle_previous=%s, had_candle_current=%s  where market = %s",(last,  HAD_trend, HaD_previous_candle, HaD_current_candle,  market))                   
+            cursor.execute("update markets set ha_day=%s  where market = %s",(HAD_trend,  market))
+            cursor.execute("update history set price='%s' where market='%s' and date='%s'" % (last, market, currentdate))
+            db.commit()
+        except pymysql.Error as e:
+            print ("Error %d: %s" % (e.args[0], e.args[1]))
+            sys.exit(1)
+        finally:
+            db.close()
+
+        try:
+            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+            cursor = db.cursor()
+            cursor.execute("update markets set ha_day=%s, ha_time_second=%s  where market = %s",(HAD_trend, currtime, market))
+            cursor.execute("update history set ha_day='%s'  where market='%s' and date='%s'" % (HAD_trend, market, currentdate))
+            db.commit()
+        except pymysql.Error as e:
+            print ("Error %d: %s" % (e.args[0], e.args[1]))
+            sys.exit(1)
+        finally:
+            db.close()					
+	
+
+def heikin_ashi_module_img(market, df_day, fivemin_day, row):
+        print ("Starting heikin ashi module")
+        days=15
+        dayid=days-1	
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)		
+        df_day_today = df_day.loc[df_day['T'] == fivemin_day]
+        df_day_index = int(df_day_today.index.tolist()[0])
+        df_day = df_day.iloc[df_day_index-14:df_day_index]	
+        df_day = df_day.append(row, ignore_index=True)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'Date', 'O': 'Open', 'H': 'High', 'L': 'Low', 'C': 'Close', 'V': 'Volume' }, axis=1, inplace=True)
+        df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
+        df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date 		
+        df = df_day
+        daycurrentdate = (df['Date'][14])		
+        dayprevdate = (df['Date'][13])
+        dayprevdate2 = (df['Date'][12])
+        dayprevdate3 = (df['Date'][11])
+        dayprevdate4 = (df['Date'][10])
+        dayprevdate5 = (df['Date'][9])
+        dayprevdate6 = (df['Date'][8])
+        dayprevdate7 = (df['Date'][7])          
+        dayprevdate8 = (df['Date'][6])
+        dayprevdate9 = (df['Date'][5])
+        dayprevdate10 = (df['Date'][4])
+        dayprevdate11 = (df['Date'][3])
+        dayprevdate12 = (df['Date'][2])          
+        dayprevdate13 = (df['Date'][1])
+        dayprevdate14 = (df['Date'][0])
+        heikin_ashi_df = heikin_ashi_func(df)
+        ohlc_df = heikin_ashi_df.copy()
+        date=[dayprevdate14, dayprevdate13, dayprevdate12, dayprevdate11, dayprevdate10, dayprevdate9, dayprevdate8, dayprevdate7, dayprevdate6, dayprevdate5, dayprevdate4, dayprevdate3, dayprevdate2, dayprevdate, daycurrentdate]
+        ohlc_df['Date']=date
+        ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
+        ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
         fig, ax = plt.subplots(figsize=(8, 4))
         ax.xaxis_date()
         candlestick_ohlc(ax, ohlc_df.values, width = 0.8, colorup = 'g', colordown = 'r', alpha = 0.8)
@@ -929,10 +1106,120 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
             print ("Error %d: %s" % (e.args[0], e.args[1]))
             sys.exit(1)
         finally:
-            db.close()					
-				
+            db.close()		
+
 
 def obv(market, df_day, fivemin_day, row):
+        print ("Starting obv module")
+        increased_volume = []		
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
+        currenttime = now[:-3]
+        df_day_today = df_day.loc[df_day['T'] == fivemin_day]
+        #print (row)
+
+        df_day_index = int(df_day_today.index.tolist()[0])
+        df_day = df_day.iloc[df_day_index-59:df_day_index]
+        #print (df_day)		
+        df_day = df_day.append(row, ignore_index=True)
+        #print (df_day)
+        del df_day["day"]
+        del df_day["BV"]
+
+        df_day.rename({ 'T': 'date', 'O': 'open', 'H': 'high', 'L': 'low', 'C': 'close', 'V': 'volume' }, axis=1, inplace=True)
+        df_day['adjclose'] = df_day['close'].values
+        #print (fivemin_day)
+        df_day = df_day[['date', 'open', 'high', 'low', 'close', 'adjclose', 'volume']]
+        df_day['date'] = pd.to_datetime(df_day['date']).dt.date 
+        del df_day.index.name
+        df_day.set_index('date', inplace=True)
+        del df_day.index.name		
+        df = df_day 
+        df = df.reset_index().rename({'index':'date'}, axis = 'columns')
+        #print (df)		
+        market_df = df[['date', 'adjclose', 'volume']]
+        market_df.columns = ['date', 'close', 'volume']
+        market_df = market_df.sort_values('date')
+        #print (market_df)
+        df = on_balance_volume(market_df)
+        new_df = df.copy()
+        new_df = new_df.drop(['close', 'volume'], axis = 1)
+        new_obv = get_obv(new_df)
+        buy_price, sell_price, obv_signal = implement_obv_strategy(df['close'], new_obv)
+
+        position = []
+        for i in range(len(obv_signal)):
+          if obv_signal[i] > 1:
+              position.append(0)
+          else:
+              position.append(1)
+        
+        for i in range(len(df['close'])):
+          if obv_signal[i] == 1:
+             position[i] = 1
+          elif obv_signal[i] == -1:
+             position[i] = 0
+          else:
+             position[i] = position[i-1]
+
+        obv = new_obv['obv']
+        signal = new_obv['obv_ema21']
+        close_price = df['close']
+        obv_signal = pd.DataFrame(obv_signal).rename(columns = {0:'obv_signal'}).set_index(df.index)
+        position = pd.DataFrame(position).rename(columns = {0:'obv_position'}).set_index(df.index)
+        frames = [close_price, obv, signal, obv_signal, position]
+        strategy = pd.concat(frames, join = 'inner', axis = 1)
+        row_ix = strategy.shape[0]-strategy.ne(0).values[::-1].argmax(0)-1
+        first_max = strategy.values[row_ix, range(strategy.shape[1])]
+        out = pd.DataFrame([first_max], columns=strategy.columns)
+        last_obv_signal = int(out['obv_signal'])
+        #print (last_obv_signal)
+
+        obv_signal= strategy.iloc[-1]
+        obv_signal = int(obv_signal['obv_signal'])
+        if obv_signal == 0:
+           print ("OBV is 0, nothing to do")
+        else:
+           if obv_signal == 1:
+              signal = "Buy"
+              print ("OBV is Buy")			  
+           else:
+              signal = "Sell"
+              print ("OBV is Sell")
+           try:
+               db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+               cursor = db.cursor()
+               cursor.execute("update markets set obv_signal='%s'  where market='%s'" % (signal, market))
+               cursor.execute("update history set obv_signal='%s'  where market='%s' and date='%s'" % (signal, market, currentdate))
+               db.commit()
+           except pymysql.Error as e:
+               print ("Error %d: %s" % (e.args[0], e.args[1]))
+               sys.exit(1)
+           finally:
+               db.close()
+
+
+
+        if last_obv_signal == 1:
+              signal = "Buy"
+        else:
+              signal = "Sell"
+        try:
+               db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+               cursor = db.cursor()
+               cursor.execute("update markets set obv_signal='%s'  where market='%s'" % (signal, market))
+               db.commit()
+        except pymysql.Error as e:
+               print ("Error %d: %s" % (e.args[0], e.args[1]))
+               sys.exit(1)
+        finally:
+               db.close()
+
+
+def obv_img(market, df_day, fivemin_day, row):
         print ("Starting obv module")
         increased_volume = []		
         last = float(row['Last'])
@@ -1097,6 +1384,104 @@ def macd_module(market, df_day, fivemin_day, row):
         new_macd = get_macd(df['close'], 26, 12, 6)
         #print (new_macd)		
         buy_price, sell_price, macd_signal = implement_macd_strategy(df['close'], new_macd)
+
+		  
+        position = []
+        for i in range(len(macd_signal)):
+          if macd_signal[i] > 1:
+             position.append(0)
+          else:
+             position.append(1)
+        
+        for i in range(len(df['close'])):
+          if macd_signal[i] == 1:
+             position[i] = 1
+          elif macd_signal[i] == -1:
+             position[i] = 0
+          else:
+             position[i] = position[i-1]
+        
+        macd = new_macd['macd']
+        signal = new_macd['signal']
+        close_price = df['close']
+        macd_signal = pd.DataFrame(macd_signal).rename(columns = {0:'macd_signal'}).set_index(df.index)
+        position = pd.DataFrame(position).rename(columns = {0:'macd_position'}).set_index(df.index)
+
+        frames = [close_price, macd, signal, macd_signal, position]
+        strategy = pd.concat(frames, join = 'inner', axis = 1)
+
+          #print (strategy)
+        row_ix = strategy.shape[0]-strategy.ne(0).values[::-1].argmax(0)-1
+        first_max = strategy.values[row_ix, range(strategy.shape[1])]
+        out = pd.DataFrame([first_max], columns=strategy.columns)
+          #print (out)
+        last_macd_signal = int(out['macd_signal'])
+        #print (last_macd_signal)
+		  
+        macd_signal= strategy.iloc[-1]
+        macd_signal = int(macd_signal['macd_signal'])
+        if macd_signal == 0:
+           print ("MACD is 0, nothing to do")
+        else:
+           if macd_signal == 1:
+              signal = "Buy"
+              print ("MACD is Buy")
+           else:
+              signal = "Sell"
+              print ("MACD is Sell")
+           try:
+               db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+               cursor = db.cursor()
+               cursor.execute("update markets set macd_signal='%s'  where market='%s'" % (signal, market))
+               cursor.execute("update history set macd_signal='%s'  where market='%s' and date='%s'" % (signal, market, currentdate))
+               db.commit()
+           except pymysql.Error as e:
+               print ("Error %d: %s" % (e.args[0], e.args[1]))
+               sys.exit(1)
+           finally:
+               db.close()
+
+        if last_macd_signal == 1:
+              signal = "Buy"
+        else:
+              signal = "Sell"
+        try:
+               db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+               cursor = db.cursor()
+               cursor.execute("update markets set macd_signal='%s'  where market='%s'" % (signal, market))
+               db.commit()
+        except pymysql.Error as e:
+               print ("Error %d: %s" % (e.args[0], e.args[1]))
+               sys.exit(1)
+        finally:
+               db.close()				 
+
+
+def macd_module_img(market, df_day, fivemin_day, row):
+        print ("Starting macd module")		
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
+        currenttime = now[:-3]		
+        df_day_today = df_day.loc[df_day['T'] == fivemin_day]
+        df_day_index = int(df_day_today.index.tolist()[0])
+        df_day = df_day.iloc[df_day_index-59:df_day_index]	
+        df_day = df_day.append(row, ignore_index=True)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'date', 'O': 'open', 'H': 'high', 'L': 'low', 'C': 'close', 'V': 'volume' }, axis=1, inplace=True)
+        df_day['adjclose'] = df_day['close'].values
+        df_day = df_day[['date', 'open', 'high', 'low', 'close', 'adjclose', 'volume']]
+        df_day['date'] = pd.to_datetime(df_day['date']).dt.date 
+        del df_day.index.name
+        df_day.set_index('date', inplace=True)
+        del df_day.index.name
+        df = df_day
+        new_macd = get_macd(df['close'], 26, 12, 6)
+        #print (new_macd)		
+        buy_price, sell_price, macd_signal = implement_macd_strategy(df['close'], new_macd)
         plt.rcParams['figure.figsize'] = (20, 15)
         plt.style.use('fivethirtyeight')
         ax1 = plt.subplot2grid((8,1), (0,0), rowspan = 5, colspan = 1)
@@ -1127,8 +1512,6 @@ def macd_module(market, df_day, fivemin_day, row):
         dst_dir = "/root/PycharmProjects/cryptobot/images/symulator/"
         for pngfile in glob.iglob(os.path.join(src_dir, "*macd_results.png")):
            shutil.copy(pngfile, dst_dir)				 
-
-
         print (new_name)
 
         #print (macd_signal)
@@ -1163,7 +1546,7 @@ def macd_module(market, df_day, fivemin_day, row):
         out = pd.DataFrame([first_max], columns=strategy.columns)
           #print (out)
         last_macd_signal = int(out['macd_signal'])
-        print (last_macd_signal)
+        #print (last_macd_signal)
 		  
         macd_signal= strategy.iloc[-1]
         macd_signal = int(macd_signal['macd_signal'])
@@ -1199,10 +1582,108 @@ def macd_module(market, df_day, fivemin_day, row):
                print ("Error %d: %s" % (e.args[0], e.args[1]))
                sys.exit(1)
         finally:
-               db.close()				 
+               db.close()		
 	
 	
 def candle_patterns(market, df_day, fivemin_day, row):
+        print ("Starting candle patterns module")
+        days=30
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
+        currenttime = now[:-3]		
+        df_day_today = df_day.loc[df_day['T'] == fivemin_day]
+        df_day_index = int(df_day_today.index.tolist()[0])
+        df_day = df_day.iloc[df_day_index-30:df_day_index]	
+        df_day = df_day.append(row, ignore_index=True)
+        del df_day["day"]
+        del df_day["BV"]
+        df_day.rename({ 'T': 'Date', 'O': 'Open', 'H': 'High', 'L': 'Low', 'C': 'Close', 'V': 'Volume' }, axis=1, inplace=True)
+        df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
+        df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date  		
+
+        df = df_day
+        ohlc_df = df.copy()
+        ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]	  
+        df=candle_df(df)
+        #print (df)
+        candle_score=market_values(market,68)
+        candle_pattern=market_values(market,69)
+        candletime=int(market_values(market,70))
+        buy_df = df.copy()
+        candle_scored_buy= buy_df[(buy_df['candle_score'] > 0)]
+        candle_scored_sell= df[(df['candle_score'] < 0)]		  
+        labels_buy=(candle_scored_buy['candle_pattern'].tolist())
+        labels_sell=(candle_scored_sell['candle_pattern'].tolist())	
+        ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
+        legend_elements = [Line2D([0], [0], marker="^", color='w', label='B_R -> Bullish_Reversal', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='T_w_s -> Three_white_soldiers', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='T_b -> Tweezer_Bottom', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='M_S -> Morning_Star', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='BU_HR -> Bullish_Harami', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='BU_R -> Bullish_Reversal', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='Bu_E -> Bullish_Engulfing', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='P_L -> Piercing_Line_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='H_M_Bu -> Hanging_Man_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="^", color='w', label='P_L -> Piercing_Line_bullish', markerfacecolor='g', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_b_c -> Three_black_crows', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_b_g -> Two_black_gapping', markersize=15), Line2D([0], [0], marker="v", color='r', label='T_t -> Tweezer_Top', markersize=15), Line2D([0], [0], marker="v", color='r', label='E_S -> Evening_Star', markersize=15), Line2D([0], [0], marker="v", color='r', label='BE_HR -> Bearish_Harami', markersize=15), Line2D([0], [0], marker="v", color='r', label='BE_R -> Bearish_Reversal', markersize=15), Line2D([0], [0], marker="v", color='r', label='SS_BE -> Shooting_Star_Bearish', markersize=15), Line2D([0], [0], marker="v", color='r', label='Be_E -> Bearish_Engulfing', markersize=15), Line2D([0], [0], marker="v", color='r', label='H_M_Be -> Hanging_Man_bearish', markersize=15), Line2D([0], [0], marker="v", color='r', label='SS_BU -> Shooting_Star_Bullish', markersize=15)]
+
+
+        new_df= (buy_df.iloc[-2:])
+        #print (new_df)
+        sum_score = new_df['candle_score'].sum()
+        last_df= buy_df.iloc[-1]
+        last_pattern = last_df['candle_pattern']
+        new_df_check_patten=(buy_df.iloc[-2:])
+        previous_day_pattern=(new_df_check_patten.iloc[:1])
+        previous_day_pattern=previous_day_pattern.iloc[-1]
+        previous_day_pattern=previous_day_pattern['candle_pattern']
+        #print (sum_score)
+
+
+        if (last_pattern =="" and previous_day_pattern!=candle_pattern):
+            try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s' where market='%s'" % (" ", market))
+                     cursor.execute("update markets set candle_score='%s'  where market='%s'" % (0, market))					 
+                     db.commit()
+            except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+            finally:
+                     db.close()				  
+
+
+
+        if (last_pattern =="" and currtime-candletime>400000):
+            try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s' where market='%s'" % (" ", market))
+                     cursor.execute("update markets set candle_score='%s'  where market='%s'" % (0, market))					 
+                     db.commit()
+            except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+            finally:
+                     db.close()	
+
+
+				 
+        if last_pattern !="":
+            print (last_pattern, previous_day_pattern)
+
+            try:
+                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                     cursor = db.cursor()
+                     cursor.execute("update markets set candle_pattern='%s', candle_time='%s'  where market='%s'" % (last_pattern, currtime, market))
+                     cursor.execute("update markets set candle_score='%s'  where market='%s'" % (sum_score, market))
+                     cursor.execute("update history set candle_score='%s', candle_pattern='%s'  where market='%s' and date='%s'" % (sum_score, last_pattern, market, currentdate))					 
+                     db.commit()
+            except pymysql.Error as e:
+                     print ("Error %d: %s" % (e.args[0], e.args[1]))
+                     sys.exit(1)
+            finally:
+                     db.close()
+
+        else:
+            pass 
+
+
+def candle_patterns_img(market, df_day, fivemin_day, row):
         print ("Starting candle patterns module")
         days=30
         last = float(row['Last'])
@@ -1283,7 +1764,7 @@ def candle_patterns(market, df_day, fivemin_day, row):
             shutil.copy(pngfile, dst_dir)
 
         new_df= (buy_df.iloc[-2:])
-        print (new_df)
+        #print (new_df)
         sum_score = new_df['candle_score'].sum()
         last_df= buy_df.iloc[-1]
         last_pattern = last_df['candle_pattern']
@@ -1291,7 +1772,7 @@ def candle_patterns(market, df_day, fivemin_day, row):
         previous_day_pattern=(new_df_check_patten.iloc[:1])
         previous_day_pattern=previous_day_pattern.iloc[-1]
         previous_day_pattern=previous_day_pattern['candle_pattern']
-        print (sum_score)
+        #print (sum_score)
 
 
         if (last_pattern =="" and previous_day_pattern!=candle_pattern):
@@ -1344,7 +1825,7 @@ def candle_patterns(market, df_day, fivemin_day, row):
             pass 
 
 
-def candle_charts(market, df_day, fivemin_day, row):
+def candle_charts_img(market, df_day, fivemin_day, row):
         print ("Starting candle chart module")
         last = float(row['Last'])
         now = str(row['T'])
@@ -1419,9 +1900,9 @@ def dashboard(market, row):
     print ("Starting dashboard module")
     now = str(row['T'])
     currenttime = now[:-9]
-    print (currenttime)
-    print (date_exist(market, currenttime))
-    print (market, currenttime)
+    #print (currenttime)
+    #print (date_exist(market, currenttime))
+    #print (market, currenttime)
     if date_exist(market, currenttime) != 1:
         try:
                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
@@ -1559,7 +2040,7 @@ def enable_market(market, row, df_hour, df_day):
         percent_grow=-1
     else:
         percent_grow=0
-    print (market, percent_grow)
+    #print (market, percent_grow)
 
     if spread>0.5 and bought_quantity_sql>0.0 and percent_grow==-1:
         print (market, "We have open order, but we need to disable this currency")
@@ -1657,7 +2138,7 @@ def enable_market(market, row, df_hour, df_day):
     else:
         candle_dir = 'D'
 
-    print (market, hourcandle_dir, candle_dir)
+    #print (market, hourcandle_dir, candle_dir)
     try:
         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
         cursor = db.cursor()
@@ -1673,7 +2154,7 @@ def enable_market(market, row, df_hour, df_day):
         db.close()
 
 
-def tweeter_charts(market, df_tw, row):
+def tweeter_charts_img(market, df_tw, row):
         print ("Starting tweeter chart module")
         now = str(row['T'])
         currentdate = now[:-9] 
@@ -1719,6 +2200,17 @@ def tweeter_charts(market, df_tw, row):
         dst_dir = "/root/PycharmProjects/cryptobot/images/symulator/"
         for pngfile in glob.iglob(os.path.join(src_dir, "*_tweets.png")):
             shutil.copy(pngfile, dst_dir)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
