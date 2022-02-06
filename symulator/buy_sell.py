@@ -42,7 +42,7 @@ try:
         dictionary.append(i)
     file.close()
 except:
-    print("Unable to read the file")
+    print("Unable to read hist_data_fivemin file")
 	
 df = pd.DataFrame(dictionary, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
 
@@ -64,7 +64,7 @@ try:
         dictionary_sum.append(i)
     file.close()
 except:
-    print("Unable to read the file")
+    print("Unable to read summaries file")
 
 df_sum = pd.DataFrame(dictionary_sum, columns=['Last', 'Bid', 'Ask', 'OpenBuyOrders', 'OpenSellOrders', 'PrevDay', 'Volume'])
 
@@ -90,7 +90,7 @@ try:
         dictionary_day.append(i)
     file.close()
 except:
-    print("Unable to read the file")
+    print("Unable to read hist_data_day file")
 	
 df_day = pd.DataFrame(dictionary_day, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
 df_day['T'] = pd.to_datetime(df_day['T'])
@@ -106,7 +106,7 @@ try:
         dictionary_hour.append(i)
     file.close()
 except:
-    print("Unable to read the file")
+    print("Unable to read hist_data_hour file")
 	
 df_hour = pd.DataFrame(dictionary_hour, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
 df_hour['T'] = pd.to_datetime(df_hour['T'])
@@ -125,7 +125,7 @@ try:
         dictionary_thirty.append(i)
     file.close()
 except:
-    print("Unable to read the file")
+    print("Unable to read hist_data_thirty file")
 	
 df_thirty = pd.DataFrame(dictionary_thirty, columns=['O', 'H', 'L', 'C', 'V', 'T', 'BV'])
 df_thirty['T'] = pd.to_datetime(df_thirty['T'])
@@ -157,7 +157,7 @@ market= "USD-BTC"
 #Start the main function  (1 week is about 20 mins of symulation)
 def main():
     for i,(index,row) in enumerate(df.iterrows()):
-#        if i < 5: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 min, then it starts at 22:00
+        if i < 3700: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 rows, then it starts at 22:00
         try:         
             fivemin_day = str(df.iloc[index]['day'])	
             print (fivemin_day)			
@@ -1229,7 +1229,7 @@ def obv_img(market, df_day, fivemin_day, row):
         currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
         currenttime = now[:-3]
         df_day_today = df_day.loc[df_day['T'] == fivemin_day]
-        #print (row)
+        #print (df_day_today)
 
         df_day_index = int(df_day_today.index.tolist()[0])
         df_day = df_day.iloc[df_day_index-59:df_day_index]
@@ -2020,9 +2020,10 @@ def enable_market(market, row, df_hour, df_day):
     percent_sql = float(heikin_ashi(market, 21))
     HAD_trend = heikin_ashi(market, 18)
     ha_time_second = heikin_ashi(market, 23)
-    spread = float(((ask / bid) - 1) * 100)
+    spread = float(((ask / bid) - 1) * 100)	
     volume = (row['V'])	
 
+	
     try:
         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
         cursor = db.cursor()
@@ -2059,7 +2060,6 @@ def enable_market(market, row, df_hour, df_day):
                 sys.exit(1)
             finally:
                 db.close()
-
     if ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000) and bought_quantity_sql==0.0:
             print (market, "We are disabling this currency")
             try:
@@ -2074,7 +2074,6 @@ def enable_market(market, row, df_hour, df_day):
             finally:
                 db.close()
 
-
     if spread<0.5 and (percent_grow==1 or percent_grow==0) and (market_count() <=max_markets) and (HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN"):
         print (market, "We need to enable those currencies")
         try:
@@ -2087,7 +2086,6 @@ def enable_market(market, row, df_hour, df_day):
             sys.exit(1)
         finally:
             db.close()
-
     #Candle analisys
     currenthour = now[:-6]
     hourlastcandle = df_hour.loc[df_hour['T'] == currenthour]
@@ -2127,7 +2125,6 @@ def enable_market(market, row, df_hour, df_day):
          day_candle = 'U'
     else:
         day_candle = 'D'
-
     if dayprevclose > dayprevopen:
         prevday_candle = 'U'
     else:
@@ -2137,7 +2134,6 @@ def enable_market(market, row, df_hour, df_day):
         candle_dir = 'U'
     else:
         candle_dir = 'D'
-
     #print (market, hourcandle_dir, candle_dir)
     try:
         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
