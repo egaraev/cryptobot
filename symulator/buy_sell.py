@@ -157,10 +157,10 @@ market= "USD-BTC"
 #Start the main function  (1 week is about 20 mins of symulation)
 def main():
     for i,(index,row) in enumerate(df.iterrows()):
-        if i < 3700: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 rows, then it starts at 22:00
+        if i < 7478: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 rows, then it starts at 22:00 (3700)
         try:         
             fivemin_day = str(df.iloc[index]['day'])	
-            print (fivemin_day)			
+            print (i, fivemin_day)			
             buy(row, market)
             sell(row, market)
             if index % 2 == 0:	# every 10 mins
@@ -2089,9 +2089,10 @@ def enable_market(market, row, df_hour, df_day):
     #Candle analisys
     currenthour = now[:-6]
     hourlastcandle = df_hour.loc[df_hour['T'] == currenthour]
+    print (hourlastcandle, currenthour)
     hourcurentopen = float(hourlastcandle['O'])	
     hourlastcandleindex = hourlastcandle.index[0]	
-    hourpreviouscandle = df_hour.loc[df_hour.index[hourlastcandleindex-1]]		
+    hourpreviouscandle = df_hour.loc[df_hour.index[hourlastcandleindex-1]]	
     hourprevopen=float(hourpreviouscandle['O'])				
     hourprevclose=float(hourpreviouscandle['C'])	
     hourprevlow=float(hourpreviouscandle['L'])	

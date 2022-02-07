@@ -12,13 +12,13 @@ df.rename(columns={ 'date': 'T', 'open': 'O', 'high': 'H', 'low': 'L', 'close': 
 del df['adjclose']
 df['T'] = df['T'].dt.strftime('%Y-%m-%d')
 result = df.to_dict('records')
-#print (result)
+print (result)
 last_date = result[-1]
 today_date =last_date['T'] 
 #print (today_date)
 
 
-if result !='':
+if result !=[]:
    try: 
        full_dict =[]
        file = open("data/hist_data_day.txt", "r")
@@ -39,17 +39,19 @@ if result !='':
     
        #print (full_dict)
        file.close()
+       with open('data/hist_data_day.txt', 'w') as filehandle:
+          for listitem in full_dict:
+             filehandle.write('%s,' % listitem)
+
+       with open('data/hist_data_day.txt', 'r') as file:
+            data = file.read()[:-1]
+       with open('data/hist_data_day.txt', 'w') as file:
+            file.write(data)
+       print ("daily data was updated")
    except:
        print("Unable to read the file")
 
-   with open('data/hist_data_day.txt', 'w') as filehandle:
-       for listitem in full_dict:
-           filehandle.write('%s,' % listitem)
 
-   with open('data/hist_data_day.txt', 'r') as file:
-       data = file.read()[:-1]
-   with open('data/hist_data_day.txt', 'w') as file:
-       file.write(data)
 
 else:
    print ("Result is empty")

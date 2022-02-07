@@ -7,6 +7,7 @@ r =requests.get('https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=USD
 responce = r.text
 data = json.loads(responce)
 result = data['result']
+#print (result)
 last_date = result[-1]
 
 
@@ -18,7 +19,7 @@ try:
     last_current_date=dictionary[-1]
     file.close()
 except:
-    print("Unable to read to file")
+    print("Unable to read the fivemin file")
 
 
 #print (last_date['T'])
