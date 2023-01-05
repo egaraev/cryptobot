@@ -1,6 +1,5 @@
 import time
 import config
-from pybittrex.client import Client
 import sys
 import datetime
 import re
@@ -23,7 +22,15 @@ import datetime
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
 currentdate = now.strftime("%Y-%m-%d")
-c=Client(api_key='', api_secret='')
+from bittrex_api import Bittrex
+bittrex = Bittrex(
+    api_key=config.key,              # YOUR API KEY
+    secret_key=config.secret,           # YOUR API SECRET
+    max_request_try_count=3, # Max tries for a request to succeed
+    sleep_time=2,            # sleep seconds between failed requests
+    debug_level=3
+)
+c = bittrex.v3
 
 
 
@@ -149,11 +156,11 @@ class TwitterClient(object):
 
 def tw():
 
-    market_summ = c.get_market_summaries().json()['result']
+    market_summ = c.get_market_summaries()
     for summary in market_summ: #Loop trough the market summary
         try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
+            if available_market_list(summary['symbol']):
+                market = summary['symbol']
 
                 # creating object of TwitterClient Class
                 api = TwitterClient()
@@ -246,14 +253,14 @@ def tw():
 
 
 
-def available_market_list(marketname):
+def available_market_list(symbol):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
+    market = symbol
     cursor.execute("SELECT * FROM markets WHERE enabled =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == symbol:
             return True
 
     return False

@@ -3,12 +3,29 @@ import sys, os
 import requests
 import ast
 
-r =requests.get('https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=USD-BTC&tickInterval=thirtymin')
+r =requests.get('https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=900')
 responce = r.text
 data = json.loads(responce)
-result = data['result']
-last_date = result[-1]
+last_date = data[0]
 
+#print (last_date)
+timestamp = last_date[0]
+output_stream = os.popen(f'date -d @{timestamp} +%FT%T.%2NZ')
+datestamp = (output_stream.read())
+
+
+openprice = last_date[3]
+highprice = last_date[2]
+lowprice  = last_date[1]
+closeprice = last_date[4]
+volume = last_date[5]
+
+datestamp = datestamp.strip('\n')
+
+
+record = {"O":openprice,"H":highprice,"L":lowprice,"C":closeprice,"V":volume,"T":datestamp[:-1],"BV":volume}
+
+#print(record)
 
 
 try:
@@ -21,15 +38,15 @@ except:
     print("Unable to read the file")
 
 
-#print (last_date['T'])
-#print(last_current_date['T'])
+print (datestamp)
+print(last_current_date['T'])
 
 
-if last_date['T']!=last_current_date['T']:
+if datestamp!=last_current_date['T']:
    try:
       history_file = open('data/hist_data_thirty.txt', 'a')
       history_file.write(',')
-      history_file.write(str(last_date))
+      history_file.write(str(record))
       history_file.close()
    except:
       print("Unable to append to file")

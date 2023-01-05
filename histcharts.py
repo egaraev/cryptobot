@@ -15,7 +15,7 @@ import pandas as pd
 from datetime import datetime
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT market FROM markets WHERE active=1")
+cursor.execute("SELECT market FROM markets WHERE enabled=1")
 markets=cursor.fetchall()
 
 def main():
@@ -38,8 +38,8 @@ def SL():
 
           df = pd.DataFrame(data)
 
-		  
-		  
+
+	  
 		  
           #df.set_index('date')
           df.columns = ['date', 'twitter_polarity', 'twitter_score', 'news_score', 'price', 'positive_tweets', 'negative_tweets', 'candle_score']
@@ -48,7 +48,7 @@ def SL():
           df['date_index'] = pd.to_datetime(df['date_index'])
           df= df.set_index('date_index')
           df=df.sort_index()
-          
+	         
 
           rc('mathtext', default='regular')
 

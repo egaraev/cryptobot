@@ -35,15 +35,13 @@ def obv_analyze():
     for market in markets: #Loop trough the crypto summary
         try:
            market=(market[0])
-           crypto=market[4:]
-           market1 = crypto+"-USD"
-           df = si.get_data(market1)
+           df = si.get_data(market)
            df = df.iloc[: , :-1]
            df = df[-60:]
            #print (df)
            df = df.reset_index().rename({'index':'date'}, axis = 'columns')
            #df  = df.dropna()
-           print (df)
+           #print (df)
 
            market_df = df[['date', 'adjclose', 'volume']]
            market_df.columns = ['date', 'close', 'volume']
@@ -63,7 +61,7 @@ def obv_analyze():
 
 
            fig, ax = plt.subplots(figsize=(16, 8))
-           plt.title(market1)
+           plt.title(market)
            plt.plot(df['date'], df['close'], label='Close', color='black')
            plt.plot(df['date'], buy_price, marker = '^', color = 'green', markersize = 8, label = 'BUY SIGNAL', linewidth = 0)
            plt.plot(df['date'], sell_price, marker = 'v', color = 'r', markersize = 8, label = 'SELL SIGNAL', linewidth = 0)

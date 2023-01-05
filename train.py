@@ -46,10 +46,6 @@ def neural():
           if not os.path.isdir("/root/PycharmProjects/cryptobot/data"):
              os.mkdir("/root/PycharmProjects/cryptobot/data")
 
-          crypto=market[4:]
-          market = crypto+"-USD"
-          		  
-
 
           ticker = market
           ticker_data_filename = os.path.join("/root/PycharmProjects/cryptobot/data", f"{ticker}_{date_now}.csv")

@@ -84,23 +84,26 @@ body {
 <link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
 <link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
 <meta name='robots' content='noindex, follow, max-image-preview:large' />
-<link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Bitcoin&#8221; Feed" href="https://transcriptdaily.com/search/Bitcoin/feed/rss2/" />
-<link rel='stylesheet' id='wp-block-library-css'  href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://transcriptdaily.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
 <style id='global-styles-inline-css' type='text/css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
 </style>
 <link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 5.9" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
 <link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
 <link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
 <meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
 
 <!-- Start Meta Data -->
-<title>Bitcoin Hits Market Cap of $803.79 Billion (BTC) - Transcript Daily</title>
-<meta name="description" content="Read Bitcoin Hits Market Cap of $803.79 Billion (BTC) at Transcript Daily"/>
+<title>Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS) - Transcript Daily</title>
+<meta name="description" content="Read Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS) at Transcript Daily"/>
 
 <!-- End Meta Data -->
 
@@ -269,653 +272,653 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
 <main class="flex-main" id="main">
 						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/07/bitcoin-hits-market-cap-of-803-79-billion-btc.html" rel="bookmark" title="Bitcoin Hits Market Cap of $803.79 Billion (BTC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/18/global-x-blockchain-bitcoin-strategy-etf-stock-set-to-reverse-split-on-tuesday-december-20th-nysearcabits.html" rel="bookmark" title="Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1.png&amp;w=150&amp;zc=1" alt="Bitcoin Hits Market Cap of $803.79 Billion (BTC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/global-x-blockchain--bitcoin-strategy-etf-logo.png?v=20220421102257&amp;w=150&amp;zc=1" alt="Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/07/bitcoin-hits-market-cap-of-803-79-billion-btc.html" rel="bookmark" title="Bitcoin Hits Market Cap of $803.79 Billion (BTC)"><h2>Bitcoin Hits Market Cap of $803.79 Billion (BTC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/18/global-x-blockchain-bitcoin-strategy-etf-stock-set-to-reverse-split-on-tuesday-december-20th-nysearcabits.html" rel="bookmark" title="Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS)"><h2>Global X Blockchain &#038; Bitcoin Strategy ETF Stock Set to Reverse Split on Tuesday, December 20th (NYSEARCA:BITS)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Feb 7th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin (CURRENCY:BTC) traded 2.1% higher  against the dollar during the 24 hour period ending at 21:00 PM Eastern on February 6th. Bitcoin has a total market capitalization of $803.79 billion and $18.00 billion worth of Bitcoin was...&nbsp;<a href='https://transcriptdaily.com/2022/02/07/bitcoin-hits-market-cap-of-803-79-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 18th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Global X Blockchain &#038; Bitcoin Strategy ETF (NYSEARCA:BITS &#8211; Get Rating)&#8217;s stock is scheduled to reverse split on Tuesday, December 20th. The 1-4 reverse split was announced on Tuesday, December 20th. The number of...&nbsp;<a href='https://transcriptdaily.com/2022/12/18/global-x-blockchain-bitcoin-strategy-etf-stock-set-to-reverse-split-on-tuesday-december-20th-nysearcabits.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/06/bitcoinpos-hits-market-capitalization-of-351961-68-bps.html" rel="bookmark" title="BitcoinPoS Hits Market Capitalization of $351,961.68 (BPS)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/18/bitcoin-additional-trading-2-4-lower-over-last-week-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL  Trading 2.4% Lower  Over Last Week (BTCA)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bps.png&amp;w=150&amp;zc=1" alt="BitcoinPoS Hits Market Capitalization of $351,961.68 (BPS)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL  Trading 2.4% Lower  Over Last Week (BTCA)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/06/bitcoinpos-hits-market-capitalization-of-351961-68-bps.html" rel="bookmark" title="BitcoinPoS Hits Market Capitalization of $351,961.68 (BPS)"><h2>BitcoinPoS Hits Market Capitalization of $351,961.68 (BPS)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/18/bitcoin-additional-trading-2-4-lower-over-last-week-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL  Trading 2.4% Lower  Over Last Week (BTCA)"><h2>BITCOIN ADDITIONAL  Trading 2.4% Lower  Over Last Week (BTCA)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Feb 6th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinPoS (CURRENCY:BPS) traded 3% lower  against the U.S. dollar during the 1-day period ending at 17:00 PM ET on February 6th. Over the last week, BitcoinPoS has traded 3.5% lower  against the U.S. dollar. BitcoinPoS has a total...&nbsp;<a href='https://transcriptdaily.com/2022/02/06/bitcoinpos-hits-market-capitalization-of-351961-68-bps.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 18th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded 0.3% higher  against the U.S. dollar during the 24 hour period ending at 22:00 PM ET on December 17th. One BITCOIN ADDITIONAL coin can now be bought for about $16,740.81 or 0.99999548 BTC on cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2022/12/18/bitcoin-additional-trading-2-4-lower-over-last-week-btca.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/06/bitcoin-cz-price-tops-0-0075-bcz.html" rel="bookmark" title="Bitcoin CZ Price Tops $0.0075  (BCZ)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-diamond-price-down-6-1-over-last-7-days-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Down 6.1% Over Last 7 Days (BCD)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bcz.png&amp;w=150&amp;zc=1" alt="Bitcoin CZ Price Tops $0.0075  (BCZ)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Price Down 6.1% Over Last 7 Days (BCD)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/06/bitcoin-cz-price-tops-0-0075-bcz.html" rel="bookmark" title="Bitcoin CZ Price Tops $0.0075  (BCZ)"><h2>Bitcoin CZ Price Tops $0.0075  (BCZ)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-diamond-price-down-6-1-over-last-7-days-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Down 6.1% Over Last 7 Days (BCD)"><h2>Bitcoin Diamond Price Down 6.1% Over Last 7 Days (BCD)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 6th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin CZ (CURRENCY:BCZ) traded 5.5% lower  against the dollar during the 24 hour period ending at 16:00 PM ET on February 6th. Bitcoin CZ has a market cap of $29,175.31 and approximately $1.00 worth of Bitcoin CZ was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2022/02/06/bitcoin-cz-price-tops-0-0075-bcz.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded 3.5% lower  against the U.S. dollar during the 24-hour period ending at 16:00 PM ET on December 17th. During the last seven days, Bitcoin Diamond has traded 6.1% lower  against the U.S. dollar. Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-diamond-price-down-6-1-over-last-7-days-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/06/bitcoin-diamond-bcd-price-reaches-0-94-on-exchanges.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.94 on Exchanges" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-trading-3-8-lower-over-last-week.html" rel="bookmark" title="Bitcoin Gold (BTG)  Trading 3.8% Lower  Over Last Week" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2222.png&amp;w=150&amp;zc=1" alt="Bitcoin Diamond (BCD) Price Reaches $0.94 on Exchanges" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG)  Trading 3.8% Lower  Over Last Week" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/06/bitcoin-diamond-bcd-price-reaches-0-94-on-exchanges.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.94 on Exchanges"><h2>Bitcoin Diamond (BCD) Price Reaches $0.94 on Exchanges</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-trading-3-8-lower-over-last-week.html" rel="bookmark" title="Bitcoin Gold (BTG)  Trading 3.8% Lower  Over Last Week"><h2>Bitcoin Gold (BTG)  Trading 3.8% Lower  Over Last Week</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 6th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Diamond (CURRENCY:BCD) traded down 0.9% against the US dollar during the twenty-four hour period ending at 0:00 AM E.T. on February 5th. In the last seven days, Bitcoin Diamond has traded up 3% against the US dollar. Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/02/06/bitcoin-diamond-bcd-price-reaches-0-94-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded down 1% against the U.S. dollar during the 1 day period ending at 16:00 PM E.T. on December 17th. Bitcoin Gold has a market cap of $246.25 million and approximately $15.48 million worth of Bitcoin Gold was...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-trading-3-8-lower-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/05/bitcoin-incognito-hits-one-day-trading-volume-of-12-00-xbi.html" rel="bookmark" title="Bitcoin Incognito Hits One Day Trading Volume of $12.00 (XBI)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-achieves-market-capitalization-of-3-10-billion-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Achieves Market Capitalization of $3.10 Billion (WBTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btci.jpg&amp;w=150&amp;zc=1" alt="Bitcoin Incognito Hits One Day Trading Volume of $12.00 (XBI)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin Achieves Market Capitalization of $3.10 Billion (WBTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/05/bitcoin-incognito-hits-one-day-trading-volume-of-12-00-xbi.html" rel="bookmark" title="Bitcoin Incognito Hits One Day Trading Volume of $12.00 (XBI)"><h2>Bitcoin Incognito Hits One Day Trading Volume of $12.00 (XBI)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-achieves-market-capitalization-of-3-10-billion-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Achieves Market Capitalization of $3.10 Billion (WBTC)"><h2>Wrapped Bitcoin Achieves Market Capitalization of $3.10 Billion (WBTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Feb 5th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Incognito (CURRENCY:XBI) traded 14.1% lower  against the dollar during the twenty-four hour period ending at 14:00 PM Eastern on February 5th. Bitcoin Incognito has a market cap of $27,143.80 and $12.00 worth of Bitcoin Incognito...&nbsp;<a href='https://transcriptdaily.com/2022/02/05/bitcoin-incognito-hits-one-day-trading-volume-of-12-00-xbi.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded down 1.2% against the dollar during the 1-day period ending at 16:00 PM Eastern on December 17th. One Wrapped Bitcoin token can currently be purchased for approximately $16,679.70 or 0.99820899 BTC on...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-achieves-market-capitalization-of-3-10-billion-wbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/05/bitcoin-gold-btg-market-capitalization-hits-582-26-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Market Capitalization Hits $582.26 Million" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-trading-down-2-6-this-week.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Trading Down 2.6% This Week" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2083.png&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Market Capitalization Hits $582.26 Million" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) Trading Down 2.6% This Week" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/05/bitcoin-gold-btg-market-capitalization-hits-582-26-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Market Capitalization Hits $582.26 Million"><h2>Bitcoin Gold (BTG) Market Capitalization Hits $582.26 Million</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-trading-down-2-6-this-week.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Trading Down 2.6% This Week"><h2>RSK Smart Bitcoin (RBTC) Trading Down 2.6% This Week</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Feb 5th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Gold (CURRENCY:BTG) traded up 8.2% against the dollar during the 1-day period ending at 10:00 AM E.T. on February 5th. Bitcoin Gold has a total market cap of $582.26 million and $16.62 million worth of Bitcoin Gold was traded...&nbsp;<a href='https://transcriptdaily.com/2022/02/05/bitcoin-gold-btg-market-capitalization-hits-582-26-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded 1% lower  against the US dollar during the 24 hour period ending at 15:00 PM ET on December 17th. RSK Smart Bitcoin has a market cap of $57.07 million and $22,668.32 worth of RSK Smart Bitcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-trading-down-2-6-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/05/microbitcoin-mbc-price-reaches-0-0000-on-top-exchanges.html" rel="bookmark" title="MicroBitcoin (MBC) Price Reaches $0.0000 on Top Exchanges" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-market-capitalization-hits-3-10-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Market Capitalization Hits $3.10 Billion" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3507.png&amp;w=150&amp;zc=1" alt="MicroBitcoin (MBC) Price Reaches $0.0000 on Top Exchanges" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) Market Capitalization Hits $3.10 Billion" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/05/microbitcoin-mbc-price-reaches-0-0000-on-top-exchanges.html" rel="bookmark" title="MicroBitcoin (MBC) Price Reaches $0.0000 on Top Exchanges"><h2>MicroBitcoin (MBC) Price Reaches $0.0000 on Top Exchanges</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-market-capitalization-hits-3-10-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Market Capitalization Hits $3.10 Billion"><h2>Wrapped Bitcoin (WBTC) Market Capitalization Hits $3.10 Billion</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 5th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						MicroBitcoin (CURRENCY:MBC) traded down 6.5% against the U.S. dollar during the 24 hour period ending at 8:00 AM E.T. on February 5th. Over the last week, MicroBitcoin has traded up 77.3% against the U.S. dollar. One MicroBitcoin coin...&nbsp;<a href='https://transcriptdaily.com/2022/02/05/microbitcoin-mbc-price-reaches-0-0000-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded down 1.2% against the U.S. dollar during the 1 day period ending at 11:00 AM Eastern on December 17th. Wrapped Bitcoin has a total market capitalization of $3.10 billion and $121.15 million worth of Wrapped...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-market-capitalization-hits-3-10-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/05/bitcoinhd-price-tops-0-26-on-major-exchanges-bhd.html" rel="bookmark" title="BitcoinHD Price Tops $0.26 on Major Exchanges (BHD)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-reaches-1-day-trading-volume-of-160-38-million.html" rel="bookmark" title="Bitcoin Cash (BCH) Reaches 1-Day Trading Volume of $160.38 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bhd.png&amp;w=150&amp;zc=1" alt="BitcoinHD Price Tops $0.26 on Major Exchanges (BHD)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH) Reaches 1-Day Trading Volume of $160.38 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/05/bitcoinhd-price-tops-0-26-on-major-exchanges-bhd.html" rel="bookmark" title="BitcoinHD Price Tops $0.26 on Major Exchanges (BHD)"><h2>BitcoinHD Price Tops $0.26 on Major Exchanges (BHD)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-reaches-1-day-trading-volume-of-160-38-million.html" rel="bookmark" title="Bitcoin Cash (BCH) Reaches 1-Day Trading Volume of $160.38 Million"><h2>Bitcoin Cash (BCH) Reaches 1-Day Trading Volume of $160.38 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Feb 5th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinHD (CURRENCY:BHD) traded 7.5% higher  against the US dollar during the 24 hour period ending at 20:00 PM Eastern on February 4th. One BitcoinHD coin can currently be purchased for about $0.26 or 0.00000615 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/02/05/bitcoinhd-price-tops-0-26-on-major-exchanges-bhd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded down 0.6% against the dollar during the 1-day period ending at 11:00 AM E.T. on December 17th. Bitcoin Cash has a market cap of $1.98 billion and approximately $160.38 million worth of Bitcoin Cash was traded...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-reaches-1-day-trading-volume-of-160-38-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/04/bitcoin-diamond-price-up-2-4-over-last-week-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Up 2.4% Over Last Week (BCD)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-trading-down-2-8-this-week-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Trading Down 2.8% This Week (RBTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2222.png&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Price Up 2.4% Over Last Week (BCD)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin Trading Down 2.8% This Week (RBTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/04/bitcoin-diamond-price-up-2-4-over-last-week-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Up 2.4% Over Last Week (BCD)"><h2>Bitcoin Diamond Price Up 2.4% Over Last Week (BCD)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-trading-down-2-8-this-week-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Trading Down 2.8% This Week (RBTC)"><h2>RSK Smart Bitcoin Trading Down 2.8% This Week (RBTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Feb 4th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Diamond (CURRENCY:BCD) traded 4.4% higher  against the dollar during the 24 hour period ending at 11:00 AM E.T. on February 4th. Bitcoin Diamond has a market cap of $171.00 million and approximately $1.15 million worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/02/04/bitcoin-diamond-price-up-2-4-over-last-week-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded down 1% against the dollar during the twenty-four hour period ending at 11:00 AM Eastern on December 17th. One RSK Smart Bitcoin coin can currently be bought for approximately $16,728.72 or 1.00191473...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-trading-down-2-8-this-week-rbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/04/bitcoin-zero-bzx-reaches-24-hour-volume-of-413-00.html" rel="bookmark" title="Bitcoin Zero (BZX) Reaches 24-Hour Volume of $413.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoinbr-price-reaches-0-0000-btcbr.html" rel="bookmark" title="BitcoinBR Price Reaches $0.0000  (BTCBR)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3497.png&amp;w=150&amp;zc=1" alt="Bitcoin Zero (BZX) Reaches 24-Hour Volume of $413.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoinbr-BTCBR.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BitcoinBR Price Reaches $0.0000  (BTCBR)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/04/bitcoin-zero-bzx-reaches-24-hour-volume-of-413-00.html" rel="bookmark" title="Bitcoin Zero (BZX) Reaches 24-Hour Volume of $413.00"><h2>Bitcoin Zero (BZX) Reaches 24-Hour Volume of $413.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoinbr-price-reaches-0-0000-btcbr.html" rel="bookmark" title="BitcoinBR Price Reaches $0.0000  (BTCBR)"><h2>BitcoinBR Price Reaches $0.0000  (BTCBR)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 4th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Zero (CURRENCY:BZX) traded up 7.1% against the US dollar during the 24 hour period ending at 21:00 PM E.T. on February 3rd. Over the last seven days, Bitcoin Zero has traded up 7.3% against the US dollar. One Bitcoin Zero coin...&nbsp;<a href='https://transcriptdaily.com/2022/02/04/bitcoin-zero-bzx-reaches-24-hour-volume-of-413-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinBR (BTCBR) traded 28% higher  against the US dollar during the one day period ending at 10:00 AM E.T. on December 17th. One BitcoinBR token can now be purchased for approximately $0.0000 or 0.00000000 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoinbr-price-reaches-0-0000-btcbr.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/04/bitcoin-private-market-cap-reaches-5-55-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Cap Reaches $5.55 Million (BTCP)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-private-market-capitalization-achieves-2-39-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Capitalization Achieves $2.39 Million (BTCP)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2575.png&amp;w=150&amp;zc=1" alt="Bitcoin Private Market Cap Reaches $5.55 Million (BTCP)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private Market Capitalization Achieves $2.39 Million (BTCP)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/04/bitcoin-private-market-cap-reaches-5-55-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Cap Reaches $5.55 Million (BTCP)"><h2>Bitcoin Private Market Cap Reaches $5.55 Million (BTCP)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-private-market-capitalization-achieves-2-39-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Capitalization Achieves $2.39 Million (BTCP)"><h2>Bitcoin Private Market Capitalization Achieves $2.39 Million (BTCP)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 4th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Private (CURRENCY:BTCP) traded 5% lower  against the dollar during the 1-day period ending at 20:00 PM ET on February 3rd. In the last seven days, Bitcoin Private has traded up 18.3% against the dollar. One Bitcoin Private...&nbsp;<a href='https://transcriptdaily.com/2022/02/04/bitcoin-private-market-cap-reaches-5-55-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded down 5.6% against the US dollar during the 1-day period ending at 9:00 AM E.T. on December 17th. Bitcoin Private has a market cap of $2.39 million and $45.49 worth of Bitcoin Private was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-private-market-capitalization-achieves-2-39-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/04/bitcoin-sv-bsv-trading-1-higher-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Trading 1% Higher  Over Last 7 Days" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-market-capitalization-tops-246-73-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Market Capitalization Tops $246.73 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bsv1.png&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Trading 1% Higher  Over Last 7 Days" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Market Capitalization Tops $246.73 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/04/bitcoin-sv-bsv-trading-1-higher-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Trading 1% Higher  Over Last 7 Days"><h2>Bitcoin SV (BSV) Trading 1% Higher  Over Last 7 Days</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-market-capitalization-tops-246-73-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Market Capitalization Tops $246.73 Million"><h2>Bitcoin Gold (BTG) Market Capitalization Tops $246.73 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 4th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin SV (CURRENCY:BSV) traded down 0.1% against the US dollar during the 1 day period ending at 20:00 PM E.T. on February 3rd. Bitcoin SV has a total market capitalization of $1.70 billion and approximately $89.78 million worth...&nbsp;<a href='https://transcriptdaily.com/2022/02/04/bitcoin-sv-bsv-trading-1-higher-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 2.8% lower  against the US dollar during the 1-day period ending at 7:00 AM E.T. on December 17th. Bitcoin Gold has a total market capitalization of $246.73 million and $14.83 million worth of Bitcoin Gold...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-gold-btg-market-capitalization-tops-246-73-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/02/grayscale-bitcoin-trust-btc-otcmktsgbtc-short-interest-update-2.html" rel="bookmark" title="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Short Interest Update" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-one-day-volume-tops-142-28-million.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) One Day Volume Tops $142.28 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/grayscale-bitcoin-trust-(btc)-logo.png?v=20211206090833&amp;w=150&amp;zc=1" alt="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Short Interest Update" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) One Day Volume Tops $142.28 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/02/grayscale-bitcoin-trust-btc-otcmktsgbtc-short-interest-update-2.html" rel="bookmark" title="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Short Interest Update"><h2>Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Short Interest Update</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-one-day-volume-tops-142-28-million.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) One Day Volume Tops $142.28 Million"><h2>Wrapped Bitcoin (WBTC) One Day Volume Tops $142.28 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Feb 2nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) was the recipient of a large growth in short interest in January. As of January 15th, there was short interest totalling 2,777,700 shares,  a growth of 50.1% from the December 31st total...&nbsp;<a href='https://transcriptdaily.com/2022/02/02/grayscale-bitcoin-trust-btc-otcmktsgbtc-short-interest-update-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded down 1.9% against the dollar during the 24-hour period ending at 7:00 AM Eastern on December 17th. One Wrapped Bitcoin token can currently be bought for about $16,682.40 or 0.99678600 BTC on popular exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/12/17/wrapped-bitcoin-wbtc-one-day-volume-tops-142-28-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/synchrobitcoin-snb-trading-29-1-lower-this-week.html" rel="bookmark" title="SynchroBitcoin (SNB)  Trading 29.1% Lower  This Week" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-group-otcmktsbtggf-stock-price-up-10-1.html" rel="bookmark" title="Bitcoin Group (OTCMKTS:BTGGF) Stock Price Up 10.1%" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/snb.png&amp;w=150&amp;zc=1" alt="SynchroBitcoin (SNB)  Trading 29.1% Lower  This Week" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/bitcoin-group-se-logo.png?v=20221110144140&amp;w=150&amp;zc=1" alt="Bitcoin Group (OTCMKTS:BTGGF) Stock Price Up 10.1%" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/synchrobitcoin-snb-trading-29-1-lower-this-week.html" rel="bookmark" title="SynchroBitcoin (SNB)  Trading 29.1% Lower  This Week"><h2>SynchroBitcoin (SNB)  Trading 29.1% Lower  This Week</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-group-otcmktsbtggf-stock-price-up-10-1.html" rel="bookmark" title="Bitcoin Group (OTCMKTS:BTGGF) Stock Price Up 10.1%"><h2>Bitcoin Group (OTCMKTS:BTGGF) Stock Price Up 10.1%</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						SynchroBitcoin (CURRENCY:SNB) traded up 0.5% against the dollar during the twenty-four hour period ending at 16:00 PM ET on February 1st. One SynchroBitcoin coin can now be purchased for approximately $0.0251 or 0.00000065 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/02/01/synchrobitcoin-snb-trading-29-1-lower-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Group SE (OTCMKTS:BTGGF &#8211; Get Rating) rose 10.1% during trading on Thursday . The company traded as high as $22.86 and last traded at $22.86. Approximately 200 shares changed hands during trading, a decline of 55% from...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-group-otcmktsbtggf-stock-price-up-10-1.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/rsk-smart-bitcoin-rbtc-1-day-trading-volume-hits-205189-00.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) 1-Day Trading Volume Hits $205,189.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-trading-7-4-lower-over-last-week.html" rel="bookmark" title="Bitcoin Cash (BCH)  Trading 7.4% Lower  Over Last Week" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rbtc.png&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) 1-Day Trading Volume Hits $205,189.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH)  Trading 7.4% Lower  Over Last Week" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/rsk-smart-bitcoin-rbtc-1-day-trading-volume-hits-205189-00.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) 1-Day Trading Volume Hits $205,189.00"><h2>RSK Smart Bitcoin (RBTC) 1-Day Trading Volume Hits $205,189.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-trading-7-4-lower-over-last-week.html" rel="bookmark" title="Bitcoin Cash (BCH)  Trading 7.4% Lower  Over Last Week"><h2>Bitcoin Cash (BCH)  Trading 7.4% Lower  Over Last Week</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						RSK Smart Bitcoin (CURRENCY:RBTC) traded up 1% against the U.S. dollar during the 1 day period ending at 13:00 PM Eastern on February 1st. In the last week, RSK Smart Bitcoin has traded 3.7% higher  against the U.S. dollar. RSK Smart...&nbsp;<a href='https://transcriptdaily.com/2022/02/01/rsk-smart-bitcoin-rbtc-1-day-trading-volume-hits-205189-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded down 1.6% against the dollar during the one day period ending at 7:00 AM ET on December 17th. One Bitcoin Cash coin can currently be purchased for approximately $101.86 or 0.00608634 BTC on exchanges. Over...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-cash-bch-trading-7-4-lower-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/lightning-bitcoin-trading-19-lower-this-week-lbtc.html" rel="bookmark" title="Lightning Bitcoin  Trading 19% Lower  This Week (LBTC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-price-hits-16762-68-on-major-exchanges.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Hits $16,762.68 on Major Exchanges" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/lbtc.png&amp;w=150&amp;zc=1" alt="Lightning Bitcoin  Trading 19% Lower  This Week (LBTC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) Price Hits $16,762.68 on Major Exchanges" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/lightning-bitcoin-trading-19-lower-this-week-lbtc.html" rel="bookmark" title="Lightning Bitcoin  Trading 19% Lower  This Week (LBTC)"><h2>Lightning Bitcoin  Trading 19% Lower  This Week (LBTC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-price-hits-16762-68-on-major-exchanges.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Hits $16,762.68 on Major Exchanges"><h2>RSK Smart Bitcoin (RBTC) Price Hits $16,762.68 on Major Exchanges</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Lightning Bitcoin (CURRENCY:LBTC) traded 2.7% higher  against the U.S. dollar during the 24 hour period ending at 11:00 AM ET on February 1st. Lightning Bitcoin has a total market cap of $1.76 million and $145,590.00 worth of Lightning...&nbsp;<a href='https://transcriptdaily.com/2022/02/01/lightning-bitcoin-trading-19-lower-this-week-lbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded down 1.6% against the dollar during the 24-hour period ending at 7:00 AM Eastern on December 17th. Over the last seven days, RSK Smart Bitcoin has traded 2.4% lower  against the dollar. RSK Smart Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/rsk-smart-bitcoin-rbtc-price-hits-16762-68-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/bitcoin-zero-price-reaches-0-0008-on-exchanges-bzx.html" rel="bookmark" title="Bitcoin Zero Price Reaches $0.0008 on Exchanges (BZX)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-price-down-2-6-this-week-btc.html" rel="bookmark" title="Bitcoin Price Down 2.6% This Week (BTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3497.png&amp;w=150&amp;zc=1" alt="Bitcoin Zero Price Reaches $0.0008 on Exchanges (BZX)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Price Down 2.6% This Week (BTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/bitcoin-zero-price-reaches-0-0008-on-exchanges-bzx.html" rel="bookmark" title="Bitcoin Zero Price Reaches $0.0008 on Exchanges (BZX)"><h2>Bitcoin Zero Price Reaches $0.0008 on Exchanges (BZX)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-price-down-2-6-this-week-btc.html" rel="bookmark" title="Bitcoin Price Down 2.6% This Week (BTC)"><h2>Bitcoin Price Down 2.6% This Week (BTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Zero (CURRENCY:BZX) traded up 4.1% against the U.S. dollar during the one day period ending at 8:00 AM Eastern on February 1st. During the last week, Bitcoin Zero has traded down 8.1% against the U.S. dollar. One Bitcoin Zero...&nbsp;<a href='https://transcriptdaily.com/2022/02/01/bitcoin-zero-price-reaches-0-0008-on-exchanges-bzx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 4% lower  against the dollar during the twenty-four hour period ending at 0:00 AM E.T. on December 16th. Bitcoin has a market cap of $321.47 billion and approximately $25.58 billion worth of Bitcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-price-down-2-6-this-week-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/bitcoin-rhodium-xrc-one-day-trading-volume-hits-26253-00.html" rel="bookmark" title="Bitcoin Rhodium (XRC) One Day Trading Volume Hits $26,253.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-tops-one-day-volume-of-10-98-million-btg.html" rel="bookmark" title="Bitcoin Gold Tops One Day Volume of $10.98 Million (BTG)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium (XRC) One Day Trading Volume Hits $26,253.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold Tops One Day Volume of $10.98 Million (BTG)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/bitcoin-rhodium-xrc-one-day-trading-volume-hits-26253-00.html" rel="bookmark" title="Bitcoin Rhodium (XRC) One Day Trading Volume Hits $26,253.00"><h2>Bitcoin Rhodium (XRC) One Day Trading Volume Hits $26,253.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/17/bitcoin-gold-tops-one-day-volume-of-10-98-million-btg.html" rel="bookmark" title="Bitcoin Gold Tops One Day Volume of $10.98 Million (BTG)"><h2>Bitcoin Gold Tops One Day Volume of $10.98 Million (BTG)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Rhodium (CURRENCY:XRC) traded flat against the U.S. dollar during the twenty-four hour period ending at 0:00 AM E.T. on January 31st. Bitcoin Rhodium has a market cap of $2.58 million and approximately $26,253.00 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/02/01/bitcoin-rhodium-xrc-one-day-trading-volume-hits-26253-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 17th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 5.1% lower  against the US dollar during the 24-hour period ending at 21:00 PM ET on December 16th. During the last week, Bitcoin Gold has traded down 5.9% against the US dollar. One Bitcoin Gold coin can...&nbsp;<a href='https://transcriptdaily.com/2022/12/17/bitcoin-gold-tops-one-day-volume-of-10-98-million-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/02/01/0xbitcoin-0xbtc-one-day-volume-tops-827247-00.html" rel="bookmark" title="0xBitcoin (0xBTC) One Day Volume Tops $827,247.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-reaches-one-day-volume-of-4-01-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Reaches One Day Volume of $4.01 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbtc.jpg&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) One Day Volume Tops $827,247.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Reaches One Day Volume of $4.01 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/02/01/0xbitcoin-0xbtc-one-day-volume-tops-827247-00.html" rel="bookmark" title="0xBitcoin (0xBTC) One Day Volume Tops $827,247.00"><h2>0xBitcoin (0xBTC) One Day Volume Tops $827,247.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-reaches-one-day-volume-of-4-01-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Reaches One Day Volume of $4.01 Million"><h2>Bitcoin Gold (BTG) Reaches One Day Volume of $4.01 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Feb 1st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						0xBitcoin (CURRENCY:0xBTC) traded up 3.7% against the U.S. dollar during the 24 hour period ending at 20:00 PM ET on January 31st. 0xBitcoin has a total market cap of $10.91 million and approximately $827,247.00 worth of 0xBitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/02/01/0xbitcoin-0xbtc-one-day-volume-tops-827247-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 16th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 4.3% lower  against the dollar during the 1-day period ending at 11:00 AM Eastern on December 16th. One Bitcoin Gold coin can now be purchased for approximately $14.32 or 0.00084575 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-reaches-one-day-volume-of-4-01-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/31/bitcoinhd-bhd-tops-1-day-volume-of-651488-00.html" rel="bookmark" title="BitcoinHD (BHD) Tops 1-Day Volume of $651,488.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-price-reaches-14-72-on-major-exchanges.html" rel="bookmark" title="Bitcoin Gold (BTG) Price Reaches $14.72 on Major Exchanges" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bhd.png&amp;w=150&amp;zc=1" alt="BitcoinHD (BHD) Tops 1-Day Volume of $651,488.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Price Reaches $14.72 on Major Exchanges" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/31/bitcoinhd-bhd-tops-1-day-volume-of-651488-00.html" rel="bookmark" title="BitcoinHD (BHD) Tops 1-Day Volume of $651,488.00"><h2>BitcoinHD (BHD) Tops 1-Day Volume of $651,488.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-price-reaches-14-72-on-major-exchanges.html" rel="bookmark" title="Bitcoin Gold (BTG) Price Reaches $14.72 on Major Exchanges"><h2>Bitcoin Gold (BTG) Price Reaches $14.72 on Major Exchanges</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinHD (CURRENCY:BHD) traded up 1.6% against the dollar during the 24 hour period ending at 10:00 AM ET on January 31st. In the last seven days, BitcoinHD has traded 18.6% higher  against the dollar. One BitcoinHD coin can currently...&nbsp;<a href='https://transcriptdaily.com/2022/01/31/bitcoinhd-bhd-tops-1-day-volume-of-651488-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 16th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded down 2% against the dollar during the one day period ending at 20:00 PM E.T. on December 15th. During the last seven days, Bitcoin Gold has traded 0.6% higher  against the dollar. Bitcoin Gold has a total...&nbsp;<a href='https://transcriptdaily.com/2022/12/16/bitcoin-gold-btg-price-reaches-14-72-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/31/bitcoin-cash-reaches-market-capitalization-of-5-47-billion-bch.html" rel="bookmark" title="Bitcoin Cash Reaches Market Capitalization of $5.47 Billion (BCH)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/16/wrapped-bitcoin-price-tops-17380-00-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Price Tops $17,380.00  (WBTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1831.png&amp;w=150&amp;zc=1" alt="Bitcoin Cash Reaches Market Capitalization of $5.47 Billion (BCH)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin Price Tops $17,380.00  (WBTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/31/bitcoin-cash-reaches-market-capitalization-of-5-47-billion-bch.html" rel="bookmark" title="Bitcoin Cash Reaches Market Capitalization of $5.47 Billion (BCH)"><h2>Bitcoin Cash Reaches Market Capitalization of $5.47 Billion (BCH)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/16/wrapped-bitcoin-price-tops-17380-00-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Price Tops $17,380.00  (WBTC)"><h2>Wrapped Bitcoin Price Tops $17,380.00  (WBTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Cash (CURRENCY:BCH) traded down 3.2% against the US dollar during the 1 day period ending at 19:00 PM ET on January 30th. One Bitcoin Cash coin can now be purchased for $288.31 or 0.00764480 BTC on popular cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/01/31/bitcoin-cash-reaches-market-capitalization-of-5-47-billion-bch.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 16th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded down 2.3% against the dollar during the 1 day period ending at 19:00 PM E.T. on December 15th. In the last week, Wrapped Bitcoin has traded up 1.1% against the dollar. One Wrapped Bitcoin token can currently...&nbsp;<a href='https://transcriptdaily.com/2022/12/16/wrapped-bitcoin-price-tops-17380-00-wbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/30/bitcoin-zero-reaches-24-hour-trading-volume-of-37-00-bzx.html" rel="bookmark" title="Bitcoin Zero Reaches 24 Hour Trading Volume of $37.00 (BZX)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/16/bitcoin-cash-bch-price-down-4-this-week.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Down 4% This Week" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3497.png&amp;w=150&amp;zc=1" alt="Bitcoin Zero Reaches 24 Hour Trading Volume of $37.00 (BZX)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH) Price Down 4% This Week" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/30/bitcoin-zero-reaches-24-hour-trading-volume-of-37-00-bzx.html" rel="bookmark" title="Bitcoin Zero Reaches 24 Hour Trading Volume of $37.00 (BZX)"><h2>Bitcoin Zero Reaches 24 Hour Trading Volume of $37.00 (BZX)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/16/bitcoin-cash-bch-price-down-4-this-week.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Down 4% This Week"><h2>Bitcoin Cash (BCH) Price Down 4% This Week</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 30th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Zero (CURRENCY:BZX) traded 28.9% higher  against the U.S. dollar during the one day period ending at 13:00 PM E.T. on January 30th. Bitcoin Zero has a total market capitalization of $28,180.12 and $37.00 worth of Bitcoin Zero...&nbsp;<a href='https://transcriptdaily.com/2022/01/30/bitcoin-zero-reaches-24-hour-trading-volume-of-37-00-bzx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 16th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded down 1.8% against the US dollar during the 1-day period ending at 19:00 PM Eastern on December 15th. During the last seven days, Bitcoin Cash has traded 4% lower  against the US dollar. Bitcoin Cash has a...&nbsp;<a href='https://transcriptdaily.com/2022/12/16/bitcoin-cash-bch-price-down-4-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/30/bitcoin-rhodium-xrc-market-capitalization-achieves-2-58-million.html" rel="bookmark" title="Bitcoin Rhodium (XRC) Market Capitalization Achieves $2.58 Million" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/16/rsk-smart-bitcoin-market-capitalization-tops-59-27-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Market Capitalization Tops $59.27 Million (RBTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium (XRC) Market Capitalization Achieves $2.58 Million" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin Market Capitalization Tops $59.27 Million (RBTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/30/bitcoin-rhodium-xrc-market-capitalization-achieves-2-58-million.html" rel="bookmark" title="Bitcoin Rhodium (XRC) Market Capitalization Achieves $2.58 Million"><h2>Bitcoin Rhodium (XRC) Market Capitalization Achieves $2.58 Million</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/16/rsk-smart-bitcoin-market-capitalization-tops-59-27-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Market Capitalization Tops $59.27 Million (RBTC)"><h2>RSK Smart Bitcoin Market Capitalization Tops $59.27 Million (RBTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 30th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Rhodium (CURRENCY:XRC) traded flat against the dollar during the 1-day period ending at 10:00 AM Eastern on January 30th. Bitcoin Rhodium has a market cap of $2.58 million and $26,253.00 worth of Bitcoin Rhodium was traded...&nbsp;<a href='https://transcriptdaily.com/2022/01/30/bitcoin-rhodium-xrc-market-capitalization-achieves-2-58-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 16th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded 0.6% lower  against the dollar during the 1-day period ending at 19:00 PM Eastern on December 15th. RSK Smart Bitcoin has a total market cap of $59.27 million and $30,396.72 worth of RSK Smart Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/16/rsk-smart-bitcoin-market-capitalization-tops-59-27-million-rbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/30/grayscale-bitcoin-trust-btc-otcmktsgbtc-shares-pass-below-50-day-moving-average-of-35-64.html" rel="bookmark" title="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Shares Pass Below 50-Day Moving Average of $35.64" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-diamond-market-cap-tops-24-82-million-bcd.html" rel="bookmark" title="Bitcoin Diamond Market Cap Tops $24.82 Million (BCD)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/grayscale-bitcoin-trust-(btc)-logo.png?v=20211206090833&amp;w=150&amp;zc=1" alt="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Shares Pass Below 50-Day Moving Average of $35.64" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Market Cap Tops $24.82 Million (BCD)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/30/grayscale-bitcoin-trust-btc-otcmktsgbtc-shares-pass-below-50-day-moving-average-of-35-64.html" rel="bookmark" title="Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Shares Pass Below 50-Day Moving Average of $35.64"><h2>Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) Shares Pass Below 50-Day Moving Average of $35.64</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-diamond-market-cap-tops-24-82-million-bcd.html" rel="bookmark" title="Bitcoin Diamond Market Cap Tops $24.82 Million (BCD)"><h2>Bitcoin Diamond Market Cap Tops $24.82 Million (BCD)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 30th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Grayscale Bitcoin Trust (BTC) (OTCMKTS:GBTC) crossed below its 50-day moving average during trading on Friday . The stock has a 50-day moving average of $35.64 and traded as low as $24.62. Grayscale Bitcoin Trust (BTC) shares last...&nbsp;<a href='https://transcriptdaily.com/2022/01/30/grayscale-bitcoin-trust-btc-otcmktsgbtc-shares-pass-below-50-day-moving-average-of-35-64.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded 1.7% lower  against the US dollar during the 24 hour period ending at 15:00 PM Eastern on December 15th. Bitcoin Diamond has a market capitalization of $24.82 million and approximately $59,975.91 worth...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-diamond-market-cap-tops-24-82-million-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/30/bitcoin-cz-bcz-tops-24-hour-volume-of-14-00.html" rel="bookmark" title="Bitcoin CZ (BCZ) Tops 24 Hour Volume of $14.00" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc-2.html" rel="bookmark" title="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bcz.png&amp;w=150&amp;zc=1" alt="Bitcoin CZ (BCZ) Tops 24 Hour Volume of $14.00" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/30/bitcoin-cz-bcz-tops-24-hour-volume-of-14-00.html" rel="bookmark" title="Bitcoin CZ (BCZ) Tops 24 Hour Volume of $14.00"><h2>Bitcoin CZ (BCZ) Tops 24 Hour Volume of $14.00</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc-2.html" rel="bookmark" title="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)"><h2>Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 30th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin CZ (CURRENCY:BCZ) traded down 4.9% against the dollar during the one day period ending at 21:00 PM Eastern on January 29th. In the last week, Bitcoin CZ has traded down 32.5% against the dollar. One Bitcoin CZ coin can now...&nbsp;<a href='https://transcriptdaily.com/2022/01/30/bitcoin-cz-bcz-tops-24-hour-volume-of-14-00.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 3.2% lower  against the U.S. dollar during the 24-hour period ending at 10:00 AM Eastern on December 15th. Bitcoin has a total market capitalization of $336.01 billion and approximately $25.90 billion worth of...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/29/bitcoin-atom-bca-price-reaches-0-0499-on-exchanges.html" rel="bookmark" title="Bitcoin Atom (BCA) Price Reaches $0.0499 on Exchanges" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-gold-btg-reaches-24-hour-trading-volume-of-9-44-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Reaches 24 Hour Trading Volume of $9.44 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2387.png&amp;w=150&amp;zc=1" alt="Bitcoin Atom (BCA) Price Reaches $0.0499 on Exchanges" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Reaches 24 Hour Trading Volume of $9.44 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/29/bitcoin-atom-bca-price-reaches-0-0499-on-exchanges.html" rel="bookmark" title="Bitcoin Atom (BCA) Price Reaches $0.0499 on Exchanges"><h2>Bitcoin Atom (BCA) Price Reaches $0.0499 on Exchanges</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-gold-btg-reaches-24-hour-trading-volume-of-9-44-million.html" rel="bookmark" title="Bitcoin Gold (BTG) Reaches 24 Hour Trading Volume of $9.44 Million"><h2>Bitcoin Gold (BTG) Reaches 24 Hour Trading Volume of $9.44 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 29th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Atom (CURRENCY:BCA) traded down 10.6% against the dollar during the 24-hour period ending at 18:00 PM E.T. on January 29th. In the last seven days, Bitcoin Atom has traded 2.1% higher  against the dollar. Bitcoin Atom has a...&nbsp;<a href='https://transcriptdaily.com/2022/01/29/bitcoin-atom-bca-price-reaches-0-0499-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded down 2.6% against the dollar during the one day period ending at 11:00 AM E.T. on December 15th. During the last week, Bitcoin Gold has traded 0.7% higher  against the dollar. One Bitcoin Gold coin can now...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-gold-btg-reaches-24-hour-trading-volume-of-9-44-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/29/orbitcoin-price-tops-0-16-orb.html" rel="bookmark" title="Orbitcoin Price Tops $0.16  (ORB)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/wrapped-bitcoin-wbtc-hits-24-hour-trading-volume-of-141-69-million.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits 24 Hour Trading Volume of $141.69 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/80.png&amp;w=150&amp;zc=1" alt="Orbitcoin Price Tops $0.16  (ORB)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) Hits 24 Hour Trading Volume of $141.69 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/29/orbitcoin-price-tops-0-16-orb.html" rel="bookmark" title="Orbitcoin Price Tops $0.16  (ORB)"><h2>Orbitcoin Price Tops $0.16  (ORB)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/wrapped-bitcoin-wbtc-hits-24-hour-trading-volume-of-141-69-million.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits 24 Hour Trading Volume of $141.69 Million"><h2>Wrapped Bitcoin (WBTC) Hits 24 Hour Trading Volume of $141.69 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 29th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Orbitcoin (CURRENCY:ORB) traded 1.9% higher  against the dollar during the twenty-four hour period ending at 15:00 PM ET on January 29th. Orbitcoin has a total market cap of $507,620.93 and $42.00 worth of Orbitcoin was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2022/01/29/orbitcoin-price-tops-0-16-orb.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded down 3.4% against the dollar during the 24-hour period ending at 11:00 AM E.T. on December 15th. Over the last week, Wrapped Bitcoin has traded up 3% against the dollar. One Wrapped Bitcoin token can now...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/wrapped-bitcoin-wbtc-hits-24-hour-trading-volume-of-141-69-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/29/bitcoin-rhodium-market-cap-reaches-2-58-million-xrc-2.html" rel="bookmark" title="Bitcoin Rhodium Market Cap Reaches $2.58 Million (XRC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-btcst-price-hits-3-01-on-exchanges.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Price Hits $3.01 on Exchanges" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium Market Cap Reaches $2.58 Million (XRC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token (BTCST) Price Hits $3.01 on Exchanges" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/29/bitcoin-rhodium-market-cap-reaches-2-58-million-xrc-2.html" rel="bookmark" title="Bitcoin Rhodium Market Cap Reaches $2.58 Million (XRC)"><h2>Bitcoin Rhodium Market Cap Reaches $2.58 Million (XRC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-btcst-price-hits-3-01-on-exchanges.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Price Hits $3.01 on Exchanges"><h2>Bitcoin Standard Hashrate Token (BTCST) Price Hits $3.01 on Exchanges</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 29th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Rhodium (CURRENCY:XRC) traded flat against the US dollar during the 24 hour period ending at 13:00 PM Eastern on January 29th. Bitcoin Rhodium has a market capitalization of $2.58 million and approximately $26,253.00 worth...&nbsp;<a href='https://transcriptdaily.com/2022/01/29/bitcoin-rhodium-market-cap-reaches-2-58-million-xrc-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded down 46.4% against the U.S. dollar during the 1 day period ending at 10:00 AM Eastern on December 15th. Bitcoin Standard Hashrate Token has a total market capitalization of $36.77 million...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-btcst-price-hits-3-01-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/29/ibitcoin-price-up-5-5-over-last-7-days-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Price Up 5.5% Over Last 7 Days (Î¤BTC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc.html" rel="bookmark" title="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9114.png&amp;w=150&amp;zc=1" alt="Ï„Bitcoin Price Up 5.5% Over Last 7 Days (Î¤BTC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/29/ibitcoin-price-up-5-5-over-last-7-days-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Price Up 5.5% Over Last 7 Days (Î¤BTC)"><h2>Ï„Bitcoin Price Up 5.5% Over Last 7 Days (Î¤BTC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc.html" rel="bookmark" title="Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)"><h2>Bitcoin 24 Hour Volume Hits $25.90 Billion (BTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 29th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Ï„Bitcoin (CURRENCY:Î¤BTC) traded 3.4% higher  against the U.S. dollar during the 24 hour period ending at 10:00 AM E.T. on January 29th. Over the last week, Ï„Bitcoin has traded 5.5% higher  against the U.S. dollar. Ï„Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/01/29/ibitcoin-price-up-5-5-over-last-7-days-i%c2%a4btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded down 3.2% against the dollar during the 24-hour period ending at 10:00 AM E.T. on December 15th. During the last seven days, Bitcoin has traded up 3.2% against the dollar. One Bitcoin coin can currently be bought...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-24-hour-volume-hits-25-90-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/29/microbitcoin-mbc-trading-3-4-lower-over-last-week.html" rel="bookmark" title="MicroBitcoin (MBC)  Trading 3.4% Lower  Over Last Week" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-price-down-41-9-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Down 41.9% Over Last Week (BTCST)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3507.png&amp;w=150&amp;zc=1" alt="MicroBitcoin (MBC)  Trading 3.4% Lower  Over Last Week" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Price Down 41.9% Over Last Week (BTCST)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/29/microbitcoin-mbc-trading-3-4-lower-over-last-week.html" rel="bookmark" title="MicroBitcoin (MBC)  Trading 3.4% Lower  Over Last Week"><h2>MicroBitcoin (MBC)  Trading 3.4% Lower  Over Last Week</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-price-down-41-9-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Down 41.9% Over Last Week (BTCST)"><h2>Bitcoin Standard Hashrate Token Price Down 41.9% Over Last Week (BTCST)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 29th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						MicroBitcoin (CURRENCY:MBC) traded up 1.7% against the US dollar during the 24-hour period ending at 0:00 AM E.T. on January 28th. MicroBitcoin has a market cap of $416,883.93 and approximately $500.00 worth of MicroBitcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2022/01/29/microbitcoin-mbc-trading-3-4-lower-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded down 46.4% against the U.S. dollar during the 24 hour period ending at 10:00 AM E.T. on December 15th. Over the last week, Bitcoin Standard Hashrate Token has traded down 41.9% against...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-standard-hashrate-token-price-down-41-9-over-last-week-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/27/bitcoin-confidential-market-cap-achieves-416934-51-bc.html" rel="bookmark" title="Bitcoin Confidential Market Cap Achieves $416,934.51 (BC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-sv-tops-24-hour-volume-of-54-40-million-bsv.html" rel="bookmark" title="Bitcoin SV Tops 24 Hour Volume of $54.40 Million (BSV)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential Market Cap Achieves $416,934.51 (BC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-sv-BSV.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin SV Tops 24 Hour Volume of $54.40 Million (BSV)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/27/bitcoin-confidential-market-cap-achieves-416934-51-bc.html" rel="bookmark" title="Bitcoin Confidential Market Cap Achieves $416,934.51 (BC)"><h2>Bitcoin Confidential Market Cap Achieves $416,934.51 (BC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-sv-tops-24-hour-volume-of-54-40-million-bsv.html" rel="bookmark" title="Bitcoin SV Tops 24 Hour Volume of $54.40 Million (BSV)"><h2>Bitcoin SV Tops 24 Hour Volume of $54.40 Million (BSV)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 27th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Confidential (CURRENCY:BC) traded 0.6% higher  against the US dollar during the twenty-four hour period ending at 17:00 PM Eastern on January 27th. Over the last week, Bitcoin Confidential has traded down 17.7% against the...&nbsp;<a href='https://transcriptdaily.com/2022/01/27/bitcoin-confidential-market-cap-achieves-416934-51-bc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (BSV) traded 2.4% higher  against the dollar during the 1-day period ending at 7:00 AM ET on December 15th. One Bitcoin SV coin can now be purchased for approximately $47.09 or 0.00265742 BTC on major exchanges. In the last...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-sv-tops-24-hour-volume-of-54-40-million-bsv.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/26/bitcoin-standard-hashrate-token-market-capitalization-tops-181-49-million-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Market Capitalization Tops $181.49 Million (BTCST)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-additional-btca-24-hour-volume-reaches-24-10-million.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Reaches $24.10 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btcst.png&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Market Capitalization Tops $181.49 Million (BTCST)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Reaches $24.10 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/26/bitcoin-standard-hashrate-token-market-capitalization-tops-181-49-million-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Market Capitalization Tops $181.49 Million (BTCST)"><h2>Bitcoin Standard Hashrate Token Market Capitalization Tops $181.49 Million (BTCST)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-additional-btca-24-hour-volume-reaches-24-10-million.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Reaches $24.10 Million"><h2>BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Reaches $24.10 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 26th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Standard Hashrate Token (CURRENCY:BTCST) traded 6.4% higher  against the US dollar during the one day period ending at 10:00 AM E.T. on January 26th. In the last seven days, Bitcoin Standard Hashrate Token has traded 21.7%...&nbsp;<a href='https://transcriptdaily.com/2022/01/26/bitcoin-standard-hashrate-token-market-capitalization-tops-181-49-million-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded down 0.8% against the dollar during the twenty-four hour period ending at 7:00 AM E.T. on December 15th. In the last seven days, BITCOIN ADDITIONAL has traded up 5.2% against the dollar. One BITCOIN...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-additional-btca-24-hour-volume-reaches-24-10-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/26/bitcoin-zero-bzx-market-capitalization-achieves-21460-92.html" rel="bookmark" title="Bitcoin Zero (BZX) Market Capitalization Achieves $21,460.92" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-diamond-bcd-price-reaches-0-13-on-top-exchanges-2.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.13 on Top Exchanges" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3497.png&amp;w=150&amp;zc=1" alt="Bitcoin Zero (BZX) Market Capitalization Achieves $21,460.92" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond (BCD) Price Reaches $0.13 on Top Exchanges" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/26/bitcoin-zero-bzx-market-capitalization-achieves-21460-92.html" rel="bookmark" title="Bitcoin Zero (BZX) Market Capitalization Achieves $21,460.92"><h2>Bitcoin Zero (BZX) Market Capitalization Achieves $21,460.92</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-diamond-bcd-price-reaches-0-13-on-top-exchanges-2.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.13 on Top Exchanges"><h2>Bitcoin Diamond (BCD) Price Reaches $0.13 on Top Exchanges</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 26th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Zero (CURRENCY:BZX) traded down 15.8% against the dollar during the twenty-four hour period ending at 22:00 PM Eastern on January 25th. One Bitcoin Zero coin can now be purchased for approximately $0.0007 or 0.00000002 BTC...&nbsp;<a href='https://transcriptdaily.com/2022/01/26/bitcoin-zero-bzx-market-capitalization-achieves-21460-92.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded up 1.2% against the U.S. dollar during the 24-hour period ending at 0:00 AM ET on December 14th. In the last week, Bitcoin Diamond has traded 4.4% higher  against the U.S. dollar. Bitcoin Diamond has a...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-diamond-bcd-price-reaches-0-13-on-top-exchanges-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/24/bitcoin-btc-reaches-market-capitalization-of-678-56-billion.html" rel="bookmark" title="Bitcoin (BTC) Reaches Market Capitalization of $678.56 Billion" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/15/bitcoin-private-achieves-market-capitalization-of-2-48-million-btcp.html" rel="bookmark" title="Bitcoin Private Achieves Market Capitalization of $2.48 Million (BTCP)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/1.png&amp;w=150&amp;zc=1" alt="Bitcoin (BTC) Reaches Market Capitalization of $678.56 Billion" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private Achieves Market Capitalization of $2.48 Million (BTCP)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/24/bitcoin-btc-reaches-market-capitalization-of-678-56-billion.html" rel="bookmark" title="Bitcoin (BTC) Reaches Market Capitalization of $678.56 Billion"><h2>Bitcoin (BTC) Reaches Market Capitalization of $678.56 Billion</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/15/bitcoin-private-achieves-market-capitalization-of-2-48-million-btcp.html" rel="bookmark" title="Bitcoin Private Achieves Market Capitalization of $2.48 Million (BTCP)"><h2>Bitcoin Private Achieves Market Capitalization of $2.48 Million (BTCP)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 24th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin (CURRENCY:BTC) traded 2% higher  against the dollar during the 1-day period ending at 14:00 PM Eastern on January 24th. One Bitcoin coin can currently be purchased for approximately $35,829.13 on popular cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/01/24/bitcoin-btc-reaches-market-capitalization-of-678-56-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 15th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded 5.7% lower  against the dollar during the twenty-four hour period ending at 20:00 PM E.T. on December 14th. During the last seven days, Bitcoin Private has traded 5.8% higher  against the dollar. Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/15/bitcoin-private-achieves-market-capitalization-of-2-48-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/24/bitcoin-adult-24-hour-volume-tops-3-00-btad.html" rel="bookmark" title="Bitcoin Adult 24-Hour Volume Tops $3.00 (BTAD)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-private-market-capitalization-hits-2-47-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Capitalization Hits $2.47 Million (BTCP)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3294.png&amp;w=150&amp;zc=1" alt="Bitcoin Adult 24-Hour Volume Tops $3.00 (BTAD)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private Market Capitalization Hits $2.47 Million (BTCP)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/24/bitcoin-adult-24-hour-volume-tops-3-00-btad.html" rel="bookmark" title="Bitcoin Adult 24-Hour Volume Tops $3.00 (BTAD)"><h2>Bitcoin Adult 24-Hour Volume Tops $3.00 (BTAD)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-private-market-capitalization-hits-2-47-million-btcp.html" rel="bookmark" title="Bitcoin Private Market Capitalization Hits $2.47 Million (BTCP)"><h2>Bitcoin Private Market Capitalization Hits $2.47 Million (BTCP)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 24th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Adult (CURRENCY:BTAD) traded up 10.8% against the US dollar during the twenty-four hour period ending at 13:00 PM E.T. on January 24th. Bitcoin Adult has a total market cap of $18,185.83 and approximately $3.00 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/01/24/bitcoin-adult-24-hour-volume-tops-3-00-btad.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded 5.8% lower  against the US dollar during the 24 hour period ending at 15:00 PM ET on December 14th. In the last week, Bitcoin Private has traded 5.4% higher  against the US dollar. Bitcoin Private has...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-private-market-capitalization-hits-2-47-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/24/bitcoin-atom-achieves-market-cap-of-1-01-million-bca.html" rel="bookmark" title="Bitcoin Atom Achieves Market Cap of $1.01 Million (BCA)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-64-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.64 Billion" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2387.png&amp;w=150&amp;zc=1" alt="Bitcoin Atom Achieves Market Cap of $1.01 Million (BCA)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.64 Billion" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/24/bitcoin-atom-achieves-market-cap-of-1-01-million-bca.html" rel="bookmark" title="Bitcoin Atom Achieves Market Cap of $1.01 Million (BCA)"><h2>Bitcoin Atom Achieves Market Cap of $1.01 Million (BCA)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-64-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.64 Billion"><h2>Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.64 Billion</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 24th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Atom (CURRENCY:BCA) traded 22.4% lower  against the US dollar during the 24-hour period ending at 10:00 AM E.T. on January 24th. One Bitcoin Atom coin can now be purchased for about $0.0547 or 0.00000160 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2022/01/24/bitcoin-atom-achieves-market-cap-of-1-01-million-bca.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded up 3.2% against the U.S. dollar during the 1-day period ending at 14:00 PM Eastern on December 14th. Wrapped Bitcoin has a total market capitalization of $3.64 billion and $91.72 million worth of Wrapped...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-64-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/24/bitcoin-sv-bsv-market-capitalization-achieves-1-64-billion.html" rel="bookmark" title="Bitcoin SV (BSV) Market Capitalization Achieves $1.64 Billion" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-tops-1-day-trading-volume-of-20-34-billion-btc.html" rel="bookmark" title="Bitcoin Tops 1-Day Trading Volume of $20.34 Billion (BTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bsv1.png&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Market Capitalization Achieves $1.64 Billion" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Tops 1-Day Trading Volume of $20.34 Billion (BTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/24/bitcoin-sv-bsv-market-capitalization-achieves-1-64-billion.html" rel="bookmark" title="Bitcoin SV (BSV) Market Capitalization Achieves $1.64 Billion"><h2>Bitcoin SV (BSV) Market Capitalization Achieves $1.64 Billion</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-tops-1-day-trading-volume-of-20-34-billion-btc.html" rel="bookmark" title="Bitcoin Tops 1-Day Trading Volume of $20.34 Billion (BTC)"><h2>Bitcoin Tops 1-Day Trading Volume of $20.34 Billion (BTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 24th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin SV (CURRENCY:BSV) traded 6.4% lower  against the dollar during the twenty-four hour period ending at 7:00 AM ET on January 24th. One Bitcoin SV coin can now be purchased for approximately $86.24 or 0.00255598 BTC on exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/01/24/bitcoin-sv-bsv-market-capitalization-achieves-1-64-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 3.4% higher  against the U.S. dollar during the 24 hour period ending at 14:00 PM ET on December 14th. Bitcoin has a total market cap of $352.06 billion and $20.34 billion worth of Bitcoin was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-tops-1-day-trading-volume-of-20-34-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/23/orbitcoin-orb-price-tops-0-15-on-major-exchanges.html" rel="bookmark" title="Orbitcoin (ORB) Price Tops $0.15 on Major Exchanges" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-sv-bsv-reaches-1-day-trading-volume-of-36-28-million.html" rel="bookmark" title="Bitcoin SV (BSV) Reaches 1-Day Trading Volume of $36.28 Million" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/80.png&amp;w=150&amp;zc=1" alt="Orbitcoin (ORB) Price Tops $0.15 on Major Exchanges" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-sv-BSV.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Reaches 1-Day Trading Volume of $36.28 Million" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/23/orbitcoin-orb-price-tops-0-15-on-major-exchanges.html" rel="bookmark" title="Orbitcoin (ORB) Price Tops $0.15 on Major Exchanges"><h2>Orbitcoin (ORB) Price Tops $0.15 on Major Exchanges</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-sv-bsv-reaches-1-day-trading-volume-of-36-28-million.html" rel="bookmark" title="Bitcoin SV (BSV) Reaches 1-Day Trading Volume of $36.28 Million"><h2>Bitcoin SV (BSV) Reaches 1-Day Trading Volume of $36.28 Million</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 23rd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Orbitcoin (CURRENCY:ORB) traded down 12.7% against the U.S. dollar during the 1-day period ending at 17:00 PM ET on January 23rd. Orbitcoin has a market capitalization of $473,998.09 and approximately $5,889.00 worth of Orbitcoin was...&nbsp;<a href='https://transcriptdaily.com/2022/01/23/orbitcoin-orb-price-tops-0-15-on-major-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (BSV) traded down 2.6% against the U.S. dollar during the 24-hour period ending at 11:00 AM ET on December 14th. Bitcoin SV has a market capitalization of $884.96 million and approximately $36.28 million worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-sv-bsv-reaches-1-day-trading-volume-of-36-28-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/23/bitcoin-standard-hashrate-token-btcst-price-reaches-14-84.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Price Reaches $14.84" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-private-btcp-price-tops-0-52-on-exchanges.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Tops $0.52 on Exchanges" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/btcst.png&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token (BTCST) Price Reaches $14.84" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private (BTCP) Price Tops $0.52 on Exchanges" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/23/bitcoin-standard-hashrate-token-btcst-price-reaches-14-84.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Price Reaches $14.84"><h2>Bitcoin Standard Hashrate Token (BTCST) Price Reaches $14.84</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-private-btcp-price-tops-0-52-on-exchanges.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Tops $0.52 on Exchanges"><h2>Bitcoin Private (BTCP) Price Tops $0.52 on Exchanges</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 23rd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Standard Hashrate Token (CURRENCY:BTCST) traded up 0.6% against the US dollar during the 24 hour period ending at 16:00 PM E.T. on January 23rd. One Bitcoin Standard Hashrate Token coin can now be purchased for about $14.84...&nbsp;<a href='https://transcriptdaily.com/2022/01/23/bitcoin-standard-hashrate-token-btcst-price-reaches-14-84.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded down 4.4% against the U.S. dollar during the one day period ending at 10:00 AM ET on December 14th. One Bitcoin Private coin can now be purchased for approximately $0.52 or 0.00002901 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-private-btcp-price-tops-0-52-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/23/bitcoinz-price-reaches-0-0005-on-exchanges-btcz.html" rel="bookmark" title="BitcoinZ Price Reaches $0.0005 on Exchanges (BTCZ)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-cash-24-hour-trading-volume-hits-128-80-million-bch.html" rel="bookmark" title="Bitcoin Cash 24 Hour Trading Volume Hits $128.80 Million (BCH)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2041.png&amp;w=150&amp;zc=1" alt="BitcoinZ Price Reaches $0.0005 on Exchanges (BTCZ)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash 24 Hour Trading Volume Hits $128.80 Million (BCH)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/23/bitcoinz-price-reaches-0-0005-on-exchanges-btcz.html" rel="bookmark" title="BitcoinZ Price Reaches $0.0005 on Exchanges (BTCZ)"><h2>BitcoinZ Price Reaches $0.0005 on Exchanges (BTCZ)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-cash-24-hour-trading-volume-hits-128-80-million-bch.html" rel="bookmark" title="Bitcoin Cash 24 Hour Trading Volume Hits $128.80 Million (BCH)"><h2>Bitcoin Cash 24 Hour Trading Volume Hits $128.80 Million (BCH)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 23rd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinZ (CURRENCY:BTCZ) traded 8.4% lower  against the US dollar during the 1 day period ending at 15:00 PM E.T. on January 23rd. BitcoinZ has a market capitalization of $5.79 million and approximately $208,718.00 worth of BitcoinZ...&nbsp;<a href='https://transcriptdaily.com/2022/01/23/bitcoinz-price-reaches-0-0005-on-exchanges-btcz.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded down 0.6% against the US dollar during the twenty-four hour period ending at 9:00 AM ET on December 14th. One Bitcoin Cash coin can currently be bought for $109.74 or 0.00613075 BTC on exchanges. Over the...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-cash-24-hour-trading-volume-hits-128-80-million-bch.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/23/bitcoin-private-reaches-market-cap-of-5-17-million-btcp.html" rel="bookmark" title="Bitcoin Private Reaches Market Cap of $5.17 Million (BTCP)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/rsk-smart-bitcoin-rbtc-price-up-5-4-over-last-week.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Up 5.4% Over Last Week" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2575.png&amp;w=150&amp;zc=1" alt="Bitcoin Private Reaches Market Cap of $5.17 Million (BTCP)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) Price Up 5.4% Over Last Week" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/23/bitcoin-private-reaches-market-cap-of-5-17-million-btcp.html" rel="bookmark" title="Bitcoin Private Reaches Market Cap of $5.17 Million (BTCP)"><h2>Bitcoin Private Reaches Market Cap of $5.17 Million (BTCP)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/rsk-smart-bitcoin-rbtc-price-up-5-4-over-last-week.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Up 5.4% Over Last Week"><h2>RSK Smart Bitcoin (RBTC) Price Up 5.4% Over Last Week</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 23rd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Private (CURRENCY:BTCP) traded 4.7% higher  against the US dollar during the 1 day period ending at 10:00 AM E.T. on January 23rd. One Bitcoin Private coin can currently be purchased for approximately $1.08 or 0.00003068 BTC...&nbsp;<a href='https://transcriptdaily.com/2022/01/23/bitcoin-private-reaches-market-cap-of-5-17-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded 0.4% lower  against the dollar during the 1 day period ending at 9:00 AM Eastern on December 14th. One RSK Smart Bitcoin coin can currently be bought for approximately $17,799.22 or 0.99434482 BTC on...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/rsk-smart-bitcoin-rbtc-price-up-5-4-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/22/bitcoin-sv-bsv-trading-down-22-1-over-last-week.html" rel="bookmark" title="Bitcoin SV (BSV) Trading Down 22.1% Over Last Week" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-diamond-bcd-one-day-volume-hits-110095-72.html" rel="bookmark" title="Bitcoin Diamond (BCD) One Day Volume Hits $110,095.72" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bsv1.png&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Trading Down 22.1% Over Last Week" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond (BCD) One Day Volume Hits $110,095.72" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/22/bitcoin-sv-bsv-trading-down-22-1-over-last-week.html" rel="bookmark" title="Bitcoin SV (BSV) Trading Down 22.1% Over Last Week"><h2>Bitcoin SV (BSV) Trading Down 22.1% Over Last Week</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-diamond-bcd-one-day-volume-hits-110095-72.html" rel="bookmark" title="Bitcoin Diamond (BCD) One Day Volume Hits $110,095.72"><h2>Bitcoin Diamond (BCD) One Day Volume Hits $110,095.72</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 22nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin SV (CURRENCY:BSV) traded down 14.6% against the dollar during the one day period ending at 12:00 PM E.T. on January 22nd. One Bitcoin SV coin can now be bought for approximately $88.49 or 0.00254845 BTC on major exchanges....&nbsp;<a href='https://transcriptdaily.com/2022/01/22/bitcoin-sv-bsv-trading-down-22-1-over-last-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded 2.4% higher  against the U.S. dollar during the 24 hour period ending at 22:00 PM E.T. on December 13th. During the last seven days, Bitcoin Diamond has traded 2.1% higher  against the U.S. dollar. One...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-diamond-bcd-one-day-volume-hits-110095-72.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/22/ibitcoin-trading-down-21-1-over-last-7-days-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Trading Down 21.1% Over Last 7 Days (Î¤BTC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-tops-24-hour-trading-volume-of-110-35-million-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Tops 24 Hour Trading Volume of $110.35 Million (WBTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/9114.png&amp;w=150&amp;zc=1" alt="Ï„Bitcoin Trading Down 21.1% Over Last 7 Days (Î¤BTC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin Tops 24 Hour Trading Volume of $110.35 Million (WBTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/22/ibitcoin-trading-down-21-1-over-last-7-days-i%c2%a4btc.html" rel="bookmark" title="Ï„Bitcoin Trading Down 21.1% Over Last 7 Days (Î¤BTC)"><h2>Ï„Bitcoin Trading Down 21.1% Over Last 7 Days (Î¤BTC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-tops-24-hour-trading-volume-of-110-35-million-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Tops 24 Hour Trading Volume of $110.35 Million (WBTC)"><h2>Wrapped Bitcoin Tops 24 Hour Trading Volume of $110.35 Million (WBTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 22nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Ï„Bitcoin (CURRENCY:Î¤BTC) traded down 9.8% against the US dollar during the one day period ending at 7:00 AM E.T. on January 22nd. In the last week, Ï„Bitcoin has traded down 21.1% against the US dollar. Ï„Bitcoin has a...&nbsp;<a href='https://transcriptdaily.com/2022/01/22/ibitcoin-trading-down-21-1-over-last-7-days-i%c2%a4btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded 3.8% higher  against the US dollar during the one day period ending at 22:00 PM ET on December 13th. Wrapped Bitcoin has a total market cap of $3.55 billion and $110.35 million worth of Wrapped Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/wrapped-bitcoin-tops-24-hour-trading-volume-of-110-35-million-wbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/22/0xbitcoin-reaches-1-day-trading-volume-of-649896-00-0xbtc.html" rel="bookmark" title="0xBitcoin Reaches 1-Day Trading Volume of $649,896.00 (0xBTC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-standard-hashrate-token-trading-down-0-over-last-7-days-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Trading Down 0% Over Last 7 Days (BTCST)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbtc.jpg&amp;w=150&amp;zc=1" alt="0xBitcoin Reaches 1-Day Trading Volume of $649,896.00 (0xBTC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Trading Down 0% Over Last 7 Days (BTCST)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/22/0xbitcoin-reaches-1-day-trading-volume-of-649896-00-0xbtc.html" rel="bookmark" title="0xBitcoin Reaches 1-Day Trading Volume of $649,896.00 (0xBTC)"><h2>0xBitcoin Reaches 1-Day Trading Volume of $649,896.00 (0xBTC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-standard-hashrate-token-trading-down-0-over-last-7-days-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Trading Down 0% Over Last 7 Days (BTCST)"><h2>Bitcoin Standard Hashrate Token Trading Down 0% Over Last 7 Days (BTCST)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 22nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						0xBitcoin (CURRENCY:0xBTC) traded 8.7% lower  against the U.S. dollar during the twenty-four hour period ending at 7:00 AM ET on January 22nd. One 0xBitcoin coin can now be bought for approximately $1.75 or 0.00004932 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2022/01/22/0xbitcoin-reaches-1-day-trading-volume-of-649896-00-0xbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded 1.3% higher  against the US dollar during the 1 day period ending at 22:00 PM Eastern on December 13th. In the last seven days, Bitcoin Standard Hashrate Token has traded down 0% against...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-standard-hashrate-token-trading-down-0-over-last-7-days-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/22/bitcoinote-hits-market-capitalization-of-82610-31-btcn.html" rel="bookmark" title="BitcoiNote Hits Market Capitalization of $82,610.31 (BTCN)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/14/bitcoin-latinum-reaches-self-reported-market-capitalization-of-76-81-million-ltnm-2.html" rel="bookmark" title="Bitcoin Latinum Reaches Self Reported Market Capitalization of $76.81 Million (LTNM)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/6g4_k7_o_400x400.jpg&amp;w=150&amp;zc=1" alt="BitcoiNote Hits Market Capitalization of $82,610.31 (BTCN)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-latinum-LTNM.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Latinum Reaches Self Reported Market Capitalization of $76.81 Million (LTNM)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/22/bitcoinote-hits-market-capitalization-of-82610-31-btcn.html" rel="bookmark" title="BitcoiNote Hits Market Capitalization of $82,610.31 (BTCN)"><h2>BitcoiNote Hits Market Capitalization of $82,610.31 (BTCN)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/14/bitcoin-latinum-reaches-self-reported-market-capitalization-of-76-81-million-ltnm-2.html" rel="bookmark" title="Bitcoin Latinum Reaches Self Reported Market Capitalization of $76.81 Million (LTNM)"><h2>Bitcoin Latinum Reaches Self Reported Market Capitalization of $76.81 Million (LTNM)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 22nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoiNote (CURRENCY:BTCN) traded 22.6% lower  against the dollar during the 1-day period ending at 21:00 PM Eastern on January 21st. BitcoiNote has a market cap of $82,610.31 and $28.00 worth of BitcoiNote was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2022/01/22/bitcoinote-hits-market-capitalization-of-82610-31-btcn.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 14th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Latinum (LTNM) traded down 28.5% against the U.S. dollar during the 24 hour period ending at 22:00 PM Eastern on December 13th. One Bitcoin Latinum token can now be bought for $0.20 or 0.00001145 BTC on major exchanges. In...&nbsp;<a href='https://transcriptdaily.com/2022/12/14/bitcoin-latinum-reaches-self-reported-market-capitalization-of-76-81-million-ltnm-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/22/bitcoinz-price-reaches-0-0006-on-exchanges-btcz.html" rel="bookmark" title="BitcoinZ Price Reaches $0.0006 on Exchanges (BTCZ)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/13/wrapped-bitcoin-wbtc-trading-4-6-higher-over-last-7-days.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Trading 4.6% Higher  Over Last 7 Days" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/2041.png&amp;w=150&amp;zc=1" alt="BitcoinZ Price Reaches $0.0006 on Exchanges (BTCZ)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) Trading 4.6% Higher  Over Last 7 Days" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/22/bitcoinz-price-reaches-0-0006-on-exchanges-btcz.html" rel="bookmark" title="BitcoinZ Price Reaches $0.0006 on Exchanges (BTCZ)"><h2>BitcoinZ Price Reaches $0.0006 on Exchanges (BTCZ)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/13/wrapped-bitcoin-wbtc-trading-4-6-higher-over-last-7-days.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Trading 4.6% Higher  Over Last 7 Days"><h2>Wrapped Bitcoin (WBTC) Trading 4.6% Higher  Over Last 7 Days</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 22nd, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinZ (CURRENCY:BTCZ) traded down 11.8% against the US dollar during the one day period ending at 19:00 PM Eastern on January 21st. One BitcoinZ coin can currently be bought for about $0.0006 or 0.00000002 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2022/01/22/bitcoinz-price-reaches-0-0006-on-exchanges-btcz.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 13th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded up 3.4% against the U.S. dollar during the 24 hour period ending at 17:00 PM Eastern on December 13th. One Wrapped Bitcoin token can now be bought for approximately $17,726.60 or 0.99867892 BTC on major...&nbsp;<a href='https://transcriptdaily.com/2022/12/13/wrapped-bitcoin-wbtc-trading-4-6-higher-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/21/bitcoinhd-bhd-achieves-market-capitalization-of-1-43-million.html" rel="bookmark" title="BitcoinHD (BHD) Achieves Market Capitalization of $1.43 Million" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-tops-5-43-on-major-exchanges-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Tops $5.43 on Major Exchanges (BTCST)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bhd.png&amp;w=150&amp;zc=1" alt="BitcoinHD (BHD) Achieves Market Capitalization of $1.43 Million" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Price Tops $5.43 on Major Exchanges (BTCST)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/21/bitcoinhd-bhd-achieves-market-capitalization-of-1-43-million.html" rel="bookmark" title="BitcoinHD (BHD) Achieves Market Capitalization of $1.43 Million"><h2>BitcoinHD (BHD) Achieves Market Capitalization of $1.43 Million</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-tops-5-43-on-major-exchanges-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Tops $5.43 on Major Exchanges (BTCST)"><h2>Bitcoin Standard Hashrate Token Price Tops $5.43 on Major Exchanges (BTCST)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 21st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						BitcoinHD (CURRENCY:BHD) traded down 10.7% against the U.S. dollar during the twenty-four hour period ending at 15:00 PM Eastern on January 21st. Over the last seven days, BitcoinHD has traded 19.5% lower  against the U.S. dollar....&nbsp;<a href='https://transcriptdaily.com/2022/01/21/bitcoinhd-bhd-achieves-market-capitalization-of-1-43-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 13th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded 2.1% higher  against the US dollar during the one day period ending at 17:00 PM ET on December 13th. One Bitcoin Standard Hashrate Token token can now be purchased for approximately $5.43...&nbsp;<a href='https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-tops-5-43-on-major-exchanges-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/21/bitcoin-zero-price-reaches-0-0005-on-top-exchanges-bzx.html" rel="bookmark" title="Bitcoin Zero Price Reaches $0.0005 on Top Exchanges (BZX)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-up-1-6-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Up 1.6% Over Last Week (BTCST)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/3497.png&amp;w=150&amp;zc=1" alt="Bitcoin Zero Price Reaches $0.0005 on Top Exchanges (BZX)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Price Up 1.6% Over Last Week (BTCST)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/21/bitcoin-zero-price-reaches-0-0005-on-top-exchanges-bzx.html" rel="bookmark" title="Bitcoin Zero Price Reaches $0.0005 on Top Exchanges (BZX)"><h2>Bitcoin Zero Price Reaches $0.0005 on Top Exchanges (BZX)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-up-1-6-over-last-week-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Up 1.6% Over Last Week (BTCST)"><h2>Bitcoin Standard Hashrate Token Price Up 1.6% Over Last Week (BTCST)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 21st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Zero (CURRENCY:BZX) traded down 54.4% against the dollar during the 1 day period ending at 14:00 PM E.T. on January 21st. Bitcoin Zero has a market cap of $13,066.76 and approximately $15.00 worth of Bitcoin Zero was traded...&nbsp;<a href='https://transcriptdaily.com/2022/01/21/bitcoin-zero-price-reaches-0-0005-on-top-exchanges-bzx.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 13th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded 1.7% higher  against the dollar during the one day period ending at 13:00 PM Eastern on December 13th. One Bitcoin Standard Hashrate Token token can currently be bought for about $5.42...&nbsp;<a href='https://transcriptdaily.com/2022/12/13/bitcoin-standard-hashrate-token-price-up-1-6-over-last-week-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/20/bitcoin-confidential-price-down-3-5-this-week-bc.html" rel="bookmark" title="Bitcoin Confidential Price Down 3.5% This Week (BC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/13/bitcoin-achieves-market-cap-of-339-43-billion-btc.html" rel="bookmark" title="Bitcoin Achieves Market Cap of $339.43 Billion (BTC)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitc.png&amp;w=150&amp;zc=1" alt="Bitcoin Confidential Price Down 3.5% This Week (BC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Achieves Market Cap of $339.43 Billion (BTC)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/20/bitcoin-confidential-price-down-3-5-this-week-bc.html" rel="bookmark" title="Bitcoin Confidential Price Down 3.5% This Week (BC)"><h2>Bitcoin Confidential Price Down 3.5% This Week (BC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/13/bitcoin-achieves-market-cap-of-339-43-billion-btc.html" rel="bookmark" title="Bitcoin Achieves Market Cap of $339.43 Billion (BTC)"><h2>Bitcoin Achieves Market Cap of $339.43 Billion (BTC)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 20th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Confidential (CURRENCY:BC) traded 2% higher  against the US dollar during the twenty-four hour period ending at 14:00 PM Eastern on January 20th. One Bitcoin Confidential coin can now be purchased for about $0.0001 or 0.00000000...&nbsp;<a href='https://transcriptdaily.com/2022/01/20/bitcoin-confidential-price-down-3-5-this-week-bc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 13th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 3.7% higher  against the U.S. dollar during the twenty-four hour period ending at 13:00 PM ET on December 13th. Bitcoin has a total market cap of $339.43 billion and approximately $26.82 billion worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/13/bitcoin-achieves-market-cap-of-339-43-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 								<section class="archive">
-					<a href="https://transcriptdaily.com/2022/01/20/bitcoin-rhodium-hits-24-hour-trading-volume-of-26253-00-xrc.html" rel="bookmark" title="Bitcoin Rhodium Hits 24 Hour Trading Volume of $26,253.00 (XRC)" class="archive-image">
+					<a href="https://transcriptdaily.com/2022/12/13/bitcoin-diamond-price-tops-0-13-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Tops $0.13  (BCD)" class="archive-image">
 					    
-					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/xrc.png&amp;w=150&amp;zc=1" alt="Bitcoin Rhodium Hits 24 Hour Trading Volume of $26,253.00 (XRC)" />
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Price Tops $0.13  (BCD)" />
 					
 					</a>
 					<div class="entry">
-					    <a href="https://transcriptdaily.com/2022/01/20/bitcoin-rhodium-hits-24-hour-trading-volume-of-26253-00-xrc.html" rel="bookmark" title="Bitcoin Rhodium Hits 24 Hour Trading Volume of $26,253.00 (XRC)"><h2>Bitcoin Rhodium Hits 24 Hour Trading Volume of $26,253.00 (XRC)</h2></a>
+					    <a href="https://transcriptdaily.com/2022/12/13/bitcoin-diamond-price-tops-0-13-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Tops $0.13  (BCD)"><h2>Bitcoin Diamond Price Tops $0.13  (BCD)</h2></a>
 					<p class="postmeta">
-						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 20th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
-						Bitcoin Rhodium (CURRENCY:XRC) traded flat against the US dollar during the 1 day period ending at 13:00 PM E.T. on January 20th. Bitcoin Rhodium has a market capitalization of $2.58 million and approximately $26,253.00 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/01/20/bitcoin-rhodium-hits-24-hour-trading-volume-of-26253-00-xrc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 13th, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded up 3.9% against the US dollar during the twenty-four hour period ending at 8:00 AM Eastern on December 13th. Over the last week, Bitcoin Diamond has traded 0.3% lower  against the US dollar. One Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/13/bitcoin-diamond-price-tops-0-13-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
 					
                 </section> <!-- end archive -->
 				
@@ -967,12 +970,12 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
 
 <!-- Start Sidebar Registration -->
 <div class="sidebar-email">
-                        <h3>Daily Ratings &amp; News for Bitcoin</h3>
-        	Complete the form below to receive the latest headlines and analysts' recommendations for Bitcoin with our free daily email newsletter:<br/>
+                        <h3>Daily Ratings &amp; News for Global X Blockchain & Bitcoin Strategy ETF</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Global X Blockchain & Bitcoin Strategy ETF with our free daily email newsletter:<br/>
         <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
         <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
         <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
-        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:bitcoin" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="NYSEARCA:BITS" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
     <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
     </form>
     </div>
@@ -998,26 +1001,26 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
         <div>
         <h3>Recent News</h3>
             <ul>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/salesforce-com-inc-nysecrm-stock-holdings-decreased-by-deccan-value-investors-l-p.html">salesforce.com, inc. (NYSE:CRM) Stock Holdings Decreased by Deccan Value Investors L.P.</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/mxc-trading-0-6-lower-this-week-mxc.html">MXC  Trading 0.6% Lower  This Week (MXC)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/acute-angle-cloud-price-up-5-5-over-last-7-days-aac.html">Acute Angle Cloud Price Up 5.5% Over Last 7 Days (AAC)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/zogenix-inc-nasdaqzgnx-expected-to-announce-quarterly-sales-of-26-23-million.html">Zogenix, Inc. (NASDAQ:ZGNX) Expected to Announce Quarterly Sales of $26.23 Million</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/radnet-inc-nasdaqrdnt-expected-to-post-quarterly-sales-of-347-96-million.html">RadNet, Inc. (NASDAQ:RDNT) Expected to Post Quarterly Sales of $347.96 Million</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/zacks-brokerages-anticipate-magenta-therapeutics-inc-nasdaqmgta-will-announce-earnings-of-0-32-per-share.html">Zacks: Brokerages Anticipate Magenta Therapeutics, Inc. (NASDAQ:MGTA) Will Announce Earnings of -$0.32 Per Share</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/ethplus-24-hour-volume-tops-39-00-ethp.html">ETHPlus 24-Hour Volume Tops $39.00 (ETHP)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/voya-investment-management-llc-sells-183207-shares-of-amazon-com-inc-nasdaqamzn.html">Voya Investment Management LLC Sells 183,207 Shares of Amazon.com, Inc. (NASDAQ:AMZN)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/regions-financial-co-nyserf-stake-reduced-by-lbmc-investment-advisors-llc.html">Regions Financial Co. (NYSE:RF) Stake Reduced by Lbmc Investment Advisors LLC</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/alcoa-co-nyseaa-shares-sold-by-asia-research-capital-management-ltd.html">Alcoa Co. (NYSE:AA) Shares Sold by Asia Research &#038; Capital Management Ltd</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/amylyx-pharmaceuticals-nasdaqamlx-shares-down-10-3.html">Amylyx Pharmaceuticals (NASDAQ:AMLX)  Shares Down 10.3%</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/vulcan-minerals-cvevul-reaches-new-52-week-high-at-0-37.html">Vulcan Minerals (CVE:VUL) Reaches New 52-Week High at $0.37</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/warrior-gold-cvewar-reaches-new-52-week-low-at-0-06.html">Warrior Gold (CVE:WAR) Reaches New 52-Week Low at $0.06</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/link-tops-1-day-volume-of-751892-00-ln.html">LINK Tops 1-Day Volume of $751,892.00 (LN)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/thorchain-tops-1-day-trading-volume-of-72-33-million-rune.html">THORChain Tops 1-Day Trading Volume of $72.33 Million (RUNE)</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/zacks-analysts-anticipate-terex-co-nysetex-will-post-quarterly-sales-of-947-42-million.html">Zacks: Analysts Anticipate Terex Co. (NYSE:TEX) Will Post Quarterly Sales of $947.42 Million</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/international-petroleum-co-tseipco-insider-international-petroleum-corporation-buys-92176-shares.html">International Petroleum Co. (TSE:IPCO) Insider International Petroleum Corporation  Buys 92,176 Shares</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/cashaa-cas-trading-9-6-higher-this-week.html">Cashaa (CAS) Trading 9.6% Higher  This Week</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/wing-finance-wing-price-reaches-10-71-on-exchanges.html">Wing Finance (WING) Price Reaches $10.71 on Exchanges</a></li>
-                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/02/07/endeavour-silver-corp-nyseexk-expected-to-announce-quarterly-sales-of-54-32-million.html">Endeavour Silver Corp. (NYSE:EXK) Expected to Announce Quarterly Sales of $54.32 Million</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/morgan-stanley-lowers-ovintiv-nyseovv-price-target-to-60-00.html">Morgan Stanley Lowers Ovintiv (NYSE:OVV) Price Target to $60.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/veracyte-inc-nasdaqvcyt-director-sells-51193-57-in-stock.html">Veracyte, Inc. (NASDAQ:VCYT) Director Sells $51,193.57 in Stock</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/kion-group-ag-otcmktskigry-receives-average-rating-of-hold-from-brokerages.html">Kion Group Ag (OTCMKTS:KIGRY) Receives Average Rating of &#8220;Hold&#8221; from Brokerages</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/siemens-aktiengesellschaft-otcmktssiegy-receives-156-71-consensus-price-target-from-brokerages.html">Siemens Aktiengesellschaft (OTCMKTS:SIEGY) Receives $156.71 Consensus Price Target from Brokerages</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/analysts-set-oncocyte-co-nasdaqocx-price-target-at-2-08.html">Analysts Set OncoCyte Co. (NASDAQ:OCX) Price Target at $2.08</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/eli-lilly-and-nyselly-price-target-increased-to-400-00-by-analysts-at-jpmorgan-chase-co.html">Eli Lilly and (NYSE:LLY) Price Target Increased to $400.00 by Analysts at JPMorgan Chase &#038; Co.</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/northwestern-nasdaqnwe-pt-raised-to-57-00.html">NorthWestern (NASDAQ:NWE) PT Raised to $57.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/oaktree-specialty-lending-nasdaqocsl-cut-to-sell-at-stocknews-com.html">Oaktree Specialty Lending (NASDAQ:OCSL) Cut to Sell at StockNews.com</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/fluence-energy-nasdaqflnc-price-target-raised-to-27-00-at-robert-w-baird.html">Fluence Energy (NASDAQ:FLNC) Price Target Raised to $27.00 at Robert W. Baird</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/bmo-capital-markets-raises-oracle-nyseorcl-price-target-to-95-00.html">BMO Capital Markets Raises Oracle (NYSE:ORCL) Price Target to $95.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/marsh-mclennan-companies-nysemmc-research-coverage-started-at-citigroup.html">Marsh &#038; McLennan Companies (NYSE:MMC) Research Coverage Started at Citigroup</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/wells-fargo-company-begins-coverage-on-janus-henderson-group-nysejhg.html">Wells Fargo &#038; Company Begins Coverage on Janus Henderson Group (NYSE:JHG)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/morgan-stanley-boosts-netease-nasdaqntes-price-target-to-95-00.html">Morgan Stanley Boosts NetEase (NASDAQ:NTES) Price Target to $95.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/morgan-stanley-cuts-extra-space-storage-nyseexr-price-target-to-145-00.html">Morgan Stanley Cuts Extra Space Storage (NYSE:EXR) Price Target to $145.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/marchex-nasdaqmchx-research-coverage-started-at-stocknews-com.html">Marchex (NASDAQ:MCHX) Research Coverage Started at StockNews.com</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/grupo-aeroportuario-del-centro-norte-nasdaqomab-lowered-to-sell-at-citigroup.html">Grupo Aeroportuario del Centro Norte (NASDAQ:OMAB) Lowered to &#8220;Sell&#8221; at Citigroup</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/pacira-biosciences-nasdaqpcrx-price-target-lowered-to-50-00-at-cowen.html">Pacira BioSciences (NASDAQ:PCRX) Price Target Lowered to $50.00 at Cowen</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/charter-communications-nasdaqchtr-given-new-649-00-price-target-at-cowen.html">Charter Communications (NASDAQ:CHTR) Given New $649.00 Price Target at Cowen</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/morgan-stanley-lowers-mirati-therapeutics-nasdaqmrtx-price-target-to-60-00.html">Morgan Stanley Lowers Mirati Therapeutics (NASDAQ:MRTX) Price Target to $60.00</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2022/12/18/nextgen-healthcare-nasdaqnxgn-downgraded-to-buy-at-stocknews-com.html">NextGen Healthcare (NASDAQ:NXGN) Downgraded to Buy at StockNews.com</a></li>
                         </ul>
         </div>  
 </div>
@@ -1041,7 +1044,7 @@ if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.user
 	    </span>
 	</div>	
 	<!-- Begin Internal Tracking Pixel 2 -->
-		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=84804845&PostDate=2022-2-7&type=c&tertiary=1&id=1341276&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=99646159&PostDate=2022-12-18&type=a&quinary=1&id=1864079&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
 		<!-- End Internal Tracking Pixel 2-->
 </footer>
 		</div>

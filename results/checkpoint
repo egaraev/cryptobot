@@ -1,2 +1,2 @@
-model_checkpoint_path: "2022-01-22_BTC-USD-mse-LSTM-seq-200-step-30-layers-3-units-256"
-all_model_checkpoint_paths: "2022-01-22_BTC-USD-mse-LSTM-seq-200-step-30-layers-3-units-256"
+model_checkpoint_path: "2022-12-22_BTC-USD-mse-LSTM-seq-200-step-30-layers-3-units-256"
+all_model_checkpoint_paths: "2022-12-22_BTC-USD-mse-LSTM-seq-200-step-30-layers-3-units-256"

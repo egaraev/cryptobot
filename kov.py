@@ -31,9 +31,7 @@ def kov_analyze():
     for market in markets: #Loop through the crypto summary
         try:
            market=(market[0])
-           crypto=market[4:]
-           market1 = crypto+"-USD"
-           btc = yf.Ticker(market1)
+           btc = yf.Ticker(market)
            hist = btc.history(period="300d")
            print (hist)
 

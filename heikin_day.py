@@ -25,9 +25,16 @@ import json
 from dateutil import parser
 import warnings
 warnings.filterwarnings('ignore')
-# import config
-# c1 = Client(api_key=config.key, api_secret=config.secret)
-c = Client(api_key='', api_secret='')
+import config
+from bittrex_api import Bittrex
+bittrex = Bittrex(
+    api_key=config.key,              # YOUR API KEY
+    secret_key=config.secret,           # YOUR API SECRET
+    max_request_try_count=3, # Max tries for a request to succeed
+    sleep_time=2,            # sleep seconds between failed requests
+    debug_level=3
+)
+c = bittrex.v3
 currtime = int(round(time.time()))
 now = datetime.datetime.now()
 currenttime = now.strftime("%Y-%m-%d %H:%M")
@@ -49,17 +56,15 @@ def main():
 
 def HA():
 
-    market_summ = c.get_market_summaries().json()['result']
+    market_summ = c.get_market_summaries()
     #print (market_summ)
-    
+    tickers = c.get_tickers()
 
     for summary in market_summ: #Loop trough the market summary
         try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
-                crypto=market[4:]
-                market1 = crypto+"-USD"
-                stock = yf.Ticker(market1)
+            if available_market_list(summary['symbol']):
+                market = summary['symbol']
+                stock = yf.Ticker(market)
                 hist = stock.history(period="{}d".format(days))
                 df = pd.DataFrame(hist)
                 df = df.reset_index(level=['Date'])
@@ -67,9 +72,9 @@ def HA():
                 #pd.set_option('display.float_format', lambda x: '%0.2f' % x)
                 #print (df)
                 # Current prices
-                last = float(summary['Last'])  # last price
-                bid = float(summary['Bid'])  # sell price
-                ask = float(summary['Ask'])  # buy price
+                last = float([tick['lastTradeRate'] for tick in tickers if tick['symbol']==market][0]) #last price
+                bid = float([tick['bidRate'] for tick in tickers if tick['symbol']==market][0])   #sell price
+                ask = float([tick['askRate'] for tick in tickers if tick['symbol']==market][0])	#buy price	
                 #print (market, last)
 
 				
@@ -345,15 +350,15 @@ def heikin_ashi_func(df):
     return heikin_ashi_df
 
 
-def available_market_list(marketname):
+def available_market_list(symbol):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
+    market = symbol
     cursor.execute("SELECT * FROM `markets` where  enabled=1 and market = '%s'" % market)
 
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == symbol:
             return True
 
     return False

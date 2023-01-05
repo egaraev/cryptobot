@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="distribution" content="global" />
+<meta name="robots" content="follow, all" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+<meta name="theme-color" content="#486993"/>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Escape from Frames -->
+<script type="text/javascript">if(self==top){document.documentElement.style.display="block"}else{top.location=self.location}</script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+
+<style>
+
+:root {
+  --header-background: #ffffff;
+  --button-background: #486993;
+  --button-background-2: #486993;
+  --button-hover-background: #5478ab;
+  --button-hover-background-2: #5478ab;
+  --button-text-color: #fff;
+  --link-color: #486993;
+  --link-hover-color: #193c68;
+  --link-text-decoration: none; /* text field */
+  --hover-link-text-decoration: underline; /* text field */
+  --menu-background: #7b6f6f;
+  --menu-background-2: #7b6f6f;
+  --menu-text-color: #fff;
+  --menu-active-hover-background: #544c4c;
+  --menu-active-hover-text-color: #dedada;
+  --top-menu-background: #193c68;
+  --top-menu-link-color: #ffffff;
+  --top-menu-link-hover-color: #eeeeee;
+  --accent-color: #193c68;
+  --accent-color-2: #193c68;
+  --sidebar-h3-color: #544c4c;
+  --light-gray-color:#dedada;
+  --light-gray-link-color:#dedada;
+  --light-gray-link-hover-color:#dedada;
+  --list-item-bottom-border: solid 1px #dedada;
+  --border-radius: 10px;
+  --border-radius-small-items: 2px;
+  --H1-font: bold 2em/1.3 "Lato",sans-serif;
+  --H2-font:  bold 1.3em/1.3 "Lato",sans-serif;
+  --H3-font:  bold uppercase 1.1em/1.3 "Lato",sans-serif;
+  --body-font: 15px "Lato",sans-serif;
+  --menu-font: 1em "Lato", sans-serif;
+  --box-shadow: 0px 0px 1px 0px #eff2f4; 
+  --body-background: #dedada;
+  --body-background-2: #c1baba;
+  --body-font-color: #222222;
+
+}
+
+
+body {
+	font: var(--body-font);
+    background: var(--body-background);
+	color: var(--body-font-color);
+	 
+		
+	background: -moz-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -webkit-gradient(left top,left bottom,color-stop(0%, var(--body-background)),color-stop(100%, var(--body-background-2)));
+    background: -webkit-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -o-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: -ms-linear-gradient(top, var(--body-background) 0%, var(--body-background-2) 100%);
+    background: linear-gradient(to bottom, var(--body-background) 0%, var(--body-background-2) 100%);
+		
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+</style>
+<link rel="stylesheet" href="https://transcriptdaily.com/wp-content/themes/responsalambre/style.css?v=2021abcdefghij" type="text/css" media="screen">
+	
+<link href="https://transcriptdaily.com/feed" rel="alternate" title="Transcript Daily RSS Feed" type="application/rss+xml" />
+<link href="https://transcriptdaily.com/feed/atom" rel="alternate" title="Transcript Daily Atom Feed" type="application/atom+xml" />
+<link href="https://transcriptdaily.com/xmlrpc.php" rel="pingback" />
+<meta name='robots' content='noindex, follow, max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="Transcript Daily &raquo; Search Results for &#8220;Bitcoin&#8221; Feed" href="https://transcriptdaily.com/search/Bitcoin/feed/rss2/" />
+<link rel='stylesheet' id='wp-block-library-css' href='https://transcriptdaily.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://transcriptdaily.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="https://api.w.org/" href="https://transcriptdaily.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://transcriptdaily.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://transcriptdaily.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel="manifest" href="https://transcriptdaily.com/manifest.json"><link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-180x180.png" />
+<meta name="msapplication-TileImage" content="https://transcriptdaily.com/wp-content/uploads/2021/05/cropped-Transcript-Daily-Logo-Icon-07-270x270.png" />
+
+<!-- Start Meta Data -->
+<title>Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM) - Transcript Daily</title>
+<meta name="description" content="Read Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM) at Transcript Daily"/>
+
+<!-- End Meta Data -->
+
+	
+<script type='text/javascript'>var PopupAdChannel=''; </script>
+
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+  <script>
+  	function registerUserChange(action) {
+		OneSignal.getUserId( function(userId) {
+			OneSignalIdString = userId;
+			var Domain = 'transcriptdaily.com';
+			var url = "https://www.marketbeat.com/scripts/OneSignalTracking.ashx?OneSignalID=" + OneSignalIdString + "&domain=" + Domain + "&action=" + action;
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', url);
+			xhr.onload = function () {
+				if (xhr.status !== 200) {
+					console.log('GET failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		});
+	}
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "881bfa77-26cb-4cd6-9aa9-572b33abb76a",
+      safari_web_id: 'web.onesignal.auto.1d2463f6-17a6-4c7e-80c3-735ae8ddc977', 
+      autoRegister: false,
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      },
+ welcomeNotification: {
+        "title": "Join Wall Street's Brightest Minds.",
+        "message": "Receive research in your inbox from top analysts, before the market opens. Click here to learn how.",
+         "url": "https://www.marketbeat.com/subscribe/subscribe.aspx?ReferralType=OneSignalThankYou&ProductCode=1997t"
+    }
+    },
+		OneSignal.once('subscriptionChange', function (isSubscribed) {
+			if(isSubscribed) {
+				registerUserChange("subscribe");
+			}
+			else {
+				registerUserChange("unsubscribe");
+			}
+			
+		  })
+	]);
+if((navigator.userAgent.toLowerCase().indexOf('firefox') > -1)||((navigator.userAgent.toLowerCase().indexOf('safari') > -1)&&(!(navigator.userAgent.toLowerCase().indexOf('chrome') > -1)))){
+		OneSignal.showSlidedownPrompt();
+	} else {
+		OneSignal.showNativePrompt();		
+	}  </script>
+
+
+
+<script type="text/javascript">var vbnfgha = '211626'; var ertdfga = '13739-bup-ac'; var qhyuioa = '53938'; var AdClientID = qhyuioa + vbnfgha + ertdfga; AdClientID = AdClientID.split("").reverse().join("");</script>
+
+
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: AdClientID,
+          enable_page_level_ads: false
+     });
+</script>
+
+</head>
+<body>
+<div id="wrap">
+<script type="text/javascript" src="https://www.marketbeat.com/scripts/modal/modernpopup.js?v=60"></script>
+	
+<!-- Start MarketBeat Modern Popup -->
+<!-- End MarketBeat Modern Popup -->
+	
+<a class="skip-link scroll" href="#main">Skip to main content</a>
+<header>
+	<div class="width-limiter background-light top-menu-bar">
+		<div style='color:#222;text-align:right;'>
+			<nav class="navigation top-menu" aria-label="Utility Links"><ul id="menu-top-menu" class="menu"><li id="menu-item-81" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>		</div>
+   </div>
+<!-- start for mobile menu -->
+<div class="width-limiter top-mobile-menu" id='mobile-logo-bar'>
+	 <label for="nav-trigger" style="display:inline-block; width:30vw; color:#12424d;vertical-align:middle;">&#9776;</label> 
+	 <a style='vertical-align:middle;width:33vw;display:inline-block;text-align:center;padding:5px;' href="https://transcriptdaily.com"><img style='width:120px' src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+	</div>
+	<div class="width-limiter" style="min-height: 5px;" id='mobile-menu-bar'>
+		
+                	<input type="checkbox" id="nav-trigger" class="navOpen" />
+                
+                	<div class="mobile-nav nice-scroll">
+                		
+							
+                			
+                			<nav class="mobile-menu" aria-label="Category Mobile Menu"><ul id="menu-categories-for-menus" class="menu"><li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>                			<nav class="mobile-menu" aria-label="Utility Mobile Menu"><ul id="menu-top-menu-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-81"><a href="https://transcriptdaily.com">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="https://transcriptdaily.com/privacy-policy">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://transcriptdaily.com/about-contact">About/Contact</a></li>
+</ul></nav>                			
+                			<form class="mobile-search" id="mobileSearchForm" action="https://transcriptdaily.com/" method="get">
+                				<div class="search">
+                					<input id="s" style='margin-left:0;' class="searchinput" aria-label="Search Keywords" name="s" onclick="this.value='';" type="text" />
+                					<input class="searchsubmit" type="submit" value="SEARCH" />
+                				</div>
+                			</form>
+						<div>
+	
+						</div>
+                	</div>
+		
+	</div>
+<!-- end for mobile menu -->
+	<div class="width-limiter add-padding flex-container"><!-- start: width-limiter with logo and space for alternate header unit -->
+		
+		<a class="logo-link flex-logo" id="header-logo-link" href="https://transcriptdaily.com" title="Transcript Daily"><img id="logo" src="https://transcriptdaily.com/wp-content/uploads/2021/05/Transcript-Daily-Logo-04.png" alt="Transcript Daily logo" width="605" height="189"></a>
+
+<!-- Begin Header Unit -->
+<div id="AlternateHeaderUnit" class="flex-header-ad">
+	<iframe class="large-show" src="https://marketbeat.com/scripts/HeaderAdNewsSites.ashx" width="728" height="110" frameborder="no" scrolling="no" style="width: 100%;overflow:hidden;" title="Ad"></iframe>
+	<iframe class="small-show" src="https://marketbeat.com/scripts/SidebarAdNewsSites.ashx" width="336" height="280" frameborder="no"scrolling="no" style="overflow:hidden;margin:0 auto;" title="Ad"></iframe>
+</div> 
+
+<!-- End Header Unit-->
+	</div> <!-- end: width-limiter with logo and space for alternate header unit -->
+	<div id="menu">
+		<div class="width-limiter flex-container" id="nav-main">
+			
+			<!-- start main category menu -->
+			
+			<div class="flex-nav">
+			   
+			  
+
+
+
+			<nav class="navigation" aria-label="Main Menu"><ul id="menu-categories-for-menus-1" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>			
+			</div>
+				<form class="flex-search" id="searchform" action="https://transcriptdaily.com/" method="get">
+					<div class="search">
+						<input id="s-main" class="searchinput" name="s" aria-label="Search Keywords" onclick="this.value='';" type="text" />
+						<input class="searchsubmit" type="submit" value="SEARCH" />
+					</div>
+					
+				</form><!-- end: searchform -->
+		</div> <!-- end: width-limiter for menu -->
+	</div> <!-- end: menu -->
+</header> <!-- end: header -->
+	<div class="width-limiter main-content flex-container">
+		
+<main class="flex-main" id="main">
+						<h1 class="archive-category"><a href="https://transcriptdaily.com">Home</a> &raquo; Search Results</h1>
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoin-latinum-price-down-26-7-over-last-7-days-ltnm.html" rel="bookmark" title="Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-latinum-LTNM.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoin-latinum-price-down-26-7-over-last-7-days-ltnm.html" rel="bookmark" title="Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM)"><h2>Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Latinum (LTNM) traded up 0.5% against the US dollar during the twenty-four hour period ending at 14:00 PM E.T. on January 5th. Bitcoin Latinum has a total market cap of $76.81 million and approximately $7.68 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoin-latinum-price-down-26-7-over-last-7-days-ltnm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoinbr-price-up-62-4-over-last-7-days-btcbr.html" rel="bookmark" title="BitcoinBR Price Up 62.4% Over Last 7 Days (BTCBR)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoinbr-BTCBR.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BitcoinBR Price Up 62.4% Over Last 7 Days (BTCBR)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoinbr-price-up-62-4-over-last-7-days-btcbr.html" rel="bookmark" title="BitcoinBR Price Up 62.4% Over Last 7 Days (BTCBR)"><h2>BitcoinBR Price Up 62.4% Over Last 7 Days (BTCBR)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinBR (BTCBR) traded 23.2% lower  against the US dollar during the 1-day period ending at 13:00 PM ET on January 5th. Over the last week, BitcoinBR has traded 62.4% higher  against the US dollar. BitcoinBR has a market capitalization...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoinbr-price-up-62-4-over-last-7-days-btcbr.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoin-gold-btg-price-tops-13-51-on-exchanges.html" rel="bookmark" title="Bitcoin Gold (BTG) Price Tops $13.51 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold (BTG) Price Tops $13.51 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoin-gold-btg-price-tops-13-51-on-exchanges.html" rel="bookmark" title="Bitcoin Gold (BTG) Price Tops $13.51 on Exchanges"><h2>Bitcoin Gold (BTG) Price Tops $13.51 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 5.8% higher  against the U.S. dollar during the 24 hour period ending at 10:00 AM E.T. on January 5th. Bitcoin Gold has a total market cap of $236.58 million and $45.45 million worth of Bitcoin Gold was traded...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoin-gold-btg-price-tops-13-51-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoin-latinum-achieves-self-reported-market-cap-of-76-81-million-ltnm-2.html" rel="bookmark" title="Bitcoin Latinum Achieves Self Reported Market Cap of $76.81 Million (LTNM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-latinum-LTNM.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Latinum Achieves Self Reported Market Cap of $76.81 Million (LTNM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoin-latinum-achieves-self-reported-market-cap-of-76-81-million-ltnm-2.html" rel="bookmark" title="Bitcoin Latinum Achieves Self Reported Market Cap of $76.81 Million (LTNM)"><h2>Bitcoin Latinum Achieves Self Reported Market Cap of $76.81 Million (LTNM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Latinum (LTNM) traded up 0.1% against the dollar during the 24 hour period ending at 9:00 AM ET on January 5th. Bitcoin Latinum has a total market cap of $76.81 million and approximately $7.57 worth of Bitcoin Latinum was traded...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoin-latinum-achieves-self-reported-market-cap-of-76-81-million-ltnm-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoin-private-btcp-price-down-32-1-this-week.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Down 32.1% This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private (BTCP) Price Down 32.1% This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoin-private-btcp-price-down-32-1-this-week.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Down 32.1% This Week"><h2>Bitcoin Private (BTCP) Price Down 32.1% This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded down 29.2% against the U.S. dollar during the 1 day period ending at 7:00 AM Eastern on January 5th. During the last week, Bitcoin Private has traded 32.1% lower  against the U.S. dollar. Bitcoin Private...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoin-private-btcp-price-down-32-1-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoinbr-btcbr-reaches-24-hour-trading-volume-of-3-90.html" rel="bookmark" title="BitcoinBR (BTCBR) Reaches 24 Hour Trading Volume of $3.90" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoinbr-BTCBR.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BitcoinBR (BTCBR) Reaches 24 Hour Trading Volume of $3.90" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoinbr-btcbr-reaches-24-hour-trading-volume-of-3-90.html" rel="bookmark" title="BitcoinBR (BTCBR) Reaches 24 Hour Trading Volume of $3.90"><h2>BitcoinBR (BTCBR) Reaches 24 Hour Trading Volume of $3.90</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinBR (BTCBR) traded down 19.2% against the dollar during the one day period ending at 22:00 PM E.T. on January 4th. During the last week, BitcoinBR has traded 106.9% higher  against the dollar. One BitcoinBR token can now be purchased...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoinbr-btcbr-reaches-24-hour-trading-volume-of-3-90.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/05/bitcoin-private-price-reaches-0-46-btcp.html" rel="bookmark" title="Bitcoin Private Price Reaches $0.46  (BTCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private Price Reaches $0.46  (BTCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/05/bitcoin-private-price-reaches-0-46-btcp.html" rel="bookmark" title="Bitcoin Private Price Reaches $0.46  (BTCP)"><h2>Bitcoin Private Price Reaches $0.46  (BTCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 5th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded 20.4% higher  against the US dollar during the 1 day period ending at 21:00 PM E.T. on January 4th. Bitcoin Private has a market cap of $2.22 million and $113.03 worth of Bitcoin Private was traded on...&nbsp;<a href='https://transcriptdaily.com/2023/01/05/bitcoin-private-price-reaches-0-46-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-gold-trading-8-6-higher-this-week-btg.html" rel="bookmark" title="Bitcoin Gold Trading 8.6% Higher  This Week (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold Trading 8.6% Higher  This Week (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-gold-trading-8-6-higher-this-week-btg.html" rel="bookmark" title="Bitcoin Gold Trading 8.6% Higher  This Week (BTG)"><h2>Bitcoin Gold Trading 8.6% Higher  This Week (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 8.1% higher  against the U.S. dollar during the 1 day period ending at 18:00 PM ET on January 4th. Bitcoin Gold has a total market capitalization of $223.42 million and $23.77 million worth of Bitcoin Gold...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-gold-trading-8-6-higher-this-week-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-latinum-price-hits-0-28-on-top-exchanges-ltnm.html" rel="bookmark" title="Bitcoin Latinum Price Hits $0.28 on Top Exchanges (LTNM)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-latinum-LTNM.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Latinum Price Hits $0.28 on Top Exchanges (LTNM)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-latinum-price-hits-0-28-on-top-exchanges-ltnm.html" rel="bookmark" title="Bitcoin Latinum Price Hits $0.28 on Top Exchanges (LTNM)"><h2>Bitcoin Latinum Price Hits $0.28 on Top Exchanges (LTNM)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Latinum (LTNM) traded up 82% against the dollar during the one day period ending at 18:00 PM E.T. on January 4th. Bitcoin Latinum has a market cap of $76.81 million and $6.72 worth of Bitcoin Latinum was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-latinum-price-hits-0-28-on-top-exchanges-ltnm.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/0xbitcoin-self-reported-market-cap-hits-1-45-million-0xbtc.html" rel="bookmark" title="0xBitcoin Self Reported Market Cap Hits $1.45 Million (0xBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin Self Reported Market Cap Hits $1.45 Million (0xBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/0xbitcoin-self-reported-market-cap-hits-1-45-million-0xbtc.html" rel="bookmark" title="0xBitcoin Self Reported Market Cap Hits $1.45 Million (0xBTC)"><h2>0xBitcoin Self Reported Market Cap Hits $1.45 Million (0xBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded 5.7% lower  against the U.S. dollar during the 24-hour period ending at 15:00 PM E.T. on January 4th. 0xBitcoin has a market capitalization of $1.45 million and $79,535.23 worth of 0xBitcoin was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/0xbitcoin-self-reported-market-cap-hits-1-45-million-0xbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-diamond-one-day-volume-tops-117204-17-bcd.html" rel="bookmark" title="Bitcoin Diamond One Day Volume Tops $117,204.17 (BCD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond One Day Volume Tops $117,204.17 (BCD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-diamond-one-day-volume-tops-117204-17-bcd.html" rel="bookmark" title="Bitcoin Diamond One Day Volume Tops $117,204.17 (BCD)"><h2>Bitcoin Diamond One Day Volume Tops $117,204.17 (BCD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded up 2.5% against the US dollar during the 24-hour period ending at 14:00 PM Eastern on January 4th. Bitcoin Diamond has a total market capitalization of $19.04 million and approximately $117,204.17 worth...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-diamond-one-day-volume-tops-117204-17-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-10-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.10 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.10 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-10-billion.html" rel="bookmark" title="Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.10 Billion"><h2>Wrapped Bitcoin (WBTC) Hits Market Capitalization of $3.10 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded up 1.9% against the U.S. dollar during the 1-day period ending at 14:00 PM Eastern on January 4th. Wrapped Bitcoin has a total market capitalization of $3.10 billion and $66.20 million worth of Wrapped...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-wbtc-hits-market-capitalization-of-3-10-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-1-day-trading-volume-hits-35-29-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL 1-Day Trading Volume Hits $35.29 Million (BTCA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL 1-Day Trading Volume Hits $35.29 Million (BTCA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-1-day-trading-volume-hits-35-29-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL 1-Day Trading Volume Hits $35.29 Million (BTCA)"><h2>BITCOIN ADDITIONAL 1-Day Trading Volume Hits $35.29 Million (BTCA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded up 1.3% against the US dollar during the 1-day period ending at 11:00 AM E.T. on January 4th. During the last seven days, BITCOIN ADDITIONAL has traded 1.6% higher  against the US dollar. One BITCOIN...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-additional-1-day-trading-volume-hits-35-29-million-btca.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-sv-bsv-trading-4-5-higher-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Trading 4.5% Higher  Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-sv-BSV.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Trading 4.5% Higher  Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-sv-bsv-trading-4-5-higher-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Trading 4.5% Higher  Over Last 7 Days"><h2>Bitcoin SV (BSV) Trading 4.5% Higher  Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (BSV) traded up 1.7% against the dollar during the 24 hour period ending at 11:00 AM Eastern on January 4th. In the last seven days, Bitcoin SV has traded up 4.5% against the dollar. Bitcoin SV has a total market cap of...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-sv-bsv-trading-4-5-higher-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-gold-price-up-7-4-over-last-7-days-btg.html" rel="bookmark" title="Bitcoin Gold Price Up 7.4% Over Last 7 Days (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold Price Up 7.4% Over Last 7 Days (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-gold-price-up-7-4-over-last-7-days-btg.html" rel="bookmark" title="Bitcoin Gold Price Up 7.4% Over Last 7 Days (BTG)"><h2>Bitcoin Gold Price Up 7.4% Over Last 7 Days (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded 8.3% higher  against the US dollar during the 1 day period ending at 9:00 AM E.T. on January 4th. Bitcoin Gold has a market cap of $223.57 million and $21.63 million worth of Bitcoin Gold was traded on exchanges...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-gold-price-up-7-4-over-last-7-days-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-price-up-1-3-this-week-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Price Up 1.3% This Week (WBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/wrapped-bitcoin-WBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Wrapped Bitcoin Price Up 1.3% This Week (WBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-price-up-1-3-this-week-wbtc.html" rel="bookmark" title="Wrapped Bitcoin Price Up 1.3% This Week (WBTC)"><h2>Wrapped Bitcoin Price Up 1.3% This Week (WBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Wrapped Bitcoin (WBTC) traded up 0.6% against the dollar during the 24-hour period ending at 9:00 AM E.T. on January 4th. One Wrapped Bitcoin token can currently be bought for $16,803.60 or 0.99906786 BTC on popular cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/wrapped-bitcoin-price-up-1-3-this-week-wbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/rsk-smart-bitcoin-rbtc-price-tops-16853-32-on-exchanges.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Tops $16,853.32 on Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) Price Tops $16,853.32 on Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/rsk-smart-bitcoin-rbtc-price-tops-16853-32-on-exchanges.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) Price Tops $16,853.32 on Exchanges"><h2>RSK Smart Bitcoin (RBTC) Price Tops $16,853.32 on Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded up 0.8% against the dollar during the twenty-four hour period ending at 9:00 AM Eastern on January 4th. RSK Smart Bitcoin has a total market cap of $58.07 million and approximately $23,078.63 worth of...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/rsk-smart-bitcoin-rbtc-price-tops-16853-32-on-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-cash-bch-price-hits-101-60.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Hits $101.60" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH) Price Hits $101.60" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-cash-bch-price-hits-101-60.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Hits $101.60"><h2>Bitcoin Cash (BCH) Price Hits $101.60</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded 1.9% higher  against the US dollar during the 24-hour period ending at 9:00 AM Eastern on January 4th. Bitcoin Cash has a total market cap of $1.96 billion and approximately $130.58 million worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-cash-bch-price-hits-101-60.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-btca-trading-1-4-higher-this-week.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) Trading 1.4% Higher  This Week" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL (BTCA) Trading 1.4% Higher  This Week" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-btca-trading-1-4-higher-this-week.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) Trading 1.4% Higher  This Week"><h2>BITCOIN ADDITIONAL (BTCA) Trading 1.4% Higher  This Week</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded 0.8% higher  against the U.S. dollar during the 1 day period ending at 0:00 AM Eastern on January 3rd. During the last week, BITCOIN ADDITIONAL has traded 1.4% higher  against the U.S. dollar. One BITCOIN...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-additional-btca-trading-1-4-higher-this-week.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-reaches-self-reported-market-cap-of-112-82-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches Self Reported Market Cap of $112.82 Million (BTCA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL Reaches Self Reported Market Cap of $112.82 Million (BTCA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/bitcoin-additional-reaches-self-reported-market-cap-of-112-82-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches Self Reported Market Cap of $112.82 Million (BTCA)"><h2>BITCOIN ADDITIONAL Reaches Self Reported Market Cap of $112.82 Million (BTCA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded 0.1% higher  against the US dollar during the 24 hour period ending at 20:00 PM Eastern on January 3rd. Over the last seven days, BITCOIN ADDITIONAL has traded up 0.1% against the US dollar. BITCOIN...&nbsp;<a href='https://transcriptdaily.com/2023/01/04/bitcoin-additional-reaches-self-reported-market-cap-of-112-82-million-btca.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/04/0xbitcoin-0xbtc-self-reported-market-cap-hits-1-56-million.html" rel="bookmark" title="0xBitcoin (0xBTC) Self Reported Market Cap Hits $1.56 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Self Reported Market Cap Hits $1.56 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/04/0xbitcoin-0xbtc-self-reported-market-cap-hits-1-56-million.html" rel="bookmark" title="0xBitcoin (0xBTC) Self Reported Market Cap Hits $1.56 Million"><h2>0xBitcoin (0xBTC) Self Reported Market Cap Hits $1.56 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 4th, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded up 1.9% against the dollar during the 24-hour period ending at 19:00 PM ET on January 3rd. One 0xBitcoin token can currently be bought for approximately $0.19 or 0.00001140 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2023/01/04/0xbitcoin-0xbtc-self-reported-market-cap-hits-1-56-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-btcst-trading-down-2-9-over-last-7-days.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Trading Down 2.9% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2023-0&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token (BTCST) Trading Down 2.9% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-btcst-trading-down-2-9-over-last-7-days.html" rel="bookmark" title="Bitcoin Standard Hashrate Token (BTCST) Trading Down 2.9% Over Last 7 Days"><h2>Bitcoin Standard Hashrate Token (BTCST) Trading Down 2.9% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded down 0.5% against the U.S. dollar during the one day period ending at 18:00 PM ET on January 3rd. Bitcoin Standard Hashrate Token has a total market cap of $9.83 million and $181,229.07...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-btcst-trading-down-2-9-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-btc-achieves-market-cap-of-320-87-billion.html" rel="bookmark" title="Bitcoin (BTC) Achieves Market Cap of $320.87 Billion" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin (BTC) Achieves Market Cap of $320.87 Billion" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-btc-achieves-market-cap-of-320-87-billion.html" rel="bookmark" title="Bitcoin (BTC) Achieves Market Cap of $320.87 Billion"><h2>Bitcoin (BTC) Achieves Market Cap of $320.87 Billion</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded down 0.3% against the dollar during the 1 day period ending at 18:00 PM ET on January 3rd. During the last seven days, Bitcoin has traded down 0.3% against the dollar. One Bitcoin coin can now be purchased for...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-btc-achieves-market-cap-of-320-87-billion.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-private-reaches-market-cap-of-2-10-million-btcp.html" rel="bookmark" title="Bitcoin Private Reaches Market Cap of $2.10 Million (BTCP)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private Reaches Market Cap of $2.10 Million (BTCP)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-private-reaches-market-cap-of-2-10-million-btcp.html" rel="bookmark" title="Bitcoin Private Reaches Market Cap of $2.10 Million (BTCP)"><h2>Bitcoin Private Reaches Market Cap of $2.10 Million (BTCP)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded 8.5% lower  against the dollar during the 24-hour period ending at 16:00 PM Eastern on January 3rd. In the last week, Bitcoin Private has traded down 9.6% against the dollar. One Bitcoin Private coin can...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-private-reaches-market-cap-of-2-10-million-btcp.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-diamond-one-day-volume-hits-144135-23-bcd.html" rel="bookmark" title="Bitcoin Diamond One Day Volume Hits $144,135.23 (BCD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond One Day Volume Hits $144,135.23 (BCD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-diamond-one-day-volume-hits-144135-23-bcd.html" rel="bookmark" title="Bitcoin Diamond One Day Volume Hits $144,135.23 (BCD)"><h2>Bitcoin Diamond One Day Volume Hits $144,135.23 (BCD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded down 6.4% against the dollar during the 1-day period ending at 14:00 PM E.T. on January 3rd. During the last week, Bitcoin Diamond has traded down 12.3% against the dollar. Bitcoin Diamond has a market...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-diamond-one-day-volume-hits-144135-23-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-private-btcp-price-hits-0-44-on-top-exchanges.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Hits $0.44 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-private-BTCP.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Private (BTCP) Price Hits $0.44 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-private-btcp-price-hits-0-44-on-top-exchanges.html" rel="bookmark" title="Bitcoin Private (BTCP) Price Hits $0.44 on Top Exchanges"><h2>Bitcoin Private (BTCP) Price Hits $0.44 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Private (BTCP) traded down 8.7% against the dollar during the one day period ending at 11:00 AM Eastern on January 3rd. Bitcoin Private has a total market cap of $2.10 million and $88.82 worth of Bitcoin Private was traded...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-private-btcp-price-hits-0-44-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/0xbitcoin-price-reaches-0-19-on-major-exchanges-0xbtc.html" rel="bookmark" title="0xBitcoin Price Reaches $0.19 on Major Exchanges (0xBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin Price Reaches $0.19 on Major Exchanges (0xBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/0xbitcoin-price-reaches-0-19-on-major-exchanges-0xbtc.html" rel="bookmark" title="0xBitcoin Price Reaches $0.19 on Major Exchanges (0xBTC)"><h2>0xBitcoin Price Reaches $0.19 on Major Exchanges (0xBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded 4.2% higher  against the dollar during the 1-day period ending at 9:00 AM E.T. on January 3rd. 0xBitcoin has a market capitalization of $1.55 million and approximately $83,717.84 worth of 0xBitcoin was traded...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/0xbitcoin-price-reaches-0-19-on-major-exchanges-0xbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca-2.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca-2.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)"><h2>BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded up 0.3% against the dollar during the 1 day period ending at 0:00 AM E.T. on January 2nd. One BITCOIN ADDITIONAL coin can currently be bought for $16,690.80 or 0.99995607 BTC on major exchanges. During...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca-2.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca.html" rel="bookmark" title="BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)"><h2>BITCOIN ADDITIONAL Reaches One Day Trading Volume of $34.64 Million (BTCA)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded up 0.3% against the dollar during the 1 day period ending at 0:00 AM E.T. on January 2nd. One BITCOIN ADDITIONAL coin can currently be bought for $16,690.80 or 0.99995607 BTC on major exchanges. During...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-additional-reaches-one-day-trading-volume-of-34-64-million-btca.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/0xbitcoin-0xbtc-reaches-1-day-volume-of-81615-71.html" rel="bookmark" title="0xBitcoin (0xBTC) Reaches 1-Day Volume of $81,615.71" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Reaches 1-Day Volume of $81,615.71" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/0xbitcoin-0xbtc-reaches-1-day-volume-of-81615-71.html" rel="bookmark" title="0xBitcoin (0xBTC) Reaches 1-Day Volume of $81,615.71"><h2>0xBitcoin (0xBTC) Reaches 1-Day Volume of $81,615.71</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded up 2% against the dollar during the twenty-four hour period ending at 23:00 PM E.T. on January 2nd. 0xBitcoin has a market cap of $1.50 million and approximately $81,615.71 worth of 0xBitcoin was traded on...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/0xbitcoin-0xbtc-reaches-1-day-volume-of-81615-71.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-diamond-bcd-market-capitalization-tops-19-13-million.html" rel="bookmark" title="Bitcoin Diamond (BCD) Market Capitalization Tops $19.13 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond (BCD) Market Capitalization Tops $19.13 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-diamond-bcd-market-capitalization-tops-19-13-million.html" rel="bookmark" title="Bitcoin Diamond (BCD) Market Capitalization Tops $19.13 Million"><h2>Bitcoin Diamond (BCD) Market Capitalization Tops $19.13 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded up 1.5% against the US dollar during the 1-day period ending at 22:00 PM E.T. on January 2nd. Bitcoin Diamond has a market capitalization of $19.13 million and approximately $119,802.77 worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-diamond-bcd-market-capitalization-tops-19-13-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-price-reaches-0-82-on-major-exchanges-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Reaches $0.82 on Major Exchanges (BTCST)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2023-0&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Price Reaches $0.82 on Major Exchanges (BTCST)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-price-reaches-0-82-on-major-exchanges-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Price Reaches $0.82 on Major Exchanges (BTCST)"><h2>Bitcoin Standard Hashrate Token Price Reaches $0.82 on Major Exchanges (BTCST)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 3rd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded up 14.1% against the dollar during the twenty-four hour period ending at 22:00 PM E.T. on January 2nd. During the last week, Bitcoin Standard Hashrate Token has traded down 3.9% against...&nbsp;<a href='https://transcriptdaily.com/2023/01/03/bitcoin-standard-hashrate-token-price-reaches-0-82-on-major-exchanges-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/02/rsk-smart-bitcoin-market-capitalization-achieves-57-66-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Market Capitalization Achieves $57.66 Million (RBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin Market Capitalization Achieves $57.66 Million (RBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/02/rsk-smart-bitcoin-market-capitalization-achieves-57-66-million-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin Market Capitalization Achieves $57.66 Million (RBTC)"><h2>RSK Smart Bitcoin Market Capitalization Achieves $57.66 Million (RBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 2nd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded 0.8% higher  against the US dollar during the one day period ending at 17:00 PM Eastern on January 2nd. RSK Smart Bitcoin has a total market cap of $57.66 million and $22,340.16 worth of RSK Smart Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2023/01/02/rsk-smart-bitcoin-market-capitalization-achieves-57-66-million-rbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/02/bitcoin-gold-price-reaches-11-81-btg.html" rel="bookmark" title="Bitcoin Gold Price Reaches $11.81  (BTG)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-gold-BTG.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Gold Price Reaches $11.81  (BTG)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/02/bitcoin-gold-price-reaches-11-81-btg.html" rel="bookmark" title="Bitcoin Gold Price Reaches $11.81  (BTG)"><h2>Bitcoin Gold Price Reaches $11.81  (BTG)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 2nd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Gold (BTG) traded up 1.2% against the US dollar during the twenty-four hour period ending at 14:00 PM ET on January 2nd. Over the last seven days, Bitcoin Gold has traded 7.2% lower  against the US dollar. One Bitcoin Gold...&nbsp;<a href='https://transcriptdaily.com/2023/01/02/bitcoin-gold-price-reaches-11-81-btg.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/02/bitcoin-cash-bch-price-hits-96-40-on-top-exchanges.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Hits $96.40 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-cash-BCH.png?v=20221005000545&amp;w=150&amp;zc=1" alt="Bitcoin Cash (BCH) Price Hits $96.40 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/02/bitcoin-cash-bch-price-hits-96-40-on-top-exchanges.html" rel="bookmark" title="Bitcoin Cash (BCH) Price Hits $96.40 on Top Exchanges"><h2>Bitcoin Cash (BCH) Price Hits $96.40 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 2nd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Cash (BCH) traded 0.3% lower  against the US dollar during the 24-hour period ending at 23:00 PM ET on January 1st. Bitcoin Cash has a total market capitalization of $1.86 billion and approximately $82.87 million worth of Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2023/01/02/bitcoin-cash-bch-price-hits-96-40-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/02/bitcoinbr-24-hour-volume-hits-2-93-btcbr.html" rel="bookmark" title="BitcoinBR 24-Hour Volume Hits $2.93 (BTCBR)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoinbr-BTCBR.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BitcoinBR 24-Hour Volume Hits $2.93 (BTCBR)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/02/bitcoinbr-24-hour-volume-hits-2-93-btcbr.html" rel="bookmark" title="BitcoinBR 24-Hour Volume Hits $2.93 (BTCBR)"><h2>BitcoinBR 24-Hour Volume Hits $2.93 (BTCBR)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 2nd, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BitcoinBR (BTCBR) traded 21.8% higher  against the U.S. dollar during the 24 hour period ending at 22:00 PM ET on January 1st. Over the last seven days, BitcoinBR has traded 105.4% higher  against the U.S. dollar. BitcoinBR has a market...&nbsp;<a href='https://transcriptdaily.com/2023/01/02/bitcoinbr-24-hour-volume-hits-2-93-btcbr.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-reaches-24-hour-volume-of-9-21-billion-btc.html" rel="bookmark" title="Bitcoin Reaches 24-Hour Volume of $9.21 Billion (BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Reaches 24-Hour Volume of $9.21 Billion (BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-reaches-24-hour-volume-of-9-21-billion-btc.html" rel="bookmark" title="Bitcoin Reaches 24-Hour Volume of $9.21 Billion (BTC)"><h2>Bitcoin Reaches 24-Hour Volume of $9.21 Billion (BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 0.6% higher  against the dollar during the 1 day period ending at 18:00 PM E.T. on January 1st. In the last week, Bitcoin has traded 1.2% lower  against the dollar. Bitcoin has a market capitalization of $320.11...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-reaches-24-hour-volume-of-9-21-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-latinum-ltnm-24-hour-volume-hits-0-17.html" rel="bookmark" title="Bitcoin Latinum (LTNM) 24 Hour Volume Hits $0.17" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-latinum-LTNM.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Latinum (LTNM) 24 Hour Volume Hits $0.17" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-latinum-ltnm-24-hour-volume-hits-0-17.html" rel="bookmark" title="Bitcoin Latinum (LTNM) 24 Hour Volume Hits $0.17"><h2>Bitcoin Latinum (LTNM) 24 Hour Volume Hits $0.17</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Latinum (LTNM) traded up 8.2% against the US dollar during the 1 day period ending at 17:00 PM Eastern on January 1st. One Bitcoin Latinum token can currently be purchased for approximately $0.16 or 0.00000985 BTC on popular...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-latinum-ltnm-24-hour-volume-hits-0-17.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-additional-btca-24-hour-volume-hits-35-21-million.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Hits $35.21 Million" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-additional-BTCA.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Hits $35.21 Million" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-additional-btca-24-hour-volume-hits-35-21-million.html" rel="bookmark" title="BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Hits $35.21 Million"><h2>BITCOIN ADDITIONAL (BTCA) 24 Hour Volume Hits $35.21 Million</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						BITCOIN ADDITIONAL (BTCA) traded up 0.2% against the US dollar during the 1 day period ending at 16:00 PM Eastern on January 1st. BITCOIN ADDITIONAL has a total market cap of $112.23 million and $35.21 million worth of BITCOIN ADDITIONAL...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-additional-btca-24-hour-volume-hits-35-21-million.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-sv-price-tops-41-35-on-exchanges-bsv.html" rel="bookmark" title="Bitcoin SV Price Tops $41.35 on Exchanges (BSV)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-sv-BSV.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin SV Price Tops $41.35 on Exchanges (BSV)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-sv-price-tops-41-35-on-exchanges-bsv.html" rel="bookmark" title="Bitcoin SV Price Tops $41.35 on Exchanges (BSV)"><h2>Bitcoin SV Price Tops $41.35 on Exchanges (BSV)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (BSV) traded 0.9% lower  against the U.S. dollar during the 1 day period ending at 16:00 PM ET on January 1st. One Bitcoin SV coin can currently be bought for approximately $41.35 or 0.00248946 BTC on cryptocurrency exchanges....&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-sv-price-tops-41-35-on-exchanges-bsv.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-one-day-trading-volume-reaches-9-42-billion-btc.html" rel="bookmark" title="Bitcoin One Day Trading Volume Reaches $9.42 Billion (BTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-BTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin One Day Trading Volume Reaches $9.42 Billion (BTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-one-day-trading-volume-reaches-9-42-billion-btc.html" rel="bookmark" title="Bitcoin One Day Trading Volume Reaches $9.42 Billion (BTC)"><h2>Bitcoin One Day Trading Volume Reaches $9.42 Billion (BTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin (BTC) traded 0.1% higher  against the dollar during the 24-hour period ending at 14:00 PM ET on January 1st. Over the last seven days, Bitcoin has traded 1.2% lower  against the dollar. Bitcoin has a total market cap of $319.50...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-one-day-trading-volume-reaches-9-42-billion-btc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-diamond-price-hits-0-10-on-top-exchanges-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Hits $0.10 on Top Exchanges (BCD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Price Hits $0.10 on Top Exchanges (BCD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-diamond-price-hits-0-10-on-top-exchanges-bcd.html" rel="bookmark" title="Bitcoin Diamond Price Hits $0.10 on Top Exchanges (BCD)"><h2>Bitcoin Diamond Price Hits $0.10 on Top Exchanges (BCD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded 2.4% lower  against the dollar during the 1 day period ending at 10:00 AM Eastern on January 1st. One Bitcoin Diamond coin can now be bought for about $0.10 or 0.00000622 BTC on exchanges. Bitcoin Diamond...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-diamond-price-hits-0-10-on-top-exchanges-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/0xbitcoin-0xbtc-hits-one-day-trading-volume-of-77701-10.html" rel="bookmark" title="0xBitcoin (0xBTC) Hits One Day Trading Volume of $77,701.10" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Hits One Day Trading Volume of $77,701.10" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/0xbitcoin-0xbtc-hits-one-day-trading-volume-of-77701-10.html" rel="bookmark" title="0xBitcoin (0xBTC) Hits One Day Trading Volume of $77,701.10"><h2>0xBitcoin (0xBTC) Hits One Day Trading Volume of $77,701.10</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded down 4.1% against the US dollar during the 1-day period ending at 0:00 AM Eastern on December 31st. One 0xBitcoin token can currently be purchased for approximately $0.18 or 0.00001094 BTC on major cryptocurrency...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/0xbitcoin-0xbtc-hits-one-day-trading-volume-of-77701-10.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-diamond-bcd-price-reaches-0-10.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.10" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond (BCD) Price Reaches $0.10" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-diamond-bcd-price-reaches-0-10.html" rel="bookmark" title="Bitcoin Diamond (BCD) Price Reaches $0.10"><h2>Bitcoin Diamond (BCD) Price Reaches $0.10</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded down 1.5% against the U.S. dollar during the 1 day period ending at 23:00 PM E.T. on December 31st. Bitcoin Diamond has a market cap of $19.11 million and approximately $70,240.93 worth of Bitcoin Diamond...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-diamond-bcd-price-reaches-0-10.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-standard-hashrate-token-trading-down-16-2-over-last-7-days-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Trading Down 16.2% Over Last 7 Days (BTCST)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-standard-hashrate-token-BTCST.png?v=2022-1&amp;w=150&amp;zc=1" alt="Bitcoin Standard Hashrate Token Trading Down 16.2% Over Last 7 Days (BTCST)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-standard-hashrate-token-trading-down-16-2-over-last-7-days-btcst.html" rel="bookmark" title="Bitcoin Standard Hashrate Token Trading Down 16.2% Over Last 7 Days (BTCST)"><h2>Bitcoin Standard Hashrate Token Trading Down 16.2% Over Last 7 Days (BTCST)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Standard Hashrate Token (BTCST) traded 0.1% higher  against the US dollar during the 1 day period ending at 23:00 PM ET on December 31st. In the last week, Bitcoin Standard Hashrate Token has traded down 16.2% against the US...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-standard-hashrate-token-trading-down-16-2-over-last-7-days-btcst.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2023/01/01/bitcoin-sv-bsv-price-down-6-7-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Price Down 6.7% Over Last 7 Days" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-sv-BSV.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin SV (BSV) Price Down 6.7% Over Last 7 Days" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2023/01/01/bitcoin-sv-bsv-price-down-6-7-over-last-7-days.html" rel="bookmark" title="Bitcoin SV (BSV) Price Down 6.7% Over Last 7 Days"><h2>Bitcoin SV (BSV) Price Down 6.7% Over Last 7 Days</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/cawalker" title="Posts by Casey Walker" rel="author">Casey Walker</a> on Jan 1st, 2023 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin SV (BSV) traded down 0.4% against the U.S. dollar during the 24 hour period ending at 20:00 PM E.T. on December 31st. During the last week, Bitcoin SV has traded 6.7% lower  against the U.S. dollar. Bitcoin SV has a total market...&nbsp;<a href='https://transcriptdaily.com/2023/01/01/bitcoin-sv-bsv-price-down-6-7-over-last-7-days.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2022/12/31/0xbitcoin-0xbtc-price-hits-0-18-on-top-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Hits $0.18 on Top Exchanges" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/0xbitcoin-0xBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="0xBitcoin (0xBTC) Price Hits $0.18 on Top Exchanges" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2022/12/31/0xbitcoin-0xbtc-price-hits-0-18-on-top-exchanges.html" rel="bookmark" title="0xBitcoin (0xBTC) Price Hits $0.18 on Top Exchanges"><h2>0xBitcoin (0xBTC) Price Hits $0.18 on Top Exchanges</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jaquigley" title="Posts by James Quigley" rel="author">James Quigley</a> on Dec 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						0xBitcoin (0xBTC) traded 2% lower  against the US dollar during the 24-hour period ending at 15:00 PM E.T. on December 31st. One 0xBitcoin token can currently be purchased for $0.18 or 0.00001115 BTC on major exchanges. 0xBitcoin has...&nbsp;<a href='https://transcriptdaily.com/2022/12/31/0xbitcoin-0xbtc-price-hits-0-18-on-top-exchanges.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2022/12/31/bitcoin-diamond-trading-down-6-8-over-last-week-bcd.html" rel="bookmark" title="Bitcoin Diamond Trading Down 6.8% Over Last Week (BCD)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/bitcoin-diamond-BCD.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="Bitcoin Diamond Trading Down 6.8% Over Last Week (BCD)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2022/12/31/bitcoin-diamond-trading-down-6-8-over-last-week-bcd.html" rel="bookmark" title="Bitcoin Diamond Trading Down 6.8% Over Last Week (BCD)"><h2>Bitcoin Diamond Trading Down 6.8% Over Last Week (BCD)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/lasteadman" title="Posts by Lauren Steadman" rel="author">Lauren Steadman</a> on Dec 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						Bitcoin Diamond (BCD) traded 1.4% lower  against the U.S. dollar during the one day period ending at 14:00 PM ET on December 31st. Bitcoin Diamond has a market capitalization of $19.31 million and approximately $95,923.45 worth of...&nbsp;<a href='https://transcriptdaily.com/2022/12/31/bitcoin-diamond-trading-down-6-8-over-last-week-bcd.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-rbtc-one-day-trading-volume-tops-22532-21.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) One Day Trading Volume Tops $22,532.21" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin (RBTC) One Day Trading Volume Tops $22,532.21" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-rbtc-one-day-trading-volume-tops-22532-21.html" rel="bookmark" title="RSK Smart Bitcoin (RBTC) One Day Trading Volume Tops $22,532.21"><h2>RSK Smart Bitcoin (RBTC) One Day Trading Volume Tops $22,532.21</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/liflegge" title="Posts by Linda Flegge" rel="author">Linda Flegge</a> on Dec 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded up 0.6% against the dollar during the 1-day period ending at 9:00 AM ET on December 31st. One RSK Smart Bitcoin coin can now be purchased for about $16,607.00 or 0.99906082 BTC on exchanges. During the...&nbsp;<a href='https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-rbtc-one-day-trading-volume-tops-22532-21.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+								<section class="archive">
+					<a href="https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-one-day-trading-volume-hits-22770-21-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin One Day Trading Volume Hits $22,770.21 (RBTC)" class="archive-image">
+					    
+					<img style='vertical-align:middle' src="https://www.americanbankingnews.com/wp-content/timthumb/timthumb.php?src=https://www.marketbeat.com/logos/cryptocurrencies/rsk-smart-bitcoin-RBTC.png?v=2022-10-05&amp;w=150&amp;zc=1" alt="RSK Smart Bitcoin One Day Trading Volume Hits $22,770.21 (RBTC)" />
+					
+					</a>
+					<div class="entry">
+					    <a href="https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-one-day-trading-volume-hits-22770-21-rbtc.html" rel="bookmark" title="RSK Smart Bitcoin One Day Trading Volume Hits $22,770.21 (RBTC)"><h2>RSK Smart Bitcoin One Day Trading Volume Hits $22,770.21 (RBTC)</h2></a>
+					<p class="postmeta">
+						Posted by <a href="https://transcriptdaily.com/author/jocasey" title="Posts by Joseph Casey" rel="author">Joseph Casey</a> on Dec 31st, 2022 // <span class="comments-link">Comments off</span>					</p><!--end .postmeta-->
+						RSK Smart Bitcoin (RBTC) traded 0.3% lower  against the dollar during the one day period ending at 23:00 PM Eastern on December 30th. Over the last week, RSK Smart Bitcoin has traded 1.7% lower  against the dollar. One RSK Smart Bitcoin...&nbsp;<a href='https://transcriptdaily.com/2022/12/31/rsk-smart-bitcoin-one-day-trading-volume-hits-22770-21-rbtc.html'>More<span class='sr-only'> of this article</span> &raquo;</a>					</div>
+					
+                </section> <!-- end archive -->
+				
+				<div class="navigation" style="margin-bottom:10px;">
+					<a href="https://transcriptdaily.com/page/2?s=Bitcoin" >Next &raquo;</a>				</div><!--end .navigation-->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end first .bottom-square-ad -->
+
+			<div class="bottom-square-ad">
+				<script type="text/javascript">
+				(function() {
+				var html = "javascript:\"<body style='margin: 0;'><script src='https://www.googletagservices.com/tag/js/gpt.js'>googletag.pubads().set('page_url','"+window.location.href+"').definePassback('/8095840/342.network-acn.com_desktop_300x250', [300, 250]).display();<\/script></body>\"";
+				document.write('<iframe width="300" height="250" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0" src="'+encodeURI(html)+'"></iframe>');
+				})();
+				</script>
+			</div> <!-- end second .bottom-square-ad -->
+
+		</main> <!-- end main -->
+	<aside class="flex-sidebar">
+<div class="flex-container">	
+<div class="sidebar-section">
+	
+<iframe src="https://marketbeat.com/scripts/MoreOnMarketBeat.aspx" width="336" height="600" frameborder="no" title="More Articles"></iframe><br><br>
+	
+<!-- Network Wide AdSense Unit - Top Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="1875628183" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>
+<!-- end first square unit -->
+
+<!-- Network Wide AdSense Unit - Middle Sidebar Position -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9373162611283935" data-ad-slot="9445683366" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- End AdSense Unit -->
+<br><br>	
+<!-- end second square unit -->
+		
+</div>	
+<div class="sidebar-section">
+<!-- OptIn Form -->
+
+<!-- Start Sidebar Registration -->
+<div class="sidebar-email">
+                        <h3>Daily Ratings &amp; News for Bitcoin Latinum</h3>
+        	Complete the form below to receive the latest headlines and analysts' recommendations for Bitcoin Latinum with our free daily email newsletter:<br/>
+        <form method="get" action="https://www.marketbeat.com/newsletter/default.aspx">
+        <input id="RegisterEmailSidebar" style='width:100%' name="RegisterEmail" type="email" placeholder="Your Email Address" aria-label="Your Email Address">
+        <input type="hidden" id="Hidden7" name="RegistrationCode" value="Transcript Daily-Sidebar">
+        <input type="hidden" id="Hidden8" name="RegisterTicker" value="CURRENCY:bitcoin-latinum" />        <input type="submit" name="submit" onclick="return CheckEmail('RegisterEmailSidebar', 'ShowSuggestionSidebar');" value="Subscribe Now (Free Sign-Up)" class="button" style="width:100%;height:30px">
+    <div id="ShowSuggestionSidebar" style="padding-top:7px"></div>
+    </form>
+    </div>
+
+<!-- End Sidebar Registration -->
+	
+<!-- optional social media -->
+	
+ 
+		<br>
+	
+	<a style="background: #075A8D;color: #fff;padding: 5px 7px 4px;border-radius: 3px;font-size: 12px;text-decoration: none;" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftranscriptdaily.com%2F&ref_src=twsrc%5Etfw&screen_name=transcriptdaily" target="_blank" rel="noopener nofollow">
+<svg style="width: 13px;vertical-align: middle;margin-right: 4px;fill: #fff;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Follow @transcriptdaily</a>
+		
+	
+<!-- end optional social media -->
+
+<!-- sidebar unit position -->
+
+
+<!-- start Recent Posts -->
+        <br/>
+        <div>
+        <h3>Recent News</h3>
+            <ul>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/ultra-uos-hits-1-day-volume-of-620684-01.html">Ultra (UOS) Hits 1-Day Volume of $620,684.01</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/stormx-tops-one-day-volume-of-3-49-million-stmx.html">StormX Tops One Day Volume of $3.49 Million (STMX)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/atomic-wallet-coin-awc-tops-24-hour-trading-volume-of-3755-94.html">Atomic Wallet Coin (AWC) Tops 24-Hour Trading Volume of $3,755.94</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/dogelon-mars-elon-price-hits-0-0000-on-major-exchanges.html">Dogelon Mars (ELON) Price Hits $0.0000 on Major Exchanges</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/coinex-token-price-tops-0-0422-cet.html">CoinEx Token Price Tops $0.0422  (CET)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/bitcoin-latinum-price-down-26-7-over-last-7-days-ltnm.html">Bitcoin Latinum Price Down 26.7% Over Last 7 Days (LTNM)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/autumn-glory-partners-llc-acquires-110-shares-of-blackrock-inc-nyseblk.html">Autumn Glory Partners LLC Acquires 110 Shares of BlackRock, Inc. (NYSE:BLK)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/financial-insights-inc-buys-shares-of-3281-dominion-energy-inc-nysed.html">Financial Insights Inc. Buys Shares of 3,281 Dominion Energy, Inc. (NYSE:D)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/financial-insights-inc-raises-stock-position-in-vanguard-ftse-emerging-markets-etf-nysearcavwo.html">Financial Insights Inc. Raises Stock Position in Vanguard FTSE Emerging Markets ETF (NYSEARCA:VWO)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/autumn-glory-partners-llc-purchases-new-shares-in-deere-company-nysede.html">Autumn Glory Partners LLC Purchases New Shares in Deere &#038; Company (NYSE:DE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/3m-nysemmm-shares-sold-by-autumn-glory-partners-llc.html">3M (NYSE:MMM) Shares Sold by Autumn Glory Partners LLC</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/vanguard-short-term-bond-etf-nysearcabsv-shares-sold-by-chico-wealth-ria.html">Vanguard Short-Term Bond ETF (NYSEARCA:BSV) Shares Sold by Chico Wealth RIA</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/spdr-sp-regional-banking-etf-sees-unusually-large-options-volume-nysearcakre.html">SPDR S&#038;P Regional Banking ETF Sees Unusually Large Options Volume (NYSEARCA:KRE)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/benedetti-gucer-inc-sells-66-shares-of-vanguard-small-cap-etf-nysearcavb.html">Benedetti &#038; Gucer Inc. Sells 66 Shares of Vanguard Small-Cap ETF (NYSEARCA:VB)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/achmea-investment-management-b-v-reduces-stake-in-amgen-inc-nasdaqamgn.html">Achmea Investment Management B.V. Reduces Stake in Amgen Inc. (NASDAQ:AMGN)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/arnhold-llc-raises-stock-position-in-intel-co-nasdaqintc.html">Arnhold LLC Raises Stock Position in Intel Co. (NASDAQ:INTC)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/sargent-investment-group-llc-acquires-1360-shares-of-qualcomm-incorporated-nasdaqqcom.html">Sargent Investment Group LLC Acquires 1,360 Shares of QUALCOMM Incorporated (NASDAQ:QCOM)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/sargent-investment-group-llc-has-852000-stock-holdings-in-merck-co-inc-nysemrk.html">Sargent Investment Group LLC Has $852,000 Stock Holdings in Merck &#038; Co., Inc. (NYSE:MRK)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/orion-capital-management-llc-purchases-2775-shares-of-merck-co-inc-nysemrk.html">Orion Capital Management LLC Purchases 2,775 Shares of Merck &#038; Co., Inc. (NYSE:MRK)</a></li>
+                        <li class="recent-posts"><a href="https://transcriptdaily.com/2023/01/05/veriti-management-llc-trims-stake-in-cisco-systems-inc-nasdaqcsco.html">Veriti Management LLC Trims Stake in Cisco Systems, Inc. (NASDAQ:CSCO)</a></li>
+                        </ul>
+        </div>  
+</div>
+</div>
+<!-- end recent posts -->
+</aside><!--end #sidebar-->
+<div style="clear: both;"></div>
+	</div> <!-- end .width-limiter -->
+<footer class="full-width">
+	<div class="width-limiter flex-container">
+		<div id="footer-info" class="add-padding flex-nav">
+			<nav class="navigation" aria-label="Category Links"><ul id="menu-categories-for-menus-2" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="https://transcriptdaily.com/headlines">Headlines</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="https://transcriptdaily.com/business">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-77"><a href="https://transcriptdaily.com/markets">Markets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="https://transcriptdaily.com/politics">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="https://transcriptdaily.com/technology">Technology</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="https://transcriptdaily.com/health">Health</a></li>
+</ul></nav>		</div><!-- end #footer-info -->
+		<span id="copyright" class="add-padding flex-copyright">
+				&copy; 2018-2023 <a href="https://transcriptdaily.com">Transcript Daily</a>
+	    </span>
+	</div>	
+	<!-- Begin Internal Tracking Pixel 2 -->
+		<script type='text/javascript'>document.write('<img src="https://www.american' + 'consumernews.net/scripts/standalone/viewcount.ashx?ArticleHistoryID=100394486&PostDate=2023-1-5&type=f&id=13727317&domain=transcriptdaily.com&referrer=' + encodeURIComponent(document.referrer) + '" alt="" width="1" height="1" style="float:left;" />');</script>
+		<!-- End Internal Tracking Pixel 2-->
+</footer>
+		</div>
+<!-- MarketBeat News Network StatCounter Code -->
+<script type="text/javascript">var sc_project=9021069; var sc_invisible=1; var sc_security="fdde5482"; var sc_https=1; </script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/9021069/0/fdde5482/1/" height="1" width="1" alt=""></noscript>
+<!-- End MarketBeat News Network StatCounter Code -->
+
+<!-- Start of Site Specific StatCounter Code -->
+<script type="text/javascript">
+var sc_project=11301659; 
+var sc_invisible=1; 
+var sc_security="a399788a"; 
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js"></script>
+<noscript><img class="statcounter" src="https://c.statcounter.com/11301659/0/a399788a/1/" height="1" width="1"  alt=""></noscript>
+<!-- End of Site Specific StatCounter Code -->
+
+	</body>
+</html>

@@ -1,6 +1,5 @@
 import time
 import config
-from pybittrex.client import Client
 import pymysql
 import requests
 import hashlib
@@ -21,13 +20,21 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from datetime import timedelta, date
 currtime = int(round(time.time()))
-c=Client(api_key='', api_secret='')
+from bittrex_api import Bittrex
+bittrex = Bittrex(
+    api_key=config.key,              # YOUR API KEY
+    secret_key=config.secret,           # YOUR API SECRET
+    max_request_try_count=3, # Max tries for a request to succeed
+    sleep_time=2,            # sleep seconds between failed requests
+    debug_level=3
+)
+c = bittrex.v3
 import yfinance as yf
 from yahoo_fin import stock_info as si
 from yahoo_fin.stock_info import *
 days=30
 
-
+tickers = c.get_tickers()
 
 def main():
     print('Starting candle patterns module')
@@ -40,19 +47,16 @@ def tick():
     currenttime = now.strftime("%Y-%m-%d %H:%M")
     currentdate = now.strftime("%Y-%m-%d")
 
-    market_summ = c.get_market_summaries().json()['result']
+    market_summ = c.get_market_summaries()
     for summary in market_summ: #Loop trough the market summary
         try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
+            if available_market_list(summary['symbol']):
+                market = summary['symbol']
                 #active_order= status_orders(market, 4)
-                last = float(summary['Last'])  # last price
+                last = float([tick['lastTradeRate'] for tick in tickers if tick['symbol']==market][0]) #last price
 #######################
-                # market=(market[0])
-                # name=market_full_name(market, 73)
-                crypto=market[4:]
-                market1 = crypto+"-USD"
-                stock = yf.Ticker(market1)
+
+                stock = yf.Ticker(market)
                 hist = stock.history(period="{}d".format(days))
                 df = pd.DataFrame(hist)
                 df = df.reset_index(level=['Date'])   
@@ -395,15 +399,15 @@ def candle_df(df):
 
 
 	
-def available_market_list(marketname):
+def available_market_list(symbol):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
+    market = symbol
     cursor.execute("SELECT * FROM `markets` where  enabled=1 and market = '%s'" % market)
 
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == symbol:
             return True
 
     return False

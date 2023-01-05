@@ -21,7 +21,6 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from datetime import timedelta, date
 currtime = int(round(time.time()))
-c=Client(api_key='', api_secret='')
 import yfinance as yf
 from yahoo_fin import stock_info as si
 from yahoo_fin.stock_info import *
@@ -49,8 +48,7 @@ def prices():
           market=(market[0])
           name=market_full_name(market, 73)
           crypto=market[4:]
-          market1 = crypto+"-USD"
-          stock = yf.Ticker(market1)
+          stock = yf.Ticker(crypto)
           hist = stock.history(period="{}d".format(days))
           df = pd.DataFrame(hist)
           df = df.reset_index(level=['Date'])    

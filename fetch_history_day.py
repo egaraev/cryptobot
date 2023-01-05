@@ -1,6 +1,7 @@
 from yahoo_fin import stock_info as si
 import sys, os
 import ast
+import json
 
 df = si.get_data('BTC-USD')
 df = df.iloc[: , :-1]
@@ -12,19 +13,19 @@ df.rename(columns={ 'date': 'T', 'open': 'O', 'high': 'H', 'low': 'L', 'close': 
 del df['adjclose']
 df['T'] = df['T'].dt.strftime('%Y-%m-%d')
 result = df.to_dict('records')
-print (result)
+#print (result)
 last_date = result[-1]
 today_date =last_date['T'] 
 #print (today_date)
 
 
 if result !=[]:
-   try: 
+#   try: 
        full_dict =[]
        file = open("data/hist_data_day.txt", "r")
        contents = file.read()
+       print(contents)	   
        dictionary = ast.literal_eval(contents)
-       #print (dictionary)	
        last_current_date=dictionary[-1]
        last_written_date = last_current_date['T']	
        if last_written_date == today_date: 	
@@ -37,19 +38,24 @@ if result !=[]:
           dict_with_last_day.append(last_date)
           full_dict = dict_with_last_day
     
-       #print (full_dict)
+       print ("File was scanned")
        file.close()
        with open('data/hist_data_day.txt', 'w') as filehandle:
           for listitem in full_dict:
              filehandle.write('%s,' % listitem)
+       filehandle.close()
+       print ("File was written")
 
        with open('data/hist_data_day.txt', 'r') as file:
             data = file.read()[:-1]
+       file.close()
+       print ("File was read")
        with open('data/hist_data_day.txt', 'w') as file:
             file.write(data)
-       print ("daily data was updated")
-   except:
-       print("Unable to read the file")
+       file.close()
+       print ("Daily data was updated")
+#   except:
+#       print("Unable to update the file")
 
 
 

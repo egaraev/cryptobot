@@ -1,8 +1,5 @@
 #Imports from modules, libraries and config files
-from bittrex.bittrex import *
 import config
-import pybittrex
-from pybittrex.client import Client
 import requests
 import time
 import datetime
@@ -11,9 +8,16 @@ import hashlib
 import pymysql
 import sys
 import smtplib
-#c = Client(api_key=config.key, api_secret=config.secret)   #Configuring bytrex client with API key/secret from config file
-c=Client(api_key="", api_secret="")
-c1 = Bittrex(config.key, config.secret, api_version=API_V1_1)   #Configuring bytrex client with API key/secret from config file
+import json
+from bittrex_api import Bittrex
+bittrex = Bittrex(
+    api_key=config.key,              # YOUR API KEY
+    secret_key=config.secret,           # YOUR API SECRET
+    max_request_try_count=3, # Max tries for a request to succeed
+    sleep_time=2,            # sleep seconds between failed requests
+    debug_level=3
+)
+c = bittrex.v3
 
 
 
@@ -31,8 +35,7 @@ def tick():
     buy_size = parameters()[0] #The size for opening orders for STOP_LOSS mode
     stop_bot_force = parameters()[4]  #If stop_bot_force==1 we  stop bot and close all orders
     stop_bot = int(parameters()[11])
-    market_summ = c.get_market_summaries().json()['result']
-    #BTC_price = c.get_ticker('USDT-BTC').json()['result']['Last']
+    market_summ = c.get_market_summaries()
     currtime = int(time.time())
     btc_trend = parameters()[12]
     max_sell_timeout = parameters()[2]
@@ -40,17 +43,18 @@ def tick():
     bot_mode = parameters()[23]
     bot_token= parameters()[30]
     bot_chatID= parameters()[31]
-    #print market_summ
-    print "Global sell parameters configured, moving to market loop"
+    tickers = c.get_tickers()
+   #print (market_summ)
+    print ("Global sell parameters configured, moving to market loop")
 
 
     #global active
     if bot_mode==0:
         for summary in market_summ: #Loop trough the market summary
             try:
-                if available_market_list(summary['MarketName']):
-                    market = summary['MarketName']
-                    print market
+                if available_market_list(summary['symbol']):
+                    market = summary['symbol']
+                    print (market)
                     macd_fluc = macd_fluctuation(market)
                     macd_first_day=macd_fluc[0]
                     macd_second_day=macd_fluc[1]
@@ -69,19 +73,19 @@ def tick():
                     else:
                        obv_fluct_status = 'not-fluctuation'	
 
-                    print macd_fluct_status, obv_fluct_status	
-                    print macd_third_day, macd_second_day, macd_first_day					
+                    print (macd_fluct_status, obv_fluct_status)	
+                    print (macd_third_day, macd_second_day, macd_first_day)					
                     previous_order_sell_time = previous_order(market)
                     previous_order_serf = previous_serf(market)
                     #print previous_order_sell_time, previous_order_serf
                     #Candle analisys
-                    lastcandle = get_candles(market, 'thirtymin')['result'][-1:]
-                    currentlow = float("{0:.4f}".format(lastcandle[0]['L']))
-                    currentopen = float("{0:.4f}".format(lastcandle[0]['O']))
-                    currenthigh = float("{0:.4f}".format(lastcandle[0]['H']))
-                    previouscandle = get_candles(market, 'thirtymin')['result'][-2:]
-                    prevhigh = float("{0:.4f}".format(previouscandle[0]['H']))
-                    prevclose = float("{0:.4f}".format(previouscandle[0]['C']))
+                    lastcandle = get_coinbase_candles(market, 900)[-1:]
+                    currentlow = float(lastcandle[0][1])
+                    currentopen = float(lastcandle[0][3])
+                    currenthigh = float(lastcandle[0][2])
+                    previouscandle = get_coinbase_candles(market, 900)[-2:]
+                    prevhigh = float(previouscandle[0][2])
+                    prevclose = float(previouscandle[0][4])
                     # lastcandle5 = get_candles(market, 'fivemin')['result'][-1:]
                     # currentlow5 = float("{0:.4f}".format(lastcandle5[0]['L']))
                     # currentopen5 = float("{0:.4f}".format(lastcandle5[0]['O']))
@@ -100,16 +104,15 @@ def tick():
                     hourcurrentopen = float(heikin_ashi(market, 83))
                     daycurrentopen = float(heikin_ashi(market, 84))
                     timestamp = int(time.time())
-                    day_close = summary['PrevDay']   #Getting day of closing order
                 #Current prices
-                    last = float("{0:.4f}".format(summary['Last']))  #last price
-                    bid = float("{0:.4f}".format(summary['Bid']))    #sell price
-                    ask = float("{0:.4f}".format(summary['Ask']))    #buy price
+                    last = float([tick['lastTradeRate'] for tick in tickers if tick['symbol']==market][0]) #last price
+                    bid = float([tick['bidRate'] for tick in tickers if tick['symbol']==market][0])   #sell price
+                    ask = float([tick['askRate'] for tick in tickers if tick['symbol']==market][0])	#buy price		
 
 
                 #BOUGHT PRICE
                     newbid=float("{:.5f}".format(bid - bid*0.002))
-
+                    print (newbid)
                     #print market
                 #Bought Quantity need for sell order, to know at which price we bought some currency
                     bought_price_sql = float(status_orders(market, 3))
@@ -174,7 +177,7 @@ def tick():
                     else:
                         candles_status='STABLE'
 
-                    print "Market parameters configured, moving to selling for ", market
+                    print ("Market parameters configured, moving to selling for ", market)
                     try:
                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                         cursor = db.cursor()
@@ -210,7 +213,7 @@ def tick():
                         #print "5"
                         db.commit()
                     except pymysql.Error as e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                         sys.exit(1)
                     finally:
                         db.close()
@@ -220,13 +223,13 @@ def tick():
                     max_percent_sql = float("{0:.2f}".format(status_orders(market, 15)))
                     min_percent_sql = float("{0:.2f}".format(status_orders(market, 24)))
                     #print market, procent_serf
-                    print "Updated sell serf and procent serf stuff for", market
+                    print ("Updated sell serf and procent serf stuff for", market)
 
-                    print market, procent_serf,  max_percent_sql, danger_order,  candle_direction,  hour_candle_direction                  
+                    print (market, procent_serf,  max_percent_sql, danger_order,  candle_direction,  hour_candle_direction)                  
 
     # Force Stop
                     if stop_bot_force==1 and (bought_quantity_sql is not None and bought_quantity_sql != 0.0):
-                            print "Checking reason 1"
+                            print ("Checking reason 1")
                             try:
                                 netto_value=float(procent_serf-0.5)
                                 print ('    1 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or loosing  '  + str(netto_value) +'  %')
@@ -243,7 +246,7 @@ def tick():
                                 cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -265,14 +268,14 @@ def tick():
                                     currenttime, printed))
                             db.commit()
                         except pymysql.Error as e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                             sys.exit(1)
                         finally:
                             db.close()
 
 
     # AI_HA MODE SELL START
-                    print "Starting selling mechanizm for ", market
+                    print ("Starting selling mechanizm for ", market)
                     if bought_price_sql != None:
                         if bought_quantity_sql is None or bought_quantity_sql == 0.0:
                             # print market, bought_quantity_sql, current_balance
@@ -282,7 +285,7 @@ def tick():
                             ##Check if we have completelly green candle
                             
 
-                            print "Checking reason 2"
+                            print ("Checking reason 2")
                             if ((procent_serf>=2.0 and danger_order==1 and (max_percent_sql - procent_serf > 1)) or  ((max_percent_sql - procent_serf >= 1.5) and 10.0>=procent_serf >= 4.0 and candle_direction=='D' )   or ((max_percent_sql - procent_serf >= 3) and 18.0>=procent_serf >= 10.0 and candles_status=='DOWN')):
                                 
                                 #print "Reason 2 is OK"
@@ -303,7 +306,7 @@ def tick():
                                     cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                     db.commit()
                                 except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     sys.exit(1)
                                 finally:
                                     db.close()
@@ -323,7 +326,7 @@ def tick():
                                                 currenttime, printed))
                                         db.commit()
                                     except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                     finally:
                                         db.close()
@@ -344,7 +347,7 @@ def tick():
                                                 # currenttime, printed))
                                         # db.commit()
                                     # except pymysql.Error as e:
-                                        # print "Error %d: %s" % (e.args[0], e.args[1])
+                                        # print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         # sys.exit(1)
                                     # finally:
                                         # db.close()
@@ -352,7 +355,7 @@ def tick():
 
 
                             else:
-                                print "Checking reason 3"
+                                print ("Checking reason 3")
                                 #if  procent_serf>=18: 
                                 if  procent_serf>=18 and (max_percent_sql - procent_serf > 1):
 
@@ -376,7 +379,7 @@ def tick():
                                             currenttime, newvalue, market))
                                         db.commit()
                                     except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                     finally:
                                         db.close()
@@ -386,7 +389,7 @@ def tick():
 
 
 
-                            print "Checking reason 4"
+                            print ("Checking reason 4")
                             if procent_serf <= -15  and  percent_serf_max(market) < 0.1  and candle_direction=='D' and HAD_trend!="UP" and HAD_trend!="Revers-UP" and candle_score<=0:
                                 try:
                                         netto_value=float(procent_serf-0.5)
@@ -405,7 +408,7 @@ def tick():
                                         cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                         db.commit()
                                 except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                 finally:
                                         db.close()
@@ -415,7 +418,7 @@ def tick():
 
 
 
-                            print "Checking reason 5" 
+                            print ("Checking reason 5") 
                             if procent_serf <= -20  and  macd=="Sell"  and candle_direction=='D' and HAD_trend!="UP" and HAD_trend!="Revers-UP" and HAD_trend!="STABLE" and candle_score<=0:
                                 try:
                                         netto_value=float(procent_serf-0.5)
@@ -434,7 +437,7 @@ def tick():
                                         cursor.execute('insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (currenttime, newvalue, market))
                                         db.commit()
                                 except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                 finally:
                                         db.close()
@@ -445,7 +448,7 @@ def tick():
 
 
 
-                            print "Checking reason 6"
+                            print ("Checking reason 6")
                             if procent_serf <= -30:
                                 try:
                                         netto_value=float(procent_serf-0.5)
@@ -467,7 +470,7 @@ def tick():
                                             currenttime, newvalue, market))
                                         db.commit()
                                 except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                 finally:
                                         db.close()
@@ -476,7 +479,7 @@ def tick():
 									
 									
 
-                            print "Checking reason 7"
+                            print ("Checking reason 7")
                             if (1.0>procent_serf>=-10 and danger_order==1 and candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=2500000) or (1.0>procent_serf>=-15 and danger_order==1 and candle_direction=='D' and hour_candle_direction=='D' and percent_serf_min(market) <= -20 and timestamp-timestamp_old >=3500000 and candle_score<0) : # and (candle_score<0 or news_score<0)):
                                 try:
                                         netto_value=float(procent_serf-0.5)
@@ -498,7 +501,7 @@ def tick():
                                             currenttime, newvalue, market))
                                         db.commit()
                                 except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                 finally:
                                         db.close()
@@ -507,7 +510,7 @@ def tick():
 
 
 
-                            print "Checking reason 8"
+                            print ("Checking reason 8")
                             if (macd=="Sell" and macd_fluct_status == 'not-fluctuation'):
                                 try:
                                         netto_value=float(procent_serf-0.5)
@@ -529,7 +532,7 @@ def tick():
                                             currenttime, newvalue, market))
                                         db.commit()
                                 except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                 finally:
                                         db.close()
@@ -704,7 +707,7 @@ def tick():
                                        (newbid, market))
                         db.commit()
                     except pymysql.Error as e:
-                        print "Error %d: %s" % (e.args[0], e.args[1])
+                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                         sys.exit(1)
                     finally:
                         db.close()
@@ -726,7 +729,7 @@ def tick():
                         # cursor.execute('update orders set history=%s where order_id=%s', (history, orderid))
                         # db.commit()
                     # except pymysql.Error as e:
-                        # print "Error %d: %s" % (e.args[0], e.args[1])
+                        # print ("Error %d: %s" % (e.args[0], e.args[1]))
                         # sys.exit(1)
                     # finally:
                         # db.close()
@@ -747,7 +750,7 @@ def tick():
                                     (uuid, market))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -762,7 +765,7 @@ def tick():
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -776,7 +779,7 @@ def tick():
                                                    (bought_quantity, market))
                                     db.commit()
                                 except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     sys.exit(1)
                                 finally:
                                     db.close()
@@ -803,7 +806,7 @@ def tick():
                                     'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -823,13 +826,13 @@ def tick():
                                 cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                 db.commit()	
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
                             #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                             #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                            print c1.sell_limit(market, sell_quantity, newbid)
+                            print (c1.sell_limit(market, sell_quantity, newbid))
                             #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                     else:
                         pass
@@ -856,7 +859,7 @@ def tick():
                                         'insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
                                     db.commit()
                                 except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     sys.exit(1)
                                 finally:
                                     db.close()
@@ -874,13 +877,13 @@ def tick():
                                         (timestamp, market))
                                     db.commit()
                                 except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     sys.exit(1)
                                 finally:
                                     db.close()
                                 #########################################CANCEL OLD ORDER#####
                                 uuid = order_uuid(market)
-                                print c1.market_cancel(uuid)
+                                print (c1.market_cancel(uuid))
                                 #Mail("egaraev@gmail.com", "egaraev@gmail.com", "Cancel order", printed,"database-service")
                                 #############################################################
 
@@ -900,7 +903,7 @@ def tick():
                                                (rest_balance, market))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -924,7 +927,7 @@ def tick():
                                 cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
@@ -946,7 +949,7 @@ def tick():
                                     currenttime, printed))
                             db.commit()
                         except pymysql.Error as e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                             sys.exit(1)
                         finally:
                             db.close()
@@ -980,7 +983,7 @@ def tick():
                                             currenttime, printed))
                                         db.commit()
                                     except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                     finally:
                                         db.close()
@@ -1002,13 +1005,13 @@ def tick():
                                         cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                         db.commit()									
                                     except pymysql.Error as e:
-                                        print "Error %d: %s" % (e.args[0], e.args[1])
+                                        print ("Error %d: %s" % (e.args[0], e.args[1]))
                                         sys.exit(1)
                                     finally:
                                         db.close()
                                     #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                                    print c1.sell_limit(market, sell_quantity, newbid)
+                                    print (c1.sell_limit(market, sell_quantity, newbid))
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                     break
 
@@ -1029,7 +1032,7 @@ def tick():
                                             currenttime, printed))
                                     db.commit()
                                 except pymysql.Error as e:
-                                    print "Error %d: %s" % (e.args[0], e.args[1])
+                                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     sys.exit(1)
                                 finally:
                                     db.close()
@@ -1052,7 +1055,7 @@ def tick():
                                             # currenttime, printed))
                                     # db.commit()
                                 # except pymysql.Error as e:
-                                    # print "Error %d: %s" % (e.args[0], e.args[1])
+                                    # print ("Error %d: %s" % (e.args[0], e.args[1]))
                                     # sys.exit(1)
                                 # finally:
                                     # db.close()
@@ -1074,7 +1077,7 @@ def tick():
                                                 currenttime, printed))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
@@ -1095,13 +1098,13 @@ def tick():
                                             cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
                                         #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                                        print c1.sell_limit(market, sell_quantity, newbid)
+                                        print (c1.sell_limit(market, sell_quantity, newbid))
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         break
 
@@ -1122,7 +1125,7 @@ def tick():
                                                     currenttime, printed))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
@@ -1144,13 +1147,13 @@ def tick():
                                             cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
                                         #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                                        print c1.sell_limit(market, sell_quantity, newbid)
+                                        print (c1.sell_limit(market, sell_quantity, newbid))
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         break
 
@@ -1170,7 +1173,7 @@ def tick():
                                                     currenttime, printed))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
@@ -1191,13 +1194,13 @@ def tick():
                                             cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
                                         #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed, "database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                                        print c1.sell_limit(market, sell_quantity, newbid)
+                                        print (c1.sell_limit(market, sell_quantity, newbid))
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                         break
 
@@ -1217,7 +1220,7 @@ def tick():
                                                     currenttime, printed))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
@@ -1238,13 +1241,13 @@ def tick():
                                             cursor.execute("update orders set open_sell = %s  where market = %s and active =1",(1, market))
                                             db.commit()
                                         except pymysql.Error as e:
-                                            print "Error %d: %s" % (e.args[0], e.args[1])
+                                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                                             sys.exit(1)
                                         finally:
                                             db.close()
                                         #Mail("egaraev@gmail.com", "egaraev@gmail.com", "New sell", printed,"database-service")
                                         #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
-                                        print c1.sell_limit(market, sell_quantity, newbid)
+                                        print (c1.sell_limit(market, sell_quantity, newbid))
                                     #########!!!!!!!!! SELLING MECHANIZM, DANGER !!!!###################################
                                     break
 
@@ -1338,14 +1341,14 @@ def Mail(FROM,TO,SUBJECT,TEXT,SERVER):
 
 
 #Allowed currencies function for SQL
-def available_market_list(marketname):
+def available_market_list(symbol):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
+    market = symbol
     cursor.execute("SELECT * FROM orders WHERE active =1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == symbol:
             return True
 
     return False
@@ -1630,12 +1633,21 @@ def order_uuid(market):
 # def get_candles(market, tick_interval):
     # url = 'https://bittrex.com/api/v2.0/pub/market/GetTicks?apikey=' + config.key + '&MarketName=' + market +'&tickInterval=' + str(tick_interval)
     # return signed_request(url)
+	#https://api.bittrex.com/v3/markets/BTC-USD/candles/MINUTE_5/recent
 
 def get_candles(market, tick_interval):
-    url = ('https://bittrex.com/api/v2.0/pub/market/GetTicks?marketName=' + market +'&tickInterval=' + str(tick_interval))
+    url = ('https://api.bittrex.com/v3/markets/' + market +'/candles/' + str(tick_interval)+'/recent')
     r = requests.get(url)
     requests.session().close()
     return r.json()
+
+def get_coinbase_candles(market, tick_interval):
+    url = ('https://api.exchange.coinbase.com/products/' + market +'/candles?granularity=' + str(tick_interval))
+	#[ time, low, high, open, close, volume ]
+    r = requests.get(url)
+    requests.session().close()
+    return r.json()
+
 
 def signed_request(url):
     now = time.time()

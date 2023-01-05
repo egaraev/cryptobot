@@ -66,7 +66,7 @@ try:
 except:
     print("Unable to read summaries file")
 
-df_sum = pd.DataFrame(dictionary_sum, columns=['Last', 'Bid', 'Ask', 'OpenBuyOrders', 'OpenSellOrders', 'PrevDay', 'Volume'])
+df_sum = pd.DataFrame(dictionary_sum, columns=['Last', 'Bid', 'Ask', 'PrevDay', 'Volume'])
 
 (df_sum['Volume']) = 150000000 * df_sum['Volume']
 #print (df_sum)
@@ -137,7 +137,7 @@ df_thirty['T'] = df_thirty['T'].dt.strftime('%Y-%m-%d %H:%M')
 tweetlist = []
 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
 cursor = db.cursor()
-cursor.execute("SELECT `date`, `twitter_polarity`, `positive_tweets`, `negative_tweets` FROM `history` WHERE `market`='USD-BTC' and `id` >= '557' ORDER BY id")
+cursor.execute("SELECT `date`, `twitter_polarity`, `positive_tweets`, `negative_tweets` FROM `history` WHERE `market`='BTC-USD' and `id` >= '1005' ORDER BY id")
 tweets=cursor.fetchall()
 for i in tweets:
    tweetlist.append(i)
@@ -157,10 +157,11 @@ market= "USD-BTC"
 #Start the main function  (1 week is about 20 mins of symulation)
 def main():
     for i,(index,row) in enumerate(df.iterrows()):
-        if i < 7478: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 rows, then it starts at 22:00 (3700)
+        #if i < 1: continue # skip first 5 rows (normally starts at 2022-01-07 21:35 with interval of 5 min). if we skip 5 rows, then it starts at 22:00 (3700)
         try:         
             fivemin_day = str(df.iloc[index]['day'])	
-            print (i, fivemin_day)			
+            print (i, fivemin_day)
+            #print (df)			
             buy(row, market)
             sell(row, market)
             if index % 2 == 0:	# every 10 mins
@@ -208,6 +209,7 @@ def buy(row, market):
         ask = float(row['Ask'])  # buy price
         newbid=float("{:.3f}".format(bid - bid*0.002))
         newask=float("{:.3f}".format(ask + ask*0.002))
+		
     #HOW MUCH TO BUY
         buy_quantity = buy_size / last
         bought_price_sql = float(status_orders(market, 3))
@@ -221,10 +223,12 @@ def buy(row, market):
         candle_direction=heikin_ashi(market, 77)
         hour_candle_direction=heikin_ashi(market, 76)
         today_tweet = df_tw.loc[df_tw['Date'] == currentdate]
+        #print (today_tweet)
         tweet_positive=float(today_tweet['Positive'])
         tweet_negative=float(today_tweet['Negative'])
         tweet_ratio = float("{0:.2f}".format(tweet_positive/tweet_negative))
         tweet_polarity=float(today_tweet['Polarity'])
+
         candle_score=heikin_ashi(market,68)
         news_score=heikin_ashi(market,72)
         candle_pattern=heikin_ashi(market,69)
@@ -363,7 +367,7 @@ def sell(row, market):
     now = str(row['T'])
     currentdate = now[:-9]
     last = float(row['Last'])
-    day_close = float(row['PrevDay'])	
+    #day_close = float(row['PrevDay'])	
     macd_fluc = macd_fluctuation(market)
     macd_first_day=macd_fluc[0]
     macd_second_day=macd_fluc[1]
@@ -761,7 +765,7 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
         now = str(row['T'])
         currentdate = now[:-9] 	
         iso_8601= now	
-        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)		
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)	
         df_day_today = df_day.loc[df_day['T'] == fivemin_day]
         df_day_index = int(df_day_today.index.tolist()[0])
         df_day = df_day.iloc[df_day_index-14:df_day_index]	
@@ -772,6 +776,8 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
         df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
         df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date 		
         df = df_day
+        print (fivemin_day)
+
         daycurrentdate = (df['Date'][14])		
         dayprevdate = (df['Date'][13])
         dayprevdate2 = (df['Date'][12])
@@ -793,7 +799,7 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
         ohlc_df['Date']=date
         ohlc_df = ohlc_df[['Date', 'Open', 'High', 'Low', 'Close']]
         ohlc_df['Date'] = ohlc_df['Date'].map(mdates.date2num)
-
+	
 					
         HAD_PREV_Close4 = ohlc_df['Close'][dayid-4]
         HAD_PREV_Open4 = ohlc_df['Open'][dayid-4]
@@ -2005,7 +2011,8 @@ def enable_market(market, row, df_hour, df_day):
     print ("Starting enable market module")
     max_markets = parameters()[6]
     last = float(row['Last'])
-    day_close = float(row['PrevDay'])	
+    #day_close = float(row['PrevDay'])	
+    percent_chg = float(row['PrevDay'])
     now = str(row['T'])
     currentdate = now[:-9] 	
     iso_8601= now	
@@ -2016,7 +2023,7 @@ def enable_market(market, row, df_hour, df_day):
     newbid=float("{:.3f}".format(bid - bid*0.002))
     newask=float("{:.3f}".format(ask + ask*0.002))	
     bought_quantity_sql = float(status_orders(market, 2))
-    percent_chg = float(((last / day_close) - 1) * 100)
+    #percent_chg = float(((last / day_close) - 1) * 100)
     percent_sql = float(heikin_ashi(market, 21))
     HAD_trend = heikin_ashi(market, 18)
     ha_time_second = heikin_ashi(market, 23)

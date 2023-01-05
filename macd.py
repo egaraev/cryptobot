@@ -35,20 +35,19 @@ def macd_analyze():
     for market in markets: #Loop trough the crypto summary
         try:
           market=(market[0])
-          crypto=market[4:]
-          market1 = crypto+"-USD"
-          print (market1)
-          df = si.get_data(market1)
+          df = si.get_data(market)
           df = df.iloc[: , :-1]
           df = df[-59:]
-          #print (df)
+
           new_macd = get_macd(df['close'], 26, 12, 6)
           #print (new_macd)
           buy_price, sell_price, macd_signal = implement_macd_strategy(df['close'], new_macd)
 
           ax1 = plt.subplot2grid((8,1), (0,0), rowspan = 5, colspan = 1)
           ax2 = plt.subplot2grid((8,1), (5,0), rowspan = 3, colspan = 1)
-          ax1.plot(df['close'], color = 'skyblue', linewidth = 2, label = market1)
+          #print (df)
+          ax1.plot(df['close'], color = 'skyblue', linewidth = 2, label = market)
+
           ax1.plot(df.index, buy_price, marker = '^', color = 'green', markersize = 10, label = 'BUY SIGNAL', linewidth = 0)
           ax1.plot(df.index, sell_price, marker = 'v', color = 'r', markersize = 10, label = 'SELL SIGNAL', linewidth = 0)
           ax1.legend()

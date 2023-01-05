@@ -1,7 +1,5 @@
 from bittrex.bittrex import *
 import config
-import pybittrex
-from pybittrex.client import Client
 import pymysql
 import sys
 import datetime
@@ -9,12 +7,21 @@ import time
 import hmac
 import requests
 import hashlib
-now = datetime.datetime.now()
-currenttime = now.strftime("%Y-%m-%d %H:%M")
-c1 = Client(api_key=config.key, api_secret=config.secret)
-c=Client(api_key="", api_secret="")
+import config
+from bittrex_api import Bittrex
+bittrex = Bittrex(
+    api_key=config.key,              # YOUR API KEY
+    secret_key=config.secret,           # YOUR API SECRET
+    max_request_try_count=3, # Max tries for a request to succeed
+    sleep_time=2,            # sleep seconds between failed requests
+    debug_level=3
+)
+c = bittrex.v3
 currtime = int(time.time())
+now = datetime.datetime.now()
 currentdate = now.strftime("%Y-%m-%d")
+currenttime = now.strftime("%Y-%m-%d %H:%M")
+tickers = c.get_tickers()
 
 
 
@@ -27,7 +34,7 @@ def main():
 
 
 def ME():
-    market_summ = c.get_market_summaries().json()['result']
+    market_summ = c.get_market_summaries()
     max_markets = parameters()[6]
     bot_mode=parameters()[23]
     #print market_summ
@@ -36,20 +43,21 @@ def ME():
 
     for summary in market_summ: #Loop trough the market summary
         try:
-            if available_market_list(summary['MarketName']):
-                market = summary['MarketName']
+            if available_market_list(summary['symbol']):
+                market = summary['symbol']
 
-                day_close = summary['PrevDay']  # Getting day of closing order
-                volume = int(summary['BaseVolume'])
-                last = float(summary['Last'])  #last price
-                bid = float(summary['Bid'])    #sell price
-                ask = float(summary['Ask'])    #buy price
+                volume = summary['quoteVolume']
+                last = float([tick['lastTradeRate'] for tick in tickers if tick['symbol']==market][0]) #last price
+                bid = float([tick['bidRate'] for tick in tickers if tick['symbol']==market][0])   #sell price
+                ask = float([tick['askRate'] for tick in tickers if tick['symbol']==market][0])	#buy price	
                 bought_quantity_sql = float(status_orders(market, 2))
-                percent_chg = float(((last / day_close) - 1) * 100)
+                #percent_chg = float(((last / day_close) - 1) * 100)
+                percent_chg = float(summary['percentChange'])
                 percent_sql = float(heikin_ashi(market, 21))
                 HAD_trend = heikin_ashi(market, 18)
                 ha_time_second = heikin_ashi(market, 23)
                 spread = float(((ask / bid) - 1) * 100)
+
                 # print "3"
                 # prev_volume = float(previous_volume(market))
                 # print "4"				
@@ -65,10 +73,12 @@ def ME():
                   # cursor.execute("update history set volume= '%s' where market=%s and date=%s", (volume, market, currentdate))
                   db.commit()
                 except pymysql.Error as e:
-                  print "Error %d: %s" % (e.args[0], e.args[1])
+                  print ("Error %d: %s" % (e.args[0], e.args[1]))
                   sys.exit(1)
                 finally:
-                  db.close()                
+                  db.close()  
+				  
+
 
                 if percent_chg>percent_sql:
                     percent_grow=1
@@ -76,18 +86,18 @@ def ME():
                     percent_grow=-1
                 else:
                     percent_grow=0
-                print market, percent_grow
+                #print (market, percent_grow)
 
 
 
                 if bot_mode==0:
 
                     if spread>0.5 and bought_quantity_sql>0.0 and percent_grow==-1:
-                        print market, "We have open order, but we need to disable this currency"
+                        print (market, "We have open order, but we need to disable this currency")
 
 
                     if spread>0.5 and percent_grow==-1 and bought_quantity_sql==0.0:
-                            print market, "We are disabling this currency"
+                            print (market, "We are disabling this currency")
                             try:
                                 printed = ('    We are disabling this currency  ' + market)
                                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -95,13 +105,13 @@ def ME():
                                 cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
 
                     if ((HAD_trend=="DOWN" or HAD_trend=="Revers-DOWN") and currtime - ha_time_second < 3000) and bought_quantity_sql==0.0:
-                            print market, "We are disabling this currency"
+                            print (market, "We are disabling this currency")
                             try:
                                 printed = ('    We are disabling this currency because of HA  ' + market)
                                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -109,35 +119,35 @@ def ME():
                                 cursor.execute('update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
 
 
                     if spread<0.5 and (percent_grow==1 or percent_grow==0) and (market_count() <=max_markets) and (HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN"):
-                        print market, "We need to enable those currencies"
+                        print (market, "We need to enable those currencies")
                         try:
                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                             db.commit()
                         except pymysql.Error as e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                             sys.exit(1)
                         finally:
                             db.close()
 
                 else:
                     if (spread > 0.5 and bought_quantity_sql > 0 and percent_grow == -1 and open_buy(market) == 2 and ((get_balance_from_market(market)['result']['Available'] > 0.0 or get_balance_from_market(market)['result']['Balance'] > 0.0))):
-                        print market, "Prod We have open order, but we need to disable this currency"
+                        print (market, "Prod We have open order, but we need to disable this currency")
 
                     if (spread > 0.5 and bought_quantity_sql == 0 and percent_grow == -1) or (
                         (HAD_trend == "DOWN" or HAD_trend == "Revers-DOWN") and currtime - ha_time_second < 3000):
                         if has_open_order(market, 'LIMIT_SELL') or has_open_order(market, 'LIMIT_BUY') or open_buy(market) == 2:  # added last for test bot
                             pass
                         else:
-                            print market, "Prod We are disabling this currency"
+                            print (market, "Prod We are disabling this currency")
                             try:
                                 printed = ('    We are disabling this currency  ' + market)
                                 db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
@@ -146,48 +156,50 @@ def ME():
                                     'update markets set active= 0 where enabled=1 and market =("%s")' % market)
                                 db.commit()
                             except pymysql.Error as e:
-                                print "Error %d: %s" % (e.args[0], e.args[1])
+                                print ("Error %d: %s" % (e.args[0], e.args[1]))
                                 sys.exit(1)
                             finally:
                                 db.close()
 
                     if spread < 0.5 and (percent_grow == 1 or percent_grow == 0) and market_count() <= max_markets:
-                        print market, "Prod We need to enable those currencies"
+                        print (market, "Prod We need to enable those currencies")
                         try:
                             db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                             cursor = db.cursor()
                             cursor.execute('update markets set active= 1 where enabled=1 and market =("%s")' % market)
                             db.commit()
                         except pymysql.Error as e:
-                            print "Error %d: %s" % (e.args[0], e.args[1])
+                            print ("Error %d: %s" % (e.args[0], e.args[1]))
                             sys.exit(1)
                         finally:
                             db.close()
 
 
 
-                #Candle analisys	
-                hourlastcandle = get_candles(market, 'hour')['result'][-1:]
-                hourcurentopen = float(hourlastcandle[0]['O'])	
-                hourpreviouscandle = get_candles(market, 'hour')['result'][-2:]				
-                hourprevopen=(hourpreviouscandle[0]['O'])				
-                hourprevclose=float(hourpreviouscandle[0]['C'])	
-                hourprevlow=float(hourpreviouscandle[0]['L'])	
-                hourprevhigh=float(hourpreviouscandle[0]['H'])
-                daylastcandle = get_candles(market, 'day')['result'][-1:]
-                daycurrentlow = float(daylastcandle[0]['L'])
-                daycurrenthigh = float(daylastcandle[0]['H'])
-                daycurrentopen = float(daylastcandle[0]['O'])
-                daycurrentclose = float(daylastcandle[0]['C'])
-                daypreviouscandle = get_candles(market, 'day')['result'][-2:]
-                dayprevlow = float(daypreviouscandle[0]['L'])
-                dayprevhigh = float(daypreviouscandle[0]['H'])
-                dayprevopen = float(daypreviouscandle[0]['O'])
-                dayprevclose = float(daypreviouscandle[0]['C'])
+                #Candle analisys					
+                hourlastcandle = get_candles(market, 'HOUR_1')[-1:]
+                hourcurentopen = float(hourlastcandle[0]['open'])				
+                hourpreviouscandle = get_candles(market, 'HOUR_1')[-2:]				
+                hourprevopen=float(hourpreviouscandle[0]['open'])				
+                hourprevclose=float(hourpreviouscandle[0]['close'])	
+                hourprevlow=float(hourpreviouscandle[0]['low'])	
+                hourprevhigh=float(hourpreviouscandle[0]['high'])
+                daylastcandle = get_candles(market, 'DAY_1')[-1:]
+                daycurrentlow = float(daylastcandle[0]['low'])
+                daycurrenthigh = float(daylastcandle[0]['high'])
+                daycurrentopen = float(daylastcandle[0]['open'])
+                daycurrentclose = float(daylastcandle[0]['close'])
+                daypreviouscandle = get_candles(market, 'DAY_1')[-2:]
+                dayprevlow = float(daypreviouscandle[0]['low'])
+                dayprevhigh = float(daypreviouscandle[0]['high'])
+                dayprevopen = float(daypreviouscandle[0]['open'])
+                dayprevclose = float(daypreviouscandle[0]['close'])
+
                 day_candle = 'NONE'
                 prevhour_candle='NONE'
                 hourcandle_dir='NONE'
                 candle_dir='NONE'
+                #print(type(hourprevclose), type(hourprevopen))
                 if hourprevclose > hourprevopen:
                    prevhour_candle = 'U'
                 else:
@@ -213,7 +225,7 @@ def ME():
                 else:
                    candle_dir = 'D'
 
-                print market, hourcandle_dir, candle_dir
+                print (market, hourcandle_dir, candle_dir)
                 try:
                     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                     cursor = db.cursor()
@@ -223,10 +235,11 @@ def ME():
                     cursor.execute("update history set day_direction= %s where market=%s and date=%s", (candle_dir, market, currentdate))
                     db.commit()
                 except pymysql.Error as e:
-                    print "Error %d: %s" % (e.args[0], e.args[1])
+                    print ("Error %d: %s" % (e.args[0], e.args[1]))
                     sys.exit(1)
                 finally:
                     db.close()
+                print ("Db updated")
 
 
 
@@ -248,14 +261,14 @@ def open_buy_sql(marketname):
 
 
 
-def available_market_list(marketname):
+def available_market_list(symbol):
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
     cursor = db.cursor()
-    market = marketname
+    market = symbol
     cursor.execute("SELECT * FROM markets WHERE  enabled=1 and market = '%s'" % market)
     r = cursor.fetchall()
     for row in r:
-        if row[1] == marketname:
+        if row[1] == symbol:
             return True
 
     return False
@@ -391,7 +404,7 @@ def heikin_ashi(marketname, value):
 
 
 def get_candles(market, tick_interval):
-    url = ('https://bittrex.com/api/v2.0/pub/market/GetTicks?marketName=' + market +'&tickInterval=' + str(tick_interval))
+    url = ('https://api.bittrex.com/v3/markets/' + market +'/candles/' + str(tick_interval)+'/recent')
     r = requests.get(url)
     requests.session().close()
     return r.json()

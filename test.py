@@ -1,40 +1,22 @@
-from yahoo_fin import stock_info as si
-import sys, os
-import ast
+import requests
+import json
+market = "BTC-USD"
+tick_interval = 900
 
-df = si.get_data('BTC-USD')
-df = df.iloc[: , :-1]
-df = df[-62:]
-df = df.reset_index().rename({'index':'date'}, axis = 'columns')
-
-#print (df)
-df.rename(columns={ 'date': 'T', 'open': 'O', 'high': 'H', 'low': 'L', 'close': 'C', 'volume': 'V' }, inplace=True)
-del df['adjclose']
-df['T'] = df['T'].dt.strftime('%Y-%m-%d')
-result = df.to_dict('records')
-last_date = result[-1]
+def get_coinbase_candles(market, tick_interval):
+    url = ('https://api.exchange.coinbase.com/products/' + market +'/candles?granularity=' + str(tick_interval))
+	#[ time, low, high, open, close, volume ]
+    r = requests.get(url)
+    requests.session().close()
+    return r.json()
 
 
+lastcandle = get_coinbase_candles(market, tick_interval)[-1:]
+currentlow = float(lastcandle[0][1])
+currentopen = float(lastcandle[0][3])
+currenthigh = float(lastcandle[0][2])
+previouscandle = get_coinbase_candles(market, tick_interval)[-2:]
+prevhigh = float(previouscandle[0][2])
+prevclose = float(previouscandle[0][4])
 
-try:
-    file = open("hist_data_day.txt", "r")
-    contents = file.read()
-    dictionary = ast.literal_eval(contents)
-    dict_without_last_day= dictionary[:-1]	
-    print (dictionary)
-    last_current_date=dictionary[-1]
-    file.close()
-except:
-    print("Unable to read the file")
-
-
-
-
-try:
-      history_file = open('hist_data_day.txt', 'w')
-      history_file.write(str(dict_without_last_day))
-      history_file.write(',')
-      history_file.write(str(last_date))
-      history_file.close()
-except:
-      print("Unable to append to file")
+print (lastcandle, currentlow)	
