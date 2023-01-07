@@ -7,19 +7,22 @@ import csv
 pd.options.mode.chained_assignment = None
 from sklearn.naive_bayes import GaussianNB
 
-header = ["'HA", 'Candle_direction', 'Candle_score', 'AI_direction', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Tweet_score', 'Candle_pattern', 'News_score', 'H_candle_dir', 'Trend', 'MACD', 'OBV']
+header = ["'HA", 'Day_candle_direction', 'Candle_score', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern', 'Hour_candle_direction', 'Trend', 'MACD', 'OBV']
+
+
 
 orderlist = []
-db = pymysql.connect("database-service", "stockuser", "123456", "stock_advisor")
+db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
 cursor = db.cursor()
 cursor.execute("SELECT params FROM orders where active = 0")
 orders=cursor.fetchall()
 for i in orders:
    orderlist.append(str(i))
 
+#print(orderlist)
 
 resultlist = []
-db = pymysql.connect("database-service", "stockuser", "123456", "stock_advisor")
+db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
 cursor = db.cursor()
 cursor.execute("SELECT percent_serf, percent_serf_max FROM orders where active = 0")
 results=cursor.fetchall()
@@ -63,7 +66,7 @@ for order in orderlist:
     try:
        for i in  header:
            test_list.remove(i)
-		   		   
+           #print(test_list)		   
        #print(test_list)
        new_order_list.append(test_list)	   
   		   
@@ -83,7 +86,10 @@ for f, b in zip(new_order_list, final_result_list):
 #print (final_list)	   
 
 
-columnz = ['HA', 'Candle_direction', 'Candle_score', 'AI_direction', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Tweet_score', 'Candle_pattern', 'News_score', 'H_candle_dir', 'Trend', 'Trend_percent', 'MACD', 'OBV', 'Result']
+columnz = ['HA', 'Day_candle_direction', 'Candle_score',  'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern',  'Hour_candle_direction', 'Trend', 'Trend_percent', 'MACD', 'OBV', 'Result']
+
+
+
 
 with open("out.csv", 'w') as fileObj:
     writerObj = csv.writer(fileObj)
@@ -101,11 +107,11 @@ data.HA[data.HA =='STABLE'] = 3
 data.HA[data.HA =='Revers-UP'] = 4
 data.HA[data.HA =='UP'] = 5
 
-data.Candle_direction[data.Candle_direction =='D'] = 1
-data.Candle_direction[data.Candle_direction =='U'] = 2
+data.Day_candle_direction[data.Day_candle_direction =='D'] = 1
+data.Day_candle_direction[data.Day_candle_direction =='U'] = 2
 
-data.AI_direction[data.AI_direction =='DOWN'] = 1
-data.AI_direction[data.AI_direction =='UP'] = 2
+# data.AI_direction[data.AI_direction =='DOWN'] = 1
+# data.AI_direction[data.AI_direction =='UP'] = 2
 
 # data.Candle_pattern[data.Candle_pattern =='T_b_c-v'] = 1
 # data.Candle_pattern[data.Candle_pattern =='T_w_s-^'] = 2
@@ -126,8 +132,8 @@ data.AI_direction[data.AI_direction =='UP'] = 2
 # data.Candle_pattern[data.Candle_pattern =='H_M_Be-v'] = 1
 # data.Candle_pattern[data.Candle_pattern =='H_M_Bu-^'] = 2
 
-data.H_candle_dir[data.H_candle_dir =='D'] = 1
-data.H_candle_dir[data.H_candle_dir =='U'] = 2
+data.Hour_candle_direction[data.Hour_candle_direction =='D'] = 1
+data.Hour_candle_direction[data.Hour_candle_direction =='U'] = 2
 
 data.Trend[data.Trend =='Fluctuating'] = 1
 data.Trend[data.Trend =='Peak'] = 2
@@ -144,8 +150,6 @@ df = data
 
 
 df = df.drop(['Candle_pattern'],axis=1)
-df = df.drop(['Tweet_score'],axis=1)
-
 
 #df = df.drop(['Trend_percent'],axis=1)
 df = df.drop(['Tweet_negative'],axis=1)
@@ -164,7 +168,7 @@ newdf = df.copy()
 df = df.append(newdf, ignore_index = True)
 
 
-print (df.head)
+print (df.to_string())
 
 ####################################################################
 ###################################################################
@@ -219,7 +223,6 @@ tw_ratio = 1
 tw_pol = 0.25
 # tw_score = 1.0
 # candle_pat = 1
-news_score = 1
 h_candle_dir = 1
 trend = 2
 trend_perc = 10
@@ -230,7 +233,7 @@ obv = 1
     
 #HA Candle_direction Candle_score AI_direction Tweet_positive Tweet_negative Tweet_ratio Tweet_polarity Tweet_score Candle_pattern News_score H_candle_dir Trend Trend_percent MACD OBV
 
-y_pred = nb_clf.predict([[ha,candle_dir,candle_score,ai_dir,tw_ratio,tw_pol,news_score,h_candle_dir,trend,trend_perc,macd,obv]])
+y_pred = nb_clf.predict([[ha,candle_dir,candle_score,tw_ratio,tw_pol,h_candle_dir,trend,trend_perc,macd,obv]])
 
 
   

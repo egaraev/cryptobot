@@ -147,7 +147,7 @@ df_tw = pd.DataFrame.from_records(tweetlist, columns =['Date', 'Polarity', 'Posi
 #print (df_tw)
 
 
-market= "USD-BTC"
+market= "BTC-USD"
 
 
 
@@ -164,29 +164,25 @@ def main():
             #print (df)			
             buy(row, market)
             sell(row, market)
-            if index % 2 == 0:	# every 10 mins
-               enable_market(market, row, df_hour, df_day)	
-               #time.sleep(1)			   
+            # if index % 2 == 0:	# every 10 mins
+               # enable_market(market, row, df_hour, df_day)			   
             if index % 3 == 0: #every 15 mins
                dashboard(market, row)
                heikin_ashi_module(market, df_day, fivemin_day, row)
                obv(market, df_day, fivemin_day, row)
                macd_module(market, df_day, fivemin_day, row)	
-               candle_patterns(market, df_day, fivemin_day, row)
-               #time.sleep(1)			   
+               candle_patterns(market, df_day, fivemin_day, row)			   
             if index % 5 == 0: # every 25 mins
                profit_chart()
                aftercount(market, row)
                trend_analizer(market)
-               #time.sleep(1)
             if index % 150 == 0:  # every 12 hours			
                tweeter_charts_img(market, df_tw, row)
                heikin_ashi_module_img(market, df_day, fivemin_day, row)	
                obv_img(market, df_day, fivemin_day, row)
                macd_module_img(market, df_day, fivemin_day, row)	
                candle_patterns_img(market, df_day, fivemin_day, row)
-               candle_charts_img(market, df_day, fivemin_day, row)				   
-               #time.sleep(1)	    
+               candle_charts_img(market, df_day, fivemin_day, row)				   	    
         except:
             break
         #if i > 20: break
@@ -213,6 +209,7 @@ def buy(row, market):
     #HOW MUCH TO BUY
         buy_quantity = buy_size / last
         bought_price_sql = float(status_orders(market, 3))
+
         bought_quantity_sql = float(status_orders(market, 2))
         active = active_orders(market)
         iteration = int(iteration_orders(market))
@@ -231,15 +228,19 @@ def buy(row, market):
 
         candle_score=heikin_ashi(market,68)
         news_score=heikin_ashi(market,72)
+
         candle_pattern=heikin_ashi(market,69)
         previous_date = str(heikin_ashi(market,46))
         trend = str(heikin_ashi(market,78))					
-        macd = str(heikin_ashi(market,79))					
+        macd = str(heikin_ashi(market,79))
         obv = str(heikin_ashi(market,81))
         macd_fluc = macd_fluctuation(market)
+
         macd_first_day=macd_fluc[0]
         macd_second_day=macd_fluc[1]
         macd_third_day=macd_fluc[2]
+		
+	
         current_order_count = int(order_count())		
         if (macd_third_day!='none' and macd_second_day!='none' and macd_first_day!='none') or  (macd_third_day!='none' and macd_second_day!='none')  or (macd_third_day!='none'  and macd_first_day!='none') or (macd_third_day!=macd_first_day) or (macd_second_day!=macd_third_day):
             macd_fluct_status = 'fluctuation'
@@ -298,8 +299,9 @@ def buy(row, market):
 
         print ("Starting buying mechanizm for " , market)
 
-        if HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0  and candles_status=='OK' and macd=="Buy" and current_order_count <= max_orders  and obv=="Buy" and macd_fluct_status=='not-fluctuation' and obv_fluct_status=='not-fluctuation' and tweet_polarity>0.14 and tweet_positive>tweet_negative: 
-       # if tweet_polarity>0.14:
+        # if HAD_trend!="DOWN" and HAD_trend!="Revers-DOWN" and candle_score>=0  and candles_status=='OK' and macd=="Buy" and current_order_count <= max_orders  and obv=="Buy" and macd_fluct_status=='not-fluctuation' and obv_fluct_status=='not-fluctuation' and tweet_polarity>0.14 and tweet_positive>tweet_negative: 
+        if current_order_count <= max_orders:		
+
                             # If we have some currency on the balance
                 if bought_quantity_sql !=0.0:
                     print ('    2 - We already have ' + str(
@@ -518,7 +520,8 @@ def sell(row, market):
                             
 
             print ("Checking reason 2")
-            if ((procent_serf>=2.0 and danger_order==1 and (max_percent_sql - procent_serf > 1)) or  ((max_percent_sql - procent_serf >= 1.5) and 10.0>=procent_serf >= 4.0 and candle_direction=='D' )   or ((max_percent_sql - procent_serf >= 3) and 18.0>=procent_serf >= 10.0 and candles_status=='DOWN')):
+            # if ((procent_serf>=2.0 and danger_order==1 and (max_percent_sql - procent_serf > 1)) or  ((max_percent_sql - procent_serf >= 1.5) and 10.0>=procent_serf >= 4.0 and candle_direction=='D' )   or ((max_percent_sql - procent_serf >= 3) and 18.0>=procent_serf >= 10.0 and candles_status=='DOWN')):
+            if 	procent_serf>=1.0:		
                                 
                                 #print "Reason 2 is OK"
                                 
@@ -714,32 +717,32 @@ def sell(row, market):
 
 
 
-            print ("Checking reason 8")
-            if (macd=="Sell" and macd_fluct_status == 'not-fluctuation'):
-                try:
-                        netto_value=float(procent_serf-0.5)
-                        print ('    8  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + str(netto_value) +'  %')
-                        printed = ('    8 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or losing   '     + str(netto_value) +'  %')
-                        db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
-                        cursor = db.cursor()
-                        cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                        cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("8 , MACD_SELL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
-								        + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score)   + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
-								        + ' Tweet_polarity: ' + str(tweet_polarity)   + ' Candle_pattern: ' + str(candle_pattern) +   ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
-                        cursor.execute('update orders set active = 0 where market =("%s")' % market)   
-                        cursor.execute(
-                            'update orders set active = 0 where market =("%s")' % market)
-                        cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
-                        newvalue = summ_serf() + (procent_serf-0.5)
-                        cursor.execute(
-                            'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
-                            currenttime, newvalue, market))
-                        db.commit()
-                except pymysql.Error as e:
-                        print ("Error %d: %s" % (e.args[0], e.args[1]))
-                        sys.exit(1)
-                finally:
-                        db.close()
+            # print ("Checking reason 8")
+            # if (macd=="Sell" and macd_fluct_status == 'not-fluctuation'):
+                # try:
+                        # netto_value=float(procent_serf-0.5)
+                        # print ('    8  -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(last)) + '  and getting or losing  '   + str(netto_value) +'  %')
+                        # printed = ('    8 -Selling ' + str(format_float(sell_quantity_sql)) + ' units of ' + market + ' for ' + str(format_float(newbid)) + '  and getting or losing   '     + str(netto_value) +'  %')
+                        # db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                        # cursor = db.cursor()
+                        # cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
+                        # cursor.execute('update orders set reason_close =%s, sell_time=%s where active=1 and market =%s', ("8 , MACD_SELL p:    " + str(format_float(last)) + "    t:   " + str(currenttime)  +'  HA: ' + str(HAD_trend) 
+								        # + '  Day_candle_direction ' + str(candle_direction) + ' Candle_score: ' + str(candle_score)   + ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) 
+								        # + ' Tweet_polarity: ' + str(tweet_polarity)   + ' Candle_pattern: ' + str(candle_pattern) +   ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+ ' MACD: ' + str(macd) + ' OBV: ' +str(obv)  ,currtime, market))
+                        # cursor.execute('update orders set active = 0 where market =("%s")' % market)   
+                        # cursor.execute(
+                            # 'update orders set active = 0 where market =("%s")' % market)
+                        # cursor.execute('UPDATE orders SET percent_serf = %s WHERE active = 0 AND market =%s ORDER BY order_id DESC LIMIT 1', (netto_value,market))
+                        # newvalue = summ_serf() + (procent_serf-0.5)
+                        # cursor.execute(
+                            # 'insert into statistics(date, serf, market) values("%s", "%s", "%s")' % (
+                            # currenttime, newvalue, market))
+                        # db.commit()
+                # except pymysql.Error as e:
+                        # print ("Error %d: %s" % (e.args[0], e.args[1]))
+                        # sys.exit(1)
+                # finally:
+                        # db.close()
 
 
 
@@ -776,7 +779,7 @@ def heikin_ashi_module(market, df_day, fivemin_day, row):
         df_day = df_day[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']]
         df_day['Date'] = pd.to_datetime(df_day['Date']).dt.date 		
         df = df_day
-        print (fivemin_day)
+        #print (fivemin_day)
 
         daycurrentdate = (df['Date'][14])		
         dayprevdate = (df['Date'][13])
