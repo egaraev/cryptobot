@@ -144,12 +144,17 @@ def nasdaq_news():
 #             print (new_list)
 #             minimal_score=(min(scores))
           print (average)
+          print(currentdate)
+	  
+          words = currentdate.split('/')
+          newdate = '-'.join(words)		  
+          print(newdate)
 
-             
+		  
           try:
                  db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
                  cursor = db.cursor()
-                 cursor.execute("update history set news_score='%s'  where market='%s' and date='%s'" % (average, market, currentdate))
+                 cursor.execute("update history set news_score='%s'  where market='%s' and date='%s'" % (average, market, newdate))
                  cursor.execute("update markets set news_score='%s'  where market='%s'" % (average, market))
                  db.commit()
           except pymysql.Error as e:

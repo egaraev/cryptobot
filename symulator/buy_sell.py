@@ -146,6 +146,33 @@ df_tw = pd.DataFrame.from_records(tweetlist, columns =['Date', 'Polarity', 'Posi
 
 #print (df_tw)
 
+#Read the data for AI predictions
+ai_list = []
+db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+cursor = db.cursor()
+cursor.execute("SELECT `date`, `predicted_price` FROM `history` WHERE `market`='BTC-USD' and `date` >= '2023-01-02' ORDER BY date")
+ai_preds=cursor.fetchall()
+for i in ai_preds:
+   ai_list.append(i)
+
+df_ai = pd.DataFrame.from_records(ai_list, columns =['Date', 'Predicted_price'])
+
+#print (df_ai)
+
+
+news_score_list = []
+db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb")
+cursor = db.cursor()
+cursor.execute("SELECT `date`, `news_score` FROM `history` WHERE `market`='BTC-USD' and `date` >= '2023-01-02' ORDER BY date")
+news_score_preds=cursor.fetchall()
+for i in news_score_preds:
+   news_score_list.append(i)
+
+news_ai = pd.DataFrame.from_records(news_score_list, columns =['Date', 'news_score'])
+
+print (news_ai)
+
+
 
 market= "BTC-USD"
 
@@ -161,7 +188,8 @@ def main():
         try:         
             fivemin_day = str(df.iloc[index]['day'])	
             print (i, fivemin_day)
-            #print (df)			
+            #print (df)
+            news_score(market, row)			
             buy(row, market)
             sell(row, market)
             # if index % 2 == 0:	# every 10 mins
@@ -182,10 +210,92 @@ def main():
                obv_img(market, df_day, fivemin_day, row)
                macd_module_img(market, df_day, fivemin_day, row)	
                candle_patterns_img(market, df_day, fivemin_day, row)
-               candle_charts_img(market, df_day, fivemin_day, row)				   	    
+               candle_charts_img(market, df_day, fivemin_day, row)
+               ai_prediction(market, row)			   
         except:
             break
         #if i > 20: break
+
+
+
+
+def news_score(market, row):
+        print ("Starting news_score module")
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
+        #print (currtime)		
+        currenttime = now[:-3]	
+        current_row = news_ai[news_ai.Date == currentdate].iloc[0] 		
+        news_score = float(current_row['news_score'])
+        try:
+            db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+            cursor = db.cursor()
+            cursor.execute("update markets set news_score = %s  where market = %s",(news_score, market))
+            db.commit()
+        except pymysql.Error as e:
+            print ("Error %d: %s" % (e.args[0], e.args[1]))
+            sys.exit(1)
+        finally:
+            db.close()
+
+
+def ai_prediction(market, row):
+        print ("Starting ai_prediction module")
+        last = float(row['Last'])
+        now = str(row['T'])
+        currentdate = now[:-9] 	
+        iso_8601= now	
+        currtime = epoch_seconds_from_iso_8601_with_tz_offset(iso_8601)
+        #print (currtime)		
+        currenttime = now[:-3]	
+        predicted_row = df_ai[(df_ai.Predicted_price > 0) & (df_ai.Date >= currentdate)].iloc[0] 
+        #print (predicted_row)		
+        predicted_price = float(predicted_row['Predicted_price'])
+        predicted_date = (predicted_row['Date'])
+        #print (currentdate, predicted_date)	
+        curr_ai_dir = current_ai_direction(market)
+        #print (curr_ai_dir)
+        
+	
+        if predicted_price > last:
+           ai_direction = "UP"
+        elif predicted_price < last:
+           ai_direction = "DOWN"
+        else:
+           pass	
+		   
+
+#        print (curr_ai_dir)
+		
+        if currentdate == predicted_date:
+            try:
+                db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                cursor = db.cursor()
+                cursor.execute("update markets set ai_direction = 'NEUTRAL'  where market = %s",(market))
+                db.commit()
+            except pymysql.Error as e:
+                print ("Error %d: %s" % (e.args[0], e.args[1]))
+                sys.exit(1)
+            finally:
+                db.close()            		
+        elif curr_ai_dir == "NEUTRAL":
+            try:
+                db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+                cursor = db.cursor()
+                cursor.execute("update markets set ai_direction = %s  where market = %s",(ai_direction, market))
+                db.commit()
+            except pymysql.Error as e:
+                print ("Error %d: %s" % (e.args[0], e.args[1]))
+                sys.exit(1)
+            finally:
+                db.close()
+        elif curr_ai_dir != "NEUTRAL":
+            pass		
+	
+#        print (ai_direction)
 
 
 
@@ -228,7 +338,7 @@ def buy(row, market):
 
         candle_score=heikin_ashi(market,68)
         news_score=heikin_ashi(market,72)
-
+        ai_direction=str(heikin_ashi(market,9))
         candle_pattern=heikin_ashi(market,69)
         previous_date = str(heikin_ashi(market,46))
         trend = str(heikin_ashi(market,78))					
@@ -343,7 +453,7 @@ def buy(row, market):
                         db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
                         cursor = db.cursor()
                         cursor.execute('insert into logs(date, log_entry) values("%s", "%s")' % (currenttime, printed))
-                        cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Day_candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) +  ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity)  + ' Candle_pattern: ' + str(candle_pattern)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd)  +' OBV: ' +str(obv)))
+                        cursor.execute('insert into orders(market, quantity, price, active, date, timestamp, params) values("%s", "%s", "%s", "%s", "%s", "%s", "%s")' % (market, buy_quantity, last, "1", currenttime, timestamp,  '  HA: ' + str(HAD_trend) + '  Day_candle_direction: ' + str(candle_direction) + ' Candle_score: ' + str(candle_score) + ' AI_direction: ' + str(ai_direction) +  ' Tweet_positive: ' + str(tweet_positive) + ' Tweet_negative: ' + str(tweet_negative) + ' Tweet_ratio: ' +str(tweet_ratio) + ' Tweet_polarity: ' + str(tweet_polarity)  + ' Candle_pattern: ' + str(candle_pattern)+ ' News_score: ' + str(news_score)+ ' Hour_candle_direction: ' + str(hour_candle_direction) + ' Trend: ' + str(trend)+' MACD: ' +str(macd)  +' OBV: ' +str(obv)))
                         cursor.execute("update orders set serf = %s, one_step_active =1 where market = %s and active =1",(serf, market))
                         db.commit()
                     except pymysql.Error as e:
@@ -758,6 +868,19 @@ def sell(row, market):
     else:
         pass
 ####### SELL - END ################
+
+
+
+
+		
+
+
+
+
+
+
+
+
 
 
 def heikin_ashi_module(market, df_day, fivemin_day, row):
@@ -2216,10 +2339,27 @@ def tweeter_charts_img(market, df_tw, row):
 
 
 
+def current_ai_direction(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT ai_direction FROM markets where market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return row[0]
+    return 0
 
 
-
-
+def current_ai_time(marketname):
+    db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")
+    cursor = db.cursor()
+    market=marketname
+    cursor.execute("SELECT ai_time FROM markets where market = '%s'" % market)
+    r = cursor.fetchall()
+    for row in r:
+        return row[0]
+    return 0
+	
 
 def market_count():
     db = pymysql.connect("database-service", "cryptouser", "123456", "cryptodb_simulator")

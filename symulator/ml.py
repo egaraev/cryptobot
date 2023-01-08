@@ -7,7 +7,7 @@ import csv
 pd.options.mode.chained_assignment = None
 from sklearn.naive_bayes import GaussianNB
 
-header = ["'HA", 'Day_candle_direction', 'Candle_score', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern', 'Hour_candle_direction', 'Trend', 'MACD', 'OBV']
+header = ["'HA", 'Day_candle_direction', 'Candle_score', 'AI_direction', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern', 'News_score', 'Hour_candle_direction', 'Trend', 'MACD', 'OBV']
 
 
 
@@ -86,7 +86,7 @@ for f, b in zip(new_order_list, final_result_list):
 #print (final_list)	   
 
 
-columnz = ['HA', 'Day_candle_direction', 'Candle_score',  'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern',  'Hour_candle_direction', 'Trend', 'Trend_percent', 'MACD', 'OBV', 'Result']
+columnz = ['HA', 'Day_candle_direction', 'Candle_score', 'AI_direction', 'Tweet_positive', 'Tweet_negative', 'Tweet_ratio', 'Tweet_polarity', 'Candle_pattern', 'News_score', 'Hour_candle_direction', 'Trend', 'Trend_percent', 'MACD', 'OBV', 'Result']
 
 
 
@@ -110,8 +110,8 @@ data.HA[data.HA =='UP'] = 5
 data.Day_candle_direction[data.Day_candle_direction =='D'] = 1
 data.Day_candle_direction[data.Day_candle_direction =='U'] = 2
 
-# data.AI_direction[data.AI_direction =='DOWN'] = 1
-# data.AI_direction[data.AI_direction =='UP'] = 2
+data.AI_direction[data.AI_direction =='DOWN'] = 1
+data.AI_direction[data.AI_direction =='UP'] = 2
 
 # data.Candle_pattern[data.Candle_pattern =='T_b_c-v'] = 1
 # data.Candle_pattern[data.Candle_pattern =='T_w_s-^'] = 2
@@ -223,6 +223,7 @@ tw_ratio = 1
 tw_pol = 0.25
 # tw_score = 1.0
 # candle_pat = 1
+news_score = 0.9
 h_candle_dir = 1
 trend = 2
 trend_perc = 10
@@ -233,7 +234,7 @@ obv = 1
     
 #HA Candle_direction Candle_score AI_direction Tweet_positive Tweet_negative Tweet_ratio Tweet_polarity Tweet_score Candle_pattern News_score H_candle_dir Trend Trend_percent MACD OBV
 
-y_pred = nb_clf.predict([[ha,candle_dir,candle_score,tw_ratio,tw_pol,h_candle_dir,trend,trend_perc,macd,obv]])
+y_pred = nb_clf.predict([[ha,candle_dir,candle_score,tw_ratio,tw_pol,news_score,h_candle_dir,trend,trend_perc,macd,obv]])
 
 
   
